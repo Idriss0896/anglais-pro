@@ -7,8 +7,8 @@ import {
   Check,
   Copy,
   MessageCircle,
+  Quote,
   Search,
-  Sparkles,
   Volume2,
   X,
 } from "lucide-react";
@@ -153,7 +153,7 @@ export function ExpressionsPage() {
         iconTone="from-amber-400 to-orange-500"
         actions={
           <>
-            <StatPill icon={Sparkles} value={TOTAL_PHRASES} label="expressions" tone="flame" />
+            <StatPill icon={Quote} value={TOTAL_PHRASES} label="expressions" tone="flame" />
             <StatPill
               icon={Bookmark}
               value={favorites.length}

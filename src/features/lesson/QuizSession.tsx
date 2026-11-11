@@ -11,14 +11,15 @@ import {
   ArrowRight,
   Check,
   CheckCircle2,
+  Flame,
+  Gem,
   Heart,
   Lightbulb,
+  PencilLine,
   RotateCcw,
-  Sparkles,
   Trophy,
   Volume2,
   XCircle,
-  Zap,
 } from "lucide-react";
 import { Button } from "@/components/Button";
 import { ProgressBar } from "@/components/ProgressBar";
@@ -554,7 +555,7 @@ export function QuizSession({
                 </p>
               </div>
               <div className="rounded-2xl bg-slate-50 p-3 ring-1 ring-slate-100">
-                <Zap size={17} className="mx-auto text-violet-500" fill="currentColor" />
+                <Gem size={17} className="mx-auto text-violet-500" fill="currentColor" />
                 <p className="mt-1 text-lg font-extrabold text-ink">+{result.xp}</p>
                 <p className="text-[9px] font-extrabold uppercase tracking-wide text-slate-400">
                   XP gagnés
@@ -564,7 +565,7 @@ export function QuizSession({
 
             <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-[10px] font-bold text-slate-400">
               <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-1 text-amber-700 ring-1 ring-amber-100">
-                <Sparkles size={11} className="fill-current" />
+                <Flame size={11} className="fill-current" />
                 Série : {streak} jour{streak > 1 ? "s" : ""}
               </span>
               <span className="inline-flex items-center gap-1 rounded-full bg-rose-50 px-2.5 py-1 text-rose-600 ring-1 ring-rose-100">
@@ -643,7 +644,7 @@ export function QuizSession({
         <div className="card overflow-hidden p-5 sm:p-7">
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-2.5 py-1 text-[10px] font-extrabold text-brand-700 ring-1 ring-brand-100">
-              <Sparkles size={11} />
+              <PencilLine size={11} />
               {typeLabels[question.t]}
             </span>
             <CategoryBadge category={question.category} />
@@ -718,7 +719,7 @@ export function QuizSession({
                   </p>
                   {feedback.correct && (
                     <span className="inline-flex items-center gap-1 rounded-full bg-white px-2 py-0.5 text-[10px] font-extrabold text-emerald-700">
-                      <Zap size={10} fill="currentColor" />
+                      <Gem size={10} fill="currentColor" />
                       +10 XP
                     </span>
                   )}
@@ -770,7 +771,7 @@ export function QuizSession({
                 restoreHearts();
                 setHeartsOpen(false);
               }}
-              icon={Sparkles}
+              icon={Heart}
             >
               Recharger mes cœurs
             </Button>

@@ -7,14 +7,15 @@ import {
   Dumbbell,
   FileText,
   Flame,
+  Gauge,
+  Gem,
   Layers,
   Link2,
   ListChecks,
+  MousePointerClick,
   PenLine,
-  Sparkles,
   Target,
   Trophy,
-  Zap,
   type LucideIcon,
 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
@@ -51,7 +52,7 @@ const modes: PracticeMode[] = [
     id: "express",
     title: "Quiz express",
     description: "10 questions variées pour s'échauffer en quelques minutes.",
-    icon: Sparkles,
+    icon: Gauge,
     questions: 10,
     tone: "from-brand-500 to-brand-700",
     soft: "bg-brand-50",
@@ -186,7 +187,7 @@ export function PracticePage() {
         iconTone="from-brand-500 to-brand-700"
         actions={
           <>
-            <StatPill icon={Zap} value={xp} label="XP" tone="xp" />
+            <StatPill icon={Gem} value={xp} label="XP" tone="xp" />
             <StatPill icon={Target} value={`${accuracy}%`} label="précision" tone="mint" />
             <StatPill icon={BookOpenCheck} value={completed} label="leçons" tone="neutral" />
           </>
@@ -214,7 +215,7 @@ export function PracticePage() {
                 to="/practice/session/express"
                 className="inline-flex h-11 items-center gap-2 rounded-2xl bg-white px-5 text-sm font-extrabold text-ink transition hover:-translate-y-0.5"
               >
-                <Sparkles size={17} />
+                <Gauge size={17} />
                 Quiz express
               </Link>
               <Link
@@ -271,7 +272,7 @@ export function PracticePage() {
             </p>
           </div>
           <span className="hidden items-center gap-1 text-[10px] font-bold text-slate-400 sm:inline-flex">
-            <Zap size={12} className="text-violet-500" fill="currentColor" />
+            <Gem size={12} className="text-violet-500" fill="currentColor" />
             10 XP par bonne réponse
           </span>
         </div>
@@ -292,7 +293,7 @@ export function PracticePage() {
         <div className="grid gap-0 sm:grid-cols-3">
           {[
             {
-              icon: Sparkles,
+              icon: MousePointerClick,
               title: "1. Choisis un mode",
               text: "Quiz express, QCM, saisie, assemblage ou association.",
             },

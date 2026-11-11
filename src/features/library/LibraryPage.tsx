@@ -2,10 +2,10 @@ import { useMemo, useState, type ReactNode } from "react";
 import { useSearchParams } from "react-router-dom";
 import {
   BookOpen,
+  CheckCircle2,
   Dumbbell,
   LayoutGrid,
   Search,
-  Sparkles,
   X,
   type LucideIcon,
 } from "lucide-react";
@@ -108,7 +108,7 @@ export function LibraryPage({
           <>
             <StatPill icon={BookOpen} value={TOTAL_UNITS} label="leçons" tone="neutral" />
             <StatPill icon={Dumbbell} value={TOTAL_QUESTIONS} label="exercices" tone="xp" />
-            <StatPill icon={Sparkles} value={completed} label="terminées" tone="mint" />
+            <StatPill icon={CheckCircle2} value={completed} label="terminées" tone="mint" />
           </>
         }
       />

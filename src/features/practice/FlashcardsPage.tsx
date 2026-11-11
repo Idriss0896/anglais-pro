@@ -5,9 +5,10 @@ import {
   Bookmark,
   BookmarkCheck,
   Check,
+  Eye,
   Layers,
+  Quote,
   RefreshCw,
-  Sparkles,
   Target,
   Volume2,
   X,
@@ -95,7 +96,7 @@ export function FlashcardsPage() {
         actions={
           <>
             <StatPill icon={Layers} value={DECK_SIZE} label="cartes" tone="sky" />
-            <StatPill icon={Sparkles} value={TOTAL_PHRASES} label="expressions" tone="flame" />
+            <StatPill icon={Quote} value={TOTAL_PHRASES} label="expressions" tone="flame" />
             <StatPill icon={Target} value={`${knownPercent}%`} label="maîtrisées" tone="mint" />
           </>
         }
@@ -254,7 +255,7 @@ export function FlashcardsPage() {
                         onClick={() => setRevealed(true)}
                         className="inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-6 text-sm font-extrabold text-ink transition hover:-translate-y-0.5"
                       >
-                        <Sparkles size={17} />
+                        <Eye size={17} />
                         Afficher la traduction
                       </button>
                     ) : (

@@ -7,12 +7,13 @@ import {
   BookmarkCheck,
   CheckCircle2,
   Clock3,
+  GraduationCap,
   Heart,
   Lightbulb,
   ListChecks,
   MessageCircle,
   Play,
-  Sparkles,
+  RotateCcw,
   Table2,
   Trophy,
   Volume2,
@@ -314,7 +315,7 @@ export function LessonPage() {
           <div className="relative">
             <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.12em] text-white/85 ring-1 ring-white/20">
-                <Sparkles size={11} />
+                <GraduationCap size={11} />
                 Niveau {unit.level} · {unit.levelCefr}
               </span>
               <span className="rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-bold text-white/70 ring-1 ring-white/15">
@@ -406,7 +407,7 @@ export function LessonPage() {
           <Button
             onClick={() => setPhase("quiz")}
             size="md"
-            icon={progress?.completed ? Play : Sparkles}
+            icon={progress?.completed ? RotateCcw : Play}
             className="shrink-0"
           >
             {progress?.completed ? "Refaire" : "Commencer"}

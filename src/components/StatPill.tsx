@@ -19,6 +19,7 @@ interface StatPillProps {
   label?: string;
   tone?: Tone;
   compact?: boolean;
+  onDark?: boolean;
   className?: string;
   title?: string;
 }
@@ -29,10 +30,14 @@ export function StatPill({
   label,
   tone = "neutral",
   compact = false,
+  onDark = false,
   className,
   title,
 }: StatPillProps) {
-  const theme = tones[tone];
+  const base = tones[tone];
+  const theme = onDark
+    ? { wrap: "bg-white/10 ring-white/20", icon: "text-white/85", fill: base.fill }
+    : base;
   return (
     <span
       className={cn(
@@ -49,10 +54,20 @@ export function StatPill({
         className={cn(theme.icon, "transition-transform duration-300 group-hover:scale-110")}
         fill={theme.fill ? "currentColor" : "none"}
       />
-      <b key={String(value)} className="animate-pop text-[12px] font-extrabold tabular-nums text-ink">
+      <b
+        key={String(value)}
+        className={cn(
+          "animate-pop text-[12px] font-extrabold tabular-nums",
+          onDark ? "text-white" : "text-ink",
+        )}
+      >
         {value}
       </b>
-      {label && !compact && <span className="text-[11px] font-bold text-slate-400">{label}</span>}
+      {label && !compact && (
+        <span className={cn("text-[11px] font-bold", onDark ? "text-white/60" : "text-slate-400")}>
+          {label}
+        </span>
+      )}
     </span>
   );
 }

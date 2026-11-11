@@ -8,15 +8,15 @@ import {
   Check,
   CheckCircle2,
   Flame,
+  Gem,
   GraduationCap,
+  Medal,
   RotateCcw,
   Settings2,
-  Sparkles,
   Target,
   Trophy,
   Volume2,
   VolumeX,
-  Zap,
 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { StatPill } from "@/components/StatPill";
@@ -187,7 +187,7 @@ export function ProgressPage() {
         iconTone="from-brand-500 to-brand-700"
         actions={
           <>
-            <StatPill icon={Zap} value={xp} label="XP" tone="xp" />
+            <StatPill icon={Gem} value={xp} label="XP" tone="xp" />
             <StatPill icon={Flame} value={bestStreak} label="record" tone="flame" />
             <StatPill icon={Trophy} value={unlocked.length} label="succès" tone="mint" />
           </>
@@ -200,7 +200,7 @@ export function ProgressPage() {
           <div className="pointer-events-none absolute -right-16 -top-20 h-48 w-48 rounded-full bg-brand-400/30 blur-3xl" />
           <div className="relative">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.14em] text-white/70 ring-1 ring-white/10">
-              <Sparkles size={12} className="text-amber-300" />
+              <Medal size={12} className="text-amber-300" />
               Niveau {rank.label}
             </span>
             <div className="mt-4 flex items-end justify-between gap-4">

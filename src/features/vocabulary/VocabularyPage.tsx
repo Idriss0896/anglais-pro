@@ -2,9 +2,9 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowUpRight,
+  BookA,
   ChevronDown,
   Search,
-  Sparkles,
   Tag,
   Volume2,
   X,
@@ -120,7 +120,7 @@ export function VocabularyPage() {
         actions={
           <>
             <StatPill icon={Tag} value={countByCategory("vocabulary")} label="thèmes" tone="mint" />
-            <StatPill icon={Sparkles} value={totalWords} label="mots" tone="neutral" />
+            <StatPill icon={BookA} value={totalWords} label="mots" tone="neutral" />
           </>
         }
       />

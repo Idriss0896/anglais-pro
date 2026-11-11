@@ -8,15 +8,15 @@ import {
   Clock3,
   Dumbbell,
   Flame,
+  Gem,
   GraduationCap,
   ListChecks,
   MessageCircle,
   Play,
-  Sparkles,
+  PlayCircle,
   Target,
   Trophy,
   Volume2,
-  Zap,
 } from "lucide-react";
 import { ButtonLink } from "@/components/Button";
 import { LevelCard } from "@/components/LevelCard";
@@ -77,7 +77,7 @@ function NextLessonCard() {
       <div className="relative">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.14em] text-white/75 ring-1 ring-white/10">
-            <Sparkles size={12} className="text-amber-300" />
+            <PlayCircle size={12} className="text-amber-300" />
             {isDone ? "À consolider" : "Ta prochaine leçon"}
           </span>
           <span className="inline-flex items-center gap-1.5 rounded-full bg-white/[0.07] px-2.5 py-1 text-[10px] font-bold text-white/55 ring-1 ring-white/10">
@@ -284,7 +284,7 @@ function WeekCard() {
       <div className="mt-3 flex items-center justify-between border-t border-slate-100 pt-3">
         <span className="text-[11px] font-bold text-slate-400">Total de la semaine</span>
         <span className="inline-flex items-center gap-1 text-[12px] font-extrabold text-ink">
-          <Zap size={12} className="text-violet-500" fill="currentColor" />
+          <Gem size={12} className="text-violet-500" fill="currentColor" />
           {total} XP
         </span>
       </div>
@@ -565,16 +565,6 @@ export function HomePage() {
           <NextAchievementCard />
         </aside>
       </div>
-
-      <footer className="flex flex-col items-center gap-2 pt-2 text-center">
-        <p className="text-[11px] font-bold text-slate-400">
-          {TOTAL_UNITS} leçons · {TOTAL_QUESTIONS} exercices · {TOTAL_PHRASES} expressions
-        </p>
-        <p className="max-w-md text-[10px] font-medium leading-5 text-slate-400/80">
-          Apprends à ton rythme, 5 minutes par jour suffisent pour créer une vraie
-          habitude. Ton anglais se construit une répétition à la fois.
-        </p>
-      </footer>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 
 interface LogoProps {
   compact?: boolean;
+  onDark?: boolean;
   className?: string;
 }
 
@@ -10,14 +11,14 @@ interface LogoProps {
  * Marque « Anglais Pro » : un monogramme A dessiné à la main (aucune icône
  * linguistique générique) avec un point ambre, cohérent avec le favicon.
  */
-export function Logo({ compact = false, className }: LogoProps) {
+export function Logo({ compact = false, onDark = false, className }: LogoProps) {
   return (
     <Link
       to="/"
       className={cn("group inline-flex items-center gap-2.5", className)}
       aria-label="Anglais Pro — Accueil"
     >
-      <span className="relative grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-2xl bg-gradient-to-br from-brand-500 via-brand-600 to-brand-800 text-white shadow-glow transition-all duration-300 group-hover:-rotate-3 group-hover:scale-105 group-active:scale-95">
+      <span className="relative grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-2xl bg-gradient-to-br from-brand-500 via-brand-600 to-brand-800 text-white shadow-glow ring-1 ring-white/15 transition-all duration-300 group-hover:-rotate-3 group-hover:scale-105 group-active:scale-95">
         <span
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_28%_18%,rgba(255,255,255,0.4),transparent_58%)]"
@@ -36,8 +37,13 @@ export function Logo({ compact = false, className }: LogoProps) {
         <span className="absolute right-1 top-1 h-2.5 w-2.5 rounded-full bg-amber-400 ring-2 ring-brand-700/50" />
       </span>
       {!compact && (
-        <span className="font-display text-[19px] font-extrabold tracking-[-0.03em] text-ink">
-          Anglais<span className="text-brand-600">Pro</span>
+        <span
+          className={cn(
+            "font-display text-[19px] font-extrabold tracking-[-0.03em]",
+            onDark ? "text-white" : "text-ink",
+          )}
+        >
+          Anglais<span className={onDark ? "text-brand-300" : "text-brand-600"}>Pro</span>
         </span>
       )}
     </Link>

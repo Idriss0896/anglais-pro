@@ -1,16 +1,16 @@
 import {
   Award,
+  BadgeCheck,
   BookOpenCheck,
   CalendarCheck,
   Crown,
   Flame,
+  Footprints,
+  Gem,
   GraduationCap,
   Medal,
-  Sparkles,
-  Star,
   Target,
   Trophy,
-  Zap,
   type LucideIcon,
 } from "lucide-react";
 
@@ -40,7 +40,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     id: "first-step",
     title: "Premier pas",
     description: "Termine ta première leçon",
-    icon: Sparkles,
+    icon: Footprints,
     tone: "from-amber-400 to-orange-500",
     goal: 1,
     value: (stats) => stats.completed,
@@ -121,7 +121,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     id: "xp-500",
     title: "500 XP",
     description: "Gagne 500 points d'expérience",
-    icon: Zap,
+    icon: Gem,
     tone: "from-violet-400 to-indigo-500",
     goal: 500,
     value: (stats) => stats.xp,
@@ -139,7 +139,7 @@ export const ACHIEVEMENTS: Achievement[] = [
     id: "perfect-10",
     title: "Sans faute",
     description: "10 leçons avec 100 % de précision",
-    icon: Star,
+    icon: BadgeCheck,
     tone: "from-yellow-400 to-amber-500",
     goal: 10,
     value: (stats) => stats.perfectLessons,
@@ -154,7 +154,7 @@ export interface Rank {
 }
 
 export const RANKS: Rank[] = [
-  { label: "Curieux", min: 0, max: 299, tone: "from-slate-400 to-slate-500" },
+  { label: "Curieux", min: 0, max: 299, tone: "from-indigo-400 to-violet-500" },
   { label: "Apprenti", min: 300, max: 799, tone: "from-emerald-400 to-teal-500" },
   { label: "Intermédiaire", min: 800, max: 1499, tone: "from-sky-400 to-blue-500" },
   { label: "Confirmé", min: 1500, max: 2499, tone: "from-indigo-400 to-violet-500" },

@@ -4,7 +4,7 @@ import {
   CheckCircle2,
   Clock3,
   ListChecks,
-  Sparkles,
+  Play,
 } from "lucide-react";
 import type { CurriculumUnit, LessonProgress } from "@/types";
 import { CATEGORIES } from "@/lib/categories";
@@ -38,7 +38,7 @@ export function UnitCard({ unit, progress, featured = false, className }: UnitCa
     >
       {featured && (
         <span className="absolute right-4 top-4 inline-flex items-center gap-1 rounded-full bg-brand-600 px-2.5 py-1 text-[10px] font-extrabold text-white shadow-glow">
-          <Sparkles size={11} />
+          <Play size={11} className="fill-current" />
           Prochaine
         </span>
       )}

@@ -16,7 +16,7 @@
   --color-brand-900: #332982;
 
   --color-ink: #17162b;
-  --color-mist: #f7f6fc;
+  --color-mist: #ffffff;
 
   --shadow-soft: 0 24px 60px -30px rgba(23, 22, 43, 0.28);
   --shadow-lift: 0 22px 48px -22px rgba(23, 22, 43, 0.3);
@@ -31,10 +31,11 @@
 
   body {
     min-height: 100dvh;
-    background-color: var(--color-mist);
+    background-color: #ffffff;
     background-image:
-      radial-gradient(1100px 560px at 100% -8%, rgba(116, 91, 250, 0.11), transparent 62%),
-      radial-gradient(900px 520px at -8% 12%, rgba(20, 184, 166, 0.08), transparent 60%);
+      radial-gradient(1000px 520px at 100% -10%, rgba(99, 102, 241, 0.16), transparent 62%),
+      radial-gradient(820px 480px at -8% 14%, rgba(14, 165, 233, 0.1), transparent 60%),
+      radial-gradient(760px 420px at 52% 112%, rgba(245, 158, 11, 0.08), transparent 62%);
     background-attachment: fixed;
     color: var(--color-ink);
     font-family: var(--font-sans);
@@ -130,7 +131,7 @@
   }
 
   .glass {
-    background: rgba(247, 246, 252, 0.82);
+    background: rgba(255, 255, 255, 0.86);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
   }

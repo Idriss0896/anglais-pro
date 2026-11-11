@@ -1,0 +1,6062 @@
+[
+  {
+    "id": "l2-g1",
+    "cat": "grammar",
+    "title": "Present Continuous",
+    "subtitle": "Parler d'une action en cours (affirmatif, négatif, interrogatif)",
+    "emoji": "🕑",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Le Present Continuous sert à parler des actions qui se passent en ce moment, des situations temporaires et des projets futurs déjà organisés. Cette leçon montre comment le former et quand l'utiliser."
+      },
+      {
+        "t": "h",
+        "text": "A. Comment former le Present Continuous"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Forme",
+          "Structure",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "Affirmative",
+            "Sujet + am/is/are + verbe-ing",
+            "I am working right now."
+          ],
+          [
+            "Negative",
+            "Sujet + am/is/are + not + verbe-ing",
+            "I am not working now."
+          ],
+          [
+            "Interrogative",
+            "Am/Is/Are + sujet + verbe-ing ?",
+            "Are you working now?"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Règles d'orthographe (verbe + -ing)"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Type de verbe",
+          "Règle",
+          "Exemples"
+        ],
+        "rows": [
+          [
+            "La plupart des verbes",
+            "ajouter -ing",
+            "work → working, play → playing"
+          ],
+          [
+            "Verbes en -e muet",
+            "supprimer le e, ajouter -ing",
+            "make → making, write → writing"
+          ],
+          [
+            "Verbes courts (1 syllabe, consonne-voyelle-consonne)",
+            "doubler la consonne finale",
+            "run → running, stop → stopping, sit → sitting"
+          ],
+          [
+            "Verbes en -ie",
+            "changer ie → y, ajouter -ing",
+            "lie → lying, die → dying"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Quand utiliser le Present Continuous"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Usage",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "Action qui se passe maintenant",
+            "I am reading a book right now.",
+            "Maintenant, en ce moment"
+          ],
+          [
+            "Situation temporaire (non permanente)",
+            "She is staying with her cousin this month.",
+            "Une situation temporaire"
+          ],
+          [
+            "Projet futur déjà organisé",
+            "We are meeting the client tomorrow at 10.",
+            "Un projet déjà organisé"
+          ],
+          [
+            "Situation qui évolue",
+            "The weather is getting colder.",
+            "Une situation qui évolue"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Present Continuous vs Simple Present"
+      },
+      {
+        "t": "tip",
+        "text": "Ne confonds pas une habitude (Simple Present) avec une action en cours (Present Continuous)."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Temps",
+          "Usage",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "Simple Present",
+            "habitudes, routines, vérités générales",
+            "I work every day.",
+            "Une habitude"
+          ],
+          [
+            "Present Continuous",
+            "actions en cours ou temporaires",
+            "I am working right now.",
+            "Une action en cours"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "E. Expressions de temps du Present Continuous"
+      },
+      {
+        "t": "phrases",
+        "title": "Expressions de temps",
+        "items": [
+          {
+            "en": "now",
+            "fr": "maintenant"
+          },
+          {
+            "en": "right now",
+            "fr": "tout de suite / en ce moment"
+          },
+          {
+            "en": "at the moment",
+            "fr": "en ce moment"
+          },
+          {
+            "en": "currently",
+            "fr": "actuellement"
+          },
+          {
+            "en": "these days",
+            "fr": "ces jours-ci"
+          },
+          {
+            "en": "Look! / Listen!",
+            "fr": "Regarde ! / Écoute !"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "Choisis la bonne forme : Look! It ______ .",
+        "opts": [
+          "rains",
+          "is raining"
+        ],
+        "a": 1,
+        "x": "« Look! » signale une action en cours → Present Continuous."
+      },
+      {
+        "t": "type",
+        "q": "Complète : She ______ (read) a book right now.",
+        "a": "is reading",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : She ______ (lie) on the sofa.",
+        "a": "is lying",
+        "accept": [],
+        "x": "Verbe en -ie : ie → y + -ing."
+      },
+      {
+        "t": "type",
+        "q": "Mets à la forme négative : I am working today.",
+        "a": "I'm not working today.",
+        "accept": [
+          "I am not working today"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Transforme en question : You are coming to the party.",
+        "a": "Are you coming to the party?",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Choisis la bonne forme : She ______ (works / is working) in a bank. It's her job.",
+        "opts": [
+          "works",
+          "is working"
+        ],
+        "a": 0,
+        "x": "C'est son métier (habitude) → Simple Present."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je suis en train de lire un livre.",
+        "a": "I am reading a book.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Elle travaille en ce moment.",
+        "a": "She is working right now.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Nous partons en voyage la semaine prochaine.",
+        "a": "We are leaving on a trip next week.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Complète avec l'expression de temps : ______! It's raining!",
+        "opts": [
+          "Look",
+          "Currently",
+          "These days"
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète avec l'expression de temps : I am ______ studying English at a new school.",
+        "a": "currently",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "match",
+        "q": "Associe chaque expression de temps à sa traduction.",
+        "pairs": [
+          {
+            "en": "now",
+            "fr": "maintenant"
+          },
+          {
+            "en": "right now",
+            "fr": "tout de suite / en ce moment"
+          },
+          {
+            "en": "at the moment",
+            "fr": "en ce moment"
+          }
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-g2",
+    "cat": "grammar",
+    "title": "Simple Past",
+    "subtitle": "Raconter des actions passées (verbes réguliers et irréguliers)",
+    "emoji": "⏪",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Le Simple Past sert à parler d'actions et de situations qui ont commencé et se sont terminées dans le passé. Cette leçon couvre les verbes réguliers, les verbes irréguliers courants et la formation de la négation et des questions."
+      },
+      {
+        "t": "h",
+        "text": "A. Verbes réguliers — règles d'orthographe (verbe + -ed)"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Type de verbe",
+          "Règle",
+          "Exemples"
+        ],
+        "rows": [
+          [
+            "La plupart des verbes",
+            "ajouter -ed",
+            "work → worked, play → played, watch → watched"
+          ],
+          [
+            "Verbes en -e",
+            "ajouter -d seulement",
+            "like → liked, dance → danced, live → lived"
+          ],
+          [
+            "Consonne + -y",
+            "changer y → i, ajouter -ed",
+            "study → studied, carry → carried, cry → cried"
+          ],
+          [
+            "Verbes courts (1 syllabe, consonne-voyelle-consonne)",
+            "doubler la consonne finale",
+            "stop → stopped, plan → planned, chat → chatted"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Verbes irréguliers courants"
+      },
+      {
+        "t": "tip",
+        "text": "Les verbes irréguliers ne suivent pas la règle du -ed : leur forme au passé s'apprend par cœur."
+      },
+      {
+        "t": "phrases",
+        "title": "Verbes irréguliers courants",
+        "items": [
+          {
+            "en": "go → went",
+            "fr": "aller"
+          },
+          {
+            "en": "have → had",
+            "fr": "avoir"
+          },
+          {
+            "en": "do → did",
+            "fr": "faire"
+          },
+          {
+            "en": "see → saw",
+            "fr": "voir"
+          },
+          {
+            "en": "eat → ate",
+            "fr": "manger"
+          },
+          {
+            "en": "make → made",
+            "fr": "faire / fabriquer"
+          },
+          {
+            "en": "take → took",
+            "fr": "prendre"
+          },
+          {
+            "en": "get → got",
+            "fr": "obtenir / recevoir"
+          },
+          {
+            "en": "give → gave",
+            "fr": "donner"
+          },
+          {
+            "en": "come → came",
+            "fr": "venir"
+          },
+          {
+            "en": "write → wrote",
+            "fr": "écrire"
+          },
+          {
+            "en": "buy → bought",
+            "fr": "acheter"
+          },
+          {
+            "en": "say → said",
+            "fr": "dire"
+          },
+          {
+            "en": "know → knew",
+            "fr": "savoir / connaître"
+          },
+          {
+            "en": "speak → spoke",
+            "fr": "parler"
+          },
+          {
+            "en": "read → read",
+            "fr": "lire"
+          },
+          {
+            "en": "drink → drank",
+            "fr": "boire"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Forme négative"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Structure",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "Sujet + didn't + base verbale",
+            "I didn't go to work yesterday."
+          ],
+          [
+            "Sujet + didn't + base verbale (irréguliers aussi)",
+            "She didn't call me last night."
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Forme interrogative"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Structure",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "Did + sujet + base verbale ?",
+            "Did you go to the party?"
+          ],
+          [
+            "Mot en Wh- + did + sujet + base verbale ?",
+            "Where did you go?"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "E. Expressions de temps du Simple Past"
+      },
+      {
+        "t": "phrases",
+        "title": "Expressions de temps",
+        "items": [
+          {
+            "en": "yesterday",
+            "fr": "hier"
+          },
+          {
+            "en": "last night / week / month / year",
+            "fr": "hier soir / la semaine, le mois, l'année dernière"
+          },
+          {
+            "en": "two days / weeks ago",
+            "fr": "il y a deux jours / semaines"
+          },
+          {
+            "en": "in 2020",
+            "fr": "en 2020"
+          },
+          {
+            "en": "when I was young",
+            "fr": "quand j'étais jeune / enfant"
+          },
+          {
+            "en": "the other day",
+            "fr": "l'autre jour"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "type",
+        "q": "Complète : I ______ (watch) a movie last night.",
+        "a": "watched",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : She ______ (go) to the market yesterday.",
+        "a": "went",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : They ______ (study) English two years ago.",
+        "a": "studied",
+        "accept": [],
+        "x": "Consonne + -y : y → i + -ed."
+      },
+      {
+        "t": "type",
+        "q": "Complète : He ______ (stop) at the traffic light.",
+        "a": "stopped",
+        "accept": [],
+        "x": "Verbe court : on double la consonne finale."
+      },
+      {
+        "t": "type",
+        "q": "Mets à la forme négative : I went to work yesterday.",
+        "a": "I didn't go to work yesterday.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Transforme en question : You went to the party.",
+        "a": "Did you go to the party?",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Écris la question (Wh-) : She went to the market. → Where ______?",
+        "a": "Where did she go?",
+        "accept": [
+          "did she go"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Écris la question (Wh-) : They were late because of the traffic. → Why ______?",
+        "a": "Why were they late?",
+        "accept": [
+          "were they late"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je suis allé au marché hier.",
+        "a": "I went to the market yesterday.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : As-tu vu le film hier soir ?",
+        "a": "Did you see the movie last night?",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je vivais à Abidjan quand j'étais jeune.",
+        "a": "I lived in Abidjan when I was young.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "match",
+        "q": "Associe chaque verbe irrégulier à sa traduction.",
+        "pairs": [
+          {
+            "en": "go → went",
+            "fr": "aller"
+          },
+          {
+            "en": "have → had",
+            "fr": "avoir"
+          },
+          {
+            "en": "see → saw",
+            "fr": "voir"
+          },
+          {
+            "en": "buy → bought",
+            "fr": "acheter"
+          },
+          {
+            "en": "eat → ate",
+            "fr": "manger"
+          }
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-g3",
+    "cat": "grammar",
+    "title": "Future (going to / will)",
+    "subtitle": "Projets, prédictions, promesses et décisions spontanées",
+    "emoji": "🔮",
+    "theory": [
+      {
+        "t": "p",
+        "text": "L'anglais a deux façons courantes de parler du futur : going to et will. Cette leçon explique comment former chacun et, surtout, quand utiliser l'un ou l'autre."
+      },
+      {
+        "t": "h",
+        "text": "A. « Going to » — forme"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Forme",
+          "Structure",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "Affirmative",
+            "Sujet + am/is/are + going to + base verbale",
+            "I am going to travel next month."
+          ],
+          [
+            "Negative",
+            "Sujet + am/is/are + not + going to + base verbale",
+            "She isn't going to come tonight."
+          ],
+          [
+            "Interrogative",
+            "Am/Is/Are + sujet + going to + base verbale ?",
+            "Are you going to call her?"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. « Going to » — quand l'utiliser"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Usage",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "Projets et intentions (déjà décidés)",
+            "I am going to study medicine.",
+            "Un projet déjà décidé"
+          ],
+          [
+            "Prédictions fondées sur une preuve visible",
+            "Look at those clouds — it's going to rain.",
+            "Une prédiction basée sur une preuve"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. « Will » — forme"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Forme",
+          "Structure",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "Affirmative",
+            "Sujet + will + base verbale",
+            "I will help you tomorrow."
+          ],
+          [
+            "Negative",
+            "Sujet + will not (won't) + base verbale",
+            "She won't be late."
+          ],
+          [
+            "Interrogative",
+            "Will + sujet + base verbale ?",
+            "Will you call me later?"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. « Will » — quand l'utiliser"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Usage",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "Décision spontanée (prise au moment de parler)",
+            "The phone is ringing — I'll answer it.",
+            "Une décision prise sur le moment"
+          ],
+          [
+            "Promesses",
+            "I will always love you.",
+            "Une promesse"
+          ],
+          [
+            "Offres",
+            "I'll carry that bag for you.",
+            "Une offre d'aide"
+          ],
+          [
+            "Prédictions / opinions sur le futur",
+            "I think it will be a great year.",
+            "Une prédiction ou opinion"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "E. « Going to » vs « Will »"
+      },
+      {
+        "t": "tip",
+        "text": "Si le projet existe déjà, utilise going to. Si tu décides à l'instant, utilise will."
+      },
+      {
+        "t": "h",
+        "text": "F. Expressions de temps du futur"
+      },
+      {
+        "t": "phrases",
+        "title": "Expressions de temps",
+        "items": [
+          {
+            "en": "tomorrow",
+            "fr": "demain"
+          },
+          {
+            "en": "next week / month / year",
+            "fr": "la semaine, le mois, l'année prochaine"
+          },
+          {
+            "en": "soon",
+            "fr": "bientôt"
+          },
+          {
+            "en": "in the future",
+            "fr": "dans le futur / à l'avenir"
+          },
+          {
+            "en": "later",
+            "fr": "plus tard"
+          },
+          {
+            "en": "in two days / weeks",
+            "fr": "dans deux jours / semaines"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "type",
+        "q": "Complète (going to) : I ______ (visit) my parents this weekend. It's already planned.",
+        "a": "am going to visit",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète (going to) : Look at the sky! It ______ (rain).",
+        "a": "is going to rain",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète (going to) : He ______ (not/come) to the meeting tomorrow.",
+        "a": "isn't going to come",
+        "accept": [
+          "is not going to come"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète (will) : I think it ______ (be) a good year.",
+        "a": "will be",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète (will) : Don't worry, I ______ (help) you with your bags.",
+        "a": "will help",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète (will) : She ______ (not/be) angry, I'm sure.",
+        "a": "won't be",
+        "accept": [
+          "will not be"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "A: The phone is ringing. B: I (am going to / will) answer it.",
+        "opts": [
+          "am going to",
+          "will"
+        ],
+        "a": 1,
+        "x": "Décision spontanée → will."
+      },
+      {
+        "t": "choice",
+        "q": "I've already booked the tickets — we (are going to / will) fly to Rome next week.",
+        "opts": [
+          "are going to",
+          "will"
+        ],
+        "a": 0,
+        "x": "Projet déjà organisé → going to."
+      },
+      {
+        "t": "choice",
+        "q": "Look at those dark clouds — it (is going to / will) rain soon.",
+        "opts": [
+          "is going to",
+          "will"
+        ],
+        "a": 0,
+        "x": "Prédiction fondée sur une preuve visible → going to."
+      },
+      {
+        "t": "type",
+        "q": "Transforme en question : You are going to travel next year.",
+        "a": "Are you going to travel next year?",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je vais visiter mes parents ce week-end. (déjà prévu)",
+        "a": "I am going to visit my parents this weekend.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Regarde ! Il va pleuvoir.",
+        "a": "Look! It's going to rain.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je promets que je t'appellerai demain.",
+        "a": "I promise I will call you tomorrow.",
+        "accept": [],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-g4",
+    "cat": "grammar",
+    "title": "This, That, These, Those",
+    "subtitle": "Les démonstratifs : proche / loin, singulier / pluriel",
+    "emoji": "👉",
+    "theory": [
+      {
+        "t": "p",
+        "text": "This, that, these et those servent à désigner des personnes ou des choses. Ils changent selon que la chose est proche ou lointaine, et selon qu'elle est singulière ou plurielle."
+      },
+      {
+        "t": "h",
+        "text": "A. This, That, These, Those — vue d'ensemble"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Mot",
+          "Nombre",
+          "Distance",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "this",
+            "singulier",
+            "proche",
+            "This is my bag.",
+            "ceci / celui-ci (proche)"
+          ],
+          [
+            "that",
+            "singulier",
+            "loin",
+            "That is her car, over there.",
+            "cela / celui-là (loin)"
+          ],
+          [
+            "these",
+            "pluriel",
+            "proche",
+            "These are my keys.",
+            "ceux-ci / celles-ci (proches)"
+          ],
+          [
+            "those",
+            "pluriel",
+            "loin",
+            "Those are your friends, over there.",
+            "ceux-là / celles-là (loin)"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Comment les utiliser"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Structure",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "This / These + nom",
+            "This book is interesting.",
+            "désigner un objet précis, proche"
+          ],
+          [
+            "That / Those + nom",
+            "That man is my uncle.",
+            "désigner un objet précis, loin"
+          ],
+          [
+            "This / That / These / Those seuls (pronom)",
+            "This is delicious.",
+            "utilisés seuls, sans nom"
+          ],
+          [
+            "This / That + is (présentation au téléphone)",
+            "Hello, this is Sarah.",
+            "se présenter au téléphone"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Expressions courantes avec This / That / These"
+      },
+      {
+        "t": "phrases",
+        "title": "Expressions courantes",
+        "items": [
+          {
+            "en": "This is...",
+            "fr": "voici..."
+          },
+          {
+            "en": "That's right.",
+            "fr": "c'est exact."
+          },
+          {
+            "en": "That's true.",
+            "fr": "c'est vrai."
+          },
+          {
+            "en": "That's all.",
+            "fr": "c'est tout."
+          },
+          {
+            "en": "These days",
+            "fr": "de nos jours"
+          },
+          {
+            "en": "That's a good idea.",
+            "fr": "c'est une bonne idée."
+          },
+          {
+            "en": "What's this / that?",
+            "fr": "qu'est-ce que c'est ?"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "type",
+        "q": "Complète : ______ is my brother. (la personne est à côté de toi)",
+        "a": "This",
+        "accept": [
+          "this"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Look at ______ mountains over there!",
+        "a": "those",
+        "accept": [
+          "Those"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Can you pass me ______ book? (le livre près de toi, loin du locuteur)",
+        "a": "that",
+        "accept": [
+          "That"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Choisis le bon mot : (This / These) is my new phone.",
+        "opts": [
+          "This",
+          "These"
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Choisis le bon mot : (That / Those) shoes over there are very expensive.",
+        "opts": [
+          "That",
+          "Those"
+        ],
+        "a": 1,
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ceci est mon sac.",
+        "a": "This is my bag.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Regarde cette voiture là-bas !",
+        "a": "Look at that car over there!",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : C'est vrai, tu as raison.",
+        "a": "That's true, you're right.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : C'est tout pour aujourd'hui, merci.",
+        "a": "That's all for today, thank you.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Quel mot est pluriel et proche ?",
+        "opts": [
+          "this",
+          "these",
+          "those"
+        ],
+        "a": 1,
+        "x": "these = pluriel + proche."
+      },
+      {
+        "t": "match",
+        "q": "Associe chaque démonstratif à sa traduction.",
+        "pairs": [
+          {
+            "en": "this",
+            "fr": "ceci (proche)"
+          },
+          {
+            "en": "that",
+            "fr": "cela (loin)"
+          },
+          {
+            "en": "these",
+            "fr": "ceux-ci (proches)"
+          },
+          {
+            "en": "those",
+            "fr": "ceux-là (loin)"
+          }
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-g5",
+    "cat": "grammar",
+    "title": "Pronouns",
+    "subtitle": "Pronoms objets, possessifs et réfléchis",
+    "emoji": "👥",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Au niveau 1 tu as appris les pronoms sujets (I, you, he...). Tu vas maintenant apprendre les autres formes : pronoms objets, adjectifs possessifs, pronoms possessifs et pronoms réfléchis."
+      },
+      {
+        "t": "h",
+        "text": "A. Pronoms sujets vs pronoms objets"
+      },
+      {
+        "t": "tip",
+        "text": "Les pronoms sujets se placent avant le verbe ; les pronoms objets se placent après le verbe ou une préposition."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Sujet",
+          "Objet",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "I",
+            "me",
+            "I called her. She called me.",
+            "moi"
+          ],
+          [
+            "you",
+            "you",
+            "You know him. He knows you.",
+            "toi / vous"
+          ],
+          [
+            "he",
+            "him",
+            "He likes her. She likes him.",
+            "lui"
+          ],
+          [
+            "she",
+            "her",
+            "She helped me. I helped her.",
+            "elle"
+          ],
+          [
+            "it",
+            "it",
+            "It works well. I like it.",
+            "il / elle (chose)"
+          ],
+          [
+            "we",
+            "us",
+            "We saw them. They saw us.",
+            "nous"
+          ],
+          [
+            "they",
+            "them",
+            "They know us. We know them.",
+            "eux / elles"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Adjectifs possessifs (+ nom)"
+      },
+      {
+        "t": "tip",
+        "text": "Un adjectif possessif se place toujours avant un nom : my book, her car."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Mot",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "my",
+            "This is my book.",
+            "mon / ma / mes"
+          ],
+          [
+            "your",
+            "Is this your phone?",
+            "ton / ta / tes, votre / vos"
+          ],
+          [
+            "his",
+            "That's his car.",
+            "son / sa / ses (à lui)"
+          ],
+          [
+            "her",
+            "That's her bag.",
+            "son / sa / ses (à elle)"
+          ],
+          [
+            "its",
+            "The dog wagged its tail.",
+            "son / sa / ses (à ça)"
+          ],
+          [
+            "our",
+            "This is our house.",
+            "notre / nos"
+          ],
+          [
+            "their",
+            "That's their car.",
+            "leur / leurs"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Pronoms possessifs (seuls, sans nom)"
+      },
+      {
+        "t": "tip",
+        "text": "Un pronom possessif remplace « adjectif possessif + nom » : This is my book → This book is mine."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Mot",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "mine",
+            "This book is mine.",
+            "le mien / la mienne"
+          ],
+          [
+            "yours",
+            "Is this phone yours?",
+            "le tien / le vôtre"
+          ],
+          [
+            "his",
+            "That car is his.",
+            "le sien (à lui)"
+          ],
+          [
+            "hers",
+            "That bag is hers.",
+            "le sien (à elle)"
+          ],
+          [
+            "ours",
+            "This house is ours.",
+            "le nôtre"
+          ],
+          [
+            "theirs",
+            "That car is theirs.",
+            "le leur"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Pronoms réfléchis"
+      },
+      {
+        "t": "tip",
+        "text": "Utilisés quand le sujet et l'objet sont la même personne."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Mot",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "myself",
+            "I hurt myself yesterday.",
+            "moi-même"
+          ],
+          [
+            "yourself",
+            "Did you enjoy yourself?",
+            "toi-même"
+          ],
+          [
+            "himself",
+            "He introduced himself.",
+            "lui-même"
+          ],
+          [
+            "herself",
+            "She made this cake herself.",
+            "elle-même"
+          ],
+          [
+            "itself",
+            "The cat cleaned itself.",
+            "lui-même (chose)"
+          ],
+          [
+            "ourselves",
+            "We enjoyed ourselves at the party.",
+            "nous-mêmes"
+          ],
+          [
+            "yourselves",
+            "Help yourselves to some food.",
+            "vous-mêmes"
+          ],
+          [
+            "themselves",
+            "They did it themselves.",
+            "eux-mêmes"
+          ]
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "type",
+        "q": "Complète avec le pronom objet : I called my mother yesterday. → I called ______ yesterday.",
+        "a": "her",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète avec le pronom objet : She helped my brother and me. → She helped ______.",
+        "a": "us",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Is this ______ (you) bag?",
+        "a": "your",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Yes, it's ______ (I).",
+        "a": "mine",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : That is ______ (he) car.",
+        "a": "his",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : The dog is wagging ______ (it) tail.",
+        "a": "its",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète avec le pronom réfléchi : I taught ______ how to cook.",
+        "a": "myself",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète avec le pronom réfléchi : She looked at ______ in the mirror.",
+        "a": "herself",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète avec le pronom réfléchi : The children behaved ______ very well.",
+        "a": "themselves",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Elle m'a appelé hier soir.",
+        "a": "She called me last night.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : C'est son livre à elle, pas le mien.",
+        "a": "It's her book, not mine.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Il s'est présenté à la réunion.",
+        "a": "He introduced himself at the meeting.",
+        "accept": [],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-g6",
+    "cat": "grammar",
+    "title": "Question Words",
+    "subtitle": "Les mots interrogatifs (Wh- et How)",
+    "emoji": "❓",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Les mots interrogatifs (aussi appelés wh- words) servent à demander une information précise. Cette leçon couvre les mots interrogatifs de base et la construction correcte d'une question."
+      },
+      {
+        "t": "h",
+        "text": "A. Mots interrogatifs de base (Wh-)"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Mot",
+          "Interroge sur",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "Who",
+            "une personne",
+            "Who is that woman?",
+            "qui"
+          ],
+          [
+            "What",
+            "une chose ou une action",
+            "What are you doing?",
+            "quoi / que"
+          ],
+          [
+            "Where",
+            "un lieu",
+            "Where do you live?",
+            "où"
+          ],
+          [
+            "When",
+            "un moment",
+            "When is the meeting?",
+            "quand"
+          ],
+          [
+            "Why",
+            "une raison",
+            "Why are you late?",
+            "pourquoi"
+          ],
+          [
+            "How",
+            "la manière",
+            "How do you make tea?",
+            "comment"
+          ],
+          [
+            "Which",
+            "un choix entre des options",
+            "Which color do you prefer?",
+            "lequel / laquelle"
+          ],
+          [
+            "Whose",
+            "la possession",
+            "Whose bag is this?",
+            "à qui"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. How much / many / long / often / far / old"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Mot",
+          "Interroge sur",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "How much",
+            "quantité (indénombrables) / prix",
+            "How much is it?",
+            "combien (de)"
+          ],
+          [
+            "How many",
+            "quantité (dénombrables)",
+            "How many children do you have?",
+            "combien (de)"
+          ],
+          [
+            "How long",
+            "la durée",
+            "How long have you lived here?",
+            "combien de temps"
+          ],
+          [
+            "How often",
+            "la fréquence",
+            "How often do you go to the gym?",
+            "à quelle fréquence"
+          ],
+          [
+            "How far",
+            "la distance",
+            "How far is the station from here?",
+            "à quelle distance"
+          ],
+          [
+            "How old",
+            "l'âge",
+            "How old are you?",
+            "quel âge"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Comment construire une question"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Cas",
+          "Structure",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "Avec « be »",
+            "Mot en Wh- + be + sujet ?",
+            "Where is she?"
+          ],
+          [
+            "Avec un autre verbe",
+            "Mot en Wh- + do/does/did + sujet + base verbale ?",
+            "What do you do?"
+          ],
+          [
+            "Question sur le sujet lui-même",
+            "Who / What + verbe ?",
+            "Who called you? (sans did)"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Questions et expressions courantes"
+      },
+      {
+        "t": "phrases",
+        "title": "Expressions courantes",
+        "items": [
+          {
+            "en": "What time...?",
+            "fr": "à quelle heure...?"
+          },
+          {
+            "en": "What's...like?",
+            "fr": "comment est...?"
+          },
+          {
+            "en": "What do you do?",
+            "fr": "que fais-tu dans la vie ?"
+          },
+          {
+            "en": "How's it going?",
+            "fr": "comment ça va ?"
+          },
+          {
+            "en": "What's wrong?",
+            "fr": "qu'est-ce qui ne va pas ?"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "type",
+        "q": "Complète : ______ is your birthday?",
+        "a": "When",
+        "accept": [
+          "when"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : ______ do you live?",
+        "a": "Where",
+        "accept": [
+          "where"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : ______ do you spell your name?",
+        "a": "How",
+        "accept": [
+          "how"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : ______ bag is this — yours or mine?",
+        "a": "Whose",
+        "accept": [
+          "whose"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Complète : ______ one do you prefer, the red or the blue?",
+        "opts": [
+          "Which",
+          "What",
+          "Who"
+        ],
+        "a": 0,
+        "x": "Un choix entre options → which."
+      },
+      {
+        "t": "type",
+        "q": "Complète : ______ brothers and sisters do you have?",
+        "a": "How many",
+        "accept": [
+          "how many"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : ______ is the airport from the city center?",
+        "a": "How far",
+        "accept": [
+          "how far"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : ______ is your grandmother?",
+        "a": "How old",
+        "accept": [
+          "how old"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Écris la question : She lives in Paris. → ______?",
+        "a": "Where does she live?",
+        "accept": [
+          "Where does she live"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Écris la question : Maria called you. → ______?",
+        "a": "Who called you?",
+        "accept": [
+          "Who called you"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Écris la question : It costs ten dollars. → ______?",
+        "a": "How much does it cost?",
+        "accept": [
+          "How much does it cost"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Quel âge as-tu ?",
+        "a": "How old are you?",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Quelle heure est-il ?",
+        "a": "What time is it?",
+        "accept": [],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-v1",
+    "cat": "vocabulary",
+    "title": "Places",
+    "subtitle": "Parler des lieux de la ville",
+    "emoji": "🏙️",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu vas apprendre les noms des lieux courants d'une ville : commerces et services du quotidien, lieux de loisirs et de voyage, administration et santé, et des mots plus généraux pour décrire l'organisation d'une ville."
+      },
+      {
+        "t": "h",
+        "text": "A. Everyday Places (Shops & Services)"
+      },
+      {
+        "t": "phrases",
+        "title": "Commerces et services du quotidien",
+        "items": [
+          {
+            "en": "Bakery",
+            "fr": "Boulangerie"
+          },
+          {
+            "en": "Supermarket",
+            "fr": "Supermarché"
+          },
+          {
+            "en": "Market",
+            "fr": "Marché"
+          },
+          {
+            "en": "Shopping mall",
+            "fr": "Centre commercial"
+          },
+          {
+            "en": "Butcher's",
+            "fr": "Boucherie"
+          },
+          {
+            "en": "Pharmacy",
+            "fr": "Pharmacie"
+          },
+          {
+            "en": "Bank",
+            "fr": "Banque"
+          },
+          {
+            "en": "Post office",
+            "fr": "Bureau de poste"
+          },
+          {
+            "en": "Hairdresser's",
+            "fr": "Salon de coiffure"
+          },
+          {
+            "en": "Laundromat",
+            "fr": "Laverie"
+          },
+          {
+            "en": "Hardware store",
+            "fr": "Quincaillerie"
+          },
+          {
+            "en": "Restaurant",
+            "fr": "Restaurant"
+          },
+          {
+            "en": "Café",
+            "fr": "Café"
+          },
+          {
+            "en": "Gas station",
+            "fr": "Station-service"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Places for Leisure & Travel"
+      },
+      {
+        "t": "phrases",
+        "title": "Lieux de loisirs et de voyage",
+        "items": [
+          {
+            "en": "Park",
+            "fr": "Parc"
+          },
+          {
+            "en": "Cinema",
+            "fr": "Cinéma"
+          },
+          {
+            "en": "Theater",
+            "fr": "Théâtre"
+          },
+          {
+            "en": "Museum",
+            "fr": "Musée"
+          },
+          {
+            "en": "Zoo",
+            "fr": "Zoo"
+          },
+          {
+            "en": "Stadium",
+            "fr": "Stade"
+          },
+          {
+            "en": "Swimming pool",
+            "fr": "Piscine"
+          },
+          {
+            "en": "Library",
+            "fr": "Bibliothèque"
+          },
+          {
+            "en": "Gym",
+            "fr": "Salle de sport"
+          },
+          {
+            "en": "Train station",
+            "fr": "Gare"
+          },
+          {
+            "en": "Bus stop",
+            "fr": "Arrêt de bus"
+          },
+          {
+            "en": "Airport",
+            "fr": "Aéroport"
+          },
+          {
+            "en": "Hotel",
+            "fr": "Hôtel"
+          },
+          {
+            "en": "Beach",
+            "fr": "Plage"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Places for Administration & Health"
+      },
+      {
+        "t": "phrases",
+        "title": "Administration et santé",
+        "items": [
+          {
+            "en": "Hospital",
+            "fr": "Hôpital"
+          },
+          {
+            "en": "Clinic",
+            "fr": "Clinique"
+          },
+          {
+            "en": "Police station",
+            "fr": "Commissariat"
+          },
+          {
+            "en": "Fire station",
+            "fr": "Caserne de pompiers"
+          },
+          {
+            "en": "School",
+            "fr": "École"
+          },
+          {
+            "en": "University",
+            "fr": "Université"
+          },
+          {
+            "en": "Town hall",
+            "fr": "Mairie"
+          },
+          {
+            "en": "Courthouse",
+            "fr": "Tribunal"
+          },
+          {
+            "en": "Church",
+            "fr": "Église"
+          },
+          {
+            "en": "Mosque",
+            "fr": "Mosquée"
+          },
+          {
+            "en": "Embassy",
+            "fr": "Ambassade"
+          },
+          {
+            "en": "Immigration office",
+            "fr": "Bureau de l'immigration"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. General & Specific Places (Describing a Town)"
+      },
+      {
+        "t": "phrases",
+        "title": "Décrire une ville",
+        "items": [
+          {
+            "en": "City center / Downtown",
+            "fr": "Centre-ville"
+          },
+          {
+            "en": "Neighborhood",
+            "fr": "Quartier"
+          },
+          {
+            "en": "Suburb",
+            "fr": "Banlieue"
+          },
+          {
+            "en": "Countryside",
+            "fr": "Campagne"
+          },
+          {
+            "en": "Village",
+            "fr": "Village"
+          },
+          {
+            "en": "Street / Avenue",
+            "fr": "Rue / avenue"
+          },
+          {
+            "en": "Square",
+            "fr": "Place"
+          },
+          {
+            "en": "Roundabout",
+            "fr": "Rond-point"
+          },
+          {
+            "en": "Bridge",
+            "fr": "Pont"
+          },
+          {
+            "en": "Parking lot",
+            "fr": "Parking"
+          },
+          {
+            "en": "Sidewalk",
+            "fr": "Trottoir"
+          },
+          {
+            "en": "Building",
+            "fr": "Immeuble / bâtiment"
+          },
+          {
+            "en": "Warehouse",
+            "fr": "Entrepôt"
+          },
+          {
+            "en": "Factory",
+            "fr": "Usine"
+          }
+        ]
+      },
+      {
+        "t": "tip",
+        "text": "« City center » et « Downtown » désignent tous deux le centre-ville."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque mot anglais à sa traduction française.",
+        "pairs": [
+          {
+            "en": "Embassy",
+            "fr": "Ambassade"
+          },
+          {
+            "en": "Bakery",
+            "fr": "Boulangerie"
+          },
+          {
+            "en": "Town hall",
+            "fr": "Mairie"
+          },
+          {
+            "en": "Pharmacy",
+            "fr": "Pharmacie"
+          },
+          {
+            "en": "Train station",
+            "fr": "Gare"
+          },
+          {
+            "en": "Factory",
+            "fr": "Usine"
+          },
+          {
+            "en": "Roundabout",
+            "fr": "Rond-point"
+          },
+          {
+            "en": "Neighborhood",
+            "fr": "Quartier"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : I need to go to the ______ to withdraw some money.",
+        "a": "bank",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : She borrowed a novel from the ______.",
+        "a": "library",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : He exercises at the ______ every morning.",
+        "a": "gym",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : We reported the theft at the ______.",
+        "a": "police station",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : I'm waiting for the number 12 bus at the ______.",
+        "a": "bus stop",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : The judge works at the ______.",
+        "a": "courthouse",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Please walk on the ______, it's safer than the road.",
+        "a": "sidewalk",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "A pharmacy is a place where you buy bread.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "Non, on achète du pain à la boulangerie (bakery)."
+      },
+      {
+        "t": "choice",
+        "q": "A hospital is a place where sick people are treated.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "Oui, l'hôpital soigne les malades."
+      },
+      {
+        "t": "choice",
+        "q": "You can borrow books at the cinema.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "Non, on emprunte des livres à la bibliothèque (library)."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je vais à la pharmacie pour acheter des médicaments.",
+        "a": "I'm going to the pharmacy to buy some medicine.",
+        "accept": [
+          "I am going to the pharmacy to buy some medicine"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ma sœur travaille à l'hôpital.",
+        "a": "My sister works at the hospital.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Il y a beaucoup de magasins dans le centre-ville.",
+        "a": "There are many shops in the city center.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ma grand-mère habite dans un petit village.",
+        "a": "My grandmother lives in a small village.",
+        "accept": [],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-v2",
+    "cat": "vocabulary",
+    "title": "The Home, Appliances & Furniture",
+    "subtitle": "Parler de ta maison",
+    "emoji": "🏠",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu vas apprendre les pièces de la maison, les meubles et appareils qu'on y trouve, et les expressions du quotidien pour parler des tâches ménagères."
+      },
+      {
+        "t": "h",
+        "text": "A. Rooms of the House"
+      },
+      {
+        "t": "phrases",
+        "title": "Les pièces de la maison",
+        "items": [
+          {
+            "en": "Bedroom",
+            "fr": "Chambre"
+          },
+          {
+            "en": "Bathroom",
+            "fr": "Salle de bain"
+          },
+          {
+            "en": "Kitchen",
+            "fr": "Cuisine"
+          },
+          {
+            "en": "Living room",
+            "fr": "Salon"
+          },
+          {
+            "en": "Dining room",
+            "fr": "Salle à manger"
+          },
+          {
+            "en": "Hallway",
+            "fr": "Couloir"
+          },
+          {
+            "en": "Garage",
+            "fr": "Garage"
+          },
+          {
+            "en": "Garden",
+            "fr": "Jardin"
+          },
+          {
+            "en": "Balcony",
+            "fr": "Balcon"
+          },
+          {
+            "en": "Basement",
+            "fr": "Sous-sol"
+          },
+          {
+            "en": "Attic",
+            "fr": "Grenier"
+          },
+          {
+            "en": "Study / Office",
+            "fr": "Bureau (à la maison)"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Furniture"
+      },
+      {
+        "t": "phrases",
+        "title": "Les meubles",
+        "items": [
+          {
+            "en": "Bed",
+            "fr": "Lit"
+          },
+          {
+            "en": "Wardrobe",
+            "fr": "Armoire"
+          },
+          {
+            "en": "Sofa / Couch",
+            "fr": "Canapé"
+          },
+          {
+            "en": "Armchair",
+            "fr": "Fauteuil"
+          },
+          {
+            "en": "Table",
+            "fr": "Table"
+          },
+          {
+            "en": "Chair",
+            "fr": "Chaise"
+          },
+          {
+            "en": "Desk",
+            "fr": "Bureau (meuble)"
+          },
+          {
+            "en": "Bookshelf",
+            "fr": "Étagère"
+          },
+          {
+            "en": "Cupboard",
+            "fr": "Placard"
+          },
+          {
+            "en": "Drawer",
+            "fr": "Tiroir"
+          },
+          {
+            "en": "Mirror",
+            "fr": "Miroir"
+          },
+          {
+            "en": "Curtains",
+            "fr": "Rideaux"
+          },
+          {
+            "en": "Carpet / Rug",
+            "fr": "Tapis"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Kitchen Appliances"
+      },
+      {
+        "t": "phrases",
+        "title": "Les appareils de cuisine",
+        "items": [
+          {
+            "en": "Fridge / Refrigerator",
+            "fr": "Réfrigérateur"
+          },
+          {
+            "en": "Oven",
+            "fr": "Four"
+          },
+          {
+            "en": "Stove",
+            "fr": "Cuisinière"
+          },
+          {
+            "en": "Microwave",
+            "fr": "Micro-ondes"
+          },
+          {
+            "en": "Sink",
+            "fr": "Évier"
+          },
+          {
+            "en": "Dishwasher",
+            "fr": "Lave-vaisselle"
+          },
+          {
+            "en": "Washing machine",
+            "fr": "Lave-linge"
+          },
+          {
+            "en": "Kettle",
+            "fr": "Bouilloire"
+          },
+          {
+            "en": "Toaster",
+            "fr": "Grille-pain"
+          },
+          {
+            "en": "Blender",
+            "fr": "Mixeur"
+          },
+          {
+            "en": "Air conditioner",
+            "fr": "Climatiseur"
+          },
+          {
+            "en": "Fan",
+            "fr": "Ventilateur"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Household Chores"
+      },
+      {
+        "t": "phrases",
+        "title": "Les tâches ménagères",
+        "items": [
+          {
+            "en": "Do the dishes",
+            "fr": "Faire la vaisselle"
+          },
+          {
+            "en": "Do the laundry",
+            "fr": "Faire la lessive"
+          },
+          {
+            "en": "Vacuum the floor",
+            "fr": "Passer l'aspirateur"
+          },
+          {
+            "en": "Sweep the floor",
+            "fr": "Balayer le sol"
+          },
+          {
+            "en": "Mop the floor",
+            "fr": "Passer la serpillière"
+          },
+          {
+            "en": "Make the bed",
+            "fr": "Faire le lit"
+          },
+          {
+            "en": "Tidy up",
+            "fr": "Ranger"
+          },
+          {
+            "en": "Dust the furniture",
+            "fr": "Épousseter les meubles"
+          },
+          {
+            "en": "Take out the trash",
+            "fr": "Sortir les poubelles"
+          },
+          {
+            "en": "Water the plants",
+            "fr": "Arroser les plantes"
+          }
+        ]
+      },
+      {
+        "t": "tip",
+        "text": "« Sofa » et « Couch » sont deux mots pour dire « canapé »."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque mot anglais à sa traduction française.",
+        "pairs": [
+          {
+            "en": "Wardrobe",
+            "fr": "Armoire"
+          },
+          {
+            "en": "Kettle",
+            "fr": "Bouilloire"
+          },
+          {
+            "en": "Carpet",
+            "fr": "Tapis"
+          },
+          {
+            "en": "Sink",
+            "fr": "Évier"
+          },
+          {
+            "en": "Attic",
+            "fr": "Grenier"
+          },
+          {
+            "en": "Dishwasher",
+            "fr": "Lave-vaisselle"
+          },
+          {
+            "en": "Sweep",
+            "fr": "Balayer"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Put the milk back in the ______.",
+        "a": "fridge",
+        "accept": [
+          "refrigerator"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : The cake has been in the ______ for 20 minutes.",
+        "a": "oven",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : He keeps his car in the ______.",
+        "a": "garage",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : We have breakfast on the ______ when it's sunny.",
+        "a": "balcony",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : We don't have a ______, so I wash dishes by hand.",
+        "a": "dishwasher",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Let's ______ before our guests arrive.",
+        "a": "tidy up",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "A sofa and a TV → dans quelle pièce ?",
+        "opts": [
+          "Living room",
+          "Kitchen",
+          "Bedroom"
+        ],
+        "a": 0,
+        "x": "Le canapé et la télé sont dans le salon (living room)."
+      },
+      {
+        "t": "choice",
+        "q": "A stove and a sink → dans quelle pièce ?",
+        "opts": [
+          "Kitchen",
+          "Living room",
+          "Bathroom"
+        ],
+        "a": 0,
+        "x": "La cuisinière et l'évier sont dans la cuisine (kitchen)."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je range ma chambre tous les matins.",
+        "a": "I tidy my room every morning.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Elle fait la vaisselle après le dîner.",
+        "a": "She does the dishes after dinner.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Mets le lait dans le réfrigérateur.",
+        "a": "Put the milk in the fridge.",
+        "accept": [
+          "Put the milk in the refrigerator"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Peux-tu sortir les poubelles, s'il te plaît ?",
+        "a": "Can you take out the trash, please?",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Le miroir est dans la salle de bain.",
+        "a": "The mirror is in the bathroom.",
+        "accept": [],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-v3",
+    "cat": "vocabulary",
+    "title": "Traffic & Transportation",
+    "subtitle": "Véhicules, la route et se déplacer",
+    "emoji": "🚗",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu vas apprendre les noms des véhicules courants, le vocabulaire de la route et de la circulation, les verbes de la conduite et des expressions utiles sur le trafic."
+      },
+      {
+        "t": "h",
+        "text": "A. Vehicles"
+      },
+      {
+        "t": "phrases",
+        "title": "Les véhicules",
+        "items": [
+          {
+            "en": "Car",
+            "fr": "Voiture"
+          },
+          {
+            "en": "Bus",
+            "fr": "Bus"
+          },
+          {
+            "en": "Truck",
+            "fr": "Camion"
+          },
+          {
+            "en": "Motorbike / Motorcycle",
+            "fr": "Moto"
+          },
+          {
+            "en": "Bicycle / Bike",
+            "fr": "Vélo"
+          },
+          {
+            "en": "Taxi",
+            "fr": "Taxi"
+          },
+          {
+            "en": "Van",
+            "fr": "Camionnette"
+          },
+          {
+            "en": "Ambulance",
+            "fr": "Ambulance"
+          },
+          {
+            "en": "Fire truck",
+            "fr": "Camion de pompiers"
+          },
+          {
+            "en": "Train",
+            "fr": "Train"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Traffic & the Road"
+      },
+      {
+        "t": "phrases",
+        "title": "La circulation et la route",
+        "items": [
+          {
+            "en": "Traffic jam",
+            "fr": "Embouteillage"
+          },
+          {
+            "en": "Traffic light",
+            "fr": "Feu de signalisation"
+          },
+          {
+            "en": "Road sign",
+            "fr": "Panneau de signalisation"
+          },
+          {
+            "en": "Speed limit",
+            "fr": "Limitation de vitesse"
+          },
+          {
+            "en": "Highway / Motorway",
+            "fr": "Autoroute"
+          },
+          {
+            "en": "Pedestrian",
+            "fr": "Piéton"
+          },
+          {
+            "en": "Crosswalk / Zebra crossing",
+            "fr": "Passage piéton"
+          },
+          {
+            "en": "Intersection",
+            "fr": "Carrefour"
+          },
+          {
+            "en": "One-way street",
+            "fr": "Rue à sens unique"
+          },
+          {
+            "en": "Rush hour",
+            "fr": "Heure de pointe"
+          },
+          {
+            "en": "Toll booth",
+            "fr": "Poste de péage"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Traffic Actions & Verbs"
+      },
+      {
+        "t": "phrases",
+        "title": "Actions et verbes de la route",
+        "items": [
+          {
+            "en": "Drive",
+            "fr": "Conduire"
+          },
+          {
+            "en": "Park",
+            "fr": "Se garer"
+          },
+          {
+            "en": "Overtake",
+            "fr": "Doubler"
+          },
+          {
+            "en": "Brake",
+            "fr": "Freiner"
+          },
+          {
+            "en": "Accelerate",
+            "fr": "Accélérer"
+          },
+          {
+            "en": "Turn",
+            "fr": "Tourner"
+          },
+          {
+            "en": "Reverse",
+            "fr": "Faire marche arrière"
+          },
+          {
+            "en": "Get stuck in traffic",
+            "fr": "Être coincé dans les embouteillages"
+          },
+          {
+            "en": "Run a red light",
+            "fr": "Griller un feu rouge"
+          },
+          {
+            "en": "Fasten your seatbelt",
+            "fr": "Attacher sa ceinture"
+          },
+          {
+            "en": "Give way / Yield",
+            "fr": "Céder le passage"
+          },
+          {
+            "en": "Honk the horn",
+            "fr": "Klaxonner"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Useful Traffic Expressions"
+      },
+      {
+        "t": "phrases",
+        "title": "Expressions utiles",
+        "items": [
+          {
+            "en": "Watch out!",
+            "fr": "Attention !"
+          },
+          {
+            "en": "Slow down!",
+            "fr": "Ralentis !"
+          },
+          {
+            "en": "Buckle up.",
+            "fr": "Attache ta ceinture."
+          },
+          {
+            "en": "The road is blocked.",
+            "fr": "La route est bloquée."
+          },
+          {
+            "en": "There's a lot of traffic today.",
+            "fr": "Il y a beaucoup de circulation aujourd'hui."
+          },
+          {
+            "en": "I got stuck in traffic.",
+            "fr": "J'étais coincé(e) dans les embouteillages."
+          },
+          {
+            "en": "Can you give me a lift?",
+            "fr": "Peux-tu me déposer ?"
+          },
+          {
+            "en": "It's rush hour.",
+            "fr": "C'est l'heure de pointe."
+          }
+        ]
+      },
+      {
+        "t": "tip",
+        "text": "« Crosswalk » et « Zebra crossing » désignent tous deux le passage piéton."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque mot anglais à sa traduction française.",
+        "pairs": [
+          {
+            "en": "Traffic jam",
+            "fr": "Embouteillage"
+          },
+          {
+            "en": "Pedestrian",
+            "fr": "Piéton"
+          },
+          {
+            "en": "Speed limit",
+            "fr": "Limitation de vitesse"
+          },
+          {
+            "en": "Honk the horn",
+            "fr": "Klaxonner"
+          },
+          {
+            "en": "Intersection",
+            "fr": "Carrefour"
+          },
+          {
+            "en": "Overtake",
+            "fr": "Doubler"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Stop at the red ______.",
+        "a": "traffic light",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Always cross the street at the ______.",
+        "a": "crosswalk",
+        "accept": [
+          "zebra crossing"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : He had to ______ suddenly to avoid the dog.",
+        "a": "brake",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Please fasten your ______ before we leave.",
+        "a": "seatbelt",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "You must (give way / overtake) to pedestrians at a crosswalk.",
+        "opts": [
+          "give way",
+          "overtake"
+        ],
+        "a": 0,
+        "x": "On doit céder le passage (give way) aux piétons."
+      },
+      {
+        "t": "choice",
+        "q": "He (braked / accelerated) to merge onto the highway.",
+        "opts": [
+          "braked",
+          "accelerated"
+        ],
+        "a": 1,
+        "x": "Il a accéléré (accelerated) pour s'insérer sur l'autoroute."
+      },
+      {
+        "t": "choice",
+        "q": "We took the (highway / sidewalk) to save time.",
+        "opts": [
+          "highway",
+          "sidewalk"
+        ],
+        "a": 0,
+        "x": "On prend l'autoroute (highway) pour gagner du temps."
+      },
+      {
+        "t": "choice",
+        "q": "The (ambulance / bicycle) rushed to the hospital.",
+        "opts": [
+          "ambulance",
+          "bicycle"
+        ],
+        "a": 0,
+        "x": "C'est l'ambulance (ambulance) qui fonce vers l'hôpital."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Nous étions coincés dans les embouteillages ce matin.",
+        "a": "We were stuck in traffic this morning.",
+        "accept": [
+          "We were stuck in a traffic jam this morning"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Attache ta ceinture avant de partir.",
+        "a": "Fasten your seatbelt before we leave.",
+        "accept": [
+          "Fasten your seatbelt before leaving",
+          "Fasten your seatbelt before you leave"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Il a grillé un feu rouge.",
+        "a": "He ran a red light.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Peux-tu me déposer à la gare ?",
+        "a": "Can you give me a lift to the station?",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ralentis, la route est glissante.",
+        "a": "Slow down, the road is slippery.",
+        "accept": [],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-v4",
+    "cat": "vocabulary",
+    "title": "Fruits, Vegetables, Meats & Ingredients",
+    "subtitle": "Parler de la nourriture",
+    "emoji": "🍎",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu vas apprendre les noms des fruits, légumes, viandes et ingrédients de cuisine courants — du vocabulaire utile pour faire les courses, cuisiner et parler des repas."
+      },
+      {
+        "t": "h",
+        "text": "A. Fruits"
+      },
+      {
+        "t": "phrases",
+        "title": "Les fruits",
+        "items": [
+          {
+            "en": "Apple",
+            "fr": "Pomme"
+          },
+          {
+            "en": "Banana",
+            "fr": "Banane"
+          },
+          {
+            "en": "Orange",
+            "fr": "Orange"
+          },
+          {
+            "en": "Mango",
+            "fr": "Mangue"
+          },
+          {
+            "en": "Pineapple",
+            "fr": "Ananas"
+          },
+          {
+            "en": "Grapes",
+            "fr": "Raisins"
+          },
+          {
+            "en": "Watermelon",
+            "fr": "Pastèque"
+          },
+          {
+            "en": "Papaya",
+            "fr": "Papaye"
+          },
+          {
+            "en": "Lemon",
+            "fr": "Citron"
+          },
+          {
+            "en": "Strawberry",
+            "fr": "Fraise"
+          },
+          {
+            "en": "Avocado",
+            "fr": "Avocat"
+          },
+          {
+            "en": "Coconut",
+            "fr": "Noix de coco"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Vegetables"
+      },
+      {
+        "t": "phrases",
+        "title": "Les légumes",
+        "items": [
+          {
+            "en": "Tomato",
+            "fr": "Tomate"
+          },
+          {
+            "en": "Onion",
+            "fr": "Oignon"
+          },
+          {
+            "en": "Potato",
+            "fr": "Pomme de terre"
+          },
+          {
+            "en": "Carrot",
+            "fr": "Carotte"
+          },
+          {
+            "en": "Cabbage",
+            "fr": "Chou"
+          },
+          {
+            "en": "Pepper",
+            "fr": "Poivron"
+          },
+          {
+            "en": "Cucumber",
+            "fr": "Concombre"
+          },
+          {
+            "en": "Lettuce",
+            "fr": "Laitue"
+          },
+          {
+            "en": "Garlic",
+            "fr": "Ail"
+          },
+          {
+            "en": "Spinach",
+            "fr": "Épinard"
+          },
+          {
+            "en": "Eggplant / Aubergine",
+            "fr": "Aubergine"
+          },
+          {
+            "en": "Okra",
+            "fr": "Gombo"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Meats & Proteins"
+      },
+      {
+        "t": "phrases",
+        "title": "Viandes et protéines",
+        "items": [
+          {
+            "en": "Beef",
+            "fr": "Bœuf"
+          },
+          {
+            "en": "Chicken",
+            "fr": "Poulet"
+          },
+          {
+            "en": "Fish",
+            "fr": "Poisson"
+          },
+          {
+            "en": "Lamb",
+            "fr": "Agneau"
+          },
+          {
+            "en": "Pork",
+            "fr": "Porc"
+          },
+          {
+            "en": "Eggs",
+            "fr": "Œufs"
+          },
+          {
+            "en": "Shrimp",
+            "fr": "Crevette"
+          },
+          {
+            "en": "Turkey",
+            "fr": "Dinde"
+          },
+          {
+            "en": "Sausage",
+            "fr": "Saucisse"
+          },
+          {
+            "en": "Beans / Lentils",
+            "fr": "Haricots / lentilles"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Cooking Ingredients"
+      },
+      {
+        "t": "phrases",
+        "title": "Ingrédients de cuisine",
+        "items": [
+          {
+            "en": "Salt",
+            "fr": "Sel"
+          },
+          {
+            "en": "Pepper (spice)",
+            "fr": "Poivre"
+          },
+          {
+            "en": "Oil",
+            "fr": "Huile"
+          },
+          {
+            "en": "Sugar",
+            "fr": "Sucre"
+          },
+          {
+            "en": "Flour",
+            "fr": "Farine"
+          },
+          {
+            "en": "Rice",
+            "fr": "Riz"
+          },
+          {
+            "en": "Spices",
+            "fr": "Épices"
+          },
+          {
+            "en": "Sauce",
+            "fr": "Sauce"
+          },
+          {
+            "en": "Vinegar",
+            "fr": "Vinaigre"
+          },
+          {
+            "en": "Butter",
+            "fr": "Beurre"
+          },
+          {
+            "en": "Milk",
+            "fr": "Lait"
+          },
+          {
+            "en": "Bread",
+            "fr": "Pain"
+          }
+        ]
+      },
+      {
+        "t": "tip",
+        "text": "« Eggplant » et « Aubergine » sont deux mots pour dire « aubergine »."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque mot anglais à sa traduction française.",
+        "pairs": [
+          {
+            "en": "Onion",
+            "fr": "Oignon"
+          },
+          {
+            "en": "Garlic",
+            "fr": "Ail"
+          },
+          {
+            "en": "Shrimp",
+            "fr": "Crevette"
+          },
+          {
+            "en": "Flour",
+            "fr": "Farine"
+          },
+          {
+            "en": "Cabbage",
+            "fr": "Chou"
+          },
+          {
+            "en": "Avocado",
+            "fr": "Avocat"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Add a pinch of ______ to the soup.",
+        "a": "salt",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : We usually eat ______ with our meals.",
+        "a": "rice",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : She's making a ______ stew for dinner.",
+        "a": "beef",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : I had two ______ for breakfast this morning.",
+        "a": "eggs",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Mango → quel type d'aliment ?",
+        "opts": [
+          "Fruit",
+          "Légume",
+          "Viande"
+        ],
+        "a": 0,
+        "x": "La mangue est un fruit."
+      },
+      {
+        "t": "choice",
+        "q": "Chicken → quel type d'aliment ?",
+        "opts": [
+          "Viande",
+          "Fruit",
+          "Légume"
+        ],
+        "a": 0,
+        "x": "Le poulet est une viande."
+      },
+      {
+        "t": "choice",
+        "q": "Spinach → quel type d'aliment ?",
+        "opts": [
+          "Légume",
+          "Fruit",
+          "Viande"
+        ],
+        "a": 0,
+        "x": "L'épinard est un légume."
+      },
+      {
+        "t": "choice",
+        "q": "Watermelon → quel type d'aliment ?",
+        "opts": [
+          "Fruit",
+          "Légume",
+          "Viande"
+        ],
+        "a": 0,
+        "x": "La pastèque est un fruit."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : J'achète des tomates et des oignons au marché.",
+        "a": "I buy tomatoes and onions at the market.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Elle prépare du poulet avec du riz.",
+        "a": "She's preparing chicken with rice.",
+        "accept": [
+          "She is preparing chicken with rice"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ajoute un peu de sel et de poivre.",
+        "a": "Add a little salt and pepper.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Le pain est frais aujourd'hui.",
+        "a": "The bread is fresh today.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Elle a acheté des crevettes pour le dîner.",
+        "a": "She bought shrimp for dinner.",
+        "accept": [],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-v5",
+    "cat": "vocabulary",
+    "title": "School Subjects & School Life",
+    "subtitle": "Parler de l'école",
+    "emoji": "🏫",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu vas apprendre les noms des matières scolaires, les personnes et lieux de l'école, les fournitures utiles et les expressions courantes en classe."
+      },
+      {
+        "t": "h",
+        "text": "A. School Subjects"
+      },
+      {
+        "t": "phrases",
+        "title": "Les matières scolaires",
+        "items": [
+          {
+            "en": "Mathematics / Math",
+            "fr": "Mathématiques"
+          },
+          {
+            "en": "English",
+            "fr": "Anglais"
+          },
+          {
+            "en": "French",
+            "fr": "Français"
+          },
+          {
+            "en": "History",
+            "fr": "Histoire"
+          },
+          {
+            "en": "Geography",
+            "fr": "Géographie"
+          },
+          {
+            "en": "Science",
+            "fr": "Sciences"
+          },
+          {
+            "en": "Biology",
+            "fr": "Biologie"
+          },
+          {
+            "en": "Chemistry",
+            "fr": "Chimie"
+          },
+          {
+            "en": "Physics",
+            "fr": "Physique"
+          },
+          {
+            "en": "Art",
+            "fr": "Arts plastiques"
+          },
+          {
+            "en": "Music",
+            "fr": "Musique"
+          },
+          {
+            "en": "Physical Education / PE",
+            "fr": "Éducation physique"
+          },
+          {
+            "en": "Computer Science / IT",
+            "fr": "Informatique"
+          },
+          {
+            "en": "Literature",
+            "fr": "Littérature"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. School Places & People"
+      },
+      {
+        "t": "phrases",
+        "title": "Lieux et personnes de l'école",
+        "items": [
+          {
+            "en": "Classroom",
+            "fr": "Salle de classe"
+          },
+          {
+            "en": "Playground",
+            "fr": "Cour de récréation"
+          },
+          {
+            "en": "Canteen",
+            "fr": "Cantine"
+          },
+          {
+            "en": "Staff room",
+            "fr": "Salle des professeurs"
+          },
+          {
+            "en": "Principal / Headmaster",
+            "fr": "Directeur / directrice"
+          },
+          {
+            "en": "Teacher",
+            "fr": "Enseignant(e) / professeur"
+          },
+          {
+            "en": "Student / Pupil",
+            "fr": "Élève"
+          },
+          {
+            "en": "Classmate",
+            "fr": "Camarade de classe"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. School Items"
+      },
+      {
+        "t": "phrases",
+        "title": "Les fournitures scolaires",
+        "items": [
+          {
+            "en": "Textbook",
+            "fr": "Manuel scolaire"
+          },
+          {
+            "en": "Notebook",
+            "fr": "Cahier"
+          },
+          {
+            "en": "Pen",
+            "fr": "Stylo"
+          },
+          {
+            "en": "Pencil",
+            "fr": "Crayon"
+          },
+          {
+            "en": "Eraser",
+            "fr": "Gomme"
+          },
+          {
+            "en": "Ruler",
+            "fr": "Règle"
+          },
+          {
+            "en": "Backpack",
+            "fr": "Sac à dos"
+          },
+          {
+            "en": "Blackboard / Whiteboard",
+            "fr": "Tableau"
+          },
+          {
+            "en": "Homework",
+            "fr": "Devoirs"
+          },
+          {
+            "en": "Exam / Test",
+            "fr": "Examen"
+          },
+          {
+            "en": "Timetable",
+            "fr": "Emploi du temps"
+          },
+          {
+            "en": "Report card",
+            "fr": "Bulletin scolaire"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Classroom Expressions"
+      },
+      {
+        "t": "phrases",
+        "title": "Expressions en classe",
+        "items": [
+          {
+            "en": "Pay attention.",
+            "fr": "Fais attention. / Sois attentif(-ve)."
+          },
+          {
+            "en": "Raise your hand.",
+            "fr": "Lève la main."
+          },
+          {
+            "en": "Take a seat.",
+            "fr": "Assieds-toi."
+          },
+          {
+            "en": "Hand in your homework.",
+            "fr": "Rends tes devoirs."
+          },
+          {
+            "en": "Turn to page...",
+            "fr": "Ouvrez à la page..."
+          },
+          {
+            "en": "It's my turn to answer.",
+            "fr": "C'est mon tour de répondre."
+          },
+          {
+            "en": "I have an exam tomorrow.",
+            "fr": "J'ai un examen demain."
+          },
+          {
+            "en": "What's the homework for today?",
+            "fr": "Quel est le devoir pour aujourd'hui ?"
+          }
+        ]
+      },
+      {
+        "t": "tip",
+        "text": "« Principal » et « Headmaster » désignent le directeur / la directrice de l'école."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque mot anglais à sa traduction française.",
+        "pairs": [
+          {
+            "en": "Homework",
+            "fr": "Devoirs"
+          },
+          {
+            "en": "Notebook",
+            "fr": "Cahier"
+          },
+          {
+            "en": "Principal",
+            "fr": "Directeur"
+          },
+          {
+            "en": "Playground",
+            "fr": "Cour de récréation"
+          },
+          {
+            "en": "Ruler",
+            "fr": "Règle"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Open your ______ to page 15.",
+        "a": "textbook",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : We eat lunch in the ______ at noon.",
+        "a": "canteen",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : I'm a bit nervous about the ______ next week.",
+        "a": "exam",
+        "accept": [
+          "test"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : She carries her books in her ______.",
+        "a": "backpack",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "You study numbers, equations, and geometry.",
+        "opts": [
+          "Mathematics",
+          "History",
+          "Art"
+        ],
+        "a": 0,
+        "x": "Les nombres, équations et la géométrie relèvent des mathématiques."
+      },
+      {
+        "t": "choice",
+        "q": "You study plants, animals, and the human body.",
+        "opts": [
+          "Biology",
+          "Geography",
+          "Physics"
+        ],
+        "a": 0,
+        "x": "Les plantes, les animaux et le corps humain relèvent de la biologie."
+      },
+      {
+        "t": "choice",
+        "q": "You study maps, countries, and continents.",
+        "opts": [
+          "Geography",
+          "Mathematics",
+          "Chemistry"
+        ],
+        "a": 0,
+        "x": "Les cartes, les pays et les continents relèvent de la géographie."
+      },
+      {
+        "t": "choice",
+        "q": "You learn to draw and paint.",
+        "opts": [
+          "Art",
+          "Music",
+          "Science"
+        ],
+        "a": 0,
+        "x": "Dessiner et peindre relèvent des arts plastiques (art)."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : J'ai un examen de mathématiques demain.",
+        "a": "I have a math exam tomorrow.",
+        "accept": [
+          "I have a mathematics exam tomorrow"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Le professeur a écrit la leçon au tableau.",
+        "a": "The teacher wrote the lesson on the board.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Lève la main si tu connais la réponse.",
+        "a": "Raise your hand if you know the answer.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : N'oublie pas de rendre tes devoirs.",
+        "a": "Don't forget to hand in your homework.",
+        "accept": [],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Quel est le devoir pour demain ?",
+        "a": "What's the homework for tomorrow?",
+        "accept": [
+          "What is the homework for tomorrow"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-e1",
+    "cat": "expressions",
+    "title": "Everyday Life Idioms",
+    "subtitle": "La vie quotidienne et la routine",
+    "emoji": "🏠",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Les idiomes sont des expressions dont le sens diffère des mots pris littéralement. Cette leçon couvre 15 idiomes courants pour parler de la vie quotidienne et de la routine, avec leur sens, un exemple et la traduction française."
+      },
+      {
+        "t": "phrases",
+        "title": "Idiomes de la vie quotidienne",
+        "items": [
+          {
+            "en": "once in a blue moon",
+            "fr": "Très rarement",
+            "note": "very rarely — We go to the cinema once in a blue moon."
+          },
+          {
+            "en": "under the weather",
+            "fr": "Patraque, pas en forme",
+            "note": "feeling slightly ill — I'm a bit under the weather today."
+          },
+          {
+            "en": "a couch potato",
+            "fr": "Un(e) accro à la télé",
+            "note": "someone who watches a lot of TV and doesn't exercise — He's a real couch potato on weekends."
+          },
+          {
+            "en": "hit the sack",
+            "fr": "Aller se coucher",
+            "note": "go to bed — I'm exhausted, I'm going to hit the sack."
+          },
+          {
+            "en": "burn the midnight oil",
+            "fr": "Travailler tard dans la nuit",
+            "note": "work or study late into the night — She burned the midnight oil to finish the report."
+          },
+          {
+            "en": "up and about",
+            "fr": "Sur pied, de nouveau actif",
+            "note": "awake and active again, especially after being ill — He's up and about again after his cold."
+          },
+          {
+            "en": "out of the blue",
+            "fr": "De façon inattendue",
+            "note": "suddenly and unexpectedly — He called me out of the blue yesterday."
+          },
+          {
+            "en": "a home away from home",
+            "fr": "Un endroit comme à la maison",
+            "note": "a place where you feel as comfortable as at home — This café feels like a home away from home."
+          },
+          {
+            "en": "a creature of habit",
+            "fr": "Une personne routinière",
+            "note": "someone who always does things the same way — I'm a creature of habit, I eat the same breakfast every day."
+          },
+          {
+            "en": "the daily grind",
+            "fr": "Le train-train quotidien",
+            "note": "the boring routine of everyday work or life — I need a break from the daily grind."
+          },
+          {
+            "en": "run errands",
+            "fr": "Faire des courses / commissions",
+            "note": "do small tasks like shopping or paying bills — I need to run some errands this afternoon."
+          },
+          {
+            "en": "keep an eye on",
+            "fr": "Surveiller",
+            "note": "watch or take care of something/someone — Can you keep an eye on my bag for a minute?"
+          },
+          {
+            "en": "make yourself at home",
+            "fr": "Faites comme chez vous",
+            "note": "relax and behave as if you were in your own home — Come in, make yourself at home."
+          },
+          {
+            "en": "from scratch",
+            "fr": "À partir de zéro",
+            "note": "from the very beginning, without using anything already made — She made the cake from scratch."
+          },
+          {
+            "en": "a fresh start",
+            "fr": "Un nouveau départ",
+            "note": "a new beginning — Moving to a new city gave him a fresh start."
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque idiome à sa traduction française.",
+        "pairs": [
+          {
+            "en": "under the weather",
+            "fr": "patraque, pas en forme"
+          },
+          {
+            "en": "hit the sack",
+            "fr": "aller se coucher"
+          },
+          {
+            "en": "up and about",
+            "fr": "sur pied, de nouveau actif"
+          },
+          {
+            "en": "out of the blue",
+            "fr": "de façon inattendue"
+          },
+          {
+            "en": "the daily grind",
+            "fr": "le train-train quotidien"
+          },
+          {
+            "en": "run errands",
+            "fr": "faire des courses"
+          },
+          {
+            "en": "from scratch",
+            "fr": "à partir de zéro"
+          },
+          {
+            "en": "keep an eye on",
+            "fr": "surveiller"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : My brother is such a ______, he watches TV all day.",
+        "tiles": [
+          "a",
+          "couch",
+          "potato"
+        ],
+        "a": "a couch potato",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : She had to ______ to finish her thesis before the deadline.",
+        "a": "burn the midnight oil",
+        "accept": [
+          "burn midnight oil"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : This gym feels like ______ to me now.",
+        "a": "a home away from home",
+        "accept": [
+          "home away from home"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « once in a blue moon » signifie que quelque chose arrive très souvent.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "Faux : cela signifie « très rarement »."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « hit the sack » signifie aller se coucher.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "Vrai : « hit the sack » = aller se coucher."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je suis un peu patraque aujourd'hui.",
+        "a": "I'm a bit under the weather today.",
+        "accept": [
+          "i'm a bit under the weather today",
+          "i am a bit under the weather today"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Il m'a appelé de façon inattendue hier.",
+        "a": "He called me out of the blue yesterday.",
+        "accept": [
+          "he called me out of the blue yesterday"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Elle a fait le gâteau à partir de zéro.",
+        "a": "She made the cake from scratch.",
+        "accept": [
+          "she made the cake from scratch"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Déménager lui a donné un nouveau départ.",
+        "a": "Moving gave him a fresh start.",
+        "accept": [
+          "moving gave him a fresh start"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-e2",
+    "cat": "expressions",
+    "title": "Feelings & Emotions Idioms",
+    "subtitle": "Sentiments et émotions",
+    "emoji": "😊",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Cette leçon couvre 15 idiomes courants pour décrire les émotions et les sentiments, de la grande joie à la tristesse, la peur et la colère."
+      },
+      {
+        "t": "phrases",
+        "title": "Idiomes des sentiments & émotions",
+        "items": [
+          {
+            "en": "over the moon",
+            "fr": "Aux anges",
+            "note": "extremely happy — She was over the moon about her new job."
+          },
+          {
+            "en": "down in the dumps",
+            "fr": "Avoir le cafard",
+            "note": "feeling sad — He's been down in the dumps since he lost his job."
+          },
+          {
+            "en": "butterflies in my stomach",
+            "fr": "Avoir le trac / des papillons dans le ventre",
+            "note": "a nervous feeling — I get butterflies in my stomach before exams."
+          },
+          {
+            "en": "on top of the world",
+            "fr": "Au septième ciel",
+            "note": "extremely happy and successful — After passing the exam, he was on top of the world."
+          },
+          {
+            "en": "lose your temper",
+            "fr": "Perdre son sang-froid",
+            "note": "get very angry — Don't lose your temper over small things."
+          },
+          {
+            "en": "keep your cool",
+            "fr": "Garder son calme",
+            "note": "stay calm — Try to keep your cool during the interview."
+          },
+          {
+            "en": "scared stiff",
+            "fr": "Mort(e) de peur",
+            "note": "extremely frightened — I was scared stiff during the storm."
+          },
+          {
+            "en": "a bundle of nerves",
+            "fr": "Un paquet de nerfs",
+            "note": "very anxious — She's a bundle of nerves before every exam."
+          },
+          {
+            "en": "green with envy",
+            "fr": "Vert de jalousie",
+            "note": "very jealous — He was green with envy when he saw my new car."
+          },
+          {
+            "en": "break down in tears",
+            "fr": "Fondre en larmes",
+            "note": "start crying suddenly — She broke down in tears at the news."
+          },
+          {
+            "en": "hit rock bottom",
+            "fr": "Toucher le fond",
+            "note": "reach the lowest point, emotionally or financially — He hit rock bottom after losing his job."
+          },
+          {
+            "en": "get cold feet",
+            "fr": "Se dégonfler",
+            "note": "become too nervous to do something you planned — He got cold feet before the wedding."
+          },
+          {
+            "en": "laugh your head off",
+            "fr": "Rire aux éclats",
+            "note": "laugh a lot — We laughed our heads off at the joke."
+          },
+          {
+            "en": "cry your eyes out",
+            "fr": "Pleurer toutes les larmes de son corps",
+            "note": "cry a lot — She cried her eyes out after the movie."
+          },
+          {
+            "en": "on edge",
+            "fr": "Sur les nerfs",
+            "note": "nervous or irritable — He's been on edge all week because of the exam."
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque idiome à sa traduction française.",
+        "pairs": [
+          {
+            "en": "over the moon",
+            "fr": "aux anges"
+          },
+          {
+            "en": "down in the dumps",
+            "fr": "avoir le cafard"
+          },
+          {
+            "en": "lose your temper",
+            "fr": "perdre son sang-froid"
+          },
+          {
+            "en": "keep your cool",
+            "fr": "garder son calme"
+          },
+          {
+            "en": "scared stiff",
+            "fr": "mort(e) de peur"
+          },
+          {
+            "en": "green with envy",
+            "fr": "vert de jalousie"
+          },
+          {
+            "en": "hit rock bottom",
+            "fr": "toucher le fond"
+          },
+          {
+            "en": "on edge",
+            "fr": "sur les nerfs"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : I always get ______ before a job interview.",
+        "tiles": [
+          "butterflies",
+          "in",
+          "my",
+          "stomach"
+        ],
+        "a": "butterflies in my stomach",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : She's ______ before every exam.",
+        "a": "a bundle of nerves",
+        "accept": [
+          "bundle of nerves"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : He wanted to propose, but he ______ at the last minute.",
+        "a": "got cold feet",
+        "accept": [
+          "got cold feet",
+          "gets cold feet"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « over the moon » signifie extrêmement triste.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "Faux : cela signifie « aux anges », extrêmement heureux."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « green with envy » signifie très jaloux.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "Vrai : « green with envy » = vert de jalousie."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Elle était aux anges à propos de son nouveau travail.",
+        "a": "She was over the moon about her new job.",
+        "accept": [
+          "she was over the moon about her new job"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ne perds pas ton sang-froid pour des petites choses.",
+        "a": "Don't lose your temper over small things.",
+        "accept": [
+          "don't lose your temper over small things",
+          "do not lose your temper over small things"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Elle a fondu en larmes en apprenant la nouvelle.",
+        "a": "She broke down in tears at the news.",
+        "accept": [
+          "she broke down in tears at the news"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Il a été sur les nerfs toute la semaine à cause de l'examen.",
+        "a": "He's been on edge all week because of the exam.",
+        "accept": [
+          "he's been on edge all week because of the exam",
+          "he has been on edge all week because of the exam"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-e3",
+    "cat": "expressions",
+    "title": "Time & Punctuality Idioms",
+    "subtitle": "Le temps et la ponctualité",
+    "emoji": "⏰",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Cette leçon couvre 15 idiomes courants pour parler du temps, des délais, et du fait d'être en avance, en retard ou à l'heure."
+      },
+      {
+        "t": "phrases",
+        "title": "Idiomes du temps & de la ponctualité",
+        "items": [
+          {
+            "en": "in the nick of time",
+            "fr": "Juste à temps",
+            "note": "just in time, at the last possible moment — We arrived in the nick of time for the train."
+          },
+          {
+            "en": "once and for all",
+            "fr": "Une fois pour toutes",
+            "note": "completely and finally — Let's settle this once and for all."
+          },
+          {
+            "en": "around the clock",
+            "fr": "24 heures sur 24",
+            "note": "all day and night, continuously — The factory operates around the clock."
+          },
+          {
+            "en": "behind schedule",
+            "fr": "En retard sur le planning",
+            "note": "later than planned — The project is behind schedule."
+          },
+          {
+            "en": "ahead of schedule",
+            "fr": "En avance sur le planning",
+            "note": "earlier than planned — We finished the work ahead of schedule."
+          },
+          {
+            "en": "time flies",
+            "fr": "Le temps passe vite",
+            "note": "time passes very quickly — Time flies when you're having fun."
+          },
+          {
+            "en": "in broad daylight",
+            "fr": "En plein jour",
+            "note": "during the day, openly, without hiding — The robbery happened in broad daylight."
+          },
+          {
+            "en": "at the eleventh hour",
+            "fr": "À la dernière minute",
+            "note": "at the very last possible moment — They changed the plan at the eleventh hour."
+          },
+          {
+            "en": "from time to time",
+            "fr": "De temps en temps",
+            "note": "occasionally — We meet from time to time."
+          },
+          {
+            "en": "take your time",
+            "fr": "Prends ton temps",
+            "note": "do something without hurrying — Take your time, there's no rush."
+          },
+          {
+            "en": "beat the clock",
+            "fr": "Battre la montre",
+            "note": "finish something before a deadline — The team worked hard to beat the clock."
+          },
+          {
+            "en": "a race against time",
+            "fr": "Une course contre la montre",
+            "note": "trying to finish something before a deadline — It was a race against time to finish the report."
+          },
+          {
+            "en": "better late than never",
+            "fr": "Mieux vaut tard que jamais",
+            "note": "it's better to do something late than not at all — He finally apologized, better late than never."
+          },
+          {
+            "en": "have the time of your life",
+            "fr": "Passer un moment formidable",
+            "note": "enjoy yourself very much — We had the time of our lives at the festival."
+          },
+          {
+            "en": "save time",
+            "fr": "Gagner du temps",
+            "note": "use less time than usual — This shortcut will save us time."
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque idiome à sa traduction française.",
+        "pairs": [
+          {
+            "en": "in the nick of time",
+            "fr": "juste à temps"
+          },
+          {
+            "en": "around the clock",
+            "fr": "24 heures sur 24"
+          },
+          {
+            "en": "behind schedule",
+            "fr": "en retard sur le planning"
+          },
+          {
+            "en": "ahead of schedule",
+            "fr": "en avance sur le planning"
+          },
+          {
+            "en": "in broad daylight",
+            "fr": "en plein jour"
+          },
+          {
+            "en": "at the eleventh hour",
+            "fr": "à la dernière minute"
+          },
+          {
+            "en": "from time to time",
+            "fr": "de temps en temps"
+          },
+          {
+            "en": "save time",
+            "fr": "gagner du temps"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : I want to settle this problem ______.",
+        "tiles": [
+          "once",
+          "and",
+          "for",
+          "all"
+        ],
+        "a": "once and for all",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : There's no rush, ______ with your decision.",
+        "a": "take your time",
+        "accept": [
+          "take your time"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : We had ______ on our trip to Senegal.",
+        "a": "the time of our lives",
+        "accept": [
+          "the time of our lives",
+          "the time of our life"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « in the nick of time » signifie beaucoup trop tard.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "Faux : cela signifie « juste à temps », au dernier moment possible."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « beat the clock » signifie finir avant une échéance.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "Vrai : « beat the clock » = finir avant la date limite."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Nous sommes arrivés juste à temps pour le train.",
+        "a": "We arrived in the nick of time for the train.",
+        "accept": [
+          "we arrived in the nick of time for the train"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : L'usine fonctionne 24 heures sur 24.",
+        "a": "The factory operates around the clock.",
+        "accept": [
+          "the factory operates around the clock"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Le temps passe vite quand on s'amuse.",
+        "a": "Time flies when you're having fun.",
+        "accept": [
+          "time flies when you're having fun",
+          "time flies when you are having fun"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Prends ton temps, il n'y a pas d'urgence.",
+        "a": "Take your time, there's no rush.",
+        "accept": [
+          "take your time, there's no rush",
+          "take your time, there is no rush"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-e4",
+    "cat": "expressions",
+    "title": "Money & Shopping Idioms",
+    "subtitle": "L'argent et les achats",
+    "emoji": "💰",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Cette leçon couvre 15 idiomes courants pour parler d'argent, de prix et de dépenses."
+      },
+      {
+        "t": "phrases",
+        "title": "Idiomes de l'argent & du shopping",
+        "items": [
+          {
+            "en": "cost an arm and a leg",
+            "fr": "Coûter les yeux de la tête",
+            "note": "be very expensive — That car costs an arm and a leg."
+          },
+          {
+            "en": "break the bank",
+            "fr": "Coûter une fortune, ruiner",
+            "note": "spend more money than you can afford — This trip won't break the bank."
+          },
+          {
+            "en": "tighten your belt",
+            "fr": "Se serrer la ceinture",
+            "note": "spend less money than before — We need to tighten our belts this month."
+          },
+          {
+            "en": "save for a rainy day",
+            "fr": "Mettre de côté pour les jours difficiles",
+            "note": "save money for future needs — It's wise to save for a rainy day."
+          },
+          {
+            "en": "money doesn't grow on trees",
+            "fr": "L'argent ne pousse pas sur les arbres",
+            "note": "money is limited, don't waste it — Money doesn't grow on trees, you know."
+          },
+          {
+            "en": "a bargain",
+            "fr": "Une bonne affaire",
+            "note": "something bought cheaply, for a good price — I got this jacket for a bargain price."
+          },
+          {
+            "en": "go Dutch",
+            "fr": "Payer chacun sa part",
+            "note": "split the bill equally between everyone — Let's go Dutch for dinner."
+          },
+          {
+            "en": "on a shoestring budget",
+            "fr": "Avec un budget très serré",
+            "note": "with very little money — They traveled on a shoestring budget."
+          },
+          {
+            "en": "make ends meet",
+            "fr": "Joindre les deux bouts",
+            "note": "earn just enough money to live on — It's hard to make ends meet these days."
+          },
+          {
+            "en": "worth every penny",
+            "fr": "Cela vaut chaque centime",
+            "note": "worth the money spent — The hotel was expensive but worth every penny."
+          },
+          {
+            "en": "pay through the nose",
+            "fr": "Payer un prix exorbitant",
+            "note": "pay a very high price for something — We paid through the nose for parking."
+          },
+          {
+            "en": "a rip-off",
+            "fr": "Une arnaque",
+            "note": "something too expensive for what it's worth — That restaurant is a total rip-off."
+          },
+          {
+            "en": "cut corners",
+            "fr": "Rogner sur les coûts",
+            "note": "do something cheaply, often lowering the quality — The company cut corners on the materials."
+          },
+          {
+            "en": "in the red",
+            "fr": "Être dans le rouge, endetté",
+            "note": "losing money, in debt — The business has been in the red for months."
+          },
+          {
+            "en": "splash out",
+            "fr": "Claquer de l'argent",
+            "note": "spend a lot of money on something special — We splashed out on a nice dinner for our anniversary."
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque idiome à sa traduction française.",
+        "pairs": [
+          {
+            "en": "cost an arm and a leg",
+            "fr": "coûter les yeux de la tête"
+          },
+          {
+            "en": "tighten your belt",
+            "fr": "se serrer la ceinture"
+          },
+          {
+            "en": "a bargain",
+            "fr": "une bonne affaire"
+          },
+          {
+            "en": "go Dutch",
+            "fr": "payer chacun sa part"
+          },
+          {
+            "en": "make ends meet",
+            "fr": "joindre les deux bouts"
+          },
+          {
+            "en": "a rip-off",
+            "fr": "une arnaque"
+          },
+          {
+            "en": "cut corners",
+            "fr": "rogner sur les coûts"
+          },
+          {
+            "en": "in the red",
+            "fr": "être dans le rouge, endetté"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : A short weekend trip won't ______.",
+        "tiles": [
+          "break",
+          "the",
+          "bank"
+        ],
+        "a": "break the bank",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : They traveled around Europe ______.",
+        "a": "on a shoestring budget",
+        "accept": [
+          "on a shoestring budget"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : For our anniversary, we decided to ______ on a nice hotel.",
+        "a": "splash out",
+        "accept": [
+          "splash out"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « cost an arm and a leg » signifie que quelque chose est très bon marché.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "Faux : cela signifie « coûter les yeux de la tête », être très cher."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « make ends meet » signifie gagner juste assez pour vivre.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "Vrai : « make ends meet » = joindre les deux bouts."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Cette voiture coûte les yeux de la tête.",
+        "a": "This car costs an arm and a leg.",
+        "accept": [
+          "this car costs an arm and a leg"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Nous devons nous serrer la ceinture ce mois-ci.",
+        "a": "We need to tighten our belts this month.",
+        "accept": [
+          "we need to tighten our belts this month"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ce restaurant est une vraie arnaque.",
+        "a": "That restaurant is a total rip-off.",
+        "accept": [
+          "that restaurant is a total rip-off",
+          "that restaurant is a total ripoff"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : L'entreprise rogne sur les coûts des matériaux.",
+        "a": "The company cuts corners on the materials.",
+        "accept": [
+          "the company cuts corners on the materials"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-e5",
+    "cat": "expressions",
+    "title": "Difficulty, Effort & Problems Idioms",
+    "subtitle": "Difficultés, efforts et problèmes",
+    "emoji": "🧗",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Cette leçon couvre 15 idiomes courants pour parler des difficultés, des efforts et des problèmes."
+      },
+      {
+        "t": "phrases",
+        "title": "Idiomes des difficultés & problèmes",
+        "items": [
+          {
+            "en": "bite off more than you can chew",
+            "fr": "Avoir les yeux plus gros que le ventre",
+            "note": "take on more than you can handle — He bit off more than he could chew with two jobs."
+          },
+          {
+            "en": "an uphill battle",
+            "fr": "Une bataille difficile",
+            "note": "a difficult struggle — Finding a job has been an uphill battle."
+          },
+          {
+            "en": "hit a wall",
+            "fr": "Se heurter à un mur",
+            "note": "reach an obstacle you can't get past — I hit a wall trying to solve this problem."
+          },
+          {
+            "en": "back to the drawing board",
+            "fr": "Retour à la case départ",
+            "note": "start planning again after a failure — The plan failed, so it's back to the drawing board."
+          },
+          {
+            "en": "a blessing in disguise",
+            "fr": "Un mal pour un bien",
+            "note": "something that seems bad but turns out to be good — Losing that job was a blessing in disguise."
+          },
+          {
+            "en": "between a rock and a hard place",
+            "fr": "Entre le marteau et l'enclume",
+            "note": "facing a very difficult choice — I'm between a rock and a hard place with this decision."
+          },
+          {
+            "en": "easier said than done",
+            "fr": "Plus facile à dire qu'à faire",
+            "note": "something that sounds easy but is hard to do — Quitting smoking is easier said than done."
+          },
+          {
+            "en": "no pain, no gain",
+            "fr": "On n'a rien sans rien",
+            "note": "you must work hard and suffer a little to succeed — No pain, no gain, keep training."
+          },
+          {
+            "en": "cross that bridge when we come to it",
+            "fr": "On verra le moment venu",
+            "note": "deal with a problem when it actually happens — We'll cross that bridge when we come to it."
+          },
+          {
+            "en": "get the ball rolling",
+            "fr": "Se mettre en route, démarrer",
+            "note": "start something — Let's get the ball rolling on this project."
+          },
+          {
+            "en": "hang by a thread",
+            "fr": "Ne tenir qu'à un fil",
+            "note": "be in a very risky or uncertain situation — His job is hanging by a thread."
+          },
+          {
+            "en": "in over your head",
+            "fr": "Dépassé par la situation",
+            "note": "dealing with something too difficult for you — He's in over his head with this project."
+          },
+          {
+            "en": "face the music",
+            "fr": "Assumer les conséquences",
+            "note": "accept the consequences of your actions — You'll have to face the music eventually."
+          },
+          {
+            "en": "every cloud has a silver lining",
+            "fr": "Après la pluie, le beau temps",
+            "note": "something good can come from a bad situation — Every cloud has a silver lining."
+          },
+          {
+            "en": "jump through hoops",
+            "fr": "Se plier en quatre",
+            "note": "go through a lot of difficult steps to get something — We had to jump through hoops to get the visa."
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque idiome à sa traduction française.",
+        "pairs": [
+          {
+            "en": "an uphill battle",
+            "fr": "une bataille difficile"
+          },
+          {
+            "en": "hit a wall",
+            "fr": "se heurter à un mur"
+          },
+          {
+            "en": "back to the drawing board",
+            "fr": "retour à la case départ"
+          },
+          {
+            "en": "a blessing in disguise",
+            "fr": "un mal pour un bien"
+          },
+          {
+            "en": "easier said than done",
+            "fr": "plus facile à dire qu'à faire"
+          },
+          {
+            "en": "face the music",
+            "fr": "assumer les conséquences"
+          },
+          {
+            "en": "in over your head",
+            "fr": "dépassé par la situation"
+          },
+          {
+            "en": "jump through hoops",
+            "fr": "se plier en quatre"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : Let's ______ on this project today.",
+        "tiles": [
+          "get",
+          "the",
+          "ball",
+          "rolling"
+        ],
+        "a": "get the ball rolling",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : I think I ______ by taking three courses at once.",
+        "a": "bit off more than I could chew",
+        "accept": [
+          "bit off more than i could chew"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : After the mistake, his job was ______.",
+        "a": "hanging by a thread",
+        "accept": [
+          "hanging by a thread"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « an uphill battle » signifie quelque chose de très facile.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "Faux : c'est une lutte difficile."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « every cloud has a silver lining » signifie qu'un mal peut apporter du bien.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "Vrai : après la pluie, le beau temps."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Trouver un travail a été une bataille difficile.",
+        "a": "Finding a job has been an uphill battle.",
+        "accept": [
+          "finding a job has been an uphill battle"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Arrêter de fumer est plus facile à dire qu'à faire.",
+        "a": "Quitting smoking is easier said than done.",
+        "accept": [
+          "quitting smoking is easier said than done"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Tu devras assumer les conséquences un jour ou l'autre.",
+        "a": "You'll have to face the music eventually.",
+        "accept": [
+          "you'll have to face the music eventually",
+          "you will have to face the music eventually"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Nous avons dû nous plier en quatre pour obtenir le visa.",
+        "a": "We had to jump through hoops to get the visa.",
+        "accept": [
+          "we had to jump through hoops to get the visa"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-e6",
+    "cat": "expressions",
+    "title": "Success, Failure & Opinions Idioms",
+    "subtitle": "Succès, échec et opinions",
+    "emoji": "🏆",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Cette leçon couvre 15 idiomes courants pour parler de la réussite, des opinions et de la façon de penser."
+      },
+      {
+        "t": "phrases",
+        "title": "Idiomes de la réussite & des opinions",
+        "items": [
+          {
+            "en": "hit the nail on the head",
+            "fr": "Mettre le doigt dessus",
+            "note": "describe exactly what is causing a situation — You hit the nail on the head with that comment."
+          },
+          {
+            "en": "make a name for yourself",
+            "fr": "Se faire un nom",
+            "note": "become well-known for something — She made a name for herself in the fashion industry."
+          },
+          {
+            "en": "go the extra mile",
+            "fr": "Faire un effort supplémentaire",
+            "note": "do more than what is expected — He always goes the extra mile for his clients."
+          },
+          {
+            "en": "in the same boat",
+            "fr": "Être logé à la même enseigne",
+            "note": "in the same difficult situation as someone else — We're all in the same boat."
+          },
+          {
+            "en": "think outside the box",
+            "fr": "Sortir des sentiers battus",
+            "note": "think creatively, in a new way — We need to think outside the box for this project."
+          },
+          {
+            "en": "the bigger picture",
+            "fr": "La vue d'ensemble",
+            "note": "the overall situation, not just the details — Let's focus on the bigger picture."
+          },
+          {
+            "en": "miss the boat",
+            "fr": "Rater le coche",
+            "note": "miss an opportunity — If you don't apply now, you'll miss the boat."
+          },
+          {
+            "en": "par for the course",
+            "fr": "La norme, monnaie courante",
+            "note": "normal, what you would expect — Delays are par for the course in this industry."
+          },
+          {
+            "en": "take something with a grain of salt",
+            "fr": "Prendre avec des pincettes",
+            "note": "not believe something completely — Take his advice with a grain of salt."
+          },
+          {
+            "en": "see eye to eye",
+            "fr": "Être sur la même longueur d'onde",
+            "note": "agree with someone — We don't always see eye to eye on this."
+          },
+          {
+            "en": "jump to conclusions",
+            "fr": "Tirer des conclusions hâtives",
+            "note": "decide something too quickly, without enough information — Don't jump to conclusions before you hear the facts."
+          },
+          {
+            "en": "a step in the right direction",
+            "fr": "Un pas dans la bonne direction",
+            "note": "a positive move toward success — This new policy is a step in the right direction."
+          },
+          {
+            "en": "beat around the bush",
+            "fr": "Tourner autour du pot",
+            "note": "avoid saying something directly — Stop beating around the bush and tell me the truth."
+          },
+          {
+            "en": "read between the lines",
+            "fr": "Lire entre les lignes",
+            "note": "understand the hidden meaning of something — You have to read between the lines with him."
+          },
+          {
+            "en": "food for thought",
+            "fr": "Matière à réflexion",
+            "note": "something worth thinking about seriously — That article gave me a lot of food for thought."
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque idiome à sa traduction française.",
+        "pairs": [
+          {
+            "en": "hit the nail on the head",
+            "fr": "mettre le doigt dessus"
+          },
+          {
+            "en": "go the extra mile",
+            "fr": "faire un effort supplémentaire"
+          },
+          {
+            "en": "think outside the box",
+            "fr": "sortir des sentiers battus"
+          },
+          {
+            "en": "miss the boat",
+            "fr": "rater le coche"
+          },
+          {
+            "en": "see eye to eye",
+            "fr": "être sur la même longueur d'onde"
+          },
+          {
+            "en": "jump to conclusions",
+            "fr": "tirer des conclusions hâtives"
+          },
+          {
+            "en": "beat around the bush",
+            "fr": "tourner autour du pot"
+          },
+          {
+            "en": "read between the lines",
+            "fr": "lire entre les lignes"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : That documentary gave me a lot of ______.",
+        "tiles": [
+          "food",
+          "for",
+          "thought"
+        ],
+        "a": "food for thought",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Stop focusing on the small details, look at ______.",
+        "a": "the bigger picture",
+        "accept": [
+          "the bigger picture"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : He wants to ______ in the tech industry.",
+        "a": "make a name for himself",
+        "accept": [
+          "make a name for himself"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « hit the nail on the head » signifie décrire exactement ce qui cause une situation.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "Vrai : « hit the nail on the head » = mettre le doigt dessus."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « jump to conclusions » signifie décider quelque chose trop vite.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "Vrai : « jump to conclusions » = tirer des conclusions hâtives."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Tu as mis le doigt dessus avec cette remarque.",
+        "a": "You hit the nail on the head with that comment.",
+        "accept": [
+          "you hit the nail on the head with that comment"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Concentrons-nous sur la vue d'ensemble.",
+        "a": "Let's focus on the bigger picture.",
+        "accept": [
+          "let's focus on the bigger picture",
+          "lets focus on the bigger picture"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Arrête de tourner autour du pot et dis-moi la vérité.",
+        "a": "Stop beating around the bush and tell me the truth.",
+        "accept": [
+          "stop beating around the bush and tell me the truth"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Il faut lire entre les lignes avec lui.",
+        "a": "You have to read between the lines with him.",
+        "accept": [
+          "you have to read between the lines with him"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-e7",
+    "cat": "expressions",
+    "title": "People & Relationships Idioms",
+    "subtitle": "Personnes et relations",
+    "emoji": "👥",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Cette leçon couvre 15 idiomes courants pour parler d'amitié, de famille et de relations."
+      },
+      {
+        "t": "phrases",
+        "title": "Idiomes des personnes & relations",
+        "items": [
+          {
+            "en": "a shoulder to cry on",
+            "fr": "Une épaule sur laquelle pleurer",
+            "note": "someone who comforts and supports you — She's always a shoulder to cry on."
+          },
+          {
+            "en": "birds of a feather flock together",
+            "fr": "Qui se ressemble s'assemble",
+            "note": "similar people tend to spend time together — They're best friends, birds of a feather flock together."
+          },
+          {
+            "en": "the apple of someone's eye",
+            "fr": "La prunelle de ses yeux",
+            "note": "someone's favorite, most cherished person — She's the apple of her father's eye."
+          },
+          {
+            "en": "get along with someone",
+            "fr": "Bien s'entendre avec",
+            "note": "have a good, friendly relationship with someone — I get along really well with my coworkers."
+          },
+          {
+            "en": "break the ice",
+            "fr": "Briser la glace",
+            "note": "make people feel more comfortable in a social situation — He told a joke to break the ice."
+          },
+          {
+            "en": "see someone's true colors",
+            "fr": "Découvrir la vraie nature de quelqu'un",
+            "note": "discover someone's real character — I finally saw his true colors."
+          },
+          {
+            "en": "a close-knit family",
+            "fr": "Une famille très unie",
+            "note": "a family that is emotionally very close — They're a close-knit family."
+          },
+          {
+            "en": "hit it off",
+            "fr": "Bien s'entendre dès le début",
+            "note": "quickly become friends with someone — We hit it off immediately."
+          },
+          {
+            "en": "burn bridges",
+            "fr": "Couper les ponts",
+            "note": "damage a relationship permanently — Don't burn bridges when you leave a job."
+          },
+          {
+            "en": "make up",
+            "fr": "Se réconcilier",
+            "note": "reconcile with someone after an argument — They had a fight but made up quickly."
+          },
+          {
+            "en": "have a soft spot for",
+            "fr": "Avoir un faible pour",
+            "note": "have special affection for someone or something — I have a soft spot for my little sister."
+          },
+          {
+            "en": "a fair-weather friend",
+            "fr": "Un ami des beaux jours seulement",
+            "note": "someone who is only a friend when things are going well — He turned out to be just a fair-weather friend."
+          },
+          {
+            "en": "two peas in a pod",
+            "fr": "Être comme les deux doigts de la main",
+            "note": "two people who are very similar and close — They're like two peas in a pod."
+          },
+          {
+            "en": "water under the bridge",
+            "fr": "C'est du passé",
+            "note": "a past problem that is no longer important — That argument is water under the bridge now."
+          },
+          {
+            "en": "stand someone up",
+            "fr": "Poser un lapin à quelqu'un",
+            "note": "fail to show up for a date or meeting with someone — He stood her up on their first date."
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque idiome à sa traduction française.",
+        "pairs": [
+          {
+            "en": "a shoulder to cry on",
+            "fr": "une épaule sur laquelle pleurer"
+          },
+          {
+            "en": "get along with someone",
+            "fr": "bien s'entendre avec"
+          },
+          {
+            "en": "break the ice",
+            "fr": "briser la glace"
+          },
+          {
+            "en": "hit it off",
+            "fr": "bien s'entendre dès le début"
+          },
+          {
+            "en": "burn bridges",
+            "fr": "couper les ponts"
+          },
+          {
+            "en": "make up",
+            "fr": "se réconcilier"
+          },
+          {
+            "en": "water under the bridge",
+            "fr": "c'est du passé"
+          },
+          {
+            "en": "stand someone up",
+            "fr": "poser un lapin à quelqu'un"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : They're ______, they help each other with everything.",
+        "tiles": [
+          "a",
+          "close-knit",
+          "family"
+        ],
+        "a": "a close-knit family",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Their youngest daughter is ______.",
+        "a": "the apple of her eye",
+        "accept": [
+          "the apple of her eye",
+          "the apple of his eye"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : I've always had ______ my grandmother.",
+        "a": "a soft spot for",
+        "accept": [
+          "a soft spot for"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « break the ice » signifie rendre une situation sociale plus confortable.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "Vrai : « break the ice » = briser la glace."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « burn bridges » signifie garder une bonne relation pour toujours.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "Faux : cela signifie couper les ponts, abîmer une relation définitivement."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je m'entends très bien avec mes collègues.",
+        "a": "I get along really well with my coworkers.",
+        "accept": [
+          "i get along really well with my coworkers",
+          "i get along well with my coworkers"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : J'ai finalement découvert sa vraie nature.",
+        "a": "I finally saw his true colors.",
+        "accept": [
+          "i finally saw his true colors",
+          "i finally saw his true colours"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ils se sont disputés mais se sont réconciliés rapidement.",
+        "a": "They had a fight but made up quickly.",
+        "accept": [
+          "they had a fight but made up quickly"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Cette dispute, c'est du passé maintenant.",
+        "a": "That argument is water under the bridge now.",
+        "accept": [
+          "that argument is water under the bridge now"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-e8",
+    "cat": "expressions",
+    "title": "Communication & Conversation Idioms",
+    "subtitle": "Communication et conversation",
+    "emoji": "💬",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Cette leçon couvre 15 idiomes courants pour parler de communication, de conversation et de secrets."
+      },
+      {
+        "t": "phrases",
+        "title": "Idiomes de la communication",
+        "items": [
+          {
+            "en": "get straight to the point",
+            "fr": "Aller droit au but",
+            "note": "say something directly, without delay — Let's get straight to the point."
+          },
+          {
+            "en": "talk behind someone's back",
+            "fr": "Parler dans le dos de quelqu'un",
+            "note": "say negative things about someone when they're not there — It's not nice to talk behind someone's back."
+          },
+          {
+            "en": "spill the beans",
+            "fr": "Vendre la mèche",
+            "note": "reveal a secret — Who spilled the beans about the surprise party?"
+          },
+          {
+            "en": "keep something under your hat",
+            "fr": "Garder ça pour soi",
+            "note": "keep something secret — Keep this under your hat for now."
+          },
+          {
+            "en": "put in a good word",
+            "fr": "Dire du bien de quelqu'un",
+            "note": "recommend someone positively to another person — Can you put in a good word for me?"
+          },
+          {
+            "en": "get a word in edgeways",
+            "fr": "Placer un mot",
+            "note": "manage to say something when others are talking a lot — He talks so much, I couldn't get a word in edgeways."
+          },
+          {
+            "en": "talk someone's ear off",
+            "fr": "Soûler quelqu'un de paroles",
+            "note": "talk too much to someone — She talked my ear off about her trip."
+          },
+          {
+            "en": "straight from the horse's mouth",
+            "fr": "De source sûre",
+            "note": "information from a reliable, direct source — I heard it straight from the horse's mouth."
+          },
+          {
+            "en": "beat a dead horse",
+            "fr": "Insister inutilement",
+            "note": "keep discussing something that is already settled — We're beating a dead horse."
+          },
+          {
+            "en": "drop a hint",
+            "fr": "Faire une allusion",
+            "note": "suggest something indirectly — She dropped a hint about her birthday."
+          },
+          {
+            "en": "on the same page",
+            "fr": "Être sur la même longueur d'onde",
+            "note": "having the same understanding or plan as someone — Let's make sure we're on the same page."
+          },
+          {
+            "en": "cut to the chase",
+            "fr": "Aller à l'essentiel",
+            "note": "get to the main point quickly, without unnecessary details — Let's cut to the chase, what do you want?"
+          },
+          {
+            "en": "sugarcoat something",
+            "fr": "Enjoliver, édulcorer",
+            "note": "make something unpleasant sound better than it really is — Don't sugarcoat it, just tell me the truth."
+          },
+          {
+            "en": "a slip of the tongue",
+            "fr": "Un lapsus",
+            "note": "an accidental verbal mistake — Calling her by the wrong name was just a slip of the tongue."
+          },
+          {
+            "en": "it goes without saying",
+            "fr": "Cela va sans dire",
+            "note": "something so obvious it doesn't need to be said — It goes without saying that honesty is important."
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque idiome à sa traduction française.",
+        "pairs": [
+          {
+            "en": "get straight to the point",
+            "fr": "aller droit au but"
+          },
+          {
+            "en": "spill the beans",
+            "fr": "vendre la mèche"
+          },
+          {
+            "en": "put in a good word",
+            "fr": "dire du bien de quelqu'un"
+          },
+          {
+            "en": "get a word in edgeways",
+            "fr": "placer un mot"
+          },
+          {
+            "en": "straight from the horse's mouth",
+            "fr": "de source sûre"
+          },
+          {
+            "en": "drop a hint",
+            "fr": "faire une allusion"
+          },
+          {
+            "en": "cut to the chase",
+            "fr": "aller à l'essentiel"
+          },
+          {
+            "en": "it goes without saying",
+            "fr": "cela va sans dire"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : Calling him by his brother's name was just ______.",
+        "tiles": [
+          "a",
+          "slip",
+          "of",
+          "the",
+          "tongue"
+        ],
+        "a": "a slip of the tongue",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : This is a secret, please ______.",
+        "a": "keep it under your hat",
+        "accept": [
+          "keep it under your hat"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Before we start the project, let's make sure we're ______.",
+        "a": "on the same page",
+        "accept": [
+          "on the same page"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « spill the beans » signifie garder parfaitement un secret.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "Faux : cela signifie révéler un secret, vendre la mèche."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « cut to the chase » signifie aller vite à l'essentiel.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "Vrai : « cut to the chase » = aller à l'essentiel."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Allons droit au but.",
+        "a": "Let's get straight to the point.",
+        "accept": [
+          "let's get straight to the point",
+          "lets get straight to the point"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Il parle tellement, je ne peux pas placer un mot.",
+        "a": "He talks so much, I can't get a word in edgeways.",
+        "accept": [
+          "he talks so much, i can't get a word in edgeways",
+          "he talks so much, i cannot get a word in edgeways"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je l'ai appris de source sûre.",
+        "a": "I heard it straight from the horse's mouth.",
+        "accept": [
+          "i heard it straight from the horse's mouth"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Cela va sans dire que l'honnêteté est importante.",
+        "a": "It goes without saying that honesty is important.",
+        "accept": [
+          "it goes without saying that honesty is important"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-e9",
+    "cat": "expressions",
+    "title": "Work & Business Idioms",
+    "subtitle": "Travail et affaires",
+    "emoji": "💼",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Cette leçon couvre 15 idiomes supplémentaires sur le travail et les affaires, dans la continuité des expressions du lieu de travail du niveau 1."
+      },
+      {
+        "t": "phrases",
+        "title": "Idiomes du travail & des affaires",
+        "items": [
+          {
+            "en": "learn the ropes",
+            "fr": "Apprendre les ficelles du métier",
+            "note": "learn how to do a new job — It took her a few weeks to learn the ropes."
+          },
+          {
+            "en": "climb the corporate ladder",
+            "fr": "Gravir les échelons",
+            "note": "advance step by step in your career — He's been climbing the corporate ladder for years."
+          },
+          {
+            "en": "a nine-to-five job",
+            "fr": "Un travail de 9h à 17h",
+            "note": "a standard, regular working schedule — She has a typical nine-to-five job."
+          },
+          {
+            "en": "get the sack",
+            "fr": "Se faire virer",
+            "note": "be fired from a job — He got the sack for being late too often."
+          },
+          {
+            "en": "land a job",
+            "fr": "Décrocher un emploi",
+            "note": "successfully get a job — She landed a great job after the interview."
+          },
+          {
+            "en": "put someone in the picture",
+            "fr": "Mettre au courant",
+            "note": "inform someone of the current situation — Can you put me in the picture about the project?"
+          },
+          {
+            "en": "get down to business",
+            "fr": "Passer aux choses sérieuses",
+            "note": "start working seriously — Let's stop chatting and get down to business."
+          },
+          {
+            "en": "on the ball",
+            "fr": "Être à la hauteur, réactif",
+            "note": "alert, quick to understand and act — She's always on the ball with deadlines."
+          },
+          {
+            "en": "pull your weight",
+            "fr": "Faire sa part du travail",
+            "note": "do your fair share of the work — Everyone needs to pull their weight on this project."
+          },
+          {
+            "en": "a rat race",
+            "fr": "La course effrénée au travail",
+            "note": "a stressful, highly competitive way of working — He wanted to leave the corporate rat race."
+          },
+          {
+            "en": "call the shots",
+            "fr": "Donner les ordres",
+            "note": "be in charge, make the decisions — The manager calls the shots around here."
+          },
+          {
+            "en": "bring something to the table",
+            "fr": "Apporter quelque chose de valeur",
+            "note": "offer something valuable to a project or discussion — She brings a lot of experience to the table."
+          },
+          {
+            "en": "get the green light",
+            "fr": "Avoir le feu vert",
+            "note": "receive approval to go ahead with something — We got the green light for the new project."
+          },
+          {
+            "en": "back to square one",
+            "fr": "Retour à la case départ",
+            "note": "starting over again after a failure — The client rejected the plan, so we're back to square one."
+          },
+          {
+            "en": "wear many hats",
+            "fr": "Porter plusieurs casquettes",
+            "note": "perform many different roles or jobs — In a small company, you often wear many hats."
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque idiome à sa traduction française.",
+        "pairs": [
+          {
+            "en": "learn the ropes",
+            "fr": "apprendre les ficelles du métier"
+          },
+          {
+            "en": "climb the corporate ladder",
+            "fr": "gravir les échelons"
+          },
+          {
+            "en": "get the sack",
+            "fr": "se faire virer"
+          },
+          {
+            "en": "land a job",
+            "fr": "décrocher un emploi"
+          },
+          {
+            "en": "pull your weight",
+            "fr": "faire sa part du travail"
+          },
+          {
+            "en": "call the shots",
+            "fr": "donner les ordres"
+          },
+          {
+            "en": "get the green light",
+            "fr": "avoir le feu vert"
+          },
+          {
+            "en": "back to square one",
+            "fr": "retour à la case départ"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : Let's stop the small talk and ______.",
+        "tiles": [
+          "get",
+          "down",
+          "to",
+          "business"
+        ],
+        "a": "get down to business",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : My father has always had ______ at the bank.",
+        "a": "a nine-to-five job",
+        "accept": [
+          "a nine-to-five job",
+          "a nine to five job"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : As the only manager, she ______ in the office.",
+        "a": "wears many hats",
+        "accept": [
+          "wears many hats"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « get the sack » signifie être promu.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "Faux : cela signifie se faire virer, être renvoyé."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « call the shots » signifie être aux commandes et prendre les décisions.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "Vrai : « call the shots » = donner les ordres."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Elle a décroché un excellent emploi après l'entretien.",
+        "a": "She landed a great job after the interview.",
+        "accept": [
+          "she landed a great job after the interview"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Tout le monde doit faire sa part du travail sur ce projet.",
+        "a": "Everyone needs to pull their weight on this project.",
+        "accept": [
+          "everyone needs to pull their weight on this project"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : C'est le directeur qui donne les ordres ici.",
+        "a": "The manager calls the shots around here.",
+        "accept": [
+          "the manager calls the shots around here"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Nous avons eu le feu vert pour le nouveau projet.",
+        "a": "We got the green light for the new project.",
+        "accept": [
+          "we got the green light for the new project"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-e10",
+    "cat": "expressions",
+    "title": "Luck, Weather & Misc Idioms",
+    "subtitle": "Chance, météo et divers",
+    "emoji": "🍀",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Cette dernière leçon d'expressions couvre 15 idiomes courants sur la chance, la météo et les situations difficiles en général, complétant la série de 150 idiomes du niveau 2."
+      },
+      {
+        "t": "phrases",
+        "title": "Idiomes de la chance & de la météo",
+        "items": [
+          {
+            "en": "a stroke of luck",
+            "fr": "Un coup de chance",
+            "note": "a lucky, unexpected event — Finding that job was a real stroke of luck."
+          },
+          {
+            "en": "as luck would have it",
+            "fr": "Par chance",
+            "note": "by chance — As luck would have it, I found my keys right away."
+          },
+          {
+            "en": "once bitten, twice shy",
+            "fr": "Chat échaudé craint l'eau froide",
+            "note": "cautious after a bad experience — I won't lend him money again, once bitten, twice shy."
+          },
+          {
+            "en": "when it rains, it pours",
+            "fr": "Un malheur n'arrive jamais seul",
+            "note": "bad things seem to happen all at once — When it rains, it pours."
+          },
+          {
+            "en": "under a cloud",
+            "fr": "Sous un nuage de suspicion",
+            "note": "suspected of having done something wrong — He left the company under a cloud."
+          },
+          {
+            "en": "a ray of sunshine",
+            "fr": "Un rayon de soleil",
+            "note": "someone or something that brings happiness — Her smile is a real ray of sunshine."
+          },
+          {
+            "en": "come rain or shine",
+            "fr": "Quoi qu'il arrive",
+            "note": "whatever happens, no matter the circumstances — We'll be there, come rain or shine."
+          },
+          {
+            "en": "steal someone's thunder",
+            "fr": "Voler la vedette",
+            "note": "take credit for someone else's achievement — She stole my thunder by announcing the news first."
+          },
+          {
+            "en": "every dog has its day",
+            "fr": "À chacun son heure de gloire",
+            "note": "everyone gets a chance to succeed eventually — Don't worry, every dog has its day."
+          },
+          {
+            "en": "the calm before the storm",
+            "fr": "Le calme avant la tempête",
+            "note": "a quiet period right before something difficult happens — This is the calm before the storm."
+          },
+          {
+            "en": "weather the storm",
+            "fr": "Surmonter la tempête",
+            "note": "get through a very difficult period — The company managed to weather the storm."
+          },
+          {
+            "en": "a drop in the ocean",
+            "fr": "Une goutte d'eau dans l'océan",
+            "note": "a very small amount compared to what is needed — This donation is just a drop in the ocean."
+          },
+          {
+            "en": "out of the woods",
+            "fr": "Tiré(e) d'affaire",
+            "note": "no longer in danger or difficulty — The patient is finally out of the woods."
+          },
+          {
+            "en": "once in a lifetime",
+            "fr": "Une fois dans une vie",
+            "note": "an experience that happens only once — Seeing the pyramids was a once-in-a-lifetime experience."
+          },
+          {
+            "en": "the best of both worlds",
+            "fr": "Le meilleur des deux mondes",
+            "note": "enjoying the advantages of two different things at the same time — Working from home gives her the best of both worlds."
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque idiome à sa traduction française.",
+        "pairs": [
+          {
+            "en": "a stroke of luck",
+            "fr": "un coup de chance"
+          },
+          {
+            "en": "as luck would have it",
+            "fr": "par chance"
+          },
+          {
+            "en": "under a cloud",
+            "fr": "sous un nuage de suspicion"
+          },
+          {
+            "en": "come rain or shine",
+            "fr": "quoi qu'il arrive"
+          },
+          {
+            "en": "steal someone's thunder",
+            "fr": "voler la vedette"
+          },
+          {
+            "en": "weather the storm",
+            "fr": "surmonter la tempête"
+          },
+          {
+            "en": "out of the woods",
+            "fr": "tiré(e) d'affaire"
+          },
+          {
+            "en": "the best of both worlds",
+            "fr": "le meilleur des deux mondes"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : My small donation felt like ______ compared to what's needed.",
+        "tiles": [
+          "a",
+          "drop",
+          "in",
+          "the",
+          "ocean"
+        ],
+        "a": "a drop in the ocean",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : My niece is such ______, always smiling.",
+        "a": "a ray of sunshine",
+        "accept": [
+          "a ray of sunshine"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Traveling to Antarctica was a ______ experience for them.",
+        "a": "once-in-a-lifetime",
+        "accept": [
+          "once-in-a-lifetime",
+          "once in a lifetime"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « under a cloud » signifie être félicité publiquement.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "Faux : cela signifie être sous un nuage de suspicion."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « the best of both worlds » signifie profiter des avantages de deux choses à la fois.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "Vrai : « the best of both worlds » = le meilleur des deux mondes."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Par chance, j'ai trouvé mes clés tout de suite.",
+        "a": "As luck would have it, I found my keys right away.",
+        "accept": [
+          "as luck would have it, i found my keys right away"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Nous serons là, quoi qu'il arrive.",
+        "a": "We'll be there, come rain or shine.",
+        "accept": [
+          "we'll be there, come rain or shine",
+          "we will be there, come rain or shine"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Elle m'a volé la vedette en annonçant la nouvelle en premier.",
+        "a": "She stole my thunder by announcing the news first.",
+        "accept": [
+          "she stole my thunder by announcing the news first"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Travailler de chez elle lui donne le meilleur des deux mondes.",
+        "a": "Working from home gives her the best of both worlds.",
+        "accept": [
+          "working from home gives her the best of both worlds"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l2-r1",
+    "cat": "reading",
+    "title": "Moving to a New Apartment",
+    "subtitle": "Comprendre un texte et retenir les expressions",
+    "emoji": "🏠",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Lis ce texte français, puis entraîne-toi à retenir les expressions anglaises qui correspondent. Traduis les idées, pas mot à mot."
+      },
+      {
+        "t": "h",
+        "text": "📖 Déménager dans un nouvel appartement"
+      },
+      {
+        "t": "p",
+        "text": "Samedi dernier, Claire a emménagé dans son nouvel appartement. Le matin, deux amis sont venus l'aider à porter les cartons. Ensemble, ils ont placé le canapé près de la fenêtre et poussé la bibliothèque contre le mur."
+      },
+      {
+        "t": "p",
+        "text": "Dans l'après-midi, la plupart des meubles étaient en place, mais Claire ne trouvait plus le carton contenant ses affaires de cuisine. Elle l'a finalement trouvé derrière l'armoire, caché sous des couvertures."
+      },
+      {
+        "t": "p",
+        "text": "Ce soir-là, Claire s'est assise sur son nouveau canapé. Elle avait l'intention d'acheter des rideaux et une petite table pour la cuisine le week-end suivant. Pour l'instant, elle était simplement heureuse d'être installée."
+      },
+      {
+        "t": "h",
+        "text": "Expressions anglaises à retenir"
+      },
+      {
+        "t": "phrases",
+        "title": "Expressions",
+        "items": [
+          {
+            "en": "move into an apartment",
+            "fr": "emménager dans un appartement"
+          },
+          {
+            "en": "help someone carry something",
+            "fr": "aider quelqu'un à porter quelque chose"
+          },
+          {
+            "en": "push something against the wall",
+            "fr": "pousser quelque chose contre le mur"
+          },
+          {
+            "en": "be nowhere to be seen",
+            "fr": "être introuvable"
+          },
+          {
+            "en": "be hidden under...",
+            "fr": "être caché(e) sous..."
+          },
+          {
+            "en": "for now",
+            "fr": "pour l'instant"
+          },
+          {
+            "en": "be settled in",
+            "fr": "être installé(e)"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Vocabulaire"
+      },
+      {
+        "t": "phrases",
+        "title": "Les mots de la maison",
+        "items": [
+          {
+            "en": "sofa",
+            "fr": "canapé"
+          },
+          {
+            "en": "bookshelf",
+            "fr": "bibliothèque"
+          },
+          {
+            "en": "wardrobe",
+            "fr": "armoire"
+          },
+          {
+            "en": "curtains",
+            "fr": "rideaux"
+          },
+          {
+            "en": "furniture",
+            "fr": "meubles"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "type",
+        "q": "Traduis en anglais : emménager dans un appartement",
+        "a": "move into an apartment",
+        "accept": [
+          "move into an apartment",
+          "to move into an apartment"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : aider quelqu'un à porter quelque chose",
+        "a": "help someone carry something",
+        "accept": [
+          "help someone carry something",
+          "to help someone carry something"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : pour l'instant",
+        "a": "for now",
+        "accept": [
+          "for now"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Comment dit-on « canapé » en anglais ?",
+        "opts": [
+          "wardrobe",
+          "sofa",
+          "curtains"
+        ],
+        "a": 1,
+        "x": "canapé = sofa"
+      },
+      {
+        "t": "choice",
+        "q": "Comment dit-on « armoire » en anglais ?",
+        "opts": [
+          "bookshelf",
+          "wardrobe",
+          "furniture"
+        ],
+        "a": 1,
+        "x": "armoire = wardrobe"
+      },
+      {
+        "t": "match",
+        "q": "Associe chaque mot anglais à sa traduction.",
+        "pairs": [
+          {
+            "en": "sofa",
+            "fr": "canapé"
+          },
+          {
+            "en": "bookshelf",
+            "fr": "bibliothèque"
+          },
+          {
+            "en": "curtains",
+            "fr": "rideaux"
+          },
+          {
+            "en": "furniture",
+            "fr": "meubles"
+          }
+        ],
+        "x": ""
+      }
+    ]
+  }
+]

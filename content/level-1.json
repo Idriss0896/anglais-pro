@@ -1,0 +1,6098 @@
+[
+  {
+    "id": "l1-g1",
+    "cat": "grammar",
+    "title": "Greetings & Basic Phrases",
+    "subtitle": "Saluer, se présenter et poser des questions",
+    "emoji": "👋",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu vas apprendre à construire des questions de base, à y répondre brièvement, à saluer selon le moment de la journée et à utiliser les phrases courantes pour rencontrer des gens, dire au revoir et être poli(e)."
+      },
+      {
+        "t": "h",
+        "text": "A. Former des questions"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Type",
+          "Structure",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "Yes/No avec BE",
+            "Am/Is/Are + sujet + ... ?",
+            "Are you sure?"
+          ],
+          [
+            "Yes/No avec DO",
+            "Do/Does + sujet + verbe ?",
+            "Do you understand?"
+          ],
+          [
+            "Wh- question",
+            "Mot interrogatif + am/is/are/do/does + sujet + (verbe) ?",
+            "How are you?"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Réponses courtes (Yes/No)"
+      },
+      {
+        "t": "p",
+        "text": "En anglais, on ne répond pas juste « Yes » ou « No », cela peut paraître impoli : on répète l'auxiliaire (am/is/are, do/does) pour faire une réponse courte et polie."
+      },
+      {
+        "t": "phrases",
+        "title": "Les réponses courtes",
+        "items": [
+          {
+            "en": "Yes, I am. / No, I'm not.",
+            "fr": "Oui, je le suis. / Non, je ne le suis pas."
+          },
+          {
+            "en": "Yes, he is. / No, she isn't.",
+            "fr": "Oui, il/elle l'est. / Non, il/elle ne l'est pas."
+          },
+          {
+            "en": "Yes, I do. / No, I don't.",
+            "fr": "Oui, c'est le cas. / Non, ce n'est pas le cas."
+          },
+          {
+            "en": "Yes, she does. / No, he doesn't.",
+            "fr": "Oui, c'est le cas. / Non, ce n'est pas le cas."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Saluer selon le moment"
+      },
+      {
+        "t": "phrases",
+        "title": "Les salutations",
+        "items": [
+          {
+            "en": "Good morning",
+            "fr": "Bonjour (le matin)"
+          },
+          {
+            "en": "Good afternoon",
+            "fr": "Bon après-midi / Bonjour (l'après-midi)"
+          },
+          {
+            "en": "Good evening",
+            "fr": "Bonsoir"
+          },
+          {
+            "en": "Good night",
+            "fr": "Bonne nuit (seulement pour se quitter / dormir)"
+          }
+        ]
+      },
+      {
+        "t": "tip",
+        "text": "« Good night » ne s'utilise jamais pour saluer en arrivant, seulement en partant ou en allant dormir."
+      },
+      {
+        "t": "h",
+        "text": "D. Saluer quelqu'un"
+      },
+      {
+        "t": "phrases",
+        "title": "Demander des nouvelles",
+        "items": [
+          {
+            "en": "How are you?",
+            "fr": "Comment vas-tu ?"
+          },
+          {
+            "en": "How do you feel?",
+            "fr": "Comment te sens-tu ?"
+          },
+          {
+            "en": "What's going on?",
+            "fr": "Qu'est-ce qui se passe ?"
+          },
+          {
+            "en": "What's up?",
+            "fr": "Quoi de neuf ?"
+          },
+          {
+            "en": "Are you sure?",
+            "fr": "Tu es sûr(e) ?"
+          },
+          {
+            "en": "Are you okay?",
+            "fr": "Ça va ?"
+          },
+          {
+            "en": "Nice to meet you.",
+            "fr": "Enchanté(e)."
+          },
+          {
+            "en": "Long time no see!",
+            "fr": "Ça fait longtemps !"
+          },
+          {
+            "en": "Welcome.",
+            "fr": "Bienvenue."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "E. Dire au revoir"
+      },
+      {
+        "t": "phrases",
+        "title": "Les adieux",
+        "items": [
+          {
+            "en": "See you later.",
+            "fr": "À plus tard."
+          },
+          {
+            "en": "See you soon.",
+            "fr": "À bientôt."
+          },
+          {
+            "en": "Take care.",
+            "fr": "Prends soin de toi."
+          },
+          {
+            "en": "Have a good day.",
+            "fr": "Bonne journée."
+          },
+          {
+            "en": "Bye for now.",
+            "fr": "À plus, pour l'instant."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "F. Être poli(e)"
+      },
+      {
+        "t": "phrases",
+        "title": "La politesse",
+        "items": [
+          {
+            "en": "Excuse me.",
+            "fr": "Excusez-moi."
+          },
+          {
+            "en": "I'm sorry.",
+            "fr": "Je suis désolé(e)."
+          },
+          {
+            "en": "Please.",
+            "fr": "S'il te/vous plaît."
+          },
+          {
+            "en": "Thank you / Thanks.",
+            "fr": "Merci."
+          },
+          {
+            "en": "You're welcome.",
+            "fr": "Je t'en prie / De rien."
+          },
+          {
+            "en": "No problem.",
+            "fr": "Pas de problème."
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "Quand tu rencontres quelqu'un pour la première fois, tu dis :",
+        "opts": [
+          "Take care",
+          "Nice to meet you",
+          "No problem"
+        ],
+        "a": 1,
+        "x": "« Nice to meet you » se dit à la première rencontre."
+      },
+      {
+        "t": "choice",
+        "q": "Quand quelqu'un te remercie, tu peux répondre :",
+        "opts": [
+          "Please",
+          "You're welcome",
+          "Are you sure?"
+        ],
+        "a": 1,
+        "x": "On répond « You're welcome » à un remerciement."
+      },
+      {
+        "t": "choice",
+        "q": "Pour demander des nouvelles de façon informelle, tu dis :",
+        "opts": [
+          "What's up?",
+          "Excuse me.",
+          "Welcome."
+        ],
+        "a": 0,
+        "x": "« What's up? » est la façon informelle de demander comment ça va."
+      },
+      {
+        "t": "choice",
+        "q": "Pour t'excuser, tu dis :",
+        "opts": [
+          "Thank you",
+          "I'm sorry",
+          "Have a good day"
+        ],
+        "a": 1,
+        "x": "« I'm sorry » sert à s'excuser."
+      },
+      {
+        "t": "choice",
+        "q": "Pour attirer poliment l'attention de quelqu'un, tu dis :",
+        "opts": [
+          "Excuse me",
+          "See you later",
+          "No problem"
+        ],
+        "a": 0,
+        "x": "« Excuse me » sert à attirer poliment l'attention."
+      },
+      {
+        "t": "choice",
+        "q": "Tu arrives à une fête le soir, tu dis :",
+        "opts": [
+          "Good night",
+          "Good evening",
+          "Good afternoon"
+        ],
+        "a": 1,
+        "x": "Le soir on salue avec « Good evening » ; « Good night » ne se dit qu'en partant."
+      },
+      {
+        "t": "type",
+        "q": "Complète la réponse courte : Are you tired? – Yes, ______.",
+        "a": "Yes, I am.",
+        "accept": [
+          "Yes, I am",
+          "yes i am"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète la réponse courte : Does she work here? – No, ______.",
+        "a": "No, she doesn't.",
+        "accept": [
+          "No, she doesn't",
+          "no she doesn't"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète la réponse courte : Do you understand? – Yes, ______.",
+        "a": "Yes, I do.",
+        "accept": [
+          "Yes, I do",
+          "yes i do"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Tu arrives au travail à 8 h. Tu dis :",
+        "a": "Good morning",
+        "accept": [
+          "good morning"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Tu rencontres un ami à 15 h. Tu dis :",
+        "a": "Good afternoon",
+        "accept": [
+          "good afternoon"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Tu vas te coucher. Tu dis :",
+        "a": "Good night",
+        "accept": [
+          "good night"
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Traduis : Merci beaucoup pour ton aide.",
+        "tiles": [
+          "Thank",
+          "you",
+          "very",
+          "much",
+          "for",
+          "your",
+          "help"
+        ],
+        "a": "Thank you very much for your help",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Comment vas-tu aujourd'hui ?",
+        "a": "How are you today?",
+        "accept": [
+          "How are you today",
+          "how are you today",
+          "how are you"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l1-g2",
+    "cat": "grammar",
+    "title": "Prepositions IN / ON / AT",
+    "subtitle": "Parler du temps et du lieu",
+    "emoji": "📍",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Les prépositions in, on et at sont de petits mots très importants. Cette leçon t'explique quand utiliser chacun, pour le temps et pour le lieu, ainsi que les cas particuliers qui piègent souvent les francophones."
+      },
+      {
+        "t": "h",
+        "text": "A. Prépositions de temps"
+      },
+      {
+        "t": "p",
+        "text": "Imagine un zoom : AT pour un moment précis, ON pour un jour précis, IN pour une période plus large."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Préposition",
+          "Usage",
+          "Exemples"
+        ],
+        "rows": [
+          [
+            "AT",
+            "heures précises",
+            "at 6 o'clock, at noon, at midnight, at night"
+          ],
+          [
+            "ON",
+            "jours et dates",
+            "on Monday, on May 3rd, on my birthday"
+          ],
+          [
+            "IN",
+            "mois, années, saisons",
+            "in June, in 2026, in summer, in the morning"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Prépositions de lieu"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Préposition",
+          "Usage",
+          "Exemples"
+        ],
+        "rows": [
+          [
+            "AT",
+            "point ou endroit précis",
+            "at the door, at school, at the bus stop, at home"
+          ],
+          [
+            "ON",
+            "surface ou rue/étage",
+            "on the table, on the wall, on Main Street"
+          ],
+          [
+            "IN",
+            "espace fermé ou zone plus grande",
+            "in the room, in the box, in Mali, in the car"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Cas particuliers avec le temps"
+      },
+      {
+        "t": "p",
+        "text": "Ces expressions ne suivent pas toujours les règles simples : apprends-les comme des expressions figées."
+      },
+      {
+        "t": "phrases",
+        "title": "Expressions figées",
+        "items": [
+          {
+            "en": "On time",
+            "fr": "À l'heure (pile)"
+          },
+          {
+            "en": "In time",
+            "fr": "À temps (avant qu'il ne soit trop tard)"
+          },
+          {
+            "en": "At Christmas / At Easter",
+            "fr": "À Noël / à Pâques (exception : AT)"
+          },
+          {
+            "en": "At night",
+            "fr": "La nuit (en général)"
+          },
+          {
+            "en": "In the night",
+            "fr": "Pendant la nuit (un moment précis)"
+          },
+          {
+            "en": "In the end",
+            "fr": "Finalement / à la fin"
+          },
+          {
+            "en": "In the meantime",
+            "fr": "En attendant / entre-temps"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "The children are playing ______ the garden.",
+        "opts": [
+          "in",
+          "on",
+          "at"
+        ],
+        "a": 0,
+        "x": "Le jardin est un espace fermé → IN the garden."
+      },
+      {
+        "t": "choice",
+        "q": "She was born ______ 1998.",
+        "opts": [
+          "in",
+          "on",
+          "at"
+        ],
+        "a": 0,
+        "x": "Les années prennent IN."
+      },
+      {
+        "t": "choice",
+        "q": "I'll see you ______ Monday.",
+        "opts": [
+          "in",
+          "on",
+          "at"
+        ],
+        "a": 1,
+        "x": "Les jours prennent ON."
+      },
+      {
+        "t": "choice",
+        "q": "We arrived ______ midnight.",
+        "opts": [
+          "in",
+          "on",
+          "at"
+        ],
+        "a": 2,
+        "x": "Une heure précise prend AT."
+      },
+      {
+        "t": "type",
+        "q": "Complète : The bus always arrives ______ time, it's very reliable. (on / in)",
+        "a": "on",
+        "accept": [
+          "on time"
+        ],
+        "x": "« On time » = à l'heure (ponctuel)."
+      },
+      {
+        "t": "type",
+        "q": "Complète : We left early and arrived ______ time for the meeting. (on / in)",
+        "a": "in",
+        "accept": [
+          "in time"
+        ],
+        "x": "« In time » = à temps (avant qu'il ne soit trop tard)."
+      },
+      {
+        "t": "type",
+        "q": "Complète : My family gets together ______ Christmas every year. (at / on / in)",
+        "a": "at",
+        "accept": [
+          "at Christmas"
+        ],
+        "x": "Exception : les fêtes religieuses prennent AT."
+      },
+      {
+        "t": "type",
+        "q": "Complète : I couldn't sleep and woke up twice ______ the night. (at / in)",
+        "a": "in",
+        "accept": [
+          "in the night"
+        ],
+        "x": "« In the night » = pendant la nuit (un moment précis)."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Le train est arrivé à l'heure.",
+        "a": "The train arrived on time.",
+        "accept": [
+          "The train arrived on time",
+          "the train arrived on time"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Nous sommes arrivés à temps pour le film.",
+        "a": "We arrived in time for the film.",
+        "accept": [
+          "We arrived in time for the film",
+          "we arrived in time for the film"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Il habite en France.",
+        "a": "He lives in France.",
+        "accept": [
+          "He lives in France",
+          "he lives in france"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Les clés sont sur la table.",
+        "a": "The keys are on the table.",
+        "accept": [
+          "The keys are on the table",
+          "the keys are on the table"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Nous sommes nés en 1995.",
+        "a": "We were born in 1995.",
+        "accept": [
+          "We were born in 1995",
+          "we were born in 1995"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : On se retrouve à Noël.",
+        "a": "We'll meet at Christmas.",
+        "accept": [
+          "We'll meet at Christmas",
+          "We will meet at Christmas",
+          "we'll meet at christmas"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l1-g3",
+    "cat": "grammar",
+    "title": "Common Mistakes",
+    "subtitle": "Éviter les erreurs typiques des francophones",
+    "emoji": "⚠️",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Le français et l'anglais se ressemblent parfois, ce qui provoque des erreurs fréquentes. Cette leçon montre les plus courantes, pourquoi elles arrivent, et la forme correcte à utiliser."
+      },
+      {
+        "t": "h",
+        "text": "Erreurs fréquentes et corrections"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Erreur",
+          "Correction",
+          "Pourquoi"
+        ],
+        "rows": [
+          [
+            "I am agree.",
+            "I agree.",
+            "« Agree » est un verbe, pas d'auxiliaire."
+          ],
+          [
+            "I have 25 years.",
+            "I am 25 years old.",
+            "L'âge se dit avec « to be »."
+          ],
+          [
+            "I have hunger.",
+            "I am hungry.",
+            "Les sensations se disent avec « to be + adjectif »."
+          ],
+          [
+            "I have hot.",
+            "I am hot.",
+            "Avoir chaud/froid → to be hot/cold."
+          ],
+          [
+            "I am here since two years.",
+            "I have been here for two years.",
+            "Present perfect + for."
+          ],
+          [
+            "She is boring today.",
+            "She is bored today.",
+            "-ing = qui cause ; -ed = ce qu'on ressent."
+          ],
+          [
+            "Depends of the weather.",
+            "Depends on the weather.",
+            "« Depend » est suivi de « on »."
+          ],
+          [
+            "Listen me.",
+            "Listen to me.",
+            "« Listen » exige « to »."
+          ],
+          [
+            "I did a mistake.",
+            "I made a mistake.",
+            "On dit « make a mistake »."
+          ],
+          [
+            "Actually, I am at home.",
+            "Currently, I am at home.",
+            "« Actually » = en fait (faux ami)."
+          ]
+        ]
+      },
+      {
+        "t": "tip",
+        "text": "Trois pièges clés : l'âge et les sensations se disent avec « to be » ; « depend on » et « listen to » exigent leur préposition ; « actually » veut dire « en fait », pas « actuellement »."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "I (made / did) a big mistake yesterday.",
+        "opts": [
+          "made",
+          "did"
+        ],
+        "a": 0,
+        "x": "On dit « make a mistake », pas « do a mistake »."
+      },
+      {
+        "t": "choice",
+        "q": "I have lived here (since / for) three years.",
+        "opts": [
+          "since",
+          "for"
+        ],
+        "a": 1,
+        "x": "Une durée se dit avec « for »."
+      },
+      {
+        "t": "choice",
+        "q": "This movie is really (boring / bored).",
+        "opts": [
+          "boring",
+          "bored"
+        ],
+        "a": 0,
+        "x": "Le film cause l'ennui → « boring »."
+      },
+      {
+        "t": "choice",
+        "q": "We go to work (on foot / by foot) every day.",
+        "opts": [
+          "on foot",
+          "by foot"
+        ],
+        "a": 0,
+        "x": "On dit « on foot », pas « by foot »."
+      },
+      {
+        "t": "choice",
+        "q": "Can you explain the lesson (me / to me)?",
+        "opts": [
+          "me",
+          "to me"
+        ],
+        "a": 1,
+        "x": "« Explain » exige « to » : explain something to someone."
+      },
+      {
+        "t": "choice",
+        "q": "She told me (a good news / some good news) about her job.",
+        "opts": [
+          "a good news",
+          "some good news"
+        ],
+        "a": 1,
+        "x": "« News » est indénombrable : pas de « a »."
+      },
+      {
+        "t": "type",
+        "q": "Corrige : I have 30 years.",
+        "a": "I am 30 years old.",
+        "accept": [
+          "I am 30 years old",
+          "i am 30 years old"
+        ],
+        "x": "L'âge se dit avec « to be »."
+      },
+      {
+        "t": "type",
+        "q": "Corrige : Listen me, please.",
+        "a": "Listen to me, please.",
+        "accept": [
+          "Listen to me, please",
+          "listen to me please"
+        ],
+        "x": "« Listen » exige « to »."
+      },
+      {
+        "t": "type",
+        "q": "Corrige : He is married with a teacher.",
+        "a": "He is married to a teacher.",
+        "accept": [
+          "He is married to a teacher",
+          "he is married to a teacher"
+        ],
+        "x": "« Married » est suivi de « to », pas « with »."
+      },
+      {
+        "t": "type",
+        "q": "Corrige : It depends of the price.",
+        "a": "It depends on the price.",
+        "accept": [
+          "It depends on the price",
+          "it depends on the price"
+        ],
+        "x": "« Depend » est toujours suivi de « on »."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : J'ai vingt ans.",
+        "a": "I am twenty years old.",
+        "accept": [
+          "I am twenty years old",
+          "I'm twenty years old",
+          "i am twenty years old"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je suis d'accord avec toi.",
+        "a": "I agree with you.",
+        "accept": [
+          "I agree with you",
+          "i agree with you"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : J'ai faim, on mange ?",
+        "a": "I am hungry, shall we eat?",
+        "accept": [
+          "I am hungry, shall we eat?",
+          "I'm hungry, shall we eat?",
+          "i am hungry shall we eat"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« I have hunger. » est-il grammaticalement correct ?",
+        "opts": [
+          "True (correct)",
+          "False (incorrect)"
+        ],
+        "a": 1,
+        "x": "Incorrect : on dit « I am hungry »."
+      }
+    ]
+  },
+  {
+    "id": "l1-g4",
+    "cat": "grammar",
+    "title": "Subject Pronouns & Simple Present",
+    "subtitle": "Qui fait l'action ? Affirmatif, négatif, interrogatif",
+    "emoji": "🔁",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Avant de bien utiliser les verbes, tu dois savoir qui chaque pronom sujet représente. Cette leçon commence par les pronoms sujets, puis montre comment le présent simple — utilisé pour les habitudes, les routines, les vérités générales et les horaires — se forme à l'affirmatif, au négatif et à l'interrogatif."
+      },
+      {
+        "t": "h",
+        "text": "A. Les pronoms sujets"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Pronom",
+          "Il/Elle représente",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "I",
+            "la personne qui parle",
+            "I work in Bamako."
+          ],
+          [
+            "You",
+            "la personne à qui on parle",
+            "You speak English well."
+          ],
+          [
+            "He",
+            "un homme / animal mâle",
+            "He is my brother."
+          ],
+          [
+            "She",
+            "une femme / animal femelle",
+            "She works at the bank."
+          ],
+          [
+            "It",
+            "une chose, un animal, une idée",
+            "It is a good idea."
+          ],
+          [
+            "We",
+            "celui qui parle + d'autres",
+            "We live in the same city."
+          ],
+          [
+            "They",
+            "plusieurs personnes/animaux/choses",
+            "They work together every day."
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Former le présent simple"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Forme",
+          "Structure",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "Affirmative",
+            "Sujet + verbe (on ajoute -s/-es pour he/she/it)",
+            "She works every day."
+          ],
+          [
+            "Négative",
+            "Sujet + don't / doesn't + verbe",
+            "She doesn't work on Sunday."
+          ],
+          [
+            "Interrogative",
+            "Do / Does + sujet + verbe ?",
+            "Does she work on Sunday?"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Règles d'orthographe (he / she / it)"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Type de verbe",
+          "Règle",
+          "Exemples"
+        ],
+        "rows": [
+          [
+            "La plupart",
+            "ajouter -s",
+            "work → works, live → lives"
+          ],
+          [
+            "-o, -ch, -sh, -ss, -x",
+            "ajouter -es",
+            "go → goes, watch → watches, wash → washes"
+          ],
+          [
+            "Consonne + -y",
+            "y devient -ies",
+            "study → studies, cry → cries"
+          ],
+          [
+            "Voyelle + -y",
+            "ajouter -s seulement",
+            "play → plays, say → says"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Expressions de fréquence"
+      },
+      {
+        "t": "phrases",
+        "title": "À quelle fréquence ?",
+        "items": [
+          {
+            "en": "Always",
+            "fr": "Toujours"
+          },
+          {
+            "en": "Usually",
+            "fr": "D'habitude"
+          },
+          {
+            "en": "Often",
+            "fr": "Souvent"
+          },
+          {
+            "en": "Sometimes",
+            "fr": "Parfois"
+          },
+          {
+            "en": "Rarely / Seldom",
+            "fr": "Rarement"
+          },
+          {
+            "en": "Never",
+            "fr": "Jamais"
+          },
+          {
+            "en": "Every day / week",
+            "fr": "Chaque jour / semaine"
+          },
+          {
+            "en": "On Mondays",
+            "fr": "Le lundi (chaque lundi)"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "______ speaks French very well. (une personne de sexe masculin, déjà mentionnée)",
+        "opts": [
+          "He",
+          "She",
+          "It"
+        ],
+        "a": 0,
+        "x": "Une personne de sexe masculin → He."
+      },
+      {
+        "t": "choice",
+        "q": "______ live in the same house. (celui qui parle + d'autres personnes)",
+        "opts": [
+          "We",
+          "They",
+          "You"
+        ],
+        "a": 0,
+        "x": "« Moi + d'autres » → We."
+      },
+      {
+        "t": "choice",
+        "q": "______ is broken. (une chose)",
+        "opts": [
+          "He",
+          "It",
+          "They"
+        ],
+        "a": 1,
+        "x": "Une chose → It."
+      },
+      {
+        "t": "choice",
+        "q": "She ______ (work) in a bank.",
+        "opts": [
+          "work",
+          "works"
+        ],
+        "a": 1,
+        "x": "Avec he/she/it, on ajoute -s."
+      },
+      {
+        "t": "choice",
+        "q": "He ______ (go) to work by bus every day.",
+        "opts": [
+          "go",
+          "goes"
+        ],
+        "a": 1,
+        "x": "Les verbes en -o prennent -es : go → goes."
+      },
+      {
+        "t": "type",
+        "q": "Complète : My sister ______ (study) at the university.",
+        "a": "studies",
+        "accept": [
+          "studies"
+        ],
+        "x": "Consonne + -y → -ies : study → studies."
+      },
+      {
+        "t": "type",
+        "q": "Complète : The shop ______ (open) at 9 o'clock.",
+        "a": "opens",
+        "accept": [
+          "opens"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Mets à la forme négative : I work on Sunday.",
+        "a": "I don't work on Sunday.",
+        "accept": [
+          "I don't work on Sunday",
+          "I do not work on Sunday",
+          "i don't work on sunday"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Mets à la forme négative : She likes coffee.",
+        "a": "She doesn't like coffee.",
+        "accept": [
+          "She doesn't like coffee",
+          "She does not like coffee",
+          "she doesn't like coffee"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Mets à la forme négative : They live in Dakar.",
+        "a": "They don't live in Dakar.",
+        "accept": [
+          "They don't live in Dakar",
+          "They do not live in Dakar",
+          "they don't live in dakar"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Transforme en question : You work every day.",
+        "a": "Do you work every day?",
+        "accept": [
+          "Do you work every day?",
+          "do you work every day"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Transforme en question : She has two children.",
+        "a": "Does she have two children?",
+        "accept": [
+          "Does she have two children?",
+          "does she have two children"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Transforme en question : He goes to the gym.",
+        "a": "Does he go to the gym?",
+        "accept": [
+          "Does he go to the gym?",
+          "does he go to the gym"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Transforme en question : She speaks English well.",
+        "a": "Does she speak English well?",
+        "accept": [
+          "Does she speak English well?",
+          "does she speak english well"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l1-g5",
+    "cat": "grammar",
+    "title": "BE or HAVE",
+    "subtitle": "Choisir entre être et avoir",
+    "emoji": "⚖️",
+    "theory": [
+      {
+        "t": "p",
+        "text": "BE et HAVE se choisissent selon le sens : BE décrit un état ou un sentiment (âge, humeur, état physique), HAVE décrit une possession, une obligation ou une expérience (un objet, un symptôme, un rendez-vous...)."
+      },
+      {
+        "t": "h",
+        "text": "A. Comment choisir entre BE et HAVE"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Verbe",
+          "Conjugaison",
+          "Usage"
+        ],
+        "rows": [
+          [
+            "BE",
+            "am / is / are",
+            "un état ou un sentiment : I am · he/she/it is · you/we/they are"
+          ],
+          [
+            "HAVE",
+            "have / has",
+            "une possession, une obligation, une expérience : I/you/we/they have · he/she/it has"
+          ]
+        ]
+      },
+      {
+        "t": "tip",
+        "text": "Test rapide : si tu peux dire « I feel... » (je me sens...), c'est BE. Si tu peux dire « I possess/own... » (je possède), c'est HAVE."
+      },
+      {
+        "t": "h",
+        "text": "B. Expressions avec BE"
+      },
+      {
+        "t": "phrases",
+        "title": "BE expressions",
+        "items": [
+          {
+            "en": "I am sick.",
+            "fr": "Je suis malade."
+          },
+          {
+            "en": "I am tired.",
+            "fr": "Je suis fatigué(e)."
+          },
+          {
+            "en": "I am hungry.",
+            "fr": "J'ai faim."
+          },
+          {
+            "en": "I am thirsty.",
+            "fr": "J'ai soif."
+          },
+          {
+            "en": "I am late.",
+            "fr": "Je suis en retard."
+          },
+          {
+            "en": "I am busy.",
+            "fr": "Je suis occupé(e)."
+          },
+          {
+            "en": "I am afraid.",
+            "fr": "J'ai peur."
+          },
+          {
+            "en": "I am happy.",
+            "fr": "Je suis heureux/heureuse."
+          },
+          {
+            "en": "I am right.",
+            "fr": "J'ai raison."
+          },
+          {
+            "en": "I am wrong.",
+            "fr": "J'ai tort."
+          },
+          {
+            "en": "I am in a hurry.",
+            "fr": "Je suis pressé(e)."
+          },
+          {
+            "en": "I am on time.",
+            "fr": "Je suis à l'heure."
+          },
+          {
+            "en": "I am at home.",
+            "fr": "Je suis à la maison."
+          },
+          {
+            "en": "I am from Mali.",
+            "fr": "Je viens du Mali."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Expressions avec HAVE"
+      },
+      {
+        "t": "phrases",
+        "title": "HAVE expressions",
+        "items": [
+          {
+            "en": "I have a headache.",
+            "fr": "J'ai mal à la tête."
+          },
+          {
+            "en": "I have a cold.",
+            "fr": "Je suis enrhumé(e)."
+          },
+          {
+            "en": "I have a fever.",
+            "fr": "J'ai de la fièvre."
+          },
+          {
+            "en": "I have a question.",
+            "fr": "J'ai une question."
+          },
+          {
+            "en": "I have time.",
+            "fr": "J'ai le temps."
+          },
+          {
+            "en": "I have money.",
+            "fr": "J'ai de l'argent."
+          },
+          {
+            "en": "I have a job.",
+            "fr": "J'ai un travail / un emploi."
+          },
+          {
+            "en": "I have a lot of work.",
+            "fr": "J'ai beaucoup de travail."
+          },
+          {
+            "en": "I have an appointment.",
+            "fr": "J'ai un rendez-vous."
+          },
+          {
+            "en": "I have breakfast.",
+            "fr": "Je prends mon petit-déjeuner."
+          },
+          {
+            "en": "I have lunch.",
+            "fr": "Je déjeune."
+          },
+          {
+            "en": "I have dinner.",
+            "fr": "Je dîne."
+          },
+          {
+            "en": "I have a shower.",
+            "fr": "Je prends une douche."
+          },
+          {
+            "en": "I have fun.",
+            "fr": "Je m'amuse."
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "type",
+        "q": "Complète avec BE ou HAVE : I ______ very nervous before exams. (be)",
+        "a": "am",
+        "accept": [
+          "am"
+        ],
+        "x": "« Nervous » est un état → BE. Sujet « I » → am."
+      },
+      {
+        "t": "type",
+        "q": "Complète avec BE ou HAVE : She ______ a lot of things to do today. (have)",
+        "a": "has",
+        "accept": [
+          "has"
+        ],
+        "x": "« Things to do » = possession → HAVE. Sujet « she » → has."
+      },
+      {
+        "t": "choice",
+        "q": "Complète : My brother ______ a new job. (have)",
+        "opts": [
+          "have",
+          "has"
+        ],
+        "a": 1,
+        "x": "« a new job » = possession → HAVE, et « my brother » = he → has."
+      },
+      {
+        "t": "type",
+        "q": "Complète avec BE ou HAVE : We ______ on time for the meeting. (be)",
+        "a": "are",
+        "accept": [
+          "are"
+        ],
+        "x": "« On time » est un état → BE. Sujet « we » → are."
+      },
+      {
+        "t": "type",
+        "q": "Complète avec BE ou HAVE : They ______ very excited about the trip. (be)",
+        "a": "are",
+        "accept": [
+          "are"
+        ],
+        "x": "« Excited » est un sentiment → BE."
+      },
+      {
+        "t": "type",
+        "q": "Complète avec BE ou HAVE : He ______ very careful when he drives. (be)",
+        "a": "is",
+        "accept": [
+          "is"
+        ],
+        "x": "« Careful » est un état → BE. Sujet « he » → is."
+      },
+      {
+        "t": "type",
+        "q": "Complète avec BE ou HAVE : Sarah ______ at work right now. (be)",
+        "a": "is",
+        "accept": [
+          "is"
+        ],
+        "x": "« At work » = localisation → BE."
+      },
+      {
+        "t": "type",
+        "q": "Mets à la forme négative : She has enough time.",
+        "a": "She doesn't have enough time.",
+        "accept": [
+          "She doesn't have enough time",
+          "She does not have enough time",
+          "she doesn't have enough time"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Mets à la forme négative : I am available today.",
+        "a": "I'm not available today.",
+        "accept": [
+          "I'm not available today",
+          "I am not available today",
+          "i am not available today"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Transforme en question : You are tired.",
+        "a": "Are you tired?",
+        "accept": [
+          "Are you tired?",
+          "are you tired"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Transforme en question : She has an appointment.",
+        "a": "Does she have an appointment?",
+        "accept": [
+          "Does she have an appointment?",
+          "does she have an appointment"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Transforme en question : They are ready.",
+        "a": "Are they ready?",
+        "accept": [
+          "Are they ready?",
+          "are they ready"
+        ],
+        "x": ""
+      },
+      {
+        "t": "match",
+        "q": "Associe chaque expression à sa traduction.",
+        "pairs": [
+          {
+            "en": "I am hungry",
+            "fr": "J'ai faim"
+          },
+          {
+            "en": "I am late",
+            "fr": "Je suis en retard"
+          },
+          {
+            "en": "I have a headache",
+            "fr": "J'ai mal à la tête"
+          },
+          {
+            "en": "I have a question",
+            "fr": "J'ai une question"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : J'ai soif.",
+        "a": "I am thirsty.",
+        "accept": [
+          "I am thirsty",
+          "I'm thirsty",
+          "i am thirsty"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l1-v1",
+    "cat": "vocabulary",
+    "title": "Numbers",
+    "subtitle": "Compter, ordonner et calculer en anglais",
+    "emoji": "🔢",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu apprends à compter en anglais (nombres cardinaux), à parler d'ordre ou de position (nombres ordinaux), et le vocabulaire des pourcentages et des calculs simples. Entraîne-toi à lire chaque nombre à voix haute."
+      },
+      {
+        "t": "h",
+        "text": "A. Les nombres cardinaux (compter)"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Nombre",
+          "English",
+          "French"
+        ],
+        "rows": [
+          [
+            "0",
+            "zero",
+            "zéro"
+          ],
+          [
+            "1",
+            "one",
+            "un"
+          ],
+          [
+            "2",
+            "two",
+            "deux"
+          ],
+          [
+            "3",
+            "three",
+            "trois"
+          ],
+          [
+            "4",
+            "four",
+            "quatre"
+          ],
+          [
+            "5",
+            "five",
+            "cinq"
+          ],
+          [
+            "6",
+            "six",
+            "six"
+          ],
+          [
+            "7",
+            "seven",
+            "sept"
+          ],
+          [
+            "8",
+            "eight",
+            "huit"
+          ],
+          [
+            "9",
+            "nine",
+            "neuf"
+          ],
+          [
+            "10",
+            "ten",
+            "dix"
+          ],
+          [
+            "11",
+            "eleven",
+            "onze"
+          ],
+          [
+            "12",
+            "twelve",
+            "douze"
+          ],
+          [
+            "13",
+            "thirteen",
+            "treize"
+          ],
+          [
+            "14",
+            "fourteen",
+            "quatorze"
+          ],
+          [
+            "15",
+            "fifteen",
+            "quinze"
+          ],
+          [
+            "16",
+            "sixteen",
+            "seize"
+          ],
+          [
+            "17",
+            "seventeen",
+            "dix-sept"
+          ],
+          [
+            "18",
+            "eighteen",
+            "dix-huit"
+          ],
+          [
+            "19",
+            "nineteen",
+            "dix-neuf"
+          ],
+          [
+            "20",
+            "twenty",
+            "vingt"
+          ]
+        ]
+      },
+      {
+        "t": "table",
+        "head": [
+          "Nombre",
+          "English",
+          "French"
+        ],
+        "rows": [
+          [
+            "30",
+            "thirty",
+            "trente"
+          ],
+          [
+            "40",
+            "forty",
+            "quarante"
+          ],
+          [
+            "50",
+            "fifty",
+            "cinquante"
+          ],
+          [
+            "60",
+            "sixty",
+            "soixante"
+          ],
+          [
+            "70",
+            "seventy",
+            "soixante-dix"
+          ],
+          [
+            "80",
+            "eighty",
+            "quatre-vingts"
+          ],
+          [
+            "90",
+            "ninety",
+            "quatre-vingt-dix"
+          ],
+          [
+            "100",
+            "one hundred",
+            "cent"
+          ],
+          [
+            "1,000",
+            "one thousand",
+            "mille"
+          ],
+          [
+            "1,000,000",
+            "one million",
+            "un million"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Les nombres ordinaux (ordre / position)"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Ordinal",
+          "English",
+          "French"
+        ],
+        "rows": [
+          [
+            "1st",
+            "first",
+            "premier"
+          ],
+          [
+            "2nd",
+            "second",
+            "deuxième"
+          ],
+          [
+            "3rd",
+            "third",
+            "troisième"
+          ],
+          [
+            "4th",
+            "fourth",
+            "quatrième"
+          ],
+          [
+            "5th",
+            "fifth",
+            "cinquième"
+          ],
+          [
+            "6th",
+            "sixth",
+            "sixième"
+          ],
+          [
+            "7th",
+            "seventh",
+            "septième"
+          ],
+          [
+            "8th",
+            "eighth",
+            "huitième"
+          ],
+          [
+            "9th",
+            "ninth",
+            "neuvième"
+          ],
+          [
+            "10th",
+            "tenth",
+            "dixième"
+          ],
+          [
+            "11th",
+            "eleventh",
+            "onzième"
+          ],
+          [
+            "12th",
+            "twelfth",
+            "douzième"
+          ],
+          [
+            "13th",
+            "thirteenth",
+            "treizième"
+          ],
+          [
+            "14th",
+            "fourteenth",
+            "quatorzième"
+          ],
+          [
+            "15th",
+            "fifteenth",
+            "quinzième"
+          ],
+          [
+            "20th",
+            "twentieth",
+            "vingtième"
+          ],
+          [
+            "30th",
+            "thirtieth",
+            "trentième"
+          ],
+          [
+            "100th",
+            "hundredth",
+            "centième"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Les nombres dans des phrases"
+      },
+      {
+        "t": "phrases",
+        "title": "À retenir",
+        "items": [
+          {
+            "en": "January is the first month of the year.",
+            "fr": "Janvier est le premier mois de l'année."
+          },
+          {
+            "en": "She came second in the competition.",
+            "fr": "Elle est arrivée deuxième à la compétition."
+          },
+          {
+            "en": "I have three brothers and two sisters.",
+            "fr": "J'ai trois frères et deux sœurs."
+          },
+          {
+            "en": "There are twenty students in my class.",
+            "fr": "Il y a vingt élèves dans ma classe."
+          },
+          {
+            "en": "He lives on the fourth floor.",
+            "fr": "Il habite au quatrième étage."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Pourcentages & vocabulaire des maths"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Mot",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "Number (n.)",
+            "Write the number on the board.",
+            "Nombre"
+          ],
+          [
+            "Percent / % (n.)",
+            "Fifty percent of the students passed the exam.",
+            "Pourcent"
+          ],
+          [
+            "Half (n.)",
+            "I ate half of the cake.",
+            "Moitié"
+          ],
+          [
+            "Quarter (n.)",
+            "Please wait a quarter of an hour.",
+            "Quart"
+          ],
+          [
+            "Plus / +",
+            "Two plus two equals four.",
+            "Plus"
+          ],
+          [
+            "Minus / −",
+            "Ten minus three equals seven.",
+            "Moins"
+          ],
+          [
+            "Multiply / ×",
+            "Four multiplied by three equals twelve.",
+            "Multiplier"
+          ],
+          [
+            "Divide / ÷",
+            "Ten divided by two equals five.",
+            "Diviser"
+          ],
+          [
+            "Equals / =",
+            "Five plus five equals ten.",
+            "Égaler / faire"
+          ],
+          [
+            "Add (v.)",
+            "Add these two numbers together.",
+            "Additionner"
+          ],
+          [
+            "Subtract (v.)",
+            "Subtract five from ten.",
+            "Soustraire"
+          ],
+          [
+            "Total (n.)",
+            "What's the total, please?",
+            "Total"
+          ],
+          [
+            "Sum (n.)",
+            "The sum of 4 and 6 is 10.",
+            "Somme"
+          ],
+          [
+            "Average (n.)",
+            "The average price is 20 dollars.",
+            "Moyenne"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "E. Lire les grands nombres"
+      },
+      {
+        "t": "tip",
+        "text": "On utilise « and » entre les centaines et le reste du nombre : one hundred and twenty-eight."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Nombre",
+          "En toutes lettres (anglais)",
+          "Français"
+        ],
+        "rows": [
+          [
+            "47",
+            "forty-seven",
+            "quarante-sept"
+          ],
+          [
+            "128",
+            "one hundred and twenty-eight",
+            "cent vingt-huit"
+          ],
+          [
+            "365",
+            "three hundred and sixty-five",
+            "trois cent soixante-cinq"
+          ],
+          [
+            "1,234",
+            "one thousand, two hundred and thirty-four",
+            "mille deux cent trente-quatre"
+          ],
+          [
+            "2,026",
+            "two thousand and twenty-six",
+            "deux mille vingt-six"
+          ],
+          [
+            "15,780",
+            "fifteen thousand, seven hundred and eighty",
+            "quinze mille sept cent quatre-vingts"
+          ],
+          [
+            "100,000",
+            "one hundred thousand",
+            "cent mille"
+          ],
+          [
+            "3,500,000",
+            "three million, five hundred thousand",
+            "trois millions cinq cent mille"
+          ]
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque mot anglais à sa traduction française.",
+        "pairs": [
+          {
+            "en": "twelve",
+            "fr": "douze"
+          },
+          {
+            "en": "quarter",
+            "fr": "quart"
+          },
+          {
+            "en": "hundred",
+            "fr": "cent"
+          },
+          {
+            "en": "fifth",
+            "fr": "cinquième"
+          },
+          {
+            "en": "divide",
+            "fr": "diviser"
+          },
+          {
+            "en": "average",
+            "fr": "moyenne"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Écris le nombre en toutes lettres : 7",
+        "a": "seven",
+        "accept": [
+          "seven"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Écris le nombre en toutes lettres : 15",
+        "a": "fifteen",
+        "accept": [
+          "fifteen"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Écris le nombre en toutes lettres : 47",
+        "a": "forty-seven",
+        "accept": [
+          "forty seven"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Écris le nombre en toutes lettres : 100",
+        "a": "one hundred",
+        "accept": [
+          "one hundred"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Écris le nombre en toutes lettres : 156",
+        "a": "one hundred and fifty-six",
+        "accept": [
+          "one hundred and fifty six"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Écris le nombre en toutes lettres : 1,000",
+        "a": "one thousand",
+        "accept": [
+          "one thousand"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Ten ___ five equals fifteen.",
+        "a": "plus",
+        "accept": [
+          "plus"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Ten ___ by two equals five.",
+        "a": "divided",
+        "accept": [
+          "divided"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Twenty ___ eight equals twelve.",
+        "a": "minus",
+        "accept": [
+          "minus"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : January is the ___ (1) month of the year.",
+        "a": "first",
+        "accept": [
+          "first"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : December is the ___ (12) month of the year.",
+        "a": "twelfth",
+        "accept": [
+          "twelfth"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : J'ai vingt-cinq ans.",
+        "a": "I am twenty-five years old.",
+        "accept": [
+          "i am twenty five years old",
+          "i am twenty-five years old"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Dix plus dix égale vingt.",
+        "a": "Ten plus ten equals twenty.",
+        "accept": [
+          "ten plus ten equals twenty"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l1-v2",
+    "cat": "vocabulary",
+    "title": "Days, Months & Time",
+    "subtitle": "Le calendrier et l'heure",
+    "emoji": "📅",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu apprends les jours de la semaine, les mois de l'année, et comment dire l'heure en anglais : donner les heures, poser des questions sur l'heure et t'entraîner avec des exemples concrets."
+      },
+      {
+        "t": "h",
+        "text": "A. Les jours de la semaine"
+      },
+      {
+        "t": "table",
+        "head": [
+          "English",
+          "French"
+        ],
+        "rows": [
+          [
+            "Monday",
+            "lundi"
+          ],
+          [
+            "Tuesday",
+            "mardi"
+          ],
+          [
+            "Wednesday",
+            "mercredi"
+          ],
+          [
+            "Thursday",
+            "jeudi"
+          ],
+          [
+            "Friday",
+            "vendredi"
+          ],
+          [
+            "Saturday",
+            "samedi"
+          ],
+          [
+            "Sunday",
+            "dimanche"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Les mois de l'année"
+      },
+      {
+        "t": "table",
+        "head": [
+          "English",
+          "French"
+        ],
+        "rows": [
+          [
+            "January",
+            "janvier"
+          ],
+          [
+            "February",
+            "février"
+          ],
+          [
+            "March",
+            "mars"
+          ],
+          [
+            "April",
+            "avril"
+          ],
+          [
+            "May",
+            "mai"
+          ],
+          [
+            "June",
+            "juin"
+          ],
+          [
+            "July",
+            "juillet"
+          ],
+          [
+            "August",
+            "août"
+          ],
+          [
+            "September",
+            "septembre"
+          ],
+          [
+            "October",
+            "octobre"
+          ],
+          [
+            "November",
+            "novembre"
+          ],
+          [
+            "December",
+            "décembre"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Dates & périodes de temps"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Mot",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "Year (n.)",
+            "I moved to Bamako last year.",
+            "Année"
+          ],
+          [
+            "Month (n.)",
+            "My birthday is next month.",
+            "Mois"
+          ],
+          [
+            "Week (n.)",
+            "I work five days a week.",
+            "Semaine"
+          ],
+          [
+            "Day (n.)",
+            "Have a nice day!",
+            "Jour / journée"
+          ],
+          [
+            "Hour (n.)",
+            "The meeting lasted one hour.",
+            "Heure"
+          ],
+          [
+            "Minute (n.)",
+            "Wait a minute, please.",
+            "Minute"
+          ],
+          [
+            "Today (adv.)",
+            "What's the date today?",
+            "Aujourd'hui"
+          ],
+          [
+            "Tomorrow (adv.)",
+            "See you tomorrow.",
+            "Demain"
+          ],
+          [
+            "Yesterday (adv.)",
+            "I called her yesterday.",
+            "Hier"
+          ],
+          [
+            "Date (n.)",
+            "What's the date of the meeting?",
+            "Date"
+          ],
+          [
+            "Weekend (n.)",
+            "I'm free this weekend.",
+            "Week-end"
+          ],
+          [
+            "Morning (n.)",
+            "Good morning!",
+            "Matin"
+          ],
+          [
+            "Afternoon (n.)",
+            "See you this afternoon.",
+            "Après-midi"
+          ],
+          [
+            "Evening (n.)",
+            "Good evening!",
+            "Soir"
+          ],
+          [
+            "Night (n.)",
+            "Good night!",
+            "Nuit"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Dire l'heure"
+      },
+      {
+        "t": "tip",
+        "text": "Après la demie, l'anglais compte à rebours vers l'heure suivante avec « to » (ex. 3:40 = twenty to four), un peu comme « moins » en français."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Heure",
+          "Comment le dire",
+          "Français"
+        ],
+        "rows": [
+          [
+            "3:00",
+            "It's three o'clock.",
+            "Il est trois heures."
+          ],
+          [
+            "3:05",
+            "It's five past three.",
+            "Il est trois heures cinq."
+          ],
+          [
+            "3:10",
+            "It's ten past three.",
+            "Il est trois heures dix."
+          ],
+          [
+            "3:15",
+            "It's quarter past three. / It's three fifteen.",
+            "Il est trois heures et quart."
+          ],
+          [
+            "3:20",
+            "It's twenty past three.",
+            "Il est trois heures vingt."
+          ],
+          [
+            "3:25",
+            "It's twenty-five past three.",
+            "Il est trois heures vingt-cinq."
+          ],
+          [
+            "3:30",
+            "It's half past three. / It's three thirty.",
+            "Il est trois heures et demie."
+          ],
+          [
+            "3:35",
+            "It's twenty-five to four.",
+            "Il est quatre heures moins vingt-cinq."
+          ],
+          [
+            "3:40",
+            "It's twenty to four.",
+            "Il est quatre heures moins vingt."
+          ],
+          [
+            "3:45",
+            "It's quarter to four.",
+            "Il est quatre heures moins le quart."
+          ],
+          [
+            "3:50",
+            "It's ten to four.",
+            "Il est quatre heures moins dix."
+          ],
+          [
+            "3:55",
+            "It's five to four.",
+            "Il est quatre heures moins cinq."
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "E. Questions sur l'heure"
+      },
+      {
+        "t": "phrases",
+        "title": "À retenir",
+        "items": [
+          {
+            "en": "What time is it?",
+            "fr": "Quelle heure est-il ?"
+          },
+          {
+            "en": "What's the time?",
+            "fr": "Quelle heure est-il ?"
+          },
+          {
+            "en": "Do you have the time?",
+            "fr": "Avez-vous l'heure ?"
+          },
+          {
+            "en": "Could you tell me the time, please?",
+            "fr": "Pourriez-vous me dire l'heure, s'il vous plaît ?"
+          },
+          {
+            "en": "What time does it start?",
+            "fr": "À quelle heure ça commence ?"
+          },
+          {
+            "en": "At what time...?",
+            "fr": "À quelle heure ... ?"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "F. Exercice : donner l'heure"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Heure",
+          "English",
+          "Français"
+        ],
+        "rows": [
+          [
+            "2:05",
+            "It's five past two.",
+            "Il est deux heures cinq."
+          ],
+          [
+            "4:15",
+            "It's quarter past four.",
+            "Il est quatre heures et quart."
+          ],
+          [
+            "6:30",
+            "It's half past six.",
+            "Il est six heures et demie."
+          ],
+          [
+            "8:45",
+            "It's quarter to nine.",
+            "Il est neuf heures moins le quart."
+          ],
+          [
+            "11:50",
+            "It's ten to twelve.",
+            "Il est midi moins dix."
+          ]
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque mot anglais à sa traduction française.",
+        "pairs": [
+          {
+            "en": "Wednesday",
+            "fr": "mercredi"
+          },
+          {
+            "en": "August",
+            "fr": "août"
+          },
+          {
+            "en": "yesterday",
+            "fr": "hier"
+          },
+          {
+            "en": "afternoon",
+            "fr": "après-midi"
+          },
+          {
+            "en": "week",
+            "fr": "semaine"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Remets les jours de la semaine dans l'ordre, en commençant par lundi.",
+        "tiles": [
+          "Saturday",
+          "Monday",
+          "Thursday",
+          "Sunday",
+          "Tuesday",
+          "Friday",
+          "Wednesday"
+        ],
+        "a": "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Écris l'heure en toutes lettres : 1:05",
+        "a": "It's five past one.",
+        "accept": [
+          "it's five past one",
+          "its five past one"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Écris l'heure en toutes lettres : 2:15",
+        "a": "It's quarter past two.",
+        "accept": [
+          "it's quarter past two",
+          "its quarter past two"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Écris l'heure en toutes lettres : 5:30",
+        "a": "It's half past five.",
+        "accept": [
+          "it's half past five",
+          "its half past five"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Écris l'heure en toutes lettres : 7:40",
+        "a": "It's twenty to eight.",
+        "accept": [
+          "it's twenty to eight",
+          "its twenty to eight"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Écris l'heure en toutes lettres : 9:55",
+        "a": "It's five to ten.",
+        "accept": [
+          "it's five to ten",
+          "its five to ten"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : It's ___ five. That means it's 5:15.",
+        "a": "quarter past",
+        "accept": [
+          "quarter past"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : December is the last ___ of the year.",
+        "a": "month",
+        "accept": [
+          "month"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : I'm free this ___, let's meet on Saturday.",
+        "a": "weekend",
+        "accept": [
+          "weekend"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Nous sommes lundi aujourd'hui.",
+        "a": "Today is Monday.",
+        "accept": [
+          "today is monday",
+          "it's monday today",
+          "it is monday today"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Mon anniversaire est en juin.",
+        "a": "My birthday is in June.",
+        "accept": [
+          "my birthday is in june"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Il est quatre heures et demie.",
+        "a": "It's half past four.",
+        "accept": [
+          "it's half past four",
+          "its half past four"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Il est cinq heures moins le quart.",
+        "a": "It's quarter to five.",
+        "accept": [
+          "it's quarter to five",
+          "its quarter to five"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l1-v3",
+    "cat": "vocabulary",
+    "title": "Seasons & Weather",
+    "subtitle": "Parler de la météo et des saisons",
+    "emoji": "🌦️",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu apprends les quatre saisons et le vocabulaire nécessaire pour décrire la météo et la température."
+      },
+      {
+        "t": "h",
+        "text": "A. Les quatre saisons"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Mot",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "Spring (n.)",
+            "Flowers bloom in spring.",
+            "Printemps"
+          ],
+          [
+            "Summer (n.)",
+            "It's very hot in summer.",
+            "Été"
+          ],
+          [
+            "Autumn / Fall (n.)",
+            "Leaves turn orange in autumn.",
+            "Automne"
+          ],
+          [
+            "Winter (n.)",
+            "It's cold and dark in winter.",
+            "Hiver"
+          ],
+          [
+            "Rainy season (n.)",
+            "It rains a lot during the rainy season.",
+            "Saison des pluies"
+          ],
+          [
+            "Dry season (n.)",
+            "It's very dusty during the dry season.",
+            "Saison sèche"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Parler de la météo"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Mot",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "Weather (n.)",
+            "What's the weather like today?",
+            "Météo / temps"
+          ],
+          [
+            "Sunny (adj.)",
+            "It's sunny today.",
+            "Ensoleillé(e)"
+          ],
+          [
+            "Cloudy (adj.)",
+            "It's cloudy this morning.",
+            "Nuageux/-euse"
+          ],
+          [
+            "Rainy (adj.)",
+            "It's very rainy in June.",
+            "Pluvieux/-euse"
+          ],
+          [
+            "Windy (adj.)",
+            "It's very windy today.",
+            "Venteux/-euse"
+          ],
+          [
+            "Hot (adj.)",
+            "It's very hot in summer.",
+            "Chaud(e)"
+          ],
+          [
+            "Cold (adj.)",
+            "It's cold in winter.",
+            "Froid(e)"
+          ],
+          [
+            "Warm (adj.)",
+            "The water is warm.",
+            "Tiède / chaud(e)"
+          ],
+          [
+            "Cool (adj.)",
+            "The evening is cool.",
+            "Frais / fraîche"
+          ],
+          [
+            "Humid (adj.)",
+            "It's very humid during the rainy season.",
+            "Humide"
+          ],
+          [
+            "Storm (n.)",
+            "A storm is coming.",
+            "Tempête / orage"
+          ],
+          [
+            "Rain (n.)",
+            "The rain stopped an hour ago.",
+            "Pluie"
+          ],
+          [
+            "Sun (n.)",
+            "The sun is shining.",
+            "Soleil"
+          ],
+          [
+            "Cloud (n.)",
+            "There's a big cloud in the sky.",
+            "Nuage"
+          ],
+          [
+            "Temperature (n.)",
+            "The temperature is 30 degrees.",
+            "Température"
+          ],
+          [
+            "Degree (n.)",
+            "It's 25 degrees today.",
+            "Degré"
+          ]
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque mot anglais à sa traduction française.",
+        "pairs": [
+          {
+            "en": "sunny",
+            "fr": "ensoleillé"
+          },
+          {
+            "en": "cloudy",
+            "fr": "nuageux"
+          },
+          {
+            "en": "cold",
+            "fr": "froid"
+          },
+          {
+            "en": "storm",
+            "fr": "tempête"
+          },
+          {
+            "en": "humid",
+            "fr": "humide"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "In winter, the weather is usually ...",
+        "opts": [
+          "hot",
+          "cold"
+        ],
+        "a": 1,
+        "x": "En hiver, il fait généralement froid."
+      },
+      {
+        "t": "choice",
+        "q": "When it's ..., you need an umbrella.",
+        "opts": [
+          "sunny",
+          "rainy"
+        ],
+        "a": 1,
+        "x": "Quand il pleut, il faut un parapluie."
+      },
+      {
+        "t": "choice",
+        "q": "Leaves fall from the trees in ...",
+        "opts": [
+          "spring",
+          "autumn"
+        ],
+        "a": 1,
+        "x": "Les feuilles tombent des arbres en automne."
+      },
+      {
+        "t": "choice",
+        "q": "A ... has strong wind and heavy rain.",
+        "opts": [
+          "storm",
+          "cloud"
+        ],
+        "a": 0,
+        "x": "Une tempête a un vent fort et une forte pluie."
+      },
+      {
+        "t": "choice",
+        "q": "When there is a lot of moisture in the air, it's ...",
+        "opts": [
+          "humid",
+          "dry"
+        ],
+        "a": 0,
+        "x": "Beaucoup d'humidité dans l'air = humide."
+      },
+      {
+        "t": "type",
+        "q": "Complète : It's very ___ today, take an umbrella!",
+        "a": "rainy",
+        "accept": [
+          "rainy"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : In summer, it's usually very ___ here.",
+        "a": "hot",
+        "accept": [
+          "hot"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : The temperature is thirty ___ today.",
+        "a": "degrees",
+        "accept": [
+          "degrees"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Hold your hat, it's really ___ outside!",
+        "a": "windy",
+        "accept": [
+          "windy"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : The rainy ___ starts in June.",
+        "a": "season",
+        "accept": [
+          "season"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Il fait très chaud aujourd'hui.",
+        "a": "It's very hot today.",
+        "accept": [
+          "it's very hot today",
+          "it is very hot today"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Il pleut beaucoup pendant la saison des pluies.",
+        "a": "It rains a lot during the rainy season.",
+        "accept": [
+          "it rains a lot during the rainy season"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : C'est nuageux ce matin.",
+        "a": "It's cloudy this morning.",
+        "accept": [
+          "it's cloudy this morning",
+          "it is cloudy this morning"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l1-v4",
+    "cat": "vocabulary",
+    "title": "The Family",
+    "subtitle": "Parler de la famille et des relations",
+    "emoji": "👨‍👩‍👧‍👦",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu apprends les mots utilisés pour parler des membres de la famille et des situations familiales (mariage, belle-famille, et plus encore)."
+      },
+      {
+        "t": "h",
+        "text": "A. La famille proche"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Mot",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "Father (n.)",
+            "My father works as a teacher.",
+            "Père"
+          ],
+          [
+            "Mother (n.)",
+            "My mother cooks very well.",
+            "Mère"
+          ],
+          [
+            "Parents (n.)",
+            "My parents live in Mali.",
+            "Parents"
+          ],
+          [
+            "Brother (n.)",
+            "I have one brother.",
+            "Frère"
+          ],
+          [
+            "Sister (n.)",
+            "My sister is younger than me.",
+            "Sœur"
+          ],
+          [
+            "Son (n.)",
+            "Their son is five years old.",
+            "Fils"
+          ],
+          [
+            "Daughter (n.)",
+            "Their daughter goes to school.",
+            "Fille"
+          ],
+          [
+            "Husband (n.)",
+            "Her husband works abroad.",
+            "Mari"
+          ],
+          [
+            "Wife (n.)",
+            "His wife is a nurse.",
+            "Épouse / femme"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. La famille élargie"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Mot",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "Grandfather (n.)",
+            "My grandfather tells great stories.",
+            "Grand-père"
+          ],
+          [
+            "Grandmother (n.)",
+            "My grandmother lives with us.",
+            "Grand-mère"
+          ],
+          [
+            "Uncle (n.)",
+            "My uncle visits every year.",
+            "Oncle"
+          ],
+          [
+            "Aunt (n.)",
+            "My aunt lives in Abidjan.",
+            "Tante"
+          ],
+          [
+            "Cousin (n.)",
+            "My cousin is my best friend.",
+            "Cousin(e)"
+          ],
+          [
+            "Nephew (n.)",
+            "My nephew is very smart.",
+            "Neveu"
+          ],
+          [
+            "Niece (n.)",
+            "My niece just turned ten.",
+            "Nièce"
+          ],
+          [
+            "In-law (n.)",
+            "My mother-in-law is very kind.",
+            "Beau-parent (belle-mère / beau-père...)"
+          ],
+          [
+            "Twins (n.)",
+            "They had twins last year.",
+            "Jumeaux / jumelles"
+          ],
+          [
+            "Relative (n.)",
+            "Many relatives came to the wedding.",
+            "Un parent (de la famille)"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Mariage & situations familiales"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Mot",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "Married (adj.)",
+            "She is married with two children.",
+            "Marié(e)"
+          ],
+          [
+            "Single (adj.)",
+            "He is still single.",
+            "Célibataire"
+          ],
+          [
+            "Engaged (adj.)",
+            "My sister is engaged.",
+            "Fiancé(e)"
+          ],
+          [
+            "Bride (n.)",
+            "The bride wore a beautiful dress.",
+            "Mariée"
+          ],
+          [
+            "Groom (n.)",
+            "The groom arrived a little late.",
+            "Le marié"
+          ],
+          [
+            "Bride price (n.)",
+            "His family paid the bride price last month.",
+            "Dot"
+          ],
+          [
+            "Honeymoon (n.)",
+            "They went to Dakar for their honeymoon.",
+            "Lune de miel"
+          ],
+          [
+            "Divorced (adj.)",
+            "They got divorced last year.",
+            "Divorcé(e)"
+          ],
+          [
+            "Widow (n.)",
+            "She became a widow last year.",
+            "Veuve"
+          ],
+          [
+            "Widower (n.)",
+            "He has been a widower for two years.",
+            "Veuf"
+          ],
+          [
+            "Orphan (n.)",
+            "The organization helps orphans.",
+            "Orphelin(e)"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Relations, fidélité & confiance"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Mot",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "Faithful (adj.)",
+            "A good husband is faithful to his wife.",
+            "Fidèle"
+          ],
+          [
+            "Unfaithful (adj.)",
+            "He was unfaithful to his wife.",
+            "Infidèle"
+          ],
+          [
+            "Cheat on someone (v.)",
+            "She found out he was cheating on her.",
+            "Tromper quelqu'un"
+          ],
+          [
+            "Affair (n.)",
+            "The whole family found out about the affair.",
+            "Liaison / aventure (extraconjugale)"
+          ],
+          [
+            "Trust (n. / v.)",
+            "I trust my husband completely.",
+            "Confiance / faire confiance"
+          ],
+          [
+            "Betray (v.)",
+            "He felt betrayed by his own brother.",
+            "Trahir"
+          ],
+          [
+            "Jealous (adj.)",
+            "He gets jealous very easily.",
+            "Jaloux/-ouse"
+          ],
+          [
+            "Separated (adj.)",
+            "They have been separated for a year.",
+            "Séparé(e)"
+          ],
+          [
+            "Reconcile (v.)",
+            "The couple decided to reconcile.",
+            "Se réconcilier"
+          ]
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque mot anglais à sa traduction française.",
+        "pairs": [
+          {
+            "en": "widow",
+            "fr": "veuve"
+          },
+          {
+            "en": "nephew",
+            "fr": "neveu"
+          },
+          {
+            "en": "engaged",
+            "fr": "fiancé(e)"
+          },
+          {
+            "en": "bride price",
+            "fr": "dot"
+          },
+          {
+            "en": "orphan",
+            "fr": "orphelin"
+          },
+          {
+            "en": "unfaithful",
+            "fr": "infidèle"
+          },
+          {
+            "en": "trust",
+            "fr": "confiance"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "A widow is a man whose wife has died.",
+        "opts": [
+          "True",
+          "False"
+        ],
+        "a": 1,
+        "x": "Faux : une veuve (widow) est une femme."
+      },
+      {
+        "t": "choice",
+        "q": "Your cousin is the child of your uncle or aunt.",
+        "opts": [
+          "True",
+          "False"
+        ],
+        "a": 0,
+        "x": "Vrai : le cousin est l'enfant de l'oncle ou de la tante."
+      },
+      {
+        "t": "choice",
+        "q": "A groom is a woman on her wedding day.",
+        "opts": [
+          "True",
+          "False"
+        ],
+        "a": 1,
+        "x": "Faux : un groom (marié) est un homme."
+      },
+      {
+        "t": "choice",
+        "q": "An orphan is a child whose parents have died.",
+        "opts": [
+          "True",
+          "False"
+        ],
+        "a": 0,
+        "x": "Vrai : un orphelin a perdu ses parents."
+      },
+      {
+        "t": "choice",
+        "q": "Twins are two children born at the same time.",
+        "opts": [
+          "True",
+          "False"
+        ],
+        "a": 0,
+        "x": "Vrai : les jumeaux naissent en même temps."
+      },
+      {
+        "t": "choice",
+        "q": "To betray someone means to be loyal to them.",
+        "opts": [
+          "True",
+          "False"
+        ],
+        "a": 1,
+        "x": "Faux : trahir, c'est briser la confiance de quelqu'un."
+      },
+      {
+        "t": "type",
+        "q": "Complète : My ___ works in a bank.",
+        "a": "husband",
+        "accept": [
+          "husband"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : My mother-___ lives next door.",
+        "a": "in-law",
+        "accept": [
+          "in-law",
+          "in law"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : He isn't married, he's ___.",
+        "a": "single",
+        "accept": [
+          "single"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : They went to Senegal for their ___.",
+        "a": "honeymoon",
+        "accept": [
+          "honeymoon"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : He gets ___ when she talks to other men.",
+        "a": "jealous",
+        "accept": [
+          "jealous"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ma sœur est fiancée.",
+        "a": "My sister is engaged.",
+        "accept": [
+          "my sister is engaged"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Nous avons une grande famille.",
+        "a": "We have a big family.",
+        "accept": [
+          "we have a big family"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l1-v5",
+    "cat": "vocabulary",
+    "title": "Body & Pain",
+    "subtitle": "Le corps, les cinq sens et la douleur",
+    "emoji": "🩺",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu apprends les noms des principales parties du corps, les cinq sens, et comment dire que quelque chose fait mal ou que tu souffres."
+      },
+      {
+        "t": "h",
+        "text": "A. Les parties du corps"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Mot",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "Head (n.)",
+            "He has a big head.",
+            "Tête"
+          ],
+          [
+            "Hair (n.)",
+            "She has long hair.",
+            "Cheveux"
+          ],
+          [
+            "Face (n.)",
+            "He has a friendly face.",
+            "Visage"
+          ],
+          [
+            "Forehead (n.)",
+            "Her forehead feels hot.",
+            "Front"
+          ],
+          [
+            "Eyebrow (n.)",
+            "He raised his eyebrow.",
+            "Sourcil"
+          ],
+          [
+            "Eye (n.)",
+            "She has brown eyes.",
+            "Œil (yeux)"
+          ],
+          [
+            "Ear (n.)",
+            "My ears hurt.",
+            "Oreille"
+          ],
+          [
+            "Nose (n.)",
+            "He has a small nose.",
+            "Nez"
+          ],
+          [
+            "Cheek (n.)",
+            "She kissed him on the cheek.",
+            "Joue"
+          ],
+          [
+            "Mouth (n.)",
+            "Open your mouth, please.",
+            "Bouche"
+          ],
+          [
+            "Lip (n.)",
+            "She has red lips.",
+            "Lèvre"
+          ],
+          [
+            "Tongue (n.)",
+            "Stick out your tongue.",
+            "Langue"
+          ],
+          [
+            "Tooth / Teeth (n.)",
+            "Brush your teeth every day.",
+            "Dent(s)"
+          ],
+          [
+            "Chin (n.)",
+            "He has a small scar on his chin.",
+            "Menton"
+          ],
+          [
+            "Neck (n.)",
+            "My neck hurts.",
+            "Cou"
+          ],
+          [
+            "Shoulder (n.)",
+            "He carries the bag on his shoulder.",
+            "Épaule"
+          ],
+          [
+            "Arm (n.)",
+            "She broke her arm.",
+            "Bras"
+          ],
+          [
+            "Elbow (n.)",
+            "He hit his elbow on the table.",
+            "Coude"
+          ],
+          [
+            "Wrist (n.)",
+            "She wears a watch on her wrist.",
+            "Poignet"
+          ],
+          [
+            "Hand (n.)",
+            "Wash your hands.",
+            "Main"
+          ],
+          [
+            "Finger (n.)",
+            "He cut his finger.",
+            "Doigt"
+          ],
+          [
+            "Chest (n.)",
+            "He has chest pain.",
+            "Poitrine"
+          ],
+          [
+            "Back (n.)",
+            "My back hurts.",
+            "Dos"
+          ],
+          [
+            "Stomach (n.)",
+            "I have a stomachache.",
+            "Ventre / estomac"
+          ],
+          [
+            "Leg (n.)",
+            "She has long legs.",
+            "Jambe"
+          ],
+          [
+            "Knee (n.)",
+            "He hurt his knee playing football.",
+            "Genou"
+          ],
+          [
+            "Ankle (n.)",
+            "He twisted his ankle.",
+            "Cheville"
+          ],
+          [
+            "Foot / Feet (n.)",
+            "My feet hurt after the long walk.",
+            "Pied(s)"
+          ],
+          [
+            "Toe (n.)",
+            "I stubbed my toe on the chair.",
+            "Orteil"
+          ],
+          [
+            "Skin (n.)",
+            "She has soft skin.",
+            "Peau"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Les cinq sens"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Mot",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "See (v.)",
+            "I can see the mountains from here.",
+            "Voir"
+          ],
+          [
+            "Hear (v.)",
+            "Can you hear that noise?",
+            "Entendre"
+          ],
+          [
+            "Smell (v.)",
+            "This flower smells wonderful.",
+            "Sentir (odorat)"
+          ],
+          [
+            "Touch (v.)",
+            "Please don't touch the paintings.",
+            "Toucher"
+          ],
+          [
+            "Taste (v.)",
+            "This soup tastes delicious.",
+            "Goûter / avoir le goût de"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Exprimer la douleur & se sentir mal"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Mot / Expression",
+          "Exemple",
+          "Français"
+        ],
+        "rows": [
+          [
+            "Pain (n.)",
+            "He is in a lot of pain.",
+            "Douleur"
+          ],
+          [
+            "Ache (n.)",
+            "I have a stomach ache.",
+            "Douleur / mal"
+          ],
+          [
+            "Hurt (v.)",
+            "My head hurts.",
+            "Faire mal"
+          ],
+          [
+            "Headache (n.)",
+            "I have a headache.",
+            "Mal de tête"
+          ],
+          [
+            "Stomachache (n.)",
+            "She has a stomachache.",
+            "Mal de ventre"
+          ],
+          [
+            "Toothache (n.)",
+            "He has a toothache.",
+            "Mal de dents"
+          ],
+          [
+            "Backache (n.)",
+            "I have a backache after work.",
+            "Mal de dos"
+          ],
+          [
+            "Sore throat (n.)",
+            "I have a sore throat.",
+            "Mal de gorge"
+          ],
+          [
+            "Fever (n.)",
+            "The child has a fever.",
+            "Fièvre"
+          ],
+          [
+            "Sick / Ill (adj.)",
+            "She feels sick today.",
+            "Malade"
+          ],
+          [
+            "Dizzy (adj.)",
+            "I feel dizzy.",
+            "Avoir le vertige"
+          ],
+          [
+            "Swollen (adj.)",
+            "His ankle is swollen.",
+            "Enflé(e) / gonflé(e)"
+          ],
+          [
+            "Injury (n.)",
+            "He has a knee injury.",
+            "Blessure"
+          ],
+          [
+            "Bleed (v.)",
+            "His finger is bleeding.",
+            "Saigner"
+          ]
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque mot anglais à sa traduction française.",
+        "pairs": [
+          {
+            "en": "shoulder",
+            "fr": "épaule"
+          },
+          {
+            "en": "knee",
+            "fr": "genou"
+          },
+          {
+            "en": "fever",
+            "fr": "fièvre"
+          },
+          {
+            "en": "bleed",
+            "fr": "saigner"
+          },
+          {
+            "en": "dizzy",
+            "fr": "avoir le vertige"
+          },
+          {
+            "en": "wrist",
+            "fr": "poignet"
+          },
+          {
+            "en": "taste",
+            "fr": "goûter"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : I have a ___, I need to take some medicine.",
+        "a": "headache",
+        "accept": [
+          "headache"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : My ankle is ___ after I fell down.",
+        "a": "swollen",
+        "accept": [
+          "swollen"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : My back really ___ today.",
+        "a": "hurts",
+        "accept": [
+          "hurts"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : The child has a ___, he feels very hot.",
+        "a": "fever",
+        "accept": [
+          "fever"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : I have a ___, it's difficult to talk.",
+        "a": "sore throat",
+        "accept": [
+          "sore throat"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Quelle partie du corps utilises-tu pour voir ?",
+        "a": "eye",
+        "accept": [
+          "eye",
+          "the eye"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Quelle partie au bout du bras sert à tenir les objets ?",
+        "a": "hand",
+        "accept": [
+          "hand",
+          "the hand"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Quelle partie relie la tête au corps ?",
+        "a": "neck",
+        "accept": [
+          "neck",
+          "the neck"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Quelles sont les parties blanches et dures de la bouche qui servent à mâcher ?",
+        "a": "teeth",
+        "accept": [
+          "teeth",
+          "the teeth"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : J'ai mal à la tête.",
+        "a": "I have a headache.",
+        "accept": [
+          "i have a headache"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Il s'est blessé au genou.",
+        "a": "He hurt his knee.",
+        "accept": [
+          "he hurt his knee"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Mon doigt saigne.",
+        "a": "My finger is bleeding.",
+        "accept": [
+          "my finger is bleeding"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je me sens malade aujourd'hui.",
+        "a": "I feel sick today.",
+        "accept": [
+          "i feel sick today"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l1-v6",
+    "cat": "vocabulary",
+    "title": "Introduce Yourself",
+    "subtitle": "Se présenter : questions et réponses",
+    "emoji": "🙋",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Ce sont les questions que l'on pose généralement quand on rencontre quelqu'un pour la première fois. Apprends la question et l'exemple de réponse, puis adapte la réponse pour parler de toi."
+      },
+      {
+        "t": "h",
+        "text": "Partie 1 – Questions & réponses courantes"
+      },
+      {
+        "t": "phrases",
+        "title": "Se présenter",
+        "items": [
+          {
+            "en": "What's your name? — My name is Aminata.",
+            "fr": "Comment tu t'appelles ? — Je m'appelle Aminata."
+          },
+          {
+            "en": "How old are you? — I am 28 years old.",
+            "fr": "Quel âge as-tu ? — J'ai 28 ans."
+          },
+          {
+            "en": "Where are you from? — I am from Mali.",
+            "fr": "D'où viens-tu ? — Je viens du Mali."
+          },
+          {
+            "en": "Where do you live? — I live in Bamako.",
+            "fr": "Où habites-tu ? — J'habite à Bamako."
+          },
+          {
+            "en": "What's your nationality? — I am Malian.",
+            "fr": "Quelle est ta nationalité ? — Je suis malienne."
+          },
+          {
+            "en": "What do you do? — I am an accountant.",
+            "fr": "Que fais-tu dans la vie ? — Je suis comptable."
+          },
+          {
+            "en": "Where do you work? — I work for a company in Bamako.",
+            "fr": "Où travailles-tu ? — Je travaille pour une entreprise à Bamako."
+          },
+          {
+            "en": "Are you married? — Yes, I am married. / No, I am single.",
+            "fr": "Es-tu marié(e) ? — Oui, je suis marié(e). / Non, je suis célibataire."
+          },
+          {
+            "en": "Do you have children? — Yes, I have two children.",
+            "fr": "As-tu des enfants ? — Oui, j'ai deux enfants."
+          },
+          {
+            "en": "Do you have brothers or sisters? — Yes, I have one brother and two sisters.",
+            "fr": "As-tu des frères et sœurs ? — Oui, j'ai un frère et deux sœurs."
+          },
+          {
+            "en": "What languages do you speak? — I speak French and Bambara.",
+            "fr": "Quelles langues parles-tu ? — Je parle français et bambara."
+          },
+          {
+            "en": "How do you spell your name? — My name is spelled A-M-I-N-A-T-A.",
+            "fr": "Comment ça s'écrit, ton nom ? — Mon nom s'écrit A-M-I-N-A-T-A."
+          },
+          {
+            "en": "What's your phone number? — My phone number is 07...",
+            "fr": "Quel est ton numéro de téléphone ? — Mon numéro est 07..."
+          },
+          {
+            "en": "What's your email address? — My email address is aminata@email.com.",
+            "fr": "Quelle est ton adresse e-mail ? — Mon adresse e-mail est aminata@email.com."
+          },
+          {
+            "en": "What are your hobbies? — I like reading and cooking.",
+            "fr": "Quels sont tes loisirs ? — J'aime lire et cuisiner."
+          },
+          {
+            "en": "What's your date of birth? — I was born on May 3rd, 1997.",
+            "fr": "Quelle est ta date de naissance ? — Je suis née le 3 mai 1997."
+          },
+          {
+            "en": "How are you? — I'm fine, thank you. And you?",
+            "fr": "Comment vas-tu ? — Je vais bien, merci. Et toi ?"
+          },
+          {
+            "en": "Nice to meet you! — Nice to meet you too!",
+            "fr": "Enchanté(e) ! — Enchanté(e) également !"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Partie 2 – À toi ! Questions d'entraînement"
+      },
+      {
+        "t": "tip",
+        "text": "Réponds en phrases complètes, sans te contenter de « oui » ou « non », en reprenant la même structure que les réponses de la Partie 1."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque question anglaise à sa traduction française.",
+        "pairs": [
+          {
+            "en": "What's your name?",
+            "fr": "Comment tu t'appelles ?"
+          },
+          {
+            "en": "How old are you?",
+            "fr": "Quel âge as-tu ?"
+          },
+          {
+            "en": "Where are you from?",
+            "fr": "D'où viens-tu ?"
+          },
+          {
+            "en": "Where do you live?",
+            "fr": "Où habites-tu ?"
+          },
+          {
+            "en": "What do you do?",
+            "fr": "Que fais-tu dans la vie ?"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Comment tu t'appelles ?",
+        "a": "What's your name?",
+        "accept": [
+          "what's your name",
+          "what is your name"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Quel âge as-tu ?",
+        "a": "How old are you?",
+        "accept": [
+          "how old are you"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : D'où viens-tu ?",
+        "a": "Where are you from?",
+        "accept": [
+          "where are you from"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Où habites-tu ?",
+        "a": "Where do you live?",
+        "accept": [
+          "where do you live"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Que fais-tu dans la vie ?",
+        "a": "What do you do?",
+        "accept": [
+          "what do you do"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je m'appelle Aminata.",
+        "a": "My name is Aminata.",
+        "accept": [
+          "my name is aminata"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : J'ai 28 ans.",
+        "a": "I am 28 years old.",
+        "accept": [
+          "i am 28 years old",
+          "i'm 28 years old"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Es-tu marié(e) ?",
+        "a": "Are you married?",
+        "accept": [
+          "are you married"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« How old are you? » se traduit par :",
+        "opts": [
+          "Quel âge as-tu ?",
+          "Comment tu t'appelles ?",
+          "Où habites-tu ?"
+        ],
+        "a": 0,
+        "x": "« How old are you? » = Quel âge as-tu ?"
+      },
+      {
+        "t": "choice",
+        "q": "« I am Malian » répond à la question :",
+        "opts": [
+          "What's your nationality?",
+          "How old are you?",
+          "Where do you work?"
+        ],
+        "a": 0,
+        "x": "« I am Malian » = Je suis malien(ne) → la nationalité."
+      },
+      {
+        "t": "choice",
+        "q": "« I am an accountant » répond à la question :",
+        "opts": [
+          "What do you do?",
+          "Where are you from?",
+          "How old are you?"
+        ],
+        "a": 0,
+        "x": "« I am an accountant » = Je suis comptable → la profession."
+      }
+    ]
+  },
+  {
+    "id": "l1-e1",
+    "cat": "expressions",
+    "title": "Everyday Survival (Part 1)",
+    "subtitle": "Demander poliment, s'excuser et demander de l'aide",
+    "emoji": "🆘",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Des expressions de survie du quotidien pour demander poliment, demander la permission, s'excuser et demander de l'aide."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "« Could I ask you something? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Of course, go ahead.",
+          "You're welcome."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« Could you help me with this bag? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "You're welcome.",
+          "Sure, no problem."
+        ],
+        "a": 1,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« I'm really sorry for breaking your pen. » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "It's my fault.",
+          "No worries, it happens."
+        ],
+        "a": 1,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« Could you recommend a good restaurant? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "I don't know.",
+          "Sure, there's a great one nearby."
+        ],
+        "a": 1,
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Pourrais-je vous poser une question ?",
+        "a": "Could I ask you a question?",
+        "accept": [
+          "could i ask you a question"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ça vous dérange si je m'assieds ici ?",
+        "a": "Do you mind if I sit here?",
+        "accept": [
+          "do you mind if i sit here"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Désolé pour ça, j'ai oublié de te rappeler.",
+        "a": "Sorry about that, I forgot to call you back.",
+        "accept": [
+          "sorry about that, i forgot to call you back"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : C'est de ma faute.",
+        "a": "It's my fault.",
+        "accept": [
+          "it's my fault"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je voudrais un café, s'il vous plaît.",
+        "a": "I'd like a coffee, please.",
+        "accept": [
+          "i'd like a coffee, please"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Peux-tu me passer le stylo, s'il te plaît ?",
+        "a": "Can you pass me the pen, please?",
+        "accept": [
+          "can you pass me the pen, please"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « _____________ ask you a question? »",
+        "a": "Could I",
+        "accept": [
+          "could i"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « _____________ open the window? »",
+        "a": "Do you mind if I",
+        "accept": [
+          "do you mind if i"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « Can I park here? – _____________. »",
+        "a": "I'm afraid not",
+        "accept": [
+          "i'm afraid not"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l1-e2",
+    "cat": "expressions",
+    "title": "Asking Permission & Apologizing",
+    "subtitle": "Demander la permission et s'excuser",
+    "emoji": "🙏",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Apprends à demander la permission poliment, à t'excuser et à rassurer quelqu'un après une erreur."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "« Could I ask you something? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Of course, go ahead.",
+          "You're welcome."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« I'm really sorry for breaking your pen. » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "It's my fault.",
+          "No worries, it happens."
+        ],
+        "a": 1,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« Do you mind if I open the window? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Not at all, go ahead.",
+          "See you later."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« May I come in? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "It's my fault.",
+          "Yes, please, come in."
+        ],
+        "a": 1,
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Puis-je vous poser une question ?",
+        "a": "May I ask you a question?",
+        "accept": [
+          "may i ask you a question"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ça vous dérange si je m'assieds ici ?",
+        "a": "Do you mind if I sit here?",
+        "accept": [
+          "do you mind if i sit here"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Désolé pour ça, j'ai oublié de te rappeler.",
+        "a": "Sorry about that, I forgot to call you back.",
+        "accept": [
+          "sorry about that, i forgot to call you back"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : C'est de ma faute.",
+        "a": "It's my fault.",
+        "accept": [
+          "it's my fault"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ça ne se reproduira plus.",
+        "a": "It won't happen again.",
+        "accept": [
+          "it won't happen again"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je ne voulais pas te vexer.",
+        "a": "I didn't mean to upset you.",
+        "accept": [
+          "i didn't mean to upset you"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « _____________ ask you a question? »",
+        "a": "Could I",
+        "accept": [
+          "could i"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « I'm sorry, _____________. »",
+        "a": "it won't happen again",
+        "accept": [
+          "It won't happen again",
+          "it won't happen again"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « _____________ upset you. »",
+        "a": "I didn't mean to",
+        "accept": [
+          "i didn't mean to"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l1-e3",
+    "cat": "expressions",
+    "title": "Asking for a Service",
+    "subtitle": "Demander de l'aide et commander poliment",
+    "emoji": "🤝",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Apprends à demander un service, à demander de l'aide et à commander poliment en anglais."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "« Could you help me with this bag? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "You're welcome.",
+          "Sure, no problem."
+        ],
+        "a": 1,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« Would you mind closing the door? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Not at all.",
+          "I don't know."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« Can you pass me the stapler, please? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Here you go.",
+          "I'm afraid not."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« Any chance you could give me a lift? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Take care.",
+          "Sure, no problem."
+        ],
+        "a": 1,
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Pourriez-vous m'aider, s'il vous plaît ?",
+        "a": "Could you help me, please?",
+        "accept": [
+          "could you help me, please"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je voudrais un café, s'il vous plaît.",
+        "a": "I'd like a coffee, please.",
+        "accept": [
+          "i'd like a coffee, please"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Peux-tu me passer le stylo, s'il te plaît ?",
+        "a": "Can you pass me the pen, please?",
+        "accept": [
+          "can you pass me the pen, please"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : J'ai besoin d'un taxi.",
+        "a": "I need a taxi.",
+        "accept": [
+          "i need a taxi"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Pourriez-vous recommander un bon restaurant ?",
+        "a": "Could you recommend a good restaurant?",
+        "accept": [
+          "could you recommend a good restaurant"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Pas de problème, bien sûr.",
+        "a": "No problem, of course.",
+        "accept": [
+          "no problem, of course"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « _____________, please? I can't open this jar. »",
+        "a": "Could you help me",
+        "accept": [
+          "could you help me"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « _____________ closing the door, please? »",
+        "a": "Would you mind",
+        "accept": [
+          "would you mind"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « _____________ a good restaurant near here? »",
+        "a": "Could you recommend",
+        "accept": [
+          "could you recommend"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l1-e4",
+    "cat": "expressions",
+    "title": "Everyday Survival (Part 2)",
+    "subtitle": "L'heure, les directions et se présenter",
+    "emoji": "🧭",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Des expressions de survie du quotidien (partie 2) : demander l'heure, demander son chemin et se présenter."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "« Excuse me, do you have the time? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "You're welcome.",
+          "It's half past three."
+        ],
+        "a": 1,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« How do I get to the station? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Go straight ahead, then turn left.",
+          "I'm lost."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« Nice to meet you. » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Nice to meet you too.",
+          "You're welcome."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« Could you repeat that, please? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Of course. I said...",
+          "Take care."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Quelle heure est-il ?",
+        "a": "What time is it?",
+        "accept": [
+          "what time is it"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je suis en retard.",
+        "a": "I'm running late.",
+        "accept": [
+          "i'm running late"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je suis perdu(e).",
+        "a": "I'm lost.",
+        "accept": [
+          "i'm lost"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ravi de vous rencontrer.",
+        "a": "Nice to meet you.",
+        "accept": [
+          "nice to meet you"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : D'où venez-vous ?",
+        "a": "Where are you from?",
+        "accept": [
+          "where are you from"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je ne comprends pas.",
+        "a": "I don't understand.",
+        "accept": [
+          "i don't understand"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « Excuse me, _____________? »",
+        "a": "what time is it",
+        "accept": [
+          "What time is it",
+          "what time is it?"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « Sorry, _____________. »",
+        "a": "I'm running late",
+        "accept": [
+          "i'm running late"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « _____________, then turn left. »",
+        "a": "Go straight ahead",
+        "accept": [
+          "go straight ahead"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l1-e5",
+    "cat": "expressions",
+    "title": "Idioms: Time & Everyday Life",
+    "subtitle": "Idiomes courants sur le temps",
+    "emoji": "⏰",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Des idiomes courants pour parler du temps et de la vie quotidienne : être à l'heure, en retard, et plus encore."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "« We need to hurry or we'll miss the train. » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Don't worry, we'll make it in the nick of time.",
+          "It's my fault."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« He only visits once a year. » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "That's on time.",
+          "That's once in a blue moon."
+        ],
+        "a": 1,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« Is the project on schedule? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "No, it's a night owl.",
+          "No, it's behind schedule."
+        ],
+        "a": 1,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« You're finally here! » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Better late than never!",
+          "Take your time!"
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Nous sommes arrivés juste à temps.",
+        "a": "We arrived in the nick of time.",
+        "accept": [
+          "we arrived in the nick of time"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Mieux vaut tard que jamais !",
+        "a": "Better late than never!",
+        "accept": [
+          "better late than never"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Le temps passe vite.",
+        "a": "Time flies.",
+        "accept": [
+          "time flies"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Il la visite très rarement.",
+        "a": "He visits her once in a blue moon.",
+        "accept": [
+          "he visits her once in a blue moon"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Prends ton temps.",
+        "a": "Take your time.",
+        "accept": [
+          "take your time"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Nous avons terminé en avance.",
+        "a": "We finished ahead of schedule.",
+        "accept": [
+          "we finished ahead of schedule"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « We arrived _____________, right before the doors closed. »",
+        "a": "in the nick of time",
+        "accept": [
+          "in the nick of time"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « _____________! It's already December. »",
+        "a": "Time flies",
+        "accept": [
+          "time flies"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « Don't worry, I'll be done _____________. »",
+        "a": "in no time",
+        "accept": [
+          "in no time"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l1-e6",
+    "cat": "expressions",
+    "title": "Asking the Time & Directions",
+    "subtitle": "Demander l'heure et son chemin",
+    "emoji": "🗺️",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Apprends à demander l'heure, à demander ton chemin et à donner des indications en anglais."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "« Excuse me, do you have the time? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "You're welcome.",
+          "It's half past three."
+        ],
+        "a": 1,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« How do I get to the station? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Go straight ahead, then turn left.",
+          "I'm lost."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« Is the museum far from here? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "It's my fault.",
+          "It's a five-minute walk."
+        ],
+        "a": 1,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« I think I'm lost. » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Don't worry, I'll show you the way.",
+          "Take it easy."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Quelle heure est-il ?",
+        "a": "What time is it?",
+        "accept": [
+          "what time is it"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je suis en retard.",
+        "a": "I'm running late.",
+        "accept": [
+          "i'm running late"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : J'y serai dans dix minutes.",
+        "a": "I'll be there in ten minutes.",
+        "accept": [
+          "i'll be there in ten minutes"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je suis perdu(e).",
+        "a": "I'm lost.",
+        "accept": [
+          "i'm lost"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : C'est juste au coin de la rue.",
+        "a": "It's just around the corner.",
+        "accept": [
+          "it's just around the corner"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : C'est à cinq minutes à pied.",
+        "a": "It's a five-minute walk.",
+        "accept": [
+          "it's a five-minute walk"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « Excuse me, _____________? »",
+        "a": "what time is it",
+        "accept": [
+          "What time is it",
+          "what time is it?"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « _____________, then turn left. »",
+        "a": "Go straight ahead",
+        "accept": [
+          "go straight ahead"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « Excuse me, _____________. Can you help me? »",
+        "a": "I'm lost",
+        "accept": [
+          "i'm lost"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l1-e7",
+    "cat": "expressions",
+    "title": "Everyday Small Talk",
+    "subtitle": "Expressions courantes du quotidien",
+    "emoji": "💬",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Apprends 15 expressions courantes du quotidien et du « small talk », avec leur signification et leur traduction française."
+      },
+      {
+        "t": "h",
+        "text": "Les expressions"
+      },
+      {
+        "t": "phrases",
+        "title": "À retenir",
+        "items": [
+          {
+            "en": "How's it going?",
+            "fr": "Comment ça va ?",
+            "note": "an informal way to ask how someone is"
+          },
+          {
+            "en": "Long time no see!",
+            "fr": "Ça fait longtemps !",
+            "note": "said when you meet someone after a long time"
+          },
+          {
+            "en": "It's been a while.",
+            "fr": "Ça fait un moment.",
+            "note": "noting that a lot of time has passed"
+          },
+          {
+            "en": "What have you been up to?",
+            "fr": "Qu'est-ce que tu deviens ?",
+            "note": "asking what someone's been doing lately"
+          },
+          {
+            "en": "I'll get back to you.",
+            "fr": "Je te recontacte.",
+            "note": "saying you will reply later"
+          },
+          {
+            "en": "Keep me posted.",
+            "fr": "Tiens-moi informé(e).",
+            "note": "asking to be kept informed"
+          },
+          {
+            "en": "Sounds good.",
+            "fr": "Ça marche / Ça me va.",
+            "note": "agreeing that a plan is good"
+          },
+          {
+            "en": "No worries.",
+            "fr": "Pas de souci.",
+            "note": "saying something is not a problem"
+          },
+          {
+            "en": "Take it easy.",
+            "fr": "Ne t'en fais pas.",
+            "note": "telling someone to relax"
+          },
+          {
+            "en": "Hang in there.",
+            "fr": "Tiens bon.",
+            "note": "encouraging someone through a hard moment"
+          },
+          {
+            "en": "Make yourself at home.",
+            "fr": "Fais comme chez toi.",
+            "note": "inviting a guest to feel comfortable"
+          },
+          {
+            "en": "That makes sense.",
+            "fr": "Ça se tient.",
+            "note": "showing you understand and agree"
+          },
+          {
+            "en": "It's up to you.",
+            "fr": "C'est toi qui décides.",
+            "note": "letting someone else decide"
+          },
+          {
+            "en": "Piece of cake!",
+            "fr": "C'est du gâteau !",
+            "note": "saying something is very easy"
+          },
+          {
+            "en": "Break a leg!",
+            "fr": "Bonne chance !",
+            "note": "wishing someone good luck (informal)"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "« How's it going? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Pretty good, thanks!",
+          "You're welcome."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« It's been a while! » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "No problem.",
+          "Yes, I know, how are you?"
+        ],
+        "a": 1,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« I'll get back to you tomorrow. » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Sounds good, thanks.",
+          "Never mind."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« I have a big interview tomorrow. » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Break a leg!",
+          "It's a work in progress."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ça fait longtemps qu'on ne s'est pas vus !",
+        "a": "Long time no see!",
+        "accept": [
+          "long time no see"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Qu'est-ce que tu deviens ?",
+        "a": "What have you been up to?",
+        "accept": [
+          "what have you been up to"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je te recontacte.",
+        "a": "I'll get back to you.",
+        "accept": [
+          "i'll get back to you"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ça marche pour moi.",
+        "a": "Sounds good to me.",
+        "accept": [
+          "sounds good to me"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Fais comme chez toi.",
+        "a": "Make yourself at home.",
+        "accept": [
+          "make yourself at home"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : C'est du gâteau, ne t'inquiète pas.",
+        "a": "It's a piece of cake, don't worry.",
+        "accept": [
+          "it's a piece of cake, don't worry"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « _____________! How have you been? »",
+        "a": "Long time no see",
+        "accept": [
+          "long time no see"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « We can meet at 5. – _____________. »",
+        "a": "Sounds good",
+        "accept": [
+          "sounds good"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « Don't worry about the exam, it's a _____________. »",
+        "a": "piece of cake",
+        "accept": [
+          "piece of cake"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l1-e8",
+    "cat": "expressions",
+    "title": "Idioms: Feelings & Luck",
+    "subtitle": "Sentiments, chance et encouragement",
+    "emoji": "😊",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Apprends 14 idiomes très courants sur les sentiments, la chance et l'encouragement, avec leur signification et leur traduction française."
+      },
+      {
+        "t": "h",
+        "text": "Les idiomes"
+      },
+      {
+        "t": "phrases",
+        "title": "À retenir",
+        "items": [
+          {
+            "en": "piece of cake",
+            "fr": "du gâteau (facile)",
+            "note": "something very easy"
+          },
+          {
+            "en": "break a leg",
+            "fr": "bonne chance",
+            "note": "good luck (said before a performance or exam)"
+          },
+          {
+            "en": "hang in there",
+            "fr": "tiens bon",
+            "note": "keep trying, don't give up"
+          },
+          {
+            "en": "over the moon",
+            "fr": "aux anges",
+            "note": "extremely happy"
+          },
+          {
+            "en": "under the weather",
+            "fr": "pas dans son assiette",
+            "note": "feeling slightly ill"
+          },
+          {
+            "en": "down in the dumps",
+            "fr": "avoir le cafard",
+            "note": "feeling sad"
+          },
+          {
+            "en": "cross your fingers",
+            "fr": "croiser les doigts",
+            "note": "to hope for good luck"
+          },
+          {
+            "en": "keep your chin up",
+            "fr": "garde le sourire",
+            "note": "stay positive during a hard time"
+          },
+          {
+            "en": "all ears",
+            "fr": "tout ouïe",
+            "note": "ready and willing to listen"
+          },
+          {
+            "en": "butterflies in your stomach",
+            "fr": "avoir des papillons dans le ventre",
+            "note": "feeling nervous"
+          },
+          {
+            "en": "a lucky break",
+            "fr": "un coup de chance",
+            "note": "a fortunate opportunity"
+          },
+          {
+            "en": "burst into tears",
+            "fr": "éclater en sanglots",
+            "note": "to suddenly start crying"
+          },
+          {
+            "en": "smile from ear to ear",
+            "fr": "sourire jusqu'aux oreilles",
+            "note": "to be very happy, smiling broadly"
+          },
+          {
+            "en": "in high spirits",
+            "fr": "de bonne humeur",
+            "note": "feeling happy and enthusiastic"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "« I have a big interview tomorrow. » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Break a leg!",
+          "It's a work in progress."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« I'm feeling a bit under the weather. » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "I hope you feel better soon.",
+          "Break a leg!"
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« She got that promotion! » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "She must be over the moon!",
+          "She must be down in the dumps!"
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« He's been very quiet and sad lately. » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "He seems in high spirits.",
+          "He seems down in the dumps."
+        ],
+        "a": 1,
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ne t'inquiète pas, c'est du gâteau.",
+        "a": "Don't worry, it's a piece of cake.",
+        "accept": [
+          "don't worry, it's a piece of cake"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Bonne chance pour ton entretien !",
+        "a": "Break a leg at your interview!",
+        "accept": [
+          "break a leg at your interview"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je sais que c'est dur, tiens bon.",
+        "a": "I know it's hard, hang in there.",
+        "accept": [
+          "i know it's hard, hang in there"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Elle était aux anges.",
+        "a": "She was over the moon.",
+        "accept": [
+          "she was over the moon"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je ne suis pas dans mon assiette aujourd'hui.",
+        "a": "I'm under the weather today.",
+        "accept": [
+          "i'm under the weather today"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Il avait le sourire jusqu'aux oreilles.",
+        "a": "He had a smile from ear to ear.",
+        "accept": [
+          "he had a smile from ear to ear"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « Don't worry, the test is a _____________. »",
+        "a": "piece of cake",
+        "accept": [
+          "piece of cake"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « She was _____________ when she got the job. »",
+        "a": "over the moon",
+        "accept": [
+          "over the moon"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « I'm feeling a bit _____________ today. »",
+        "a": "under the weather",
+        "accept": [
+          "under the weather"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l1-e9",
+    "cat": "expressions",
+    "title": "Idioms: Common Sayings",
+    "subtitle": "Proverbes et sagesse du quotidien",
+    "emoji": "📖",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Apprends 14 proverbes et dictons courants, avec leur signification et leur traduction française."
+      },
+      {
+        "t": "h",
+        "text": "Les proverbes"
+      },
+      {
+        "t": "phrases",
+        "title": "À retenir",
+        "items": [
+          {
+            "en": "practice makes perfect",
+            "fr": "c'est en pratiquant qu'on devient bon",
+            "note": "the more you practice, the better you get"
+          },
+          {
+            "en": "actions speak louder than words",
+            "fr": "les actes comptent plus que les mots",
+            "note": "what you do matters more than what you say"
+          },
+          {
+            "en": "better safe than sorry",
+            "fr": "mieux vaut prévenir que guérir",
+            "note": "it's wiser to be careful"
+          },
+          {
+            "en": "every cloud has a silver lining",
+            "fr": "après la pluie, le beau temps",
+            "note": "something good can come from a bad situation"
+          },
+          {
+            "en": "the early bird catches the worm",
+            "fr": "le monde appartient à ceux qui se lèvent tôt",
+            "note": "people who start early often succeed"
+          },
+          {
+            "en": "no pain, no gain",
+            "fr": "on ne gagne rien sans effort",
+            "note": "you must work hard to get results"
+          },
+          {
+            "en": "easy come, easy go",
+            "fr": "l'argent facile s'en va facilement",
+            "note": "money or things gained easily are often lost easily"
+          },
+          {
+            "en": "don't judge a book by its cover",
+            "fr": "il ne faut pas juger un livre par sa couverture",
+            "note": "don't judge someone only by how they look"
+          },
+          {
+            "en": "the grass is always greener on the other side",
+            "fr": "l'herbe est toujours plus verte ailleurs",
+            "note": "other people's lives seem better than they really are"
+          },
+          {
+            "en": "when in Rome, do as the Romans do",
+            "fr": "à Rome, fais comme les Romains",
+            "note": "follow the customs of the place you're in"
+          },
+          {
+            "en": "honesty is the best policy",
+            "fr": "l'honnêteté est la meilleure politique",
+            "note": "it's best to always tell the truth"
+          },
+          {
+            "en": "where there's a will, there's a way",
+            "fr": "quand on veut, on peut",
+            "note": "if you really want something, you'll find a way"
+          },
+          {
+            "en": "it's never too late",
+            "fr": "il n'est jamais trop tard",
+            "note": "you can always start or change"
+          },
+          {
+            "en": "slow and steady wins the race",
+            "fr": "rien ne sert de courir, il faut partir à point",
+            "note": "patience and consistency bring success"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "« I lost my job, but I found a better one. » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Every cloud has a silver lining.",
+          "Easy come, easy go."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« He looks strict, but he's actually very kind. » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "No pain, no gain.",
+          "Don't judge a book by its cover."
+        ],
+        "a": 1,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« She's determined to finish her studies no matter what. » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Where there's a will, there's a way.",
+          "The grass is always greener."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« I should bring an umbrella just in case. » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Honesty is the best policy.",
+          "Better safe than sorry."
+        ],
+        "a": 1,
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : C'est en pratiquant qu'on devient bon.",
+        "a": "Practice makes perfect.",
+        "accept": [
+          "practice makes perfect"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Les actes comptent plus que les mots.",
+        "a": "Actions speak louder than words.",
+        "accept": [
+          "actions speak louder than words"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Mieux vaut prévenir que guérir.",
+        "a": "Better safe than sorry.",
+        "accept": [
+          "better safe than sorry"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : On ne gagne rien sans effort.",
+        "a": "No pain, no gain.",
+        "accept": [
+          "no pain, no gain"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Il n'est jamais trop tard pour apprendre.",
+        "a": "It's never too late to learn.",
+        "accept": [
+          "it's never too late to learn"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Quand on veut, on peut.",
+        "a": "Where there's a will, there's a way.",
+        "accept": [
+          "where there's a will, there's a way"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « Don't worry if it's hard — _____________. »",
+        "a": "practice makes perfect",
+        "accept": [
+          "practice makes perfect"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « Take an umbrella — _____________. »",
+        "a": "better safe than sorry",
+        "accept": [
+          "better safe than sorry"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « Don't rush, _____________. »",
+        "a": "slow and steady wins the race",
+        "accept": [
+          "slow and steady wins the race"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l1-e10",
+    "cat": "expressions",
+    "title": "Workplace & Meeting Expressions",
+    "subtitle": "Le travail et les réunions",
+    "emoji": "💼",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Apprends 14 expressions du monde du travail et des réunions, avec leur signification et leur traduction française."
+      },
+      {
+        "t": "h",
+        "text": "Les expressions"
+      },
+      {
+        "t": "phrases",
+        "title": "À retenir",
+        "items": [
+          {
+            "en": "What's today's agenda?",
+            "fr": "Quel est l'ordre du jour ?",
+            "note": "asking what will be discussed"
+          },
+          {
+            "en": "Who's taking the minutes?",
+            "fr": "Qui prend les notes ?",
+            "note": "asking who is writing down what is decided"
+          },
+          {
+            "en": "Let's get started.",
+            "fr": "Commençons.",
+            "note": "beginning a meeting or a task"
+          },
+          {
+            "en": "Let's move on.",
+            "fr": "Passons à la suite.",
+            "note": "moving to the next point or topic"
+          },
+          {
+            "en": "Can we circle back to...?",
+            "fr": "Peut-on revenir sur... ?",
+            "note": "asking to return to an earlier topic"
+          },
+          {
+            "en": "Any questions so far?",
+            "fr": "Des questions jusqu'ici ?",
+            "note": "checking if listeners have questions"
+          },
+          {
+            "en": "Let's wrap up.",
+            "fr": "Terminons / Concluons.",
+            "note": "finishing a meeting or discussion"
+          },
+          {
+            "en": "Let's call it a day.",
+            "fr": "On arrête pour aujourd'hui.",
+            "note": "saying it's time to stop working"
+          },
+          {
+            "en": "I'll follow up on that.",
+            "fr": "Je vais suivre ça.",
+            "note": "saying you will look into something later"
+          },
+          {
+            "en": "I'll keep you in the loop.",
+            "fr": "Je te tiendrai au courant.",
+            "note": "promising to keep someone informed"
+          },
+          {
+            "en": "That's on my to-do list.",
+            "fr": "C'est dans ma liste de choses à faire.",
+            "note": "saying a task is already planned"
+          },
+          {
+            "en": "I'm on top of it.",
+            "fr": "Je gère la situation.",
+            "note": "saying you are managing a task well"
+          },
+          {
+            "en": "Let's set a deadline.",
+            "fr": "Fixons une date limite.",
+            "note": "agreeing on a finish date"
+          },
+          {
+            "en": "It's a work in progress.",
+            "fr": "C'est en cours.",
+            "note": "saying a task is not finished yet"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "« What's today's agenda? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "We have three points to discuss.",
+          "I'm all ears."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« Can we circle back to the budget question? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Sure, let's come back to it.",
+          "Take care."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« Who's taking the minutes? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "It's my fault.",
+          "I'll do it."
+        ],
+        "a": 1,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« Let's wrap up. » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Never mind.",
+          "Sounds good, see you next week."
+        ],
+        "a": 1,
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Quel est l'ordre du jour aujourd'hui ?",
+        "a": "What's today's agenda?",
+        "accept": [
+          "what's today's agenda"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Qui prend les notes ?",
+        "a": "Who's taking the minutes?",
+        "accept": [
+          "who's taking the minutes"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Commençons.",
+        "a": "Let's get started.",
+        "accept": [
+          "let's get started"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je vais suivre ça par email.",
+        "a": "I'll follow up on that by email.",
+        "accept": [
+          "i'll follow up on that by email"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je te tiendrai au courant.",
+        "a": "I'll keep you in the loop.",
+        "accept": [
+          "i'll keep you in the loop"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : C'est en cours de réalisation.",
+        "a": "It's a work in progress.",
+        "accept": [
+          "it's a work in progress"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « Good morning everyone, _____________? »",
+        "a": "what's today's agenda",
+        "accept": [
+          "What's today's agenda",
+          "what's today's agenda"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « Everyone's here, _____________. »",
+        "a": "let's get started",
+        "accept": [
+          "Let's get started",
+          "let's get started"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « The report is _____________. »",
+        "a": "a work in progress",
+        "accept": [
+          "a work in progress"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l1-e11",
+    "cat": "expressions",
+    "title": "Greetings & Communication",
+    "subtitle": "Saluer, se présenter et communiquer",
+    "emoji": "👋",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Apprends 14 expressions pour saluer, se présenter et communiquer, avec leur signification et leur traduction française."
+      },
+      {
+        "t": "h",
+        "text": "Les expressions"
+      },
+      {
+        "t": "phrases",
+        "title": "À retenir",
+        "items": [
+          {
+            "en": "Hello! / Hi!",
+            "fr": "Bonjour ! / Salut !",
+            "note": "the most common everyday greeting"
+          },
+          {
+            "en": "How are you? / How are you doing?",
+            "fr": "Comment ça va ?",
+            "note": "asking how someone is"
+          },
+          {
+            "en": "Nice to meet you.",
+            "fr": "Ravi(e) de vous rencontrer.",
+            "note": "said when you meet someone for the first time"
+          },
+          {
+            "en": "What's your name?",
+            "fr": "Comment vous appelez-vous ?",
+            "note": "asking someone's name"
+          },
+          {
+            "en": "My name is...",
+            "fr": "Je m'appelle...",
+            "note": "giving your name"
+          },
+          {
+            "en": "Where are you from?",
+            "fr": "D'où venez-vous ?",
+            "note": "asking where someone is from"
+          },
+          {
+            "en": "Goodbye. / Bye.",
+            "fr": "Au revoir. / Salut.",
+            "note": "the standard way to say goodbye"
+          },
+          {
+            "en": "See you later / soon / tomorrow.",
+            "fr": "À plus tard / à bientôt.",
+            "note": "saying goodbye and when you'll meet again"
+          },
+          {
+            "en": "Take care.",
+            "fr": "Prends soin de toi.",
+            "note": "a warm, friendly way to say goodbye"
+          },
+          {
+            "en": "I don't understand.",
+            "fr": "Je ne comprends pas.",
+            "note": "saying you didn't understand at all"
+          },
+          {
+            "en": "Can you repeat that, please?",
+            "fr": "Pouvez-vous répéter, s'il vous plaît ?",
+            "note": "asking someone to say something again"
+          },
+          {
+            "en": "Could you speak more slowly, please?",
+            "fr": "Pourriez-vous parler plus lentement ?",
+            "note": "asking someone to slow down"
+          },
+          {
+            "en": "What does ... mean?",
+            "fr": "Qu'est-ce que ça veut dire, ... ?",
+            "note": "asking for the meaning of a word"
+          },
+          {
+            "en": "I don't know.",
+            "fr": "Je ne sais pas.",
+            "note": "saying you don't have the answer"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "« Nice to meet you. » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Nice to meet you too.",
+          "You're welcome."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« How are you doing? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "I'm fine, thanks. And you?",
+          "See you later."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« Could you repeat that, please? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "Of course. I said...",
+          "Take care."
+        ],
+        "a": 0,
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« Where are you from? » — Quelle est la meilleure réponse ?",
+        "opts": [
+          "I don't know.",
+          "I'm from Bamako."
+        ],
+        "a": 1,
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ravi de vous rencontrer.",
+        "a": "Nice to meet you.",
+        "accept": [
+          "nice to meet you"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Comment allez-vous ?",
+        "a": "How are you?",
+        "accept": [
+          "how are you"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je m'appelle Mohamed.",
+        "a": "My name is Mohamed.",
+        "accept": [
+          "my name is mohamed"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : D'où venez-vous ?",
+        "a": "Where are you from?",
+        "accept": [
+          "where are you from"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je ne comprends pas.",
+        "a": "I don't understand.",
+        "accept": [
+          "i don't understand"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je ne sais pas.",
+        "a": "I don't know.",
+        "accept": [
+          "i don't know"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « _____________! I'm Mohamed. »",
+        "a": "Nice to meet you",
+        "accept": [
+          "nice to meet you"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « Hi! _____________? »",
+        "a": "How are you doing",
+        "accept": [
+          "how are you doing"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complete : « _____________, please? »",
+        "a": "Can you repeat that",
+        "accept": [
+          "can you repeat that"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l1-r1",
+    "cat": "reading",
+    "title": "A Busy Monday",
+    "subtitle": "Lire et comprendre une histoire simple",
+    "emoji": "📖",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Lis cette courte histoire en anglais, puis réponds aux questions de compréhension. C'est un excellent entraînement pour la lecture et le vocabulaire du quotidien professionnel."
+      },
+      {
+        "t": "h",
+        "text": "📖 A Busy Monday"
+      },
+      {
+        "t": "p",
+        "text": "Sarah usually wakes up at 6:30 on weekdays. She gets dressed, has breakfast and leaves home at 7:30. She works in an office downtown, so she usually takes the bus. It takes about forty minutes to get there."
+      },
+      {
+        "t": "p",
+        "text": "This Monday, however, Sarah woke up late because her alarm did not ring. She quickly got dressed and left home without having breakfast. When she arrived at the bus stop, she saw many people waiting — the bus was late."
+      },
+      {
+        "t": "p",
+        "text": "Sarah finally arrived at work at 8:45. Her manager was already in the office, but fortunately, he did not get angry. Sarah apologized and explained what had happened."
+      },
+      {
+        "t": "h",
+        "text": "Expressions utiles"
+      },
+      {
+        "t": "phrases",
+        "title": "À retenir",
+        "items": [
+          {
+            "en": "wake up late",
+            "fr": "se réveiller tard"
+          },
+          {
+            "en": "get dressed",
+            "fr": "s'habiller"
+          },
+          {
+            "en": "leave home",
+            "fr": "quitter la maison"
+          },
+          {
+            "en": "get to work",
+            "fr": "arriver au travail"
+          },
+          {
+            "en": "What happened?",
+            "fr": "Que s'est-il passé ?"
+          },
+          {
+            "en": "Fortunately...",
+            "fr": "Heureusement..."
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "What time does Sarah usually wake up?",
+        "opts": [
+          "6:00",
+          "6:30",
+          "7:30"
+        ],
+        "a": 1,
+        "x": "Le texte dit « wakes up at 6:30 on weekdays »."
+      },
+      {
+        "t": "choice",
+        "q": "How does she usually go to work?",
+        "opts": [
+          "By car",
+          "By bus",
+          "On foot"
+        ],
+        "a": 1,
+        "x": "« She usually takes the bus »."
+      },
+      {
+        "t": "choice",
+        "q": "Why was she late on Monday?",
+        "opts": [
+          "She missed the bus",
+          "Her alarm did not ring",
+          "She was sick"
+        ],
+        "a": 1,
+        "x": "« Her alarm did not ring »."
+      },
+      {
+        "t": "choice",
+        "q": "What did she forget to do?",
+        "opts": [
+          "Have breakfast",
+          "Get dressed",
+          "Lock the door"
+        ],
+        "a": 0,
+        "x": "« She left home without having breakfast »."
+      },
+      {
+        "t": "choice",
+        "q": "Fortunately, her manager...",
+        "opts": [
+          "got angry",
+          "did not get angry",
+          "left the office"
+        ],
+        "a": 1,
+        "x": "« He did not get angry »."
+      },
+      {
+        "t": "match",
+        "q": "Associe chaque expression à sa traduction.",
+        "pairs": [
+          {
+            "en": "wake up late",
+            "fr": "se réveiller tard"
+          },
+          {
+            "en": "get dressed",
+            "fr": "s'habiller"
+          },
+          {
+            "en": "leave home",
+            "fr": "quitter la maison"
+          },
+          {
+            "en": "Fortunately",
+            "fr": "Heureusement"
+          }
+        ],
+        "x": ""
+      }
+    ]
+  }
+]

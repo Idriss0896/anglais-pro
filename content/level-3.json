@@ -1,0 +1,5513 @@
+[
+  {
+    "id": "l3-g1",
+    "cat": "grammar",
+    "title": "Present Perfect",
+    "subtitle": "Parler de l'expérience, du changement et du temps non terminé",
+    "emoji": "⏳",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu vas apprendre le Present Perfect (have/has + participe passé) pour parler d'expérience, de changement et de temps non terminé."
+      },
+      {
+        "t": "h",
+        "text": "A. Formation : have/has + participe passé"
+      },
+      {
+        "t": "tip",
+        "text": "Le participe passé des verbes réguliers = base + -ed (worked, finished). Beaucoup de verbes courants sont irréguliers : be→been, go→gone/been, see→seen, do→done, have→had, write→written."
+      },
+      {
+        "t": "table",
+        "head": [
+          "Forme",
+          "Règle",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "Affirmative",
+            "sujet + have/has + participe passé",
+            "I have worked here for two years."
+          ],
+          [
+            "Négative",
+            "sujet + have/has + not + participe passé",
+            "She hasn't finished the report yet."
+          ],
+          [
+            "Interrogative",
+            "Have/Has + sujet + participe passé ?",
+            "Have you ever been to Dakar?"
+          ],
+          [
+            "Réponses courtes",
+            "Yes, I have. / No, I haven't.",
+            "Have you finished? — Yes, I have."
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Quand utiliser le Present Perfect"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Usage",
+          "Exemple",
+          "Note"
+        ],
+        "rows": [
+          [
+            "Expérience de vie (pas de moment précis)",
+            "I have visited three African countries.",
+            "expérience de vie"
+          ],
+          [
+            "Action récente avec résultat présent",
+            "She has just arrived — she's at the gate now.",
+            "action récente"
+          ],
+          [
+            "Action/situation non terminée (for/since)",
+            "He has worked at this company for five years.",
+            "action non terminée"
+          ],
+          [
+            "Ce qui n'est pas encore arrivé (yet)",
+            "They haven't received the visa yet.",
+            "pas encore"
+          ],
+          [
+            "Nouvelle / annonce",
+            "The airline has cancelled all flights today.",
+            "annonce / nouvelle"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. For vs Since"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Mot",
+          "Usage",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "for",
+            "for + une durée (période)",
+            "She has lived in Bamako for ten years."
+          ],
+          [
+            "since",
+            "since + un point précis (point de départ)",
+            "He has worked here since 2019."
+          ],
+          [
+            "for",
+            "a week, two months, a long time, years",
+            "I have known him for a long time."
+          ],
+          [
+            "since",
+            "Monday, last year, January, I was a child",
+            "I have known him since we were children."
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Present Perfect vs Simple Past"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Temps",
+          "Usage",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "Present Perfect",
+            "moment non précisé / non terminé",
+            "I have visited Paris. (on ne sait pas quand)"
+          ],
+          [
+            "Simple Past",
+            "moment précis et terminé",
+            "I visited Paris in 2019."
+          ],
+          [
+            "Present Perfect",
+            "situation qui continue au présent",
+            "She has worked here since January."
+          ],
+          [
+            "Simple Past",
+            "situation complètement terminée",
+            "She worked there last year."
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "E. Expressions de temps courantes"
+      },
+      {
+        "t": "phrases",
+        "title": "Expressions de temps",
+        "items": [
+          {
+            "en": "already",
+            "fr": "déjà",
+            "note": "I have already sent the email."
+          },
+          {
+            "en": "yet",
+            "fr": "déjà / encore (questions & négations)",
+            "note": "Haven't you finished yet?"
+          },
+          {
+            "en": "just",
+            "fr": "juste / à l'instant",
+            "note": "The plane has just landed."
+          },
+          {
+            "en": "ever / never",
+            "fr": "déjà / jamais",
+            "note": "Have you ever worked abroad? — No, I've never worked abroad."
+          },
+          {
+            "en": "so far / up to now",
+            "fr": "jusqu'à présent",
+            "note": "So far, everything has gone well."
+          },
+          {
+            "en": "recently / lately",
+            "fr": "récemment",
+            "note": "He has recently changed jobs."
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "type",
+        "q": "Complète : She _____________ (live) in Bamako for ten years.",
+        "a": "has lived",
+        "accept": [
+          "has lived",
+          "has been living"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : I _____________ (never / visit) Senegal.",
+        "a": "have never visited",
+        "accept": [
+          "have never visited",
+          "have never been to"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : _____________ you _____________ (finish) the report yet?",
+        "a": "Have you finished",
+        "accept": [
+          "Have you finished",
+          "Have ... finished",
+          "have you finished"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : They _____________ (not / receive) their visa yet.",
+        "a": "haven't received",
+        "accept": [
+          "haven't received",
+          "have not received"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "I ___ Paris in 2019.",
+        "opts": [
+          "visited",
+          "have visited"
+        ],
+        "a": 0,
+        "x": "Simple Past : moment précis et terminé (2019)."
+      },
+      {
+        "t": "choice",
+        "q": "She ___ here since January; she still works here.",
+        "opts": [
+          "worked",
+          "has worked"
+        ],
+        "a": 1,
+        "x": "Present Perfect : la situation continue au présent."
+      },
+      {
+        "t": "choice",
+        "q": "We ___ that film last week.",
+        "opts": [
+          "saw",
+          "have seen"
+        ],
+        "a": 0,
+        "x": "Simple Past : moment précis (last week)."
+      },
+      {
+        "t": "choice",
+        "q": "___ you ever ___ abroad?",
+        "opts": [
+          "Did ... work",
+          "Have ... worked"
+        ],
+        "a": 1,
+        "x": "Avec ever, on utilise le Present Perfect."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Elle a déjà fini son travail.",
+        "a": "She has already finished her work.",
+        "accept": [
+          "She has already finished her work",
+          "She's already finished her work"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Avez-vous déjà visité le Sénégal ?",
+        "a": "Have you ever visited Senegal?",
+        "accept": [
+          "Have you ever visited Senegal",
+          "have you ever visited senegal"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Il travaille dans cette entreprise depuis 2018.",
+        "a": "He has worked at this company since 2018.",
+        "accept": [
+          "He has worked at this company since 2018",
+          "He has worked in this company since 2018"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Nous n'avons pas encore reçu la réponse.",
+        "a": "We haven't received the answer yet.",
+        "accept": [
+          "We haven't received the answer yet",
+          "We have not received the answer yet"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Le vol vient d'atterrir.",
+        "a": "The flight has just landed.",
+        "accept": [
+          "The flight has just landed",
+          "The plane has just landed"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l3-g2",
+    "cat": "grammar",
+    "title": "Modal Verbs",
+    "subtitle": "Exprimer la capacité, l'obligation, le conseil et la permission",
+    "emoji": "🧭",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu vas apprendre les verbes modaux (can, could, must, have to, should, may, might) qui ajoutent du sens au verbe principal."
+      },
+      {
+        "t": "h",
+        "text": "A. Capacité & possibilité"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Modal",
+          "Usage",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "can",
+            "capacité (présent / générale)",
+            "She can speak three languages."
+          ],
+          [
+            "could",
+            "capacité (passé)",
+            "He could swim when he was five."
+          ],
+          [
+            "be able to",
+            "capacité (tous les temps)",
+            "I haven't been able to contact him."
+          ],
+          [
+            "can / could",
+            "possibilité générale",
+            "Flights can be delayed in the rainy season."
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Obligation & nécessité"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Modal",
+          "Usage",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "must",
+            "obligation forte (opinion du locuteur)",
+            "You must show your passport at the gate."
+          ],
+          [
+            "have to",
+            "obligation (règle extérieure)",
+            "Employees have to wear a uniform."
+          ],
+          [
+            "don't have to",
+            "aucune obligation",
+            "You don't have to pay; it's free."
+          ],
+          [
+            "mustn't",
+            "interdiction",
+            "You mustn't smoke in the airport."
+          ],
+          [
+            "need to",
+            "nécessité",
+            "We need to confirm the booking today."
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Conseil & suggestion"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Modal",
+          "Usage",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "should / shouldn't",
+            "conseil, opinion",
+            "You should arrive two hours before the flight."
+          ],
+          [
+            "ought to",
+            "conseil (plus formel)",
+            "He ought to apologise to his colleague."
+          ],
+          [
+            "had better",
+            "conseil pressant / avertissement",
+            "You had better hurry, the gate is closing."
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Permission & demandes polies"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Modal",
+          "Usage",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "can / may",
+            "demander / donner la permission",
+            "May I see your boarding pass, please?"
+          ],
+          [
+            "could you / would you",
+            "demande polie",
+            "Could you help me with this form?"
+          ],
+          [
+            "Would you mind + -ing",
+            "demande très polie",
+            "Would you mind closing the window?"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "E. Possibilité & certitude (déduction)"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Modal",
+          "Usage",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "must",
+            "quasi-certitude (déduction positive)",
+            "He isn't answering; he must be in a meeting."
+          ],
+          [
+            "can't",
+            "quasi-certitude (déduction négative)",
+            "That can't be her office; it's closed."
+          ],
+          [
+            "may / might / could",
+            "possibilité, incertitude",
+            "The flight might be delayed because of the weather."
+          ]
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "type",
+        "q": "Complète : You _____________ show your passport at the gate. (obligation)",
+        "a": "must",
+        "accept": [
+          "must",
+          "have to"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Employees _____________ wear a uniform at this company. (règle extérieure)",
+        "a": "have to",
+        "accept": [
+          "have to",
+          "must"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : You _____________ pay; the visit is free. (aucune obligation)",
+        "a": "don't have to",
+        "accept": [
+          "don't have to",
+          "do not have to"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : You _____________ smoke in the airport. (interdiction)",
+        "a": "mustn't",
+        "accept": [
+          "mustn't",
+          "must not"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : He isn't answering his phone; he _____________ be in a meeting. (quasi-certitude)",
+        "a": "must",
+        "accept": [
+          "must"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : That _____________ be her office; the light is off. (déduction négative)",
+        "a": "can't",
+        "accept": [
+          "can't",
+          "cannot"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "You ___ show your ID; it's compulsory.",
+        "opts": [
+          "can",
+          "must"
+        ],
+        "a": 1,
+        "x": "Obligation : must."
+      },
+      {
+        "t": "choice",
+        "q": "You ___ take an umbrella; it probably won't rain.",
+        "opts": [
+          "don't have to",
+          "mustn't"
+        ],
+        "a": 0,
+        "x": "Aucune obligation : don't have to."
+      },
+      {
+        "t": "choice",
+        "q": "She ___ speak three languages.",
+        "opts": [
+          "can",
+          "must"
+        ],
+        "a": 0,
+        "x": "Capacité : can."
+      },
+      {
+        "t": "choice",
+        "q": "That ___ be true — I saw it myself yesterday!",
+        "opts": [
+          "can't",
+          "must"
+        ],
+        "a": 1,
+        "x": "Quasi-certitude positive : must."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Vous devez montrer votre passeport.",
+        "a": "You must show your passport.",
+        "accept": [
+          "You must show your passport",
+          "You have to show your passport"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Il ne faut pas fumer ici.",
+        "a": "You mustn't smoke here.",
+        "accept": [
+          "You mustn't smoke here",
+          "You must not smoke here"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Pourriez-vous m'aider avec ce formulaire ?",
+        "a": "Could you help me with this form?",
+        "accept": [
+          "Could you help me with this form",
+          "Could you help me with this form please"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ça ne peut pas être vrai.",
+        "a": "That can't be true.",
+        "accept": [
+          "That can't be true",
+          "That cannot be true"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l3-g3",
+    "cat": "grammar",
+    "title": "Comparative & Superlative Adjectives",
+    "subtitle": "Comparer les personnes, les lieux et les choses",
+    "emoji": "⚖️",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu vas apprendre à comparer avec le comparatif et le superlatif : more, the most, as...as."
+      },
+      {
+        "t": "h",
+        "text": "A. Adjectifs courts (une syllabe, ou deux en -y)"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Règle",
+          "Exemple",
+          "Note"
+        ],
+        "rows": [
+          [
+            "adjectif + -er / the + adjectif + -est",
+            "Bamako is bigger than Ségou. / Bamako is the biggest city in Mali.",
+            "adjectifs courts"
+          ],
+          [
+            "fin en -e : ajouter -r / -st",
+            "This flight is nicer than the last one.",
+            "fin en -e"
+          ],
+          [
+            "consonne+voyelle+consonne : doubler la consonne",
+            "big → bigger",
+            "consonne doublée"
+          ],
+          [
+            "fin en -y : y → i + -er/-est",
+            "Dakar is busier than Ségou. / the busiest airport",
+            "fin en -y"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Adjectifs longs (deux syllabes ou plus)"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Règle",
+          "Exemple",
+          "Note"
+        ],
+        "rows": [
+          [
+            "more + adjectif / the most + adjectif",
+            "This job is more difficult than my last one.",
+            "adjectifs longs"
+          ],
+          [
+            "the most + adjectif",
+            "This is the most interesting country I have visited.",
+            "superlatif long"
+          ],
+          [
+            "less + adjectif / the least + adjectif",
+            "This contract is less complicated than the other one.",
+            "comparatif d'infériorité"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Formes irrégulières"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Forme",
+          "Exemple",
+          "Note"
+        ],
+        "rows": [
+          [
+            "good → better → the best",
+            "Her English is better than mine. / She is the best in the class.",
+            "irrégulier"
+          ],
+          [
+            "bad → worse → the worst",
+            "Traffic is worse in the morning. / the worst traffic jam",
+            "irrégulier"
+          ],
+          [
+            "far → farther/further → the farthest/furthest",
+            "The airport is farther than the train station.",
+            "irrégulier"
+          ],
+          [
+            "little → less → the least",
+            "He has less experience than she does.",
+            "irrégulier"
+          ],
+          [
+            "much/many → more → the most",
+            "She earns more money than before.",
+            "irrégulier"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Exprimer l'égalité et l'inégalité"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Règle",
+          "Exemple",
+          "Note"
+        ],
+        "rows": [
+          [
+            "as + adjectif + as (égalité)",
+            "This flight is as expensive as the other one.",
+            "égalité"
+          ],
+          [
+            "not as/so + adjectif + as (inégalité)",
+            "Mali is not as big as Algeria.",
+            "infériorité"
+          ],
+          [
+            "the same as",
+            "His salary is the same as mine.",
+            "identique"
+          ],
+          [
+            "different from",
+            "This contract is different from the last one.",
+            "différent de"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "E. Renforcer ou atténuer la comparaison"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Règle",
+          "Exemple",
+          "Note"
+        ],
+        "rows": [
+          [
+            "much / a lot + comparatif",
+            "This job is much better than the last one.",
+            "renforcer"
+          ],
+          [
+            "a bit / a little + comparatif",
+            "This flight is a bit more expensive.",
+            "atténuer"
+          ],
+          [
+            "by far the + superlatif",
+            "She is by far the best candidate.",
+            "de loin le/la meilleur(e)"
+          ]
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "type",
+        "q": "Complète : Bamako is _____________ (big) than Ségou.",
+        "a": "bigger",
+        "accept": [
+          "bigger"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : This is the _____________ (interesting) country I have ever visited.",
+        "a": "most interesting",
+        "accept": [
+          "most interesting"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Her English is _____________ (good) than mine.",
+        "a": "better",
+        "accept": [
+          "better"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : This job is _____________ (difficult) than my last one.",
+        "a": "more difficult",
+        "accept": [
+          "more difficult"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : He has _____________ (little) experience than she does.",
+        "a": "less",
+        "accept": [
+          "less"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "This suitcase is ___ than mine.",
+        "opts": [
+          "heavier",
+          "more heavy"
+        ],
+        "a": 0,
+        "x": "Adjectif court : heavy → heavier."
+      },
+      {
+        "t": "choice",
+        "q": "This is ___ interesting job I've ever had.",
+        "opts": [
+          "the most",
+          "more"
+        ],
+        "a": 0,
+        "x": "Superlatif d'un adjectif long : the most."
+      },
+      {
+        "t": "choice",
+        "q": "He is ___ far the best employee.",
+        "opts": [
+          "by",
+          "much"
+        ],
+        "a": 0,
+        "x": "by far the + superlatif : de loin le meilleur."
+      },
+      {
+        "t": "choice",
+        "q": "That was ___ mistake of all.",
+        "opts": [
+          "the worst",
+          "the baddest"
+        ],
+        "a": 0,
+        "x": "bad → worse → the worst."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Cette ville est plus grande que la mienne.",
+        "a": "This city is bigger than mine.",
+        "accept": [
+          "This city is bigger than mine",
+          "This city is larger than mine"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : C'est le travail le plus intéressant que j'aie jamais eu.",
+        "a": "It's the most interesting job I have ever had.",
+        "accept": [
+          "It's the most interesting job I have ever had",
+          "It is the most interesting job I have ever had"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Son anglais est meilleur que le mien.",
+        "a": "Her English is better than mine.",
+        "accept": [
+          "Her English is better than mine",
+          "His English is better than mine"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ce vol est aussi cher que l'autre.",
+        "a": "This flight is as expensive as the other one.",
+        "accept": [
+          "This flight is as expensive as the other one",
+          "This flight is as expensive as the other"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : La circulation est pire le matin.",
+        "a": "Traffic is worse in the morning.",
+        "accept": [
+          "Traffic is worse in the morning",
+          "The traffic is worse in the morning"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l3-g4",
+    "cat": "grammar",
+    "title": "Singular & Plural Nouns",
+    "subtitle": "Les pluriels réguliers et irréguliers, dénombrables et indénombrables",
+    "emoji": "🔢",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu vas apprendre les pluriels réguliers et irréguliers, et la différence entre noms dénombrables et indénombrables."
+      },
+      {
+        "t": "h",
+        "text": "A. Pluriels réguliers"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Règle",
+          "Exemple",
+          "Note"
+        ],
+        "rows": [
+          [
+            "la plupart des noms : ajouter -s",
+            "one passenger → two passengers",
+            "ajout de -s"
+          ],
+          [
+            "fin en -s, -ss, -sh, -ch, -x : ajouter -es",
+            "one bus → two buses; one box → two boxes",
+            "ajout de -es"
+          ],
+          [
+            "fin en consonne + -y : y → i, ajouter -es",
+            "one country → two countries; one company → two companies",
+            "fin en -y"
+          ],
+          [
+            "fin en -f/-fe : -ves (pas toujours)",
+            "one shelf → two shelves; one wife → two wives",
+            "fin en -f/-fe"
+          ],
+          [
+            "fin en -o : -s ou -es (varie)",
+            "one photo → two photos; one potato → two potatoes",
+            "fin en -o"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Pluriels irréguliers"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Singulier → Pluriel",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "man → men",
+            "one man → three men"
+          ],
+          [
+            "woman → women",
+            "one woman → three women"
+          ],
+          [
+            "child → children",
+            "one child → three children"
+          ],
+          [
+            "foot → feet",
+            "one foot → two feet"
+          ],
+          [
+            "tooth → teeth",
+            "one tooth → two teeth"
+          ],
+          [
+            "mouse → mice",
+            "one mouse → two mice"
+          ],
+          [
+            "person → people",
+            "one person → many people"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Même forme au singulier et au pluriel"
+      },
+      {
+        "t": "phrases",
+        "title": "Noms invariables",
+        "items": [
+          {
+            "en": "sheep",
+            "fr": "un mouton / des moutons",
+            "note": "one sheep / twenty sheep"
+          },
+          {
+            "en": "fish",
+            "fr": "un poisson / des poissons",
+            "note": "one fish / many fish"
+          },
+          {
+            "en": "series",
+            "fr": "une série / des séries",
+            "note": "one series / two series"
+          },
+          {
+            "en": "aircraft",
+            "fr": "un avion / des avions",
+            "note": "one aircraft / several aircraft"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Dénombrables vs indénombrables"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Type",
+          "Règle",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "dénombrable",
+            "peut être compté, a un pluriel",
+            "one suitcase, two suitcases"
+          ],
+          [
+            "indénombrable",
+            "pas de pluriel, use some/much/a lot of",
+            "luggage, information, advice, furniture, money, traffic"
+          ],
+          [
+            "a piece of / a bit of + indénombrable",
+            "unité de mesure",
+            "a piece of advice, a piece of information, a piece of luggage"
+          ],
+          [
+            "how many + dénombrable / how much + indénombrable",
+            "many vs much",
+            "How many bags do you have? / How much luggage do you have?"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "E. Noms toujours au pluriel"
+      },
+      {
+        "t": "phrases",
+        "title": "Toujours au pluriel",
+        "items": [
+          {
+            "en": "clothes",
+            "fr": "vêtements",
+            "note": "I need to buy new clothes."
+          },
+          {
+            "en": "trousers / pants, jeans, shorts",
+            "fr": "pantalons, jeans, shorts",
+            "note": "These trousers are too big for me."
+          },
+          {
+            "en": "scissors, glasses",
+            "fr": "ciseaux, lunettes",
+            "note": "Where are my glasses?"
+          },
+          {
+            "en": "police, people",
+            "fr": "police, gens (accord pluriel)",
+            "note": "The police are investigating the theft."
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "type",
+        "q": "Complète : One passenger, two _____________.",
+        "a": "passengers",
+        "accept": [
+          "passengers"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : One child, three _____________.",
+        "a": "children",
+        "accept": [
+          "children"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : One tooth, two _____________.",
+        "a": "teeth",
+        "accept": [
+          "teeth"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : One box, two _____________.",
+        "a": "boxes",
+        "accept": [
+          "boxes"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : One man, three _____________.",
+        "a": "men",
+        "accept": [
+          "men"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : One company, two _____________.",
+        "a": "companies",
+        "accept": [
+          "companies"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : How _____________ luggage do you have? (much / many)",
+        "a": "much",
+        "accept": [
+          "much"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : How _____________ suitcases do you have? (much / many)",
+        "a": "many",
+        "accept": [
+          "many"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "I need ___ advice before I sign the contract.",
+        "opts": [
+          "a piece of",
+          "a number of"
+        ],
+        "a": 0,
+        "x": "advice est indénombrable : a piece of advice."
+      },
+      {
+        "t": "choice",
+        "q": "There are ten ___ waiting at the gate.",
+        "opts": [
+          "people",
+          "peoples"
+        ],
+        "a": 0,
+        "x": "person → people (pluriel irrégulier)."
+      },
+      {
+        "t": "choice",
+        "q": "The police ___ investigating the theft.",
+        "opts": [
+          "is",
+          "are"
+        ],
+        "a": 1,
+        "x": "police s'accorde toujours au pluriel."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : J'ai besoin d'informations sur le vol.",
+        "a": "I need some information about the flight.",
+        "accept": [
+          "I need some information about the flight",
+          "I need information about the flight"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Combien de bagages avez-vous ?",
+        "a": "How much luggage do you have?",
+        "accept": [
+          "How much luggage do you have",
+          "How much baggage do you have"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Combien de valises as-tu ?",
+        "a": "How many suitcases do you have?",
+        "accept": [
+          "How many suitcases do you have",
+          "How many bags do you have"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l3-g5",
+    "cat": "grammar",
+    "title": "Adjectives, Adverbs & Binomials",
+    "subtitle": "Décrire précisément et utiliser des paires de mots figées",
+    "emoji": "🎨",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu vas apprendre l'ordre des adjectifs, la formation des adverbes, les mots d'appréciation (+ gérondif/infinitif) et les expressions binomiales."
+      },
+      {
+        "t": "h",
+        "text": "A. Ordre des adjectifs"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Règle",
+          "Exemple",
+          "Note"
+        ],
+        "rows": [
+          [
+            "Opinion → Taille → Âge → Forme → Couleur → Origine → Matière + nom",
+            "a beautiful, small, old, round, black, Malian wooden box",
+            "ordre des adjectifs"
+          ],
+          [
+            "opinion en premier",
+            "an interesting job (not a job interesting)",
+            "opinion en premier"
+          ],
+          [
+            "taille + âge",
+            "a small old office",
+            "taille + âge"
+          ],
+          [
+            "couleur + origine + matière",
+            "a blue Chinese cotton shirt",
+            "couleur + origine + matière"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Former des adverbes à partir d'adjectifs"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Règle",
+          "Exemple",
+          "Note"
+        ],
+        "rows": [
+          [
+            "adjectif + -ly (règle générale)",
+            "quick → quickly; careful → carefully",
+            "règle générale"
+          ],
+          [
+            "fin en -y : -ily",
+            "easy → easily; happy → happily",
+            "fin en -y"
+          ],
+          [
+            "fin en -le : -ly",
+            "simple → simply",
+            "fin en -le"
+          ],
+          [
+            "irrégulier : good → well",
+            "She speaks English well.",
+            "irrégulier"
+          ],
+          [
+            "même forme adjectif/adverbe : fast, hard, late",
+            "He works hard. (not hardly = presque pas)",
+            "même forme"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Mots d'appréciation + gérondif ou infinitif"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Règle",
+          "Exemple",
+          "Note"
+        ],
+        "rows": [
+          [
+            "love / like / enjoy / hate + -ing",
+            "I enjoy learning new languages.",
+            "+ gérondif"
+          ],
+          [
+            "prefer + -ing / prefer + nom + to + nom",
+            "I prefer travelling by train to flying.",
+            "+ gérondif / comparaison"
+          ],
+          [
+            "want / would like / hope + to + verbe",
+            "I would like to improve my English.",
+            "+ infinitif"
+          ],
+          [
+            "can't stand / can't bear + -ing",
+            "He can't stand waiting at the airport.",
+            "ne pas supporter"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Binomiales (paires de mots figées)"
+      },
+      {
+        "t": "phrases",
+        "title": "Binomial expressions",
+        "items": [
+          {
+            "en": "back and forth",
+            "fr": "aller-retour / dans les deux sens",
+            "note": "He kept walking back and forth in the hall."
+          },
+          {
+            "en": "sooner or later",
+            "fr": "tôt ou tard",
+            "note": "Sooner or later, she will find a new job."
+          },
+          {
+            "en": "give and take",
+            "fr": "des concessions mutuelles",
+            "note": "A good marriage needs give and take."
+          },
+          {
+            "en": "salt and pepper",
+            "fr": "sel et poivre",
+            "note": "Add a little salt and pepper to taste."
+          },
+          {
+            "en": "now and then / now and again",
+            "fr": "de temps en temps",
+            "note": "We still meet up now and then."
+          },
+          {
+            "en": "more or less",
+            "fr": "plus ou moins",
+            "note": "The report is more or less finished."
+          },
+          {
+            "en": "here and there",
+            "fr": "ça et là",
+            "note": "There were papers here and there on his desk."
+          },
+          {
+            "en": "ups and downs",
+            "fr": "des hauts et des bas",
+            "note": "Every career has its ups and downs."
+          },
+          {
+            "en": "safe and sound",
+            "fr": "sain et sauf",
+            "note": "They arrived safe and sound."
+          },
+          {
+            "en": "by and large",
+            "fr": "dans l'ensemble",
+            "note": "By and large, the trip went very well."
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "type",
+        "q": "Complète : She answered the question _____________ (quick).",
+        "a": "quickly",
+        "accept": [
+          "quickly"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : He is a _____________, _____________ man. (opinion, âge : old / kind)",
+        "a": "kind, old",
+        "accept": [
+          "kind, old",
+          "kind old"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : This is a _____________ box. (small, wooden, black — bon ordre)",
+        "a": "small, black, wooden",
+        "accept": [
+          "small, black, wooden",
+          "small black wooden"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : She speaks English very _____________ (good).",
+        "a": "well",
+        "accept": [
+          "well"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : He works very _____________ (hard) every day.",
+        "a": "hard",
+        "accept": [
+          "hard"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : They arrived safe and _____________.",
+        "a": "sound",
+        "accept": [
+          "sound"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Every career has its ups and _____________.",
+        "a": "downs",
+        "accept": [
+          "downs"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "She did the test ___.",
+        "opts": [
+          "careful",
+          "carefully"
+        ],
+        "a": 1,
+        "x": "On utilise l'adverbe : carefully."
+      },
+      {
+        "t": "choice",
+        "q": "He speaks very ___ English.",
+        "opts": [
+          "good",
+          "well"
+        ],
+        "a": 0,
+        "x": "good qualifie le nom English (adjectif)."
+      },
+      {
+        "t": "choice",
+        "q": "I prefer reading ___ watching TV.",
+        "opts": [
+          "to",
+          "than"
+        ],
+        "a": 0,
+        "x": "prefer + -ing + to + -ing."
+      },
+      {
+        "t": "choice",
+        "q": "She enjoys ___ new people.",
+        "opts": [
+          "meet",
+          "meeting"
+        ],
+        "a": 1,
+        "x": "enjoy + -ing."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Elle parle très bien l'anglais.",
+        "a": "She speaks English very well.",
+        "accept": [
+          "She speaks English very well",
+          "She speaks very good English"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Je préfère voyager en train plutôt qu'en avion.",
+        "a": "I prefer travelling by train to flying.",
+        "accept": [
+          "I prefer travelling by train to flying",
+          "I prefer traveling by train to flying"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Tôt ou tard, elle trouvera un nouvel emploi.",
+        "a": "Sooner or later, she will find a new job.",
+        "accept": [
+          "Sooner or later, she will find a new job",
+          "Sooner or later she will find a new job"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l3-g6",
+    "cat": "grammar",
+    "title": "Question Tags",
+    "subtitle": "Les petites questions de fin de phrase",
+    "emoji": "❓",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu vas apprendre les question tags, ces courtes questions ajoutées à la fin d'une phrase : isn't it? don't you? shall we?"
+      },
+      {
+        "t": "h",
+        "text": "A. La règle de base"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Règle",
+          "Exemple",
+          "Note"
+        ],
+        "rows": [
+          [
+            "Phrase affirmative → tag négatif",
+            "You are from Mali, aren't you?",
+            "affirmatif → tag négatif"
+          ],
+          [
+            "Phrase négative → tag positif",
+            "She doesn't work here, does she?",
+            "négatif → tag positif"
+          ],
+          [
+            "Le tag reprend l'auxiliaire/modal de la phrase",
+            "They have arrived, haven't they?",
+            "même auxiliaire"
+          ],
+          [
+            "Pas d'auxiliaire → do/does/did",
+            "He works in Bamako, doesn't he?",
+            "ajout de do/does/did"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Tags avec les verbes modaux"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Modal",
+          "Exemple",
+          "Note"
+        ],
+        "rows": [
+          [
+            "can → can't",
+            "You can speak French, can't you?",
+            "can → can't"
+          ],
+          [
+            "should → shouldn't",
+            "We should leave now, shouldn't we?",
+            "should → shouldn't"
+          ],
+          [
+            "must (obligation) → mustn't",
+            "You must renew your visa, mustn't you?",
+            "must → mustn't"
+          ],
+          [
+            "will → won't",
+            "You'll call me, won't you?",
+            "will → won't"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Cas particuliers"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Règle",
+          "Exemple",
+          "Note"
+        ],
+        "rows": [
+          [
+            "I am → aren't I",
+            "I'm late, aren't I?",
+            "cas particulier"
+          ],
+          [
+            "Impératif → will you / won't you",
+            "Close the door, will you?",
+            "à l'impératif"
+          ],
+          [
+            "Let's... → shall we",
+            "Let's book the flight now, shall we?",
+            "avec let's"
+          ],
+          [
+            "There is/are → isn't/aren't there",
+            "There's a problem, isn't there?",
+            "avec there is/are"
+          ],
+          [
+            "Nothing/nobody (sens négatif) → tag positif",
+            "Nothing happened, did it?",
+            "sujets négatifs"
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Pourquoi utiliser les question tags"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Usage",
+          "Exemple",
+          "Note"
+        ],
+        "rows": [
+          [
+            "Vérifier / confirmer (ton descendant)",
+            "You work at the bank, don't you?",
+            "confirmer"
+          ],
+          [
+            "Poser une vraie question (ton montant)",
+            "You haven't seen my passport, have you?",
+            "vraie question"
+          ],
+          [
+            "Faire la conversation",
+            "Lovely weather, isn't it?",
+            "faire la conversation"
+          ]
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "type",
+        "q": "Complète : You are from Mali, _____________ ?",
+        "a": "aren't you",
+        "accept": [
+          "aren't you"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : She doesn't work here, _____________ ?",
+        "a": "does she",
+        "accept": [
+          "does she"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : They have arrived, _____________ ?",
+        "a": "haven't they",
+        "accept": [
+          "haven't they"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : He works in Bamako, _____________ ?",
+        "a": "doesn't he",
+        "accept": [
+          "doesn't he"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : You can speak French, _____________ ?",
+        "a": "can't you",
+        "accept": [
+          "can't you"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : I'm late, _____________ ?",
+        "a": "aren't I",
+        "accept": [
+          "aren't I"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Let's book the flight now, _____________ ?",
+        "a": "shall we",
+        "accept": [
+          "shall we"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : There's a problem, _____________ ?",
+        "a": "isn't there",
+        "accept": [
+          "isn't there"
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "You work at the bank, ___?",
+        "opts": [
+          "don't you",
+          "do you"
+        ],
+        "a": 0,
+        "x": "Phrase affirmative → tag négatif."
+      },
+      {
+        "t": "choice",
+        "q": "She can't drive, ___?",
+        "opts": [
+          "can she",
+          "can't she"
+        ],
+        "a": 0,
+        "x": "Phrase négative → tag positif."
+      },
+      {
+        "t": "choice",
+        "q": "Let's go, ___?",
+        "opts": [
+          "shall we",
+          "will we"
+        ],
+        "a": 0,
+        "x": "Avec let's, on utilise shall we."
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Vous venez du Mali, n'est-ce pas ?",
+        "a": "You're from Mali, aren't you?",
+        "accept": [
+          "You're from Mali, aren't you",
+          "You are from Mali, aren't you"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Il ne travaille pas ici, n'est-ce pas ?",
+        "a": "He doesn't work here, does he?",
+        "accept": [
+          "He doesn't work here, does he",
+          "He does not work here, does he"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Elle peut parler anglais, n'est-ce pas ?",
+        "a": "She can speak English, can't she?",
+        "accept": [
+          "She can speak English, can't she",
+          "She can speak English, can she"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l3-v1",
+    "cat": "vocabulary",
+    "title": "Airports & Air Travel",
+    "subtitle": "Enregistrement, sécurité, embarquement et arrivée à l'aéroport",
+    "emoji": "✈️",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu vas apprendre le vocabulaire de l'aéroport et du voyage en avion : l'enregistrement, le passage de la sécurité, l'embarquement, l'immigration et l'arrivée."
+      },
+      {
+        "t": "h",
+        "text": "A. Avant le vol — Enregistrement & sécurité"
+      },
+      {
+        "t": "phrases",
+        "title": "Vocabulaire — Avant le vol",
+        "items": [
+          {
+            "en": "boarding pass",
+            "fr": "la carte d'embarquement",
+            "note": "Please have your boarding pass ready before you go through security."
+          },
+          {
+            "en": "check-in counter",
+            "fr": "le comptoir d'enregistrement",
+            "note": "We arrived two hours early to find the check-in counter."
+          },
+          {
+            "en": "baggage allowance",
+            "fr": "la franchise de bagages",
+            "note": "Economy passengers have a baggage allowance of 23 kilos."
+          },
+          {
+            "en": "carry-on luggage",
+            "fr": "le bagage à main",
+            "note": "I only travel with carry-on luggage for short trips."
+          },
+          {
+            "en": "security check",
+            "fr": "le contrôle de sécurité",
+            "note": "The security check took almost thirty minutes."
+          },
+          {
+            "en": "departure lounge",
+            "fr": "la salle d'embarquement",
+            "note": "We had a coffee in the departure lounge."
+          },
+          {
+            "en": "boarding gate",
+            "fr": "la porte d'embarquement",
+            "note": "Our boarding gate changed at the last minute."
+          },
+          {
+            "en": "overhead compartment",
+            "fr": "le compartiment à bagages",
+            "note": "Put your bag in the overhead compartment, please."
+          },
+          {
+            "en": "excess baggage",
+            "fr": "l'excédent de bagages",
+            "note": "He had to pay extra for excess baggage."
+          },
+          {
+            "en": "duty-free shop",
+            "fr": "la boutique hors taxes",
+            "note": "She bought some perfume at the duty-free shop."
+          },
+          {
+            "en": "layover / stopover",
+            "fr": "l'escale",
+            "note": "We have a three-hour layover in Casablanca."
+          },
+          {
+            "en": "direct flight",
+            "fr": "le vol direct",
+            "note": "I prefer a direct flight, even if it's more expensive."
+          },
+          {
+            "en": "connecting flight",
+            "fr": "le vol de correspondance",
+            "note": "I almost missed my connecting flight."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Immigration, douanes & documents"
+      },
+      {
+        "t": "phrases",
+        "title": "Vocabulaire — Immigration & douanes",
+        "items": [
+          {
+            "en": "passport control",
+            "fr": "le contrôle des passeports",
+            "note": "There was a long queue at passport control."
+          },
+          {
+            "en": "visa",
+            "fr": "le visa",
+            "note": "You need a visa to travel to that country."
+          },
+          {
+            "en": "customs declaration",
+            "fr": "la déclaration de douane",
+            "note": "Fill in the customs declaration before landing."
+          },
+          {
+            "en": "customs officer",
+            "fr": "le douanier",
+            "note": "The customs officer asked me to open my suitcase."
+          },
+          {
+            "en": "nothing to declare",
+            "fr": "rien à déclarer",
+            "note": "We walked through the nothing-to-declare lane."
+          },
+          {
+            "en": "residence permit",
+            "fr": "le titre de séjour",
+            "note": "He is waiting for his residence permit."
+          },
+          {
+            "en": "border",
+            "fr": "la frontière",
+            "note": "The two countries share a long border."
+          },
+          {
+            "en": "immigration officer",
+            "fr": "l'agent d'immigration",
+            "note": "The immigration officer asked about the purpose of my visit."
+          },
+          {
+            "en": "identity check",
+            "fr": "le contrôle d'identité",
+            "note": "An identity check is required before boarding."
+          },
+          {
+            "en": "valid passport",
+            "fr": "un passeport valide",
+            "note": "Make sure your passport is still valid for six months."
+          },
+          {
+            "en": "expired",
+            "fr": "expiré(e)",
+            "note": "My passport expired last month."
+          },
+          {
+            "en": "purpose of visit",
+            "fr": "le motif du séjour",
+            "note": "Business was the purpose of his visit."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Dans l'avion"
+      },
+      {
+        "t": "phrases",
+        "title": "Vocabulaire — Dans l'avion",
+        "items": [
+          {
+            "en": "aisle seat",
+            "fr": "le siège côté couloir",
+            "note": "I always ask for an aisle seat so I can get up easily."
+          },
+          {
+            "en": "window seat",
+            "fr": "le siège côté hublot",
+            "note": "My daughter loves the window seat."
+          },
+          {
+            "en": "seatbelt",
+            "fr": "la ceinture de sécurité",
+            "note": "Please fasten your seatbelt."
+          },
+          {
+            "en": "flight attendant",
+            "fr": "l'hôtesse de l'air / le steward",
+            "note": "The flight attendant brought us some water."
+          },
+          {
+            "en": "turbulence",
+            "fr": "les turbulences",
+            "note": "We had some turbulence over the ocean."
+          },
+          {
+            "en": "take-off",
+            "fr": "le décollage",
+            "note": "Keep your seatbelt on during take-off."
+          },
+          {
+            "en": "landing",
+            "fr": "l'atterrissage",
+            "note": "The landing was very smooth."
+          },
+          {
+            "en": "cabin crew",
+            "fr": "le personnel de cabine",
+            "note": "The cabin crew checked everyone's seatbelt."
+          },
+          {
+            "en": "emergency exit",
+            "fr": "la sortie de secours",
+            "note": "Do not block the emergency exit."
+          },
+          {
+            "en": "tray table",
+            "fr": "la tablette repas",
+            "note": "Please put your tray table up."
+          },
+          {
+            "en": "in-flight meal",
+            "fr": "le repas à bord",
+            "note": "The in-flight meal was surprisingly good."
+          },
+          {
+            "en": "jet lag",
+            "fr": "le décalage horaire",
+            "note": "It took me two days to recover from jet lag."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Arrivée & problèmes"
+      },
+      {
+        "t": "phrases",
+        "title": "Vocabulaire — Arrivée & problèmes",
+        "items": [
+          {
+            "en": "baggage claim",
+            "fr": "la zone de récupération des bagages",
+            "note": "Our suitcases were already at baggage claim."
+          },
+          {
+            "en": "lost luggage",
+            "fr": "les bagages perdus",
+            "note": "We had to report our lost luggage."
+          },
+          {
+            "en": "delayed flight",
+            "fr": "le vol retardé",
+            "note": "Our flight was delayed by two hours."
+          },
+          {
+            "en": "cancelled flight",
+            "fr": "le vol annulé",
+            "note": "The airline cancelled our flight because of the storm."
+          },
+          {
+            "en": "missed flight",
+            "fr": "le vol manqué",
+            "note": "He missed his flight because of traffic."
+          },
+          {
+            "en": "compensation",
+            "fr": "l'indemnisation",
+            "note": "Passengers can ask for compensation for long delays."
+          },
+          {
+            "en": "refund",
+            "fr": "le remboursement",
+            "note": "The airline offered a full refund."
+          },
+          {
+            "en": "rebook",
+            "fr": "reprogrammer la réservation",
+            "note": "The agent rebooked us on the next flight."
+          },
+          {
+            "en": "terminal",
+            "fr": "le terminal",
+            "note": "Our flight leaves from Terminal 2."
+          },
+          {
+            "en": "arrivals hall",
+            "fr": "le hall des arrivées",
+            "note": "He was waiting in the arrivals hall."
+          },
+          {
+            "en": "shuttle bus",
+            "fr": "la navette",
+            "note": "We took the shuttle bus to the car park."
+          },
+          {
+            "en": "on time",
+            "fr": "à l'heure",
+            "note": "Luckily, our flight was on time."
+          }
+        ]
+      },
+      {
+        "t": "tip",
+        "text": "« layover » et « stopover » désignent tous les deux « l'escale » ; « flight attendant » peut se traduire par « hôtesse de l'air » ou « steward »."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque mot anglais à sa traduction française.",
+        "pairs": [
+          {
+            "en": "boarding pass",
+            "fr": "la carte d'embarquement"
+          },
+          {
+            "en": "carry-on luggage",
+            "fr": "le bagage à main"
+          },
+          {
+            "en": "boarding gate",
+            "fr": "la porte d'embarquement"
+          },
+          {
+            "en": "duty-free shop",
+            "fr": "la boutique hors taxes"
+          },
+          {
+            "en": "connecting flight",
+            "fr": "le vol de correspondance"
+          },
+          {
+            "en": "customs declaration",
+            "fr": "la déclaration de douane"
+          },
+          {
+            "en": "residence permit",
+            "fr": "le titre de séjour"
+          },
+          {
+            "en": "identity check",
+            "fr": "le contrôle d'identité"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "match",
+        "q": "Associe chaque mot anglais à sa traduction française.",
+        "pairs": [
+          {
+            "en": "purpose of visit",
+            "fr": "le motif du séjour"
+          },
+          {
+            "en": "seatbelt",
+            "fr": "la ceinture de sécurité"
+          },
+          {
+            "en": "take-off",
+            "fr": "le décollage"
+          },
+          {
+            "en": "emergency exit",
+            "fr": "la sortie de secours"
+          },
+          {
+            "en": "jet lag",
+            "fr": "le décalage horaire"
+          },
+          {
+            "en": "delayed flight",
+            "fr": "le vol retardé"
+          },
+          {
+            "en": "compensation",
+            "fr": "l'indemnisation"
+          },
+          {
+            "en": "terminal",
+            "fr": "le terminal"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Quel mot signifie « la carte d'embarquement » ?",
+        "opts": [
+          "boarding pass",
+          "security check",
+          "cancelled flight"
+        ],
+        "a": 0,
+        "x": "« boarding pass » = la carte d'embarquement."
+      },
+      {
+        "t": "choice",
+        "q": "Quel mot signifie « le contrôle de sécurité » ?",
+        "opts": [
+          "expired",
+          "boarding gate",
+          "security check"
+        ],
+        "a": 2,
+        "x": "« security check » = le contrôle de sécurité."
+      },
+      {
+        "t": "choice",
+        "q": "Quel mot signifie « l'excédent de bagages » ?",
+        "opts": [
+          "seatbelt",
+          "aisle seat",
+          "excess baggage"
+        ],
+        "a": 2,
+        "x": "« excess baggage » = l'excédent de bagages."
+      },
+      {
+        "t": "choice",
+        "q": "Quel mot signifie « l'escale » ?",
+        "opts": [
+          "aisle seat",
+          "layover / stopover",
+          "nothing to declare"
+        ],
+        "a": 1,
+        "x": "« layover / stopover » = l'escale."
+      },
+      {
+        "t": "choice",
+        "q": "Quel mot signifie « le visa » ?",
+        "opts": [
+          "excess baggage",
+          "visa",
+          "customs officer"
+        ],
+        "a": 1,
+        "x": "« visa » = le visa."
+      },
+      {
+        "t": "choice",
+        "q": "Quel mot signifie « le titre de séjour » ?",
+        "opts": [
+          "residence permit",
+          "in-flight meal",
+          "turbulence"
+        ],
+        "a": 0,
+        "x": "« residence permit » = le titre de séjour."
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : Please have your ______ ready before you go through security.",
+        "tiles": [
+          "boarding",
+          "pass"
+        ],
+        "a": "boarding pass",
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : Put your bag in the ______, please.",
+        "tiles": [
+          "overhead",
+          "compartment"
+        ],
+        "a": "overhead compartment",
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : I prefer a ______, even if it's more expensive.",
+        "tiles": [
+          "direct",
+          "flight"
+        ],
+        "a": "direct flight",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : We have a three-hour ______ in Casablanca.",
+        "a": "layover",
+        "accept": [
+          "stopover",
+          "layover / stopover"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l3-v2",
+    "cat": "vocabulary",
+    "title": "Professions & Employment",
+    "subtitle": "Métiers, contrats, embauche, salaire et avantages",
+    "emoji": "💼",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu vas apprendre le vocabulaire des métiers, des contrats de travail, de l'embauche, du départ d'un emploi, du salaire et des avantages."
+      },
+      {
+        "t": "h",
+        "text": "A. Les métiers courants"
+      },
+      {
+        "t": "phrases",
+        "title": "Vocabulaire — Les métiers",
+        "items": [
+          {
+            "en": "accountant",
+            "fr": "le/la comptable",
+            "note": "She works as an accountant at a trading company."
+          },
+          {
+            "en": "engineer",
+            "fr": "l'ingénieur(e)",
+            "note": "My brother is a civil engineer."
+          },
+          {
+            "en": "electrician",
+            "fr": "l'électricien(ne)",
+            "note": "We called an electrician to fix the wiring."
+          },
+          {
+            "en": "mechanic",
+            "fr": "le/la mécanicien(ne)",
+            "note": "The mechanic checked the engine carefully."
+          },
+          {
+            "en": "lawyer",
+            "fr": "l'avocat(e)",
+            "note": "He hired a lawyer to check the contract."
+          },
+          {
+            "en": "nurse",
+            "fr": "l'infirmier / l'infirmière",
+            "note": "The nurse took my blood pressure."
+          },
+          {
+            "en": "pharmacist",
+            "fr": "le/la pharmacien(ne)",
+            "note": "Ask the pharmacist which medicine is best."
+          },
+          {
+            "en": "architect",
+            "fr": "l'architecte",
+            "note": "The architect showed us the plans for the house."
+          },
+          {
+            "en": "driver",
+            "fr": "le chauffeur / la chauffeuse",
+            "note": "He works as a truck driver."
+          },
+          {
+            "en": "tailor",
+            "fr": "le tailleur / la couturière",
+            "note": "The tailor took my measurements for the suit."
+          },
+          {
+            "en": "translator / interpreter",
+            "fr": "le/la traducteur(trice) / interprète",
+            "note": "She worked as a translator for a foreign company."
+          },
+          {
+            "en": "civil servant",
+            "fr": "le/la fonctionnaire",
+            "note": "He has been a civil servant for ten years."
+          },
+          {
+            "en": "entrepreneur",
+            "fr": "l'entrepreneur(e)",
+            "note": "She's an entrepreneur in the fashion industry."
+          },
+          {
+            "en": "consultant",
+            "fr": "le/la consultant(e)",
+            "note": "We hired a consultant to improve our sales."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Statut & contrats de travail"
+      },
+      {
+        "t": "phrases",
+        "title": "Vocabulaire — Statut & contrats",
+        "items": [
+          {
+            "en": "permanent contract",
+            "fr": "le contrat à durée indéterminée (CDI)",
+            "note": "After the trial period, she got a permanent contract."
+          },
+          {
+            "en": "fixed-term contract",
+            "fr": "le contrat à durée déterminée (CDD)",
+            "note": "His fixed-term contract ends in December."
+          },
+          {
+            "en": "probation period",
+            "fr": "la période d'essai",
+            "note": "The probation period is usually three months."
+          },
+          {
+            "en": "internship",
+            "fr": "le stage",
+            "note": "She is doing a six-month internship at a bank."
+          },
+          {
+            "en": "freelancer",
+            "fr": "le/la travailleur(se) indépendant(e)",
+            "note": "He works as a freelancer, not for one company."
+          },
+          {
+            "en": "self-employed",
+            "fr": "à son compte",
+            "note": "My aunt is self-employed; she runs her own shop."
+          },
+          {
+            "en": "full-time",
+            "fr": "à temps plein",
+            "note": "She has a full-time job at the hospital."
+          },
+          {
+            "en": "part-time",
+            "fr": "à temps partiel",
+            "note": "He works part-time while studying."
+          },
+          {
+            "en": "employer",
+            "fr": "l'employeur",
+            "note": "Our employer offers good training programmes."
+          },
+          {
+            "en": "employee",
+            "fr": "l'employé(e)",
+            "note": "All employees must attend the meeting."
+          },
+          {
+            "en": "colleague / co-worker",
+            "fr": "le/la collègue",
+            "note": "My colleagues are very supportive."
+          },
+          {
+            "en": "shift work",
+            "fr": "le travail par équipes",
+            "note": "Nurses often do shift work."
+          },
+          {
+            "en": "remote work",
+            "fr": "le télétravail",
+            "note": "Remote work became common after the pandemic."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Trouver, garder & perdre un emploi"
+      },
+      {
+        "t": "phrases",
+        "title": "Vocabulaire — Emploi & carrière",
+        "items": [
+          {
+            "en": "apply for a job",
+            "fr": "postuler à un emploi",
+            "note": "I applied for a job at the bank."
+          },
+          {
+            "en": "job interview",
+            "fr": "l'entretien d'embauche",
+            "note": "The job interview lasted forty-five minutes."
+          },
+          {
+            "en": "hire / recruit",
+            "fr": "embaucher / recruter",
+            "note": "The company hired three new engineers."
+          },
+          {
+            "en": "promote",
+            "fr": "promouvoir",
+            "note": "She was promoted to team leader."
+          },
+          {
+            "en": "resign / quit",
+            "fr": "démissionner",
+            "note": "He resigned after ten years at the company."
+          },
+          {
+            "en": "lay off",
+            "fr": "licencier (motif économique)",
+            "note": "The factory laid off fifty workers."
+          },
+          {
+            "en": "fire / dismiss",
+            "fr": "licencier (pour faute)",
+            "note": "She was fired for being late every day."
+          },
+          {
+            "en": "unemployed",
+            "fr": "au chômage",
+            "note": "He has been unemployed for six months."
+          },
+          {
+            "en": "unemployment",
+            "fr": "le chômage",
+            "note": "Unemployment is a big problem in many countries."
+          },
+          {
+            "en": "retire",
+            "fr": "prendre sa retraite",
+            "note": "My father retired at sixty."
+          },
+          {
+            "en": "notice period",
+            "fr": "le préavis",
+            "note": "She has to work a one-month notice period."
+          },
+          {
+            "en": "career change",
+            "fr": "la reconversion professionnelle",
+            "note": "He made a career change from teaching to IT."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Salaire & avantages"
+      },
+      {
+        "t": "phrases",
+        "title": "Vocabulaire — Salaire & avantages",
+        "items": [
+          {
+            "en": "salary",
+            "fr": "le salaire",
+            "note": "Her salary increased after the promotion."
+          },
+          {
+            "en": "wage",
+            "fr": "le salaire horaire",
+            "note": "The minimum wage went up this year."
+          },
+          {
+            "en": "payslip",
+            "fr": "le bulletin de salaire",
+            "note": "Check your payslip for any mistakes."
+          },
+          {
+            "en": "bonus",
+            "fr": "la prime",
+            "note": "All staff received a bonus this year."
+          },
+          {
+            "en": "overtime",
+            "fr": "les heures supplémentaires",
+            "note": "He did a lot of overtime last month."
+          },
+          {
+            "en": "paid leave",
+            "fr": "le congé payé",
+            "note": "She took two weeks of paid leave."
+          },
+          {
+            "en": "sick leave",
+            "fr": "le congé maladie",
+            "note": "He is on sick leave this week."
+          },
+          {
+            "en": "maternity/paternity leave",
+            "fr": "le congé maternité/paternité",
+            "note": "She is on maternity leave until March."
+          },
+          {
+            "en": "pension",
+            "fr": "la pension de retraite",
+            "note": "He receives a small pension."
+          },
+          {
+            "en": "pay rise / raise",
+            "fr": "l'augmentation de salaire",
+            "note": "She asked her boss for a pay rise."
+          },
+          {
+            "en": "deduction",
+            "fr": "la retenue / déduction",
+            "note": "Tax deductions are shown on the payslip."
+          }
+        ]
+      },
+      {
+        "t": "tip",
+        "text": "« fire / dismiss » = licencier (pour faute), tandis que « lay off » = licencier (motif économique)."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque mot anglais à sa traduction française.",
+        "pairs": [
+          {
+            "en": "accountant",
+            "fr": "le/la comptable"
+          },
+          {
+            "en": "mechanic",
+            "fr": "le/la mécanicien(ne)"
+          },
+          {
+            "en": "pharmacist",
+            "fr": "le/la pharmacien(ne)"
+          },
+          {
+            "en": "tailor",
+            "fr": "le tailleur / la couturière"
+          },
+          {
+            "en": "entrepreneur",
+            "fr": "l'entrepreneur(e)"
+          },
+          {
+            "en": "freelancer",
+            "fr": "le/la travailleur(se) indépendant(e)"
+          },
+          {
+            "en": "part-time",
+            "fr": "à temps partiel"
+          },
+          {
+            "en": "colleague / co-worker",
+            "fr": "le/la collègue"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "match",
+        "q": "Associe chaque mot anglais à sa traduction française.",
+        "pairs": [
+          {
+            "en": "fixed-term contract",
+            "fr": "le contrat à durée déterminée (CDD)"
+          },
+          {
+            "en": "apply for a job",
+            "fr": "postuler à un emploi"
+          },
+          {
+            "en": "promote",
+            "fr": "promouvoir"
+          },
+          {
+            "en": "fire / dismiss",
+            "fr": "licencier (pour faute)"
+          },
+          {
+            "en": "retire",
+            "fr": "prendre sa retraite"
+          },
+          {
+            "en": "salary",
+            "fr": "le salaire"
+          },
+          {
+            "en": "bonus",
+            "fr": "la prime"
+          },
+          {
+            "en": "sick leave",
+            "fr": "le congé maladie"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Quel mot signifie « le/la comptable » ?",
+        "opts": [
+          "fire / dismiss",
+          "full-time",
+          "accountant"
+        ],
+        "a": 2,
+        "x": "« accountant » = le/la comptable."
+      },
+      {
+        "t": "choice",
+        "q": "Quel mot signifie « l'électricien(ne) » ?",
+        "opts": [
+          "colleague / co-worker",
+          "electrician",
+          "employer"
+        ],
+        "a": 1,
+        "x": "« electrician » = l'électricien(ne)."
+      },
+      {
+        "t": "choice",
+        "q": "Quel mot signifie « l'avocat(e) » ?",
+        "opts": [
+          "accountant",
+          "resign / quit",
+          "lawyer"
+        ],
+        "a": 2,
+        "x": "« lawyer » = l'avocat(e)."
+      },
+      {
+        "t": "choice",
+        "q": "Quel mot signifie « le/la pharmacien(ne) » ?",
+        "opts": [
+          "pharmacist",
+          "colleague / co-worker",
+          "salary"
+        ],
+        "a": 0,
+        "x": "« pharmacist » = le/la pharmacien(ne)."
+      },
+      {
+        "t": "choice",
+        "q": "Quel mot signifie « le contrat à durée indéterminée (CDI) » ?",
+        "opts": [
+          "permanent contract",
+          "shift work",
+          "internship"
+        ],
+        "a": 0,
+        "x": "« permanent contract » = le CDI."
+      },
+      {
+        "t": "choice",
+        "q": "Quel mot signifie « la période d'essai » ?",
+        "opts": [
+          "electrician",
+          "wage",
+          "probation period"
+        ],
+        "a": 2,
+        "x": "« probation period » = la période d'essai."
+      },
+      {
+        "t": "type",
+        "q": "Complète : She works as an ______ at a trading company.",
+        "a": "accountant",
+        "accept": [
+          "an accountant"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : We called an ______ to fix the wiring.",
+        "a": "electrician",
+        "accept": [
+          "an electrician"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : He hired a ______ to check the contract.",
+        "a": "lawyer",
+        "accept": [
+          "a lawyer"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : The ______ took my measurements for the suit.",
+        "a": "tailor",
+        "accept": [],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l3-v3",
+    "cat": "vocabulary",
+    "title": "Countries & Nationalities",
+    "subtitle": "Pays, nationalités, continents et langues",
+    "emoji": "🌍",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu vas apprendre à parler de l'origine des gens, des continents et des langues qu'ils parlent."
+      },
+      {
+        "t": "h",
+        "text": "A. Pays & nationalités"
+      },
+      {
+        "t": "phrases",
+        "title": "Vocabulaire — Pays & nationalités",
+        "items": [
+          {
+            "en": "French",
+            "fr": "français(e) (la France)",
+            "note": "He is French; he comes from France."
+          },
+          {
+            "en": "Malian",
+            "fr": "malien(ne) (le Mali)",
+            "note": "She is Malian; she was born in Bamako."
+          },
+          {
+            "en": "Senegalese",
+            "fr": "sénégalais(e) (le Sénégal)",
+            "note": "My neighbour is Senegalese; he is from Dakar."
+          },
+          {
+            "en": "Moroccan",
+            "fr": "marocain(e) (le Maroc)",
+            "note": "He studied in a Moroccan university."
+          },
+          {
+            "en": "Ivorian",
+            "fr": "ivoirien(ne) (la Côte d'Ivoire)",
+            "note": "Our new colleague is Ivorian, from Abidjan."
+          },
+          {
+            "en": "Nigerian",
+            "fr": "nigérian(e) (le Nigeria)",
+            "note": "She works with a Nigerian company."
+          },
+          {
+            "en": "Ghanaian",
+            "fr": "ghanéen(ne) (le Ghana)",
+            "note": "I have a Ghanaian friend from university."
+          },
+          {
+            "en": "American",
+            "fr": "américain(e) (les États-Unis)",
+            "note": "He has an American passport."
+          },
+          {
+            "en": "British",
+            "fr": "britannique (le Royaume-Uni)",
+            "note": "She has a British accent."
+          },
+          {
+            "en": "German",
+            "fr": "allemand(e) (l'Allemagne)",
+            "note": "This car was made by a German company."
+          },
+          {
+            "en": "Spanish",
+            "fr": "espagnol(e) (l'Espagne)",
+            "note": "We watched a Spanish film last night."
+          },
+          {
+            "en": "Chinese",
+            "fr": "chinois(e) (la Chine)",
+            "note": "They import a lot of Chinese goods."
+          },
+          {
+            "en": "Japanese",
+            "fr": "japonais(e) (le Japon)",
+            "note": "Japanese cars are known for their quality."
+          },
+          {
+            "en": "Indian",
+            "fr": "indien(ne) (l'Inde)",
+            "note": "She enjoys Indian food very much."
+          },
+          {
+            "en": "Lebanese",
+            "fr": "libanais(e) (le Liban)",
+            "note": "Many Lebanese families have businesses in Mali."
+          },
+          {
+            "en": "Canadian",
+            "fr": "canadien(ne) (le Canada)",
+            "note": "His cousin is Canadian and now lives in Toronto."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Continents & régions"
+      },
+      {
+        "t": "phrases",
+        "title": "Vocabulaire — Continents & régions",
+        "items": [
+          {
+            "en": "continent",
+            "fr": "le continent",
+            "note": "Africa is the second largest continent."
+          },
+          {
+            "en": "Africa / African",
+            "fr": "l'Afrique / africain(e)",
+            "note": "Mali is a country in West Africa."
+          },
+          {
+            "en": "Europe / European",
+            "fr": "l'Europe / européen(ne)",
+            "note": "She is doing a tour of Europe."
+          },
+          {
+            "en": "Asia / Asian",
+            "fr": "l'Asie / asiatique",
+            "note": "China and Japan are in Asia."
+          },
+          {
+            "en": "North America",
+            "fr": "l'Amérique du Nord",
+            "note": "Canada and the USA are in North America."
+          },
+          {
+            "en": "South America",
+            "fr": "l'Amérique du Sud",
+            "note": "Brazil is the largest country in South America."
+          },
+          {
+            "en": "the Middle East",
+            "fr": "le Moyen-Orient",
+            "note": "Lebanon is a country in the Middle East."
+          },
+          {
+            "en": "region / area",
+            "fr": "la région / la zone",
+            "note": "This is a mountainous region."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Parler de la nationalité & de l'origine"
+      },
+      {
+        "t": "phrases",
+        "title": "Vocabulaire — Origine & nationalité",
+        "items": [
+          {
+            "en": "Where are you from?",
+            "fr": "D'où venez-vous ?",
+            "note": "Where are you from? — I'm from Mali."
+          },
+          {
+            "en": "I'm from... / I come from...",
+            "fr": "Je viens de... / Je suis de...",
+            "note": "I come from a small village near Ségou."
+          },
+          {
+            "en": "nationality",
+            "fr": "la nationalité",
+            "note": "What is your nationality? — Malian."
+          },
+          {
+            "en": "native language / mother tongue",
+            "fr": "la langue maternelle",
+            "note": "Bambara is his mother tongue."
+          },
+          {
+            "en": "native speaker",
+            "fr": "le locuteur natif / la locutrice native",
+            "note": "She is a native speaker of French."
+          },
+          {
+            "en": "foreign / foreigner",
+            "fr": "étranger(ère)",
+            "note": "There are many foreigners living in Bamako."
+          },
+          {
+            "en": "multilingual",
+            "fr": "multilingue",
+            "note": "Many Malians are multilingual."
+          },
+          {
+            "en": "fluent in",
+            "fr": "parler couramment",
+            "note": "He is fluent in English and French."
+          },
+          {
+            "en": "abroad",
+            "fr": "à l'étranger",
+            "note": "She studied abroad for two years."
+          },
+          {
+            "en": "immigrant",
+            "fr": "l'immigrant(e)",
+            "note": "The city has a large immigrant community."
+          },
+          {
+            "en": "expatriate (expat)",
+            "fr": "l'expatrié(e)",
+            "note": "Many expats work in the mining sector."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "D. Les langues du monde"
+      },
+      {
+        "t": "phrases",
+        "title": "Vocabulaire — Les langues",
+        "items": [
+          {
+            "en": "English",
+            "fr": "l'anglais",
+            "note": "English is spoken as a first or second language almost everywhere."
+          },
+          {
+            "en": "French",
+            "fr": "le français",
+            "note": "French is the official language of Mali."
+          },
+          {
+            "en": "Arabic",
+            "fr": "l'arabe",
+            "note": "Arabic is widely used in North Africa."
+          },
+          {
+            "en": "Spanish",
+            "fr": "l'espagnol",
+            "note": "Spanish is spoken in Spain and most of Latin America."
+          },
+          {
+            "en": "Mandarin Chinese",
+            "fr": "le mandarin",
+            "note": "Mandarin Chinese has more native speakers than any other language."
+          },
+          {
+            "en": "Bambara",
+            "fr": "le bambara",
+            "note": "Bambara is widely spoken across Mali."
+          },
+          {
+            "en": "Portuguese",
+            "fr": "le portugais",
+            "note": "Portuguese is the official language of Brazil."
+          },
+          {
+            "en": "Wolof",
+            "fr": "le wolof",
+            "note": "Wolof is commonly spoken in Senegal."
+          }
+        ]
+      },
+      {
+        "t": "tip",
+        "text": "« native language » et « mother tongue » signifient tous deux « la langue maternelle » ; « foreign / foreigner » = étranger(ère)."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque mot anglais à sa traduction française.",
+        "pairs": [
+          {
+            "en": "French",
+            "fr": "français(e) (la France)"
+          },
+          {
+            "en": "Senegalese",
+            "fr": "sénégalais(e) (le Sénégal)"
+          },
+          {
+            "en": "Ivorian",
+            "fr": "ivoirien(ne) (la Côte d'Ivoire)"
+          },
+          {
+            "en": "Ghanaian",
+            "fr": "ghanéen(ne) (le Ghana)"
+          },
+          {
+            "en": "British",
+            "fr": "britannique (le Royaume-Uni)"
+          },
+          {
+            "en": "Spanish",
+            "fr": "espagnol(e) (l'Espagne)"
+          },
+          {
+            "en": "Japanese",
+            "fr": "japonais(e) (le Japon)"
+          },
+          {
+            "en": "Lebanese",
+            "fr": "libanais(e) (le Liban)"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "match",
+        "q": "Associe chaque mot anglais à sa traduction française.",
+        "pairs": [
+          {
+            "en": "continent",
+            "fr": "le continent"
+          },
+          {
+            "en": "Europe / European",
+            "fr": "l'Europe / européen(ne)"
+          },
+          {
+            "en": "North America",
+            "fr": "l'Amérique du Nord"
+          },
+          {
+            "en": "the Middle East",
+            "fr": "le Moyen-Orient"
+          },
+          {
+            "en": "Where are you from?",
+            "fr": "D'où venez-vous ?"
+          },
+          {
+            "en": "nationality",
+            "fr": "la nationalité"
+          },
+          {
+            "en": "native speaker",
+            "fr": "le locuteur natif / la locutrice native"
+          },
+          {
+            "en": "multilingual",
+            "fr": "multilingue"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Quel mot signifie « français(e) (la France) » ?",
+        "opts": [
+          "the Middle East",
+          "French",
+          "Nigerian"
+        ],
+        "a": 1,
+        "x": "« French » = français(e)."
+      },
+      {
+        "t": "choice",
+        "q": "Quel mot signifie « ivoirien(ne) (la Côte d'Ivoire) » ?",
+        "opts": [
+          "Nigerian",
+          "region / area",
+          "Ivorian"
+        ],
+        "a": 2,
+        "x": "« Ivorian » = ivoirien(ne)."
+      },
+      {
+        "t": "choice",
+        "q": "Quel mot signifie « britannique (le Royaume-Uni) » ?",
+        "opts": [
+          "Europe / European",
+          "British",
+          "native speaker"
+        ],
+        "a": 1,
+        "x": "« British » = britannique."
+      },
+      {
+        "t": "choice",
+        "q": "Quel mot signifie « japonais(e) (le Japon) » ?",
+        "opts": [
+          "Japanese",
+          "South America",
+          "Nigerian"
+        ],
+        "a": 0,
+        "x": "« Japanese » = japonais(e)."
+      },
+      {
+        "t": "choice",
+        "q": "Quel mot signifie « libanais(e) (le Liban) » ?",
+        "opts": [
+          "Senegalese",
+          "Ghanaian",
+          "Lebanese"
+        ],
+        "a": 2,
+        "x": "« Lebanese » = libanais(e)."
+      },
+      {
+        "t": "choice",
+        "q": "Quel mot signifie « le continent » ?",
+        "opts": [
+          "Canadian",
+          "continent",
+          "North America"
+        ],
+        "a": 1,
+        "x": "« continent » = le continent."
+      },
+      {
+        "t": "type",
+        "q": "Complète : She is ______; she was born in Bamako.",
+        "a": "Malian",
+        "accept": [
+          "malian"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : He has an ______ passport.",
+        "a": "American",
+        "accept": [
+          "american"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : This car was made by a ______ company.",
+        "a": "German",
+        "accept": [
+          "german"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : We watched a ______ film last night.",
+        "a": "Spanish",
+        "accept": [
+          "spanish"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l3-e1",
+    "cat": "expressions",
+    "title": "Travel & Airports Idioms",
+    "subtitle": "Parler du voyage et des aéroports",
+    "emoji": "✈️",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Cette leçon présente 15 expressions idiomatiques (idioms) courantes liées au voyage et aux aéroports, avec leur sens et leur traduction française. Les idioms sont des expressions que les anglophones natifs utilisent en permanence : le sens réel est souvent différent des mots pris au sens littéral."
+      },
+      {
+        "t": "tip",
+        "text": "Pour comprendre un idiom, lis toujours la phrase d'exemple : c'est le contexte qui révèle son vrai sens."
+      },
+      {
+        "t": "h",
+        "text": "Les expressions (1 à 8)"
+      },
+      {
+        "t": "phrases",
+        "title": "Voyage & aéroports (1 à 8)",
+        "items": [
+          {
+            "en": "hit the road",
+            "fr": "se mettre en route",
+            "note": "to start a journey"
+          },
+          {
+            "en": "jet off (somewhere)",
+            "fr": "s'envoler (vers un endroit)",
+            "note": "to fly away / leave quickly by plane"
+          },
+          {
+            "en": "miss the boat",
+            "fr": "rater le coche",
+            "note": "to miss an opportunity"
+          },
+          {
+            "en": "all over the map",
+            "fr": "décousu / brouillon",
+            "note": "disorganised, covering too many unrelated things"
+          },
+          {
+            "en": "get the ball rolling",
+            "fr": "lancer les choses",
+            "note": "to start something"
+          },
+          {
+            "en": "in the same boat",
+            "fr": "être logé à la même enseigne",
+            "note": "in the same difficult situation as others"
+          },
+          {
+            "en": "go the extra mile",
+            "fr": "faire un effort supplémentaire",
+            "note": "to make a special, additional effort"
+          },
+          {
+            "en": "off the beaten track",
+            "fr": "hors des sentiers battus",
+            "note": "a place not often visited by tourists"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Les expressions (9 à 15)"
+      },
+      {
+        "t": "phrases",
+        "title": "Voyage & aéroports (9 à 15)",
+        "items": [
+          {
+            "en": "travel light",
+            "fr": "voyager léger",
+            "note": "to carry very little luggage"
+          },
+          {
+            "en": "a long haul",
+            "fr": "un long trajet",
+            "note": "a long journey, or a long and tiring process"
+          },
+          {
+            "en": "make good time",
+            "fr": "aller plus vite que prévu",
+            "note": "to travel faster than expected"
+          },
+          {
+            "en": "touch base",
+            "fr": "reprendre contact",
+            "note": "to make brief contact with someone"
+          },
+          {
+            "en": "at the crack of dawn",
+            "fr": "au point du jour",
+            "note": "very early in the morning"
+          },
+          {
+            "en": "up in the air",
+            "fr": "en suspens / incertain",
+            "note": "undecided, uncertain"
+          },
+          {
+            "en": "get away from it all",
+            "fr": "s'évader de tout",
+            "note": "to escape daily routine and stress"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque expression à sa traduction française.",
+        "pairs": [
+          {
+            "en": "hit the road",
+            "fr": "se mettre en route"
+          },
+          {
+            "en": "miss the boat",
+            "fr": "rater le coche"
+          },
+          {
+            "en": "go the extra mile",
+            "fr": "faire un effort supplémentaire"
+          },
+          {
+            "en": "off the beaten track",
+            "fr": "hors des sentiers battus"
+          },
+          {
+            "en": "up in the air",
+            "fr": "en suspens / incertain"
+          },
+          {
+            "en": "at the crack of dawn",
+            "fr": "au point du jour"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « Touch base » means to argue with someone.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« Touch base » = reprendre contact (prendre brièvement contact avec quelqu'un)."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « At the crack of dawn » means very early in the morning.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "« At the crack of dawn » = au point du jour, très tôt le matin."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « Up in the air » means something is completely decided.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« Up in the air » = en suspens / incertain."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « In the same boat » means being in the same difficult situation as someone else.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "« In the same boat » = être logé à la même enseigne."
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : We want to ______ early tomorrow before the heat starts.",
+        "tiles": [
+          "hit",
+          "the",
+          "road"
+        ],
+        "a": "hit the road",
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : She ______ to London for a job interview last week.",
+        "tiles": [
+          "jetted",
+          "off"
+        ],
+        "a": "jetted off",
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : His report was ______ ; nobody understood the main point.",
+        "tiles": [
+          "all",
+          "over",
+          "the",
+          "map"
+        ],
+        "a": "all over the map",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Nous devons nous mettre en route tôt demain.",
+        "a": "We need to hit the road early tomorrow",
+        "accept": [
+          "we need to hit the road early tomorrow"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Nous sommes tous logés à la même enseigne.",
+        "a": "We're all in the same boat",
+        "accept": [
+          "we are all in the same boat"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Nos projets de vacances sont encore en suspens.",
+        "a": "Our holiday plans are still up in the air",
+        "accept": [
+          "our holiday plans are still up in the air"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Nous avons fait bonne route et sommes arrivés en avance.",
+        "a": "We made good time and arrived early",
+        "accept": [
+          "we made good time and arrived early"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l3-e2",
+    "cat": "expressions",
+    "title": "Career & Ambition Idioms",
+    "subtitle": "Parler de carrière et d'ambition",
+    "emoji": "💼",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Cette leçon présente 15 expressions idiomatiques (idioms) courantes liées à la carrière et à l'ambition, avec leur sens et leur traduction française. Les idioms ont un sens réel souvent différent de leur sens littéral."
+      },
+      {
+        "t": "tip",
+        "text": "Lis la phrase d'exemple pour comprendre comment chaque expression est réellement utilisée en conversation."
+      },
+      {
+        "t": "h",
+        "text": "Les expressions (1 à 8)"
+      },
+      {
+        "t": "phrases",
+        "title": "Carrière & ambition (1 à 8)",
+        "items": [
+          {
+            "en": "climb the ladder",
+            "fr": "gravir les échelons",
+            "note": "to advance in one's career"
+          },
+          {
+            "en": "land a job",
+            "fr": "décrocher un emploi",
+            "note": "to successfully get a job"
+          },
+          {
+            "en": "learn the ropes",
+            "fr": "apprendre les ficelles du métier",
+            "note": "to learn how a job or task is done"
+          },
+          {
+            "en": "get your foot in the door",
+            "fr": "mettre un pied dans la porte",
+            "note": "to get a first small opportunity"
+          },
+          {
+            "en": "burn the midnight oil",
+            "fr": "travailler tard dans la nuit",
+            "note": "to work late into the night"
+          },
+          {
+            "en": "think outside the box",
+            "fr": "sortir des sentiers battus (idées)",
+            "note": "to think creatively, unconventionally"
+          },
+          {
+            "en": "pull your weight",
+            "fr": "faire sa part du travail",
+            "note": "to do your fair share of the work"
+          },
+          {
+            "en": "go above and beyond",
+            "fr": "aller au-delà de ce qui est attendu",
+            "note": "to do much more than expected"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Les expressions (9 à 15)"
+      },
+      {
+        "t": "phrases",
+        "title": "Carrière & ambition (9 à 15)",
+        "items": [
+          {
+            "en": "on the right track",
+            "fr": "sur la bonne voie",
+            "note": "doing something correctly, making progress"
+          },
+          {
+            "en": "make a name for yourself",
+            "fr": "se faire un nom",
+            "note": "to become well known or respected"
+          },
+          {
+            "en": "bite the bullet",
+            "fr": "prendre son courage à deux mains",
+            "note": "to accept something difficult or unpleasant"
+          },
+          {
+            "en": "keep your options open",
+            "fr": "garder ses options ouvertes",
+            "note": "to avoid committing to one choice"
+          },
+          {
+            "en": "put in the hours",
+            "fr": "mettre les heures nécessaires",
+            "note": "to work hard or long hours"
+          },
+          {
+            "en": "have what it takes",
+            "fr": "avoir l'étoffe (pour)",
+            "note": "to have the necessary skills or qualities"
+          },
+          {
+            "en": "call it a career",
+            "fr": "mettre fin à sa carrière",
+            "note": "to retire or finish one's working life"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque expression à sa traduction française.",
+        "pairs": [
+          {
+            "en": "climb the ladder",
+            "fr": "gravir les échelons"
+          },
+          {
+            "en": "land a job",
+            "fr": "décrocher un emploi"
+          },
+          {
+            "en": "learn the ropes",
+            "fr": "apprendre les ficelles du métier"
+          },
+          {
+            "en": "burn the midnight oil",
+            "fr": "travailler tard dans la nuit"
+          },
+          {
+            "en": "pull your weight",
+            "fr": "faire sa part du travail"
+          },
+          {
+            "en": "bite the bullet",
+            "fr": "prendre son courage à deux mains"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « Learn the ropes » means to quit a job immediately.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« Learn the ropes » = apprendre les ficelles du métier."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « Burn the midnight oil » means to work late into the night.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "« Burn the midnight oil » = travailler tard dans la nuit."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « Have what it takes » means to lack the necessary skills.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« Have what it takes » = avoir l'étoffe (avoir les compétences nécessaires)."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « Call it a career » means to start a brand-new career.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« Call it a career » = mettre fin à sa carrière."
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : It took her ten years to ______ at the firm.",
+        "tiles": [
+          "climb",
+          "the",
+          "ladder"
+        ],
+        "a": "climb the ladder",
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : He finally ______ at the bank after months of searching.",
+        "tiles": [
+          "landed",
+          "a",
+          "job"
+        ],
+        "a": "landed a job",
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : Your proposal is ______ ; keep developing it.",
+        "tiles": [
+          "on",
+          "the",
+          "right",
+          "track"
+        ],
+        "a": "on the right track",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Elle a mis des années à gravir les échelons.",
+        "a": "It took her years to climb the ladder",
+        "accept": [
+          "it took her years to climb the ladder"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Chacun doit faire sa part du travail.",
+        "a": "Everyone has to pull their weight",
+        "accept": [
+          "everyone has to pull their weight"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Elle a pris son courage à deux mains et a accepté le poste.",
+        "a": "She bit the bullet and accepted the position",
+        "accept": [
+          "she bit the bullet and accepted the position"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Après quarante ans, il a décidé de mettre fin à sa carrière.",
+        "a": "After forty years, he decided to call it a career",
+        "accept": [
+          "after forty years, he decided to call it a career"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l3-e3",
+    "cat": "expressions",
+    "title": "Agreement & Disagreement",
+    "subtitle": "Exprimer l'accord et le désaccord",
+    "emoji": "🤝",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Cette leçon présente 15 expressions idiomatiques (idioms) courantes pour exprimer l'accord et le désaccord, avec leur sens et leur traduction française. Le sens réel des idioms diffère souvent de leur sens littéral."
+      },
+      {
+        "t": "tip",
+        "text": "Certaines de ces expressions expriment aussi la colère ou l'agacement, pas seulement l'accord : repère bien le contexte."
+      },
+      {
+        "t": "h",
+        "text": "Les expressions (1 à 8)"
+      },
+      {
+        "t": "phrases",
+        "title": "Accord & désaccord (1 à 8)",
+        "items": [
+          {
+            "en": "see eye to eye",
+            "fr": "être sur la même longueur d'onde",
+            "note": "to agree completely with someone"
+          },
+          {
+            "en": "be on the same page",
+            "fr": "avoir la même compréhension / vision des choses",
+            "note": "to have the same understanding or plan"
+          },
+          {
+            "en": "agree to disagree",
+            "fr": "convenir de ne pas être d'accord",
+            "note": "to accept a difference of opinion peacefully"
+          },
+          {
+            "en": "have a point",
+            "fr": "avoir raison sur un point",
+            "note": "to say something valid or reasonable"
+          },
+          {
+            "en": "beg to differ",
+            "fr": "se permettre d'être en désaccord",
+            "note": "to politely disagree"
+          },
+          {
+            "en": "in two minds",
+            "fr": "hésiter entre deux choix",
+            "note": "undecided between two options"
+          },
+          {
+            "en": "take sides",
+            "fr": "prendre parti",
+            "note": "to support one person or opinion in a disagreement"
+          },
+          {
+            "en": "stand your ground",
+            "fr": "camper sur ses positions",
+            "note": "to refuse to change your opinion or position"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Les expressions (9 à 15)"
+      },
+      {
+        "t": "phrases",
+        "title": "Accord & désaccord (9 à 15)",
+        "items": [
+          {
+            "en": "meet in the middle",
+            "fr": "trouver un compromis",
+            "note": "to compromise"
+          },
+          {
+            "en": "drive someone up the wall",
+            "fr": "rendre quelqu'un fou",
+            "note": "to really annoy someone"
+          },
+          {
+            "en": "get on someone's nerves",
+            "fr": "taper sur les nerfs de quelqu'un",
+            "note": "to irritate someone"
+          },
+          {
+            "en": "see red",
+            "fr": "voir rouge",
+            "note": "to become very angry"
+          },
+          {
+            "en": "make peace",
+            "fr": "faire la paix",
+            "note": "to end a disagreement or conflict"
+          },
+          {
+            "en": "put your foot down",
+            "fr": "s'imposer / être ferme",
+            "note": "to firmly insist on something"
+          },
+          {
+            "en": "a matter of opinion",
+            "fr": "une question d'opinion",
+            "note": "something people can reasonably disagree about"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque expression à sa traduction française.",
+        "pairs": [
+          {
+            "en": "see eye to eye",
+            "fr": "être sur la même longueur d'onde"
+          },
+          {
+            "en": "be on the same page",
+            "fr": "avoir la même compréhension / vision des choses"
+          },
+          {
+            "en": "agree to disagree",
+            "fr": "convenir de ne pas être d'accord"
+          },
+          {
+            "en": "stand your ground",
+            "fr": "camper sur ses positions"
+          },
+          {
+            "en": "meet in the middle",
+            "fr": "trouver un compromis"
+          },
+          {
+            "en": "see red",
+            "fr": "voir rouge"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « Beg to differ » is a rude, aggressive way of disagreeing.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« Beg to differ » = se permettre d'être en désaccord, poliment."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « Take sides » means to stay neutral in an argument.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« Take sides » = prendre parti (soutenir une personne ou une opinion)."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « See red » means to become very calm.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« See red » = voir rouge, devenir très en colère."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « Make peace » means to end a disagreement or conflict.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "« Make peace » = faire la paix."
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : Let's make sure we're all ______ before the meeting.",
+        "tiles": [
+          "on",
+          "the",
+          "same",
+          "page"
+        ],
+        "a": "on the same page",
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : I don't want to ______ in this argument.",
+        "tiles": [
+          "take",
+          "sides"
+        ],
+        "a": "take sides",
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : Let's try to ______ on the price.",
+        "tiles": [
+          "meet",
+          "in",
+          "the",
+          "middle"
+        ],
+        "a": "meet in the middle",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Nous ne sommes pas toujours sur la même longueur d'onde.",
+        "a": "We don't always see eye to eye",
+        "accept": [
+          "we dont always see eye to eye",
+          "we do not always see eye to eye"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Tu as raison sur ce point.",
+        "a": "You have a point",
+        "accept": [
+          "you have a point"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Le bruit me rend fou.",
+        "a": "The noise is driving me up the wall",
+        "accept": [
+          "the noise is driving me up the wall"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : C'est une question d'opinion.",
+        "a": "It's a matter of opinion",
+        "accept": [
+          "it is a matter of opinion",
+          "its a matter of opinion"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l3-e4",
+    "cat": "expressions",
+    "title": "Decisions & Choices",
+    "subtitle": "Prendre des décisions et faire des choix",
+    "emoji": "⚖️",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Cette leçon présente 15 expressions idiomatiques (idioms) courantes liées aux décisions et aux choix, avec leur sens et leur traduction française. Le sens réel des idioms diffère souvent de leur sens littéral."
+      },
+      {
+        "t": "tip",
+        "text": "Beaucoup de ces expressions décrivent l'état d'esprit face à une décision : indécision, instinct, prudence ou regret."
+      },
+      {
+        "t": "h",
+        "text": "Les expressions (1 à 8)"
+      },
+      {
+        "t": "phrases",
+        "title": "Décisions & choix (1 à 8)",
+        "items": [
+          {
+            "en": "make up your mind",
+            "fr": "se décider",
+            "note": "to decide"
+          },
+          {
+            "en": "weigh the pros and cons",
+            "fr": "peser le pour et le contre",
+            "note": "to consider advantages and disadvantages"
+          },
+          {
+            "en": "on the fence",
+            "fr": "indécis",
+            "note": "undecided about something"
+          },
+          {
+            "en": "a tough call",
+            "fr": "une décision difficile",
+            "note": "a difficult decision"
+          },
+          {
+            "en": "take the plunge",
+            "fr": "se jeter à l'eau",
+            "note": "to finally decide to do something risky or new"
+          },
+          {
+            "en": "think twice",
+            "fr": "réfléchir à deux fois",
+            "note": "to consider very carefully before acting"
+          },
+          {
+            "en": "go with your gut",
+            "fr": "suivre son instinct",
+            "note": "to follow your instinct"
+          },
+          {
+            "en": "the ball is in your court",
+            "fr": "la balle est dans ton camp",
+            "note": "it's your turn to decide or act"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Les expressions (9 à 15)"
+      },
+      {
+        "t": "phrases",
+        "title": "Décisions & choix (9 à 15)",
+        "items": [
+          {
+            "en": "jump to conclusions",
+            "fr": "tirer des conclusions hâtives",
+            "note": "to decide something too quickly, without enough facts"
+          },
+          {
+            "en": "sleep on it",
+            "fr": "réfléchir avant de décider",
+            "note": "to wait until the next day to decide"
+          },
+          {
+            "en": "narrow it down",
+            "fr": "réduire le choix",
+            "note": "to reduce a list of choices"
+          },
+          {
+            "en": "a no-brainer",
+            "fr": "une évidence",
+            "note": "an obvious, easy decision"
+          },
+          {
+            "en": "cross that bridge when we come to it",
+            "fr": "on verra le moment venu",
+            "note": "to deal with a problem only when it actually happens"
+          },
+          {
+            "en": "change your mind",
+            "fr": "changer d'avis",
+            "note": "to decide differently than before"
+          },
+          {
+            "en": "have second thoughts",
+            "fr": "avoir des doutes",
+            "note": "to begin to doubt a decision"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque expression à sa traduction française.",
+        "pairs": [
+          {
+            "en": "make up your mind",
+            "fr": "se décider"
+          },
+          {
+            "en": "weigh the pros and cons",
+            "fr": "peser le pour et le contre"
+          },
+          {
+            "en": "on the fence",
+            "fr": "indécis"
+          },
+          {
+            "en": "take the plunge",
+            "fr": "se jeter à l'eau"
+          },
+          {
+            "en": "the ball is in your court",
+            "fr": "la balle est dans ton camp"
+          },
+          {
+            "en": "a no-brainer",
+            "fr": "une évidence"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « On the fence » means you have already made a firm decision.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« On the fence » = indécis, pas encore décidé."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « A no-brainer » means a very difficult decision.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« A no-brainer » = une évidence, une décision facile."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « Take the plunge » means to finally decide to do something risky or new.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "« Take the plunge » = se jeter à l'eau."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « Sleep on it » means to decide immediately, without waiting.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« Sleep on it » = attendre le lendemain avant de décider."
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : I'm still ______ about moving abroad.",
+        "tiles": [
+          "on",
+          "the",
+          "fence"
+        ],
+        "a": "on the fence",
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : Choosing between the two candidates was ______.",
+        "tiles": [
+          "a",
+          "tough",
+          "call"
+        ],
+        "a": "a tough call",
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : Don't ______ before hearing both sides.",
+        "tiles": [
+          "jump",
+          "to",
+          "conclusions"
+        ],
+        "a": "jump to conclusions",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : As-tu pris ta décision ?",
+        "a": "Have you made up your mind?",
+        "accept": [
+          "have you made up your mind"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Nous devrions peser le pour et le contre.",
+        "a": "We should weigh the pros and cons",
+        "accept": [
+          "we should weigh the pros and cons"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ne tire pas de conclusions hâtives.",
+        "a": "Don't jump to conclusions",
+        "accept": [
+          "dont jump to conclusions",
+          "do not jump to conclusions"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : La balle est dans ton camp maintenant.",
+        "a": "The ball is in your court now",
+        "accept": [
+          "the ball is in your court now"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l3-e5",
+    "cat": "expressions",
+    "title": "Risk, Chance & Uncertainty",
+    "subtitle": "Parler du risque, de la chance et de l'incertitude",
+    "emoji": "🎲",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Cette leçon présente 15 expressions idiomatiques (idioms) courantes liées au risque, à la chance et à l'incertitude, avec leur sens et leur traduction française. Le sens réel des idioms diffère souvent de leur sens littéral."
+      },
+      {
+        "t": "tip",
+        "text": "Ces expressions t'aident à parler de probabilité, de prudence et d'espoir : très utiles au quotidien."
+      },
+      {
+        "t": "h",
+        "text": "Les expressions (1 à 8)"
+      },
+      {
+        "t": "phrases",
+        "title": "Risque, chance & incertitude (1 à 8)",
+        "items": [
+          {
+            "en": "take a chance",
+            "fr": "tenter sa chance",
+            "note": "to do something risky, hoping for a good result"
+          },
+          {
+            "en": "play it safe",
+            "fr": "jouer la sécurité",
+            "note": "to avoid risks"
+          },
+          {
+            "en": "on thin ice",
+            "fr": "en terrain fragile",
+            "note": "in a risky or dangerous situation"
+          },
+          {
+            "en": "a long shot",
+            "fr": "peu de chances de réussir",
+            "note": "something unlikely to succeed"
+          },
+          {
+            "en": "once in a blue moon",
+            "fr": "très rarement",
+            "note": "very rarely"
+          },
+          {
+            "en": "touch and go",
+            "fr": "incertain jusqu'au bout",
+            "note": "uncertain, could go either way"
+          },
+          {
+            "en": "a shot in the dark",
+            "fr": "un coup au hasard",
+            "note": "a guess made with very little information"
+          },
+          {
+            "en": "against all odds",
+            "fr": "contre toute attente",
+            "note": "despite very low chances of success"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Les expressions (9 à 15)"
+      },
+      {
+        "t": "phrases",
+        "title": "Risque, chance & incertitude (9 à 15)",
+        "items": [
+          {
+            "en": "up for grabs",
+            "fr": "à prendre / disponible",
+            "note": "available for anyone to take or win"
+          },
+          {
+            "en": "hit or miss",
+            "fr": "aléatoire",
+            "note": "unpredictable, sometimes good, sometimes bad"
+          },
+          {
+            "en": "no guarantee",
+            "fr": "aucune garantie",
+            "note": "nothing is certain"
+          },
+          {
+            "en": "better safe than sorry",
+            "fr": "mieux vaut prévenir que guérir",
+            "note": "it's wiser to be cautious"
+          },
+          {
+            "en": "cross your fingers",
+            "fr": "croiser les doigts",
+            "note": "to hope for good luck"
+          },
+          {
+            "en": "in the dark",
+            "fr": "ne pas être informé",
+            "note": "not informed about something"
+          },
+          {
+            "en": "a wild card",
+            "fr": "un facteur imprévisible",
+            "note": "an unpredictable factor or person"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque expression à sa traduction française.",
+        "pairs": [
+          {
+            "en": "take a chance",
+            "fr": "tenter sa chance"
+          },
+          {
+            "en": "play it safe",
+            "fr": "jouer la sécurité"
+          },
+          {
+            "en": "once in a blue moon",
+            "fr": "très rarement"
+          },
+          {
+            "en": "against all odds",
+            "fr": "contre toute attente"
+          },
+          {
+            "en": "cross your fingers",
+            "fr": "croiser les doigts"
+          },
+          {
+            "en": "a wild card",
+            "fr": "un facteur imprévisible"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « Play it safe » means to take unnecessary risks.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« Play it safe » = jouer la sécurité (éviter les risques)."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « A long shot » means something very likely to succeed.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« A long shot » = peu de chances de réussir."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « Against all odds » means despite very low chances of success.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "« Against all odds » = contre toute attente."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « In the dark » means well informed about something.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« In the dark » = ne pas être informé."
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : Given the cost, we decided to ______.",
+        "tiles": [
+          "play",
+          "it",
+          "safe"
+        ],
+        "a": "play it safe",
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : After that mistake, he's ______ at work.",
+        "tiles": [
+          "on",
+          "thin",
+          "ice"
+        ],
+        "a": "on thin ice",
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : He visits his hometown ______.",
+        "tiles": [
+          "once",
+          "in",
+          "a",
+          "blue",
+          "moon"
+        ],
+        "a": "once in a blue moon",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : J'ai décidé de tenter ma chance.",
+        "a": "I decided to take a chance",
+        "accept": [
+          "i decided to take a chance"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Contre toute attente, elle a réussi l'examen.",
+        "a": "Against all odds, she passed the exam",
+        "accept": [
+          "against all odds, she passed the exam"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Le poste est encore disponible.",
+        "a": "The position is still up for grabs",
+        "accept": [
+          "the position is still up for grabs"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Mieux vaut prévenir que guérir.",
+        "a": "Better safe than sorry",
+        "accept": [
+          "better safe than sorry"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l3-e6",
+    "cat": "expressions",
+    "title": "Change & Adaptation",
+    "subtitle": "Parler du changement et de l'adaptation",
+    "emoji": "🔄",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Cette leçon présente 15 expressions idiomatiques (idioms) courantes liées au changement et à l'adaptation, avec leur sens et leur traduction française. Le sens réel des idioms diffère souvent de leur sens littéral."
+      },
+      {
+        "t": "tip",
+        "text": "Ces expressions décrivent comment réagir face au changement : s'adapter, s'habituer ou repartir de zéro."
+      },
+      {
+        "t": "h",
+        "text": "Les expressions (1 à 8)"
+      },
+      {
+        "t": "phrases",
+        "title": "Changement & adaptation (1 à 8)",
+        "items": [
+          {
+            "en": "turn over a new leaf",
+            "fr": "tourner la page",
+            "note": "to start behaving or doing things differently (better)"
+          },
+          {
+            "en": "get used to",
+            "fr": "s'habituer à",
+            "note": "to become familiar or comfortable with something"
+          },
+          {
+            "en": "adapt to",
+            "fr": "s'adapter à",
+            "note": "to adjust to new circumstances"
+          },
+          {
+            "en": "a fresh start",
+            "fr": "un nouveau départ",
+            "note": "a new beginning"
+          },
+          {
+            "en": "out with the old, in with the new",
+            "fr": "place au nouveau",
+            "note": "replacing old things or ways with new ones"
+          },
+          {
+            "en": "go with the flow",
+            "fr": "suivre le courant",
+            "note": "to accept situations as they happen, without resisting"
+          },
+          {
+            "en": "roll with the punches",
+            "fr": "s'adapter aux difficultés",
+            "note": "to adapt calmly to difficulties"
+          },
+          {
+            "en": "a change of pace",
+            "fr": "un changement de rythme",
+            "note": "something different from the usual routine"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Les expressions (9 à 15)"
+      },
+      {
+        "t": "phrases",
+        "title": "Changement & adaptation (9 à 15)",
+        "items": [
+          {
+            "en": "settle in",
+            "fr": "s'installer",
+            "note": "to become comfortable in a new place or situation"
+          },
+          {
+            "en": "break the mould",
+            "fr": "sortir du moule",
+            "note": "to do something differently from what is usual"
+          },
+          {
+            "en": "keep up with",
+            "fr": "suivre le rythme de",
+            "note": "to stay at the same level or pace as changes"
+          },
+          {
+            "en": "a steep learning curve",
+            "fr": "un apprentissage difficile",
+            "note": "something that is difficult to learn quickly"
+          },
+          {
+            "en": "ease into something",
+            "fr": "s'habituer progressivement",
+            "note": "to start something gradually"
+          },
+          {
+            "en": "a blessing in disguise",
+            "fr": "un mal pour un bien",
+            "note": "something that seems bad but turns out good"
+          },
+          {
+            "en": "back to square one",
+            "fr": "retour à la case départ",
+            "note": "back to the starting point, no progress made"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque expression à sa traduction française.",
+        "pairs": [
+          {
+            "en": "turn over a new leaf",
+            "fr": "tourner la page"
+          },
+          {
+            "en": "get used to",
+            "fr": "s'habituer à"
+          },
+          {
+            "en": "a fresh start",
+            "fr": "un nouveau départ"
+          },
+          {
+            "en": "go with the flow",
+            "fr": "suivre le courant"
+          },
+          {
+            "en": "settle in",
+            "fr": "s'installer"
+          },
+          {
+            "en": "back to square one",
+            "fr": "retour à la case départ"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « Turn over a new leaf » means to keep doing exactly the same bad habits.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« Turn over a new leaf » = tourner la page, changer de comportement en mieux."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « A steep learning curve » describes something easy to learn quickly.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« A steep learning curve » = un apprentissage difficile."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « A blessing in disguise » means something that seems bad but turns out good.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "« A blessing in disguise » = un mal pour un bien."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « Back to square one » means a lot of progress has been made.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« Back to square one » = retour à la case départ, aucun progrès."
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : Moving to Bamako gave him ______.",
+        "tiles": [
+          "a",
+          "fresh",
+          "start"
+        ],
+        "a": "a fresh start",
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : I just try to ______ at work.",
+        "tiles": [
+          "go",
+          "with",
+          "the",
+          "flow"
+        ],
+        "a": "go with the flow",
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : It's hard to ______ new technology.",
+        "tiles": [
+          "keep",
+          "up",
+          "with"
+        ],
+        "a": "keep up with",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Il a décidé de tourner la page après cet échec.",
+        "a": "He decided to turn over a new leaf after that failure",
+        "accept": [
+          "he decided to turn over a new leaf after that failure"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : J'essaie simplement de suivre le courant.",
+        "a": "I just try to go with the flow",
+        "accept": [
+          "i just try to go with the flow"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ce nouveau logiciel est difficile à apprendre.",
+        "a": "This new software has a steep learning curve",
+        "accept": [
+          "this new software has a steep learning curve"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Perdre cet emploi était en fait un mal pour un bien.",
+        "a": "Losing that job was actually a blessing in disguise",
+        "accept": [
+          "losing that job was actually a blessing in disguise"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l3-e7",
+    "cat": "expressions",
+    "title": "Stress, Pressure & Patience",
+    "subtitle": "Parler du stress, de la pression et de la patience",
+    "emoji": "😌",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Cette leçon présente 15 expressions idiomatiques (idioms) courantes liées au stress, à la pression et à la patience, avec leur sens et leur traduction française. Le sens réel des idioms diffère souvent de leur sens littéral."
+      },
+      {
+        "t": "tip",
+        "text": "Ces expressions décrivent comment rester calme, perdre patience ou se détendre : idéales pour la vie professionnelle."
+      },
+      {
+        "t": "h",
+        "text": "Les expressions (1 à 8)"
+      },
+      {
+        "t": "phrases",
+        "title": "Stress, pression & patience (1 à 8)",
+        "items": [
+          {
+            "en": "under pressure",
+            "fr": "sous pression",
+            "note": "having to deal with stress or demands"
+          },
+          {
+            "en": "keep your cool",
+            "fr": "garder son calme",
+            "note": "to stay calm"
+          },
+          {
+            "en": "lose your temper",
+            "fr": "perdre son sang-froid",
+            "note": "to become angry suddenly"
+          },
+          {
+            "en": "hang in there",
+            "fr": "tiens bon",
+            "note": "to keep trying despite difficulty (encouragement)"
+          },
+          {
+            "en": "at the end of your rope",
+            "fr": "à bout de nerfs",
+            "note": "completely out of patience or energy"
+          },
+          {
+            "en": "take it easy",
+            "fr": "se détendre",
+            "note": "to relax, not work too hard"
+          },
+          {
+            "en": "on edge",
+            "fr": "à cran",
+            "note": "nervous, anxious"
+          },
+          {
+            "en": "bear with me",
+            "fr": "soyez patient avec moi",
+            "note": "please be patient with me"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Les expressions (9 à 15)"
+      },
+      {
+        "t": "phrases",
+        "title": "Stress, pression & patience (9 à 15)",
+        "items": [
+          {
+            "en": "a weight off your shoulders",
+            "fr": "un poids en moins",
+            "note": "a relief, something no longer worrying you"
+          },
+          {
+            "en": "snap out of it",
+            "fr": "se ressaisir",
+            "note": "to stop feeling sad or worried and think positively"
+          },
+          {
+            "en": "take a deep breath",
+            "fr": "prendre une grande respiration",
+            "note": "to calm yourself before acting"
+          },
+          {
+            "en": "push someone's buttons",
+            "fr": "énerver quelqu'un délibérément",
+            "note": "to deliberately annoy or provoke someone"
+          },
+          {
+            "en": "all in good time",
+            "fr": "chaque chose en son temps",
+            "note": "something will happen eventually, be patient"
+          },
+          {
+            "en": "run out of patience",
+            "fr": "perdre patience",
+            "note": "to no longer be able to stay patient"
+          },
+          {
+            "en": "keep a level head",
+            "fr": "garder la tête froide",
+            "note": "to stay calm and think clearly"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque expression à sa traduction française.",
+        "pairs": [
+          {
+            "en": "keep your cool",
+            "fr": "garder son calme"
+          },
+          {
+            "en": "lose your temper",
+            "fr": "perdre son sang-froid"
+          },
+          {
+            "en": "hang in there",
+            "fr": "tiens bon"
+          },
+          {
+            "en": "at the end of your rope",
+            "fr": "à bout de nerfs"
+          },
+          {
+            "en": "take it easy",
+            "fr": "se détendre"
+          },
+          {
+            "en": "on edge",
+            "fr": "à cran"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « Keep your cool » means to stay calm.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "« Keep your cool » = garder son calme."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « Hang in there » is said to discourage someone.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« Hang in there » = tiens bon (encourager à persévérer)."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « On edge » means calm and relaxed.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« On edge » = à cran (nerveux, anxieux)."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « A weight off your shoulders » means a relief.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "« A weight off your shoulders » = un poids en moins."
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : She performs very well ______.",
+        "tiles": [
+          "under",
+          "pressure"
+        ],
+        "a": "under pressure",
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : He managed to ______ during the difficult meeting.",
+        "tiles": [
+          "keep",
+          "his",
+          "cool"
+        ],
+        "a": "keep his cool",
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : After the long shift, she was ______.",
+        "tiles": [
+          "at",
+          "the",
+          "end",
+          "of",
+          "her",
+          "rope"
+        ],
+        "a": "at the end of her rope",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Elle garde son calme sous pression.",
+        "a": "She keeps her cool under pressure",
+        "accept": [
+          "she keeps her cool under pressure"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Tiens bon, c'est presque fini !",
+        "a": "Hang in there, it's almost over!",
+        "accept": [
+          "hang in there, it is almost over",
+          "hang in there its almost over"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Terminer ce rapport était un poids en moins.",
+        "a": "Finishing that report was a weight off my shoulders",
+        "accept": [
+          "finishing that report was a weight off my shoulders"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Prends une grande respiration avant l'entretien.",
+        "a": "Take a deep breath before the interview",
+        "accept": [
+          "take a deep breath before the interview"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l3-e8",
+    "cat": "expressions",
+    "title": "Advanced Everyday Idioms",
+    "subtitle": "Expressions avancées du quotidien",
+    "emoji": "🗣️",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Cette leçon présente 15 expressions idiomatiques (idioms) avancées du quotidien, avec leur sens et leur traduction française. Le sens réel des idioms diffère souvent de leur sens littéral."
+      },
+      {
+        "t": "tip",
+        "text": "Ces expressions très courantes t'aident à résumer, recentrer une conversation ou parler de manière imagée."
+      },
+      {
+        "t": "h",
+        "text": "Les expressions (1 à 8)"
+      },
+      {
+        "t": "phrases",
+        "title": "Expressions avancées (1 à 8)",
+        "items": [
+          {
+            "en": "cut corners",
+            "fr": "rogner sur la qualité",
+            "note": "to do something in the cheapest or easiest way, often badly"
+          },
+          {
+            "en": "read between the lines",
+            "fr": "lire entre les lignes",
+            "note": "to understand a hidden meaning"
+          },
+          {
+            "en": "get the hang of it",
+            "fr": "prendre le coup de main",
+            "note": "to learn how to do something"
+          },
+          {
+            "en": "in a nutshell",
+            "fr": "en résumé",
+            "note": "briefly, summarising"
+          },
+          {
+            "en": "cut to the chase",
+            "fr": "aller droit au but",
+            "note": "to get to the main point quickly"
+          },
+          {
+            "en": "the tip of the iceberg",
+            "fr": "la partie visible de l'iceberg",
+            "note": "a small visible part of a much bigger problem"
+          },
+          {
+            "en": "back to the drawing board",
+            "fr": "reprendre à zéro",
+            "note": "to start planning again from the beginning"
+          },
+          {
+            "en": "food for thought",
+            "fr": "matière à réflexion",
+            "note": "something that makes you think seriously"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "Les expressions (9 à 15)"
+      },
+      {
+        "t": "phrases",
+        "title": "Expressions avancées (9 à 15)",
+        "items": [
+          {
+            "en": "a rule of thumb",
+            "fr": "une règle générale",
+            "note": "a general, practical guideline"
+          },
+          {
+            "en": "par for the course",
+            "fr": "habituel, rien d'étonnant",
+            "note": "typical, to be expected"
+          },
+          {
+            "en": "in the long run",
+            "fr": "à long terme",
+            "note": "over a long period of time, eventually"
+          },
+          {
+            "en": "come what may",
+            "fr": "quoi qu'il arrive",
+            "note": "whatever happens"
+          },
+          {
+            "en": "keep an eye on",
+            "fr": "surveiller",
+            "note": "to watch or monitor something carefully"
+          },
+          {
+            "en": "get the wrong end of the stick",
+            "fr": "comprendre de travers",
+            "note": "to completely misunderstand something"
+          },
+          {
+            "en": "last but not least",
+            "fr": "enfin, et non des moindres",
+            "note": "the last item mentioned, which is still important"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque expression à sa traduction française.",
+        "pairs": [
+          {
+            "en": "cut corners",
+            "fr": "rogner sur la qualité"
+          },
+          {
+            "en": "read between the lines",
+            "fr": "lire entre les lignes"
+          },
+          {
+            "en": "in a nutshell",
+            "fr": "en résumé"
+          },
+          {
+            "en": "cut to the chase",
+            "fr": "aller droit au but"
+          },
+          {
+            "en": "the tip of the iceberg",
+            "fr": "la partie visible de l'iceberg"
+          },
+          {
+            "en": "keep an eye on",
+            "fr": "surveiller"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « Cut corners » means to do something carefully and thoroughly.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« Cut corners » = rogner sur la qualité (faire au moins cher / plus facile, souvent mal)."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « In a nutshell » means to explain something in great detail.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« In a nutshell » = en résumé (brièvement)."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « Keep an eye on » means to watch or monitor something carefully.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 0,
+        "x": "« Keep an eye on » = surveiller."
+      },
+      {
+        "t": "choice",
+        "q": "Vrai ou faux : « Last but not least » introduces an unimportant final item.",
+        "opts": [
+          "Vrai",
+          "Faux"
+        ],
+        "a": 1,
+        "x": "« Last but not least » = enfin, et non des moindres (un dernier élément toujours important)."
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : They ______ on the construction, and it shows.",
+        "tiles": [
+          "cut",
+          "corners"
+        ],
+        "a": "cut corners",
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : It took a while, but I finally ______.",
+        "tiles": [
+          "got",
+          "the",
+          "hang",
+          "of",
+          "it"
+        ],
+        "a": "got the hang of it",
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Complète : Let's ______ — what's the final price?",
+        "tiles": [
+          "cut",
+          "to",
+          "the",
+          "chase"
+        ],
+        "a": "cut to the chase",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ils ont rogné sur la qualité pour économiser de l'argent.",
+        "a": "They cut corners to save money",
+        "accept": [
+          "they cut corners to save money"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : En résumé, le projet a bien fonctionné.",
+        "a": "In a nutshell, the project worked well",
+        "accept": [
+          "in a nutshell, the project worked well"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Ce n'est que la partie visible de l'iceberg.",
+        "a": "That's just the tip of the iceberg",
+        "accept": [
+          "that is just the tip of the iceberg",
+          "thats just the tip of the iceberg"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis : Enfin, et non des moindres, merci à tous.",
+        "a": "Last but not least, thank you all",
+        "accept": [
+          "last but not least, thank you all"
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l3-r1",
+    "cat": "reading",
+    "title": "A Trip to the Airport",
+    "subtitle": "Le voyage en avion, pas à pas",
+    "emoji": "✈️",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Lis cette histoire sur un premier voyage en avion, puis réponds aux questions. Elle utilise le vocabulaire de l'aéroport et la grammaire du niveau 3 (present perfect, modaux)."
+      },
+      {
+        "t": "h",
+        "text": "✈️ A Trip to the Airport"
+      },
+      {
+        "t": "p",
+        "text": "Aminata had never flown before, so she arrived at the airport three hours early. She checked in at the counter and received her boarding pass. A friendly employee weighed her suitcase and told her it was under the baggage allowance, which was a relief."
+      },
+      {
+        "t": "p",
+        "text": "The security check was faster than she had expected. An officer checked her passport and asked a few questions about the purpose of her visit. Once she had passed through, she found the departure lounge and bought a bottle of water before heading to her boarding gate."
+      },
+      {
+        "t": "p",
+        "text": "When she boarded the plane, a flight attendant showed her to a window seat. She fastened her seatbelt and watched the airport grow smaller during take-off. The flight was smoother than she had imagined, although there was a little turbulence over the sea."
+      },
+      {
+        "t": "p",
+        "text": "After several hours, the plane began its descent and the landing was gentle. Aminata collected her luggage at baggage claim and walked through the nothing-to-declare lane. Outside the terminal, her cousin was waiting for her, holding a small sign with her name on it. \"It was a long haul,\" she admitted, \"but it has been worth it.\""
+      },
+      {
+        "t": "h",
+        "text": "Vocabulaire de l'aéroport"
+      },
+      {
+        "t": "phrases",
+        "title": "À retenir",
+        "items": [
+          {
+            "en": "boarding pass",
+            "fr": "carte d'embarquement"
+          },
+          {
+            "en": "baggage allowance",
+            "fr": "franchise de bagages"
+          },
+          {
+            "en": "security check",
+            "fr": "contrôle de sécurité"
+          },
+          {
+            "en": "departure lounge",
+            "fr": "salle d'embarquement"
+          },
+          {
+            "en": "boarding gate",
+            "fr": "porte d'embarquement"
+          },
+          {
+            "en": "take-off",
+            "fr": "décollage"
+          },
+          {
+            "en": "landing",
+            "fr": "atterrissage"
+          },
+          {
+            "en": "baggage claim",
+            "fr": "récupération des bagages"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "Why did Aminata arrive three hours early?",
+        "opts": [
+          "She had never flown before",
+          "She missed her flight",
+          "She had a lot of luggage"
+        ],
+        "a": 0,
+        "x": "« She had never flown before »."
+      },
+      {
+        "t": "choice",
+        "q": "What did the employee tell her about her suitcase?",
+        "opts": [
+          "It was too heavy",
+          "It was under the baggage allowance",
+          "It was lost"
+        ],
+        "a": 1,
+        "x": "« It was under the baggage allowance »."
+      },
+      {
+        "t": "choice",
+        "q": "Where did she sit on the plane?",
+        "opts": [
+          "An aisle seat",
+          "A window seat",
+          "Near the back"
+        ],
+        "a": 1,
+        "x": "« A window seat, exactly what she had asked for »."
+      },
+      {
+        "t": "choice",
+        "q": "Who was waiting for her outside the terminal?",
+        "opts": [
+          "Her cousin",
+          "Her manager",
+          "A flight attendant"
+        ],
+        "a": 0,
+        "x": "« Her cousin was waiting for her »."
+      },
+      {
+        "t": "choice",
+        "q": "\"It was a long haul\" means...",
+        "opts": [
+          "a long and tiring trip",
+          "a short trip",
+          "a difficult landing"
+        ],
+        "a": 0,
+        "x": "« A long haul » = un long voyage éprouvant."
+      },
+      {
+        "t": "match",
+        "q": "Associe chaque mot à sa traduction.",
+        "pairs": [
+          {
+            "en": "boarding pass",
+            "fr": "carte d'embarquement"
+          },
+          {
+            "en": "take-off",
+            "fr": "décollage"
+          },
+          {
+            "en": "landing",
+            "fr": "atterrissage"
+          },
+          {
+            "en": "baggage claim",
+            "fr": "récupération des bagages"
+          }
+        ],
+        "x": ""
+      }
+    ]
+  }
+]

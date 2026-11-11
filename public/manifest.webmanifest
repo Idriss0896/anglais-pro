@@ -1,0 +1,27 @@
+{
+  "name": "Anglais Pro — Apprendre l'anglais",
+  "short_name": "Anglais Pro",
+  "description": "Cours, exercices, expressions et grammaire pour apprendre l'anglais du niveau débutant au niveau avancé.",
+  "lang": "fr",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f7f6fc",
+  "theme_color": "#5a45e8",
+  "icons": [
+    {
+      "src": "./app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

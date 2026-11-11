@@ -1,12 +1,12 @@
-import { sql, ensureSchema } from "../_lib/db.js";
-import { getSessionUser, publicUser } from "../_lib/auth.js";
+import { sql, ensureSchema } from "./_lib/db.js";
+import { getSessionUser, publicUser } from "./_lib/auth.js";
 import {
   cleanText,
   fail,
   json,
   methodNotAllowed,
   parseBody,
-} from "../_lib/http.js";
+} from "./_lib/http.js";
 
 const MAX_AVATAR_LENGTH = 400_000; // ~300 Ko utiles après compression côté client
 

@@ -1,6 +1,6 @@
-import { sql, ensureSchema } from "../_lib/db.js";
-import { getSessionUser } from "../_lib/auth.js";
-import { fail, json, methodNotAllowed, parseBody } from "../_lib/http.js";
+import { sql, ensureSchema } from "./_lib/db.js";
+import { getSessionUser } from "./_lib/auth.js";
+import { fail, json, methodNotAllowed, parseBody } from "./_lib/http.js";
 
 const MAX_STATE_LENGTH = 400_000;
 

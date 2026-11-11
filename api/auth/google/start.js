@@ -1,5 +1,5 @@
-import { randomState, setStateCookie } from "../_lib/auth.js";
-import { requestUrl } from "../_lib/http.js";
+import { randomState, setStateCookie } from "../../_lib/auth.js";
+import { requestUrl } from "../../_lib/http.js";
 
 export default async function handler(req, res) {
   const url = requestUrl(req);

@@ -30,11 +30,15 @@ export function PageHeader({
           {Icon && (
             <div
               className={cn(
-                "hidden h-14 w-14 shrink-0 place-items-center rounded-3xl bg-gradient-to-br text-white shadow-glow sm:grid",
+                "relative hidden h-14 w-14 shrink-0 place-items-center overflow-hidden rounded-3xl bg-gradient-to-br text-white shadow-glow sm:grid",
                 iconTone,
               )}
             >
-              <Icon size={26} strokeWidth={2.2} />
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_28%_18%,rgba(255,255,255,0.42),transparent_62%)]"
+              />
+              <Icon size={26} strokeWidth={2.2} className="relative" />
             </div>
           )}
           <div>

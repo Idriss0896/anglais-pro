@@ -71,7 +71,7 @@ function SidebarLink({ item }: { item: NavItem }) {
         )
       }
     >
-      <item.icon size={18} strokeWidth={2.3} className="shrink-0" />
+      <item.icon size={18} strokeWidth={2.3} className="shrink-0 transition-transform duration-200 group-hover:scale-110" />
       {item.label}
     </NavLink>
   );
@@ -191,7 +191,7 @@ function BottomNav() {
             end={item.end}
             className={({ isActive }) =>
               cn(
-                "flex min-w-0 flex-1 flex-col items-center gap-1 rounded-2xl px-1 py-1.5 text-[10px] font-extrabold transition",
+                "group flex min-w-0 flex-1 flex-col items-center gap-1 rounded-2xl px-1 py-1.5 text-[10px] font-extrabold transition",
                 isActive ? "text-brand-600" : "text-slate-400 hover:text-slate-600",
               )
             }
@@ -200,8 +200,8 @@ function BottomNav() {
               <>
                 <span
                   className={cn(
-                    "grid h-8 w-10 place-items-center rounded-xl transition-all",
-                    isActive ? "bg-brand-50" : "bg-transparent",
+                    "grid h-8 w-10 place-items-center rounded-xl transition-all duration-200 group-hover:-translate-y-0.5 group-active:scale-90",
+                    isActive ? "bg-brand-50 shadow-[0_8px_18px_-12px_rgba(90,69,232,.9)]" : "bg-transparent",
                   )}
                 >
                   <item.icon size={20} strokeWidth={isActive ? 2.7 : 2.1} />
@@ -216,14 +216,33 @@ function BottomNav() {
   );
 }
 
+function AppBackground() {
+  return (
+    <div
+      aria-hidden="true"
+      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
+    >
+      <div className="aurora aurora-a" />
+      <div className="aurora aurora-b" />
+      <div className="aurora aurora-c" />
+    </div>
+  );
+}
+
 export function AppShell() {
+  const { pathname } = useLocation();
+
   return (
     <div className="min-h-dvh">
       <ScrollToTop />
+      <AppBackground />
       <Sidebar />
       <MobileHeader />
-      <main className="lg:pl-[268px]">
-        <div className="mx-auto w-full max-w-6xl px-4 pb-28 pt-5 sm:px-6 lg:px-9 lg:pb-14 lg:pt-9">
+      <main className="relative lg:pl-[268px]">
+        <div
+          key={pathname}
+          className="animate-page-in mx-auto w-full max-w-6xl px-4 pb-28 pt-5 sm:px-6 lg:px-9 lg:pb-14 lg:pt-9"
+        >
           <Outlet />
         </div>
       </main>

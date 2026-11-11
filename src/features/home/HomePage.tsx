@@ -539,7 +539,7 @@ export function HomePage() {
       </div>
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(290px,0.8fr)] lg:items-start">
-        <div className="space-y-6">
+        <div className="animate-fade-up space-y-6" style={{ animationDelay: "70ms" }}>
           <NextLessonCard />
 
           <section>
@@ -558,7 +558,7 @@ export function HomePage() {
           <ExploreGrid />
         </div>
 
-        <aside className="space-y-4 lg:sticky lg:top-6">
+        <aside className="animate-fade-up space-y-4 lg:sticky lg:top-6" style={{ animationDelay: "150ms" }}>
           <DailyGoalCard />
           <WeekCard />
           <FeaturedPhraseCard />

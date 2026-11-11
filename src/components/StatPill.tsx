@@ -36,7 +36,7 @@ export function StatPill({
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full ring-1",
+        "group inline-flex items-center rounded-full ring-1 transition-transform duration-200 hover:-translate-y-0.5",
         theme.wrap,
         compact ? "gap-1 px-2 py-1" : "gap-1.5 px-2.5 py-1.5",
         className,
@@ -46,10 +46,12 @@ export function StatPill({
       <Icon
         size={compact ? 13 : 15}
         strokeWidth={2.5}
-        className={theme.icon}
+        className={cn(theme.icon, "transition-transform duration-300 group-hover:scale-110")}
         fill={theme.fill ? "currentColor" : "none"}
       />
-      <b className="text-[12px] font-extrabold tabular-nums text-ink">{value}</b>
+      <b key={String(value)} className="animate-pop text-[12px] font-extrabold tabular-nums text-ink">
+        {value}
+      </b>
       {label && !compact && <span className="text-[11px] font-bold text-slate-400">{label}</span>}
     </span>
   );

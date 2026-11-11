@@ -25,15 +25,15 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "bg-brand-600 text-white shadow-[0_12px_26px_-14px_rgba(90,69,232,0.95)] hover:bg-brand-700 hover:-translate-y-0.5 active:translate-y-0",
+    "btn-shine bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-[0_14px_30px_-14px_rgba(90,69,232,0.95)] hover:to-brand-800 hover:-translate-y-0.5 hover:shadow-[0_20px_38px_-16px_rgba(90,69,232,0.95)] active:translate-y-0 active:scale-[0.98]",
   secondary:
-    "bg-white text-ink ring-1 ring-slate-900/10 hover:bg-slate-50 hover:-translate-y-0.5 active:translate-y-0",
-  ghost: "text-slate-600 hover:bg-slate-900/5 hover:text-ink",
-  soft: "bg-brand-50 text-brand-700 ring-1 ring-brand-100 hover:bg-brand-100",
+    "bg-white text-ink ring-1 ring-slate-900/10 hover:bg-slate-50 hover:-translate-y-0.5 hover:ring-slate-900/15 active:translate-y-0 active:scale-[0.98]",
+  ghost: "text-slate-600 hover:bg-slate-900/5 hover:text-ink active:scale-[0.98]",
+  soft: "bg-brand-50 text-brand-700 ring-1 ring-brand-100 hover:bg-brand-100 active:scale-[0.98]",
   success:
-    "bg-emerald-500 text-white shadow-[0_12px_26px_-14px_rgba(16,185,129,0.95)] hover:bg-emerald-600 hover:-translate-y-0.5 active:translate-y-0",
-  dark: "bg-ink text-white hover:bg-ink/90 hover:-translate-y-0.5 active:translate-y-0",
-  danger: "bg-rose-50 text-rose-600 ring-1 ring-rose-100 hover:bg-rose-100",
+    "btn-shine bg-gradient-to-br from-emerald-400 to-emerald-600 text-white shadow-[0_14px_30px_-14px_rgba(16,185,129,0.95)] hover:to-emerald-700 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]",
+  dark: "btn-shine bg-gradient-to-br from-ink to-[#2a2755] text-white shadow-[0_14px_30px_-18px_rgba(23,22,43,0.8)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]",
+  danger: "bg-rose-50 text-rose-600 ring-1 ring-rose-100 hover:bg-rose-100 active:scale-[0.98]",
 };
 
 const sizes: Record<ButtonSize, string> = {

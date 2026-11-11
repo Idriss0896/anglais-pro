@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { HashRouter, Link, Route, Routes, useLocation } from "react-router-dom";
 import { Compass } from "lucide-react";
+import { AuthProvider } from "@/auth/AuthProvider";
 import { AppShell } from "@/components/AppShell";
 import { HomePage } from "@/features/home/HomePage";
 import { LearnPage } from "@/features/learn/LearnPage";
@@ -12,6 +13,8 @@ import { PracticeSessionPage } from "@/features/practice/PracticeSessionPage";
 import { FlashcardsPage } from "@/features/practice/FlashcardsPage";
 import { LessonPage } from "@/features/lesson/LessonPage";
 import { ProgressPage } from "@/features/progress/ProgressPage";
+import { AuthPage } from "@/features/auth/AuthPage";
+import { ProfilePage } from "@/features/profile/ProfilePage";
 import { useProgressStore } from "@/store/useProgressStore";
 import { primeSpeech, setAudioEnabled } from "@/lib/audio";
 
@@ -56,22 +59,26 @@ export default function App() {
 
   return (
     <HashRouter>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/lesson/:unitId" element={<LessonPage />} />
-        <Route path="/practice/session/:mode" element={<PracticeSessionPage />} />
-        <Route element={<AppShell />}>
-          <Route index element={<HomePage />} />
-          <Route path="/learn" element={<LearnPage />} />
-          <Route path="/grammar" element={<GrammarPage />} />
-          <Route path="/vocabulary" element={<VocabularyPage />} />
-          <Route path="/expressions" element={<ExpressionsPage />} />
-          <Route path="/practice" element={<PracticePage />} />
-          <Route path="/practice/flashcards" element={<FlashcardsPage />} />
-          <Route path="/progress" element={<ProgressPage />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
+      <AuthProvider>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/auth" element={<AuthPage />} />
+          <Route path="/lesson/:unitId" element={<LessonPage />} />
+          <Route path="/practice/session/:mode" element={<PracticeSessionPage />} />
+          <Route element={<AppShell />}>
+            <Route index element={<HomePage />} />
+            <Route path="/learn" element={<LearnPage />} />
+            <Route path="/grammar" element={<GrammarPage />} />
+            <Route path="/vocabulary" element={<VocabularyPage />} />
+            <Route path="/expressions" element={<ExpressionsPage />} />
+            <Route path="/practice" element={<PracticePage />} />
+            <Route path="/practice/flashcards" element={<FlashcardsPage />} />
+            <Route path="/progress" element={<ProgressPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </AuthProvider>
     </HashRouter>
   );
 }

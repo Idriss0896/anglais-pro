@@ -5,7 +5,7 @@ import { todayKey, yesterdayKey } from "../lib/utils";
 
 export const MAX_HEARTS = 5;
 
-interface ProgressState {
+export interface ProgressData {
   xp: number;
   hearts: number;
   streak: number;
@@ -15,6 +15,9 @@ interface ProgressState {
   activity: Record<string, DayActivity>;
   lessons: Record<string, LessonProgress>;
   favorites: string[];
+}
+
+interface ProgressState extends ProgressData {
   sound: boolean;
   addXp: (amount: number) => void;
   completeLesson: (id: string, accuracy: number, xp: number) => void;
@@ -24,6 +27,7 @@ interface ProgressState {
   setDailyGoal: (value: number) => void;
   setSound: (value: boolean) => void;
   resetProgress: () => void;
+  importProgress: (data: Partial<ProgressData>) => void;
 }
 
 const defaultProgress = {
@@ -130,6 +134,24 @@ export const useProgressStore = create<ProgressState>()(
           sound: state.sound,
           dailyGoal: state.dailyGoal,
         })),
+
+      importProgress: (data) =>
+        set((state) => ({
+          xp: typeof data.xp === "number" ? data.xp : state.xp,
+          hearts: typeof data.hearts === "number" ? data.hearts : state.hearts,
+          streak: typeof data.streak === "number" ? data.streak : state.streak,
+          bestStreak:
+            typeof data.bestStreak === "number" ? data.bestStreak : state.bestStreak,
+          lastStudyDay:
+            typeof data.lastStudyDay === "string" || data.lastStudyDay === null
+              ? data.lastStudyDay
+              : state.lastStudyDay,
+          dailyGoal:
+            typeof data.dailyGoal === "number" ? data.dailyGoal : state.dailyGoal,
+          activity: data.activity ? { ...data.activity } : state.activity,
+          lessons: data.lessons ? { ...data.lessons } : state.lessons,
+          favorites: data.favorites ? [...data.favorites] : state.favorites,
+        })),
     }),
     {
       name: "anglais-pro-v3",
@@ -137,6 +159,20 @@ export const useProgressStore = create<ProgressState>()(
     },
   ),
 );
+
+export function progressSnapshot(state: ProgressData): ProgressData {
+  return {
+    xp: state.xp,
+    hearts: state.hearts,
+    streak: state.streak,
+    bestStreak: state.bestStreak,
+    lastStudyDay: state.lastStudyDay,
+    dailyGoal: state.dailyGoal,
+    activity: state.activity,
+    lessons: state.lessons,
+    favorites: state.favorites,
+  };
+}
 
 export function todayXp(activity: Record<string, DayActivity>) {
   return activity[todayKey()]?.xp ?? 0;

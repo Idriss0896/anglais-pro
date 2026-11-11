@@ -20,7 +20,7 @@ Une application web **mobile-first** pensée pour les francophones qui veulent p
 
 ---
 
-## ✨ Fonctionnalités
+## 💎 Fonctionnalités
 
 - **Parcours structuré en 3 niveaux** — Fondations (A1–A2), Intermédiaire (B1), Avancé (B2).
 - **63 leçons complètes** — chaque leçon combine théorie claire (encadrés, tableaux, phrases clés) et quiz interactif.
@@ -31,8 +31,10 @@ Une application web **mobile-first** pensée pour les francophones qui veulent p
 - **Révision ciblée** — sessions par compétence, marathon de 20 questions et flashcards.
 - **Progression motivante** — XP, cœurs, série quotidienne, objectif journalier, rangs et succès.
 - **Audio intégré** — prononciation via la synthèse vocale du navigateur (activable/désactivable).
-- **Mobile d'abord** — navigation basse sur téléphone, sidebar sur ordinateur, transitions soignées.
-- **Hors ligne côté données** — contenu et progression stockés localement (aucun serveur, aucun compte).
+- **Mobile d'abord** — barre haute arrondie, navigation basse sur téléphone, sidebar repliable sur ordinateur.
+- **Compte utilisateur** — inscription email / mot de passe ou Google, photo de profil, session sécurisée.
+- **Progression synchronisée** — Neon Postgres conserve XP, cœurs, série, leçons et favoris entre appareils.
+- **Mode invité complet** — on commence à apprendre immédiatement, puis on crée son compte quand on veut, sans rien perdre.
 
 ## 📚 Contenu
 
@@ -54,10 +56,25 @@ Une application web **mobile-first** pensée pour les francophones qui veulent p
 | UI | [React 19](https://react.dev) + TypeScript |
 | Build | [Vite 8](https://vite.dev) |
 | Styles | [Tailwind CSS 4](https://tailwindcss.com) (thème personnalisé, composants utilitaires) |
-| Navigation | [React Router 7](https://reactrouter.com) — `HashRouter` pour un hébergement statique |
+| Navigation | [React Router 7](https://reactrouter.com) — `HashRouter` compatible hébergement statique |
 | État global | [Zustand 5](https://zustand-demo.pmnd.rs) + `persist` (localStorage) |
+| Base de données | [Neon Postgres](https://neon.tech) via l'intégration Vercel |
+| API | Fonctions serverless Vercel (`/api`) — sessions HttpOnly, mots de passe scrypt |
+| Authentification | Email / mot de passe + Google OAuth 2.0 |
 | Icônes | [Lucide](https://lucide.dev) |
 | Effets | [canvas-confetti](https://github.com/catdad/canvas-confetti) |
+
+## 🔐 Comptes et base de données
+
+L'application fonctionne **sans compte**. Dès la première leçon, une invitation discrète propose de créer un compte pour synchroniser la progression.
+
+- **Inscription email** : mot de passe haché avec `scrypt`, session dans un cookie `HttpOnly` / `SameSite=Lax` de 30 jours.
+- **Google** : active le fournisseur en renseignant `GOOGLE_CLIENT_ID` et `GOOGLE_CLIENT_SECRET` sur Vercel, avec l'URI de redirection `https://<domaine>/api/auth/google/callback`.
+- **Photo** : redimensionnée et compressée en 256×256 dans le navigateur, puis stockée dans Postgres.
+- **Progression** : fusionnée à la connexion (aucune perte des données invité), puis synchronisée avec un debounce.
+- **Tables créées automatiquement** au premier appel : `users`, `sessions`, `progress`.
+
+Variables d'environnement : voir [`.env.example`](.env.example). Sur Vercel, l'intégration Neon fournit `DATABASE_URL` automatiquement.
 
 ## 🚀 Démarrage
 
@@ -95,9 +112,15 @@ anglais-pro/
 │  ├─ level-1.json
 │  ├─ level-2.json
 │  └─ level-3.json
+├─ api/                     # Fonctions serverless Vercel
+│  ├─ auth/                 # signup, login, logout, me, Google OAuth
+│  ├─ profile.js            # Nom + photo
+│  ├─ progress.js           # Synchronisation de la progression
+│  └─ _lib/                 # Connexion Neon, sessions, utilitaires HTTP
 ├─ public/                  # Favicon, icône, manifest PWA
 ├─ src/
-│  ├─ components/           # UI partagée (shell, boutons, cartes, modales…)
+│  ├─ auth/                 # AuthProvider (session, fusion et sync)
+│  ├─ components/           # UI partagée (shell, avatar, menus, boutons…)
 │  ├─ data/
 │  │  └─ curriculum.ts      # Agrégation, index et sélecteurs du contenu
 │  ├─ features/
@@ -109,13 +132,16 @@ anglais-pro/
 │  │  ├─ expressions/       # Expressions et favoris
 │  │  ├─ practice/          # Révision, sessions, flashcards
 │  │  ├─ lesson/            # Leçon + moteur de quiz
+│  │  ├─ auth/              # Connexion / inscription
+│  │  ├─ profile/           # Profil et photo
 │  │  └─ progress/          # Statistiques et succès
-│  ├─ lib/                  # Utilitaires, audio, succès, catégories
+│  ├─ lib/                  # Utilitaires, API, audio, succès, catégories
 │  ├─ store/                # État persistant (XP, cœurs, série…)
 │  ├─ types.ts              # Modèle de données typé
 │  ├─ App.tsx               # Routes
 │  └─ index.css             # Design system Tailwind
-├─ .github/workflows/       # Déploiement GitHub Pages
+├─ .github/workflows/       # Déploiement GitHub Pages (site statique)
+├─ vercel.json              # Build Vite + fonctions API
 └─ vite.config.ts
 ```
 

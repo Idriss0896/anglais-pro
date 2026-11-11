@@ -188,13 +188,30 @@ interface Unit {
 
 ## 🌐 Déploiement
 
-Le projet est prêt pour **GitHub Pages** via GitHub Actions (`.github/workflows/deploy.yml`) :
+### Vercel (version complète, avec comptes)
+
+**Production : [anglais-pro.vercel.app](https://anglais-pro.vercel.app)**
+
+Le projet est relié au dépôt GitHub : chaque push sur `main` déclenche un déploiement de production, et l'intégration Neon fournit la base Postgres.
+
+1. Importer le dépôt dans Vercel (framework **Vite** détecté automatiquement).
+2. Ajouter l'intégration **Neon** (elle renseigne `DATABASE_URL`).
+3. Renseigner éventuellement `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` pour activer Google.
+4. Les tables `users`, `sessions` et `progress` sont créées au premier appel API.
+
+Les préversions restent protégées par Vercel Authentication ; seule la production est publique.
+
+### GitHub Pages (version statique)
+
+Le projet est aussi prêt pour **GitHub Pages** via GitHub Actions (`.github/workflows/deploy.yml`) :
 
 1. Pousser le dépôt sur GitHub (branche `main`).
 2. Dans **Settings → Pages**, choisir **Source : GitHub Actions**.
 3. Chaque push sur `main` construit et publie automatiquement l'application.
 
 Le build utilise `base: "./"` et un `HashRouter` : il fonctionne aussi bien à la racine d'un domaine que dans un sous-dossier, sans configuration serveur.
+
+> Sur GitHub Pages, il n'y a pas de fonctions serverless : l'application reste pleinement utilisable en **mode invité** (progression locale) et l'interface indique que les comptes sont disponibles sur Vercel.
 
 ## 📄 Licence
 

@@ -531,13 +531,13 @@ function MobileHeader({ scrolled }: { scrolled: boolean }) {
         <Link
           to="/progress"
           aria-label={`Progression du parcours : ${overall}%`}
-          className="min-w-0 flex-1 rounded-2xl bg-white/10 px-2.5 py-1.5 ring-1 ring-white/15 transition hover:bg-white/[0.17]"
+          className="min-w-0 flex-1 rounded-2xl bg-white/10 px-2.5 py-1.5 ring-1 ring-white/15 transition hover:bg-white/[0.17] max-[359px]:px-2"
         >
-          <div className="flex items-center justify-between gap-1.5 text-[9px] font-extrabold uppercase tracking-[0.08em] text-indigo-100/65">
-            <span className="truncate">Avancée</span>
+          <div className="flex items-center justify-between gap-1.5 text-[9px] font-extrabold uppercase tracking-[0.08em] text-indigo-100/65 max-[359px]:justify-center">
+            <span className="truncate max-[359px]:hidden">Avancée</span>
             <span className="text-white">{overall}%</span>
           </div>
-          <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-white/15">
+          <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-white/15 max-[359px]:hidden">
             <div
               className="h-full rounded-full bg-gradient-to-r from-emerald-300 to-teal-300 transition-[width] duration-700"
               style={{ width: `${overall}%` }}
@@ -582,7 +582,7 @@ function BottomNav() {
 
   return (
     <nav
-      className="pointer-events-none fixed inset-x-0 bottom-0 z-40 px-3 pb-[max(0.7rem,env(safe-area-inset-bottom))] lg:hidden"
+      className="pointer-events-none fixed inset-x-0 bottom-0 z-40 px-2.5 pb-[max(0.7rem,env(safe-area-inset-bottom))] min-[360px]:px-3 lg:hidden"
       aria-label="Navigation mobile"
     >
       <div className="pointer-events-auto mx-auto max-w-md rounded-[27px] bg-gradient-to-r from-violet-500/70 via-fuchsia-400/55 to-amber-400/75 p-[1.6px] shadow-[0_26px_58px_-24px_rgba(23,22,43,0.55)] backdrop-blur-xl">
@@ -635,7 +635,7 @@ function BottomNav() {
                   </span>
                   <span
                     className={cn(
-                      "w-full truncate text-center text-[9.5px] leading-none tracking-[-0.01em] transition-colors",
+                      "w-full truncate text-center text-[9.5px] leading-none tracking-[-0.01em] transition-colors max-[359px]:text-[9px] max-[359px]:tracking-[-0.03em]",
                       isActive ? "font-extrabold text-ink" : "font-bold text-slate-500",
                     )}
                   >

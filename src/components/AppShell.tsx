@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import {
   BarChart3,
   BookOpen,
+  BookOpenText,
+  BrainCircuit,
+  ChartNoAxesColumnIncreasing,
   ChevronRight,
   Cloud,
   Dumbbell,
@@ -10,8 +13,10 @@ import {
   Globe,
   Heart,
   Home,
+  House,
   LayoutGrid,
   MessageCircle,
+  MessagesSquare,
   PanelLeftClose,
   PanelLeftOpen,
   Search,
@@ -51,12 +56,64 @@ const trainingNav: NavItem[] = [
   { to: "/progress", label: "Progression", icon: BarChart3 },
 ];
 
-const mobileNav: NavItem[] = [
-  { to: "/", label: "Accueil", icon: Home, end: true },
-  { to: "/learn", label: "Cours", icon: BookOpen },
-  { to: "/practice", label: "Réviser", icon: Dumbbell },
-  { to: "/expressions", label: "Expressions", icon: MessageCircle },
-  { to: "/progress", label: "Progrès", icon: BarChart3 },
+interface MobileNavItem extends NavItem {
+  /** Dégradé de la tuile active. */
+  tone: string;
+  /** Teinte douce de la tuile au repos. */
+  soft: string;
+  /** Couleur de l'icône au repos. */
+  ink: string;
+  /** Ombre colorée sous la tuile active. */
+  glow: string;
+}
+
+const mobileNav: MobileNavItem[] = [
+  {
+    to: "/",
+    label: "Accueil",
+    icon: House,
+    end: true,
+    tone: "from-violet-500 via-violet-500 to-indigo-600",
+    soft: "bg-violet-50",
+    ink: "text-violet-500",
+    glow: "shadow-[0_14px_24px_-10px_rgba(109,76,246,0.9)]",
+  },
+  {
+    to: "/learn",
+    label: "Cours",
+    icon: BookOpenText,
+    tone: "from-sky-400 via-sky-500 to-blue-600",
+    soft: "bg-sky-50",
+    ink: "text-sky-500",
+    glow: "shadow-[0_14px_24px_-10px_rgba(14,132,233,0.9)]",
+  },
+  {
+    to: "/practice",
+    label: "Réviser",
+    icon: BrainCircuit,
+    tone: "from-emerald-400 via-emerald-500 to-teal-600",
+    soft: "bg-emerald-50",
+    ink: "text-emerald-500",
+    glow: "shadow-[0_14px_24px_-10px_rgba(5,150,105,0.9)]",
+  },
+  {
+    to: "/expressions",
+    label: "Expressions",
+    icon: MessagesSquare,
+    tone: "from-amber-400 via-orange-400 to-orange-500",
+    soft: "bg-amber-50",
+    ink: "text-amber-500",
+    glow: "shadow-[0_14px_24px_-10px_rgba(245,158,11,0.95)]",
+  },
+  {
+    to: "/progress",
+    label: "Progrès",
+    icon: ChartNoAxesColumnIncreasing,
+    tone: "from-rose-400 via-pink-500 to-fuchsia-600",
+    soft: "bg-rose-50",
+    ink: "text-rose-500",
+    glow: "shadow-[0_14px_24px_-10px_rgba(236,72,153,0.9)]",
+  },
 ];
 
 const footerNav: { title: string; links: { label: string; to: string }[] }[] = [
@@ -514,41 +571,81 @@ function MobileHeader({ scrolled }: { scrolled: boolean }) {
 }
 
 function BottomNav() {
+  const { pathname } = useLocation();
+  const [pressed, setPressed] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!pressed) return;
+    const timer = window.setTimeout(() => setPressed(null), 520);
+    return () => window.clearTimeout(timer);
+  }, [pressed]);
+
   return (
     <nav
-      className="safe-bottom fixed inset-x-0 bottom-0 z-40 border-t border-slate-900/[0.07] bg-white/90 px-2 pt-1.5 backdrop-blur-xl lg:hidden"
+      className="pointer-events-none fixed inset-x-0 bottom-0 z-40 px-3 pb-[max(0.7rem,env(safe-area-inset-bottom))] lg:hidden"
       aria-label="Navigation mobile"
     >
-      <div className="mx-auto flex max-w-lg items-stretch justify-between">
-        {mobileNav.map((item) => (
-          <NavLink
-            key={item.to}
-            to={item.to}
-            end={item.end}
-            className={({ isActive }) =>
-              cn(
-                "group flex min-w-0 flex-1 flex-col items-center gap-1 rounded-2xl px-1 py-1.5 text-[10px] font-extrabold transition",
-                isActive ? "text-brand-700" : "text-slate-400 hover:text-slate-600",
-              )
-            }
-          >
-            {({ isActive }) => (
-              <>
-                <span
-                  className={cn(
-                    "grid h-8 w-10 place-items-center rounded-xl transition-all duration-200 group-hover:-translate-y-0.5 group-active:scale-90",
-                    isActive
-                      ? "bg-brand-600 text-white shadow-[0_10px_20px_-10px_rgba(90,69,232,0.95)]"
-                      : "bg-transparent",
-                  )}
-                >
-                  <item.icon size={20} strokeWidth={isActive ? 2.7 : 2.1} />
-                </span>
-                <span className="truncate">{item.label}</span>
-              </>
-            )}
-          </NavLink>
-        ))}
+      <div className="pointer-events-auto mx-auto max-w-md rounded-[27px] bg-gradient-to-r from-violet-500/70 via-fuchsia-400/55 to-amber-400/75 p-[1.6px] shadow-[0_26px_58px_-24px_rgba(23,22,43,0.55)] backdrop-blur-xl">
+        <div className="flex items-center justify-between gap-0.5 rounded-[25.6px] bg-white/95 px-1.5 py-1.5 ring-1 ring-white/60">
+          {mobileNav.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              end={item.end}
+              onPointerDown={() => setPressed(item.to)}
+              onClick={() => {
+                if (pathname === item.to) {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
+              className="group relative flex min-w-0 flex-1 flex-col items-center gap-[3px] rounded-[19px] px-0.5 pb-1 pt-1.5"
+            >
+              {({ isActive }) => (
+                <>
+                  <span
+                    className={cn(
+                      "relative grid h-[38px] w-full max-w-[48px] place-items-center rounded-[14px] transition-all duration-300 ease-out",
+                      isActive
+                        ? cn(
+                            "-translate-y-px bg-gradient-to-br text-white",
+                            item.tone,
+                            item.glow,
+                          )
+                        : cn(
+                            item.soft,
+                            item.ink,
+                            "group-hover:-translate-y-px group-active:scale-90",
+                          ),
+                    )}
+                  >
+                    {isActive && (
+                      <span
+                        aria-hidden="true"
+                        className="pointer-events-none absolute inset-0 rounded-[14px] bg-[radial-gradient(circle_at_30%_15%,rgba(255,255,255,0.45),transparent_62%)]"
+                      />
+                    )}
+                    <item.icon
+                      size={20}
+                      strokeWidth={isActive ? 2.5 : 2.2}
+                      className={cn(
+                        "relative transition-transform duration-300",
+                        pressed === item.to && "animate-nav-press",
+                      )}
+                    />
+                  </span>
+                  <span
+                    className={cn(
+                      "w-full truncate text-center text-[9.5px] leading-none tracking-[-0.01em] transition-colors",
+                      isActive ? "font-extrabold text-ink" : "font-bold text-slate-500",
+                    )}
+                  >
+                    {item.label}
+                  </span>
+                </>
+              )}
+            </NavLink>
+          ))}
+        </div>
       </div>
     </nav>
   );

@@ -12,6 +12,7 @@ import {
 import { PageHeader } from "@/components/PageHeader";
 import { StatPill } from "@/components/StatPill";
 import { EmptyState } from "@/components/EmptyState";
+import { Mascot, MascotSay, mascotFor, MASCOTS } from "@/components/Mascot";
 import { LEVEL_EMOJIS, LEVEL_THEMES } from "@/lib/levels";
 import { CURRICULUM, TOTAL_UNITS, countByCategory } from "@/data/curriculum";
 import { useProgressStore } from "@/store/useProgressStore";
@@ -140,10 +141,14 @@ export function VocabularyPage() {
               répète-les à voix haute et imagine une phrase pour chacun.
             </p>
           </div>
-          <Tag size={84} strokeWidth={1.2} className="hidden shrink-0 text-white/20 sm:block" />
+          <Mascot
+            id="zoe"
+            mood="cheer"
+            size={108}
+            className="h-[70px] w-[70px] shrink-0 drop-shadow-[0_18px_30px_rgba(6,78,59,0.35)] sm:h-[108px] sm:w-[108px]"
+          />
         </div>
       </div>
-
       <div className="animate-fade-up space-y-4" style={{ animationDelay: "60ms" }}>
         <div className="relative">
           <Search
@@ -253,6 +258,7 @@ export function VocabularyPage() {
             const theme = LEVEL_THEMES[unit.level];
             const open = openId === unit.id;
             const done = Boolean(lessons[unit.id]?.completed);
+            const coach = mascotFor(unit.id);
             return (
               <section
                 key={unit.id}
@@ -306,6 +312,16 @@ export function VocabularyPage() {
 
                 {open && (
                   <div className="animate-fade-in border-t border-slate-100 px-3 pb-3 pt-2">
+                    <MascotSay
+                      id={coach}
+                      mood="talk"
+                      size={38}
+                      label={`${MASCOTS[coach].name} t'explique`}
+                      className="mb-2"
+                    >
+                      {entries.length} mots sur « {unit.title} ». Touche le haut-parleur pour
+                      écouter, puis répète chaque mot à voix haute.
+                    </MascotSay>
                     <div className="grid gap-0.5">
                       {entries.map((entry) => (
                         <VocabRow key={entry.id} entry={entry} />

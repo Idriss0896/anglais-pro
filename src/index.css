@@ -243,6 +243,16 @@
   .animate-heart {
     animation: heart-beat 0.45s ease both;
   }
+
+  .mascot-float {
+    animation: mascot-float 5.5s ease-in-out infinite;
+  }
+
+  .mascot-eye {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: mascot-blink 6.5s ease-in-out infinite;
+  }
 }
 
 @keyframes fade-up {
@@ -329,6 +339,34 @@
   }
   65% {
     transform: scale(0.94);
+  }
+}
+
+@keyframes mascot-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes mascot-blink {
+  0%,
+  92%,
+  100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mascot-float,
+  .mascot-eye {
+    animation: none;
   }
 }
 

@@ -3,8 +3,9 @@ import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import {
   AlertCircle,
   ArrowLeft,
+  ArrowRight,
   Check,
-  CheckCircle2,
+  Cloud,
   Eye,
   EyeOff,
   LoaderCircle,
@@ -17,7 +18,8 @@ import {
 import { useAuth } from "@/auth/AuthProvider";
 import { Logo } from "@/components/Logo";
 import { ApiError, googleStartUrl } from "@/lib/api";
-import { cn } from "@/lib/utils";
+import { TOTAL_PHRASES, TOTAL_QUESTIONS, TOTAL_UNITS } from "@/data/curriculum";
+import { cn, formatNumber } from "@/lib/utils";
 
 type Mode = "login" | "signup";
 
@@ -31,9 +33,25 @@ const googleErrors: Record<string, string> = {
   google_failed: "La connexion Google a échoué. Réessaie ou utilise ton email.",
 };
 
-function GoogleMark() {
+const strengthLabels = ["Trop court", "Faible", "Correct", "Solide"];
+const strengthColors = ["bg-slate-200", "bg-rose-400", "bg-amber-400", "bg-emerald-500"];
+const strengthText = ["text-slate-400", "text-rose-500", "text-amber-600", "text-emerald-600"];
+
+function passwordScore(value: string) {
+  if (value.length < 8) return 0;
+  const criteria =
+    Number(value.length >= 12) +
+    Number(/[a-z]/.test(value) && /[A-Z]/.test(value)) +
+    Number(/\d/.test(value)) +
+    Number(/[^A-Za-z0-9]/.test(value));
+  if (criteria >= 4) return 3;
+  if (criteria >= 2) return 2;
+  return 1;
+}
+
+function GoogleMark({ size = 18 }: { size?: number }) {
   return (
-    <svg viewBox="0 0 48 48" width="18" height="18" aria-hidden="true">
+    <svg viewBox="0 0 48 48" width={size} height={size} aria-hidden="true">
       <path
         fill="#EA4335"
         d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5Z"
@@ -65,7 +83,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mb-1.5 block text-[11px] font-extrabold uppercase tracking-[0.12em] text-slate-500">
+      <span className="mb-1.5 block text-[10.5px] font-extrabold uppercase tracking-[0.12em] text-slate-500">
         {label}
       </span>
       <span className="relative flex items-center">
@@ -75,6 +93,9 @@ function Field({
     </label>
   );
 }
+
+const inputClass =
+  "h-12 w-full rounded-2xl bg-slate-50 pl-10 pr-3.5 text-[13.5px] font-semibold text-ink outline-none ring-1 ring-slate-200 transition placeholder:font-medium placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-brand-400";
 
 export function AuthPage() {
   const { user, apiReady, googleEnabled, login, signup } = useAuth();
@@ -95,6 +116,8 @@ export function AuthPage() {
     if (oauthError) return googleErrors[oauthError] ?? "La connexion a échoué.";
     return null;
   }, [error, oauthError]);
+
+  const score = passwordScore(password);
 
   useEffect(() => {
     if (user && !pending) {
@@ -142,42 +165,70 @@ export function AuthPage() {
     }
   }
 
+  const title = mode === "login" ? "Content de te revoir" : "Crée ton compte";
+  const subtitle =
+    mode === "login"
+      ? "Retrouve ta progression, ta série et tes expressions favorites."
+      : "Ta progression actuelle sera automatiquement rattachée à ton compte.";
+
   return (
-    <div className="relative min-h-dvh overflow-hidden bg-[#0e0c28] px-4 py-6 text-white sm:px-6 lg:py-10">
+    <div className="relative min-h-dvh overflow-hidden bg-[#0a0820] px-4 py-5 text-white sm:px-6 lg:py-10">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-32 top-0 h-[420px] w-[420px] rounded-full bg-brand-500/40 blur-3xl"
+        className="pointer-events-none absolute -left-32 -top-24 h-[420px] w-[420px] rounded-full bg-brand-500/40 blur-3xl"
       />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-24 bottom-0 h-[380px] w-[380px] rounded-full bg-sky-400/25 blur-3xl"
       />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.06),transparent_60%)]"
+      />
 
-      <div className="relative mx-auto flex w-full max-w-5xl flex-col gap-4">
-        <Link
-          to="/"
-          className="inline-flex w-fit items-center gap-2 rounded-full bg-white/10 px-3.5 py-2 text-[11.5px] font-extrabold text-indigo-100 ring-1 ring-white/15 transition hover:-translate-y-0.5 hover:bg-white/15 hover:text-white"
-        >
-          <ArrowLeft size={14} />
-          Continuer à apprendre sans compte
-        </Link>
+      <div className="relative mx-auto w-full max-w-5xl">
+        <div className="flex items-center justify-between gap-3">
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-2 text-[11.5px] font-extrabold text-indigo-100 ring-1 ring-white/15 transition hover:-translate-y-0.5 hover:bg-white/15 hover:text-white"
+          >
+            <ArrowLeft size={14} />
+            Continuer sans compte
+          </Link>
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-400/15 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.12em] text-emerald-200 ring-1 ring-emerald-300/25">
+            <Check size={11} strokeWidth={3} />
+            Gratuit
+          </span>
+        </div>
 
-        <div className="grid overflow-hidden rounded-[34px] bg-white shadow-[0_50px_120px_-40px_rgba(0,0,0,0.8)] ring-1 ring-white/15 lg:grid-cols-[1.02fr_1fr]">
-          <section className="relative hidden overflow-hidden bg-gradient-to-br from-[#312e81] via-[#4338ca] to-[#6d28d9] p-8 text-white lg:block lg:p-10">
-            <div className="pointer-events-none absolute inset-0 pattern-dots opacity-25" />
-            <div className="pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full bg-white/15 blur-3xl" />
-            <div className="relative flex h-full flex-col">
+        <div className="mt-6 space-y-1 lg:hidden">
+          <Logo onDark />
+          <h1 className="pt-4 text-[29px] font-extrabold leading-[1.08] tracking-[-0.03em]">
+            {title}
+          </h1>
+          <p className="text-[12.5px] font-medium leading-5 text-indigo-100/65">{subtitle}</p>
+        </div>
+
+        <div className="mt-5 grid overflow-hidden rounded-[34px] bg-white shadow-[0_50px_120px_-45px_rgba(0,0,0,0.9)] ring-1 ring-white/10 lg:mt-6 lg:grid-cols-[1.02fr_1fr]">
+          <section className="relative hidden overflow-hidden bg-gradient-to-br from-[#2a2470] via-[#4338ca] to-[#6d28d9] p-8 text-white lg:flex lg:flex-col lg:p-10">
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 pattern-dots opacity-25" />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full bg-white/15 blur-3xl"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-sky-400/25 blur-3xl"
+            />
+
+            <div className="relative flex flex-col">
               <Logo onDark />
-              <h1 className="mt-10 text-[34px] font-extrabold leading-[1.08] tracking-[-0.03em]">
-                Ton anglais avance,
-                <br />
-                même quand tu changes
-                <br />
-                d'appareil.
-              </h1>
+              <h2 className="mt-10 max-w-[16ch] text-[34px] font-extrabold leading-[1.06] tracking-[-0.035em]">
+                Ton anglais avance, même quand tu changes d'appareil.
+              </h2>
               <p className="mt-4 max-w-sm text-[13.5px] font-medium leading-6 text-indigo-100/75">
-                Commence en invité, puis crée ton compte quand tu veux : XP, série,
-                cœurs et leçons terminées sont conservés.
+                Commence en invité, crée ton compte quand tu veux : XP, cœurs, série et leçons
+                terminées sont conservés.
               </p>
 
               <ul className="mt-8 space-y-3">
@@ -186,7 +237,10 @@ export function AuthPage() {
                   "Ta photo et ton prénom sur ton espace",
                   "Connexion par email ou avec Google",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-[12.5px] font-bold text-white/85">
+                  <li
+                    key={item}
+                    className="flex items-start gap-2.5 text-[12.5px] font-bold text-white/85"
+                  >
                     <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-emerald-400/20 text-emerald-200 ring-1 ring-emerald-300/30">
                       <Check size={12} strokeWidth={3} />
                     </span>
@@ -195,34 +249,46 @@ export function AuthPage() {
                 ))}
               </ul>
 
-              <div className="mt-auto flex items-center gap-2 rounded-2xl bg-white/10 p-3 text-[11px] font-bold text-indigo-100/75 ring-1 ring-white/10">
-                <ShieldCheck size={16} className="text-emerald-300" />
-                Mot de passe chiffré, données hébergées sur Neon.
-              </div>
+              <dl className="mt-8 grid grid-cols-3 gap-2">
+                {[
+                  { value: TOTAL_UNITS, label: "leçons" },
+                  { value: TOTAL_QUESTIONS, label: "exercices" },
+                  { value: TOTAL_PHRASES, label: "expressions" },
+                ].map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="rounded-2xl bg-white/10 px-3 py-2.5 ring-1 ring-white/15"
+                  >
+                    <dt className="sr-only">{stat.label}</dt>
+                    <dd className="text-[16px] font-extrabold leading-none tabular-nums">
+                      {formatNumber(stat.value)}
+                    </dd>
+                    <dd className="mt-1 text-[9.5px] font-bold uppercase tracking-[0.1em] text-indigo-100/55">
+                      {stat.label}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+
+            <div className="relative mt-8 flex items-center gap-2 rounded-2xl bg-white/10 p-3 text-[11px] font-bold text-indigo-100/75 ring-1 ring-white/10 lg:mt-auto">
+              <ShieldCheck size={16} className="shrink-0 text-emerald-300" />
+              Mot de passe chiffré, données privées et synchronisées.
             </div>
           </section>
 
           <section className="p-5 sm:p-7 lg:p-9">
-            <div className="flex items-center justify-between gap-3 lg:hidden">
-              <Logo />
-              <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wide text-emerald-700 ring-1 ring-emerald-100">
-                Gratuit
-              </span>
-            </div>
-
-            <div className="mt-5 lg:mt-0">
+            <div className="hidden lg:block">
               <p className="eyebrow">Ton espace</p>
               <h2 className="mt-1 text-[25px] font-extrabold tracking-[-0.02em] text-ink">
-                {mode === "login" ? "Content de te revoir" : "Crée ton compte"}
+                {title}
               </h2>
               <p className="mt-1.5 text-[12.5px] font-medium leading-5 text-slate-500">
-                {mode === "login"
-                  ? "Retrouve ta progression, ta série et tes expressions favorites."
-                  : "Ta progression actuelle sera automatiquement rattachée à ton compte."}
+                {subtitle}
               </p>
             </div>
 
-            <div className="mt-5 grid grid-cols-2 gap-1 rounded-2xl bg-slate-100 p-1">
+            <div className="grid grid-cols-2 gap-1 rounded-2xl bg-slate-100 p-1 lg:mt-5">
               {(["login", "signup"] as Mode[]).map((item) => (
                 <button
                   key={item}
@@ -243,8 +309,8 @@ export function AuthPage() {
             {!apiReady && (
               <div className="mt-4 flex items-start gap-2 rounded-2xl bg-amber-50 p-3 text-[11.5px] font-semibold leading-5 text-amber-800 ring-1 ring-amber-200">
                 <WifiOff size={16} className="mt-0.5 shrink-0" />
-                Le service de compte n'est pas joignable depuis cette adresse. Utilise la
-                version déployée sur Vercel pour te connecter.
+                Les comptes sont momentanément indisponibles ici. Tu peux continuer à apprendre
+                sans compte, ta progression reste sur cet appareil.
               </div>
             )}
 
@@ -255,15 +321,16 @@ export function AuthPage() {
               </div>
             )}
 
-            <form onSubmit={onSubmit} className="mt-5 space-y-3.5">
+            <form onSubmit={onSubmit} className="mt-4 space-y-3.5">
               {mode === "signup" && (
                 <Field icon={UserRound} label="Prénom (optionnel)">
                   <input
                     value={name}
                     onChange={(event) => setName(event.target.value)}
                     autoComplete="name"
+                    enterKeyHint="next"
                     placeholder="Comment veux-tu être appelé ?"
-                    className="h-12 w-full rounded-2xl bg-slate-50 pl-10 pr-3.5 text-[13.5px] font-semibold text-ink outline-none ring-1 ring-slate-200 transition placeholder:font-medium placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-brand-400"
+                    className={inputClass}
                   />
                 </Field>
               )}
@@ -273,10 +340,12 @@ export function AuthPage() {
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
                   type="email"
+                  inputMode="email"
                   autoComplete="email"
+                  enterKeyHint="next"
                   required
                   placeholder="toi@exemple.com"
-                  className="h-12 w-full rounded-2xl bg-slate-50 pl-10 pr-3.5 text-[13.5px] font-semibold text-ink outline-none ring-1 ring-slate-200 transition placeholder:font-medium placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-brand-400"
+                  className={inputClass}
                 />
               </Field>
 
@@ -286,10 +355,11 @@ export function AuthPage() {
                   onChange={(event) => setPassword(event.target.value)}
                   type={showPassword ? "text" : "password"}
                   autoComplete={mode === "signup" ? "new-password" : "current-password"}
+                  enterKeyHint="go"
                   required
                   minLength={8}
                   placeholder="8 caractères minimum"
-                  className="h-12 w-full rounded-2xl bg-slate-50 pl-10 pr-11 text-[13.5px] font-semibold text-ink outline-none ring-1 ring-slate-200 transition placeholder:font-medium placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-brand-400"
+                  className={cn(inputClass, "pr-11")}
                 />
                 <button
                   type="button"
@@ -301,11 +371,28 @@ export function AuthPage() {
                 </button>
               </Field>
 
-              {mode === "signup" && (
-                <p className="flex items-center gap-1.5 text-[10.5px] font-semibold text-slate-400">
-                  <CheckCircle2 size={12} className="text-emerald-500" />
-                  En créant un compte, tu acceptes que ta progression soit sauvegardée.
-                </p>
+              {mode === "signup" && password.length > 0 && (
+                <div className="rounded-2xl bg-slate-50 p-3 ring-1 ring-slate-200">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-[10px] font-extrabold uppercase tracking-[0.12em] text-slate-500">
+                      Robustesse
+                    </span>
+                    <span className={cn("text-[10.5px] font-extrabold", strengthText[score])}>
+                      {strengthLabels[score]}
+                    </span>
+                  </div>
+                  <div className="mt-2 flex gap-1">
+                    {[0, 1, 2].map((step) => (
+                      <span
+                        key={step}
+                        className={cn(
+                          "h-1.5 flex-1 rounded-full transition-colors duration-300",
+                          step <= score && score > 0 ? strengthColors[score] : "bg-slate-200",
+                        )}
+                      />
+                    ))}
+                  </div>
+                </div>
               )}
 
               <button
@@ -315,6 +402,7 @@ export function AuthPage() {
               >
                 {pending ? <LoaderCircle size={18} className="animate-spin" /> : null}
                 {mode === "login" ? "Se connecter" : "Créer mon compte"}
+                {!pending && <ArrowRight size={16} />}
               </button>
             </form>
 
@@ -338,7 +426,7 @@ export function AuthPage() {
               <button
                 type="button"
                 disabled
-                title="Ajoute GOOGLE_CLIENT_ID et GOOGLE_CLIENT_SECRET sur Vercel pour activer Google."
+                title="La connexion Google sera activée très bientôt."
                 className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-2xl bg-slate-50 text-[13.5px] font-extrabold text-slate-400 ring-1 ring-slate-200"
               >
                 <GoogleMark />
@@ -351,8 +439,20 @@ export function AuthPage() {
               className="mt-4 flex items-center justify-center gap-1.5 text-[11.5px] font-bold text-slate-500 transition hover:text-ink"
             >
               Continuer sans compte
-              <ArrowLeft size={13} className="rotate-180" />
+              <ArrowRight size={13} />
             </Link>
+
+            <div className="mt-4 flex items-center justify-center gap-3 border-t border-slate-100 pt-3 text-[10px] font-bold text-slate-400">
+              <span className="inline-flex items-center gap-1.5">
+                <ShieldCheck size={12} className="text-emerald-500" />
+                Session sécurisée
+              </span>
+              <span className="h-3 w-px bg-slate-200" />
+              <span className="inline-flex items-center gap-1.5">
+                <Cloud size={12} className="text-sky-500" />
+                Synchronisation auto
+              </span>
+            </div>
           </section>
         </div>
       </div>

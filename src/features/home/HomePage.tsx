@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { ButtonLink } from "@/components/Button";
 import { LevelCard } from "@/components/LevelCard";
+import { Mascot, mascotFor, MASCOTS } from "@/components/Mascot";
 import { ProgressBar } from "@/components/ProgressBar";
 import { ProgressRing } from "@/components/ProgressRing";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -145,6 +146,49 @@ function NextLessonCard() {
           </span>
         </div>
       </div>
+    </section>
+  );
+}
+
+function CoachCard() {
+  const lessons = useProgressStore((state) => state.lessons);
+  const unit = getNextUnit(lessons);
+  const phraseBlock = unit.theory.find((block) => block.t === "phrases");
+  const phrase = phraseBlock?.items?.[0];
+  if (!phrase) return null;
+  const coach = mascotFor(unit.id);
+  const meta = MASCOTS[coach];
+
+  return (
+    <section className="card animate-fade-up flex items-center gap-4 p-4 sm:p-5">
+      <Mascot id={coach} mood="hello" size={82} className="hidden sm:block" />
+      <div className="min-w-0 flex-1">
+        <p className="eyebrow">
+          {meta.name} · {unit.title}
+        </p>
+        <p className="mt-1 font-display text-[16px] font-extrabold leading-snug text-ink">
+          « {phrase.en} »
+        </p>
+        <p className="mt-0.5 text-[12px] font-medium leading-5 text-slate-500">{phrase.fr}</p>
+        <div className="mt-3 flex flex-wrap items-center gap-2">
+          <button
+            type="button"
+            onClick={() => speak(phrase.en)}
+            className="inline-flex h-8 items-center gap-1.5 rounded-full bg-brand-50 px-3 text-[11px] font-extrabold text-brand-700 ring-1 ring-brand-100 transition hover:bg-brand-100"
+          >
+            <Volume2 size={13} strokeWidth={2.6} />
+            Écouter
+          </button>
+          <Link
+            to={`/lesson/${unit.id}`}
+            className="inline-flex h-8 items-center gap-1 rounded-full px-2.5 text-[11px] font-extrabold text-slate-500 transition hover:text-ink"
+          >
+            Voir la leçon
+            <ArrowRight size={12.5} />
+          </Link>
+        </div>
+      </div>
+      <Mascot id={coach} mood="hello" size={62} className="sm:hidden" />
     </section>
   );
 }
@@ -541,6 +585,7 @@ export function HomePage() {
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(290px,0.8fr)] lg:items-start">
         <div className="animate-fade-up space-y-6" style={{ animationDelay: "70ms" }}>
           <NextLessonCard />
+          <CoachCard />
 
           <section>
             <SectionHeading

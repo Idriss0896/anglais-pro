@@ -144,7 +144,7 @@ export function ProfilePage() {
               {!apiReady && (
                 <p className="mt-4 flex items-center gap-1.5 text-[11px] font-semibold text-amber-200">
                   <CloudOff size={13} />
-                  Les comptes seront disponibles sur la version Vercel.
+                  Les comptes sont momentanément indisponibles sur cette adresse.
                 </p>
               )}
             </div>

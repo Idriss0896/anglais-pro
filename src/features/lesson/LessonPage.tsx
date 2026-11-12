@@ -9,7 +9,6 @@ import {
   Clock3,
   GraduationCap,
   Heart,
-  Lightbulb,
   ListChecks,
   MessageCircle,
   Play,
@@ -21,6 +20,7 @@ import {
 import { FocusShell } from "@/components/AppShell";
 import { Button } from "@/components/Button";
 import { CategoryBadge } from "@/components/CategoryBadge";
+import { Mascot, MascotSay, mascotFor, MASCOTS } from "@/components/Mascot";
 import { StatPill } from "@/components/StatPill";
 import { QuizSession } from "@/features/lesson/QuizSession";
 import { ALL_QUESTIONS, getUnit, makePhraseId, unitMinutes } from "@/data/curriculum";
@@ -117,12 +117,10 @@ function TheoryContent({ unit }: { unit: CurriculumUnit }) {
               key={blockIndex}
               className="flex items-start gap-3 rounded-2xl bg-amber-50 p-4 ring-1 ring-amber-100"
             >
-              <span className="grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-amber-100 text-amber-600">
-                <Lightbulb size={16} strokeWidth={2.4} />
-              </span>
+              <Mascot id="sam" mood="think" size={36} />
               <div>
                 <p className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-amber-600">
-                  À retenir
+                  Sam te conseille
                 </p>
                 <p className="mt-0.5 text-[12.5px] font-semibold leading-6 text-amber-950/80">
                   {block.text}
@@ -191,9 +189,7 @@ function TheoryContent({ unit }: { unit: CurriculumUnit }) {
               className="rounded-2xl bg-slate-50/80 p-3.5 ring-1 ring-slate-900/[0.05] sm:p-4"
             >
               <div className="mb-2 flex items-center gap-2 px-1">
-                <span className="grid h-7 w-7 place-items-center rounded-lg bg-white text-brand-600 ring-1 ring-slate-900/[0.06]">
-                  <MessageCircle size={14} strokeWidth={2.4} />
-                </span>
+                <Mascot id={mascotFor(unit.id)} mood="talk" size={28} />
                 <h4 className="text-[12px] font-extrabold uppercase tracking-[0.1em] text-slate-500">
                   {block.title ?? "À retenir"}
                 </h4>
@@ -366,6 +362,16 @@ export function LessonPage() {
           </div>
         </section>
       </div>
+
+      <MascotSay
+        id={mascotFor(unit.id)}
+        mood="talk"
+        label={`${MASCOTS[mascotFor(unit.id)].name}, ton coach`}
+        className="mt-3"
+      >
+        Aujourd'hui, on travaille « {unit.title} ». Lis le cours ci-dessous, puis lance les{" "}
+        {unit.quiz.length} exercices : tu peux gagner jusqu'à {unit.quiz.length * 10 + 20} XP.
+      </MascotSay>
 
       <div className="mt-5 flex items-center gap-2">
         <CategoryBadge category={unit.cat} size="md" />

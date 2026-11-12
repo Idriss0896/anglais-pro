@@ -15,6 +15,7 @@ import {
 import { PageHeader } from "@/components/PageHeader";
 import { StatPill } from "@/components/StatPill";
 import { EmptyState } from "@/components/EmptyState";
+import { Mascot, MascotSay, mascotFor, MASCOTS } from "@/components/Mascot";
 import { CATEGORIES } from "@/lib/categories";
 import { LEVEL_EMOJIS } from "@/lib/levels";
 import { PHRASES, TOTAL_PHRASES } from "@/data/curriculum";
@@ -34,6 +35,7 @@ function PhraseCard({
   onToggle: () => void;
 }) {
   const [copied, setCopied] = useState(false);
+  const coach = mascotFor(phrase.unitId);
 
   const handleCopy = async () => {
     const success = await copyText(`${phrase.en} — ${phrase.fr}`);
@@ -91,12 +93,21 @@ function PhraseCard({
       <p className="mt-3 font-display text-[17px] font-extrabold leading-snug tracking-[-0.015em] text-ink">
         {phrase.en}
       </p>
-      <p className="mt-1.5 text-[12.5px] font-medium leading-5 text-slate-500">{phrase.fr}</p>
-      {phrase.note && (
-        <p className="mt-2 inline-flex rounded-lg bg-slate-50 px-2 py-1 text-[10px] font-bold text-slate-500">
-          {phrase.note}
-        </p>
-      )}
+
+      <MascotSay
+        id={coach}
+        label={`${MASCOTS[coach].name} traduit`}
+        className="mt-2.5"
+        size={40}
+        tone="light"
+      >
+        {phrase.fr}
+        {phrase.note && (
+          <span className="mt-1 block text-[11px] font-semibold italic leading-4 text-slate-500/90">
+            {phrase.note}
+          </span>
+        )}
+      </MascotSay>
 
       <div className="mt-auto flex items-center justify-between gap-2 pt-4">
         <Link
@@ -179,10 +190,11 @@ export function ExpressionsPage() {
               écoute la prononciation et réutilise-les dès que possible.
             </p>
           </div>
-          <MessageCircle
-            size={84}
-            strokeWidth={1.2}
-            className="hidden shrink-0 text-white/20 sm:block"
+          <Mascot
+            id="mia"
+            mood="talk"
+            size={108}
+            className="h-[70px] w-[70px] shrink-0 drop-shadow-[0_18px_30px_rgba(120,53,15,0.35)] sm:h-[108px] sm:w-[108px]"
           />
         </div>
       </div>

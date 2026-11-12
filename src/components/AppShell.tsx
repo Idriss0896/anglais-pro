@@ -3,14 +3,14 @@ import {
   BarChart3,
   BookOpen,
   ChevronRight,
-  Code2,
+  Cloud,
   Dumbbell,
   Flame,
   Gem,
+  Globe,
   Heart,
   Home,
   LayoutGrid,
-  LifeBuoy,
   MessageCircle,
   PanelLeftClose,
   PanelLeftOpen,
@@ -21,14 +21,14 @@ import {
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { useAuth } from "@/auth/AuthProvider";
 import { GuestBanner } from "./GuestBanner";
+import { HeaderStat, HeartsMeter } from "./HeaderStat";
 import { Logo } from "./Logo";
 import { ProgressRing } from "./ProgressRing";
-import { StatPill } from "./StatPill";
 import { UserAvatar } from "./UserAvatar";
 import { UserMenu } from "./UserMenu";
-import { useProgressStore, todayXp, completedCount } from "@/store/useProgressStore";
+import { MAX_HEARTS, useProgressStore, todayXp, completedCount } from "@/store/useProgressStore";
 import { getRank } from "@/lib/achievements";
-import { cn, percent } from "@/lib/utils";
+import { cn, formatNumber, percent, plural } from "@/lib/utils";
 import { TOTAL_PHRASES, TOTAL_QUESTIONS, TOTAL_UNITS } from "@/data/curriculum";
 
 interface NavItem {
@@ -59,14 +59,7 @@ const mobileNav: NavItem[] = [
   { to: "/progress", label: "Progrès", icon: BarChart3 },
 ];
 
-interface FooterLink {
-  label: string;
-  to?: string;
-  href?: string;
-  icon?: LucideIcon;
-}
-
-const footerNav: { title: string; links: FooterLink[] }[] = [
+const footerNav: { title: string; links: { label: string; to: string }[] }[] = [
   {
     title: "Apprendre",
     links: [
@@ -77,26 +70,19 @@ const footerNav: { title: string; links: FooterLink[] }[] = [
     ],
   },
   {
-    title: "Entraînement",
+    title: "S'entraîner",
     links: [
       { label: "Réviser", to: "/practice" },
       { label: "Cartes mémoire", to: "/practice/flashcards" },
-      { label: "Progression", to: "/progress" },
+      { label: "Ma progression", to: "/progress" },
     ],
   },
   {
-    title: "Le projet",
+    title: "Mon compte",
     links: [
-      { label: "Code source", href: "https://github.com/Idriss0896/anglais-pro", icon: Code2 },
-      {
-        label: "Signaler un problème",
-        href: "https://github.com/Idriss0896/anglais-pro/issues/new",
-        icon: LifeBuoy,
-      },
-      {
-        label: "Licence MIT",
-        href: "https://github.com/Idriss0896/anglais-pro/blob/main/LICENSE",
-      },
+      { label: "Se connecter", to: "/auth" },
+      { label: "Créer un compte", to: "/auth?mode=signup" },
+      { label: "Mon profil", to: "/profile" },
     ],
   },
 ];
@@ -291,12 +277,27 @@ function Sidebar({
   );
 }
 
+function useScrolled(threshold = 8) {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > threshold);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [threshold]);
+
+  return scrolled;
+}
+
 function DesktopTopBar({
   collapsed,
   onToggle,
+  scrolled,
 }: {
   collapsed: boolean;
   onToggle: () => void;
+  scrolled: boolean;
 }) {
   const xp = useProgressStore((state) => state.xp);
   const streak = useProgressStore((state) => state.streak);
@@ -306,25 +307,52 @@ function DesktopTopBar({
   const overall = percent(completed, TOTAL_UNITS);
 
   return (
-    <div className="sticky top-0 z-30 hidden bg-gradient-to-b from-white via-white/90 to-transparent pb-2 pt-4 lg:block">
-      <div className="mx-auto flex h-16 max-w-6xl items-center gap-2.5 rounded-[26px] border border-white/80 bg-white/90 px-3 shadow-[0_22px_50px_-30px_rgba(23,22,43,0.5)] ring-1 ring-slate-900/[0.04] backdrop-blur-xl">
+    <div
+      className={cn(
+        "sticky top-0 z-30 hidden transition-[padding] duration-300 lg:block",
+        scrolled ? "pb-2 pt-2" : "pb-3 pt-4",
+      )}
+    >
+      <div
+        aria-hidden="true"
+        className={cn(
+          "pointer-events-none absolute inset-x-0 top-0 -z-10 transition-opacity duration-300",
+          scrolled ? "opacity-100" : "opacity-0",
+        )}
+        style={{
+          height: "100%",
+          background: "rgba(250, 249, 255, 0.82)",
+          backdropFilter: "blur(14px)",
+          WebkitBackdropFilter: "blur(14px)",
+          maskImage: "linear-gradient(to bottom, #000 82%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, #000 82%, transparent 100%)",
+        }}
+      />
+      <div
+        className={cn(
+          "mx-auto flex max-w-6xl items-center gap-2.5 rounded-[30px] bg-gradient-to-r from-[#16143c] via-[#241f5e] to-[#4c1d95] ring-1 ring-white/10 transition-all duration-300",
+          scrolled
+            ? "h-[60px] px-2.5 shadow-[0_16px_34px_-22px_rgba(22,20,60,0.85)]"
+            : "h-[68px] px-3 shadow-[0_26px_60px_-32px_rgba(22,20,60,0.95)]",
+        )}
+      >
         <button
           type="button"
           onClick={onToggle}
           aria-label={collapsed ? "Afficher le menu" : "Masquer le menu"}
           title={collapsed ? "Afficher le menu" : "Masquer le menu"}
-          className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-slate-100 text-slate-500 transition hover:bg-brand-50 hover:text-brand-700"
+          className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white/10 text-indigo-100 ring-1 ring-white/15 transition hover:bg-white/20 hover:text-white"
         >
           {collapsed ? <PanelLeftOpen size={18} /> : <PanelLeftClose size={18} />}
         </button>
 
         <Link
           to="/learn"
-          className="group flex h-10 w-full max-w-sm items-center gap-2.5 rounded-2xl bg-slate-100/80 px-4 text-[13px] font-semibold text-slate-400 ring-1 ring-transparent transition hover:bg-slate-50 hover:text-slate-500 hover:ring-slate-200"
+          className="group flex h-10 w-full max-w-[280px] items-center gap-2.5 rounded-2xl bg-white/10 px-3.5 text-[12.5px] font-semibold text-indigo-100/55 ring-1 ring-white/10 transition hover:bg-white/[0.16] hover:text-white"
         >
-          <Search size={16} className="shrink-0 text-slate-400" />
-          <span className="truncate">Rechercher une leçon, une expression…</span>
-          <kbd className="ml-auto hidden rounded-md bg-white px-1.5 py-0.5 text-[10px] font-extrabold text-slate-400 ring-1 ring-slate-200 xl:block">
+          <Search size={16} className="shrink-0 text-indigo-200/70" />
+          <span className="truncate">Rechercher une leçon…</span>
+          <kbd className="ml-auto hidden rounded-md bg-white/10 px-1.5 py-0.5 text-[10px] font-extrabold text-indigo-100/45 ring-1 ring-white/15 xl:block">
             /
           </kbd>
         </Link>
@@ -332,34 +360,71 @@ function DesktopTopBar({
         <div className="ml-auto flex items-center gap-1.5">
           <Link
             to="/progress"
-            title="Progression du parcours"
-            className="flex h-10 items-center gap-2 rounded-full bg-slate-50 py-1 pl-1 pr-3 ring-1 ring-slate-200 transition hover:bg-white hover:ring-brand-200"
+            title={`Parcours : ${completed} leçons terminées sur ${TOTAL_UNITS}`}
+            className="flex h-11 items-center gap-2.5 rounded-2xl bg-white/10 py-1 pl-1 pr-3 ring-1 ring-white/15 transition hover:bg-white/[0.17]"
           >
             <ProgressRing
               value={overall}
-              size={32}
+              size={36}
               stroke={4}
-              barClassName="stroke-brand-500"
+              trackClassName="stroke-white/15"
+              barClassName="stroke-emerald-300"
               label="Progression du parcours"
             >
-              <span className="text-[9px] font-extrabold text-ink">{overall}%</span>
+              <span className="text-[9px] font-extrabold text-white">{overall}%</span>
             </ProgressRing>
-            <span className="hidden leading-tight xl:block">
-              <span className="block text-[9px] font-extrabold uppercase tracking-[0.12em] text-slate-400">
+            <span className="hidden leading-none xl:block">
+              <span className="block text-[8.5px] font-extrabold uppercase tracking-[0.14em] text-indigo-100/55">
                 Parcours
               </span>
-              <span className="block text-[11px] font-extrabold text-ink">
+              <span className="mt-1 block text-[12.5px] font-extrabold text-white">
                 {completed}/{TOTAL_UNITS} leçons
               </span>
             </span>
           </Link>
 
-          <StatPill icon={Gem} value={xp} tone="xp" compact title="Points d'expérience" />
-          <StatPill icon={Heart} value={hearts} tone="heart" compact title="Cœurs restants" />
-          <StatPill icon={Flame} value={streak} tone="flame" compact title="Série de jours" />
+          <HeaderStat
+            icon={Gem}
+            tone="violet"
+            label="Points"
+            value={`${formatNumber(xp)} XP`}
+            title={`${formatNumber(xp)} points d'expérience`}
+            to="/progress"
+            className="hidden md:inline-flex"
+          />
+
+          <HeaderStat
+            icon={Flame}
+            tone="amber"
+            filled
+            label="Série"
+            value={`${streak} ${plural(streak, "jour", "jours")}`}
+            title={`Série de ${streak} ${plural(streak, "jour", "jours")}`}
+            to="/progress"
+            className="hidden xl:inline-flex"
+          />
+
+          <Link
+            to="/progress"
+            title={`${hearts} cœur${hearts > 1 ? "s" : ""} sur ${MAX_HEARTS}`}
+            aria-label={`${hearts} cœurs restants sur ${MAX_HEARTS}`}
+            className="group flex h-11 items-center gap-2.5 rounded-2xl bg-white/10 px-2.5 ring-1 ring-white/15 transition hover:bg-white/[0.17]"
+          >
+            <span className="grid h-7 w-7 shrink-0 place-items-center rounded-[13px] bg-gradient-to-br from-rose-400 to-rose-600 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.4)]">
+              <Heart size={14} strokeWidth={2.4} fill="currentColor" />
+            </span>
+            <span className="leading-none">
+              <span className="block text-[8.5px] font-extrabold uppercase tracking-[0.14em] text-indigo-100/55">
+                Cœurs
+              </span>
+              <span className="mt-1 block">
+                <HeartsMeter hearts={hearts} max={MAX_HEARTS} />
+              </span>
+            </span>
+          </Link>
 
           <div className="ml-1">
-            <UserMenu showIdentity />
+            <UserMenu showIdentity onDark />
           </div>
         </div>
       </div>
@@ -367,7 +432,7 @@ function DesktopTopBar({
   );
 }
 
-function MobileHeader() {
+function MobileHeader({ scrolled }: { scrolled: boolean }) {
   const hearts = useProgressStore((state) => state.hearts);
   const xp = useProgressStore((state) => state.xp);
   const lessons = useProgressStore((state) => state.lessons);
@@ -375,20 +440,47 @@ function MobileHeader() {
   const overall = percent(completed, TOTAL_UNITS);
 
   return (
-    <header className="sticky top-0 z-30 bg-gradient-to-b from-white via-white/92 to-transparent px-3 pb-2 pt-3 backdrop-blur-sm lg:hidden">
-      <div className="flex h-16 items-center gap-2 rounded-[26px] bg-gradient-to-r from-[#16143c] via-[#2a2470] to-[#4c1d95] px-2.5 shadow-[0_20px_44px_-22px_rgba(22,20,60,0.9)] ring-1 ring-white/15">
+    <header
+      className={cn(
+        "sticky top-0 z-30 px-3 transition-[padding] duration-300 lg:hidden",
+        scrolled ? "pb-1.5 pt-1.5" : "pb-2 pt-3",
+      )}
+    >
+      <div
+        aria-hidden="true"
+        className={cn(
+          "pointer-events-none absolute inset-x-0 top-0 -z-10 transition-opacity duration-300",
+          scrolled ? "opacity-100" : "opacity-0",
+        )}
+        style={{
+          height: "100%",
+          background: "rgba(250, 249, 255, 0.84)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+          maskImage: "linear-gradient(to bottom, #000 84%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, #000 84%, transparent 100%)",
+        }}
+      />
+      <div
+        className={cn(
+          "flex items-center gap-1.5 rounded-[26px] bg-gradient-to-r from-[#16143c] via-[#2a2470] to-[#4c1d95] px-2.5 ring-1 ring-white/15 transition-all duration-300",
+          scrolled
+            ? "h-[58px] shadow-[0_12px_28px_-18px_rgba(22,20,60,0.85)]"
+            : "h-16 shadow-[0_20px_44px_-22px_rgba(22,20,60,0.9)]",
+        )}
+      >
         <Logo compact onDark />
 
         <Link
           to="/progress"
-          aria-label={`Progression : ${overall}%`}
-          className="min-w-0 flex-1 rounded-2xl bg-white/10 px-2.5 py-2 ring-1 ring-white/15 transition hover:bg-white/15"
+          aria-label={`Progression du parcours : ${overall}%`}
+          className="min-w-0 flex-1 rounded-2xl bg-white/10 px-2.5 py-1.5 ring-1 ring-white/15 transition hover:bg-white/[0.17]"
         >
-          <div className="flex items-center justify-between gap-2 text-[9.5px] font-extrabold uppercase tracking-[0.1em] text-indigo-100/65">
+          <div className="flex items-center justify-between gap-1.5 text-[9px] font-extrabold uppercase tracking-[0.08em] text-indigo-100/65">
             <span className="truncate">Avancée</span>
             <span className="text-white">{overall}%</span>
           </div>
-          <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-white/15">
+          <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-white/15">
             <div
               className="h-full rounded-full bg-gradient-to-r from-emerald-300 to-teal-300 transition-[width] duration-700"
               style={{ width: `${overall}%` }}
@@ -396,8 +488,24 @@ function MobileHeader() {
           </div>
         </Link>
 
-        <StatPill onDark icon={Heart} value={hearts} compact title="Cœurs restants" />
-        <StatPill onDark icon={Gem} value={xp} compact title="Points d'expérience" />
+        <Link
+          to="/progress"
+          title={`${hearts} cœur${hearts > 1 ? "s" : ""} sur ${MAX_HEARTS}`}
+          aria-label={`${hearts} cœurs restants sur ${MAX_HEARTS}`}
+          className="group grid h-10 shrink-0 place-items-center rounded-2xl bg-white/10 px-2 ring-1 ring-white/15 transition hover:bg-white/[0.17]"
+        >
+          <HeartsMeter hearts={hearts} max={MAX_HEARTS} size={8} />
+        </Link>
+
+        <HeaderStat
+          compact
+          icon={Gem}
+          tone="violet"
+          label="Points"
+          value={`${formatNumber(xp)} XP`}
+          title={`${formatNumber(xp)} points d'expérience`}
+          to="/progress"
+        />
 
         <UserMenu onDark />
       </div>
@@ -447,83 +555,108 @@ function BottomNav() {
 }
 
 function SiteFooter({ collapsed }: { collapsed: boolean }) {
+  const stats = [
+    { value: TOTAL_UNITS, label: "leçons" },
+    { value: TOTAL_QUESTIONS, label: "exercices" },
+    { value: TOTAL_PHRASES, label: "expressions" },
+  ];
+
   return (
     <footer
       className={cn(
-        "relative overflow-hidden bg-gradient-to-b from-[#16143c] to-[#0f0d2b] text-white transition-[padding] duration-300",
+        "relative overflow-hidden bg-gradient-to-b from-[#16143c] via-[#131031] to-[#0b0920] text-white transition-[padding] duration-300",
         collapsed ? "lg:pl-[84px]" : "lg:pl-[272px]",
       )}
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-24 top-0 h-72 w-72 rounded-full bg-brand-500/20 blur-3xl"
+        className="pointer-events-none absolute -right-24 -top-16 h-72 w-72 rounded-full bg-brand-500/20 blur-3xl"
       />
-      <div className="relative mx-auto max-w-6xl px-4 pb-28 pt-10 sm:px-6 lg:px-9 lg:pb-10">
-        <div className="grid grid-cols-2 gap-9 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
-          <div className="col-span-2 md:col-span-1">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-28 left-10 h-64 w-64 rounded-full bg-sky-400/10 blur-3xl"
+      />
+
+      <div className="relative mx-auto max-w-6xl px-4 pb-28 pt-11 sm:px-6 lg:px-9 lg:pb-12">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_1.35fr] lg:gap-14">
+          <div>
             <Logo onDark />
-            <p className="mt-3 max-w-xs text-[12.5px] font-medium leading-6 text-indigo-100/55">
-              Des leçons courtes, des exercices variés et un suivi clair pour progresser en
-              anglais, cinq minutes par jour.
+            <p className="mt-3 max-w-sm text-[12.5px] font-medium leading-6 text-indigo-100/55">
+              Cinq minutes par jour pour parler anglais avec assurance. Des leçons courtes, des
+              exercices variés et un suivi clair de ta progression.
             </p>
-            <div className="mt-4 flex items-center gap-2">
-              <a
-                href="https://github.com/Idriss0896/anglais-pro"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Voir le code sur GitHub"
-                className="grid h-9 w-9 place-items-center rounded-xl bg-white/10 text-indigo-100 ring-1 ring-white/10 transition hover:-translate-y-0.5 hover:bg-white/15 hover:text-white"
+
+            <div className="mt-5 flex flex-col gap-2 sm:flex-row">
+              <Link
+                to="/auth?mode=signup"
+                className="btn-shine inline-flex h-11 items-center justify-center gap-2 rounded-2xl bg-white px-5 text-[12.5px] font-extrabold text-brand-800 shadow-[0_16px_34px_-20px_rgba(0,0,0,0.9)] transition hover:-translate-y-0.5"
               >
-                <Code2 size={16} />
-              </a>
+                Créer mon compte gratuit
+                <ChevronRight size={15} />
+              </Link>
               <Link
                 to="/practice"
-                className="inline-flex h-9 items-center gap-2 rounded-xl bg-white/10 px-3 text-[11px] font-extrabold text-indigo-100 ring-1 ring-white/10 transition hover:-translate-y-0.5 hover:bg-white/15 hover:text-white"
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-2xl bg-white/10 px-5 text-[12.5px] font-extrabold text-white ring-1 ring-white/15 transition hover:-translate-y-0.5 hover:bg-white/15"
               >
-                Commencer à réviser
-                <ChevronRight size={13} />
+                Réviser maintenant
               </Link>
             </div>
+
+            <dl className="mt-6 grid max-w-sm grid-cols-3 gap-2">
+              {stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="rounded-2xl bg-white/[0.07] px-3 py-2.5 ring-1 ring-white/10"
+                >
+                  <dt className="sr-only">{stat.label}</dt>
+                  <dd className="text-[15px] font-extrabold leading-none tabular-nums">
+                    {formatNumber(stat.value)}
+                  </dd>
+                  <dd className="mt-1 text-[9.5px] font-bold uppercase tracking-[0.1em] text-indigo-100/45">
+                    {stat.label}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
 
-          {footerNav.map((group) => (
-            <div key={group.title}>
-              <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-indigo-200/45">
-                {group.title}
-              </p>
-              <ul className="mt-3 space-y-2">
-                {group.links.map((link) => (
-                  <li key={link.label}>
-                    {link.to ? (
+          <div className="grid grid-cols-3 gap-x-3 gap-y-7 sm:gap-x-8">
+            {footerNav.map((group) => (
+              <div key={group.title}>
+                <p className="text-[9.5px] font-extrabold uppercase tracking-[0.12em] text-indigo-200/45 sm:text-[10px] sm:tracking-[0.16em]">
+                  {group.title}
+                </p>
+                <ul className="mt-2.5 space-y-2 sm:mt-3 sm:space-y-2.5">
+                  {group.links.map((link) => (
+                    <li key={link.label}>
                       <Link
                         to={link.to}
-                        className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-indigo-100/65 transition hover:text-white"
+                        className="inline-flex text-[11.5px] font-semibold leading-tight text-indigo-100/65 transition hover:translate-x-0.5 hover:text-white sm:text-[12.5px]"
                       >
                         {link.label}
                       </Link>
-                    ) : (
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-indigo-100/65 transition hover:text-white"
-                      >
-                        {link.icon && <link.icon size={13} />}
-                        {link.label}
-                      </a>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="mt-9 flex flex-col gap-2 border-t border-white/10 pt-5 text-[11px] font-semibold text-indigo-100/45 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 Anglais Pro — Apprendre l'anglais autrement.</p>
-          <p>
-            {TOTAL_UNITS} leçons · {TOTAL_QUESTIONS} exercices · {TOTAL_PHRASES} expressions
-          </p>
+        <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-center gap-2 text-[11.5px] font-semibold text-indigo-100/45">
+            <span className="grid h-6 w-6 place-items-center rounded-lg bg-white/10 ring-1 ring-white/10">
+              <Globe size={12} />
+            </span>
+            Français (France)
+          </div>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] font-semibold text-indigo-100/40">
+            <span className="inline-flex items-center gap-1.5 text-emerald-200/70">
+              <Cloud size={12} />
+              Progression synchronisée
+            </span>
+            <span>© 2026 Anglais Pro</span>
+          </div>
         </div>
       </div>
     </footer>
@@ -545,6 +678,7 @@ function AppBackground() {
 
 export function AppShell() {
   const { pathname } = useLocation();
+  const scrolled = useScrolled();
   const [collapsed, setCollapsed] = useState<boolean>(() => {
     if (typeof window === "undefined") return false;
     return window.localStorage.getItem(SIDEBAR_KEY) === "collapsed";
@@ -559,7 +693,7 @@ export function AppShell() {
       <ScrollToTop />
       <AppBackground />
       <Sidebar collapsed={collapsed} onToggle={() => setCollapsed((value) => !value)} />
-      <MobileHeader />
+      <MobileHeader scrolled={scrolled} />
       <main
         className={cn(
           "relative transition-[padding] duration-300",
@@ -568,6 +702,7 @@ export function AppShell() {
       >
         <DesktopTopBar
           collapsed={collapsed}
+          scrolled={scrolled}
           onToggle={() => setCollapsed((value) => !value)}
         />
         <div

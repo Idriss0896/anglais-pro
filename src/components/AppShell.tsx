@@ -2,9 +2,6 @@ import { useEffect, useState } from "react";
 import {
   BarChart3,
   BookOpen,
-  BookOpenText,
-  BrainCircuit,
-  ChartNoAxesColumnIncreasing,
   ChevronRight,
   Cloud,
   Dumbbell,
@@ -13,10 +10,8 @@ import {
   Globe,
   Heart,
   Home,
-  House,
   LayoutGrid,
   MessageCircle,
-  MessagesSquare,
   PanelLeftClose,
   PanelLeftOpen,
   Search,
@@ -56,66 +51,6 @@ const trainingNav: NavItem[] = [
   { to: "/progress", label: "Progression", icon: BarChart3 },
 ];
 
-interface MobileNavItem extends NavItem {
-  /** Dégradé de la tuile active. */
-  tone: string;
-  /** Teinte douce de la tuile au repos. */
-  soft: string;
-  /** Couleur de l'icône au repos. */
-  ink: string;
-  /** Ombre colorée sous la tuile active. */
-  glow: string;
-}
-
-const mobileNav: MobileNavItem[] = [
-  {
-    to: "/",
-    label: "Accueil",
-    icon: House,
-    end: true,
-    tone: "from-violet-500 via-violet-500 to-indigo-600",
-    soft: "bg-violet-50",
-    ink: "text-violet-500",
-    glow: "shadow-[0_14px_24px_-10px_rgba(109,76,246,0.9)]",
-  },
-  {
-    to: "/learn",
-    label: "Cours",
-    icon: BookOpenText,
-    tone: "from-sky-400 via-sky-500 to-blue-600",
-    soft: "bg-sky-50",
-    ink: "text-sky-500",
-    glow: "shadow-[0_14px_24px_-10px_rgba(14,132,233,0.9)]",
-  },
-  {
-    to: "/practice",
-    label: "Réviser",
-    icon: BrainCircuit,
-    tone: "from-emerald-400 via-emerald-500 to-teal-600",
-    soft: "bg-emerald-50",
-    ink: "text-emerald-500",
-    glow: "shadow-[0_14px_24px_-10px_rgba(5,150,105,0.9)]",
-  },
-  {
-    to: "/expressions",
-    label: "Expressions",
-    icon: MessagesSquare,
-    tone: "from-amber-400 via-orange-400 to-orange-500",
-    soft: "bg-amber-50",
-    ink: "text-amber-500",
-    glow: "shadow-[0_14px_24px_-10px_rgba(245,158,11,0.95)]",
-  },
-  {
-    to: "/progress",
-    label: "Progrès",
-    icon: ChartNoAxesColumnIncreasing,
-    tone: "from-rose-400 via-pink-500 to-fuchsia-600",
-    soft: "bg-rose-50",
-    ink: "text-rose-500",
-    glow: "shadow-[0_14px_24px_-10px_rgba(236,72,153,0.9)]",
-  },
-];
-
 const footerNav: { title: string; links: { label: string; to: string }[] }[] = [
   {
     title: "Apprendre",
@@ -146,6 +81,23 @@ const footerNav: { title: string; links: { label: string; to: string }[] }[] = [
 
 const SIDEBAR_KEY = "anglais-pro:sidebar";
 
+function useIsDesktop() {
+  const [isDesktop, setIsDesktop] = useState(() => {
+    if (typeof window === "undefined") return true;
+    return window.matchMedia("(min-width: 1024px)").matches;
+  });
+
+  useEffect(() => {
+    const query = window.matchMedia("(min-width: 1024px)");
+    const onChange = () => setIsDesktop(query.matches);
+    onChange();
+    query.addEventListener("change", onChange);
+    return () => query.removeEventListener("change", onChange);
+  }, []);
+
+  return isDesktop;
+}
+
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -154,13 +106,22 @@ function ScrollToTop() {
   return null;
 }
 
-function SidebarLink({ item, collapsed }: { item: NavItem; collapsed: boolean }) {
+function SidebarLink({
+  item,
+  collapsed,
+  onSelect,
+}: {
+  item: NavItem;
+  collapsed: boolean;
+  onSelect?: () => void;
+}) {
   return (
     <NavLink
       to={item.to}
       end={item.end}
       title={collapsed ? item.label : undefined}
       aria-label={item.label}
+      onClick={onSelect}
       className={({ isActive }) =>
         cn(
           "group flex items-center rounded-2xl text-[13.5px] font-bold transition-all duration-200",
@@ -184,11 +145,17 @@ function SidebarLink({ item, collapsed }: { item: NavItem; collapsed: boolean })
 function Sidebar({
   collapsed,
   onToggle,
+  open,
+  onClose,
 }: {
   collapsed: boolean;
   onToggle: () => void;
+  open: boolean;
+  onClose: () => void;
 }) {
   const { user } = useAuth();
+  const isDesktop = useIsDesktop();
+  const drawerHidden = !isDesktop && !open;
   const xp = useProgressStore((state) => state.xp);
   const dailyGoal = useProgressStore((state) => state.dailyGoal);
   const activity = useProgressStore((state) => state.activity);
@@ -199,9 +166,15 @@ function Sidebar({
 
   return (
     <aside
+      id="app-sidebar"
+      aria-label="Menu latéral"
+      aria-hidden={drawerHidden || undefined}
+      inert={drawerHidden || undefined}
       className={cn(
-        "fixed inset-y-0 left-0 z-40 hidden flex-col overflow-hidden bg-gradient-to-b from-[#16143c] via-[#211d5a] to-[#312e81] py-5 transition-[width,padding] duration-300 lg:flex",
+        "fixed inset-y-0 left-0 z-50 flex flex-col overflow-hidden bg-gradient-to-b from-[#16143c] via-[#211d5a] to-[#312e81] pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-5 shadow-[0_36px_80px_-40px_rgba(9,8,30,0.9)] will-change-transform",
+        "transition-[width,padding,transform] duration-300 ease-out lg:translate-x-0 lg:shadow-none",
         collapsed ? "w-[84px] px-2.5" : "w-[272px] px-4",
+        open ? "translate-x-0" : "-translate-x-full",
       )}
     >
       <div
@@ -223,8 +196,14 @@ function Sidebar({
         <button
           type="button"
           onClick={onToggle}
-          aria-label={collapsed ? "Afficher le menu" : "Masquer le menu"}
-          title={collapsed ? "Afficher le menu" : "Masquer le menu"}
+          aria-label={
+            collapsed
+              ? "Déplier le menu"
+              : isDesktop
+                ? "Réduire le menu"
+                : "Réduire le menu en icônes"
+          }
+          title={collapsed ? "Déplier le menu" : "Réduire le menu"}
           className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-white/10 text-indigo-100 ring-1 ring-white/15 transition hover:bg-white/15 hover:text-white"
         >
           {collapsed ? <PanelLeftOpen size={17} /> : <PanelLeftClose size={17} />}
@@ -241,7 +220,7 @@ function Sidebar({
           </p>
         )}
         {primaryNav.map((item) => (
-          <SidebarLink key={item.to} item={item} collapsed={collapsed} />
+          <SidebarLink key={item.to} item={item} collapsed={collapsed} onSelect={onClose} />
         ))}
 
         {!collapsed && (
@@ -251,7 +230,7 @@ function Sidebar({
         )}
         {collapsed && <div className="mx-auto my-2 h-px w-8 bg-white/10" />}
         {trainingNav.map((item) => (
-          <SidebarLink key={item.to} item={item} collapsed={collapsed} />
+          <SidebarLink key={item.to} item={item} collapsed={collapsed} onSelect={onClose} />
         ))}
       </nav>
 
@@ -260,6 +239,7 @@ function Sidebar({
           <Link
             to="/progress"
             title={`Objectif du jour : ${goalXp} / ${dailyGoal} XP`}
+            onClick={onClose}
             className="mx-auto grid place-items-center rounded-2xl bg-white/10 p-2 ring-1 ring-white/10 transition hover:bg-white/15"
           >
             <ProgressRing
@@ -276,6 +256,7 @@ function Sidebar({
         ) : (
           <Link
             to="/progress"
+            onClick={onClose}
             className="group block rounded-[24px] bg-white/10 p-4 text-white ring-1 ring-white/10 backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white/[0.14]"
           >
             <div className="flex items-center justify-between gap-2">
@@ -309,6 +290,7 @@ function Sidebar({
         <Link
           to={user ? "/profile" : "/auth"}
           title={user ? "Mon profil" : "Se connecter"}
+          onClick={onClose}
           className={cn(
             "flex items-center rounded-2xl transition hover:bg-white/10",
             collapsed ? "justify-center p-1.5" : "gap-3 p-2.5",
@@ -347,15 +329,7 @@ function useScrolled(threshold = 8) {
   return scrolled;
 }
 
-function DesktopTopBar({
-  collapsed,
-  onToggle,
-  scrolled,
-}: {
-  collapsed: boolean;
-  onToggle: () => void;
-  scrolled: boolean;
-}) {
+function DesktopTopBar({ scrolled }: { scrolled: boolean }) {
   const xp = useProgressStore((state) => state.xp);
   const streak = useProgressStore((state) => state.streak);
   const hearts = useProgressStore((state) => state.hearts);
@@ -393,16 +367,6 @@ function DesktopTopBar({
             : "h-[68px] px-3 shadow-[0_26px_60px_-32px_rgba(22,20,60,0.95)]",
         )}
       >
-        <button
-          type="button"
-          onClick={onToggle}
-          aria-label={collapsed ? "Afficher le menu" : "Masquer le menu"}
-          title={collapsed ? "Afficher le menu" : "Masquer le menu"}
-          className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white/10 text-indigo-100 ring-1 ring-white/15 transition hover:bg-white/20 hover:text-white"
-        >
-          {collapsed ? <PanelLeftOpen size={18} /> : <PanelLeftClose size={18} />}
-        </button>
-
         <Link
           to="/learn"
           className="group flex h-10 w-full max-w-[280px] items-center gap-2.5 rounded-2xl bg-white/10 px-3.5 text-[12.5px] font-semibold text-indigo-100/55 ring-1 ring-white/10 transition hover:bg-white/[0.16] hover:text-white"
@@ -489,7 +453,13 @@ function DesktopTopBar({
   );
 }
 
-function MobileHeader({ scrolled }: { scrolled: boolean }) {
+function MobileHeader({
+  scrolled,
+  onOpenMenu,
+}: {
+  scrolled: boolean;
+  onOpenMenu: () => void;
+}) {
   const hearts = useProgressStore((state) => state.hearts);
   const xp = useProgressStore((state) => state.xp);
   const lessons = useProgressStore((state) => state.lessons);
@@ -526,7 +496,16 @@ function MobileHeader({ scrolled }: { scrolled: boolean }) {
             : "h-16 shadow-[0_20px_44px_-22px_rgba(22,20,60,0.9)]",
         )}
       >
-        <Logo compact onDark />
+        <button
+          type="button"
+          onClick={onOpenMenu}
+          aria-label="Ouvrir le menu"
+          title="Ouvrir le menu"
+          aria-controls="app-sidebar"
+          className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white/10 text-indigo-100 ring-1 ring-white/15 transition hover:bg-white/20 hover:text-white active:scale-90"
+        >
+          <PanelLeftOpen size={18} />
+        </button>
 
         <Link
           to="/progress"
@@ -570,87 +549,6 @@ function MobileHeader({ scrolled }: { scrolled: boolean }) {
   );
 }
 
-function BottomNav() {
-  const { pathname } = useLocation();
-  const [pressed, setPressed] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!pressed) return;
-    const timer = window.setTimeout(() => setPressed(null), 520);
-    return () => window.clearTimeout(timer);
-  }, [pressed]);
-
-  return (
-    <nav
-      className="pointer-events-none fixed inset-x-0 bottom-0 z-40 px-2.5 pb-[max(0.7rem,env(safe-area-inset-bottom))] min-[360px]:px-3 lg:hidden"
-      aria-label="Navigation mobile"
-    >
-      <div className="pointer-events-auto mx-auto max-w-md rounded-[27px] bg-gradient-to-r from-violet-500/70 via-fuchsia-400/55 to-amber-400/75 p-[1.6px] shadow-[0_26px_58px_-24px_rgba(23,22,43,0.55)] backdrop-blur-xl">
-        <div className="flex items-center justify-between gap-0.5 rounded-[25.6px] bg-white/95 px-1.5 py-1.5 ring-1 ring-white/60">
-          {mobileNav.map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              end={item.end}
-              onPointerDown={() => setPressed(item.to)}
-              onClick={() => {
-                if (pathname === item.to) {
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }
-              }}
-              className="group relative flex min-w-0 flex-1 flex-col items-center gap-[3px] rounded-[19px] px-0.5 pb-1 pt-1.5"
-            >
-              {({ isActive }) => (
-                <>
-                  <span
-                    className={cn(
-                      "relative grid h-[38px] w-full max-w-[48px] place-items-center rounded-[14px] transition-all duration-300 ease-out",
-                      isActive
-                        ? cn(
-                            "-translate-y-px bg-gradient-to-br text-white",
-                            item.tone,
-                            item.glow,
-                          )
-                        : cn(
-                            item.soft,
-                            item.ink,
-                            "group-hover:-translate-y-px group-active:scale-90",
-                          ),
-                    )}
-                  >
-                    {isActive && (
-                      <span
-                        aria-hidden="true"
-                        className="pointer-events-none absolute inset-0 rounded-[14px] bg-[radial-gradient(circle_at_30%_15%,rgba(255,255,255,0.45),transparent_62%)]"
-                      />
-                    )}
-                    <item.icon
-                      size={20}
-                      strokeWidth={isActive ? 2.5 : 2.2}
-                      className={cn(
-                        "relative transition-transform duration-300",
-                        pressed === item.to && "animate-nav-press",
-                      )}
-                    />
-                  </span>
-                  <span
-                    className={cn(
-                      "w-full truncate text-center text-[9.5px] leading-none tracking-[-0.01em] transition-colors max-[359px]:text-[9px] max-[359px]:tracking-[-0.03em]",
-                      isActive ? "font-extrabold text-ink" : "font-bold text-slate-500",
-                    )}
-                  >
-                    {item.label}
-                  </span>
-                </>
-              )}
-            </NavLink>
-          ))}
-        </div>
-      </div>
-    </nav>
-  );
-}
-
 function SiteFooter({ collapsed }: { collapsed: boolean }) {
   const stats = [
     { value: TOTAL_UNITS, label: "leçons" },
@@ -674,7 +572,7 @@ function SiteFooter({ collapsed }: { collapsed: boolean }) {
         className="pointer-events-none absolute -bottom-28 left-10 h-64 w-64 rounded-full bg-sky-400/10 blur-3xl"
       />
 
-      <div className="relative mx-auto max-w-6xl px-4 pb-28 pt-11 sm:px-6 lg:px-9 lg:pb-12">
+      <div className="relative mx-auto max-w-6xl px-4 pb-14 pt-11 sm:px-6 lg:px-9 lg:pb-12">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1.35fr] lg:gap-14">
           <div>
             <Logo onDark />
@@ -776,6 +674,8 @@ function AppBackground() {
 export function AppShell() {
   const { pathname } = useLocation();
   const scrolled = useScrolled();
+  const isDesktop = useIsDesktop();
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [collapsed, setCollapsed] = useState<boolean>(() => {
     if (typeof window === "undefined") return false;
     return window.localStorage.getItem(SIDEBAR_KEY) === "collapsed";
@@ -785,23 +685,62 @@ export function AppShell() {
     window.localStorage.setItem(SIDEBAR_KEY, collapsed ? "collapsed" : "expanded");
   }, [collapsed]);
 
+  // Le menu mobile se referme à chaque changement de page.
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
+
+  // Il se referme aussi si la fenêtre repasse en grand écran.
+  useEffect(() => {
+    if (isDesktop) setMobileOpen(false);
+  }, [isDesktop]);
+
+  // Verrouille le défilement du fond et gère la touche Échap quand le tiroir est ouvert.
+  useEffect(() => {
+    if (!mobileOpen || isDesktop) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMobileOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [mobileOpen, isDesktop]);
+
   return (
     <div className="min-h-dvh">
       <ScrollToTop />
       <AppBackground />
-      <Sidebar collapsed={collapsed} onToggle={() => setCollapsed((value) => !value)} />
-      <MobileHeader scrolled={scrolled} />
+
+      <div
+        aria-hidden="true"
+        onClick={() => setMobileOpen(false)}
+        className={cn(
+          "fixed inset-0 z-40 bg-[#0b0920]/45 backdrop-blur-[2px] transition-opacity duration-300 lg:hidden",
+          mobileOpen ? "opacity-100" : "pointer-events-none opacity-0",
+        )}
+      />
+
+      <Sidebar
+        collapsed={collapsed}
+        onToggle={() => setCollapsed((value) => !value)}
+        open={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+      />
+      <MobileHeader scrolled={scrolled} onOpenMenu={() => setMobileOpen(true)} />
       <main
         className={cn(
           "relative transition-[padding] duration-300",
           collapsed ? "lg:pl-[84px]" : "lg:pl-[272px]",
         )}
       >
-        <DesktopTopBar
-          collapsed={collapsed}
-          scrolled={scrolled}
-          onToggle={() => setCollapsed((value) => !value)}
-        />
+        <DesktopTopBar scrolled={scrolled} />
         <div
           key={pathname}
           className="animate-page-in mx-auto w-full max-w-6xl px-4 pb-10 pt-5 sm:px-6 lg:px-9 lg:pb-12 lg:pt-6"
@@ -811,7 +750,6 @@ export function AppShell() {
         </div>
       </main>
       <SiteFooter collapsed={collapsed} />
-      <BottomNav />
     </div>
   );
 }

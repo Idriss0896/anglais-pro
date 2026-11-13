@@ -253,10 +253,6 @@
     transform-origin: center;
     animation: mascot-blink 6.5s ease-in-out infinite;
   }
-
-  .animate-nav-press {
-    animation: nav-press 0.48s cubic-bezier(0.2, 0.9, 0.3, 1.2);
-  }
 }
 
 @keyframes fade-up {
@@ -367,25 +363,9 @@
   }
 }
 
-@keyframes nav-press {
-  0% {
-    transform: scale(1) rotate(0deg);
-  }
-  35% {
-    transform: scale(0.84) rotate(-4deg);
-  }
-  70% {
-    transform: scale(1.1) rotate(2deg);
-  }
-  100% {
-    transform: scale(1) rotate(0deg);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .mascot-float,
-  .mascot-eye,
-  .animate-nav-press {
+  .mascot-eye {
     animation: none;
   }
 }

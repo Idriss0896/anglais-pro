@@ -32,7 +32,7 @@ Une application web **mobile-first** pensée pour les francophones qui veulent p
 - **Progression motivante** — XP, cœurs, série quotidienne, objectif journalier, rangs et succès.
 - **Audio intégré** — prononciation via la synthèse vocale du navigateur (activable/désactivable).
 - **Coachs illustrés** — quatre personnages animés (Mia, Leo, Zoé et Sam) accompagnent les expressions, le vocabulaire et les conseils avec des bulles d'explication.
-- **Mobile d'abord** — barre haute arrondie qui reste collée en haut pendant le défilement, navigation basse flottante aux tuiles dégradées et animées, sidebar repliable sur ordinateur.
+- **Mobile d'abord** — barre haute arrondie qui reste collée en haut pendant le défilement, sidebar unique qui se referme en rail d'icônes (tiroir animé sur mobile, panneau fixe sur ordinateur).
 - **Compte utilisateur** — inscription email / mot de passe ou Google, photo de profil, session sécurisée.
 - **Progression synchronisée** — Neon Postgres conserve XP, cœurs, série, leçons et favoris entre appareils.
 - **Mode invité complet** — on commence à apprendre immédiatement, puis on crée son compte quand on veut, sans rien perdre.
@@ -185,7 +185,7 @@ interface Unit {
 - Typographies **Bricolage Grotesque** (titres) et **Plus Jakarta Sans** (texte).
 - Composants utilitaires dans `src/index.css` : `.card`, `.btn`, `.glass`, `.eyebrow`, `.safe-bottom`…
 - Animations douces (`fade-up`, `float`, transitions) et respect de `prefers-reduced-motion`.
-- Cibles tactiles ≥ 44 px, navigation basse sécurisée pour les encoches (`safe-area-inset`).
+- Cibles tactiles ≥ 44 px, tiroir mobile refermable au clavier (`Échap`) et zones sûres pour les encoches (`safe-area-inset`).
 
 ## 🌐 Déploiement
 

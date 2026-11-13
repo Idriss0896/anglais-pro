@@ -26,15 +26,16 @@ Une application web **mobile-first** pensée pour les francophones qui veulent p
 - **63 leçons complètes** — chaque leçon combine théorie claire (encadrés, tableaux, phrases clés) et quiz interactif.
 - **4 types d'exercices** — choix multiple, saisie de texte, reconstruction de phrases par tuiles et association de paires.
 - **Bibliothèque filtrable** — recherche instantanée, filtres par niveau, catégorie et statut (à faire / terminé / favoris).
+- **Recherche globale** — la barre haute (ou les raccourcis `/` et Ctrl/Cmd + K) retrouve une leçon ou une expression, puis l'ouvre au clavier.
 - **Grammaire & vocabulaire** — 17 fiches de grammaire et 14 thèmes de vocabulaire, consultables hors leçon.
 - **910 expressions utiles** — avec traduction, note d'usage et écoute audio.
 - **Révision ciblée** — sessions par compétence, marathon de 20 questions et flashcards.
-- **Progression motivante** — XP, cœurs, série quotidienne, objectif journalier, rangs et succès.
+- **Progression motivante** — XP, cœurs qui se gagnent en terminant des leçons (3 maximum), série quotidienne, objectif journalier, rangs et succès.
 - **Audio intégré** — prononciation via la synthèse vocale du navigateur (activable/désactivable).
 - **Coachs illustrés** — quatre personnages animés (Mia, Leo, Zoé et Sam) accompagnent les expressions, le vocabulaire et les conseils avec des bulles d'explication.
 - **Mobile d'abord** — barre haute arrondie qui reste collée en haut pendant le défilement, sidebar unique qui se referme en rail d'icônes (tiroir animé sur mobile, panneau fixe sur ordinateur).
 - **Compte utilisateur** — inscription email / mot de passe ou Google, photo de profil, session sécurisée.
-- **Progression synchronisée** — Neon Postgres conserve XP, cœurs, série, leçons et favoris entre appareils.
+- **Progression sauvegardée** — une base Postgres conserve XP, cœurs, série, leçons et favoris entre appareils.
 - **Mode invité complet** — on commence à apprendre immédiatement, puis on crée son compte quand on veut, sans rien perdre.
 
 ## 📚 Contenu

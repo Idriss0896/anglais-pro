@@ -95,7 +95,7 @@ function Field({
 }
 
 const inputClass =
-  "h-12 w-full rounded-2xl bg-slate-50 pl-10 pr-3.5 text-[13.5px] font-semibold text-ink outline-none ring-1 ring-slate-200 transition placeholder:font-medium placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-brand-400";
+  "h-12 w-full rounded-2xl bg-[#f2f6ff] pl-10 pr-3.5 text-[13.5px] font-semibold text-ink outline-none ring-1 ring-slate-200 transition placeholder:font-medium placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-brand-400";
 
 export function AuthPage() {
   const { user, apiReady, googleEnabled, login, signup } = useAuth();
@@ -372,7 +372,7 @@ export function AuthPage() {
               </Field>
 
               {mode === "signup" && password.length > 0 && (
-                <div className="rounded-2xl bg-slate-50 p-3 ring-1 ring-slate-200">
+                <div className="rounded-2xl bg-[#f2f6ff] p-3 ring-1 ring-slate-200">
                   <div className="flex items-center justify-between gap-2">
                     <span className="text-[10px] font-extrabold uppercase tracking-[0.12em] text-slate-500">
                       Robustesse
@@ -417,7 +417,7 @@ export function AuthPage() {
             {googleEnabled ? (
               <a
                 href={googleStartUrl()}
-                className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-2xl bg-white text-[13.5px] font-extrabold text-ink ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:bg-slate-50 hover:ring-slate-300"
+                className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-2xl bg-white text-[13.5px] font-extrabold text-ink ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:bg-[#f2f6ff] hover:ring-slate-300"
               >
                 <GoogleMark />
                 Continuer avec Google
@@ -427,7 +427,7 @@ export function AuthPage() {
                 type="button"
                 disabled
                 title="La connexion Google sera activée très bientôt."
-                className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-2xl bg-slate-50 text-[13.5px] font-extrabold text-slate-400 ring-1 ring-slate-200"
+                className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-2xl bg-[#f2f6ff] text-[13.5px] font-extrabold text-slate-400 ring-1 ring-slate-200"
               >
                 <GoogleMark />
                 Google bientôt disponible

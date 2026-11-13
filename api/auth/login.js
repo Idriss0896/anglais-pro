@@ -1,4 +1,5 @@
 import {
+  burnPasswordTime,
   createSession,
   findUserByEmail,
   publicUser,
@@ -12,10 +13,12 @@ import {
   normalizeEmail,
   parseBody,
   rateLimit,
+  requireSameOrigin,
 } from "../_lib/http.js";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return methodNotAllowed(res, ["POST"]);
+  if (!requireSameOrigin(req, res)) return;
   if (!rateLimit(req, "login", { max: 12, windowMs: 60_000 })) {
     return fail(res, 429, "too_many_requests", "Trop de tentatives. Réessaie dans une minute.");
   }
@@ -31,9 +34,12 @@ export default async function handler(req, res) {
   try {
     const user = await findUserByEmail(email);
     if (!user) {
+      // Même temps de réponse qu'un compte existant (anti-énumération).
+      await burnPasswordTime(password);
       return fail(res, 401, "invalid_credentials", "Email ou mot de passe incorrect.");
     }
     if (!user.password_hash) {
+      await burnPasswordTime(password);
       return fail(
         res,
         409,

@@ -150,7 +150,7 @@ export function FlashcardsPage() {
                   </Button>
                   <Link
                     to="/practice"
-                    className="inline-flex h-13 items-center justify-center gap-2 rounded-2xl bg-white px-6 text-[15px] font-extrabold text-ink ring-1 ring-slate-900/10 transition hover:bg-slate-50"
+                    className="inline-flex h-13 items-center justify-center gap-2 rounded-2xl bg-white px-6 text-[15px] font-extrabold text-ink ring-1 ring-slate-900/10 transition hover:bg-[#f2f6ff]"
                   >
                     <ArrowLeft size={18} />
                     Retour à l'entraînement

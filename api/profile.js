@@ -6,6 +6,8 @@ import {
   json,
   methodNotAllowed,
   parseBody,
+  rateLimit,
+  requireSameOrigin,
 } from "./_lib/http.js";
 
 const MAX_AVATAR_LENGTH = 400_000; // ~300 Ko utiles après compression côté client
@@ -22,6 +24,10 @@ function validAvatar(value) {
 export default async function handler(req, res) {
   if (!["PATCH", "POST"].includes(req.method)) {
     return methodNotAllowed(res, ["PATCH", "POST"]);
+  }
+  if (!requireSameOrigin(req, res)) return;
+  if (!rateLimit(req, "profile", { max: 20, windowMs: 60_000 })) {
+    return fail(res, 429, "too_many_requests", "Trop de tentatives. Réessaie dans une minute.");
   }
 
   try {

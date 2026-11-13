@@ -10,7 +10,7 @@ const tones: Record<Tone, { wrap: string; icon: string; fill?: boolean }> = {
   heart: { wrap: "bg-rose-50 ring-rose-100", icon: "text-rose-500", fill: true },
   mint: { wrap: "bg-emerald-50 ring-emerald-100", icon: "text-emerald-500" },
   sky: { wrap: "bg-sky-50 ring-sky-100", icon: "text-sky-500" },
-  neutral: { wrap: "bg-slate-50 ring-slate-200/70", icon: "text-slate-500" },
+  neutral: { wrap: "bg-[#f2f6ff] ring-slate-200/70", icon: "text-slate-500" },
 };
 
 interface StatPillProps {

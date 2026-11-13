@@ -1,9 +1,6 @@
-import { useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { useSearchParams } from "react-router-dom";
 import {
-  BookOpen,
-  CheckCircle2,
-  Dumbbell,
   LayoutGrid,
   Search,
   X,
@@ -11,15 +8,12 @@ import {
 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { UnitCard } from "@/components/UnitCard";
-import { StatPill } from "@/components/StatPill";
 import { EmptyState } from "@/components/EmptyState";
-import { CategoryBadge } from "@/components/CategoryBadge";
 import { CATEGORIES, CATEGORY_KEYS } from "@/lib/categories";
 import { LEVEL_EMOJIS, LEVEL_THEMES } from "@/lib/levels";
 import {
   CURRICULUM,
   LEVELS,
-  TOTAL_QUESTIONS,
   TOTAL_UNITS,
   getNextUnit,
 } from "@/data/curriculum";
@@ -37,6 +31,29 @@ interface LibraryPageProps {
   banner?: ReactNode;
 }
 
+/** Index de recherche précalculé : titre, thème, catégorie, niveau et contenu. */
+const UNIT_SEARCH_INDEX = new Map(
+  CURRICULUM.map((unit) => [
+    unit.id,
+    [
+      unit.title,
+      unit.subtitle,
+      CATEGORIES[unit.cat].label,
+      unit.levelTitle,
+      `niveau ${unit.level}`,
+      ...unit.theory.flatMap((block) => [
+        block.text ?? "",
+        block.title ?? "",
+        ...(block.items ?? []).flatMap((item) => [item.en, item.fr]),
+        ...(block.rows ?? []).flatMap((row) => row),
+      ]),
+      ...unit.quiz.flatMap((question) => [question.q, question.hint ?? ""]),
+    ]
+      .join(" ")
+      .toLowerCase(),
+  ]),
+);
+
 export function LibraryPage({
   title,
   eyebrow,
@@ -47,10 +64,16 @@ export function LibraryPage({
   banner,
 }: LibraryPageProps) {
   const [params, setParams] = useSearchParams();
-  const [search, setSearch] = useState("");
+  const queryParam = params.get("q") ?? "";
+  const [search, setSearch] = useState(queryParam);
   const lessons = useProgressStore((state) => state.lessons);
   const completed = completedCount(lessons);
   const nextUnit = getNextUnit(lessons);
+
+  // Recherche lancée depuis la barre du haut (?q=…).
+  useEffect(() => {
+    setSearch(queryParam);
+  }, [queryParam]);
 
   const levelParam = Number(params.get("level"));
   const activeLevel = [1, 2, 3].includes(levelParam) ? levelParam : "all";
@@ -70,11 +93,13 @@ export function LibraryPage({
 
   const filtered = useMemo(() => {
     const needle = search.trim().toLowerCase();
+    const words = needle.split(/\s+/).filter(Boolean);
     return CURRICULUM.filter((unit) => {
       if (activeLevel !== "all" && unit.level !== activeLevel) return false;
       if (activeCategory !== "all" && unit.cat !== activeCategory) return false;
       if (!needle) return true;
-      return `${unit.title} ${unit.subtitle} ${unit.emoji}`.toLowerCase().includes(needle);
+      const haystack = UNIT_SEARCH_INDEX.get(unit.id) ?? "";
+      return words.every((word) => haystack.includes(word));
     });
   }, [activeCategory, activeLevel, search]);
 
@@ -104,13 +129,6 @@ export function LibraryPage({
         description={description}
         icon={icon}
         iconTone={iconTone}
-        actions={
-          <>
-            <StatPill icon={BookOpen} value={TOTAL_UNITS} label="leçons" tone="neutral" />
-            <StatPill icon={Dumbbell} value={TOTAL_QUESTIONS} label="exercices" tone="xp" />
-            <StatPill icon={CheckCircle2} value={completed} label="terminées" tone="mint" />
-          </>
-        }
       />
 
       {banner}
@@ -126,7 +144,7 @@ export function LibraryPage({
             value={search}
             onChange={(event) => setSearch(event.target.value)}
             placeholder="Rechercher une leçon, un thème…"
-            className="h-12 w-full rounded-2xl bg-white pl-11 pr-11 text-sm font-semibold text-ink shadow-soft ring-1 ring-slate-900/[0.06] transition placeholder:font-medium placeholder:text-slate-400 focus:ring-2 focus:ring-brand-300"
+            className="h-12 w-full rounded-2xl bg-white pl-11 pr-11 text-sm font-semibold text-ink ring-1 ring-[#2563eb]/15 transition placeholder:font-medium placeholder:text-slate-400 focus:ring-2 focus:ring-[#2563eb]/40"
             aria-label="Rechercher une leçon"
           />
           {search && (
@@ -148,8 +166,8 @@ export function LibraryPage({
             className={cn(
               "shrink-0 rounded-full px-3.5 py-2 text-[11px] font-extrabold transition",
               activeLevel === "all"
-                ? "bg-ink text-white shadow-sm"
-                : "bg-white text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
+                ? "bg-[#1d4ed8] text-white shadow-sm"
+                : "bg-white text-slate-500 ring-1 ring-[#2563eb]/15 hover:text-[#1d4ed8]",
             )}
           >
             Tous les niveaux
@@ -165,8 +183,8 @@ export function LibraryPage({
                 className={cn(
                   "inline-flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-[11px] font-extrabold transition",
                   active
-                    ? "bg-ink text-white shadow-sm"
-                    : "bg-white text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
+                    ? "bg-[#1d4ed8] text-white shadow-sm"
+                    : "bg-white text-slate-500 ring-1 ring-[#2563eb]/15 hover:text-[#1d4ed8]",
                 )}
               >
                 <span>{LEVEL_EMOJIS[level.num]}</span>
@@ -193,7 +211,7 @@ export function LibraryPage({
                 "inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-extrabold transition",
                 activeCategory === "all"
                   ? "bg-brand-600 text-white"
-                  : "bg-white text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
+                  : "bg-white text-slate-500 ring-1 ring-[#2563eb]/15 hover:text-[#1d4ed8]",
               )}
             >
               <LayoutGrid size={13} />
@@ -212,8 +230,8 @@ export function LibraryPage({
                   className={cn(
                     "inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-extrabold transition",
                     active
-                      ? "bg-ink text-white"
-                      : "bg-white text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
+                      ? "bg-[#1d4ed8] text-white"
+                      : "bg-white text-slate-500 ring-1 ring-[#2563eb]/15 hover:text-[#1d4ed8]",
                   )}
                 >
                   <Icon
@@ -306,12 +324,13 @@ export function LibraryPage({
                   </div>
                 </div>
                 <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-                  {units.map((unit) => (
+                  {units.map((unit, index) => (
                     <UnitCard
                       key={unit.id}
                       unit={unit}
                       progress={lessons[unit.id]}
                       featured={unit.id === nextUnit.id}
+                      tinted={index % 2 === 1}
                     />
                   ))}
                 </div>
@@ -321,12 +340,13 @@ export function LibraryPage({
         </div>
       ) : (
         <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-          {filtered.map((unit) => (
+          {filtered.map((unit, index) => (
             <UnitCard
               key={unit.id}
               unit={unit}
               progress={lessons[unit.id]}
               featured={unit.id === nextUnit.id}
+              tinted={index % 2 === 1}
             />
           ))}
         </div>

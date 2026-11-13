@@ -1,25 +1,21 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  Award,
   BarChart3,
   Bookmark,
   CalendarDays,
   Check,
   CheckCircle2,
   Flame,
-  Gem,
   GraduationCap,
   Medal,
   RotateCcw,
   Settings2,
   Target,
-  Trophy,
   Volume2,
   VolumeX,
 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
-import { StatPill } from "@/components/StatPill";
 import { ProgressBar } from "@/components/ProgressBar";
 import { ProgressRing } from "@/components/ProgressRing";
 import { Button } from "@/components/Button";
@@ -38,7 +34,7 @@ import {
   todayXp,
   useProgressStore,
 } from "@/store/useProgressStore";
-import { cn, lastNDays, percent, plural } from "@/lib/utils";
+import { cn, lastNDays, percent } from "@/lib/utils";
 
 function Toggle({
   checked,
@@ -184,20 +180,13 @@ export function ProgressPage() {
         title="Ta progression"
         description="Chaque leçon terminée, chaque série de jours et chaque bonne réponse construit ta confiance en anglais."
         icon={BarChart3}
-        iconTone="from-brand-500 to-brand-700"
-        actions={
-          <>
-            <StatPill icon={Gem} value={xp} label="XP" tone="xp" />
-            <StatPill icon={Flame} value={bestStreak} label="record" tone="flame" />
-            <StatPill icon={Trophy} value={unlocked.length} label="succès" tone="mint" />
-          </>
-        }
+        iconTone="from-[#2563eb] to-[#1e40af]"
       />
 
       <div className="animate-fade-up grid gap-4 lg:grid-cols-[1.35fr_1fr]">
-        <section className="relative overflow-hidden rounded-[30px] bg-gradient-to-br from-[#1b1938] via-[#262153] to-[#3a2c78] p-5 text-white shadow-[0_28px_60px_-30px_rgba(23,22,43,.85)] sm:p-7">
-          <div className="pointer-events-none absolute inset-0 pattern-dots opacity-30" />
-          <div className="pointer-events-none absolute -right-16 -top-20 h-48 w-48 rounded-full bg-brand-400/30 blur-3xl" />
+        <section className="card-blue-deep relative overflow-hidden p-5 sm:p-7">
+          <div className="pointer-events-none absolute inset-0 pattern-dots opacity-25" />
+          <div className="pointer-events-none absolute -right-16 -top-20 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
           <div className="relative">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.14em] text-white/70 ring-1 ring-white/10">
               <Medal size={12} className="text-amber-300" />
@@ -238,26 +227,6 @@ export function ProgressPage() {
                 barClassName="bg-gradient-to-r from-emerald-300 to-teal-300"
                 label="Progression vers le prochain rang"
               />
-            </div>
-            <div className="mt-5 grid grid-cols-3 gap-2">
-              <div className="rounded-2xl bg-white/[0.07] p-3 ring-1 ring-white/10">
-                <p className="text-xl font-extrabold">{completed}</p>
-                <p className="text-[9px] font-extrabold uppercase tracking-wide text-white/45">
-                  Leçons
-                </p>
-              </div>
-              <div className="rounded-2xl bg-white/[0.07] p-3 ring-1 ring-white/10">
-                <p className="text-xl font-extrabold">{accuracy}%</p>
-                <p className="text-[9px] font-extrabold uppercase tracking-wide text-white/45">
-                  Précision
-                </p>
-              </div>
-              <div className="rounded-2xl bg-white/[0.07] p-3 ring-1 ring-white/10">
-                <p className="text-xl font-extrabold">{streak}</p>
-                <p className="text-[9px] font-extrabold uppercase tracking-wide text-white/45">
-                  Série
-                </p>
-              </div>
             </div>
           </div>
         </section>
@@ -367,10 +336,6 @@ export function ProgressPage() {
               {unlocked.length}/{ACHIEVEMENTS.length} débloqués
             </p>
           </div>
-          <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-1 text-[10px] font-extrabold text-amber-700 ring-1 ring-amber-100">
-            <Award size={12} />
-            {plural(unlocked.length, "succès")}
-          </span>
         </div>
         <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
           {ACHIEVEMENTS.map((achievement) => {
@@ -428,7 +393,7 @@ export function ProgressPage() {
 
       <section className="card overflow-hidden">
         <div className="flex items-center gap-2.5 border-b border-slate-100 px-5 py-4">
-          <span className="grid h-8 w-8 place-items-center rounded-xl bg-slate-50 text-slate-500">
+          <span className="grid h-8 w-8 place-items-center rounded-xl bg-[#f2f6ff] text-slate-500">
             <Settings2 size={16} />
           </span>
           <h2 className="text-[15px] font-extrabold text-ink">Préférences</h2>
@@ -456,7 +421,7 @@ export function ProgressPage() {
                     "h-8 rounded-full px-3 text-[10px] font-extrabold transition",
                     dailyGoal === goal
                       ? "bg-ink text-white"
-                      : "bg-slate-50 text-slate-500 ring-1 ring-slate-200/70 hover:text-ink",
+                      : "bg-[#f2f6ff] text-slate-500 ring-1 ring-slate-200/70 hover:text-ink",
                   )}
                 >
                   {goal} XP
@@ -482,13 +447,13 @@ export function ProgressPage() {
 
           <div className="flex items-center justify-between gap-3 px-5 py-4">
             <div className="flex items-center gap-3">
-              <span className="grid h-9 w-9 place-items-center rounded-xl bg-slate-50 text-slate-500 ring-1 ring-slate-200/70">
+              <span className="grid h-9 w-9 place-items-center rounded-xl bg-[#f2f6ff] text-slate-500 ring-1 ring-slate-200/70">
                 <CalendarDays size={16} />
               </span>
               <div>
                 <p className="text-[12.5px] font-extrabold text-ink">Coeurs</p>
                 <p className="text-[10.5px] font-medium text-slate-400">
-                  Les erreurs retirent un cœur. Recharge-les à tout moment.
+                  Un cœur se gagne à chaque leçon terminée (3 maximum).
                 </p>
               </div>
             </div>

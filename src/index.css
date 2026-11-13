@@ -4,23 +4,32 @@
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-display: "Bricolage Grotesque", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 
-  --color-brand-50: #f2f0ff;
-  --color-brand-100: #e8e4ff;
-  --color-brand-200: #d3ccff;
-  --color-brand-300: #b3a6ff;
-  --color-brand-400: #927dff;
-  --color-brand-500: #745bfa;
-  --color-brand-600: #5a45e8;
-  --color-brand-700: #4934c9;
-  --color-brand-800: #3c2ca4;
-  --color-brand-900: #332982;
+  --color-brand-50: #f4f1ff;
+  --color-brand-100: #e9e3ff;
+  --color-brand-200: #d6ccff;
+  --color-brand-300: #b6a4ff;
+  --color-brand-400: #9578ff;
+  --color-brand-500: #7754f6;
+  --color-brand-600: #5b21b6;
+  --color-brand-700: #4c1d95;
+  --color-brand-800: #3b1878;
+  --color-brand-900: #2e1065;
 
-  --color-ink: #17162b;
+  /* Bleu de marque : utilisé pour les surfaces et les cartes. */
+  --color-azure-50: #eef4ff;
+  --color-azure-100: #dbe7ff;
+  --color-azure-200: #bfd4ff;
+  --color-azure-500: #3b82f6;
+  --color-azure-600: #2563eb;
+  --color-azure-700: #1d4ed8;
+  --color-azure-800: #1e40af;
+
+  --color-ink: #131a33;
   --color-mist: #ffffff;
 
-  --shadow-soft: 0 24px 60px -30px rgba(23, 22, 43, 0.28);
-  --shadow-lift: 0 22px 48px -22px rgba(23, 22, 43, 0.3);
-  --shadow-glow: 0 18px 40px -18px rgba(90, 69, 232, 0.6);
+  --shadow-soft: 0 20px 48px -28px rgba(23, 37, 84, 0.26);
+  --shadow-lift: 0 24px 52px -24px rgba(23, 37, 84, 0.3);
+  --shadow-glow: 0 18px 40px -18px rgba(91, 33, 182, 0.5);
 }
 
 @layer base {
@@ -33,9 +42,8 @@
     min-height: 100dvh;
     background-color: #ffffff;
     background-image:
-      radial-gradient(1000px 520px at 100% -10%, rgba(99, 102, 241, 0.16), transparent 62%),
-      radial-gradient(820px 480px at -8% 14%, rgba(14, 165, 233, 0.1), transparent 60%),
-      radial-gradient(760px 420px at 52% 112%, rgba(245, 158, 11, 0.08), transparent 62%);
+      radial-gradient(900px 480px at 100% -12%, rgba(37, 99, 235, 0.1), transparent 60%),
+      radial-gradient(720px 420px at -10% 0%, rgba(91, 33, 182, 0.08), transparent 58%);
     background-attachment: fixed;
     color: var(--color-ink);
     font-family: var(--font-sans);
@@ -76,11 +84,29 @@
 @layer components {
   .card {
     border-radius: 1.75rem;
-    background: #fff;
-    box-shadow: var(--shadow-soft);
+    background: #ffffff;
     box-shadow:
-      0 0 0 1px rgba(23, 22, 43, 0.055),
-      var(--shadow-soft);
+      0 0 0 1px rgba(37, 99, 235, 0.1),
+      0 18px 40px -30px rgba(23, 37, 84, 0.35);
+  }
+
+  /* Carte bleue claire : surface teintée, texte sombre. */
+  .card-blue {
+    border-radius: 1.75rem;
+    background: linear-gradient(165deg, #eef4ff 0%, #e3edff 100%);
+    box-shadow:
+      0 0 0 1px rgba(37, 99, 235, 0.16),
+      0 18px 40px -30px rgba(37, 99, 235, 0.4);
+  }
+
+  /* Carte bleue pleine : pour les blocs mis en avant. */
+  .card-blue-deep {
+    border-radius: 1.75rem;
+    background: linear-gradient(150deg, #1d4ed8 0%, #1e40af 52%, #1e3a8a 100%);
+    color: #ffffff;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.12),
+      0 26px 54px -26px rgba(23, 37, 84, 0.6);
   }
 
   .card-hover {
@@ -93,7 +119,7 @@
   .card-hover:hover {
     transform: translateY(-3px);
     box-shadow:
-      0 0 0 1px rgba(23, 22, 43, 0.055),
+      0 0 0 1px rgba(37, 99, 235, 0.16),
       var(--shadow-lift);
   }
 

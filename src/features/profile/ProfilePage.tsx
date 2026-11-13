@@ -168,8 +168,8 @@ export function ProfilePage() {
               />
               <StatCard
                 icon={Heart}
-                value={hearts}
-                label="Cœurs"
+                value={`${hearts}/3`}
+                label="Cœurs gagnés"
                 tone="bg-rose-50 text-rose-500 ring-rose-100"
               />
               <StatCard
@@ -179,7 +179,7 @@ export function ProfilePage() {
                 tone="bg-emerald-50 text-emerald-600 ring-emerald-100"
               />
             </div>
-            <p className="mt-3 rounded-2xl bg-slate-50 p-3 text-[11px] font-medium leading-5 text-slate-500">
+            <p className="mt-3 rounded-2xl bg-[#f2f6ff] p-3 text-[11px] font-medium leading-5 text-slate-500">
               En invité, tout est enregistré dans ce navigateur. Avec un compte, ces données
               te suivent sur mobile et ordinateur.
             </p>
@@ -358,7 +358,7 @@ export function ProfilePage() {
                   onChange={(event) => setName(event.target.value)}
                   maxLength={60}
                   placeholder="Ton prénom"
-                  className="h-11 min-w-0 flex-1 rounded-2xl bg-slate-50 px-3.5 text-[13px] font-semibold text-ink outline-none ring-1 ring-slate-200 transition focus:bg-white focus:ring-2 focus:ring-brand-400"
+                  className="h-11 min-w-0 flex-1 rounded-2xl bg-[#f2f6ff] px-3.5 text-[13px] font-semibold text-ink outline-none ring-1 ring-slate-200 transition focus:bg-white focus:ring-2 focus:ring-brand-400"
                 />
                 <button
                   type="button"
@@ -386,7 +386,7 @@ export function ProfilePage() {
               </div>
             </label>
 
-            <div className="flex items-center justify-between gap-3 rounded-2xl bg-slate-50 p-3">
+            <div className="flex items-center justify-between gap-3 rounded-2xl bg-[#f2f6ff] p-3">
               <div className="flex items-center gap-2">
                 <CalendarDays size={16} className="text-slate-400" />
                 <span className="text-[11.5px] font-bold text-slate-500">Membre depuis</span>
@@ -400,7 +400,7 @@ export function ProfilePage() {
               type="button"
               onClick={() => fileRef.current?.click()}
               disabled={uploading}
-              className="flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-50 py-3 text-[12px] font-extrabold text-slate-600 ring-1 ring-slate-200 transition hover:bg-white hover:text-ink disabled:opacity-60"
+              className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#f2f6ff] py-3 text-[12px] font-extrabold text-slate-600 ring-1 ring-slate-200 transition hover:bg-white hover:text-ink disabled:opacity-60"
             >
               {uploading ? (
                 <LoaderCircle size={15} className="animate-spin" />
@@ -462,7 +462,7 @@ export function ProfilePage() {
             </Link>
             <Link
               to="/progress"
-              className="flex h-11 items-center justify-center gap-2 rounded-2xl bg-slate-50 text-[12.5px] font-extrabold text-slate-600 ring-1 ring-slate-200 transition hover:bg-white hover:text-ink"
+              className="flex h-11 items-center justify-center gap-2 rounded-2xl bg-[#f2f6ff] text-[12.5px] font-extrabold text-slate-600 ring-1 ring-slate-200 transition hover:bg-white hover:text-ink"
             >
               Voir mes statistiques
             </Link>

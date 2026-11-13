@@ -3,7 +3,9 @@ import { persist } from "zustand/middleware";
 import type { DayActivity, LessonProgress } from "../types";
 import { todayKey, yesterdayKey } from "../lib/utils";
 
-export const MAX_HEARTS = 5;
+export const MAX_HEARTS = 3;
+/** On démarre avec un seul cœur : les autres se gagnent en terminant des leçons. */
+export const STARTING_HEARTS = 1;
 
 export interface ProgressData {
   xp: number;
@@ -32,7 +34,7 @@ interface ProgressState extends ProgressData {
 
 const defaultProgress = {
   xp: 0,
-  hearts: MAX_HEARTS,
+  hearts: STARTING_HEARTS,
   streak: 0,
   bestStreak: 0,
   lastStudyDay: null as string | null,
@@ -104,6 +106,8 @@ export const useProgressStore = create<ProgressState>()(
           };
           return {
             xp: state.xp + xp,
+            // Un cœur se gagne à chaque leçon terminée (3 maximum).
+            hearts: Math.min(MAX_HEARTS, state.hearts + 1),
             activity: bumpActivity(state.activity, day, xp, 1),
             lessons: { ...state.lessons, [id]: nextLesson },
             ...touchStreak(state, day),
@@ -138,7 +142,10 @@ export const useProgressStore = create<ProgressState>()(
       importProgress: (data) =>
         set((state) => ({
           xp: typeof data.xp === "number" ? data.xp : state.xp,
-          hearts: typeof data.hearts === "number" ? data.hearts : state.hearts,
+          hearts:
+            typeof data.hearts === "number"
+              ? Math.min(MAX_HEARTS, Math.max(0, Math.round(data.hearts)))
+              : state.hearts,
           streak: typeof data.streak === "number" ? data.streak : state.streak,
           bestStreak:
             typeof data.bestStreak === "number" ? data.bestStreak : state.bestStreak,
@@ -155,7 +162,16 @@ export const useProgressStore = create<ProgressState>()(
     }),
     {
       name: "anglais-pro-v3",
-      version: 3,
+      version: 4,
+      migrate: (persisted) => {
+        const state = persisted as Partial<ProgressState> | undefined;
+        if (!state || typeof state !== "object") return persisted as ProgressState;
+        const hearts = typeof state.hearts === "number" ? state.hearts : STARTING_HEARTS;
+        return {
+          ...state,
+          hearts: Math.min(MAX_HEARTS, Math.max(0, Math.round(hearts))),
+        } as ProgressState;
+      },
     },
   ),
 );

@@ -18,7 +18,7 @@ export function ProgressBar({
   const safeValue = Math.min(100, Math.max(0, value));
   return (
     <div
-      className={cn("w-full overflow-hidden rounded-full bg-slate-900/[0.07]", height, className)}
+      className={cn("w-full overflow-hidden rounded-full bg-[#dbe7ff]", height, className)}
       role="progressbar"
       aria-label={label}
       aria-valuemin={0}
@@ -27,7 +27,7 @@ export function ProgressBar({
     >
       <div
         className={cn(
-          "h-full rounded-full bg-brand-500 transition-[width] duration-700 ease-out",
+          "h-full rounded-full bg-[#2563eb] transition-[width] duration-700 ease-out",
           barClassName,
         )}
         style={{ width: `${safeValue}%` }}

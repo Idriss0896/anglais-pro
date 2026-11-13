@@ -270,7 +270,7 @@ export function VocabularyPage() {
                 <button
                   type="button"
                   onClick={() => setOpenId(open ? null : unit.id)}
-                  className="flex items-center gap-3 p-4 text-left transition hover:bg-slate-50/60"
+                  className="flex items-center gap-3 p-4 text-left transition hover:bg-[#f2f6ff]/60"
                   aria-expanded={open}
                 >
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-emerald-50 text-xl ring-1 ring-emerald-100">

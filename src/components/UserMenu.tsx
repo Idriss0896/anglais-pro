@@ -145,7 +145,7 @@ export function UserMenu({
                 <Link
                   to="/profile"
                   role="menuitem"
-                  className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-[13px] font-bold text-slate-700 transition hover:bg-slate-50 hover:text-ink"
+                  className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-[13px] font-bold text-slate-700 transition hover:bg-[#f2f6ff] hover:text-ink"
                 >
                   <UserRound size={17} className="text-brand-600" />
                   Mon profil et ma photo
@@ -153,7 +153,7 @@ export function UserMenu({
                 <Link
                   to="/progress"
                   role="menuitem"
-                  className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-[13px] font-bold text-slate-700 transition hover:bg-slate-50 hover:text-ink"
+                  className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-[13px] font-bold text-slate-700 transition hover:bg-[#f2f6ff] hover:text-ink"
                 >
                   <BarChart3 size={17} className="text-brand-600" />
                   Ma progression

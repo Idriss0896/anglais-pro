@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import {
   ArrowUpRight,
   Bookmark,
@@ -7,18 +7,16 @@ import {
   Check,
   Copy,
   MessageCircle,
-  Quote,
   Search,
   Volume2,
   X,
 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
-import { StatPill } from "@/components/StatPill";
 import { EmptyState } from "@/components/EmptyState";
 import { Mascot, MascotSay, mascotFor, MASCOTS } from "@/components/Mascot";
 import { CATEGORIES } from "@/lib/categories";
 import { LEVEL_EMOJIS } from "@/lib/levels";
-import { PHRASES, TOTAL_PHRASES } from "@/data/curriculum";
+import { PHRASES } from "@/data/curriculum";
 import { useProgressStore } from "@/store/useProgressStore";
 import { copyText } from "@/lib/utils";
 import { speak } from "@/lib/audio";
@@ -29,10 +27,12 @@ function PhraseCard({
   phrase,
   favorite,
   onToggle,
+  tinted = false,
 }: {
   phrase: PhraseEntry;
   favorite: boolean;
   onToggle: () => void;
+  tinted?: boolean;
 }) {
   const [copied, setCopied] = useState(false);
   const coach = mascotFor(phrase.unitId);
@@ -46,9 +46,9 @@ function PhraseCard({
   };
 
   return (
-    <article className="card card-hover group flex flex-col p-4 sm:p-5">
+    <article className={cn("card-hover group flex flex-col p-4 sm:p-5", tinted ? "card-blue" : "card")}>
       <div className="flex items-start justify-between gap-3">
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-2.5 py-1 text-[10px] font-extrabold text-amber-700 ring-1 ring-amber-100">
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-[10px] font-extrabold text-[#1d4ed8] ring-1 ring-[#2563eb]/15">
           <span aria-hidden="true">{phrase.emoji}</span>
           Niveau {phrase.level}
         </span>
@@ -68,7 +68,7 @@ function PhraseCard({
               "grid h-8 w-8 place-items-center rounded-full transition",
               copied
                 ? "bg-emerald-50 text-emerald-600"
-                : "text-slate-400 hover:bg-slate-50 hover:text-ink",
+                : "text-slate-400 hover:bg-[#f2f6ff] hover:text-ink",
             )}
             aria-label={copied ? "Copié" : "Copier l'expression"}
           >
@@ -118,7 +118,7 @@ function PhraseCard({
         </Link>
         <Link
           to={`/lesson/${phrase.unitId}`}
-          className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-slate-50 text-slate-400 transition group-hover:bg-brand-600 group-hover:text-white"
+          className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-[#f2f6ff] text-slate-400 transition group-hover:bg-brand-600 group-hover:text-white"
           aria-label={`Ouvrir la leçon ${phrase.unitTitle}`}
         >
           <ArrowUpRight size={13} />
@@ -131,10 +131,17 @@ function PhraseCard({
 export function ExpressionsPage() {
   const favorites = useProgressStore((state) => state.favorites);
   const toggleFavorite = useProgressStore((state) => state.toggleFavorite);
-  const [search, setSearch] = useState("");
+  const [params] = useSearchParams();
+  const queryParam = params.get("q") ?? "";
+  const [search, setSearch] = useState(queryParam);
   const [level, setLevel] = useState<"all" | 1 | 2 | 3>("all");
   const [favoritesOnly, setFavoritesOnly] = useState(false);
   const [visible, setVisible] = useState(24);
+
+  // Une recherche lancée depuis la barre du haut arrive ici via ?q=…
+  useEffect(() => {
+    setSearch(queryParam);
+  }, [queryParam]);
 
   useEffect(() => {
     setVisible(24);
@@ -161,22 +168,12 @@ export function ExpressionsPage() {
         title="Les mots pour le dire"
         description="910 phrases, idiomes et formules du quotidien. Écoute, enregistre tes favorites et retrouve-les quand tu en as besoin."
         icon={MessageCircle}
-        iconTone="from-amber-400 to-orange-500"
-        actions={
-          <>
-            <StatPill icon={Quote} value={TOTAL_PHRASES} label="expressions" tone="flame" />
-            <StatPill
-              icon={Bookmark}
-              value={favorites.length}
-              label="favoris"
-              tone="heart"
-            />
-          </>
-        }
+        iconTone="from-[#2563eb] to-[#1e40af]"
       />
 
-      <div className="animate-fade-up relative overflow-hidden rounded-[28px] bg-gradient-to-br from-amber-400 via-amber-400 to-orange-500 p-5 text-white shadow-[0_24px_50px_-26px_rgba(245,158,11,.8)] sm:p-6">
-        <div className="pointer-events-none absolute inset-0 pattern-dots opacity-30" />
+      <div className="card-blue-deep animate-fade-up relative overflow-hidden p-5 sm:p-6">
+        <div className="pointer-events-none absolute inset-0 pattern-dots opacity-25" />
+        <div className="pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full bg-white/10 blur-3xl" />
         <div className="relative flex items-center justify-between gap-4">
           <div>
             <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-white/70">
@@ -210,7 +207,7 @@ export function ExpressionsPage() {
             value={search}
             onChange={(event) => setSearch(event.target.value)}
             placeholder="Chercher une expression en anglais ou en français…"
-            className="h-12 w-full rounded-2xl bg-white pl-11 pr-11 text-sm font-semibold text-ink shadow-soft ring-1 ring-slate-900/[0.06] transition placeholder:font-medium placeholder:text-slate-400 focus:ring-2 focus:ring-brand-300"
+            className="h-12 w-full rounded-2xl bg-white pl-11 pr-11 text-sm font-semibold text-ink ring-1 ring-[#2563eb]/15 transition placeholder:font-medium placeholder:text-slate-400 focus:ring-2 focus:ring-[#2563eb]/40"
             aria-label="Rechercher une expression"
           />
           {search && (
@@ -313,12 +310,13 @@ export function ExpressionsPage() {
       ) : (
         <>
           <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-            {displayed.map((phrase) => (
+            {displayed.map((phrase, index) => (
               <PhraseCard
                 key={phrase.id}
                 phrase={phrase}
                 favorite={favorites.includes(phrase.id)}
                 onToggle={() => toggleFavorite(phrase.id)}
+                tinted={index % 2 === 1}
               />
             ))}
           </div>

@@ -104,7 +104,7 @@ function ChoiceQuestion({ question, answered, isCorrect, onAnswer }: QuestionVie
           >
             <span
               className={cn(
-                "grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-slate-50 text-[11px] font-extrabold text-slate-400 transition",
+                "grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-[#f2f6ff] text-[11px] font-extrabold text-slate-400 transition",
                 !answered && "group-hover:bg-brand-50 group-hover:text-brand-600",
                 answered && isRight && "bg-emerald-500 text-white",
                 answered && isPicked && !isRight && "bg-rose-500 text-white",
@@ -120,7 +120,7 @@ function ChoiceQuestion({ question, answered, isCorrect, onAnswer }: QuestionVie
             </span>
             <span className="min-w-0 flex-1">{option}</span>
             {index < 9 && !answered && (
-              <span className="hidden h-5 w-5 place-items-center rounded-md bg-slate-50 text-[9px] font-extrabold text-slate-300 sm:grid">
+              <span className="hidden h-5 w-5 place-items-center rounded-md bg-[#f2f6ff] text-[9px] font-extrabold text-slate-300 sm:grid">
                 {index + 1}
               </span>
             )}
@@ -214,7 +214,7 @@ function TilesQuestion({ question, answered, onAnswer }: QuestionViewProps) {
 
   return (
     <div className="mt-5">
-      <div className="flex min-h-14 flex-wrap items-center gap-2 rounded-2xl bg-slate-50 p-2 ring-1 ring-slate-900/[0.05]">
+      <div className="flex min-h-14 flex-wrap items-center gap-2 rounded-2xl bg-[#f2f6ff] p-2 ring-1 ring-slate-900/[0.05]">
         {chosen.length === 0 && (
           <span className="px-2 text-[11px] font-bold text-slate-400">
             Clique sur les mots pour construire la phrase…
@@ -409,16 +409,9 @@ export function QuizSession({
   const feedbackRef = useRef<HTMLDivElement>(null);
   const hearts = useProgressStore((state) => state.hearts);
   const loseHeart = useProgressStore((state) => state.loseHeart);
-  const restoreHearts = useProgressStore((state) => state.restoreHearts);
 
   const total = questions.length;
   const question = questions[index];
-
-  useEffect(() => {
-    if (useProgressStore.getState().hearts === 0) restoreHearts();
-    // Only on mount: start each session with usable hearts.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   useEffect(() => {
     if (feedback) {
@@ -489,7 +482,6 @@ export function QuizSession({
     setIsCorrect(null);
     setResult(null);
     setPhase("quiz");
-    if (useProgressStore.getState().hearts === 0) restoreHearts();
   };
 
   if (phase === "result" && result) {
@@ -538,7 +530,7 @@ export function QuizSession({
             </p>
 
             <div className="mt-6 grid grid-cols-3 gap-2.5">
-              <div className="rounded-2xl bg-slate-50 p-3 ring-1 ring-slate-100">
+              <div className="rounded-2xl bg-[#f2f6ff] p-3 ring-1 ring-slate-100">
                 <CheckCircle2 size={17} className="mx-auto text-emerald-500" />
                 <p className="mt-1 text-lg font-extrabold text-ink">
                   {result.correct}/{result.total}
@@ -547,14 +539,14 @@ export function QuizSession({
                   Correct
                 </p>
               </div>
-              <div className="rounded-2xl bg-slate-50 p-3 ring-1 ring-slate-100">
+              <div className="rounded-2xl bg-[#f2f6ff] p-3 ring-1 ring-slate-100">
                 <Trophy size={17} className="mx-auto text-amber-500" />
                 <p className="mt-1 text-lg font-extrabold text-ink">{result.accuracy}%</p>
                 <p className="text-[9px] font-extrabold uppercase tracking-wide text-slate-400">
                   Précision
                 </p>
               </div>
-              <div className="rounded-2xl bg-slate-50 p-3 ring-1 ring-slate-100">
+              <div className="rounded-2xl bg-[#f2f6ff] p-3 ring-1 ring-slate-100">
                 <Gem size={17} className="mx-auto text-violet-500" fill="currentColor" />
                 <p className="mt-1 text-lg font-extrabold text-ink">+{result.xp}</p>
                 <p className="text-[9px] font-extrabold uppercase tracking-wide text-slate-400">
@@ -753,27 +745,16 @@ export function QuizSession({
 
       <Modal
         open={heartsOpen}
-        onClose={() => {
-          restoreHearts();
-          setHeartsOpen(false);
-        }}
-        title="Plus de cœurs !"
-        description="On ne va pas te laisser t'arrêter en si bon chemin. Recharge tes cœurs et continue ta session."
+        onClose={() => setHeartsOpen(false)}
+        title="Plus de cœurs"
+        description="Les cœurs se gagnent en terminant des leçons (3 maximum). Tu peux finir cette session : elle t'en rapportera un."
         icon={Heart}
         iconTone="bg-rose-100 text-rose-500"
         hideClose
         footer={
           <div className="space-y-2">
-            <Button
-              full
-              size="lg"
-              onClick={() => {
-                restoreHearts();
-                setHeartsOpen(false);
-              }}
-              icon={Heart}
-            >
-              Recharger mes cœurs
+            <Button full size="lg" onClick={() => setHeartsOpen(false)} icon={Heart}>
+              Continuer la session
             </Button>
             <button
               type="button"

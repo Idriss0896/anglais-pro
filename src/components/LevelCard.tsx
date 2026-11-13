@@ -20,7 +20,7 @@ export function LevelCard({ level, lessons, className }: LevelCardProps) {
     <Link
       to={`/learn?level=${level.num}`}
       className={cn(
-        "card card-hover group relative overflow-hidden p-4 sm:p-5",
+        "card-blue card-hover group relative overflow-hidden p-4 sm:p-5",
         className,
       )}
     >
@@ -52,17 +52,17 @@ export function LevelCard({ level, lessons, className }: LevelCardProps) {
         </span>
       </div>
 
-      <p className="mt-3 text-[10px] font-extrabold uppercase tracking-[0.15em] text-slate-400">
+      <p className="mt-3 text-[10px] font-extrabold uppercase tracking-[0.15em] text-[#2563eb]/70">
         Niveau {level.num}
       </p>
       <h3 className="mt-0.5 text-[17px] font-extrabold text-ink">{level.title}</h3>
-      <p className="mt-1 line-clamp-2 text-[11px] font-medium leading-5 text-slate-500">
+      <p className="mt-1 line-clamp-2 text-[11px] font-medium leading-5 text-slate-600">
         {level.subtitle}
       </p>
 
       <div className="mt-4">
         <div className="mb-1.5 flex items-center justify-between text-[10px] font-extrabold">
-          <span className="text-slate-400">
+          <span className="text-[#1d4ed8]/70">
             {completed}/{level.units.length} {plural(level.units.length, "leçon")}
           </span>
           <span className={theme.text}>{progress}%</span>
@@ -70,13 +70,14 @@ export function LevelCard({ level, lessons, className }: LevelCardProps) {
         <ProgressBar
           value={progress}
           height="h-1.5"
+          className="bg-white/80"
           barClassName={theme.bar}
           label={`Progression niveau ${level.num}`}
         />
       </div>
 
       <div className="mt-3 flex items-center justify-between">
-        <span className="inline-flex items-center gap-1 text-[10px] font-bold text-slate-400">
+        <span className="inline-flex items-center gap-1 text-[10px] font-bold text-[#1d4ed8]/70">
           {completed === level.units.length ? (
             <>
               <CheckCircle2 size={12} className="text-emerald-500" />

@@ -6,9 +6,21 @@ const scrypt = promisify(scryptCallback);
 
 const SESSION_COOKIE = "ap_session";
 const STATE_COOKIE = "ap_oauth_state";
-const SESSION_DAYS = 30;
+const SESSION_DAYS = 14;
 const SCRYPT_KEYLEN = 64;
 const SCRYPT_PARAMS = { N: 16384, r: 8, p: 1 };
+
+/**
+ * Hash factice utilisé quand l'email est inconnu : on paie le même coût de
+ * calcul qu'une vraie vérification pour ne pas révéler l'existence du compte.
+ */
+const DUMMY_HASH =
+  "s1$Y5yaIxSmcv4Pcq9Vpo-A_w$No_-VF8oHw2fWWKLneoOqWJ8xfbUtTQ7KmgnQkbC-wc4dXWqfMeiTyFi7njmO6mmfIe423_-_7ieGbRUmMNWog";
+
+export async function burnPasswordTime(password) {
+  await verifyPassword(typeof password === "string" ? password : "", DUMMY_HASH);
+  return false;
+}
 
 export async function hashPassword(password) {
   const salt = randomBytes(16);
@@ -61,6 +73,7 @@ function cookieOptions(req, maxAge, path = "/") {
     `Path=${path}`,
     "HttpOnly",
     "SameSite=Lax",
+    "Priority=High",
     `Max-Age=${maxAge}`,
     secure ? "Secure" : "",
   ]
@@ -106,6 +119,8 @@ export async function createSession(req, res, userId) {
   await ensureSchema();
   const token = randomBytes(32).toString("base64url");
   const expiresAt = new Date(Date.now() + SESSION_DAYS * 24 * 60 * 60 * 1000);
+  // Purge opportuniste : évite que la table des sessions grossisse sans fin.
+  await sql`DELETE FROM sessions WHERE expires_at < now()`;
   await sql`
     INSERT INTO sessions (token_hash, user_id, expires_at)
     VALUES (${hashToken(token)}, ${userId}, ${expiresAt.toISOString()})

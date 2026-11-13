@@ -7,16 +7,19 @@ import {
 import {
   cleanText,
   fail,
+  isStrongPassword,
   isValidEmail,
   json,
   methodNotAllowed,
   normalizeEmail,
   parseBody,
   rateLimit,
+  requireSameOrigin,
 } from "../_lib/http.js";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return methodNotAllowed(res, ["POST"]);
+  if (!requireSameOrigin(req, res)) return;
   if (!rateLimit(req, "signup", { max: 8, windowMs: 60_000 })) {
     return fail(res, 429, "too_many_requests", "Trop de tentatives. Réessaie dans une minute.");
   }
@@ -29,11 +32,16 @@ export default async function handler(req, res) {
   if (!isValidEmail(email)) {
     return fail(res, 400, "invalid_email", "Cette adresse email n'est pas valide.");
   }
-  if (password.length < 8) {
-    return fail(res, 400, "weak_password", "Le mot de passe doit contenir au moins 8 caractères.");
-  }
   if (password.length > 200) {
     return fail(res, 400, "weak_password", "Le mot de passe est trop long.");
+  }
+  if (!isStrongPassword(password)) {
+    return fail(
+      res,
+      400,
+      "weak_password",
+      "Le mot de passe doit contenir au moins 8 caractères, dont une lettre et un chiffre.",
+    );
   }
 
   try {

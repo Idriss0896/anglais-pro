@@ -144,7 +144,7 @@ function TheoryContent({ unit }: { unit: CurriculumUnit }) {
                 <table className="w-full min-w-[320px] border-collapse text-left">
                   {block.head && (
                     <thead>
-                      <tr className="bg-slate-50/70">
+                      <tr className="bg-[#f1f5ff]">
                         {block.head.map((head) => (
                           <th
                             key={head}
@@ -160,7 +160,7 @@ function TheoryContent({ unit }: { unit: CurriculumUnit }) {
                     {(block.rows ?? []).map((row, rowIndex) => (
                       <tr
                         key={rowIndex}
-                        className="border-t border-slate-100/80 odd:bg-white even:bg-slate-50/30"
+                        className="border-t border-slate-100/80 odd:bg-white even:bg-[#f8faff]"
                       >
                         {row.map((cell, cellIndex) => (
                           <td
@@ -186,7 +186,7 @@ function TheoryContent({ unit }: { unit: CurriculumUnit }) {
           return (
             <div
               key={blockIndex}
-              className="rounded-2xl bg-slate-50/80 p-3.5 ring-1 ring-slate-900/[0.05] sm:p-4"
+              className="rounded-2xl bg-[#f4f7ff] p-3.5 ring-1 ring-slate-900/[0.05] sm:p-4"
             >
               <div className="mb-2 flex items-center gap-2 px-1">
                 <Mascot id={mascotFor(unit.id)} mood="talk" size={28} />

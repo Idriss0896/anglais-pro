@@ -3,7 +3,6 @@ import {
   BarChart3,
   BookOpen,
   ChevronRight,
-  Cloud,
   Dumbbell,
   Flame,
   Gem,
@@ -21,12 +20,13 @@ import {
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { useAuth } from "@/auth/AuthProvider";
 import { GuestBanner } from "./GuestBanner";
-import { HeaderStat, HeartsMeter } from "./HeaderStat";
+import { HeaderStat } from "./HeaderStat";
 import { Logo } from "./Logo";
 import { ProgressRing } from "./ProgressRing";
+import { SearchDialog } from "./SearchDialog";
 import { UserAvatar } from "./UserAvatar";
 import { UserMenu } from "./UserMenu";
-import { MAX_HEARTS, useProgressStore, todayXp, completedCount } from "@/store/useProgressStore";
+import { MAX_HEARTS, useProgressStore, completedCount } from "@/store/useProgressStore";
 import { getRank } from "@/lib/achievements";
 import { cn, formatNumber, percent, plural } from "@/lib/utils";
 import { TOTAL_PHRASES, TOTAL_QUESTIONS, TOTAL_UNITS } from "@/data/curriculum";
@@ -147,22 +147,20 @@ function Sidebar({
   onToggle,
   open,
   onClose,
+  onSearch,
 }: {
   collapsed: boolean;
   onToggle: () => void;
   open: boolean;
   onClose: () => void;
+  onSearch: () => void;
 }) {
   const { user } = useAuth();
   const isDesktop = useIsDesktop();
   const drawerHidden = !isDesktop && !open;
   const xp = useProgressStore((state) => state.xp);
-  const dailyGoal = useProgressStore((state) => state.dailyGoal);
-  const activity = useProgressStore((state) => state.activity);
   const streak = useProgressStore((state) => state.streak);
   const rank = getRank(xp);
-  const goalXp = todayXp(activity);
-  const goalPercent = dailyGoal ? Math.min(100, Math.round((goalXp / dailyGoal) * 100)) : 0;
 
   return (
     <aside
@@ -171,7 +169,7 @@ function Sidebar({
       aria-hidden={drawerHidden || undefined}
       inert={drawerHidden || undefined}
       className={cn(
-        "fixed inset-y-0 left-0 z-50 flex flex-col overflow-hidden bg-gradient-to-b from-[#16143c] via-[#211d5a] to-[#312e81] pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-5 shadow-[0_36px_80px_-40px_rgba(9,8,30,0.9)] will-change-transform",
+        "fixed inset-y-0 left-0 z-50 flex flex-col overflow-hidden bg-gradient-to-b from-[#3b1878] via-[#4c1d95] to-[#5b21b6] pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-5 shadow-[0_36px_80px_-40px_rgba(30,16,60,0.9)] will-change-transform",
         "transition-[width,padding,transform] duration-300 ease-out lg:translate-x-0 lg:shadow-none",
         collapsed ? "w-[84px] px-2.5" : "w-[272px] px-4",
         open ? "translate-x-0" : "-translate-x-full",
@@ -179,11 +177,7 @@ function Sidebar({
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-brand-500/35 blur-3xl"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-sky-400/20 blur-3xl"
+        className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-white/10 blur-3xl"
       />
 
       <div
@@ -204,14 +198,35 @@ function Sidebar({
                 : "Réduire le menu en icônes"
           }
           title={collapsed ? "Déplier le menu" : "Réduire le menu"}
-          className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-white/10 text-indigo-100 ring-1 ring-white/15 transition hover:bg-white/15 hover:text-white"
+          className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-white/10 text-indigo-100 ring-1 ring-white/20 transition hover:bg-white/15 hover:text-white"
         >
           {collapsed ? <PanelLeftOpen size={17} /> : <PanelLeftClose size={17} />}
         </button>
       </div>
 
+      <button
+        type="button"
+        onClick={onSearch}
+        title="Rechercher une leçon"
+        aria-label="Rechercher une leçon"
+        className={cn(
+          "relative mt-5 flex items-center rounded-2xl bg-white/10 text-indigo-100/75 ring-1 ring-white/15 transition hover:bg-white/15 hover:text-white",
+          collapsed ? "justify-center px-0 py-3" : "gap-2.5 px-3 py-2.5 text-[12.5px] font-bold",
+        )}
+      >
+        <Search size={16} className="shrink-0" />
+        {!collapsed && (
+          <>
+            <span className="truncate">Rechercher</span>
+            <kbd className="ml-auto rounded-md bg-white/10 px-1.5 py-0.5 text-[9px] font-extrabold text-indigo-100/50 ring-1 ring-white/15">
+              /
+            </kbd>
+          </>
+        )}
+      </button>
+
       <nav
-        className="no-scrollbar relative mt-8 flex-1 space-y-1 overflow-y-auto overflow-x-hidden"
+        className="no-scrollbar relative mt-4 flex-1 space-y-1 overflow-y-auto overflow-x-hidden"
         aria-label="Navigation principale"
       >
         {!collapsed && (
@@ -234,59 +249,7 @@ function Sidebar({
         ))}
       </nav>
 
-      <div className={cn("relative mt-4", collapsed ? "space-y-2" : "space-y-3")}>
-        {collapsed ? (
-          <Link
-            to="/progress"
-            title={`Objectif du jour : ${goalXp} / ${dailyGoal} XP`}
-            onClick={onClose}
-            className="mx-auto grid place-items-center rounded-2xl bg-white/10 p-2 ring-1 ring-white/10 transition hover:bg-white/15"
-          >
-            <ProgressRing
-              value={goalPercent}
-              size={44}
-              stroke={5}
-              trackClassName="stroke-white/15"
-              barClassName="stroke-emerald-300"
-              label="Objectif quotidien"
-            >
-              <span className="text-[9px] font-extrabold text-white">{goalPercent}%</span>
-            </ProgressRing>
-          </Link>
-        ) : (
-          <Link
-            to="/progress"
-            onClick={onClose}
-            className="group block rounded-[24px] bg-white/10 p-4 text-white ring-1 ring-white/10 backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white/[0.14]"
-          >
-            <div className="flex items-center justify-between gap-2">
-              <div>
-                <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-indigo-100/55">
-                  Objectif du jour
-                </p>
-                <p className="mt-1 text-lg font-extrabold">
-                  {goalXp}
-                  <span className="text-sm font-bold text-indigo-100/50"> / {dailyGoal} XP</span>
-                </p>
-              </div>
-              <ProgressRing
-                value={goalPercent}
-                size={48}
-                stroke={5}
-                trackClassName="stroke-white/15"
-                barClassName="stroke-emerald-300"
-                label="Objectif quotidien"
-              >
-                <span className="text-[10px] font-extrabold text-white">{goalPercent}%</span>
-              </ProgressRing>
-            </div>
-            <div className="mt-3 flex items-center gap-1.5 text-[11px] font-bold text-indigo-100/70">
-              <Flame size={12} className="text-amber-300" fill="currentColor" />
-              {goalPercent >= 100 ? "Objectif atteint, bravo !" : `${dailyGoal - goalXp} XP restants`}
-            </div>
-          </Link>
-        )}
-
+      <div className="relative mt-4">
         <Link
           to={user ? "/profile" : "/auth"}
           title={user ? "Mon profil" : "Se connecter"}
@@ -329,7 +292,7 @@ function useScrolled(threshold = 8) {
   return scrolled;
 }
 
-function DesktopTopBar({ scrolled }: { scrolled: boolean }) {
+function DesktopTopBar({ scrolled, onSearch }: { scrolled: boolean; onSearch: () => void }) {
   const xp = useProgressStore((state) => state.xp);
   const streak = useProgressStore((state) => state.streak);
   const hearts = useProgressStore((state) => state.hearts);
@@ -338,12 +301,7 @@ function DesktopTopBar({ scrolled }: { scrolled: boolean }) {
   const overall = percent(completed, TOTAL_UNITS);
 
   return (
-    <div
-      className={cn(
-        "sticky top-0 z-30 hidden transition-[padding] duration-300 lg:block",
-        scrolled ? "pb-2 pt-2" : "pb-3 pt-4",
-      )}
-    >
+    <div className="sticky top-0 z-30 hidden lg:block">
       <div
         aria-hidden="true"
         className={cn(
@@ -352,56 +310,52 @@ function DesktopTopBar({ scrolled }: { scrolled: boolean }) {
         )}
         style={{
           height: "100%",
-          background: "rgba(250, 249, 255, 0.82)",
-          backdropFilter: "blur(14px)",
-          WebkitBackdropFilter: "blur(14px)",
-          maskImage: "linear-gradient(to bottom, #000 82%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, #000 82%, transparent 100%)",
+          background: "rgba(255, 255, 255, 0.88)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+          maskImage: "linear-gradient(to bottom, #000 78%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, #000 78%, transparent 100%)",
         }}
       />
+      <div className="mx-auto w-full max-w-6xl px-4 pt-3 sm:px-6 lg:px-9">
       <div
         className={cn(
-          "mx-auto flex max-w-6xl items-center gap-2.5 rounded-[30px] bg-gradient-to-r from-[#16143c] via-[#241f5e] to-[#4c1d95] ring-1 ring-white/10 transition-all duration-300",
+          "flex h-16 items-center gap-2.5 rounded-[26px] bg-gradient-to-r from-[#3b1878] via-[#5b21b6] to-[#7c3aed] px-3 ring-1 ring-white/15 transition-shadow duration-300",
           scrolled
-            ? "h-[60px] px-2.5 shadow-[0_16px_34px_-22px_rgba(22,20,60,0.85)]"
-            : "h-[68px] px-3 shadow-[0_26px_60px_-32px_rgba(22,20,60,0.95)]",
+            ? "shadow-[0_16px_34px_-22px_rgba(59,24,120,0.85)]"
+            : "shadow-[0_22px_48px_-28px_rgba(59,24,120,0.9)]",
         )}
       >
-        <Link
-          to="/learn"
-          className="group flex h-10 w-full max-w-[280px] items-center gap-2.5 rounded-2xl bg-white/10 px-3.5 text-[12.5px] font-semibold text-indigo-100/55 ring-1 ring-white/10 transition hover:bg-white/[0.16] hover:text-white"
+        <button
+          type="button"
+          onClick={onSearch}
+          className="group flex h-10 w-full max-w-[280px] items-center gap-2.5 rounded-2xl bg-white/10 px-3.5 text-left text-[12.5px] font-semibold text-indigo-100/60 ring-1 ring-white/15 transition hover:bg-white/15 hover:text-white"
+          aria-label="Rechercher une leçon"
         >
-          <Search size={16} className="shrink-0 text-indigo-200/70" />
+          <Search size={16} className="shrink-0 text-indigo-100/80" />
           <span className="truncate">Rechercher une leçon…</span>
-          <kbd className="ml-auto hidden rounded-md bg-white/10 px-1.5 py-0.5 text-[10px] font-extrabold text-indigo-100/45 ring-1 ring-white/15 xl:block">
+          <kbd className="ml-auto hidden rounded-md bg-white/10 px-1.5 py-0.5 text-[10px] font-extrabold text-indigo-100/50 ring-1 ring-white/20 xl:block">
             /
           </kbd>
-        </Link>
+        </button>
 
         <div className="ml-auto flex items-center gap-1.5">
           <Link
             to="/progress"
             title={`Parcours : ${completed} leçons terminées sur ${TOTAL_UNITS}`}
-            className="flex h-11 items-center gap-2.5 rounded-2xl bg-white/10 py-1 pl-1 pr-3 ring-1 ring-white/15 transition hover:bg-white/[0.17]"
+            aria-label={`Parcours : ${completed} leçons terminées sur ${TOTAL_UNITS}`}
+            className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/15 transition hover:bg-white/[0.17]"
           >
             <ProgressRing
               value={overall}
-              size={36}
+              size={34}
               stroke={4}
-              trackClassName="stroke-white/15"
+              trackClassName="stroke-white/20"
               barClassName="stroke-emerald-300"
               label="Progression du parcours"
             >
-              <span className="text-[9px] font-extrabold text-white">{overall}%</span>
+              <span className="text-[8.5px] font-extrabold text-white">{overall}%</span>
             </ProgressRing>
-            <span className="hidden leading-none xl:block">
-              <span className="block text-[8.5px] font-extrabold uppercase tracking-[0.14em] text-indigo-100/55">
-                Parcours
-              </span>
-              <span className="mt-1 block text-[12.5px] font-extrabold text-white">
-                {completed}/{TOTAL_UNITS} leçons
-              </span>
-            </span>
           </Link>
 
           <HeaderStat
@@ -411,7 +365,6 @@ function DesktopTopBar({ scrolled }: { scrolled: boolean }) {
             value={`${formatNumber(xp)} XP`}
             title={`${formatNumber(xp)} points d'expérience`}
             to="/progress"
-            className="hidden md:inline-flex"
           />
 
           <HeaderStat
@@ -427,8 +380,8 @@ function DesktopTopBar({ scrolled }: { scrolled: boolean }) {
 
           <Link
             to="/progress"
-            title={`${hearts} cœur${hearts > 1 ? "s" : ""} sur ${MAX_HEARTS}`}
-            aria-label={`${hearts} cœurs restants sur ${MAX_HEARTS}`}
+            title={`${hearts} cœur${hearts > 1 ? "s" : ""} sur ${MAX_HEARTS} — gagnes-en en terminant une leçon`}
+            aria-label={`${hearts} cœurs sur ${MAX_HEARTS}`}
             className="group flex h-11 items-center gap-2.5 rounded-2xl bg-white/10 px-2.5 ring-1 ring-white/15 transition hover:bg-white/[0.17]"
           >
             <span className="grid h-7 w-7 shrink-0 place-items-center rounded-[13px] bg-gradient-to-br from-rose-400 to-rose-600 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.4)]">
@@ -438,8 +391,9 @@ function DesktopTopBar({ scrolled }: { scrolled: boolean }) {
               <span className="block text-[8.5px] font-extrabold uppercase tracking-[0.14em] text-indigo-100/55">
                 Cœurs
               </span>
-              <span className="mt-1 block">
-                <HeartsMeter hearts={hearts} max={MAX_HEARTS} />
+              <span className="mt-1 block text-[12px] font-extrabold tabular-nums leading-none text-white">
+                {hearts}
+                <span className="text-indigo-100/45">/{MAX_HEARTS}</span>
               </span>
             </span>
           </Link>
@@ -448,6 +402,7 @@ function DesktopTopBar({ scrolled }: { scrolled: boolean }) {
             <UserMenu showIdentity onDark />
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
@@ -467,12 +422,7 @@ function MobileHeader({
   const overall = percent(completed, TOTAL_UNITS);
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-30 px-3 transition-[padding] duration-300 lg:hidden",
-        scrolled ? "pb-1.5 pt-1.5" : "pb-2 pt-3",
-      )}
-    >
+    <header className="sticky top-0 z-30 px-4 pt-3 lg:hidden">
       <div
         aria-hidden="true"
         className={cn(
@@ -481,19 +431,19 @@ function MobileHeader({
         )}
         style={{
           height: "100%",
-          background: "rgba(250, 249, 255, 0.84)",
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)",
-          maskImage: "linear-gradient(to bottom, #000 84%, transparent 100%)",
-          WebkitMaskImage: "linear-gradient(to bottom, #000 84%, transparent 100%)",
+          background: "rgba(255, 255, 255, 0.9)",
+          backdropFilter: "blur(14px)",
+          WebkitBackdropFilter: "blur(14px)",
+          maskImage: "linear-gradient(to bottom, #000 80%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, #000 80%, transparent 100%)",
         }}
       />
       <div
         className={cn(
-          "flex items-center gap-1.5 rounded-[26px] bg-gradient-to-r from-[#16143c] via-[#2a2470] to-[#4c1d95] px-2.5 ring-1 ring-white/15 transition-all duration-300",
+          "flex h-16 items-center gap-1.5 rounded-[24px] bg-gradient-to-r from-[#3b1878] via-[#5b21b6] to-[#7c3aed] px-2.5 ring-1 ring-white/15 transition-shadow duration-300",
           scrolled
-            ? "h-[58px] shadow-[0_12px_28px_-18px_rgba(22,20,60,0.85)]"
-            : "h-16 shadow-[0_20px_44px_-22px_rgba(22,20,60,0.9)]",
+            ? "shadow-[0_12px_28px_-18px_rgba(59,24,120,0.85)]"
+            : "shadow-[0_18px_40px_-22px_rgba(59,24,120,0.9)]",
         )}
       >
         <button
@@ -526,11 +476,15 @@ function MobileHeader({
 
         <Link
           to="/progress"
-          title={`${hearts} cœur${hearts > 1 ? "s" : ""} sur ${MAX_HEARTS}`}
-          aria-label={`${hearts} cœurs restants sur ${MAX_HEARTS}`}
-          className="group grid h-10 shrink-0 place-items-center rounded-2xl bg-white/10 px-2 ring-1 ring-white/15 transition hover:bg-white/[0.17]"
+          title={`${hearts} cœur${hearts > 1 ? "s" : ""} sur ${MAX_HEARTS} — gagnes-en en terminant une leçon`}
+          aria-label={`${hearts} cœurs sur ${MAX_HEARTS}`}
+          className="group flex h-10 shrink-0 items-center gap-1.5 rounded-2xl bg-white/10 px-2.5 ring-1 ring-white/15 transition hover:bg-white/[0.17]"
         >
-          <HeartsMeter hearts={hearts} max={MAX_HEARTS} size={8} />
+          <Heart size={13} strokeWidth={2.4} fill="currentColor" className="text-rose-300" />
+          <span className="text-[11px] font-extrabold tabular-nums leading-none text-white">
+            {hearts}
+            <span className="text-indigo-100/45">/{MAX_HEARTS}</span>
+          </span>
         </Link>
 
         <HeaderStat
@@ -559,7 +513,7 @@ function SiteFooter({ collapsed }: { collapsed: boolean }) {
   return (
     <footer
       className={cn(
-        "relative overflow-hidden bg-gradient-to-b from-[#16143c] via-[#131031] to-[#0b0920] text-white transition-[padding] duration-300",
+        "relative overflow-hidden bg-gradient-to-b from-[#2e1065] via-[#3b1878] to-[#4c1d95] text-white transition-[padding] duration-300",
         collapsed ? "lg:pl-[84px]" : "lg:pl-[272px]",
       )}
     >
@@ -646,10 +600,6 @@ function SiteFooter({ collapsed }: { collapsed: boolean }) {
             Français (France)
           </div>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] font-semibold text-indigo-100/40">
-            <span className="inline-flex items-center gap-1.5 text-emerald-200/70">
-              <Cloud size={12} />
-              Progression synchronisée
-            </span>
             <span>© 2026 Anglais Pro</span>
           </div>
         </div>
@@ -658,24 +608,12 @@ function SiteFooter({ collapsed }: { collapsed: boolean }) {
   );
 }
 
-function AppBackground() {
-  return (
-    <div
-      aria-hidden="true"
-      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
-    >
-      <div className="aurora aurora-a" />
-      <div className="aurora aurora-b" />
-      <div className="aurora aurora-c" />
-    </div>
-  );
-}
-
 export function AppShell() {
   const { pathname } = useLocation();
   const scrolled = useScrolled();
   const isDesktop = useIsDesktop();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [collapsed, setCollapsed] = useState<boolean>(() => {
     if (typeof window === "undefined") return false;
     return window.localStorage.getItem(SIDEBAR_KEY) === "collapsed";
@@ -690,7 +628,7 @@ export function AppShell() {
     setMobileOpen(false);
   }, [pathname]);
 
-  // Il se referme aussi si la fenêtre repasse en grand écran.
+  // Le menu se referme aussi si la fenêtre repasse en grand écran.
   useEffect(() => {
     if (isDesktop) setMobileOpen(false);
   }, [isDesktop]);
@@ -713,16 +651,39 @@ export function AppShell() {
     };
   }, [mobileOpen, isDesktop]);
 
+  // Raccourcis de recherche : « / » ou Ctrl/Cmd + K.
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      const target = event.target as HTMLElement | null;
+      const typing =
+        target?.tagName === "INPUT" ||
+        target?.tagName === "TEXTAREA" ||
+        target?.isContentEditable;
+      if (typing) return;
+      if (event.key === "/" || ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k")) {
+        event.preventDefault();
+        setMobileOpen(false);
+        setSearchOpen(true);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
+  const openSearch = () => {
+    setMobileOpen(false);
+    setSearchOpen(true);
+  };
+
   return (
     <div className="min-h-dvh">
       <ScrollToTop />
-      <AppBackground />
 
       <div
         aria-hidden="true"
         onClick={() => setMobileOpen(false)}
         className={cn(
-          "fixed inset-0 z-40 bg-[#0b0920]/45 backdrop-blur-[2px] transition-opacity duration-300 lg:hidden",
+          "fixed inset-0 z-40 bg-[#1e1060]/50 backdrop-blur-[2px] transition-opacity duration-300 lg:hidden",
           mobileOpen ? "opacity-100" : "pointer-events-none opacity-0",
         )}
       />
@@ -732,6 +693,7 @@ export function AppShell() {
         onToggle={() => setCollapsed((value) => !value)}
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
+        onSearch={openSearch}
       />
       <MobileHeader scrolled={scrolled} onOpenMenu={() => setMobileOpen(true)} />
       <main
@@ -740,7 +702,7 @@ export function AppShell() {
           collapsed ? "lg:pl-[84px]" : "lg:pl-[272px]",
         )}
       >
-        <DesktopTopBar scrolled={scrolled} />
+        <DesktopTopBar scrolled={scrolled} onSearch={openSearch} />
         <div
           key={pathname}
           className="animate-page-in mx-auto w-full max-w-6xl px-4 pb-10 pt-5 sm:px-6 lg:px-9 lg:pb-12 lg:pt-6"
@@ -750,6 +712,8 @@ export function AppShell() {
         </div>
       </main>
       <SiteFooter collapsed={collapsed} />
+
+      <SearchDialog open={searchOpen} onClose={() => setSearchOpen(false)} />
     </div>
   );
 }

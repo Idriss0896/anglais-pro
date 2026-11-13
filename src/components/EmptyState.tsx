@@ -18,7 +18,7 @@ export function EmptyState({ icon: Icon, title, description, action, className }
         className,
       )}
     >
-      <div className="grid h-16 w-16 place-items-center rounded-3xl bg-slate-50 text-slate-400 ring-1 ring-slate-100">
+      <div className="grid h-16 w-16 place-items-center rounded-3xl bg-[#f2f6ff] text-slate-400 ring-1 ring-slate-100">
         <Icon size={28} strokeWidth={1.8} />
       </div>
       <h3 className="mt-5 text-lg font-extrabold text-ink">{title}</h3>

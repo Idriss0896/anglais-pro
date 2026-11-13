@@ -1,7 +1,8 @@
 export function json(res, status, payload) {
   res.statusCode = status;
   res.setHeader("Content-Type", "application/json; charset=utf-8");
-  res.setHeader("Cache-Control", "no-store");
+  res.setHeader("Cache-Control", "no-store, max-age=0");
+  res.setHeader("X-Content-Type-Options", "nosniff");
   res.end(JSON.stringify(payload));
 }
 
@@ -12,6 +13,7 @@ export function fail(res, status, code, message, extra) {
 export function parseBody(req) {
   if (!req.body) return {};
   if (typeof req.body === "object") return req.body;
+  if (typeof req.body !== "string") return {};
   try {
     return JSON.parse(req.body);
   } catch {
@@ -57,6 +59,38 @@ export function rateLimit(req, key, { max = 12, windowMs = 60_000 } = {}) {
   return bucket.count <= max;
 }
 
+function allowedOrigins() {
+  return (process.env.APP_ORIGIN || "")
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean);
+}
+
+/**
+ * Protections CSRF : on refuse les écritures dont l'en-tête `Origin` ne
+ * correspond pas à l'hôte de l'application. Les cookies sont déjà SameSite=Lax,
+ * cette vérification ajoute une seconde barrière.
+ */
+export function isSameOrigin(req) {
+  const origin = req.headers.origin;
+  if (!origin) return true;
+  const allowlist = allowedOrigins();
+  if (allowlist.includes(origin)) return true;
+  try {
+    const originHost = new URL(origin).host;
+    const host = req.headers["x-forwarded-host"] || req.headers.host;
+    return Boolean(host) && originHost === host;
+  } catch {
+    return false;
+  }
+}
+
+export function requireSameOrigin(req, res) {
+  if (isSameOrigin(req)) return true;
+  fail(res, 403, "forbidden_origin", "Origine de la requête non autorisée.");
+  return false;
+}
+
 export function methodNotAllowed(res, allowed) {
   res.setHeader("Allow", allowed.join(", "));
   fail(res, 405, "method_not_allowed", "Méthode non autorisée.");
@@ -74,4 +108,10 @@ export function isValidEmail(value) {
 export function cleanText(value, max = 80) {
   if (typeof value !== "string") return "";
   return value.trim().replace(/\s+/g, " ").slice(0, max);
+}
+
+/** Un mot de passe solide : 8+ caractères, au moins une lettre et un chiffre. */
+export function isStrongPassword(value) {
+  if (typeof value !== "string" || value.length < 8 || value.length > 200) return false;
+  return /[a-zA-Z]/.test(value) && /\d/.test(value);
 }

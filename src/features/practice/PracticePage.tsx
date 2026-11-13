@@ -315,7 +315,7 @@ export function PracticePage() {
                 index < 2 && "border-b border-slate-100 sm:border-b-0 sm:border-r",
               )}
             >
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-slate-50 text-slate-500">
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-[#f2f6ff] text-slate-500">
                 <step.icon size={16} />
               </span>
               <div>

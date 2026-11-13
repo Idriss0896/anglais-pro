@@ -117,10 +117,17 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
     if (!open) return;
     const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKeyDown);
+
     return () => {
       document.body.style.overflow = previous;
+      window.removeEventListener("keydown", onKeyDown);
     };
-  }, [open]);
+  }, [open, onClose]);
 
   useEffect(() => {
     setActive(0);

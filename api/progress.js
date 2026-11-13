@@ -14,6 +14,7 @@ const MAX_HEARTS = 3;
 
 const DAY_KEY = /^\d{4}-\d{2}-\d{2}$/;
 const UNIT_KEY = /^[a-z0-9][a-z0-9-]{0,79}$/i;
+const FAVORITE_KEY = /^[a-z0-9][a-z0-9:_-]{0,79}$/i;
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}T[\d:.]+Z?$/;
 
 function int(value, min, max, fallback = 0) {
@@ -74,7 +75,7 @@ function sanitizeState(raw) {
   if (Array.isArray(raw.favorites)) {
     for (const entry of raw.favorites.slice(0, 2_000)) {
       if (typeof entry !== "string" || entry.length > 80) continue;
-      if (!UNIT_KEY.test(entry)) continue;
+      if (!FAVORITE_KEY.test(entry)) continue;
       if (!favorites.includes(entry)) favorites.push(entry);
     }
   }

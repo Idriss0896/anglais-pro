@@ -318,91 +318,91 @@ function DesktopTopBar({ scrolled, onSearch }: { scrolled: boolean; onSearch: ()
         }}
       />
       <div className="mx-auto w-full max-w-6xl px-4 pt-3 sm:px-6 lg:px-9">
-      <div
-        className={cn(
-          "flex h-16 items-center gap-2.5 rounded-[26px] bg-gradient-to-r from-[#3b1878] via-[#5b21b6] to-[#7c3aed] px-3 ring-1 ring-white/15 transition-shadow duration-300",
-          scrolled
-            ? "shadow-[0_16px_34px_-22px_rgba(59,24,120,0.85)]"
-            : "shadow-[0_22px_48px_-28px_rgba(59,24,120,0.9)]",
-        )}
-      >
-        <button
-          type="button"
-          onClick={onSearch}
-          className="group flex h-10 w-full max-w-[280px] items-center gap-2.5 rounded-2xl bg-white/10 px-3.5 text-left text-[12.5px] font-semibold text-indigo-100/60 ring-1 ring-white/15 transition hover:bg-white/15 hover:text-white"
-          aria-label="Rechercher une leçon"
+        <div
+          className={cn(
+            "flex h-16 items-center gap-2.5 rounded-[26px] bg-gradient-to-r from-[#3b1878] via-[#5b21b6] to-[#7c3aed] px-3 ring-1 ring-white/15 transition-shadow duration-300",
+            scrolled
+              ? "shadow-[0_16px_34px_-22px_rgba(59,24,120,0.85)]"
+              : "shadow-[0_22px_48px_-28px_rgba(59,24,120,0.9)]",
+          )}
         >
-          <Search size={16} className="shrink-0 text-indigo-100/80" />
-          <span className="truncate">Rechercher une leçon…</span>
-          <kbd className="ml-auto hidden rounded-md bg-white/10 px-1.5 py-0.5 text-[10px] font-extrabold text-indigo-100/50 ring-1 ring-white/20 xl:block">
-            /
-          </kbd>
-        </button>
-
-        <div className="ml-auto flex items-center gap-1.5">
-          <Link
-            to="/progress"
-            title={`Parcours : ${completed} leçons terminées sur ${TOTAL_UNITS}`}
-            aria-label={`Parcours : ${completed} leçons terminées sur ${TOTAL_UNITS}`}
-            className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/15 transition hover:bg-white/[0.17]"
+          <button
+            type="button"
+            onClick={onSearch}
+            className="group flex h-10 w-full max-w-[280px] items-center gap-2.5 rounded-2xl bg-white/10 px-3.5 text-left text-[12.5px] font-semibold text-indigo-100/60 ring-1 ring-white/15 transition hover:bg-white/15 hover:text-white"
+            aria-label="Rechercher une leçon"
           >
-            <ProgressRing
-              value={overall}
-              size={34}
-              stroke={4}
-              trackClassName="stroke-white/20"
-              barClassName="stroke-emerald-300"
-              label="Progression du parcours"
+            <Search size={16} className="shrink-0 text-indigo-100/80" />
+            <span className="truncate">Rechercher une leçon…</span>
+            <kbd className="ml-auto hidden rounded-md bg-white/10 px-1.5 py-0.5 text-[10px] font-extrabold text-indigo-100/50 ring-1 ring-white/20 xl:block">
+              /
+            </kbd>
+          </button>
+
+          <div className="ml-auto flex items-center gap-1.5">
+            <Link
+              to="/progress"
+              title={`Parcours : ${completed} leçons terminées sur ${TOTAL_UNITS}`}
+              aria-label={`Parcours : ${completed} leçons terminées sur ${TOTAL_UNITS}`}
+              className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/15 transition hover:bg-white/[0.17]"
             >
-              <span className="text-[8.5px] font-extrabold text-white">{overall}%</span>
-            </ProgressRing>
-          </Link>
+              <ProgressRing
+                value={overall}
+                size={34}
+                stroke={4}
+                trackClassName="stroke-white/20"
+                barClassName="stroke-emerald-300"
+                label="Progression du parcours"
+              >
+                <span className="text-[8.5px] font-extrabold text-white">{overall}%</span>
+              </ProgressRing>
+            </Link>
 
-          <HeaderStat
-            icon={Gem}
-            tone="violet"
-            label="Points"
-            value={`${formatNumber(xp)} XP`}
-            title={`${formatNumber(xp)} points d'expérience`}
-            to="/progress"
-          />
+            <HeaderStat
+              icon={Gem}
+              tone="violet"
+              label="Points"
+              value={`${formatNumber(xp)} XP`}
+              title={`${formatNumber(xp)} points d'expérience`}
+              to="/progress"
+            />
 
-          <HeaderStat
-            icon={Flame}
-            tone="amber"
-            filled
-            label="Série"
-            value={`${streak} ${plural(streak, "jour", "jours")}`}
-            title={`Série de ${streak} ${plural(streak, "jour", "jours")}`}
-            to="/progress"
-            className="hidden xl:inline-flex"
-          />
+            <HeaderStat
+              icon={Flame}
+              tone="amber"
+              filled
+              label="Série"
+              value={`${streak} ${plural(streak, "jour", "jours")}`}
+              title={`Série de ${streak} ${plural(streak, "jour", "jours")}`}
+              to="/progress"
+              className="hidden xl:inline-flex"
+            />
 
-          <Link
-            to="/progress"
-            title={`${hearts} cœur${hearts > 1 ? "s" : ""} sur ${MAX_HEARTS} — gagnes-en en terminant une leçon`}
-            aria-label={`${hearts} cœurs sur ${MAX_HEARTS}`}
-            className="group flex h-11 items-center gap-2.5 rounded-2xl bg-white/10 px-2.5 ring-1 ring-white/15 transition hover:bg-white/[0.17]"
-          >
-            <span className="grid h-7 w-7 shrink-0 place-items-center rounded-[13px] bg-gradient-to-br from-rose-400 to-rose-600 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.4)]">
-              <Heart size={14} strokeWidth={2.4} fill="currentColor" />
-            </span>
-            <span className="leading-none">
-              <span className="block text-[8.5px] font-extrabold uppercase tracking-[0.14em] text-indigo-100/55">
-                Cœurs
+            <Link
+              to="/progress"
+              title={`${hearts} cœur${hearts > 1 ? "s" : ""} sur ${MAX_HEARTS} — gagnes-en en terminant une leçon`}
+              aria-label={`${hearts} cœurs sur ${MAX_HEARTS}`}
+              className="group flex h-11 items-center gap-2.5 rounded-2xl bg-white/10 px-2.5 ring-1 ring-white/15 transition hover:bg-white/[0.17]"
+            >
+              <span className="grid h-7 w-7 shrink-0 place-items-center rounded-[13px] bg-gradient-to-br from-rose-400 to-rose-600 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.4)]">
+                <Heart size={14} strokeWidth={2.4} fill="currentColor" />
               </span>
-              <span className="mt-1 block text-[12px] font-extrabold tabular-nums leading-none text-white">
-                {hearts}
-                <span className="text-indigo-100/45">/{MAX_HEARTS}</span>
+              <span className="leading-none">
+                <span className="block text-[8.5px] font-extrabold uppercase tracking-[0.14em] text-indigo-100/55">
+                  Cœurs
+                </span>
+                <span className="mt-1 block text-[12px] font-extrabold tabular-nums leading-none text-white">
+                  {hearts}
+                  <span className="text-indigo-100/45">/{MAX_HEARTS}</span>
+                </span>
               </span>
-            </span>
-          </Link>
+            </Link>
 
-          <div className="ml-1">
-            <UserMenu showIdentity onDark />
+            <div className="ml-1">
+              <UserMenu showIdentity onDark />
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </div>
   );

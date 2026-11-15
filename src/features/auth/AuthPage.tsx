@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { useAuth } from "@/auth/AuthProvider";
 import { Logo } from "@/components/Logo";
+import { markEnteredApp } from "@/lib/entry";
 import { ApiError, googleStartUrl } from "@/lib/api";
 import { TOTAL_PHRASES, TOTAL_QUESTIONS, TOTAL_UNITS } from "@/data/curriculum";
 import { cn, formatNumber } from "@/lib/utils";
@@ -190,6 +191,7 @@ export function AuthPage() {
         <div className="flex items-center justify-between gap-3">
           <Link
             to="/"
+            onClick={() => markEnteredApp()}
             className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-2 text-[11.5px] font-extrabold text-indigo-100 ring-1 ring-white/15 transition hover:-translate-y-0.5 hover:bg-white/15 hover:text-white"
           >
             <ArrowLeft size={14} />
@@ -436,6 +438,7 @@ export function AuthPage() {
 
             <Link
               to="/"
+              onClick={() => markEnteredApp()}
               className="mt-4 flex items-center justify-center gap-1.5 text-[11.5px] font-bold text-slate-500 transition hover:text-ink"
             >
               Continuer sans compte

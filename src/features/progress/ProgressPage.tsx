@@ -53,16 +53,30 @@ function Toggle({
       aria-label={label}
       onClick={() => onChange(!checked)}
       className={cn(
-        "relative h-7 w-12 shrink-0 rounded-full transition-colors",
-        checked ? "bg-brand-600" : "bg-slate-200",
+        "relative h-8 w-14 shrink-0 rounded-full outline-none transition-colors duration-200 focus-visible:ring-4 focus-visible:ring-[#2563eb]/25",
+        checked
+          ? "bg-[#2563eb] shadow-[inset_0_1px_0_rgba(255,255,255,0.28),0_8px_18px_-10px_rgba(37,99,235,0.95)]"
+          : "bg-slate-200 ring-1 ring-inset ring-slate-300/80",
       )}
     >
       <span
         className={cn(
-          "absolute top-1 h-5 w-5 rounded-full bg-white shadow-sm transition-transform",
-          checked ? "translate-x-6" : "translate-x-1",
+          "absolute top-1 grid h-6 w-6 place-items-center rounded-full bg-white transition-transform duration-200",
+          checked
+            ? "translate-x-7 shadow-[0_2px_6px_rgba(15,23,42,0.28)]"
+            : "translate-x-1 shadow-[0_1px_3px_rgba(15,23,42,0.18)]",
         )}
-      />
+      >
+        <Check
+          size={13}
+          strokeWidth={3.4}
+          aria-hidden="true"
+          className={cn(
+            "text-[#2563eb] transition-opacity duration-150",
+            checked ? "opacity-100" : "opacity-0",
+          )}
+        />
+      </span>
     </button>
   );
 }
@@ -431,18 +445,41 @@ export function ProgressPage() {
           </div>
 
           <div className="flex items-center justify-between gap-3 px-5 py-4">
-            <div className="flex items-center gap-3">
-              <span className="grid h-9 w-9 place-items-center rounded-xl bg-brand-50 text-brand-600 ring-1 ring-brand-100">
+            <div className="flex min-w-0 items-center gap-3">
+              <span
+                className={cn(
+                  "grid h-9 w-9 shrink-0 place-items-center rounded-xl transition-colors",
+                  sound
+                    ? "bg-[#2563eb] text-white shadow-[0_8px_18px_-10px_rgba(37,99,235,0.95)]"
+                    : "bg-[#f2f6ff] text-slate-400 ring-1 ring-slate-200/70",
+                )}
+              >
                 {sound ? <Volume2 size={16} /> : <VolumeX size={16} />}
               </span>
-              <div>
+              <div className="min-w-0">
                 <p className="text-[12.5px] font-extrabold text-ink">Prononciation audio</p>
-                <p className="text-[10.5px] font-medium text-slate-400">
-                  Active ou désactive la synthèse vocale anglaise.
+                <p
+                  className={cn(
+                    "text-[10.5px] font-semibold",
+                    sound ? "text-[#2563eb]" : "text-slate-400",
+                  )}
+                >
+                  {sound ? "Activée — la voix lit les mots anglais." : "Désactivée — appuie pour écouter les mots."}
                 </p>
               </div>
             </div>
-            <Toggle checked={sound} onChange={setSound} label="Activer la prononciation audio" />
+            <div className="flex shrink-0 items-center gap-2">
+              <span
+                aria-hidden="true"
+                className={cn(
+                  "hidden text-[10px] font-extrabold uppercase tracking-[0.1em] sm:block",
+                  sound ? "text-[#2563eb]" : "text-slate-400",
+                )}
+              >
+                {sound ? "Activée" : "Désactivée"}
+              </span>
+              <Toggle checked={sound} onChange={setSound} label="Activer la prononciation audio" />
+            </div>
           </div>
 
           <div className="flex items-center justify-between gap-3 px-5 py-4">

@@ -5,16 +5,18 @@ interface LogoProps {
   compact?: boolean;
   onDark?: boolean;
   className?: string;
+  /** Destination du lien (l'accueil de l'application par défaut). */
+  to?: string;
 }
 
 /**
  * Marque « Anglais Pro » : un monogramme A dessiné à la main (aucune icône
  * linguistique générique) avec un point ambre, cohérent avec le favicon.
  */
-export function Logo({ compact = false, onDark = false, className }: LogoProps) {
+export function Logo({ compact = false, onDark = false, className, to = "/" }: LogoProps) {
   return (
     <Link
-      to="/"
+      to={to}
       className={cn("group inline-flex items-center gap-2.5", className)}
       aria-label="Anglais Pro — Accueil"
     >

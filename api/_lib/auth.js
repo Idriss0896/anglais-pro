@@ -6,7 +6,9 @@ const scrypt = promisify(scryptCallback);
 
 const SESSION_COOKIE = "ap_session";
 const STATE_COOKIE = "ap_oauth_state";
+const PKCE_COOKIE = "ap_oauth_verifier";
 const SESSION_DAYS = 14;
+const MAX_SESSIONS_PER_USER = 10;
 const SCRYPT_KEYLEN = 64;
 const SCRYPT_PARAMS = { N: 16384, r: 8, p: 1 };
 
@@ -81,38 +83,74 @@ function cookieOptions(req, maxAge, path = "/") {
     .join("; ");
 }
 
+/** Ajoute un cookie sans écraser ceux déjà posés sur la réponse. */
+function appendCookie(res, value) {
+  const current = res.getHeader("Set-Cookie");
+  if (!current) {
+    res.setHeader("Set-Cookie", [value]);
+    return;
+  }
+  const list = Array.isArray(current) ? current : [String(current)];
+  res.setHeader("Set-Cookie", [...list, value]);
+}
+
 export function setSessionCookie(req, res, token) {
   const maxAge = SESSION_DAYS * 24 * 60 * 60;
-  res.setHeader(
-    "Set-Cookie",
+  appendCookie(
+    res,
     `${SESSION_COOKIE}=${encodeURIComponent(token)}; ${cookieOptions(req, maxAge)}`,
   );
 }
 
 export function clearSessionCookie(req, res) {
-  res.setHeader(
-    "Set-Cookie",
-    `${SESSION_COOKIE}=; ${cookieOptions(req, 0)}`,
-  );
+  appendCookie(res, `${SESSION_COOKIE}=; ${cookieOptions(req, 0)}`);
 }
 
 export function setStateCookie(req, res, state) {
-  res.setHeader(
-    "Set-Cookie",
+  appendCookie(
+    res,
     `${STATE_COOKIE}=${encodeURIComponent(state)}; ${cookieOptions(req, 600)}`,
   );
 }
 
 export function clearStateCookie(req, res) {
-  res.setHeader("Set-Cookie", `${STATE_COOKIE}=; ${cookieOptions(req, 0)}`);
+  appendCookie(res, `${STATE_COOKIE}=; ${cookieOptions(req, 0)}`);
 }
 
 export function readStateCookie(req) {
   return parseCookies(req)[STATE_COOKIE] || "";
 }
 
+export function setPkceCookie(req, res, verifier) {
+  appendCookie(
+    res,
+    `${PKCE_COOKIE}=${encodeURIComponent(verifier)}; ${cookieOptions(req, 600)}`,
+  );
+}
+
+export function readPkceCookie(req) {
+  return parseCookies(req)[PKCE_COOKIE] || "";
+}
+
+export function clearPkceCookie(req, res) {
+  appendCookie(res, `${PKCE_COOKIE}=; ${cookieOptions(req, 0)}`);
+}
+
+/** Comparaison à temps constant pour les jetons OAuth (state, PKCE…). */
+export function safeEqual(a, b) {
+  if (typeof a !== "string" || typeof b !== "string" || a.length !== b.length) return false;
+  return timingSafeEqual(Buffer.from(a), Buffer.from(b));
+}
+
 export function randomState() {
   return randomBytes(24).toString("base64url");
+}
+
+/** PKCE (S256) : le code d'autorisation ne peut pas être rejoué sans le secret local. */
+export function createPkcePair() {
+  const verifier = randomBytes(32).toString("base64url");
+  const challenge = createHash("sha256").update(verifier).digest("base64url");
+  return { verifier, challenge };
 }
 
 export async function createSession(req, res, userId) {
@@ -124,6 +162,18 @@ export async function createSession(req, res, userId) {
   await sql`
     INSERT INTO sessions (token_hash, user_id, expires_at)
     VALUES (${hashToken(token)}, ${userId}, ${expiresAt.toISOString()})
+  `;
+  // Limite le nombre de sessions actives : une session volée ne survit pas
+  // indéfiniment à côté des connexions légitimes.
+  await sql`
+    DELETE FROM sessions
+    WHERE user_id = ${userId}
+      AND token_hash NOT IN (
+        SELECT token_hash FROM sessions
+        WHERE user_id = ${userId}
+        ORDER BY created_at DESC
+        LIMIT ${MAX_SESSIONS_PER_USER}
+      )
   `;
   setSessionCookie(req, res, token);
   return token;

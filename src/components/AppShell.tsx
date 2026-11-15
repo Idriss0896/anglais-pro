@@ -7,7 +7,6 @@ import {
   Flame,
   Gem,
   Globe,
-  Heart,
   Home,
   LayoutGrid,
   MessageCircle,
@@ -17,8 +16,7 @@ import {
   Tag,
   type LucideIcon,
 } from "lucide-react";
-import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
-import { useAuth } from "@/auth/AuthProvider";
+import { Link, NavLink, Outlet, useLocation } from "react-router-dom";import { useAuth } from "@/auth/AuthProvider";
 import { GuestBanner } from "./GuestBanner";
 import { HeaderStat } from "./HeaderStat";
 import { Logo } from "./Logo";
@@ -26,7 +24,7 @@ import { ProgressRing } from "./ProgressRing";
 import { SearchDialog } from "./SearchDialog";
 import { UserAvatar } from "./UserAvatar";
 import { UserMenu } from "./UserMenu";
-import { MAX_HEARTS, useProgressStore, completedCount } from "@/store/useProgressStore";
+import { useProgressStore, completedCount } from "@/store/useProgressStore";
 import { getRank } from "@/lib/achievements";
 import { cn, formatNumber, percent, plural } from "@/lib/utils";
 import { TOTAL_PHRASES, TOTAL_QUESTIONS, TOTAL_UNITS } from "@/data/curriculum";
@@ -39,7 +37,7 @@ interface NavItem {
 }
 
 const primaryNav: NavItem[] = [
-  { to: "/", label: "Accueil", icon: Home, end: true },
+  { to: "/accueil", label: "Accueil", icon: Home, end: true },
   { to: "/learn", label: "Parcours", icon: LayoutGrid },
   { to: "/grammar", label: "Grammaire", icon: BookOpen },
   { to: "/vocabulary", label: "Vocabulaire", icon: Tag },
@@ -186,7 +184,7 @@ function Sidebar({
           collapsed ? "flex-col items-center gap-3" : "items-center justify-between gap-2",
         )}
       >
-        <Logo compact={collapsed} onDark />
+        <Logo to="/accueil" compact={collapsed} onDark />
         <button
           type="button"
           onClick={onToggle}
@@ -295,7 +293,6 @@ function useScrolled(threshold = 8) {
 function DesktopTopBar({ scrolled, onSearch }: { scrolled: boolean; onSearch: () => void }) {
   const xp = useProgressStore((state) => state.xp);
   const streak = useProgressStore((state) => state.streak);
-  const hearts = useProgressStore((state) => state.hearts);
   const lessons = useProgressStore((state) => state.lessons);
   const completed = completedCount(lessons);
   const overall = percent(completed, TOTAL_UNITS);
@@ -340,24 +337,6 @@ function DesktopTopBar({ scrolled, onSearch }: { scrolled: boolean; onSearch: ()
           </button>
 
           <div className="ml-auto flex items-center gap-1.5">
-            <Link
-              to="/progress"
-              title={`Parcours : ${completed} leçons terminées sur ${TOTAL_UNITS}`}
-              aria-label={`Parcours : ${completed} leçons terminées sur ${TOTAL_UNITS}`}
-              className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/15 transition hover:bg-white/[0.17]"
-            >
-              <ProgressRing
-                value={overall}
-                size={34}
-                stroke={4}
-                trackClassName="stroke-white/20"
-                barClassName="stroke-emerald-300"
-                label="Progression du parcours"
-              >
-                <span className="text-[8.5px] font-extrabold text-white">{overall}%</span>
-              </ProgressRing>
-            </Link>
-
             <HeaderStat
               icon={Gem}
               tone="violet"
@@ -375,27 +354,24 @@ function DesktopTopBar({ scrolled, onSearch }: { scrolled: boolean; onSearch: ()
               value={`${streak} ${plural(streak, "jour", "jours")}`}
               title={`Série de ${streak} ${plural(streak, "jour", "jours")}`}
               to="/progress"
-              className="hidden xl:inline-flex"
             />
 
             <Link
               to="/progress"
-              title={`${hearts} cœur${hearts > 1 ? "s" : ""} sur ${MAX_HEARTS} — gagnes-en en terminant une leçon`}
-              aria-label={`${hearts} cœurs sur ${MAX_HEARTS}`}
-              className="group flex h-11 items-center gap-2.5 rounded-2xl bg-white/10 px-2.5 ring-1 ring-white/15 transition hover:bg-white/[0.17]"
+              title={`Parcours : ${completed} leçons terminées sur ${TOTAL_UNITS}`}
+              aria-label={`Parcours : ${completed} leçons terminées sur ${TOTAL_UNITS}`}
+              className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/15 transition hover:bg-white/[0.17]"
             >
-              <span className="grid h-7 w-7 shrink-0 place-items-center rounded-[13px] bg-gradient-to-br from-rose-400 to-rose-600 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.4)]">
-                <Heart size={14} strokeWidth={2.4} fill="currentColor" />
-              </span>
-              <span className="leading-none">
-                <span className="block text-[8.5px] font-extrabold uppercase tracking-[0.14em] text-indigo-100/55">
-                  Cœurs
-                </span>
-                <span className="mt-1 block text-[12px] font-extrabold tabular-nums leading-none text-white">
-                  {hearts}
-                  <span className="text-indigo-100/45">/{MAX_HEARTS}</span>
-                </span>
-              </span>
+              <ProgressRing
+                value={overall}
+                size={34}
+                stroke={4}
+                trackClassName="stroke-white/20"
+                barClassName="stroke-emerald-300"
+                label="Progression du parcours"
+              >
+                <span className="text-[8.5px] font-extrabold text-white">{overall}%</span>
+              </ProgressRing>
             </Link>
 
             <div className="ml-1">
@@ -415,8 +391,8 @@ function MobileHeader({
   scrolled: boolean;
   onOpenMenu: () => void;
 }) {
-  const hearts = useProgressStore((state) => state.hearts);
   const xp = useProgressStore((state) => state.xp);
+  const streak = useProgressStore((state) => state.streak);
   const lessons = useProgressStore((state) => state.lessons);
   const completed = completedCount(lessons);
   const overall = percent(completed, TOTAL_UNITS);
@@ -474,18 +450,17 @@ function MobileHeader({
           </div>
         </Link>
 
-        <Link
+        <HeaderStat
+          compact
+          icon={Flame}
+          tone="amber"
+          filled
+          label="Série"
+          value={`${streak} j`}
+          title={`Série de ${streak} ${plural(streak, "jour", "jours")}`}
           to="/progress"
-          title={`${hearts} cœur${hearts > 1 ? "s" : ""} sur ${MAX_HEARTS} — gagnes-en en terminant une leçon`}
-          aria-label={`${hearts} cœurs sur ${MAX_HEARTS}`}
-          className="group flex h-10 shrink-0 items-center gap-1.5 rounded-2xl bg-white/10 px-2.5 ring-1 ring-white/15 transition hover:bg-white/[0.17]"
-        >
-          <Heart size={13} strokeWidth={2.4} fill="currentColor" className="text-rose-300" />
-          <span className="text-[11px] font-extrabold tabular-nums leading-none text-white">
-            {hearts}
-            <span className="text-indigo-100/45">/{MAX_HEARTS}</span>
-          </span>
-        </Link>
+          className="max-[359px]:hidden"
+        />
 
         <HeaderStat
           compact
@@ -529,7 +504,7 @@ function SiteFooter({ collapsed }: { collapsed: boolean }) {
       <div className="relative mx-auto max-w-6xl px-4 pb-14 pt-11 sm:px-6 lg:px-9 lg:pb-12">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1.35fr] lg:gap-14">
           <div>
-            <Logo onDark />
+            <Logo to="/accueil" onDark />
             <p className="mt-3 max-w-sm text-[12.5px] font-medium leading-6 text-indigo-100/55">
               Cinq minutes par jour pour parler anglais avec assurance. Des leçons courtes, des
               exercices variés et un suivi clair de ta progression.

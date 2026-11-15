@@ -20,6 +20,7 @@ import {
   type User,
 } from "@/lib/api";
 import { mergeProgress } from "@/lib/progressSync";
+import { markEnteredApp } from "@/lib/entry";
 import { progressSnapshot, useProgressStore } from "@/store/useProgressStore";
 
 interface AuthContextValue {
@@ -49,6 +50,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     userRef.current = user;
+    if (user) markEnteredApp();
   }, [user]);
 
   const hydrateFromServer = useCallback(async (nextUser: User) => {

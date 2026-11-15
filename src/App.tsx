@@ -1,9 +1,11 @@
-import { useEffect } from "react";
-import { HashRouter, Link, Route, Routes, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { HashRouter, Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Compass } from "lucide-react";
-import { AuthProvider } from "@/auth/AuthProvider";
+import { AuthProvider, useAuth } from "@/auth/AuthProvider";
 import { AppShell } from "@/components/AppShell";
+import { Logo } from "@/components/Logo";
 import { HomePage } from "@/features/home/HomePage";
+import { LandingPage } from "@/features/landing/LandingPage";
 import { LearnPage } from "@/features/learn/LearnPage";
 import { GrammarPage } from "@/features/grammar/GrammarPage";
 import { VocabularyPage } from "@/features/vocabulary/VocabularyPage";
@@ -17,6 +19,7 @@ import { AuthPage } from "@/features/auth/AuthPage";
 import { ProfilePage } from "@/features/profile/ProfilePage";
 import { useProgressStore } from "@/store/useProgressStore";
 import { primeSpeech, setAudioEnabled } from "@/lib/audio";
+import { hasEnteredApp } from "@/lib/entry";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -24,6 +27,29 @@ function ScrollToTop() {
     window.scrollTo(0, 0);
   }, [pathname]);
   return null;
+}
+
+function EntrySplash() {
+  return (
+    <div className="grid min-h-dvh place-items-center bg-gradient-to-br from-[#2e1065] via-[#4c1d95] to-[#6d28d9]">
+      <div className="animate-pop">
+        <Logo onDark />
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Point d'entrée du site : la page de présentation s'affiche lors de la
+ * première visite, puis l'application prend le relais.
+ */
+function Entry() {
+  const { user, loading } = useAuth();
+  const [entered] = useState(hasEnteredApp);
+
+  if (!entered && loading) return <EntrySplash />;
+  if (entered || user) return <Navigate to="/accueil" replace />;
+  return <LandingPage />;
 }
 
 function NotFound() {
@@ -37,7 +63,7 @@ function NotFound() {
         Ce chemin ne mène nulle part. Reviens à l'accueil pour reprendre ton parcours.
       </p>
       <Link
-        to="/"
+        to="/accueil"
         className="mt-5 inline-flex h-11 items-center rounded-2xl bg-brand-600 px-5 text-sm font-extrabold text-white"
       >
         Retour à l'accueil
@@ -62,11 +88,12 @@ export default function App() {
       <AuthProvider>
         <ScrollToTop />
         <Routes>
+          <Route path="/" element={<Entry />} />
           <Route path="/auth" element={<AuthPage />} />
           <Route path="/lesson/:unitId" element={<LessonPage />} />
           <Route path="/practice/session/:mode" element={<PracticeSessionPage />} />
           <Route element={<AppShell />}>
-            <Route index element={<HomePage />} />
+            <Route path="/accueil" element={<HomePage />} />
             <Route path="/learn" element={<LearnPage />} />
             <Route path="/grammar" element={<GrammarPage />} />
             <Route path="/vocabulary" element={<VocabularyPage />} />

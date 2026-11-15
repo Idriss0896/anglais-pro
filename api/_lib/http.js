@@ -1,7 +1,12 @@
+import { createHash } from "node:crypto";
+
+const MAX_BODY_BYTES = 1_000_000;
+
 export function json(res, status, payload) {
   res.statusCode = status;
   res.setHeader("Content-Type", "application/json; charset=utf-8");
   res.setHeader("Cache-Control", "no-store, max-age=0");
+  res.setHeader("Pragma", "no-cache");
   res.setHeader("X-Content-Type-Options", "nosniff");
   res.end(JSON.stringify(payload));
 }
@@ -14,11 +19,17 @@ export function parseBody(req) {
   if (!req.body) return {};
   if (typeof req.body === "object") return req.body;
   if (typeof req.body !== "string") return {};
+  if (req.body.length > MAX_BODY_BYTES) return {};
   try {
     return JSON.parse(req.body);
   } catch {
     return {};
   }
+}
+
+/** Clé de limitation non réversible : aucun email en clair dans la mémoire. */
+export function rateLimitIdentity(value) {
+  return createHash("sha256").update(String(value)).digest("hex").slice(0, 32);
 }
 
 export function requestUrl(req) {

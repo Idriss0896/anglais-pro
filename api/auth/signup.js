@@ -14,6 +14,7 @@ import {
   normalizeEmail,
   parseBody,
   rateLimit,
+  rateLimitIdentity,
   requireSameOrigin,
 } from "../_lib/http.js";
 
@@ -42,6 +43,14 @@ export default async function handler(req, res) {
       "weak_password",
       "Le mot de passe doit contenir au moins 8 caractères, dont une lettre et un chiffre.",
     );
+  }
+  if (
+    !rateLimit(req, `signup-account:${rateLimitIdentity(email)}`, {
+      max: 5,
+      windowMs: 10 * 60_000,
+    })
+  ) {
+    return fail(res, 429, "too_many_requests", "Trop de tentatives. Réessaie dans quelques minutes.");
   }
 
   try {

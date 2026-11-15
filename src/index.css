@@ -243,6 +243,58 @@
     transform-origin: center;
     animation: mascot-blink 6.5s ease-in-out infinite;
   }
+
+  /* Apparition au défilement (page de présentation). */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.75s cubic-bezier(0.2, 0.8, 0.2, 1),
+      transform 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .animate-float-slow {
+    animation: float 9s ease-in-out infinite;
+  }
+
+  .animate-float-slower {
+    animation: float 12s ease-in-out infinite;
+    animation-delay: -3s;
+  }
+
+  .animate-wave {
+    transform-origin: center;
+    animation: wave 1.15s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow-pulse 6s ease-in-out infinite;
+  }
+
+  .animate-rise {
+    animation: rise 0.85s cubic-bezier(0.18, 0.9, 0.22, 1) both;
+  }
+
+  .hero-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 46px 46px;
+    mask-image: radial-gradient(ellipse at 50% 20%, #000 25%, transparent 78%);
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(100deg, #c4b5fd 0%, #ffffff 42%, #bfdbfe 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 }
 
 @keyframes fade-up {
@@ -368,6 +420,46 @@
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.07);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }
 

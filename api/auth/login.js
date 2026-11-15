@@ -13,6 +13,7 @@ import {
   normalizeEmail,
   parseBody,
   rateLimit,
+  rateLimitIdentity,
   requireSameOrigin,
 } from "../_lib/http.js";
 
@@ -27,8 +28,18 @@ export default async function handler(req, res) {
   const email = normalizeEmail(body.email);
   const password = typeof body.password === "string" ? body.password : "";
 
-  if (!isValidEmail(email) || !password) {
+  if (!isValidEmail(email) || !password || password.length > 200) {
     return fail(res, 400, "invalid_credentials", "Email ou mot de passe incorrect.");
+  }
+  // Deuxième limite, par compte : ralentit les attaques distribuées sur un
+  // même email sans bloquer les autres utilisateurs.
+  if (
+    !rateLimit(req, `login-account:${rateLimitIdentity(email)}`, {
+      max: 8,
+      windowMs: 5 * 60_000,
+    })
+  ) {
+    return fail(res, 429, "too_many_requests", "Trop de tentatives. Réessaie dans quelques minutes.");
   }
 
   try {

@@ -1,4 +1,9 @@
-import { randomState, setStateCookie } from "../../_lib/auth.js";
+import {
+  createPkcePair,
+  randomState,
+  setPkceCookie,
+  setStateCookie,
+} from "../../_lib/auth.js";
 import { requestUrl } from "../../_lib/http.js";
 
 export default async function handler(req, res) {
@@ -14,7 +19,9 @@ export default async function handler(req, res) {
   }
 
   const state = randomState();
+  const { verifier, challenge } = createPkcePair();
   setStateCookie(req, res, state);
+  setPkceCookie(req, res, verifier);
 
   const redirectUri =
     process.env.GOOGLE_REDIRECT_URI || `${url.origin}/api/auth/google/callback`;
@@ -25,6 +32,8 @@ export default async function handler(req, res) {
   authorize.searchParams.set("response_type", "code");
   authorize.searchParams.set("scope", "openid email profile");
   authorize.searchParams.set("state", state);
+  authorize.searchParams.set("code_challenge", challenge);
+  authorize.searchParams.set("code_challenge_method", "S256");
   authorize.searchParams.set("prompt", "select_account");
   authorize.searchParams.set("access_type", "online");
 

@@ -30,8 +30,10 @@ Une application web **mobile-first** pensée pour les francophones qui veulent p
 - **Grammaire & vocabulaire** — 17 fiches de grammaire et 14 thèmes de vocabulaire, consultables hors leçon.
 - **910 expressions utiles** — avec traduction, note d'usage et écoute audio.
 - **Révision ciblée** — sessions par compétence, marathon de 20 questions et flashcards.
-- **Progression motivante** — XP, cœurs qui se gagnent en terminant des leçons (3 maximum), série quotidienne, objectif journalier, rangs et succès.
-- **Audio intégré** — prononciation via la synthèse vocale du navigateur (activable/désactivable).
+- **Progression motivante** — XP, cœurs qui se gagnent en terminant des leçons (3 maximum), série quotidienne, objectif journalier, rangs et succès. La barre supérieure met en avant les points, la série de jours, le pourcentage d'avancement et le profil, sans icône cœur.
+- **Page de présentation** — un landing page moderne (dégradés violet/bleu, aperçu de leçon animé, apparitions au défilement) accueille les nouveaux visiteurs avant l'application.
+- **Audio intégré** — prononciation via la synthèse vocale du navigateur, avec un réglage explicite « Prononciation audio » dont l'état activé est immédiatement lisible (interrupteur bleu, coche et libellé « Activée »).
+- **Sécurité renforcée** — sessions HttpOnly 14 jours, isolation par `user_id`, RLS et privilèges retirés sur les tables, limitation des tentatives et en-têtes stricts.
 - **Coachs illustrés** — quatre personnages animés (Mia, Leo, Zoé et Sam) accompagnent les expressions, le vocabulaire et les conseils avec des bulles d'explication.
 - **Mobile d'abord** — barre haute arrondie qui reste collée en haut pendant le défilement, sidebar unique qui se referme en rail d'icônes (tiroir animé sur mobile, panneau fixe sur ordinateur).
 - **Compte utilisateur** — inscription email / mot de passe ou Google, photo de profil, session sécurisée.
@@ -70,11 +72,24 @@ Une application web **mobile-first** pensée pour les francophones qui veulent p
 
 L'application fonctionne **sans compte**. Dès la première leçon, une invitation discrète propose de créer un compte pour synchroniser la progression.
 
-- **Inscription email** : mot de passe haché avec `scrypt`, session dans un cookie `HttpOnly` / `SameSite=Lax` de 30 jours.
-- **Google** : active le fournisseur en renseignant `GOOGLE_CLIENT_ID` et `GOOGLE_CLIENT_SECRET` sur Vercel, avec l'URI de redirection `https://<domaine>/api/auth/google/callback`.
+- **Inscription email** : mot de passe haché avec `scrypt`, session dans un cookie `HttpOnly` / `SameSite=Lax` de 14 jours, plafonnée à 10 sessions actives par compte.
+- **Google** : active le fournisseur en renseignant `GOOGLE_CLIENT_ID` et `GOOGLE_CLIENT_SECRET` sur Vercel, avec l'URI de redirection `https://<domaine>/api/auth/google/callback`. Le flux utilise PKCE (S256) et un cookie `state` à usage unique.
 - **Photo** : redimensionnée et compressée en 256×256 dans le navigateur, puis stockée dans Postgres.
 - **Progression** : fusionnée à la connexion (aucune perte des données invité), puis synchronisée avec un debounce.
 - **Tables créées automatiquement** au premier appel : `users`, `sessions`, `progress`.
+
+### Défense en profondeur
+
+| Couche | Mesure |
+| --- | --- |
+| Base de données | RLS activé sur `users`, `sessions` et `progress`, aucune politique permissive : seul le rôle propriétaire (l'API) peut lire. `PUBLIC` et les rôles `anon` / `authenticated` sont révoqués. Les contraintes vérifient l'email en minuscules, la longueur des jetons et la forme JSON de la progression. |
+| Requêtes | Chaque lecture/écriture est filtrée par `user_id` issu de la session serveur — aucun identifiant utilisateur n'est accepté depuis le client. |
+| Sessions | Jeton aléatoire de 32 octets, stocké uniquement sous forme de hash SHA-256, cookie `HttpOnly`, `Secure`, `SameSite=Lax`, expiration 14 jours et purge opportuniste. |
+| Mots de passe | `scrypt` (N=16384, r=8, p=1), sel aléatoire, comparaison à temps constant, hash factice pour les emails inconnus (anti-énumération). |
+| Écritures | Vérification d'origine (CSRF), limitation par IP et par compte, corps limité à 1 Mo, état de progression assaini et borné. |
+| Navigateur | CSP stricte, HSTS, `nosniff`, `X-Frame-Options: DENY`, `frame-ancestors 'none'`, COOP/CORP, `Referrer-Policy`, permissions désactivées. |
+
+Le fichier `api/_lib/db.js` applique automatiquement le durcissement si la connexion est propriétaire des tables ; sinon il l'ignore pour ne jamais bloquer l'application, l'isolation applicative restant active.
 
 Variables d'environnement : voir [`.env.example`](.env.example). Sur Vercel, l'intégration Neon fournit `DATABASE_URL` automatiquement.
 
@@ -126,6 +141,7 @@ anglais-pro/
 │  ├─ data/
 │  │  └─ curriculum.ts      # Agrégation, index et sélecteurs du contenu
 │  ├─ features/
+│  │  ├─ landing/           # Page de présentation (avant l'application)
 │  │  ├─ home/              # Tableau de bord
 │  │  ├─ learn/             # Parcours
 │  │  ├─ library/           # Bibliothèque de leçons (recherche + filtres)
@@ -151,7 +167,8 @@ anglais-pro/
 
 | Route | Page |
 | --- | --- |
-| `/` | Accueil / tableau de bord |
+| `/` | Page de présentation (première visite) puis redirection vers l'accueil |
+| `/accueil` | Accueil / tableau de bord |
 | `/learn` | Parcours par niveau |
 | `/grammar` | Bibliothèque de grammaire |
 | `/vocabulary` | Thèmes de vocabulaire |

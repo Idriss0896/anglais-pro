@@ -1,7 +1,11 @@
 import { sql, ensureSchema } from "../../_lib/db.js";
 import {
+  clearPkceCookie,
+  clearStateCookie,
   createSession,
+  readPkceCookie,
   readStateCookie,
+  safeEqual,
 } from "../../_lib/auth.js";
 import { requestUrl } from "../../_lib/http.js";
 
@@ -21,10 +25,16 @@ export default async function handler(req, res) {
   const code = url.searchParams.get("code");
   const state = url.searchParams.get("state");
   const expectedState = readStateCookie(req);
+  const verifier = readPkceCookie(req);
 
-  if (!code || !state || !expectedState || state !== expectedState) {
+  // Les cookies OAuth sont à usage unique, même si la vérification échoue.
+  clearStateCookie(req, res);
+  clearPkceCookie(req, res);
+
+  if (!code || !state || !expectedState || !safeEqual(state, expectedState)) {
     return redirectError(res, "google_state");
   }
+  if (!verifier) return redirectError(res, "google_state");
 
   const redirectUri =
     process.env.GOOGLE_REDIRECT_URI || `${url.origin}/api/auth/google/callback`;
@@ -39,6 +49,7 @@ export default async function handler(req, res) {
         client_secret: clientSecret,
         redirect_uri: redirectUri,
         grant_type: "authorization_code",
+        code_verifier: verifier,
       }),
     });
 
@@ -59,9 +70,14 @@ export default async function handler(req, res) {
 
     const profile = await profileResponse.json();
     const email = typeof profile.email === "string" ? profile.email.trim().toLowerCase() : "";
-    if (!email || profile.email_verified === false) {
+    const googleId = typeof profile.sub === "string" ? profile.sub : "";
+    if (!email || profile.email_verified !== true || !googleId) {
       return redirectError(res, "google_email");
     }
+    const picture =
+      typeof profile.picture === "string" && profile.picture.startsWith("https://")
+        ? profile.picture.slice(0, 1000)
+        : null;
 
     await ensureSchema();
     const rows = await sql`
@@ -69,9 +85,9 @@ export default async function handler(req, res) {
       VALUES (
         ${email},
         ${typeof profile.name === "string" ? profile.name.slice(0, 60) : null},
-        ${typeof profile.picture === "string" ? profile.picture : null},
+        ${picture},
         'google',
-        ${typeof profile.sub === "string" ? profile.sub : null}
+        ${googleId}
       )
       ON CONFLICT (email) DO UPDATE SET
         google_id = COALESCE(users.google_id, EXCLUDED.google_id),

@@ -35,7 +35,10 @@ async function hardenDatabase() {
       AND c.relname IN ('users', 'sessions', 'progress')
       AND c.relkind = 'r'
   `;
-  if (!owner?.owns) return;
+  if (!owner?.owns) {
+    console.warn("[db] RLS ignoré : la connexion n'est pas propriétaire des tables.");
+    return;
+  }
 
   await sql`ALTER TABLE users ENABLE ROW LEVEL SECURITY`;
   await sql`ALTER TABLE sessions ENABLE ROW LEVEL SECURITY`;
@@ -59,6 +62,8 @@ async function hardenDatabase() {
     END
     $$
   `;
+
+  console.log("[db] RLS actif sur users, sessions et progress ; accès public révoqué.");
 }
 
 /**

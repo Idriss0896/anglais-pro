@@ -459,7 +459,6 @@ function MobileHeader({
           value={`${streak} j`}
           title={`Série de ${streak} ${plural(streak, "jour", "jours")}`}
           to="/progress"
-          className="max-[359px]:hidden"
         />
 
         <HeaderStat
@@ -467,7 +466,12 @@ function MobileHeader({
           icon={Gem}
           tone="violet"
           label="Points"
-          value={`${formatNumber(xp)} XP`}
+          content={
+            <>
+              {formatNumber(xp)}
+              <span className="hidden min-[360px]:inline"> XP</span>
+            </>
+          }
           title={`${formatNumber(xp)} points d'expérience`}
           to="/progress"
         />

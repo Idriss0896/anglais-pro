@@ -26,7 +26,7 @@ export function SectionHeading({
     <div className={cn("mb-3.5 flex items-end justify-between gap-4", className)}>
       <div className="flex items-center gap-2.5">
         {Icon && (
-          <span className="grid h-8 w-8 place-items-center rounded-xl bg-white text-brand-600 ring-1 ring-slate-900/[0.06]">
+          <span className="grid h-8 w-8 place-items-center rounded-xl bg-surface text-brand-strong ring-1 ring-slate-900/[0.06]">
             <Icon size={16} strokeWidth={2.3} />
           </span>
         )}
@@ -41,7 +41,7 @@ export function SectionHeading({
         (to && (
           <Link
             to={to}
-            className="group inline-flex shrink-0 items-center gap-1 text-xs font-extrabold text-brand-600 hover:text-brand-700"
+            className="group inline-flex shrink-0 items-center gap-1 text-xs font-extrabold text-brand-strong hover:text-brand-strong"
           >
             {linkLabel}
             <ArrowRight

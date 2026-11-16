@@ -21,9 +21,9 @@ export const MASCOTS: Record<MascotId, Palette> = {
   mia: {
     name: "Mia",
     role: "Coach des expressions",
-    accent: "text-violet-700",
-    soft: "bg-violet-50",
-    ring: "ring-violet-100",
+    accent: "text-violet-strong",
+    soft: "bg-violet-soft",
+    ring: "ring-violet-strong/20",
     skin: "#f7c9a8",
     skinShade: "#e9b492",
     hair: "#33254a",
@@ -33,9 +33,9 @@ export const MASCOTS: Record<MascotId, Palette> = {
   leo: {
     name: "Leo",
     role: "Coach de grammaire",
-    accent: "text-sky-700",
-    soft: "bg-sky-50",
-    ring: "ring-sky-100",
+    accent: "text-sky-strong",
+    soft: "bg-sky-soft",
+    ring: "ring-sky-strong/20",
     skin: "#eeb389",
     skinShade: "#dda077",
     hair: "#3a2b23",
@@ -45,9 +45,9 @@ export const MASCOTS: Record<MascotId, Palette> = {
   zoe: {
     name: "Zoé",
     role: "Coach du vocabulaire",
-    accent: "text-emerald-700",
-    soft: "bg-emerald-50",
-    ring: "ring-emerald-100",
+    accent: "text-emerald-strong",
+    soft: "bg-emerald-soft",
+    ring: "ring-emerald-strong/20",
     skin: "#b07350",
     skinShade: "#9a6243",
     hair: "#211c2c",
@@ -57,9 +57,9 @@ export const MASCOTS: Record<MascotId, Palette> = {
   sam: {
     name: "Sam",
     role: "Coach de prononciation",
-    accent: "text-amber-700",
-    soft: "bg-amber-50",
-    ring: "ring-amber-100",
+    accent: "text-amber-strong",
+    soft: "bg-amber-soft",
+    ring: "ring-amber-strong/20",
     skin: "#f3d3b2",
     skinShade: "#e2bd99",
     hair: "#9a4a12",
@@ -317,7 +317,7 @@ export function MascotSay({
       <div
         className={cn(
           "relative min-w-0 flex-1 rounded-[18px] rounded-bl-[7px] px-3.5 py-2.5 ring-1",
-          tone === "tinted" ? cn(c.soft, c.ring) : "bg-white ring-slate-900/[0.06]",
+          tone === "tinted" ? cn(c.soft, c.ring) : "bg-surface ring-slate-900/[0.06]",
         )}
       >
         {(label ?? c.name) && (

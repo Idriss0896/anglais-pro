@@ -45,7 +45,7 @@ export function UnitCard({
       )}
     >
       {featured && (
-        <span className="absolute right-4 top-4 inline-flex items-center gap-1 rounded-full bg-white px-2.5 py-1 text-[10px] font-extrabold text-[#1d4ed8] shadow-sm">
+        <span className="absolute right-4 top-4 inline-flex items-center gap-1 rounded-full bg-surface px-2.5 py-1 text-[10px] font-extrabold text-azure-strong shadow-sm">
           <Play size={11} className="fill-current" />
           Prochaine
         </span>
@@ -78,7 +78,7 @@ export function UnitCard({
                   "inline-flex items-center gap-1 rounded-full px-2 py-1 text-[10px] font-extrabold",
                   featured
                     ? "bg-white/15 text-white ring-1 ring-white/20"
-                    : "bg-emerald-50 text-emerald-700 ring-1 ring-emerald-100",
+                    : "bg-emerald-soft text-emerald-strong ring-1 ring-emerald-strong/20",
                 )}
               >
                 <CheckCircle2 size={11} strokeWidth={2.8} />
@@ -89,7 +89,7 @@ export function UnitCard({
           <h3
             className={cn(
               "mt-2 pr-10 text-[15px] font-extrabold leading-tight transition-colors",
-              featured ? "text-white" : "text-ink group-hover:text-[#1d4ed8]",
+              featured ? "text-white" : "text-ink group-hover:text-azure-strong",
             )}
           >
             {unit.title}
@@ -124,7 +124,7 @@ export function UnitCard({
             <span
               className={cn(
                 "inline-flex items-center gap-1",
-                featured ? "text-emerald-200" : "text-emerald-600",
+                featured ? "text-emerald-200" : "text-emerald-strong",
               )}
             >
               <CheckCircle2 size={12.5} />
@@ -136,8 +136,8 @@ export function UnitCard({
           className={cn(
             "grid h-8 w-8 shrink-0 place-items-center rounded-full transition-all",
             featured
-              ? "bg-white text-[#1d4ed8]"
-              : "bg-[#eef4ff] text-[#2563eb] group-hover:bg-[#1d4ed8] group-hover:text-white",
+              ? "bg-surface text-azure-strong"
+              : "bg-azure-soft text-azure-strong group-hover:bg-azure-700 group-hover:text-white",
           )}
         >
           <ArrowUpRight size={15} strokeWidth={2.6} />

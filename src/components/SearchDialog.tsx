@@ -178,10 +178,10 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
         role="dialog"
         aria-modal="true"
         aria-label="Rechercher une leçon ou une expression"
-        className="animate-slide-up relative flex w-full max-w-xl flex-col overflow-hidden rounded-[26px] bg-white shadow-[0_40px_90px_-30px_rgba(30,16,96,0.55)] ring-1 ring-[#2563eb]/10"
+        className="animate-slide-up relative flex w-full max-w-xl flex-col overflow-hidden rounded-[26px] bg-surface shadow-[0_40px_90px_-30px_rgba(30,16,96,0.55)] ring-1 ring-azure-500/10"
       >
-        <div className="flex items-center gap-3 border-b border-[#2563eb]/10 px-4 py-3.5">
-          <Search size={18} className="shrink-0 text-[#2563eb]" />
+        <div className="flex items-center gap-3 border-b border-azure-500/10 px-4 py-3.5">
+          <Search size={18} className="shrink-0 text-azure-strong" />
           <input
             ref={inputRef}
             value={query}
@@ -199,12 +199,12 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
                 inputRef.current?.focus();
               }}
               aria-label="Effacer la recherche"
-              className="grid h-8 w-8 place-items-center rounded-full text-slate-400 transition hover:bg-[#eef4ff] hover:text-[#1d4ed8]"
+              className="grid h-8 w-8 place-items-center rounded-full text-slate-400 transition hover:bg-azure-soft hover:text-azure-strong"
             >
               <X size={15} />
             </button>
           ) : (
-            <kbd className="hidden rounded-md bg-[#eef4ff] px-2 py-1 text-[10px] font-extrabold text-[#1d4ed8] ring-1 ring-[#2563eb]/15 sm:block">
+            <kbd className="hidden rounded-md bg-azure-soft px-2 py-1 text-[10px] font-extrabold text-azure-strong ring-1 ring-azure-500/15 sm:block">
               Échap
             </kbd>
           )}
@@ -215,10 +215,10 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
             <div className="px-4 py-8 text-center">
               <p className="text-[13px] font-extrabold text-ink">Cherche n'importe quel mot</p>
               <p className="mt-1 text-[11.5px] font-medium leading-5 text-slate-500">
-                Exemples : <span className="font-bold text-[#1d4ed8]">present</span>,{" "}
-                <span className="font-bold text-[#1d4ed8]">famille</span>,{" "}
-                <span className="font-bold text-[#1d4ed8]">airport</span>,{" "}
-                <span className="font-bold text-[#1d4ed8]">restaurant</span>.
+                Exemples : <span className="font-bold text-azure-strong">present</span>,{" "}
+                <span className="font-bold text-azure-strong">famille</span>,{" "}
+                <span className="font-bold text-azure-strong">airport</span>,{" "}
+                <span className="font-bold text-azure-strong">restaurant</span>.
               </p>
             </div>
           ) : hits.length === 0 ? (
@@ -233,7 +233,7 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
                   onClose();
                   navigate("/learn");
                 }}
-                className="mt-3 inline-flex h-9 items-center gap-1.5 rounded-xl bg-[#2563eb] px-3.5 text-[11.5px] font-extrabold text-white transition hover:bg-[#1d4ed8]"
+                className="mt-3 inline-flex h-9 items-center gap-1.5 rounded-xl bg-azure-600 px-3.5 text-[11.5px] font-extrabold text-white transition hover:bg-azure-700"
               >
                 Voir le parcours
                 <ArrowRight size={13} />
@@ -256,12 +256,12 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
                         onClick={() => go(hit)}
                         className={cn(
                           "flex w-full items-center gap-3 rounded-2xl px-3 py-2.5 text-left transition",
-                          index === active ? "bg-[#eef4ff]" : "hover:bg-[#f5f8ff]",
+                          index === active ? "bg-azure-soft" : "hover:bg-surface-soft",
                         )}
                       >
                         <span
                           aria-hidden="true"
-                          className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-white text-lg ring-1 ring-[#2563eb]/12"
+                          className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-surface text-lg ring-1 ring-azure-500/12"
                         >
                           {hit.emoji}
                         </span>
@@ -277,7 +277,7 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
                           size={14}
                           className={cn(
                             "shrink-0 transition",
-                            index === active ? "text-[#1d4ed8]" : "text-slate-300",
+                            index === active ? "text-azure-strong" : "text-slate-400",
                           )}
                         />
                       </button>
@@ -301,10 +301,10 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
                         onClick={() => go(hit)}
                         className={cn(
                           "flex w-full items-center gap-3 rounded-2xl px-3 py-2.5 text-left transition",
-                          index === active ? "bg-[#eef4ff]" : "hover:bg-[#f5f8ff]",
+                          index === active ? "bg-azure-soft" : "hover:bg-surface-soft",
                         )}
                       >
-                        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-[#eef4ff] text-[#1d4ed8] ring-1 ring-[#2563eb]/12">
+                        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-azure-soft text-azure-strong ring-1 ring-azure-500/12">
                           <MessageCircle size={15} />
                         </span>
                         <span className="min-w-0 flex-1">
@@ -319,7 +319,7 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
                           size={14}
                           className={cn(
                             "shrink-0 transition",
-                            index === active ? "text-[#1d4ed8]" : "text-slate-300",
+                            index === active ? "text-azure-strong" : "text-slate-400",
                           )}
                         />
                       </button>
@@ -331,7 +331,7 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
           )}
         </div>
 
-        <div className="flex items-center justify-between gap-3 border-t border-[#2563eb]/10 bg-[#f7faff] px-4 py-2.5 text-[10px] font-bold text-slate-500">
+        <div className="flex items-center justify-between gap-3 border-t border-azure-500/10 bg-surface-soft px-4 py-2.5 text-[10px] font-bold text-slate-500">
           <span className="inline-flex items-center gap-1.5">
             <CornerDownLeft size={12} />
             Entrée pour ouvrir

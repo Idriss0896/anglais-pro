@@ -20,11 +20,7 @@ export function Logo({ compact = false, onDark = false, className, to = "/" }: L
       className={cn("group inline-flex items-center gap-2.5", className)}
       aria-label="Anglais Pro — Accueil"
     >
-      <span className="relative grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-2xl bg-gradient-to-br from-brand-500 via-brand-600 to-brand-800 text-white shadow-glow ring-1 ring-white/15 transition-all duration-300 group-hover:-rotate-3 group-hover:scale-105 group-active:scale-95">
-        <span
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_28%_18%,rgba(255,255,255,0.4),transparent_58%)]"
-        />
+      <span className="relative grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-2xl bg-brand-600 text-white shadow-glow ring-1 ring-white/20 transition-all duration-300 group-hover:-rotate-3 group-hover:scale-105 group-active:scale-95">
         <svg
           viewBox="0 0 64 64"
           className="relative h-[22px] w-[22px] drop-shadow-[0_2px_3px_rgba(23,22,43,0.25)]"
@@ -45,7 +41,7 @@ export function Logo({ compact = false, onDark = false, className, to = "/" }: L
             onDark ? "text-white" : "text-ink",
           )}
         >
-          Anglais<span className={onDark ? "text-brand-300" : "text-brand-600"}>Pro</span>
+          Anglais<span className={onDark ? "text-brand-300" : "text-brand-strong"}>Pro</span>
         </span>
       )}
     </Link>

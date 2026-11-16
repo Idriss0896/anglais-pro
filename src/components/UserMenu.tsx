@@ -1,19 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import {
-  BarChart3,
-  ChevronDown,
-  Cloud,
-  CloudOff,
-  LogIn,
-  LogOut,
-  ShieldCheck,
-  UserRound,
-} from "lucide-react";
 import { useAuth } from "@/auth/AuthProvider";
 import { useProgressStore } from "@/store/useProgressStore";
 import { getRank } from "@/lib/achievements";
 import { cn } from "@/lib/utils";
+import { MaterialIcon } from "./MaterialIcon";
 import { UserAvatar } from "./UserAvatar";
 
 interface UserMenuProps {
@@ -72,8 +63,8 @@ export function UserMenu({
           "group flex items-center gap-2 rounded-full transition focus-visible:ring-4",
           showIdentity
             ? onDark
-              ? "bg-white/10 p-1 pr-2.5 ring-1 ring-white/20 hover:bg-white/15"
-              : "bg-white p-1 pr-2.5 ring-1 ring-slate-900/10 hover:ring-brand-200"
+              ? "bg-white/10 p-1 pr-2.5 ring-1 ring-white/20 hover:bg-white/20"
+              : "bg-surface p-1 pr-2.5 ring-1 ring-line hover:ring-brand-strong/20"
             : "p-0.5",
         )}
       >
@@ -96,7 +87,7 @@ export function UserMenu({
             <span
               className={cn(
                 "block text-[10px] font-bold",
-                onDark ? "text-indigo-100/60" : "text-slate-400",
+                onDark ? "text-indigo-100/65" : "text-slate-400",
               )}
             >
               {user ? rank.label : apiReady ? "Compte gratuit" : "Mode invité"}
@@ -104,11 +95,12 @@ export function UserMenu({
           </span>
         )}
         {showIdentity && (
-          <ChevronDown
-            size={14}
+          <MaterialIcon
+            name="expand_more"
+            size={18}
             className={cn(
-              "hidden shrink-0 transition xl:block",
-              onDark ? "text-indigo-100/60" : "text-slate-400",
+              "hidden shrink-0 transition-transform xl:block",
+              onDark ? "text-indigo-100/70" : "text-slate-400",
               open && "rotate-180",
             )}
           />
@@ -119,13 +111,13 @@ export function UserMenu({
         <div
           role="menu"
           className={cn(
-            "animate-fade-up absolute z-50 mt-2 w-[286px] overflow-hidden rounded-[26px] bg-white p-2 shadow-[0_34px_70px_-24px_rgba(23,22,43,0.45)] ring-1 ring-slate-900/10",
+            "animate-fade-up absolute z-50 mt-2 w-[286px] overflow-hidden rounded-[26px] bg-surface p-2 shadow-[0_34px_70px_-24px_rgba(23,22,43,0.45)] ring-1 ring-line",
             align === "right" ? "right-0" : "left-0",
           )}
         >
           {user ? (
             <>
-              <div className="flex items-center gap-3 rounded-2xl bg-gradient-to-br from-slate-50 to-brand-50/60 p-3">
+              <div className="flex items-center gap-3 rounded-2xl bg-surface-soft p-3">
                 <UserAvatar user={user} size={46} />
                 <div className="min-w-0">
                   <p className="truncate text-[13.5px] font-extrabold text-ink">
@@ -134,10 +126,6 @@ export function UserMenu({
                   <p className="truncate text-[11px] font-semibold text-slate-500">
                     {user.email}
                   </p>
-                  <span className="mt-1 inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[9.5px] font-extrabold uppercase tracking-wide text-emerald-700 ring-1 ring-emerald-100">
-                    <ShieldCheck size={10} />
-                    {user.provider === "google" ? "Compte Google" : "Compte vérifié"}
-                  </span>
                 </div>
               </div>
 
@@ -145,27 +133,32 @@ export function UserMenu({
                 <Link
                   to="/profile"
                   role="menuitem"
-                  className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-[13px] font-bold text-slate-700 transition hover:bg-[#f2f6ff] hover:text-ink"
+                  className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-[13px] font-bold text-slate-700 transition-colors hover:bg-surface-soft hover:text-ink"
                 >
-                  <UserRound size={17} className="text-brand-600" />
+                  <MaterialIcon name="person" size={19} className="text-brand-strong" />
                   Mon profil et ma photo
                 </Link>
                 <Link
                   to="/progress"
                   role="menuitem"
-                  className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-[13px] font-bold text-slate-700 transition hover:bg-[#f2f6ff] hover:text-ink"
+                  className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-[13px] font-bold text-slate-700 transition-colors hover:bg-surface-soft hover:text-ink"
                 >
-                  <BarChart3 size={17} className="text-brand-600" />
+                  <MaterialIcon name="analytics" size={19} className="text-brand-strong" />
                   Ma progression
+                </Link>
+                <Link
+                  to="/reglages"
+                  role="menuitem"
+                  className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-[13px] font-bold text-slate-700 transition-colors hover:bg-surface-soft hover:text-ink"
+                >
+                  <MaterialIcon name="settings" size={19} className="text-brand-strong" />
+                  Réglages
                 </Link>
               </div>
 
-              <div className="mx-2 my-1.5 flex items-center justify-between border-t border-slate-100 pt-2.5">
-                <span className="inline-flex items-center gap-1.5 text-[10.5px] font-bold text-emerald-700">
-                  <Cloud size={12} />
-                  Synchronisé
-                </span>
-                <span className="text-[10.5px] font-bold text-slate-400">{rank.label}</span>
+              <div className="mx-2 my-1.5 flex items-center justify-between border-t border-line pt-2.5">
+                <span className="text-[10.5px] font-bold text-slate-400">Niveau</span>
+                <span className="text-[10.5px] font-bold text-ink">{rank.label}</span>
               </div>
 
               <button
@@ -175,15 +168,15 @@ export function UserMenu({
                   setOpen(false);
                   await logout();
                 }}
-                className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2.5 text-[13px] font-bold text-rose-600 transition hover:bg-rose-50"
+                className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2.5 text-[13px] font-bold text-rose-strong transition-colors hover:bg-rose-soft"
               >
-                <LogOut size={17} />
+                <MaterialIcon name="logout" size={19} />
                 Se déconnecter
               </button>
             </>
           ) : (
             <>
-              <div className="rounded-2xl bg-gradient-to-br from-brand-50 to-sky-50 p-3.5">
+              <div className="rounded-2xl bg-brand-soft p-3.5">
                 <p className="text-[13px] font-extrabold text-ink">Sauvegarde ta progression</p>
                 <p className="mt-1 text-[11.5px] font-medium leading-5 text-slate-500">
                   Tu peux apprendre sans compte. Crée-le quand tu veux pour retrouver ton
@@ -193,23 +186,16 @@ export function UserMenu({
               <Link
                 to="/auth"
                 role="menuitem"
-                className="btn-shine mt-2 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 px-3 py-3 text-[13px] font-extrabold text-white shadow-[0_14px_30px_-16px_rgba(90,69,232,0.9)] transition hover:-translate-y-0.5"
+                className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-[#4c1d95] px-3 py-3 text-[13px] font-extrabold text-white transition-colors hover:bg-[#3b1878]"
               >
-                <LogIn size={16} />
+                <MaterialIcon name="login" size={18} />
                 Se connecter ou s'inscrire
               </Link>
               <div className="mt-2 flex items-center gap-1.5 px-2 pb-1 text-[10.5px] font-semibold text-slate-400">
-                {apiReady ? (
-                  <>
-                    <CloudOff size={12} />
-                    Progression enregistrée sur cet appareil
-                  </>
-                ) : (
-                  <>
-                    <CloudOff size={12} />
-                    Comptes indisponibles sur cette adresse
-                  </>
-                )}
+                <MaterialIcon name="cloud_off" size={14} />
+                {apiReady
+                  ? "Progression enregistrée sur cet appareil"
+                  : "Comptes indisponibles sur cette adresse"}
               </div>
             </>
           )}

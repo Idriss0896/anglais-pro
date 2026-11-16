@@ -23,17 +23,18 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   full?: boolean;
 }
 
+/** Couleurs pleines uniquement : aucun dégradé. */
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "btn-shine bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-[0_14px_30px_-14px_rgba(90,69,232,0.95)] hover:to-brand-800 hover:-translate-y-0.5 hover:shadow-[0_20px_38px_-16px_rgba(90,69,232,0.95)] active:translate-y-0 active:scale-[0.98]",
+    "bg-brand-700 text-white shadow-[0_14px_30px_-16px_rgba(76,29,149,0.9)] hover:bg-brand-800 active:scale-[0.98]",
   secondary:
-    "bg-white text-ink ring-1 ring-slate-900/10 hover:bg-[#f2f6ff] hover:-translate-y-0.5 hover:ring-slate-900/15 active:translate-y-0 active:scale-[0.98]",
+    "bg-surface text-ink ring-1 ring-line hover:bg-surface-soft active:scale-[0.98]",
   ghost: "text-slate-600 hover:bg-slate-900/5 hover:text-ink active:scale-[0.98]",
-  soft: "bg-brand-50 text-brand-700 ring-1 ring-brand-100 hover:bg-brand-100 active:scale-[0.98]",
+  soft: "bg-brand-soft text-brand-strong hover:bg-brand-soft active:scale-[0.98]",
   success:
-    "btn-shine bg-gradient-to-br from-emerald-400 to-emerald-600 text-white shadow-[0_14px_30px_-14px_rgba(16,185,129,0.95)] hover:to-emerald-700 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]",
-  dark: "btn-shine bg-gradient-to-br from-ink to-[#2a2755] text-white shadow-[0_14px_30px_-18px_rgba(23,22,43,0.8)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]",
-  danger: "bg-rose-50 text-rose-600 ring-1 ring-rose-100 hover:bg-rose-100 active:scale-[0.98]",
+    "bg-emerald-600 text-white shadow-[0_14px_30px_-16px_rgba(5,150,105,0.9)] hover:bg-emerald-700 active:scale-[0.98]",
+  dark: "bg-[#131a33] text-white shadow-[0_14px_30px_-18px_rgba(23,22,43,0.8)] hover:bg-[#1d2542] active:scale-[0.98]",
+  danger: "bg-rose-soft text-rose-strong hover:bg-rose-soft active:scale-[0.98]",
 };
 
 const sizes: Record<ButtonSize, string> = {
@@ -57,7 +58,7 @@ export function Button({
   return (
     <button
       className={cn(
-        "inline-flex select-none items-center justify-center font-extrabold transition-all duration-200 focus-visible:ring-4 focus-visible:ring-brand-200 disabled:pointer-events-none disabled:opacity-45",
+        "inline-flex select-none items-center justify-center font-extrabold transition-all duration-200 focus-visible:ring-4 focus-visible:ring-brand-strong/20 disabled:pointer-events-none disabled:opacity-45",
         variants[variant],
         sizes[size],
         full && "w-full",
@@ -103,7 +104,7 @@ export function ButtonLink({
   return (
     <Link
       className={cn(
-        "inline-flex select-none items-center justify-center font-extrabold transition-all duration-200 focus-visible:ring-4 focus-visible:ring-brand-200",
+        "inline-flex select-none items-center justify-center font-extrabold transition-all duration-200 focus-visible:ring-4 focus-visible:ring-brand-strong/20",
         variants[variant],
         sizes[size],
         full && "w-full",

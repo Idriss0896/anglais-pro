@@ -22,7 +22,7 @@ export function Modal({
   title,
   description,
   icon: Icon,
-  iconTone = "bg-brand-100 text-brand-600",
+  iconTone = "bg-brand-soft text-brand-strong",
   children,
   footer,
   className,
@@ -46,7 +46,7 @@ export function Modal({
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[100] flex items-end justify-center bg-ink/45 p-3 backdrop-blur-sm sm:items-center sm:p-6"
+      className="fixed inset-0 z-[100] flex items-end justify-center bg-[#0b1020]/55 p-3 backdrop-blur-sm sm:items-center sm:p-6"
       onMouseDown={(event) => {
         if (event.target === event.currentTarget) onClose();
       }}
@@ -56,7 +56,7 @@ export function Modal({
         aria-modal="true"
         aria-labelledby={title ? "modal-title" : undefined}
         className={cn(
-          "animate-pop w-full max-w-md overflow-hidden rounded-[28px] bg-white shadow-[0_32px_80px_-20px_rgba(23,22,43,.55)]",
+          "animate-pop w-full max-w-md overflow-hidden rounded-[28px] bg-surface shadow-[0_32px_80px_-20px_rgba(23,22,43,.55)]",
           className,
         )}
       >

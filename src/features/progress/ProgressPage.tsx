@@ -1,25 +1,19 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import {
   BarChart3,
   Bookmark,
-  CalendarDays,
   Check,
   CheckCircle2,
   Flame,
   GraduationCap,
   Medal,
-  RotateCcw,
   Settings2,
   Target,
-  Volume2,
-  VolumeX,
 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { ProgressBar } from "@/components/ProgressBar";
 import { ProgressRing } from "@/components/ProgressRing";
-import { Button } from "@/components/Button";
-import { Modal } from "@/components/Modal";
 import {
   ACHIEVEMENTS,
   RANKS,
@@ -31,55 +25,9 @@ import { LEVELS, TOTAL_UNITS } from "@/data/curriculum";
 import {
   accuracyAverage,
   completedCount,
-  todayXp,
   useProgressStore,
 } from "@/store/useProgressStore";
 import { cn, lastNDays, percent } from "@/lib/utils";
-
-function Toggle({
-  checked,
-  onChange,
-  label,
-}: {
-  checked: boolean;
-  onChange: (value: boolean) => void;
-  label: string;
-}) {
-  return (
-    <button
-      type="button"
-      role="switch"
-      aria-checked={checked}
-      aria-label={label}
-      onClick={() => onChange(!checked)}
-      className={cn(
-        "relative h-8 w-14 shrink-0 rounded-full outline-none transition-colors duration-200 focus-visible:ring-4 focus-visible:ring-[#2563eb]/25",
-        checked
-          ? "bg-[#2563eb] shadow-[inset_0_1px_0_rgba(255,255,255,0.28),0_8px_18px_-10px_rgba(37,99,235,0.95)]"
-          : "bg-slate-200 ring-1 ring-inset ring-slate-300/80",
-      )}
-    >
-      <span
-        className={cn(
-          "absolute top-1 grid h-6 w-6 place-items-center rounded-full bg-white transition-transform duration-200",
-          checked
-            ? "translate-x-7 shadow-[0_2px_6px_rgba(15,23,42,0.28)]"
-            : "translate-x-1 shadow-[0_1px_3px_rgba(15,23,42,0.18)]",
-        )}
-      >
-        <Check
-          size={13}
-          strokeWidth={3.4}
-          aria-hidden="true"
-          className={cn(
-            "text-[#2563eb] transition-opacity duration-150",
-            checked ? "opacity-100" : "opacity-0",
-          )}
-        />
-      </span>
-    </button>
-  );
-}
 
 function WeeklyChart() {
   const activity = useProgressStore((state) => state.activity);
@@ -92,7 +40,7 @@ function WeeklyChart() {
     <section className="card p-5">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2.5">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-amber-50 text-amber-500 ring-1 ring-amber-100">
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-amber-soft text-amber-strong ring-1 ring-amber-strong/20">
             <Flame size={17} fill="currentColor" />
           </span>
           <div>
@@ -112,11 +60,11 @@ function WeeklyChart() {
                   className={cn(
                     "animate-bar w-full max-w-9 rounded-t-lg rounded-b-sm",
                     day.xp >= dailyGoal
-                      ? "bg-gradient-to-t from-emerald-400 to-emerald-300"
+                      ? "bg-emerald-400"
                       : day.xp > 0
-                        ? "bg-gradient-to-t from-brand-500 to-brand-300"
+                        ? "bg-brand-500"
                         : "bg-slate-100",
-                    day.isToday && "ring-2 ring-brand-200 ring-offset-1",
+                    day.isToday && "ring-2 ring-brand-strong/20 ring-offset-1",
                   )}
                   style={{ height: `${height}%`, animationDelay: `${index * 50}ms` }}
                   title={`${day.xp} XP`}
@@ -125,7 +73,7 @@ function WeeklyChart() {
               <span
                 className={cn(
                   "text-[9px] font-extrabold uppercase",
-                  day.isToday ? "text-brand-600" : "text-slate-400",
+                  day.isToday ? "text-brand-strong" : "text-slate-400",
                 )}
               >
                 {day.label}
@@ -143,18 +91,11 @@ export function ProgressPage() {
   const lessons = useProgressStore((state) => state.lessons);
   const streak = useProgressStore((state) => state.streak);
   const bestStreak = useProgressStore((state) => state.bestStreak);
-  const dailyGoal = useProgressStore((state) => state.dailyGoal);
   const activity = useProgressStore((state) => state.activity);
   const favorites = useProgressStore((state) => state.favorites);
-  const sound = useProgressStore((state) => state.sound);
-  const setDailyGoal = useProgressStore((state) => state.setDailyGoal);
-  const setSound = useProgressStore((state) => state.setSound);
-  const resetProgress = useProgressStore((state) => state.resetProgress);
-  const [resetOpen, setResetOpen] = useState(false);
 
   const completed = completedCount(lessons);
   const accuracy = accuracyAverage(lessons);
-  const goalXp = todayXp(activity);
   const rank = getRank(xp);
   const rankIndex = RANKS.findIndex((item) => item.label === rank.label);
   const nextRank = RANKS[rankIndex + 1];
@@ -194,7 +135,7 @@ export function ProgressPage() {
         title="Ta progression"
         description="Chaque leçon terminée, chaque série de jours et chaque bonne réponse construit ta confiance en anglais."
         icon={BarChart3}
-        iconTone="from-[#2563eb] to-[#1e40af]"
+        iconTone="bg-[#2563eb]"
       />
 
       <div className="animate-fade-up grid gap-4 lg:grid-cols-[1.35fr_1fr]">
@@ -238,7 +179,7 @@ export function ProgressPage() {
                 value={rankProgress}
                 height="h-2"
                 className="bg-white/15"
-                barClassName="bg-gradient-to-r from-emerald-300 to-teal-300"
+                barClassName="bg-emerald-300"
                 label="Progression vers le prochain rang"
               />
             </div>
@@ -254,25 +195,25 @@ export function ProgressPage() {
             icon: CheckCircle2,
             value: `${completed}/${TOTAL_UNITS}`,
             label: "Leçons terminées",
-            tone: "bg-emerald-50 text-emerald-600 ring-emerald-100",
+            tone: "bg-emerald-soft text-emerald-strong ring-emerald-strong/20",
           },
           {
             icon: Target,
             value: `${accuracy}%`,
             label: "Précision moyenne",
-            tone: "bg-brand-50 text-brand-600 ring-brand-100",
+            tone: "bg-brand-soft text-brand-strong ring-brand-strong/20",
           },
           {
             icon: Flame,
             value: `${bestStreak} j`,
             label: "Meilleure série",
-            tone: "bg-amber-50 text-amber-600 ring-amber-100",
+            tone: "bg-amber-soft text-amber-strong ring-amber-strong/20",
           },
           {
             icon: Bookmark,
             value: favorites.length,
             label: "Expressions favorites",
-            tone: "bg-rose-50 text-rose-500 ring-rose-100",
+            tone: "bg-rose-soft text-rose-strong ring-rose-strong/20",
           },
         ].map((stat) => (
           <div key={stat.label} className="card animate-fade-up flex items-center gap-3 p-4">
@@ -299,7 +240,7 @@ export function ProgressPage() {
           </div>
           <Link
             to="/learn"
-            className="text-[11px] font-extrabold text-brand-600 hover:text-brand-700"
+            className="text-[11px] font-extrabold text-brand-strong hover:text-brand-strong"
           >
             Voir le parcours
           </Link>
@@ -314,7 +255,7 @@ export function ProgressPage() {
                 <div className="flex items-center gap-2.5">
                   <span
                     className={cn(
-                      "grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br text-base text-white",
+                      "grid h-9 w-9 place-items-center rounded-xl text-base text-white",
                       theme.gradient,
                     )}
                   >
@@ -362,13 +303,13 @@ export function ProgressPage() {
                 key={achievement.id}
                 className={cn(
                   "card flex items-start gap-3 p-4 transition",
-                  done ? "bg-white" : "bg-white/60",
+                  done ? "bg-surface" : "bg-surface-soft",
                 )}
               >
                 <span
                   className={cn(
-                    "grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-gradient-to-br text-white",
-                    done ? achievement.tone : "from-slate-200 to-slate-300",
+                    "grid h-11 w-11 shrink-0 place-items-center rounded-2xl text-white",
+                    done ? achievement.tone : "bg-slate-200",
                   )}
                 >
                   <Icon size={19} strokeWidth={2.2} />
@@ -405,157 +346,29 @@ export function ProgressPage() {
         </div>
       </section>
 
-      <section className="card overflow-hidden">
-        <div className="flex items-center gap-2.5 border-b border-slate-100 px-5 py-4">
-          <span className="grid h-8 w-8 place-items-center rounded-xl bg-[#f2f6ff] text-slate-500">
+      <section className="card flex flex-col gap-3 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-3">
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-brand-soft text-brand-strong">
             <Settings2 size={16} />
           </span>
-          <h2 className="text-[15px] font-extrabold text-ink">Préférences</h2>
-        </div>
-        <div className="divide-y divide-slate-100">
-          <div className="flex flex-col gap-3 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center gap-3">
-              <span className="grid h-9 w-9 place-items-center rounded-xl bg-emerald-50 text-emerald-600 ring-1 ring-emerald-100">
-                <Target size={16} />
-              </span>
-              <div>
-                <p className="text-[12.5px] font-extrabold text-ink">Objectif quotidien</p>
-                <p className="text-[10.5px] font-medium text-slate-400">
-                  {goalXp} XP aujourd'hui · {dailyGoal} XP visés
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-1.5">
-              {[20, 30, 50, 100].map((goal) => (
-                <button
-                  key={goal}
-                  type="button"
-                  onClick={() => setDailyGoal(goal)}
-                  className={cn(
-                    "h-8 rounded-full px-3 text-[10px] font-extrabold transition",
-                    dailyGoal === goal
-                      ? "bg-ink text-white"
-                      : "bg-[#f2f6ff] text-slate-500 ring-1 ring-slate-200/70 hover:text-ink",
-                  )}
-                >
-                  {goal} XP
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between gap-3 px-5 py-4">
-            <div className="flex min-w-0 items-center gap-3">
-              <span
-                className={cn(
-                  "grid h-9 w-9 shrink-0 place-items-center rounded-xl transition-colors",
-                  sound
-                    ? "bg-[#2563eb] text-white shadow-[0_8px_18px_-10px_rgba(37,99,235,0.95)]"
-                    : "bg-[#f2f6ff] text-slate-400 ring-1 ring-slate-200/70",
-                )}
-              >
-                {sound ? <Volume2 size={16} /> : <VolumeX size={16} />}
-              </span>
-              <div className="min-w-0">
-                <p className="text-[12.5px] font-extrabold text-ink">Prononciation audio</p>
-                <p
-                  className={cn(
-                    "text-[10.5px] font-semibold",
-                    sound ? "text-[#2563eb]" : "text-slate-400",
-                  )}
-                >
-                  {sound ? "Activée — la voix lit les mots anglais." : "Désactivée — appuie pour écouter les mots."}
-                </p>
-              </div>
-            </div>
-            <div className="flex shrink-0 items-center gap-2">
-              <span
-                aria-hidden="true"
-                className={cn(
-                  "hidden text-[10px] font-extrabold uppercase tracking-[0.1em] sm:block",
-                  sound ? "text-[#2563eb]" : "text-slate-400",
-                )}
-              >
-                {sound ? "Activée" : "Désactivée"}
-              </span>
-              <Toggle checked={sound} onChange={setSound} label="Activer la prononciation audio" />
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between gap-3 px-5 py-4">
-            <div className="flex items-center gap-3">
-              <span className="grid h-9 w-9 place-items-center rounded-xl bg-[#f2f6ff] text-slate-500 ring-1 ring-slate-200/70">
-                <CalendarDays size={16} />
-              </span>
-              <div>
-                <p className="text-[12.5px] font-extrabold text-ink">Coeurs</p>
-                <p className="text-[10.5px] font-medium text-slate-400">
-                  Un cœur se gagne à chaque leçon terminée (3 maximum).
-                </p>
-              </div>
-            </div>
-            <Link
-              to="/practice"
-              className="rounded-full bg-rose-50 px-3 py-1.5 text-[10px] font-extrabold text-rose-600 ring-1 ring-rose-100"
-            >
-              Réviser
-            </Link>
-          </div>
-
-          <div className="flex flex-col gap-3 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center gap-3">
-              <span className="grid h-9 w-9 place-items-center rounded-xl bg-rose-50 text-rose-500 ring-1 ring-rose-100">
-                <RotateCcw size={16} />
-              </span>
-              <div>
-                <p className="text-[12.5px] font-extrabold text-ink">Réinitialiser la progression</p>
-                <p className="text-[10.5px] font-medium text-slate-400">
-                  Efface XP, leçons, favoris et succès. Action irréversible.
-                </p>
-              </div>
-            </div>
-            <Button
-              variant="danger"
-              size="sm"
-              onClick={() => setResetOpen(true)}
-              icon={RotateCcw}
-            >
-              Réinitialiser
-            </Button>
+          <div>
+            <p className="text-[12.5px] font-extrabold text-ink">Préférences</p>
+            <p className="text-[10.5px] font-medium text-slate-500">
+              Thème, prononciation vocale, animations et objectif quotidien.
+            </p>
           </div>
         </div>
+        <Link
+          to="/reglages"
+          className="inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-full bg-[#4c1d95] px-4 text-[11px] font-extrabold text-white transition-colors hover:bg-[#3b1878]"
+        >
+          Ouvrir les réglages
+        </Link>
       </section>
 
       <p className="text-center text-[10px] font-bold text-slate-400">
         Anglais Pro · {TOTAL_UNITS} leçons · Progression sauvegardée sur cet appareil
       </p>
-
-      <Modal
-        open={resetOpen}
-        onClose={() => setResetOpen(false)}
-        title="Réinitialiser la progression ?"
-        description="Toute ta progression sera effacée : XP, leçons terminées, favoris et succès. Tes préférences resteront intactes."
-        icon={RotateCcw}
-        iconTone="bg-rose-50 text-rose-500"
-        footer={
-          <div className="flex flex-col gap-2 sm:flex-row-reverse">
-            <Button
-              variant="danger"
-              full
-              onClick={() => {
-                resetProgress();
-                setResetOpen(false);
-              }}
-              icon={RotateCcw}
-            >
-              Oui, tout effacer
-            </Button>
-            <Button variant="secondary" full onClick={() => setResetOpen(false)}>
-              Annuler
-            </Button>
-          </div>
-        }
-      />
     </div>
   );
 }

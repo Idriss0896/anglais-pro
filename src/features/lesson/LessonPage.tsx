@@ -50,7 +50,7 @@ function PhraseLine({
   const favorite = favorites.includes(id);
 
   return (
-    <div className="group flex items-start gap-2.5 rounded-xl px-2 py-2 transition hover:bg-white">
+    <div className="group flex items-start gap-2.5 rounded-xl px-2 py-2 transition hover:bg-surface">
       <div className="min-w-0 flex-1">
         <p className="text-[13.5px] font-extrabold leading-snug text-ink">{item.en}</p>
         <p className="mt-0.5 text-[11.5px] font-medium leading-5 text-slate-500">{item.fr}</p>
@@ -62,7 +62,7 @@ function PhraseLine({
         <button
           type="button"
           onClick={() => speak(item.en)}
-          className="grid h-8 w-8 place-items-center rounded-full text-slate-400 transition hover:bg-brand-50 hover:text-brand-600"
+          className="grid h-8 w-8 place-items-center rounded-full text-slate-400 transition hover:bg-brand-soft hover:text-brand-strong"
           aria-label={`Écouter : ${item.en}`}
         >
           <Volume2 size={15} strokeWidth={2.3} />
@@ -73,8 +73,8 @@ function PhraseLine({
           className={cn(
             "grid h-8 w-8 place-items-center rounded-full transition",
             favorite
-              ? "text-amber-500"
-              : "text-slate-400 hover:bg-amber-50 hover:text-amber-500",
+              ? "text-amber-strong"
+              : "text-slate-400 hover:bg-amber-soft hover:text-amber-strong",
           )}
           aria-label={favorite ? "Retirer des favoris" : "Ajouter aux favoris"}
         >
@@ -115,14 +115,14 @@ function TheoryContent({ unit }: { unit: CurriculumUnit }) {
           return (
             <div
               key={blockIndex}
-              className="flex items-start gap-3 rounded-2xl bg-amber-50 p-4 ring-1 ring-amber-100"
+              className="flex items-start gap-3 rounded-2xl bg-amber-soft p-4 ring-1 ring-amber-strong/20"
             >
               <Mascot id="sam" mood="think" size={36} />
               <div>
-                <p className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-amber-600">
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-amber-strong">
                   Sam te conseille
                 </p>
-                <p className="mt-0.5 text-[12.5px] font-semibold leading-6 text-amber-950/80">
+                <p className="mt-0.5 text-[12.5px] font-semibold leading-6 text-ink/80">
                   {block.text}
                 </p>
               </div>
@@ -134,9 +134,9 @@ function TheoryContent({ unit }: { unit: CurriculumUnit }) {
           return (
             <div
               key={blockIndex}
-              className="overflow-hidden rounded-2xl bg-white ring-1 ring-slate-900/[0.07]"
+              className="overflow-hidden rounded-2xl bg-surface ring-1 ring-slate-900/[0.07]"
             >
-              <div className="flex items-center gap-1.5 border-b border-slate-100 px-3.5 py-2.5 text-[10px] font-extrabold uppercase tracking-[0.12em] text-slate-400">
+              <div className="flex items-center gap-1.5 border-b border-line px-3.5 py-2.5 text-[10px] font-extrabold uppercase tracking-[0.12em] text-slate-400">
                 <Table2 size={12.5} />
                 Tableau
               </div>
@@ -144,7 +144,7 @@ function TheoryContent({ unit }: { unit: CurriculumUnit }) {
                 <table className="w-full min-w-[320px] border-collapse text-left">
                   {block.head && (
                     <thead>
-                      <tr className="bg-[#f1f5ff]">
+                      <tr className="bg-surface-soft">
                         {block.head.map((head) => (
                           <th
                             key={head}
@@ -160,7 +160,7 @@ function TheoryContent({ unit }: { unit: CurriculumUnit }) {
                     {(block.rows ?? []).map((row, rowIndex) => (
                       <tr
                         key={rowIndex}
-                        className="border-t border-slate-100/80 odd:bg-white even:bg-[#f8faff]"
+                        className="border-t border-slate-100/80 odd:bg-surface even:bg-surface-soft"
                       >
                         {row.map((cell, cellIndex) => (
                           <td
@@ -186,7 +186,7 @@ function TheoryContent({ unit }: { unit: CurriculumUnit }) {
           return (
             <div
               key={blockIndex}
-              className="rounded-2xl bg-[#f4f7ff] p-3.5 ring-1 ring-slate-900/[0.05] sm:p-4"
+              className="rounded-2xl bg-surface-soft p-3.5 ring-1 ring-slate-900/[0.05] sm:p-4"
             >
               <div className="mb-2 flex items-center gap-2 px-1">
                 <Mascot id={mascotFor(unit.id)} mood="talk" size={28} />
@@ -286,14 +286,14 @@ export function LessonPage() {
         <button
           type="button"
           onClick={() => navigate(-1)}
-          className="inline-flex h-9 items-center gap-1.5 rounded-full bg-white px-3 text-[11px] font-extrabold text-slate-500 ring-1 ring-slate-900/[0.07] transition hover:text-ink"
+          className="inline-flex h-9 items-center gap-1.5 rounded-full bg-surface px-3 text-[11px] font-extrabold text-slate-500 ring-1 ring-slate-900/[0.07] transition hover:text-ink"
         >
           <ArrowLeft size={15} />
           Retour
         </button>
         <div className="flex items-center gap-1.5">
           <StatPill icon={Heart} value={hearts} tone="heart" compact />
-          <span className="rounded-full bg-white px-2.5 py-1.5 text-[10px] font-extrabold text-slate-500 ring-1 ring-slate-900/[0.06]">
+          <span className="rounded-full bg-surface px-2.5 py-1.5 text-[10px] font-extrabold text-slate-500 ring-1 ring-slate-900/[0.06]">
             Théorie · Exercice
           </span>
         </div>
@@ -302,8 +302,8 @@ export function LessonPage() {
       <div className="animate-fade-up">
         <section
           className={cn(
-            "relative overflow-hidden rounded-[30px] bg-gradient-to-br p-5 text-white shadow-[0_26px_56px_-28px_rgba(23,22,43,.5)] sm:p-7",
-            theme.gradient,
+            "relative overflow-hidden rounded-[30px] p-5 text-white shadow-[0_26px_56px_-28px_rgba(23,22,43,.5)] sm:p-7",
+            theme.card,
           )}
         >
           <div className="pointer-events-none absolute inset-0 pattern-dots opacity-25" />
@@ -318,7 +318,7 @@ export function LessonPage() {
                 {unit.levelTitle}
               </span>
               {progress?.completed && (
-                <span className="inline-flex items-center gap-1 rounded-full bg-emerald-400/90 px-2.5 py-1 text-[10px] font-extrabold text-emerald-950">
+                <span className="inline-flex items-center gap-1 rounded-full bg-emerald-400/90 px-2.5 py-1 text-[10px] font-extrabold text-emerald-strong">
                   <CheckCircle2 size={11} strokeWidth={3} />
                   Terminé · {progress.bestAccuracy}%
                 </span>
@@ -389,7 +389,7 @@ export function LessonPage() {
 
       <article className="card mt-4 p-5 sm:p-7">
         <div className="mb-5 flex items-center gap-2">
-          <span className="grid h-8 w-8 place-items-center rounded-xl bg-brand-50 text-brand-600">
+          <span className="grid h-8 w-8 place-items-center rounded-xl bg-brand-soft text-brand-strong">
             <BookmarkCheck size={15} strokeWidth={2.3} />
           </span>
           <div>
@@ -403,7 +403,7 @@ export function LessonPage() {
       <div className="sticky bottom-4 z-20 mt-5">
         <div className="glass flex items-center justify-between gap-3 rounded-[24px] border border-white/70 p-3 shadow-[0_18px_40px_-18px_rgba(23,22,43,.4)] sm:p-4">
           <div className="min-w-0">
-            <p className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-brand-600">
+            <p className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-brand-strong">
               {progress?.completed ? "Tu connais déjà ?" : "Prêt(e) à pratiquer ?"}
             </p>
             <p className="truncate text-[12px] font-extrabold text-ink">
@@ -426,17 +426,17 @@ export function LessonPage() {
         Chaque bonne réponse rapporte 10 XP · série maintenue à la fin de la leçon
       </div>
 
-      <div className="mt-6 flex items-center justify-between gap-3 rounded-2xl bg-white p-3 ring-1 ring-slate-900/[0.05]">
+      <div className="mt-6 flex items-center justify-between gap-3 rounded-2xl bg-surface p-3 ring-1 ring-slate-900/[0.05]">
         <Link
           to={`/learn?level=${unit.level}`}
-          className="inline-flex items-center gap-1.5 text-[11px] font-extrabold text-slate-500 hover:text-brand-600"
+          className="inline-flex items-center gap-1.5 text-[11px] font-extrabold text-slate-500 hover:text-brand-strong"
         >
           <ArrowLeft size={14} />
           Toutes les leçons du niveau {unit.level}
         </Link>
         <Link
           to="/grammar"
-          className="inline-flex items-center gap-1 text-[11px] font-extrabold text-brand-600 hover:text-brand-700"
+          className="inline-flex items-center gap-1 text-[11px] font-extrabold text-brand-strong hover:text-brand-strong"
         >
           Grammaire
           <ArrowRight size={13} />

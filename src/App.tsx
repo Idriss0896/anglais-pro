@@ -15,9 +15,10 @@ import { PracticeSessionPage } from "@/features/practice/PracticeSessionPage";
 import { FlashcardsPage } from "@/features/practice/FlashcardsPage";
 import { LessonPage } from "@/features/lesson/LessonPage";
 import { ProgressPage } from "@/features/progress/ProgressPage";
+import { SettingsPage } from "@/features/settings/SettingsPage";
 import { AuthPage } from "@/features/auth/AuthPage";
 import { ProfilePage } from "@/features/profile/ProfilePage";
-import { useProgressStore } from "@/store/useProgressStore";
+import { useSettingsStore } from "@/store/useSettingsStore";
 import { primeSpeech, setAudioEnabled } from "@/lib/audio";
 import { hasEnteredApp } from "@/lib/entry";
 
@@ -29,9 +30,27 @@ function ScrollToTop() {
   return null;
 }
 
+/**
+ * Applique le thème sur <html>. La page de présentation reste toujours en
+ * clair : c'est une page marketing au fond violet, pensée pour ce rendu.
+ */
+function ThemeSync({ resolved, reducedMotion }: { resolved: string; reducedMotion: boolean }) {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = pathname === "/" ? "light" : resolved;
+  }, [resolved, pathname]);
+
+  useEffect(() => {
+    document.documentElement.dataset.motion = reducedMotion ? "reduced" : "normal";
+  }, [reducedMotion]);
+
+  return null;
+}
+
 function EntrySplash() {
   return (
-    <div className="grid min-h-dvh place-items-center bg-gradient-to-br from-[#2e1065] via-[#4c1d95] to-[#6d28d9]">
+    <div className="grid min-h-dvh place-items-center bg-[#4c1d95]">
       <div className="animate-pop">
         <Logo onDark />
       </div>
@@ -55,7 +74,7 @@ function Entry() {
 function NotFound() {
   return (
     <div className="flex min-h-[70vh] flex-col items-center justify-center px-4 text-center">
-      <span className="grid h-16 w-16 place-items-center rounded-3xl bg-brand-50 text-brand-600 ring-1 ring-brand-100">
+      <span className="grid h-16 w-16 place-items-center rounded-3xl bg-brand-soft text-brand-strong">
         <Compass size={28} />
       </span>
       <h1 className="mt-4 text-2xl font-extrabold text-ink">Page introuvable</h1>
@@ -64,7 +83,7 @@ function NotFound() {
       </p>
       <Link
         to="/accueil"
-        className="mt-5 inline-flex h-11 items-center rounded-2xl bg-brand-600 px-5 text-sm font-extrabold text-white"
+        className="mt-5 inline-flex h-11 items-center rounded-2xl bg-brand-700 px-5 text-sm font-extrabold text-white transition-colors hover:bg-brand-800"
       >
         Retour à l'accueil
       </Link>
@@ -73,18 +92,36 @@ function NotFound() {
 }
 
 export default function App() {
-  const sound = useProgressStore((state) => state.sound);
+  const theme = useSettingsStore((state) => state.theme);
+  const audio = useSettingsStore((state) => state.audio);
+  const reducedMotion = useSettingsStore((state) => state.reducedMotion);
+  const [systemDark, setSystemDark] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
 
   useEffect(() => {
     primeSpeech();
   }, []);
 
+  // Suit le thème du système quand le réglage est sur « Système ».
   useEffect(() => {
-    setAudioEnabled(sound);
-  }, [sound]);
+    const query = window.matchMedia("(prefers-color-scheme: dark)");
+    const onChange = () => setSystemDark(query.matches);
+    onChange();
+    query.addEventListener("change", onChange);
+    return () => query.removeEventListener("change", onChange);
+  }, []);
+
+  const resolved = theme === "system" ? (systemDark ? "dark" : "light") : theme;
+
+  useEffect(() => {
+    setAudioEnabled(audio);
+  }, [audio]);
 
   return (
     <HashRouter>
+      <ThemeSync resolved={resolved} reducedMotion={reducedMotion} />
       <AuthProvider>
         <ScrollToTop />
         <Routes>
@@ -101,6 +138,7 @@ export default function App() {
             <Route path="/practice" element={<PracticePage />} />
             <Route path="/practice/flashcards" element={<FlashcardsPage />} />
             <Route path="/progress" element={<ProgressPage />} />
+            <Route path="/reglages" element={<SettingsPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="*" element={<NotFound />} />
           </Route>

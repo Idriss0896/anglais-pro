@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
+/* Le mode nuit s'applique via l'attribut data-theme sur <html>. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 @theme {
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-display: "Bricolage Grotesque", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-nav: "Sora", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 
   --color-brand-50: #f4f1ff;
   --color-brand-100: #e9e3ff;
@@ -24,7 +28,52 @@
   --color-azure-700: #1d4ed8;
   --color-azure-800: #1e40af;
 
+  /* Surfaces et texte : ces valeurs basculent en mode nuit. */
+  --color-surface: #ffffff;
+  --color-surface-soft: #f2f5fb;
+  --color-surface-muted: #e9eef8;
+  --color-line: #e4e8f2;
   --color-ink: #131a33;
+  --color-muted: #5b6478;
+  --color-faint: #667085;
+  --color-slate-400: #6f7889;
+
+  /* Teintes d'accent (fond clair / texte contrasté) — déclinées en mode nuit. */
+  --color-brand-soft: #f1ecff;
+  --color-brand-strong: #5b21b6;
+  --color-azure-soft: #eaf1ff;
+  --color-azure-strong: #1d4ed8;
+  --color-emerald-soft: #e9f8f2;
+  --color-emerald-strong: #047857;
+  --color-rose-soft: #fdeef1;
+  --color-rose-strong: #be123c;
+  --color-amber-soft: #fdf3e2;
+  --color-amber-strong: #b45309;
+  --color-sky-soft: #e8f5fd;
+  --color-sky-strong: #0369a1;
+  --color-indigo-soft: #ebefff;
+  --color-indigo-strong: #4338ca;
+  --color-fuchsia-soft: #fbeafb;
+  --color-fuchsia-strong: #a21caf;
+  --color-teal-soft: #e6f7f4;
+  --color-teal-strong: #0f766e;
+  --color-orange-soft: #fdf0e3;
+  --color-orange-strong: #c2410c;
+  --color-violet-soft: #f2eeff;
+  --color-violet-strong: #6d28d9;
+  --color-blue-soft: #e8f0fe;
+  --color-blue-strong: #1a56db;
+  --color-cyan-soft: #e3f6f8;
+  --color-cyan-strong: #0e7490;
+  --color-purple-soft: #f3ebff;
+  --color-purple-strong: #6b21a8;
+  --color-pink-soft: #fdebf3;
+  --color-pink-strong: #be185d;
+  --color-red-soft: #fdecec;
+  --color-red-strong: #b91c1c;
+  --color-green-soft: #e9f7ec;
+  --color-green-strong: #15803d;
+
   --color-mist: #ffffff;
 
   --shadow-soft: 0 20px 48px -28px rgba(23, 37, 84, 0.26);
@@ -36,15 +85,71 @@
   html {
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  html[data-theme="dark"] {
+    color-scheme: dark;
+    --color-brand-soft: #241c3f;
+    --color-brand-strong: #c4b5fd;
+    --color-azure-soft: #16233d;
+    --color-azure-strong: #93b4fd;
+    --color-emerald-soft: #10251f;
+    --color-emerald-strong: #6ee7b7;
+    --color-rose-soft: #2c1620;
+    --color-rose-strong: #fda4af;
+    --color-amber-soft: #2a2011;
+    --color-amber-strong: #fcd34d;
+    --color-sky-soft: #122436;
+    --color-sky-strong: #7dd3fc;
+    --color-indigo-soft: #1b1f3b;
+    --color-indigo-strong: #a5b4fc;
+    --color-fuchsia-soft: #2a152c;
+    --color-fuchsia-strong: #f0abfc;
+    --color-teal-soft: #0f2724;
+    --color-teal-strong: #5eead4;
+    --color-orange-soft: #2b1c10;
+    --color-orange-strong: #fdba74;
+    --color-violet-soft: #221a38;
+    --color-violet-strong: #c4b5fd;
+    --color-blue-soft: #16223d;
+    --color-blue-strong: #93b4fd;
+    --color-cyan-soft: #0f2a2e;
+    --color-cyan-strong: #67e8f9;
+    --color-purple-soft: #251a38;
+    --color-purple-strong: #d8b4fe;
+    --color-pink-soft: #2c1622;
+    --color-pink-strong: #f9a8d4;
+    --color-red-soft: #2c1616;
+    --color-red-strong: #fca5a5;
+    --color-green-soft: #12261a;
+    --color-green-strong: #86efac;
+
+    --color-surface: #161b2e;
+    --color-surface-soft: #1b2136;
+    --color-surface-muted: #222a45;
+    --color-line: #2b3352;
+    --color-ink: #eef1fa;
+    --color-muted: #b6bfd4;
+    --color-faint: #a3adc2;
+
+    /* Échelle de gris adaptée aux fonds sombres. */
+    --color-slate-50: #1a2038;
+    --color-slate-100: #212845;
+    --color-slate-200: #2b3354;
+    --color-slate-300: #3b4568;
+    --color-slate-400: #8f99b3;
+    --color-slate-500: #b6bfd4;
+    --color-slate-600: #cbd2e3;
+    --color-slate-700: #dde2ee;
+    --color-slate-800: #e9edf7;
+    --color-slate-900: #f4f7fd;
+    --color-slate-950: #fbfcff;
   }
 
   body {
     min-height: 100dvh;
-    background-color: #ffffff;
-    background-image:
-      radial-gradient(900px 480px at 100% -12%, rgba(37, 99, 235, 0.1), transparent 60%),
-      radial-gradient(720px 420px at -10% 0%, rgba(91, 33, 182, 0.08), transparent 58%);
-    background-attachment: fixed;
+    background-color: var(--color-surface-soft);
     color: var(--color-ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
@@ -53,7 +158,7 @@
 
   :focus-visible {
     outline: none;
-    box-shadow: 0 0 0 4px rgba(211, 204, 255, 0.8);
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-brand-400) 45%, transparent);
     border-radius: 0.75rem;
   }
 
@@ -77,36 +182,36 @@
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: #d9d5ea transparent;
+    scrollbar-color: color-mix(in oklab, var(--color-ink) 18%, transparent) transparent;
   }
 }
 
 @layer components {
   .card {
     border-radius: 1.75rem;
-    background: #ffffff;
+    background: var(--color-surface);
     box-shadow:
-      0 0 0 1px rgba(37, 99, 235, 0.1),
-      0 18px 40px -30px rgba(23, 37, 84, 0.35);
+      0 0 0 1px var(--color-line),
+      0 18px 40px -30px rgba(23, 37, 84, 0.28);
   }
 
-  /* Carte bleue claire : surface teintée, texte sombre. */
+  /* Carte teintée bleue : surface douce, texte sombre. */
   .card-blue {
     border-radius: 1.75rem;
-    background: linear-gradient(165deg, #eef4ff 0%, #e3edff 100%);
+    background: var(--color-azure-soft);
     box-shadow:
-      0 0 0 1px rgba(37, 99, 235, 0.16),
-      0 18px 40px -30px rgba(37, 99, 235, 0.4);
+      0 0 0 1px color-mix(in oklab, var(--color-azure-500) 18%, transparent),
+      0 18px 40px -30px rgba(37, 99, 235, 0.3);
   }
 
-  /* Carte bleue pleine : pour les blocs mis en avant. */
+  /* Bloc plein bleu : mis en avant. */
   .card-blue-deep {
     border-radius: 1.75rem;
-    background: linear-gradient(150deg, #1d4ed8 0%, #1e40af 52%, #1e3a8a 100%);
+    background: #1d4ed8;
     color: #ffffff;
     box-shadow:
       0 0 0 1px rgba(255, 255, 255, 0.12),
-      0 26px 54px -26px rgba(23, 37, 84, 0.6);
+      0 26px 54px -26px rgba(23, 37, 84, 0.5);
   }
 
   .card-hover {
@@ -119,7 +224,7 @@
   .card-hover:hover {
     transform: translateY(-3px);
     box-shadow:
-      0 0 0 1px rgba(37, 99, 235, 0.16),
+      0 0 0 1px var(--color-line),
       var(--shadow-lift);
   }
 
@@ -128,7 +233,7 @@
     font-weight: 800;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #8d8aa5;
+    color: var(--color-faint);
   }
 
   .no-scrollbar {
@@ -157,12 +262,42 @@
   }
 
   .glass {
-    background: rgba(255, 255, 255, 0.86);
+    background: color-mix(in oklab, var(--color-surface) 88%, transparent);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
   }
 
-  /* Reflet animé sur les boutons principaux */
+  /* Icônes Material Symbols Rounded (jeu d'icônes de Google). */
+  .msi {
+    font-family: "Material Symbols Rounded";
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings: "liga";
+    -webkit-font-feature-settings: "liga";
+    font-variation-settings:
+      "FILL" 0,
+      "wght" 500,
+      "GRAD" 0,
+      "opsz" 24;
+    user-select: none;
+  }
+
+  .msi-fill {
+    font-variation-settings:
+      "FILL" 1,
+      "wght" 500,
+      "GRAD" 0,
+      "opsz" 24;
+  }
+
+  /* Reflet animé sur les boutons principaux (désactivé en mode nuit). */
   .btn-shine {
     position: relative;
     overflow: hidden;
@@ -177,7 +312,7 @@
     left: 0;
     width: 55%;
     transform: translateX(-160%) skewX(-18deg);
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
     pointer-events: none;
   }
@@ -287,13 +422,6 @@
       linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
     background-size: 46px 46px;
     mask-image: radial-gradient(ellipse at 50% 20%, #000 25%, transparent 78%);
-  }
-
-  .text-gradient {
-    background-image: linear-gradient(100deg, #c4b5fd 0%, #ffffff 42%, #bfdbfe 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
   }
 }
 
@@ -405,13 +533,6 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .mascot-float,
-  .mascot-eye {
-    animation: none;
-  }
-}
-
 @keyframes page-in {
   from {
     opacity: 0;
@@ -456,14 +577,32 @@
   }
 }
 
+/* Préférence « animations réduites » (réglages) ou réglage système. */
+[data-motion="reduced"] *,
+[data-motion="reduced"] *::before,
+[data-motion="reduced"] *::after {
+  scroll-behavior: auto !important;
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+[data-motion="reduced"] .reveal {
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .mascot-float,
+  .mascot-eye {
+    animation: none;
+  }
+
   .reveal {
     opacity: 1;
     transform: none;
   }
-}
 
-@media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {

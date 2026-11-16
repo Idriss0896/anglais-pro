@@ -59,7 +59,7 @@ export function LibraryPage({
   eyebrow,
   description,
   icon,
-  iconTone = "from-brand-500 to-brand-700",
+  iconTone = "bg-brand-500",
   fixedCategory,
   banner,
 }: LibraryPageProps) {
@@ -144,7 +144,7 @@ export function LibraryPage({
             value={search}
             onChange={(event) => setSearch(event.target.value)}
             placeholder="Rechercher une leçon, un thème…"
-            className="h-12 w-full rounded-2xl bg-white pl-11 pr-11 text-sm font-semibold text-ink ring-1 ring-[#2563eb]/15 transition placeholder:font-medium placeholder:text-slate-400 focus:ring-2 focus:ring-[#2563eb]/40"
+            className="h-12 w-full rounded-2xl bg-surface pl-11 pr-11 text-sm font-semibold text-ink ring-1 ring-azure-500/15 transition placeholder:font-medium placeholder:text-slate-400 focus:ring-2 focus:ring-azure-500/40"
             aria-label="Rechercher une leçon"
           />
           {search && (
@@ -166,8 +166,8 @@ export function LibraryPage({
             className={cn(
               "shrink-0 rounded-full px-3.5 py-2 text-[11px] font-extrabold transition",
               activeLevel === "all"
-                ? "bg-[#1d4ed8] text-white shadow-sm"
-                : "bg-white text-slate-500 ring-1 ring-[#2563eb]/15 hover:text-[#1d4ed8]",
+                ? "bg-azure-700 text-white shadow-sm"
+                : "bg-surface text-slate-500 ring-1 ring-azure-500/15 hover:text-azure-strong",
             )}
           >
             Tous les niveaux
@@ -183,8 +183,8 @@ export function LibraryPage({
                 className={cn(
                   "inline-flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-[11px] font-extrabold transition",
                   active
-                    ? "bg-[#1d4ed8] text-white shadow-sm"
-                    : "bg-white text-slate-500 ring-1 ring-[#2563eb]/15 hover:text-[#1d4ed8]",
+                    ? "bg-azure-700 text-white shadow-sm"
+                    : "bg-surface text-slate-500 ring-1 ring-azure-500/15 hover:text-azure-strong",
                 )}
               >
                 <span>{LEVEL_EMOJIS[level.num]}</span>
@@ -211,7 +211,7 @@ export function LibraryPage({
                 "inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-extrabold transition",
                 activeCategory === "all"
                   ? "bg-brand-600 text-white"
-                  : "bg-white text-slate-500 ring-1 ring-[#2563eb]/15 hover:text-[#1d4ed8]",
+                  : "bg-surface text-slate-500 ring-1 ring-azure-500/15 hover:text-azure-strong",
               )}
             >
               <LayoutGrid size={13} />
@@ -230,8 +230,8 @@ export function LibraryPage({
                   className={cn(
                     "inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-extrabold transition",
                     active
-                      ? "bg-[#1d4ed8] text-white"
-                      : "bg-white text-slate-500 ring-1 ring-[#2563eb]/15 hover:text-[#1d4ed8]",
+                      ? "bg-azure-700 text-white"
+                      : "bg-surface text-slate-500 ring-1 ring-azure-500/15 hover:text-azure-strong",
                   )}
                 >
                   <Icon
@@ -272,7 +272,7 @@ export function LibraryPage({
                 setSearch("");
                 setParams(new URLSearchParams(), { replace: true });
               }}
-              className="text-xs font-extrabold text-brand-600 hover:text-brand-700"
+              className="text-xs font-extrabold text-brand-strong hover:text-brand-strong"
             >
               Réinitialiser les filtres
             </button>
@@ -289,7 +289,7 @@ export function LibraryPage({
                   <div className="flex items-center gap-2.5">
                     <span
                       className={cn(
-                        "grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br text-base text-white",
+                        "grid h-9 w-9 place-items-center rounded-xl text-base text-white",
                         theme.gradient,
                       )}
                     >

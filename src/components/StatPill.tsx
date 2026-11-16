@@ -5,12 +5,12 @@ import { cn } from "@/lib/utils";
 type Tone = "flame" | "xp" | "heart" | "neutral" | "mint" | "sky";
 
 const tones: Record<Tone, { wrap: string; icon: string; fill?: boolean }> = {
-  flame: { wrap: "bg-amber-50 ring-amber-100", icon: "text-amber-500", fill: true },
-  xp: { wrap: "bg-violet-50 ring-violet-100", icon: "text-violet-500" },
-  heart: { wrap: "bg-rose-50 ring-rose-100", icon: "text-rose-500", fill: true },
-  mint: { wrap: "bg-emerald-50 ring-emerald-100", icon: "text-emerald-500" },
-  sky: { wrap: "bg-sky-50 ring-sky-100", icon: "text-sky-500" },
-  neutral: { wrap: "bg-[#f2f6ff] ring-slate-200/70", icon: "text-slate-500" },
+  flame: { wrap: "bg-amber-soft ring-amber-strong/20", icon: "text-amber-strong", fill: true },
+  xp: { wrap: "bg-violet-soft ring-violet-strong/20", icon: "text-violet-strong" },
+  heart: { wrap: "bg-rose-soft ring-rose-strong/20", icon: "text-rose-strong", fill: true },
+  mint: { wrap: "bg-emerald-soft ring-emerald-strong/20", icon: "text-emerald-strong" },
+  sky: { wrap: "bg-sky-soft ring-sky-strong/20", icon: "text-sky-strong" },
+  neutral: { wrap: "bg-surface-soft ring-slate-200/70", icon: "text-slate-500" },
 };
 
 interface StatPillProps {

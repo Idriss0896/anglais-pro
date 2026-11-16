@@ -36,7 +36,7 @@ const googleErrors: Record<string, string> = {
 
 const strengthLabels = ["Trop court", "Faible", "Correct", "Solide"];
 const strengthColors = ["bg-slate-200", "bg-rose-400", "bg-amber-400", "bg-emerald-500"];
-const strengthText = ["text-slate-400", "text-rose-500", "text-amber-600", "text-emerald-600"];
+const strengthText = ["text-slate-400", "text-rose-strong", "text-amber-strong", "text-emerald-strong"];
 
 function passwordScore(value: string) {
   if (value.length < 8) return 0;
@@ -96,7 +96,7 @@ function Field({
 }
 
 const inputClass =
-  "h-12 w-full rounded-2xl bg-[#f2f6ff] pl-10 pr-3.5 text-[13.5px] font-semibold text-ink outline-none ring-1 ring-slate-200 transition placeholder:font-medium placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-brand-400";
+  "h-12 w-full rounded-2xl bg-surface-soft pl-10 pr-3.5 text-[13.5px] font-semibold text-ink outline-none ring-1 ring-line transition placeholder:font-medium placeholder:text-slate-400 focus:bg-surface focus:ring-2 focus:ring-brand-400";
 
 export function AuthPage() {
   const { user, apiReady, googleEnabled, login, signup } = useAuth();
@@ -182,10 +182,6 @@ export function AuthPage() {
         aria-hidden="true"
         className="pointer-events-none absolute -right-24 bottom-0 h-[380px] w-[380px] rounded-full bg-sky-400/25 blur-3xl"
       />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.06),transparent_60%)]"
-      />
 
       <div className="relative mx-auto w-full max-w-5xl">
         <div className="flex items-center justify-between gap-3">
@@ -211,8 +207,8 @@ export function AuthPage() {
           <p className="text-[12.5px] font-medium leading-5 text-indigo-100/65">{subtitle}</p>
         </div>
 
-        <div className="mt-5 grid overflow-hidden rounded-[34px] bg-white shadow-[0_50px_120px_-45px_rgba(0,0,0,0.9)] ring-1 ring-white/10 lg:mt-6 lg:grid-cols-[1.02fr_1fr]">
-          <section className="relative hidden overflow-hidden bg-gradient-to-br from-[#2a2470] via-[#4338ca] to-[#6d28d9] p-8 text-white lg:flex lg:flex-col lg:p-10">
+        <div className="mt-5 grid overflow-hidden rounded-[34px] bg-surface shadow-[0_50px_120px_-45px_rgba(0,0,0,0.9)] ring-1 ring-white/10 lg:mt-6 lg:grid-cols-[1.02fr_1fr]">
+          <section className="relative hidden overflow-hidden bg-[#2a2470] p-8 text-white lg:flex lg:flex-col lg:p-10">
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 pattern-dots opacity-25" />
             <div
               aria-hidden="true"
@@ -299,7 +295,7 @@ export function AuthPage() {
                   className={cn(
                     "h-10 rounded-xl text-[12.5px] font-extrabold transition-all",
                     mode === item
-                      ? "bg-white text-ink shadow-[0_8px_18px_-10px_rgba(23,22,43,0.4)]"
+                      ? "bg-surface text-ink shadow-[0_8px_18px_-10px_rgba(23,22,43,0.4)]"
                       : "text-slate-500 hover:text-ink",
                   )}
                 >
@@ -309,7 +305,7 @@ export function AuthPage() {
             </div>
 
             {!apiReady && (
-              <div className="mt-4 flex items-start gap-2 rounded-2xl bg-amber-50 p-3 text-[11.5px] font-semibold leading-5 text-amber-800 ring-1 ring-amber-200">
+              <div className="mt-4 flex items-start gap-2 rounded-2xl bg-amber-soft p-3 text-[11.5px] font-semibold leading-5 text-amber-strong ring-1 ring-amber-strong/20">
                 <WifiOff size={16} className="mt-0.5 shrink-0" />
                 Les comptes sont momentanément indisponibles ici. Tu peux continuer à apprendre
                 sans compte, ta progression reste sur cet appareil.
@@ -317,7 +313,7 @@ export function AuthPage() {
             )}
 
             {message && (
-              <div className="mt-4 flex items-start gap-2 rounded-2xl bg-rose-50 p-3 text-[11.5px] font-semibold leading-5 text-rose-700 ring-1 ring-rose-200">
+              <div className="mt-4 flex items-start gap-2 rounded-2xl bg-rose-soft p-3 text-[11.5px] font-semibold leading-5 text-rose-strong ring-1 ring-rose-strong/20">
                 <AlertCircle size={16} className="mt-0.5 shrink-0" />
                 {message}
               </div>
@@ -367,14 +363,14 @@ export function AuthPage() {
                   type="button"
                   onClick={() => setShowPassword((value) => !value)}
                   aria-label={showPassword ? "Masquer le mot de passe" : "Afficher le mot de passe"}
-                  className="absolute right-2 grid h-9 w-9 place-items-center rounded-xl text-slate-400 transition hover:bg-white hover:text-slate-600"
+                  className="absolute right-2 grid h-9 w-9 place-items-center rounded-xl text-slate-400 transition hover:bg-surface hover:text-slate-600"
                 >
                   {showPassword ? <EyeOff size={17} /> : <Eye size={17} />}
                 </button>
               </Field>
 
               {mode === "signup" && password.length > 0 && (
-                <div className="rounded-2xl bg-[#f2f6ff] p-3 ring-1 ring-slate-200">
+                <div className="rounded-2xl bg-surface-soft p-3 ring-1 ring-line">
                   <div className="flex items-center justify-between gap-2">
                     <span className="text-[10px] font-extrabold uppercase tracking-[0.12em] text-slate-500">
                       Robustesse
@@ -400,7 +396,7 @@ export function AuthPage() {
               <button
                 type="submit"
                 disabled={pending || !apiReady}
-                className="btn-shine inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-[14px] font-extrabold text-white shadow-[0_18px_36px_-18px_rgba(90,69,232,0.95)] transition hover:-translate-y-0.5 disabled:pointer-events-none disabled:opacity-50"
+                className="btn-shine inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-brand-500 text-[14px] font-extrabold text-white shadow-[0_18px_36px_-18px_rgba(90,69,232,0.95)] transition hover:-translate-y-0.5 disabled:pointer-events-none disabled:opacity-50"
               >
                 {pending ? <LoaderCircle size={18} className="animate-spin" /> : null}
                 {mode === "login" ? "Se connecter" : "Créer mon compte"}
@@ -419,7 +415,7 @@ export function AuthPage() {
             {googleEnabled ? (
               <a
                 href={googleStartUrl()}
-                className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-2xl bg-white text-[13.5px] font-extrabold text-ink ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:bg-[#f2f6ff] hover:ring-slate-300"
+                className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-2xl bg-surface text-[13.5px] font-extrabold text-ink ring-1 ring-line transition hover:-translate-y-0.5 hover:bg-surface-soft hover:ring-slate-300"
               >
                 <GoogleMark />
                 Continuer avec Google
@@ -429,7 +425,7 @@ export function AuthPage() {
                 type="button"
                 disabled
                 title="La connexion Google sera activée très bientôt."
-                className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-2xl bg-[#f2f6ff] text-[13.5px] font-extrabold text-slate-400 ring-1 ring-slate-200"
+                className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-2xl bg-surface-soft text-[13.5px] font-extrabold text-slate-400 ring-1 ring-line"
               >
                 <GoogleMark />
                 Google bientôt disponible
@@ -445,14 +441,14 @@ export function AuthPage() {
               <ArrowRight size={13} />
             </Link>
 
-            <div className="mt-4 flex items-center justify-center gap-3 border-t border-slate-100 pt-3 text-[10px] font-bold text-slate-400">
+            <div className="mt-4 flex items-center justify-center gap-3 border-t border-line pt-3 text-[10px] font-bold text-slate-400">
               <span className="inline-flex items-center gap-1.5">
-                <ShieldCheck size={12} className="text-emerald-500" />
+                <ShieldCheck size={12} className="text-emerald-strong" />
                 Session sécurisée
               </span>
               <span className="h-3 w-px bg-slate-200" />
               <span className="inline-flex items-center gap-1.5">
-                <Cloud size={12} className="text-sky-500" />
+                <Cloud size={12} className="text-sky-strong" />
                 Synchronisation auto
               </span>
             </div>

@@ -23,10 +23,10 @@ export function UserAvatar({ user, size = 40, onDark = false, className, alt }: 
       className={cn(
         "relative grid shrink-0 place-items-center overflow-hidden rounded-full",
         avatar
-          ? "bg-white ring-2 ring-white/70"
+          ? "bg-surface ring-2 ring-white/70"
           : onDark
             ? "bg-white/15 text-white/80 ring-2 ring-white/25"
-            : "bg-gradient-to-br from-brand-100 to-sky-100 text-brand-600 ring-2 ring-white",
+            : "bg-brand-soft text-brand-strong ring-2 ring-surface",
         className,
       )}
       style={dimension}

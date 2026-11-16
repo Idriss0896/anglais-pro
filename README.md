@@ -32,7 +32,9 @@ Une application web **mobile-first** pensée pour les francophones qui veulent p
 - **Révision ciblée** — sessions par compétence, marathon de 20 questions et flashcards.
 - **Progression motivante** — XP, cœurs qui se gagnent en terminant des leçons (3 maximum), série quotidienne, objectif journalier, rangs et succès. La barre supérieure met en avant les points, la série de jours, le pourcentage d'avancement et le profil, sans icône cœur.
 - **Page de présentation** — un landing page moderne (dégradés violet/bleu, aperçu de leçon animé, apparitions au défilement) accueille les nouveaux visiteurs avant l'application.
-- **Audio intégré** — prononciation via la synthèse vocale du navigateur, avec un réglage explicite « Prononciation audio » dont l'état activé est immédiatement lisible (interrupteur bleu, coche et libellé « Activée »).
+- **Audio intégré** — prononciation via la synthèse vocale du navigateur, pilotée depuis la page **Réglages** (interrupteur « Prononciation vocale », état « Activée » lisible et bouton d'écoute de test).
+- **Réglages centralisés** — une page `/reglages` regroupe l'apparence (clair, sombre ou système), la réduction des animations, la prononciation vocale, l'objectif quotidien, la série, le compte et la réinitialisation.
+- **Mode nuit complet** — thème sombre appliqué par variables CSS sur toute l'application, mémorisé sur l'appareil et sans clignotement au chargement ; la page de présentation reste volontairement en clair.
 - **Sécurité renforcée** — sessions HttpOnly 14 jours, isolation par `user_id`, RLS et privilèges retirés sur les tables, limitation des tentatives et en-têtes stricts.
 - **Coachs illustrés** — quatre personnages animés (Mia, Leo, Zoé et Sam) accompagnent les expressions, le vocabulaire et les conseils avec des bulles d'explication.
 - **Mobile d'abord** — barre haute arrondie qui reste collée en haut pendant le défilement, sidebar unique qui se referme en rail d'icônes (tiroir animé sur mobile, panneau fixe sur ordinateur).
@@ -65,7 +67,7 @@ Une application web **mobile-first** pensée pour les francophones qui veulent p
 | Base de données | [Neon Postgres](https://neon.tech) via l'intégration Vercel |
 | API | Fonctions serverless Vercel (`/api`) — sessions HttpOnly, mots de passe scrypt |
 | Authentification | Email / mot de passe + Google OAuth 2.0 |
-| Icônes | [Lucide](https://lucide.dev) |
+| Icônes | [Material Symbols Rounded](https://fonts.google.com/icons) (navigation et réglages) + [Lucide](https://lucide.dev) (contenu) |
 | Effets | [canvas-confetti](https://github.com/catdad/canvas-confetti) |
 
 ## 🔐 Comptes et base de données
@@ -152,9 +154,10 @@ anglais-pro/
 │  │  ├─ lesson/            # Leçon + moteur de quiz
 │  │  ├─ auth/              # Connexion / inscription
 │  │  ├─ profile/           # Profil et photo
+│  │  ├─ settings/          # Réglages (thème, audio, objectif…)
 │  │  └─ progress/          # Statistiques et succès
 │  ├─ lib/                  # Utilitaires, API, audio, succès, catégories
-│  ├─ store/                # État persistant (XP, cœurs, série…)
+│  ├─ store/                # État persistant (progression + réglages)
 │  ├─ types.ts              # Modèle de données typé
 │  ├─ App.tsx               # Routes
 │  └─ index.css             # Design system Tailwind
@@ -178,6 +181,7 @@ anglais-pro/
 | `/practice/flashcards` | Flashcards |
 | `/lesson/:unitId` | Leçon (théorie + quiz) |
 | `/progress` | Progression, succès et rangs |
+| `/reglages` | Réglages : apparence, audio, objectif, compte |
 
 ## 🗃 Modèle de données
 
@@ -199,11 +203,13 @@ interface Unit {
 
 ## 🎨 Design system
 
-- Palette principale violette (`brand`), accents vert/ambre/rose pour les catégories.
-- Typographies **Bricolage Grotesque** (titres) et **Plus Jakarta Sans** (texte).
-- Composants utilitaires dans `src/index.css` : `.card`, `.btn`, `.glass`, `.eyebrow`, `.safe-bottom`…
+- **Couleurs pleines uniquement** dans l'application : le violet `#4c1d95` structure la barre latérale, la barre supérieure et le pied de page, les cartes et boutons utilisent des teintes franches. Aucun dégradé hors de la page de présentation.
+- **Clair / sombre** piloté par `data-theme` sur `<html>` et des variables CSS (`--color-surface`, `--color-ink`, `--color-line`, échelles `*-soft` / `*-strong`). La préférence « Système » suit l'appareil, et un script inline applique le thème avant le premier rendu.
+- **Accessibilité** : `data-motion="reduced"` désactive les animations, contrastes renforcés (textes secondaires `--color-faint`), cibles tactiles ≥ 44 px, tiroir mobile refermable avec `Échap`, zones sûres (`safe-area-inset`).
+- Typographies **Bricolage Grotesque** (titres), **Plus Jakarta Sans** (texte) et **Sora** (navigation latérale).
+- Icônes **Material Symbols Rounded** pour la navigation, les réglages et les statistiques, Lucide pour le contenu.
+- Composants utilitaires dans `src/index.css` : `.card`, `.btn`, `.eyebrow`, `.msi`, `.safe-bottom`…
 - Animations douces (`fade-up`, `float`, transitions) et respect de `prefers-reduced-motion`.
-- Cibles tactiles ≥ 44 px, tiroir mobile refermable au clavier (`Échap`) et zones sûres pour les encoches (`safe-area-inset`).
 
 ## 🌐 Déploiement
 

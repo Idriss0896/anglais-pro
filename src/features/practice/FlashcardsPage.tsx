@@ -92,7 +92,7 @@ export function FlashcardsPage() {
         title="Cartes mémoire"
         description="Retourne la carte, devine la traduction et garde en mémoire les expressions qui te serviront vraiment."
         icon={Layers}
-        iconTone="from-cyan-500 to-sky-600"
+        iconTone="bg-cyan-500"
         actions={
           <>
             <StatPill icon={Layers} value={DECK_SIZE} label="cartes" tone="sky" />
@@ -108,10 +108,10 @@ export function FlashcardsPage() {
             <div className="card relative overflow-hidden p-6 text-center sm:p-9">
               <div className="pointer-events-none absolute inset-0 pattern-dots opacity-[0.05]" />
               <div className="relative">
-                <div className="animate-pop mx-auto grid h-20 w-20 place-items-center rounded-[24px] bg-gradient-to-br from-cyan-400 to-sky-500 text-4xl shadow-xl shadow-cyan-200">
+                <div className="animate-pop mx-auto grid h-20 w-20 place-items-center rounded-[24px] bg-cyan-400 text-4xl shadow-xl shadow-cyan-200">
                   {knownPercent >= 80 ? "🏆" : knownPercent >= 50 ? "👏" : "💪"}
                 </div>
-                <p className="mt-4 text-[10px] font-extrabold uppercase tracking-[0.18em] text-sky-600">
+                <p className="mt-4 text-[10px] font-extrabold uppercase tracking-[0.18em] text-sky-strong">
                   Série terminée
                 </p>
                 <h1 className="mt-1 text-2xl font-extrabold text-ink sm:text-3xl">
@@ -122,23 +122,23 @@ export function FlashcardsPage() {
                       : "Continue, ça rentre !"}
                 </h1>
                 <div className="mx-auto mt-5 grid max-w-md grid-cols-3 gap-2.5">
-                  <div className="rounded-2xl bg-emerald-50 p-3 ring-1 ring-emerald-100">
-                    <Check size={16} className="mx-auto text-emerald-500" />
-                    <p className="mt-1 text-lg font-extrabold text-emerald-700">{known}</p>
+                  <div className="rounded-2xl bg-emerald-soft p-3 ring-1 ring-emerald-strong/20">
+                    <Check size={16} className="mx-auto text-emerald-strong" />
+                    <p className="mt-1 text-lg font-extrabold text-emerald-strong">{known}</p>
                     <p className="text-[9px] font-extrabold uppercase text-emerald-600/60">
                       Connues
                     </p>
                   </div>
-                  <div className="rounded-2xl bg-amber-50 p-3 ring-1 ring-amber-100">
-                    <RefreshCw size={16} className="mx-auto text-amber-500" />
-                    <p className="mt-1 text-lg font-extrabold text-amber-700">{review}</p>
+                  <div className="rounded-2xl bg-amber-soft p-3 ring-1 ring-amber-strong/20">
+                    <RefreshCw size={16} className="mx-auto text-amber-strong" />
+                    <p className="mt-1 text-lg font-extrabold text-amber-strong">{review}</p>
                     <p className="text-[9px] font-extrabold uppercase text-amber-600/60">
                       À revoir
                     </p>
                   </div>
-                  <div className="rounded-2xl bg-sky-50 p-3 ring-1 ring-sky-100">
-                    <Target size={16} className="mx-auto text-sky-500" />
-                    <p className="mt-1 text-lg font-extrabold text-sky-700">{knownPercent}%</p>
+                  <div className="rounded-2xl bg-sky-soft p-3 ring-1 ring-sky-strong/20">
+                    <Target size={16} className="mx-auto text-sky-strong" />
+                    <p className="mt-1 text-lg font-extrabold text-sky-strong">{knownPercent}%</p>
                     <p className="text-[9px] font-extrabold uppercase text-sky-600/60">
                       Réussite
                     </p>
@@ -150,7 +150,7 @@ export function FlashcardsPage() {
                   </Button>
                   <Link
                     to="/practice"
-                    className="inline-flex h-13 items-center justify-center gap-2 rounded-2xl bg-white px-6 text-[15px] font-extrabold text-ink ring-1 ring-slate-900/10 transition hover:bg-[#f2f6ff]"
+                    className="inline-flex h-13 items-center justify-center gap-2 rounded-2xl bg-surface px-6 text-[15px] font-extrabold text-ink ring-1 ring-slate-900/10 transition hover:bg-surface-soft"
                   >
                     <ArrowLeft size={18} />
                     Retour à l'entraînement
@@ -169,11 +169,11 @@ export function FlashcardsPage() {
                   Carte <span className="text-ink">{index + 1}</span> sur {deck.length}
                 </p>
                 <div className="flex items-center gap-2">
-                  <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-emerald-600">
+                  <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-emerald-strong">
                     <Check size={11} strokeWidth={3} />
                     {known}
                   </span>
-                  <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-amber-600">
+                  <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-amber-strong">
                     <RefreshCw size={11} />
                     {review}
                   </span>
@@ -182,14 +182,14 @@ export function FlashcardsPage() {
               <ProgressBar
                 value={(index / deck.length) * 100}
                 height="h-1.5"
-                barClassName="bg-gradient-to-r from-cyan-400 to-sky-500"
+                barClassName="bg-cyan-400"
                 label="Progression des cartes"
               />
 
               <div
                 className={cn(
-                  "relative mt-4 overflow-hidden rounded-[30px] bg-gradient-to-br p-5 text-white shadow-[0_28px_60px_-30px_rgba(23,22,43,.8)] sm:p-7",
-                  theme.gradient,
+                  "relative mt-4 overflow-hidden rounded-[30px] p-5 text-white shadow-[0_28px_60px_-30px_rgba(23,22,43,.8)] sm:p-7",
+                  theme.card,
                 )}
               >
                 <div className="pointer-events-none absolute inset-0 pattern-dots opacity-25" />
@@ -214,7 +214,7 @@ export function FlashcardsPage() {
                         className={cn(
                           "grid h-9 w-9 place-items-center rounded-full ring-1 transition",
                           favorite
-                            ? "bg-amber-400 text-amber-950 ring-amber-300"
+                            ? "bg-amber-400 text-amber-strong ring-amber-300"
                             : "bg-white/10 text-white/80 ring-white/15 hover:bg-white/20",
                         )}
                         aria-label={favorite ? "Retirer des favoris" : "Ajouter aux favoris"}
@@ -225,7 +225,7 @@ export function FlashcardsPage() {
                   </div>
 
                   <div className="flex min-h-[220px] flex-col items-center justify-center py-8 text-center sm:min-h-[260px]">
-                    <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-white/50">
+                    <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-white/70">
                       Comment dit-on…
                     </p>
                     <p className="mt-3 max-w-xl font-display text-2xl font-extrabold leading-snug tracking-[-0.02em] sm:text-[34px]">
@@ -233,7 +233,7 @@ export function FlashcardsPage() {
                     </p>
                     {revealed && (
                       <div className="animate-fade-up mt-6 w-full max-w-md border-t border-white/20 pt-5">
-                        <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-white/45">
+                        <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-white/65">
                           Traduction
                         </p>
                         <p className="mt-2 text-lg font-extrabold text-white/95 sm:text-xl">
@@ -253,7 +253,7 @@ export function FlashcardsPage() {
                       <button
                         type="button"
                         onClick={() => setRevealed(true)}
-                        className="inline-flex h-12 items-center gap-2 rounded-2xl bg-white px-6 text-sm font-extrabold text-ink transition hover:-translate-y-0.5"
+                        className="inline-flex h-12 items-center gap-2 rounded-2xl bg-surface px-6 text-sm font-extrabold text-ink transition hover:-translate-y-0.5"
                       >
                         <Eye size={17} />
                         Afficher la traduction
@@ -271,7 +271,7 @@ export function FlashcardsPage() {
                         <button
                           type="button"
                           onClick={() => answer(true)}
-                          className="inline-flex h-12 items-center justify-center gap-2 rounded-2xl bg-white text-sm font-extrabold text-ink transition hover:-translate-y-0.5"
+                          className="inline-flex h-12 items-center justify-center gap-2 rounded-2xl bg-surface text-sm font-extrabold text-ink transition hover:-translate-y-0.5"
                         >
                           <Check size={16} strokeWidth={3} />
                           Je savais
@@ -280,7 +280,7 @@ export function FlashcardsPage() {
                     )}
                   </div>
 
-                  <p className="mt-4 text-center text-[10px] font-bold text-white/45">
+                  <p className="mt-4 text-center text-[10px] font-bold text-white/60">
                     {current.unitTitle} · Niveau {current.level}
                   </p>
                 </div>
@@ -289,7 +289,7 @@ export function FlashcardsPage() {
               <div className="mt-3 flex items-center justify-between">
                 <Link
                   to="/practice"
-                  className="inline-flex items-center gap-1.5 text-[11px] font-extrabold text-slate-400 hover:text-brand-600"
+                  className="inline-flex items-center gap-1.5 text-[11px] font-extrabold text-slate-400 hover:text-brand-strong"
                 >
                   <ArrowLeft size={13} />
                   Quitter les cartes
@@ -297,7 +297,7 @@ export function FlashcardsPage() {
                 <button
                   type="button"
                   onClick={restart}
-                  className="inline-flex items-center gap-1.5 text-[11px] font-extrabold text-slate-400 hover:text-brand-600"
+                  className="inline-flex items-center gap-1.5 text-[11px] font-extrabold text-slate-400 hover:text-brand-strong"
                 >
                   <RefreshCw size={13} />
                   Mélanger
@@ -310,7 +310,7 @@ export function FlashcardsPage() {
         <aside className="space-y-4 lg:sticky lg:top-6">
           <section className="card p-5">
             <div className="flex items-center gap-2.5">
-              <span className="grid h-9 w-9 place-items-center rounded-xl bg-cyan-50 text-cyan-600 ring-1 ring-cyan-100">
+              <span className="grid h-9 w-9 place-items-center rounded-xl bg-cyan-soft text-cyan-strong ring-1 ring-cyan-strong/20">
                 <Target size={17} />
               </span>
               <div>
@@ -336,18 +336,18 @@ export function FlashcardsPage() {
               </ProgressRing>
             </div>
             <div className="mt-4 grid grid-cols-2 gap-2">
-              <div className="rounded-xl bg-emerald-50 p-2.5 text-center ring-1 ring-emerald-100">
-                <p className="text-base font-extrabold text-emerald-700">{known}</p>
+              <div className="rounded-xl bg-emerald-soft p-2.5 text-center ring-1 ring-emerald-strong/20">
+                <p className="text-base font-extrabold text-emerald-strong">{known}</p>
                 <p className="text-[9px] font-extrabold uppercase text-emerald-600/60">Connues</p>
               </div>
-              <div className="rounded-xl bg-amber-50 p-2.5 text-center ring-1 ring-amber-100">
-                <p className="text-base font-extrabold text-amber-700">{review}</p>
+              <div className="rounded-xl bg-amber-soft p-2.5 text-center ring-1 ring-amber-strong/20">
+                <p className="text-base font-extrabold text-amber-strong">{review}</p>
                 <p className="text-[9px] font-extrabold uppercase text-amber-600/60">À revoir</p>
               </div>
             </div>
           </section>
 
-          <section className="rounded-[24px] bg-slate-900 p-5 text-white">
+          <section className="rounded-[24px] bg-[#131a33] p-5 text-white">
             <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-white/40">
               Méthode
             </p>

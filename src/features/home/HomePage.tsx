@@ -112,7 +112,7 @@ function NextLessonCard() {
               value={overall}
               height="h-2"
               className="bg-white/15"
-              barClassName="bg-gradient-to-r from-emerald-300 to-teal-300"
+              barClassName="bg-emerald-300"
               label="Progression globale"
             />
           </div>
@@ -121,7 +121,7 @@ function NextLessonCard() {
             variant="secondary"
             size="md"
             iconRight={ArrowRight}
-            className="w-full bg-white text-ink shadow-none hover:bg-[#f2f6ff] sm:w-auto"
+            className="w-full bg-surface text-ink shadow-none hover:bg-surface-soft sm:w-auto"
           >
             {isDone ? "Réviser" : "Continuer"}
           </ButtonLink>
@@ -170,7 +170,7 @@ function CoachCard() {
           <button
             type="button"
             onClick={() => speak(phrase.en)}
-            className="inline-flex h-8 items-center gap-1.5 rounded-full bg-brand-50 px-3 text-[11px] font-extrabold text-brand-700 ring-1 ring-brand-100 transition hover:bg-brand-100"
+            className="inline-flex h-8 items-center gap-1.5 rounded-full bg-brand-soft px-3 text-[11px] font-extrabold text-brand-strong ring-1 ring-brand-strong/20 transition hover:bg-brand-soft"
           >
             <Volume2 size={13} strokeWidth={2.6} />
             Écouter
@@ -200,7 +200,7 @@ function DailyGoalCard() {
     <section className="card animate-fade-up p-5">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2.5">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-emerald-50 text-emerald-600 ring-1 ring-emerald-100">
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-emerald-soft text-emerald-strong ring-1 ring-emerald-strong/20">
             <Target size={17} strokeWidth={2.4} />
           </span>
           <div>
@@ -210,7 +210,7 @@ function DailyGoalCard() {
         </div>
         <Link
           to="/progress"
-          className="grid h-8 w-8 place-items-center rounded-full text-slate-300 transition hover:bg-[#f2f6ff] hover:text-brand-600"
+          className="grid h-8 w-8 place-items-center rounded-full text-slate-400 transition hover:bg-surface-soft hover:text-brand-strong"
           aria-label="Modifier l'objectif quotidien"
         >
           <ArrowUpRight size={15} />
@@ -272,7 +272,7 @@ function WeekCard() {
     <section className="card-blue animate-fade-up p-5" style={{ animationDelay: "60ms" }}>
       <div className="flex items-center justify-between gap-2">
         <div className="flex items-center gap-2.5">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-white text-amber-500 ring-1 ring-amber-100">
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-surface text-amber-strong ring-1 ring-amber-strong/20">
             <Flame size={17} strokeWidth={2.4} fill="currentColor" />
           </span>
           <div>
@@ -280,7 +280,7 @@ function WeekCard() {
             <h2 className="text-[16px] font-extrabold text-ink">Cette semaine</h2>
           </div>
         </div>
-        <span className="rounded-full bg-amber-50 px-2.5 py-1 text-[10px] font-extrabold text-amber-700 ring-1 ring-amber-100">
+        <span className="rounded-full bg-amber-soft px-2.5 py-1 text-[10px] font-extrabold text-amber-strong ring-1 ring-amber-strong/20">
           {streak} j
         </span>
       </div>
@@ -295,11 +295,11 @@ function WeekCard() {
                   className={cn(
                     "animate-bar w-full max-w-7 rounded-t-lg rounded-b-sm transition-colors",
                     day.xp >= dailyGoal
-                      ? "bg-gradient-to-t from-emerald-500 to-emerald-400"
+                      ? "bg-emerald-500"
                       : day.xp > 0
-                        ? "bg-gradient-to-t from-[#2563eb] to-[#60a5fa]"
-                        : "bg-white/80",
-                    day.isToday && "ring-2 ring-[#2563eb]/30 ring-offset-1",
+                        ? "bg-[#2563eb]"
+                        : "bg-surface/80",
+                    day.isToday && "ring-2 ring-azure-500/30 ring-offset-1",
                   )}
                   style={{
                     height: `${height}%`,
@@ -311,7 +311,7 @@ function WeekCard() {
               <span
                 className={cn(
                   "text-[9px] font-extrabold uppercase",
-                  day.isToday ? "text-[#1d4ed8]" : "text-[#1d4ed8]/50",
+                  day.isToday ? "text-azure-strong" : "text-azure-strong/50",
                 )}
               >
                 {day.label}
@@ -321,10 +321,10 @@ function WeekCard() {
         })}
       </div>
 
-      <div className="mt-3 flex items-center justify-between border-t border-[#2563eb]/12 pt-3">
-        <span className="text-[11px] font-bold text-[#1d4ed8]/60">Total de la semaine</span>
+      <div className="mt-3 flex items-center justify-between border-t border-azure-500/12 pt-3">
+        <span className="text-[11px] font-bold text-azure-strong/60">Total de la semaine</span>
         <span className="inline-flex items-center gap-1 text-[12px] font-extrabold text-ink">
-          <Gem size={12} className="text-violet-500" fill="currentColor" />
+          <Gem size={12} className="text-violet-strong" fill="currentColor" />
           {total} XP
         </span>
       </div>
@@ -342,7 +342,7 @@ function FeaturedPhraseCard() {
   return (
     <section className="card animate-fade-up overflow-hidden p-5" style={{ animationDelay: "90ms" }}>
       <div className="flex items-center justify-between gap-2">
-        <span className="inline-flex items-center gap-1.5 text-[10px] font-extrabold uppercase tracking-[0.16em] text-amber-600">
+        <span className="inline-flex items-center gap-1.5 text-[10px] font-extrabold uppercase tracking-[0.16em] text-amber-strong">
           <MessageCircle size={13} strokeWidth={2.5} />
           Expression du jour
         </span>
@@ -353,7 +353,7 @@ function FeaturedPhraseCard() {
             "grid h-8 w-8 place-items-center rounded-full ring-1 transition",
             favorite
               ? "bg-amber-500 text-white ring-amber-500"
-              : "bg-amber-50 text-amber-500 ring-amber-100 hover:bg-amber-100",
+              : "bg-amber-soft text-amber-strong ring-amber-strong/20 hover:bg-amber-soft",
           )}
           aria-label={favorite ? "Retirer des favoris" : "Ajouter aux favoris"}
         >
@@ -370,21 +370,21 @@ function FeaturedPhraseCard() {
         <button
           type="button"
           onClick={() => speak(phrase.en)}
-          className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-3 py-1.5 text-[11px] font-extrabold text-amber-700 ring-1 ring-amber-100 transition hover:-translate-y-0.5 hover:bg-amber-100"
+          className="inline-flex items-center gap-1.5 rounded-full bg-amber-soft px-3 py-1.5 text-[11px] font-extrabold text-amber-strong ring-1 ring-amber-strong/20 transition hover:-translate-y-0.5 hover:bg-amber-soft"
         >
           <Volume2 size={13} strokeWidth={2.5} />
           Écouter
         </button>
         <Link
           to="/expressions"
-          className="inline-flex items-center gap-1 text-[11px] font-extrabold text-[#1d4ed8] hover:text-[#1e40af]"
+          className="inline-flex items-center gap-1 text-[11px] font-extrabold text-azure-strong hover:text-azure-strong"
         >
           Voir tout
           <ArrowRight size={13} />
         </Link>
       </div>
 
-      <p className="mt-3 border-t border-amber-100 pt-3 text-[10px] font-bold text-slate-400">
+      <p className="mt-3 border-t border-amber-strong/20 pt-3 text-[10px] font-bold text-slate-400">
         {phrase.unitTitle} · Niveau {phrase.level}
       </p>
     </section>
@@ -421,7 +421,7 @@ function NextAchievementCard() {
   if (!candidate) {
     return (
       <section className="card flex items-center gap-3 p-4">
-        <span className="grid h-10 w-10 place-items-center rounded-xl bg-amber-50 text-amber-500">
+        <span className="grid h-10 w-10 place-items-center rounded-xl bg-amber-soft text-amber-strong">
           <Trophy size={18} />
         </span>
         <div>
@@ -443,7 +443,7 @@ function NextAchievementCard() {
     >
       <span
         className={cn(
-          "grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-gradient-to-br text-white",
+          "grid h-11 w-11 shrink-0 place-items-center rounded-2xl text-white",
           candidate.tone,
         )}
       >
@@ -471,32 +471,32 @@ const exploreCards = [
     title: "Grammaire",
     description: `${countByCategory("grammar")} fiches claires`,
     icon: CATEGORIES.grammar.icon,
-    tone: "bg-indigo-50 text-indigo-600 ring-indigo-100",
-    accent: "text-indigo-700",
+    tone: "bg-indigo-soft text-indigo-strong ring-indigo-strong/20",
+    accent: "text-indigo-strong",
   },
   {
     to: "/expressions",
     title: "Expressions",
     description: `${TOTAL_PHRASES} phrases utiles`,
     icon: MessageCircle,
-    tone: "bg-amber-50 text-amber-600 ring-amber-100",
-    accent: "text-amber-700",
+    tone: "bg-amber-soft text-amber-strong ring-amber-strong/20",
+    accent: "text-amber-strong",
   },
   {
     to: "/vocabulary",
     title: "Vocabulaire",
     description: `${countByCategory("vocabulary")} thèmes de mots`,
     icon: CATEGORIES.vocabulary.icon,
-    tone: "bg-emerald-50 text-emerald-600 ring-emerald-100",
-    accent: "text-emerald-700",
+    tone: "bg-emerald-soft text-emerald-strong ring-emerald-strong/20",
+    accent: "text-emerald-strong",
   },
   {
     to: "/practice",
     title: "Entraînement",
     description: `${TOTAL_QUESTIONS} exercices`,
     icon: Dumbbell,
-    tone: "bg-brand-50 text-brand-600 ring-brand-100",
-    accent: "text-brand-700",
+    tone: "bg-brand-soft text-brand-strong ring-brand-strong/20",
+    accent: "text-brand-strong",
   },
 ];
 
@@ -533,7 +533,7 @@ function ExploreGrid() {
             </span>
             <ArrowUpRight
               size={14}
-              className="hidden shrink-0 text-slate-300 transition group-hover:-translate-y-0.5 group-hover:text-brand-600 sm:block"
+              className="hidden shrink-0 text-slate-400 transition group-hover:-translate-y-0.5 group-hover:text-brand-strong sm:block"
             />
           </Link>
         ))}

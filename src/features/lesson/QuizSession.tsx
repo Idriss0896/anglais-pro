@@ -95,17 +95,17 @@ function ChoiceQuestion({ question, answered, isCorrect, onAnswer }: QuestionVie
             disabled={answered}
             onClick={() => choose(index)}
             className={cn(
-              "group flex w-full items-center gap-3 rounded-2xl bg-white p-3.5 text-left text-[13.5px] font-bold ring-1 ring-slate-900/[0.08] transition-all sm:p-4",
+              "group flex w-full items-center gap-3 rounded-2xl bg-surface p-3.5 text-left text-[13.5px] font-bold ring-1 ring-slate-900/[0.08] transition-all sm:p-4",
               !answered && "hover:-translate-y-0.5 hover:ring-brand-300 hover:shadow-sm",
-              answered && isRight && "bg-emerald-50 ring-2 ring-emerald-300",
-              answered && isPicked && !isRight && "bg-rose-50 ring-2 ring-rose-300",
+              answered && isRight && "bg-emerald-soft ring-2 ring-emerald-300",
+              answered && isPicked && !isRight && "bg-rose-soft ring-2 ring-rose-300",
               answered && !isRight && !isPicked && "opacity-45",
             )}
           >
             <span
               className={cn(
-                "grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-[#f2f6ff] text-[11px] font-extrabold text-slate-400 transition",
-                !answered && "group-hover:bg-brand-50 group-hover:text-brand-600",
+                "grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-surface-soft text-[11px] font-extrabold text-slate-400 transition",
+                !answered && "group-hover:bg-brand-soft group-hover:text-brand-strong",
                 answered && isRight && "bg-emerald-500 text-white",
                 answered && isPicked && !isRight && "bg-rose-500 text-white",
               )}
@@ -120,7 +120,7 @@ function ChoiceQuestion({ question, answered, isCorrect, onAnswer }: QuestionVie
             </span>
             <span className="min-w-0 flex-1">{option}</span>
             {index < 9 && !answered && (
-              <span className="hidden h-5 w-5 place-items-center rounded-md bg-[#f2f6ff] text-[9px] font-extrabold text-slate-300 sm:grid">
+              <span className="hidden h-5 w-5 place-items-center rounded-md bg-surface-soft text-[9px] font-extrabold text-slate-400 sm:grid">
                 {index + 1}
               </span>
             )}
@@ -161,22 +161,22 @@ function TypeQuestion({ question, answered, isCorrect, onAnswer }: QuestionViewP
           autoCapitalize="off"
           spellCheck={false}
           className={cn(
-            "h-14 w-full rounded-2xl bg-white px-4 pr-12 text-[15px] font-bold text-ink shadow-sm ring-1 ring-slate-900/[0.08] transition placeholder:font-medium placeholder:text-slate-400 focus:ring-2 focus:ring-brand-300",
-            answered && isCorrect && "bg-emerald-50 ring-2 ring-emerald-300",
-            answered && isCorrect === false && "bg-rose-50 ring-2 ring-rose-300",
+            "h-14 w-full rounded-2xl bg-surface px-4 pr-12 text-[15px] font-bold text-ink shadow-sm ring-1 ring-slate-900/[0.08] transition placeholder:font-medium placeholder:text-slate-400 focus:ring-2 focus:ring-brand-300",
+            answered && isCorrect && "bg-emerald-soft ring-2 ring-emerald-300",
+            answered && isCorrect === false && "bg-rose-soft ring-2 ring-rose-300",
           )}
           aria-label="Ta réponse"
         />
         {answered && isCorrect && (
           <CheckCircle2
             size={20}
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-emerald-500"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-emerald-strong"
           />
         )}
         {answered && isCorrect === false && (
           <XCircle
             size={20}
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-rose-500"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-rose-strong"
           />
         )}
       </div>
@@ -214,7 +214,7 @@ function TilesQuestion({ question, answered, onAnswer }: QuestionViewProps) {
 
   return (
     <div className="mt-5">
-      <div className="flex min-h-14 flex-wrap items-center gap-2 rounded-2xl bg-[#f2f6ff] p-2 ring-1 ring-slate-900/[0.05]">
+      <div className="flex min-h-14 flex-wrap items-center gap-2 rounded-2xl bg-surface-soft p-2 ring-1 ring-slate-900/[0.05]">
         {chosen.length === 0 && (
           <span className="px-2 text-[11px] font-bold text-slate-400">
             Clique sur les mots pour construire la phrase…
@@ -226,7 +226,7 @@ function TilesQuestion({ question, answered, onAnswer }: QuestionViewProps) {
             type="button"
             disabled={answered}
             onClick={() => setChosen((current) => current.filter((_, i) => i !== position))}
-            className="rounded-xl bg-white px-3 py-2 text-[13px] font-extrabold text-ink shadow-sm ring-1 ring-slate-900/[0.07] transition hover:bg-rose-50 hover:text-rose-600"
+            className="rounded-xl bg-surface px-3 py-2 text-[13px] font-extrabold text-ink shadow-sm ring-1 ring-slate-900/[0.07] transition hover:bg-rose-soft hover:text-rose-strong"
           >
             {tiles[index]}
           </button>
@@ -243,7 +243,7 @@ function TilesQuestion({ question, answered, onAnswer }: QuestionViewProps) {
               disabled={answered || used}
               onClick={() => setChosen((current) => [...current, index])}
               className={cn(
-                "rounded-xl bg-white px-3.5 py-2.5 text-[13px] font-extrabold text-ink shadow-sm ring-1 ring-slate-900/[0.08] transition hover:-translate-y-0.5 hover:ring-brand-300",
+                "rounded-xl bg-surface px-3.5 py-2.5 text-[13px] font-extrabold text-ink shadow-sm ring-1 ring-slate-900/[0.08] transition hover:-translate-y-0.5 hover:ring-brand-300",
                 used && "pointer-events-none opacity-20",
               )}
             >
@@ -318,15 +318,15 @@ function MatchQuestion({ question, answered, onAnswer }: QuestionViewProps) {
                 disabled={answered || isMatched}
                 onClick={() => setSelectedLeft(index)}
                 className={cn(
-                  "w-full rounded-xl bg-white px-3 py-3 text-left text-[12.5px] font-extrabold text-ink ring-1 ring-slate-900/[0.08] transition",
-                  selectedLeft === index && "bg-brand-50 ring-2 ring-brand-300",
-                  isMatched && "bg-emerald-50 text-emerald-700 ring-emerald-200",
+                  "w-full rounded-xl bg-surface px-3 py-3 text-left text-[12.5px] font-extrabold text-ink ring-1 ring-slate-900/[0.08] transition",
+                  selectedLeft === index && "bg-brand-soft ring-2 ring-brand-300",
+                  isMatched && "bg-emerald-soft text-emerald-strong ring-emerald-strong/20",
                   !isMatched && !answered && "hover:-translate-y-0.5 hover:ring-brand-300",
                 )}
               >
                 <span className="flex items-center justify-between gap-1">
                   <span>{pair.en}</span>
-                  {isMatched && <Check size={13} strokeWidth={3} className="text-emerald-500" />}
+                  {isMatched && <Check size={13} strokeWidth={3} className="text-emerald-strong" />}
                 </span>
               </button>
             );
@@ -342,9 +342,9 @@ function MatchQuestion({ question, answered, onAnswer }: QuestionViewProps) {
                 disabled={answered || isMatched}
                 onClick={() => pickRight(index)}
                 className={cn(
-                  "w-full rounded-xl bg-white px-3 py-3 text-left text-[12.5px] font-extrabold text-ink ring-1 ring-slate-900/[0.08] transition",
-                  isMatched && "bg-emerald-50 text-emerald-700 ring-emerald-200",
-                  wrongRight === index && "bg-rose-50 text-rose-700 ring-2 ring-rose-300",
+                  "w-full rounded-xl bg-surface px-3 py-3 text-left text-[12.5px] font-extrabold text-ink ring-1 ring-slate-900/[0.08] transition",
+                  isMatched && "bg-emerald-soft text-emerald-strong ring-emerald-strong/20",
+                  wrongRight === index && "bg-rose-soft text-rose-strong ring-2 ring-rose-300",
                   !isMatched && !answered && "hover:-translate-y-0.5 hover:ring-brand-300",
                 )}
               >
@@ -505,20 +505,20 @@ export function QuizSession({
           <div className="relative">
             <div
               className={cn(
-                "animate-pop mx-auto grid h-24 w-24 place-items-center rounded-[28px] bg-gradient-to-br text-4xl shadow-xl sm:h-28 sm:w-28 sm:text-5xl",
+                "animate-pop mx-auto grid h-24 w-24 place-items-center rounded-[28px] text-4xl shadow-xl sm:h-28 sm:w-28 sm:text-5xl",
                 perfect
-                  ? "from-amber-400 to-orange-500 shadow-amber-200"
+                  ? "bg-amber-400 shadow-amber-200"
                   : excellent
-                    ? "from-brand-500 to-brand-700 shadow-brand-200"
+                    ? "bg-brand-500 shadow-brand-200"
                     : good
-                      ? "from-emerald-400 to-teal-500 shadow-emerald-200"
-                      : "from-sky-400 to-blue-500 shadow-sky-200",
+                      ? "bg-emerald-400 shadow-emerald-200"
+                      : "bg-sky-400 shadow-sky-200",
               )}
               aria-hidden="true"
             >
               {emoji}
             </div>
-            <p className="mt-5 text-[10px] font-extrabold uppercase tracking-[0.18em] text-brand-600">
+            <p className="mt-5 text-[10px] font-extrabold uppercase tracking-[0.18em] text-brand-strong">
               {context === "lesson" ? "Leçon terminée" : "Session terminée"}
             </p>
             <h1 className="mt-1 text-3xl font-extrabold tracking-[-0.03em] text-ink sm:text-4xl">
@@ -530,8 +530,8 @@ export function QuizSession({
             </p>
 
             <div className="mt-6 grid grid-cols-3 gap-2.5">
-              <div className="rounded-2xl bg-[#f2f6ff] p-3 ring-1 ring-slate-100">
-                <CheckCircle2 size={17} className="mx-auto text-emerald-500" />
+              <div className="rounded-2xl bg-surface-soft p-3 ring-1 ring-line">
+                <CheckCircle2 size={17} className="mx-auto text-emerald-strong" />
                 <p className="mt-1 text-lg font-extrabold text-ink">
                   {result.correct}/{result.total}
                 </p>
@@ -539,15 +539,15 @@ export function QuizSession({
                   Correct
                 </p>
               </div>
-              <div className="rounded-2xl bg-[#f2f6ff] p-3 ring-1 ring-slate-100">
-                <Trophy size={17} className="mx-auto text-amber-500" />
+              <div className="rounded-2xl bg-surface-soft p-3 ring-1 ring-line">
+                <Trophy size={17} className="mx-auto text-amber-strong" />
                 <p className="mt-1 text-lg font-extrabold text-ink">{result.accuracy}%</p>
                 <p className="text-[9px] font-extrabold uppercase tracking-wide text-slate-400">
                   Précision
                 </p>
               </div>
-              <div className="rounded-2xl bg-[#f2f6ff] p-3 ring-1 ring-slate-100">
-                <Gem size={17} className="mx-auto text-violet-500" fill="currentColor" />
+              <div className="rounded-2xl bg-surface-soft p-3 ring-1 ring-line">
+                <Gem size={17} className="mx-auto text-violet-strong" fill="currentColor" />
                 <p className="mt-1 text-lg font-extrabold text-ink">+{result.xp}</p>
                 <p className="text-[9px] font-extrabold uppercase tracking-wide text-slate-400">
                   XP gagnés
@@ -556,11 +556,11 @@ export function QuizSession({
             </div>
 
             <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-[10px] font-bold text-slate-400">
-              <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-1 text-amber-700 ring-1 ring-amber-100">
+              <span className="inline-flex items-center gap-1 rounded-full bg-amber-soft px-2.5 py-1 text-amber-strong ring-1 ring-amber-strong/20">
                 <Flame size={11} className="fill-current" />
                 Série : {streak} jour{streak > 1 ? "s" : ""}
               </span>
-              <span className="inline-flex items-center gap-1 rounded-full bg-rose-50 px-2.5 py-1 text-rose-600 ring-1 ring-rose-100">
+              <span className="inline-flex items-center gap-1 rounded-full bg-rose-soft px-2.5 py-1 text-rose-strong ring-1 ring-rose-strong/20">
                 <Heart size={11} className="fill-current" />
                 {result.mistakes} erreur{result.mistakes > 1 ? "s" : ""}
               </span>
@@ -576,7 +576,7 @@ export function QuizSession({
             </div>
             <Link
               to="/progress"
-              className="mt-4 inline-flex text-[11px] font-extrabold text-brand-600 hover:text-brand-700"
+              className="mt-4 inline-flex text-[11px] font-extrabold text-brand-strong hover:text-brand-strong"
             >
               Voir ma progression
             </Link>
@@ -599,7 +599,7 @@ export function QuizSession({
           <button
             type="button"
             onClick={onExit}
-            className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-slate-500 ring-1 ring-slate-900/[0.07] transition hover:text-ink"
+            className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-surface text-slate-500 ring-1 ring-slate-900/[0.07] transition hover:text-ink"
             aria-label={exitLabel}
           >
             <ArrowLeft size={17} />
@@ -627,7 +627,7 @@ export function QuizSession({
           value={progress}
           height="h-1.5"
           className="mt-2.5"
-          barClassName="bg-gradient-to-r from-brand-500 to-violet-400"
+          barClassName="bg-brand-500"
           label="Progression de la session"
         />
       </header>
@@ -635,7 +635,7 @@ export function QuizSession({
       <div key={question.id} className="animate-slide-up">
         <div className="card overflow-hidden p-5 sm:p-7">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-2.5 py-1 text-[10px] font-extrabold text-brand-700 ring-1 ring-brand-100">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-soft px-2.5 py-1 text-[10px] font-extrabold text-brand-strong ring-1 ring-brand-strong/20">
               <PencilLine size={11} />
               {typeLabels[question.t]}
             </span>
@@ -649,7 +649,7 @@ export function QuizSession({
             {question.q}
           </h2>
           {question.hint && (
-            <p className="mt-2 inline-flex items-start gap-1.5 rounded-xl bg-amber-50 px-3 py-2 text-[11px] font-semibold leading-5 text-amber-800">
+            <p className="mt-2 inline-flex items-start gap-1.5 rounded-xl bg-amber-soft px-3 py-2 text-[11px] font-semibold leading-5 text-amber-strong">
               <Lightbulb size={13} className="mt-0.5 shrink-0" />
               {question.hint}
             </p>
@@ -666,7 +666,7 @@ export function QuizSession({
             <button
               type="button"
               onClick={() => speak(correctAnswer)}
-              className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-extrabold text-brand-600 hover:text-brand-700"
+              className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-extrabold text-brand-strong hover:text-brand-strong"
             >
               <Volume2 size={14} />
               Écouter la réponse
@@ -680,8 +680,8 @@ export function QuizSession({
             className={cn(
               "animate-slide-up mt-3 rounded-[24px] p-4 ring-1 sm:p-5",
               feedback.correct
-                ? "bg-emerald-50 ring-emerald-200"
-                : "bg-rose-50 ring-rose-200",
+                ? "bg-emerald-soft ring-emerald-strong/20"
+                : "bg-rose-soft ring-rose-strong/20",
             )}
             role="status"
             aria-live="polite"
@@ -704,22 +704,22 @@ export function QuizSession({
                   <p
                     className={cn(
                       "text-[14px] font-extrabold",
-                      feedback.correct ? "text-emerald-800" : "text-rose-800",
+                      feedback.correct ? "text-emerald-strong" : "text-rose-strong",
                     )}
                   >
                     {feedback.correct ? "Correct !" : "Pas tout à fait…"}
                   </p>
                   {feedback.correct && (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-white px-2 py-0.5 text-[10px] font-extrabold text-emerald-700">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-surface px-2 py-0.5 text-[10px] font-extrabold text-emerald-strong">
                       <Gem size={10} fill="currentColor" />
                       +10 XP
                     </span>
                   )}
                 </div>
                 {!feedback.correct && feedback.correctAnswer && (
-                  <p className="mt-1 text-[12px] font-bold text-rose-900/80">
+                  <p className="mt-1 text-[12px] font-bold text-rose-strong">
                     Réponse attendue :{" "}
-                    <span className="text-rose-950">{feedback.correctAnswer}</span>
+                    <span className="text-rose-strong">{feedback.correctAnswer}</span>
                   </p>
                 )}
                 {feedback.explanation && (
@@ -749,7 +749,7 @@ export function QuizSession({
         title="Plus de cœurs"
         description="Les cœurs se gagnent en terminant des leçons (3 maximum). Tu peux finir cette session : elle t'en rapportera un."
         icon={Heart}
-        iconTone="bg-rose-100 text-rose-500"
+        iconTone="bg-rose-soft text-rose-strong"
         hideClose
         footer={
           <div className="space-y-2">

@@ -68,7 +68,7 @@ function VocabRow({ entry }: { entry: VocabEntry }) {
       <button
         type="button"
         onClick={() => speak(entry.primary)}
-        className="grid h-7 w-7 shrink-0 place-items-center rounded-full text-slate-300 opacity-0 transition group-hover/row:opacity-100 hover:bg-emerald-100 hover:text-emerald-700 focus-visible:opacity-100"
+        className="grid h-7 w-7 shrink-0 place-items-center rounded-full text-slate-400 opacity-0 transition group-hover/row:opacity-100 hover:bg-emerald-soft hover:text-emerald-strong focus-visible:opacity-100"
         aria-label={`Écouter : ${entry.primary}`}
       >
         <Volume2 size={14} strokeWidth={2.3} />
@@ -117,7 +117,7 @@ export function VocabularyPage() {
         title="Les mots qui servent vraiment"
         description="Du vocabulaire classé par situations : nombres, famille, nourriture, voyages, travail… avec la prononciation anglaise."
         icon={Tag}
-        iconTone="from-emerald-500 to-teal-600"
+        iconTone="bg-emerald-500"
         actions={
           <>
             <StatPill icon={Tag} value={countByCategory("vocabulary")} label="thèmes" tone="mint" />
@@ -126,7 +126,7 @@ export function VocabularyPage() {
         }
       />
 
-      <div className="animate-fade-up relative overflow-hidden rounded-[28px] bg-gradient-to-br from-emerald-500 via-emerald-500 to-teal-600 p-5 text-white shadow-[0_24px_50px_-26px_rgba(16,185,129,.8)] sm:p-6">
+      <div className="animate-fade-up relative overflow-hidden rounded-[28px] bg-emerald-700 p-5 text-white shadow-[0_24px_50px_-26px_rgba(16,185,129,.8)] sm:p-6">
         <div className="pointer-events-none absolute inset-0 pattern-dots opacity-25" />
         <div className="relative flex items-center justify-between gap-4">
           <div className="max-w-xl">
@@ -160,7 +160,7 @@ export function VocabularyPage() {
             value={search}
             onChange={(event) => setSearch(event.target.value)}
             placeholder="Chercher un mot en anglais ou en français…"
-            className="h-12 w-full rounded-2xl bg-white pl-11 pr-11 text-sm font-semibold text-ink shadow-soft ring-1 ring-slate-900/[0.06] transition placeholder:font-medium placeholder:text-slate-400 focus:ring-2 focus:ring-brand-300"
+            className="h-12 w-full rounded-2xl bg-surface pl-11 pr-11 text-sm font-semibold text-ink shadow-soft ring-1 ring-slate-900/[0.06] transition placeholder:font-medium placeholder:text-slate-400 focus:ring-2 focus:ring-brand-300"
             aria-label="Rechercher un mot de vocabulaire"
           />
           {search && (
@@ -182,8 +182,8 @@ export function VocabularyPage() {
             className={cn(
               "rounded-full px-3.5 py-2 text-[11px] font-extrabold transition",
               level === "all"
-                ? "bg-ink text-white"
-                : "bg-white text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
+                ? "bg-[#131a33] text-white"
+                : "bg-surface text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
             )}
           >
             Tous les niveaux
@@ -196,8 +196,8 @@ export function VocabularyPage() {
               className={cn(
                 "inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[11px] font-extrabold transition",
                 level === value
-                  ? "bg-ink text-white"
-                  : "bg-white text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
+                  ? "bg-[#131a33] text-white"
+                  : "bg-surface text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
               )}
             >
               {LEVEL_EMOJIS[value]} Niv. {value}
@@ -216,7 +216,7 @@ export function VocabularyPage() {
               <button
                 type="button"
                 onClick={() => setSearch("")}
-                className="text-xs font-extrabold text-brand-600 hover:text-brand-700"
+                className="text-xs font-extrabold text-brand-strong hover:text-brand-strong"
               >
                 Effacer la recherche
               </button>
@@ -232,7 +232,7 @@ export function VocabularyPage() {
             {searchResults.map(({ unit, entries }) => (
               <section key={unit.id} className="card overflow-hidden p-4 sm:p-5">
                 <div className="mb-2 flex items-center gap-2.5">
-                  <span className="grid h-9 w-9 place-items-center rounded-xl bg-emerald-50 text-lg ring-1 ring-emerald-100">
+                  <span className="grid h-9 w-9 place-items-center rounded-xl bg-emerald-soft text-lg ring-1 ring-emerald-strong/20">
                     {unit.emoji}
                   </span>
                   <div>
@@ -264,16 +264,16 @@ export function VocabularyPage() {
                 key={unit.id}
                 className={cn(
                   "card animate-fade-up flex flex-col overflow-hidden",
-                  open && "ring-2 ring-emerald-200",
+                  open && "ring-2 ring-emerald-strong/20",
                 )}
               >
                 <button
                   type="button"
                   onClick={() => setOpenId(open ? null : unit.id)}
-                  className="flex items-center gap-3 p-4 text-left transition hover:bg-[#f2f6ff]/60"
+                  className="flex items-center gap-3 p-4 text-left transition hover:bg-surface-soft/60"
                   aria-expanded={open}
                 >
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-emerald-50 text-xl ring-1 ring-emerald-100">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-emerald-soft text-xl ring-1 ring-emerald-strong/20">
                     {unit.emoji}
                   </span>
                   <span className="min-w-0 flex-1">
@@ -289,7 +289,7 @@ export function VocabularyPage() {
                         Niv. {unit.level}
                       </span>
                       {done && (
-                        <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[9px] font-extrabold text-emerald-700">
+                        <span className="rounded-full bg-emerald-soft px-2 py-0.5 text-[9px] font-extrabold text-emerald-strong">
                           Terminé
                         </span>
                       )}
@@ -311,7 +311,7 @@ export function VocabularyPage() {
                 </button>
 
                 {open && (
-                  <div className="animate-fade-in border-t border-slate-100 px-3 pb-3 pt-2">
+                  <div className="animate-fade-in border-t border-line px-3 pb-3 pt-2">
                     <MascotSay
                       id={coach}
                       mood="talk"
@@ -327,13 +327,13 @@ export function VocabularyPage() {
                         <VocabRow key={entry.id} entry={entry} />
                       ))}
                     </div>
-                    <div className="mt-2 flex items-center justify-between border-t border-slate-100 px-1.5 pt-3">
+                    <div className="mt-2 flex items-center justify-between border-t border-line px-1.5 pt-3">
                       <span className="text-[10px] font-bold text-slate-400">
                         {unit.quiz.length} exercices associés
                       </span>
                       <Link
                         to={`/lesson/${unit.id}`}
-                        className="inline-flex items-center gap-1 text-[11px] font-extrabold text-emerald-700 hover:text-emerald-800"
+                        className="inline-flex items-center gap-1 text-[11px] font-extrabold text-emerald-strong hover:text-emerald-strong"
                       >
                         Ouvrir la leçon
                         <ArrowUpRight size={13} />

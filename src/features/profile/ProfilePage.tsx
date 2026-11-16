@@ -53,7 +53,7 @@ function StatCard({
   tone: string;
 }) {
   return (
-    <div className="rounded-2xl bg-white p-4 ring-1 ring-slate-900/[0.06]">
+    <div className="rounded-2xl bg-surface p-4 ring-1 ring-slate-900/[0.06]">
       <span className={cn("grid h-9 w-9 place-items-center rounded-xl ring-1", tone)}>
         <Icon size={16} strokeWidth={2.4} />
       </span>
@@ -91,7 +91,7 @@ export function ProfilePage() {
   if (loading) {
     return (
       <div className="grid min-h-[50vh] place-items-center">
-        <LoaderCircle size={28} className="animate-spin text-brand-500" />
+        <LoaderCircle size={28} className="animate-spin text-brand-strong" />
       </div>
     );
   }
@@ -104,11 +104,11 @@ export function ProfilePage() {
           title="Ton profil t'attend"
           description="Tu peux continuer à apprendre sans compte. Crée-le quand tu veux pour retrouver ta progression partout."
           icon={UserRound}
-          iconTone="from-brand-500 to-brand-700"
+          iconTone="bg-brand-500"
         />
 
         <div className="animate-fade-up grid gap-4 lg:grid-cols-[1.35fr_1fr]">
-          <section className="relative overflow-hidden rounded-[30px] bg-gradient-to-br from-[#312e81] via-[#3730a3] to-[#6d28d9] p-6 text-white shadow-[0_30px_64px_-30px_rgba(23,22,43,0.8)] sm:p-8">
+          <section className="relative overflow-hidden rounded-[30px] bg-[#312e81] p-6 text-white shadow-[0_30px_64px_-30px_rgba(23,22,43,0.8)] sm:p-8">
             <div className="pointer-events-none absolute inset-0 pattern-dots opacity-25" />
             <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/15 blur-3xl" />
             <div className="relative">
@@ -128,7 +128,7 @@ export function ProfilePage() {
               <div className="mt-6 flex flex-col gap-2 sm:flex-row">
                 <Link
                   to="/auth?mode=signup"
-                  className="btn-shine inline-flex h-12 items-center justify-center gap-2 rounded-2xl bg-white px-5 text-[13.5px] font-extrabold text-brand-800 shadow-[0_16px_32px_-18px_rgba(0,0,0,0.6)] transition hover:-translate-y-0.5"
+                  className="btn-shine inline-flex h-12 items-center justify-center gap-2 rounded-2xl bg-surface px-5 text-[13.5px] font-extrabold text-brand-strong shadow-[0_16px_32px_-18px_rgba(0,0,0,0.6)] transition hover:-translate-y-0.5"
                 >
                   <UserRound size={17} />
                   Créer mon compte
@@ -158,28 +158,28 @@ export function ProfilePage() {
                 icon={Gem}
                 value={xp}
                 label="XP gagnés"
-                tone="bg-violet-50 text-violet-600 ring-violet-100"
+                tone="bg-violet-soft text-violet-strong ring-violet-strong/20"
               />
               <StatCard
                 icon={Flame}
                 value={`${streak} j`}
                 label="Série en cours"
-                tone="bg-amber-50 text-amber-600 ring-amber-100"
+                tone="bg-amber-soft text-amber-strong ring-amber-strong/20"
               />
               <StatCard
                 icon={Heart}
                 value={`${hearts}/3`}
                 label="Cœurs gagnés"
-                tone="bg-rose-50 text-rose-500 ring-rose-100"
+                tone="bg-rose-soft text-rose-strong ring-rose-strong/20"
               />
               <StatCard
                 icon={BarChart3}
                 value={completed}
                 label="Leçons terminées"
-                tone="bg-emerald-50 text-emerald-600 ring-emerald-100"
+                tone="bg-emerald-soft text-emerald-strong ring-emerald-strong/20"
               />
             </div>
-            <p className="mt-3 rounded-2xl bg-[#f2f6ff] p-3 text-[11px] font-medium leading-5 text-slate-500">
+            <p className="mt-3 rounded-2xl bg-surface-soft p-3 text-[11px] font-medium leading-5 text-slate-500">
               En invité, tout est enregistré dans ce navigateur. Avec un compte, ces données
               te suivent sur mobile et ordinateur.
             </p>
@@ -223,8 +223,8 @@ export function ProfilePage() {
   return (
     <div className="space-y-5">
       {welcome && (
-        <div className="animate-fade-up flex items-center gap-2 rounded-2xl bg-emerald-50 px-4 py-3 text-[12px] font-bold text-emerald-800 ring-1 ring-emerald-200">
-          <Check size={16} className="shrink-0 text-emerald-600" />
+        <div className="animate-fade-up flex items-center gap-2 rounded-2xl bg-emerald-soft px-4 py-3 text-[12px] font-bold text-emerald-strong ring-1 ring-emerald-strong/20">
+          <Check size={16} className="shrink-0 text-emerald-strong" />
           {welcome === "google"
             ? "Connexion Google réussie. Ta progression est synchronisée."
             : "Bienvenue ! Ton compte est créé et ta progression a été sauvegardée."}
@@ -236,10 +236,10 @@ export function ProfilePage() {
         title={user.name ? `Bonjour ${user.name}` : "Mon profil"}
         description="Ta photo, tes informations et la progression liée à ton compte."
         icon={UserRound}
-        iconTone="from-brand-500 to-brand-700"
+        iconTone="bg-brand-500"
       />
 
-      <section className="animate-fade-up relative overflow-hidden rounded-[32px] bg-gradient-to-br from-[#16143c] via-[#312e81] to-[#5b21b6] text-white shadow-[0_34px_70px_-32px_rgba(23,22,43,0.9)]">
+      <section className="animate-fade-up relative overflow-hidden rounded-[32px] bg-[#16143c] text-white shadow-[0_34px_70px_-32px_rgba(23,22,43,0.9)]">
         <div className="pointer-events-none absolute inset-0 pattern-dots opacity-25" />
         <div className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-brand-400/30 blur-3xl" />
         <div className="relative flex flex-col gap-6 p-5 sm:p-7 lg:flex-row lg:items-center">
@@ -255,7 +255,7 @@ export function ProfilePage() {
                 type="button"
                 onClick={() => fileRef.current?.click()}
                 aria-label="Changer ma photo"
-                className="absolute -bottom-1 -right-1 grid h-9 w-9 place-items-center rounded-full bg-white text-brand-700 shadow-lg ring-2 ring-white transition hover:-translate-y-0.5 hover:bg-brand-50 disabled:opacity-60"
+                className="absolute -bottom-1 -right-1 grid h-9 w-9 place-items-center rounded-full bg-surface text-brand-strong shadow-lg ring-2 ring-white transition hover:-translate-y-0.5 hover:bg-brand-soft disabled:opacity-60"
                 disabled={uploading}
               >
                 {uploading ? (
@@ -326,8 +326,8 @@ export function ProfilePage() {
           className={cn(
             "animate-fade-up flex items-center gap-2 rounded-2xl px-4 py-3 text-[12px] font-bold ring-1",
             error
-              ? "bg-rose-50 text-rose-700 ring-rose-200"
-              : "bg-emerald-50 text-emerald-800 ring-emerald-200",
+              ? "bg-rose-soft text-rose-strong ring-rose-strong/20"
+              : "bg-emerald-soft text-emerald-strong ring-emerald-strong/20",
           )}
         >
           {error ? <CloudOff size={16} /> : <Check size={16} />}
@@ -338,7 +338,7 @@ export function ProfilePage() {
       <div className="animate-fade-up grid gap-4 lg:grid-cols-[1.25fr_1fr]">
         <section className="card p-5">
           <div className="flex items-center gap-2.5">
-            <span className="grid h-9 w-9 place-items-center rounded-xl bg-brand-50 text-brand-600 ring-1 ring-brand-100">
+            <span className="grid h-9 w-9 place-items-center rounded-xl bg-brand-soft text-brand-strong ring-1 ring-brand-strong/20">
               <UserRound size={17} />
             </span>
             <div>
@@ -358,7 +358,7 @@ export function ProfilePage() {
                   onChange={(event) => setName(event.target.value)}
                   maxLength={60}
                   placeholder="Ton prénom"
-                  className="h-11 min-w-0 flex-1 rounded-2xl bg-[#f2f6ff] px-3.5 text-[13px] font-semibold text-ink outline-none ring-1 ring-slate-200 transition focus:bg-white focus:ring-2 focus:ring-brand-400"
+                  className="h-11 min-w-0 flex-1 rounded-2xl bg-surface-soft px-3.5 text-[13px] font-semibold text-ink outline-none ring-1 ring-line transition focus:bg-surface focus:ring-2 focus:ring-brand-400"
                 />
                 <button
                   type="button"
@@ -386,7 +386,7 @@ export function ProfilePage() {
               </div>
             </label>
 
-            <div className="flex items-center justify-between gap-3 rounded-2xl bg-[#f2f6ff] p-3">
+            <div className="flex items-center justify-between gap-3 rounded-2xl bg-surface-soft p-3">
               <div className="flex items-center gap-2">
                 <CalendarDays size={16} className="text-slate-400" />
                 <span className="text-[11.5px] font-bold text-slate-500">Membre depuis</span>
@@ -400,7 +400,7 @@ export function ProfilePage() {
               type="button"
               onClick={() => fileRef.current?.click()}
               disabled={uploading}
-              className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#f2f6ff] py-3 text-[12px] font-extrabold text-slate-600 ring-1 ring-slate-200 transition hover:bg-white hover:text-ink disabled:opacity-60"
+              className="flex w-full items-center justify-center gap-2 rounded-2xl bg-surface-soft py-3 text-[12px] font-extrabold text-slate-600 ring-1 ring-line transition hover:bg-surface hover:text-ink disabled:opacity-60"
             >
               {uploading ? (
                 <LoaderCircle size={15} className="animate-spin" />
@@ -417,7 +417,7 @@ export function ProfilePage() {
 
         <section className="card p-5">
           <div className="flex items-center gap-2.5">
-            <span className="grid h-9 w-9 place-items-center rounded-xl bg-emerald-50 text-emerald-600 ring-1 ring-emerald-100">
+            <span className="grid h-9 w-9 place-items-center rounded-xl bg-emerald-soft text-emerald-strong ring-1 ring-emerald-strong/20">
               <BarChart3 size={17} />
             </span>
             <div>
@@ -431,38 +431,38 @@ export function ProfilePage() {
               icon={Gem}
               value={xp}
               label="XP gagnés"
-              tone="bg-violet-50 text-violet-600 ring-violet-100"
+              tone="bg-violet-soft text-violet-strong ring-violet-strong/20"
             />
             <StatCard
               icon={Flame}
               value={`${streak} j`}
               label="Série en cours"
-              tone="bg-amber-50 text-amber-600 ring-amber-100"
+              tone="bg-amber-soft text-amber-strong ring-amber-strong/20"
             />
             <StatCard
               icon={Check}
               value={completed}
               label="Leçons terminées"
-              tone="bg-emerald-50 text-emerald-600 ring-emerald-100"
+              tone="bg-emerald-soft text-emerald-strong ring-emerald-strong/20"
             />
             <StatCard
               icon={BarChart3}
               value={`${accuracy}%`}
               label="Précision"
-              tone="bg-sky-50 text-sky-600 ring-sky-100"
+              tone="bg-sky-soft text-sky-strong ring-sky-strong/20"
             />
           </div>
 
           <div className="mt-4 space-y-2">
             <Link
               to="/learn"
-              className="btn-shine flex h-11 items-center justify-center gap-2 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-[12.5px] font-extrabold text-white shadow-[0_14px_30px_-16px_rgba(90,69,232,0.95)] transition hover:-translate-y-0.5"
+              className="btn-shine flex h-11 items-center justify-center gap-2 rounded-2xl bg-brand-500 text-[12.5px] font-extrabold text-white shadow-[0_14px_30px_-16px_rgba(90,69,232,0.95)] transition hover:-translate-y-0.5"
             >
               Continuer mon parcours
             </Link>
             <Link
               to="/progress"
-              className="flex h-11 items-center justify-center gap-2 rounded-2xl bg-[#f2f6ff] text-[12.5px] font-extrabold text-slate-600 ring-1 ring-slate-200 transition hover:bg-white hover:text-ink"
+              className="flex h-11 items-center justify-center gap-2 rounded-2xl bg-surface-soft text-[12.5px] font-extrabold text-slate-600 ring-1 ring-line transition hover:bg-surface hover:text-ink"
             >
               Voir mes statistiques
             </Link>
@@ -471,7 +471,7 @@ export function ProfilePage() {
               onClick={async () => {
                 await logout();
               }}
-              className="flex h-11 w-full items-center justify-center gap-2 rounded-2xl text-[12.5px] font-extrabold text-rose-600 transition hover:bg-rose-50"
+              className="flex h-11 w-full items-center justify-center gap-2 rounded-2xl text-[12.5px] font-extrabold text-rose-strong transition hover:bg-rose-soft"
             >
               <LogOut size={16} />
               Se déconnecter

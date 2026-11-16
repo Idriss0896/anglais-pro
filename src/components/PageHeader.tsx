@@ -7,6 +7,7 @@ interface PageHeaderProps {
   title: string;
   description?: string;
   icon?: LucideIcon;
+  /** Couleur pleine de la tuile d'icône (ex. « bg-brand-600 »). */
   iconTone?: string;
   actions?: ReactNode;
   children?: ReactNode;
@@ -18,7 +19,7 @@ export function PageHeader({
   title,
   description,
   icon: Icon,
-  iconTone = "from-brand-500 to-brand-700",
+  iconTone = "bg-brand-600",
   actions,
   children,
   className,
@@ -30,15 +31,11 @@ export function PageHeader({
           {Icon && (
             <div
               className={cn(
-                "relative hidden h-14 w-14 shrink-0 place-items-center overflow-hidden rounded-3xl bg-gradient-to-br text-white shadow-glow sm:grid",
+                "hidden h-14 w-14 shrink-0 place-items-center rounded-3xl text-white shadow-soft sm:grid",
                 iconTone,
               )}
             >
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_28%_18%,rgba(255,255,255,0.42),transparent_62%)]"
-              />
-              <Icon size={26} strokeWidth={2.2} className="relative" />
+              <Icon size={26} strokeWidth={2.2} />
             </div>
           )}
           <div>

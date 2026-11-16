@@ -54,9 +54,9 @@ const modes: PracticeMode[] = [
     description: "10 questions variées pour s'échauffer en quelques minutes.",
     icon: Gauge,
     questions: 10,
-    tone: "from-brand-500 to-brand-700",
-    soft: "bg-brand-50",
-    text: "text-brand-700",
+    tone: "bg-brand-500",
+    soft: "bg-brand-soft",
+    text: "text-brand-strong",
     label: "Le plus populaire",
   },
   {
@@ -65,7 +65,7 @@ const modes: PracticeMode[] = [
     description: "20 questions pour tester ton endurance et ta mémoire.",
     icon: Trophy,
     questions: 20,
-    tone: "from-ink to-[#2c2858]",
+    tone: "bg-[#131a33]",
     soft: "bg-slate-100",
     text: "text-ink",
     label: "Défi",
@@ -76,9 +76,9 @@ const modes: PracticeMode[] = [
     description: "Choisis la bonne réponse parmi plusieurs propositions.",
     icon: ListChecks,
     questions: 10,
-    tone: "from-sky-500 to-cyan-500",
-    soft: "bg-sky-50",
-    text: "text-sky-700",
+    tone: "bg-sky-500",
+    soft: "bg-sky-soft",
+    text: "text-sky-strong",
     label: `${choiceCount} disponibles`,
   },
   {
@@ -87,9 +87,9 @@ const modes: PracticeMode[] = [
     description: "Écris la réponse en anglais, sans aide, comme en situation.",
     icon: PenLine,
     questions: 10,
-    tone: "from-emerald-500 to-teal-500",
-    soft: "bg-emerald-50",
-    text: "text-emerald-700",
+    tone: "bg-emerald-500",
+    soft: "bg-emerald-soft",
+    text: "text-emerald-strong",
     label: `${typeCount} disponibles`,
   },
   {
@@ -98,9 +98,9 @@ const modes: PracticeMode[] = [
     description: "Remets les mots dans le bon ordre pour reconstruire la phrase.",
     icon: Blocks,
     questions: 10,
-    tone: "from-amber-400 to-orange-500",
-    soft: "bg-amber-50",
-    text: "text-amber-700",
+    tone: "bg-amber-400",
+    soft: "bg-amber-soft",
+    text: "text-amber-strong",
     label: `${tilesCount} disponibles`,
   },
   {
@@ -109,9 +109,9 @@ const modes: PracticeMode[] = [
     description: "Associe chaque expression anglaise à sa traduction française.",
     icon: Link2,
     questions: 6,
-    tone: "from-rose-400 to-pink-500",
-    soft: "bg-rose-50",
-    text: "text-rose-700",
+    tone: "bg-rose-400",
+    soft: "bg-rose-soft",
+    text: "text-rose-strong",
     label: `${matchCount} disponibles`,
   },
 ];
@@ -124,14 +124,14 @@ function ModeCard({ mode }: { mode: PracticeMode }) {
     >
       <div
         className={cn(
-          "pointer-events-none absolute -right-8 -top-10 h-32 w-32 rounded-full bg-gradient-to-br opacity-10 blur-2xl transition group-hover:opacity-20",
+          "pointer-events-none absolute -right-8 -top-10 h-32 w-32 rounded-full opacity-10 blur-2xl transition group-hover:opacity-20",
           mode.tone,
         )}
       />
       <div className="flex items-start justify-between gap-2">
         <span
           className={cn(
-            "grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br text-white shadow-sm",
+            "grid h-11 w-11 place-items-center rounded-2xl text-white shadow-sm",
             mode.tone,
           )}
         >
@@ -157,7 +157,7 @@ function ModeCard({ mode }: { mode: PracticeMode }) {
           <CircleHelp size={12} />
           {mode.questions} questions
         </span>
-        <span className="inline-flex items-center gap-1 text-[11px] font-extrabold text-brand-600">
+        <span className="inline-flex items-center gap-1 text-[11px] font-extrabold text-brand-strong">
           Commencer
           <ArrowRight size={13} className="transition group-hover:translate-x-0.5" />
         </span>
@@ -184,7 +184,7 @@ export function PracticePage() {
         title="Réviser, encore et encore"
         description="Des sessions courtes et variées pour ancrer ce que tu apprends. Choisis ton format, on s'occupe du reste."
         icon={Dumbbell}
-        iconTone="from-brand-500 to-brand-700"
+        iconTone="bg-brand-500"
         actions={
           <>
             <StatPill icon={Gem} value={xp} label="XP" tone="xp" />
@@ -195,7 +195,7 @@ export function PracticePage() {
       />
 
       <div className="animate-fade-up grid gap-4 lg:grid-cols-[1.4fr_1fr]">
-        <div className="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-brand-600 via-brand-600 to-brand-800 p-5 text-white shadow-[0_26px_56px_-28px_rgba(90,69,232,.9)] sm:p-6">
+        <div className="relative overflow-hidden rounded-[28px] bg-brand-600 p-5 text-white shadow-[0_26px_56px_-28px_rgba(90,69,232,.9)] sm:p-6">
           <div className="pointer-events-none absolute inset-0 pattern-dots opacity-25" />
           <div className="relative">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.14em] text-white/75 ring-1 ring-white/10">
@@ -213,7 +213,7 @@ export function PracticePage() {
             <div className="mt-4 flex flex-wrap items-center gap-3">
               <Link
                 to="/practice/session/express"
-                className="inline-flex h-11 items-center gap-2 rounded-2xl bg-white px-5 text-sm font-extrabold text-ink transition hover:-translate-y-0.5"
+                className="inline-flex h-11 items-center gap-2 rounded-2xl bg-surface px-5 text-sm font-extrabold text-ink transition hover:-translate-y-0.5"
               >
                 <Gauge size={17} />
                 Quiz express
@@ -232,7 +232,7 @@ export function PracticePage() {
         <div className="card flex flex-col justify-center p-5">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="grid h-9 w-9 place-items-center rounded-xl bg-emerald-50 text-emerald-600 ring-1 ring-emerald-100">
+              <span className="grid h-9 w-9 place-items-center rounded-xl bg-emerald-soft text-emerald-strong ring-1 ring-emerald-strong/20">
                 <Target size={17} />
               </span>
               <div>
@@ -240,13 +240,13 @@ export function PracticePage() {
                 <h2 className="text-[15px] font-extrabold text-ink">Objectif du jour</h2>
               </div>
             </div>
-            <span className="text-lg font-extrabold text-emerald-600">{goalPercent}%</span>
+            <span className="text-lg font-extrabold text-emerald-strong">{goalPercent}%</span>
           </div>
           <div className="mt-4">
             <ProgressBar
               value={goalPercent}
               height="h-2.5"
-              barClassName="bg-gradient-to-r from-emerald-400 to-teal-400"
+              barClassName="bg-emerald-400"
               label="Objectif quotidien"
             />
             <div className="mt-2 flex items-center justify-between text-[10px] font-bold text-slate-400">
@@ -256,7 +256,7 @@ export function PracticePage() {
               <span>{Math.max(0, dailyGoal - goalXp)} XP restants</span>
             </div>
           </div>
-          <p className="mt-4 border-t border-slate-100 pt-3 text-[11px] font-medium leading-5 text-slate-500">
+          <p className="mt-4 border-t border-line pt-3 text-[11px] font-medium leading-5 text-slate-500">
             {TOTAL_QUESTIONS} exercices et {TOTAL_PHRASES} expressions t'attendent dans
             la bibliothèque.
           </p>
@@ -272,7 +272,7 @@ export function PracticePage() {
             </p>
           </div>
           <span className="hidden items-center gap-1 text-[10px] font-bold text-slate-400 sm:inline-flex">
-            <Gem size={12} className="text-violet-500" fill="currentColor" />
+            <Gem size={12} className="text-violet-strong" fill="currentColor" />
             10 XP par bonne réponse
           </span>
         </div>
@@ -284,8 +284,8 @@ export function PracticePage() {
       </section>
 
       <section className="card overflow-hidden">
-        <div className="flex items-center gap-2.5 border-b border-slate-100 px-5 py-4">
-          <span className="grid h-8 w-8 place-items-center rounded-xl bg-brand-50 text-brand-600">
+        <div className="flex items-center gap-2.5 border-b border-line px-5 py-4">
+          <span className="grid h-8 w-8 place-items-center rounded-xl bg-brand-soft text-brand-strong">
             <CircleHelp size={16} />
           </span>
           <h2 className="text-[15px] font-extrabold text-ink">Comment ça marche ?</h2>
@@ -312,10 +312,10 @@ export function PracticePage() {
               key={step.title}
               className={cn(
                 "flex gap-3 p-5",
-                index < 2 && "border-b border-slate-100 sm:border-b-0 sm:border-r",
+                index < 2 && "border-b border-line sm:border-b-0 sm:border-r",
               )}
             >
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-[#f2f6ff] text-slate-500">
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-surface-soft text-slate-500">
                 <step.icon size={16} />
               </span>
               <div>

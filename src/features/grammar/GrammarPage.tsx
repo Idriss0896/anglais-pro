@@ -3,7 +3,7 @@ import { LibraryPage } from "@/features/library/LibraryPage";
 
 function GrammarBanner() {
   return (
-    <div className="animate-fade-up relative overflow-hidden rounded-[28px] bg-gradient-to-br from-indigo-600 via-indigo-600 to-violet-700 p-5 text-white shadow-[0_24px_50px_-26px_rgba(79,70,229,.8)] sm:p-6">
+    <div className="animate-fade-up relative overflow-hidden rounded-[28px] bg-indigo-600 p-5 text-white shadow-[0_24px_50px_-26px_rgba(79,70,229,.8)] sm:p-6">
       <div className="pointer-events-none absolute inset-0 pattern-dots opacity-25" />
       <div className="pointer-events-none absolute -right-16 -top-16 h-44 w-44 rounded-full bg-white/10 blur-2xl" />
       <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -42,7 +42,7 @@ export function GrammarPage() {
       title="La grammaire, sans jargon"
       description="Comprendre les structures de l'anglais pour construire des phrases justes, naturellement."
       icon={BookOpen}
-      iconTone="from-indigo-500 to-violet-600"
+      iconTone="bg-indigo-500"
       fixedCategory="grammar"
       banner={<GrammarBanner />}
     />

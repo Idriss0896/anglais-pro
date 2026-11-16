@@ -20,14 +20,12 @@ export interface ProgressData {
 }
 
 interface ProgressState extends ProgressData {
-  sound: boolean;
   addXp: (amount: number) => void;
   completeLesson: (id: string, accuracy: number, xp: number) => void;
   loseHeart: () => void;
   restoreHearts: () => void;
   toggleFavorite: (id: string) => void;
   setDailyGoal: (value: number) => void;
-  setSound: (value: boolean) => void;
   resetProgress: () => void;
   importProgress: (data: Partial<ProgressData>) => void;
 }
@@ -42,7 +40,6 @@ const defaultProgress = {
   activity: {} as Record<string, DayActivity>,
   lessons: {} as Record<string, LessonProgress>,
   favorites: [] as string[],
-  sound: true,
 };
 
 function bumpActivity(
@@ -81,7 +78,6 @@ export const useProgressStore = create<ProgressState>()(
   persist(
     (set) => ({
       ...defaultProgress,
-      sound: true,
 
       addXp: (amount) =>
         set((state) => {
@@ -127,7 +123,6 @@ export const useProgressStore = create<ProgressState>()(
         })),
 
       setDailyGoal: (value) => set({ dailyGoal: value }),
-      setSound: (value) => set({ sound: value }),
 
       resetProgress: () =>
         set((state) => ({
@@ -135,7 +130,6 @@ export const useProgressStore = create<ProgressState>()(
           activity: {},
           lessons: {},
           favorites: [],
-          sound: state.sound,
           dailyGoal: state.dailyGoal,
         })),
 

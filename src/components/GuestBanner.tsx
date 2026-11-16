@@ -26,8 +26,8 @@ export function GuestBanner() {
   if (pathname === "/profile") return null;
 
   return (
-    <div className="animate-fade-up mb-4 flex flex-col gap-3 rounded-[24px] bg-gradient-to-r from-brand-50 via-white to-sky-50 p-3.5 ring-1 ring-brand-100 sm:flex-row sm:items-center">
-      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white text-brand-600 shadow-[0_10px_22px_-14px_rgba(90,69,232,0.6)] ring-1 ring-brand-100">
+    <div className="animate-fade-up mb-4 flex flex-col gap-3 rounded-[24px] bg-brand-soft p-3.5 ring-1 ring-brand-strong/20 sm:flex-row sm:items-center">
+      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-surface text-brand-strong shadow-[0_10px_22px_-14px_rgba(90,69,232,0.6)] ring-1 ring-brand-strong/20">
         <CloudUpload size={18} />
       </span>
       <div className="min-w-0 flex-1">
@@ -52,7 +52,7 @@ export function GuestBanner() {
           setDismissed(true);
           window.sessionStorage.setItem(DISMISS_KEY, "1");
         }}
-        className="grid h-8 w-8 shrink-0 place-items-center self-end rounded-lg text-slate-400 transition hover:bg-white hover:text-slate-600 sm:self-auto"
+        className="grid h-8 w-8 shrink-0 place-items-center self-end rounded-lg text-slate-400 transition hover:bg-surface hover:text-slate-600 sm:self-auto"
       >
         <X size={15} />
       </button>

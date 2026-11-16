@@ -26,14 +26,14 @@ export function LevelCard({ level, lessons, className }: LevelCardProps) {
     >
       <div
         className={cn(
-          "pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-gradient-to-br opacity-10 blur-xl transition-opacity group-hover:opacity-20",
+          "pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full opacity-10 blur-xl transition-opacity group-hover:opacity-20",
           theme.gradient,
         )}
       />
       <div className="flex items-start justify-between gap-2">
         <span
           className={cn(
-            "grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br text-xl text-white shadow-sm",
+            "grid h-11 w-11 place-items-center rounded-2xl text-xl text-white shadow-sm",
             theme.gradient,
           )}
           aria-hidden="true"
@@ -52,7 +52,7 @@ export function LevelCard({ level, lessons, className }: LevelCardProps) {
         </span>
       </div>
 
-      <p className="mt-3 text-[10px] font-extrabold uppercase tracking-[0.15em] text-[#2563eb]/70">
+      <p className="mt-3 text-[10px] font-extrabold uppercase tracking-[0.15em] text-azure-strong/70">
         Niveau {level.num}
       </p>
       <h3 className="mt-0.5 text-[17px] font-extrabold text-ink">{level.title}</h3>
@@ -62,7 +62,7 @@ export function LevelCard({ level, lessons, className }: LevelCardProps) {
 
       <div className="mt-4">
         <div className="mb-1.5 flex items-center justify-between text-[10px] font-extrabold">
-          <span className="text-[#1d4ed8]/70">
+          <span className="text-azure-strong/70">
             {completed}/{level.units.length} {plural(level.units.length, "leçon")}
           </span>
           <span className={theme.text}>{progress}%</span>
@@ -70,17 +70,17 @@ export function LevelCard({ level, lessons, className }: LevelCardProps) {
         <ProgressBar
           value={progress}
           height="h-1.5"
-          className="bg-white/80"
+          className="bg-surface/80"
           barClassName={theme.bar}
           label={`Progression niveau ${level.num}`}
         />
       </div>
 
       <div className="mt-3 flex items-center justify-between">
-        <span className="inline-flex items-center gap-1 text-[10px] font-bold text-[#1d4ed8]/70">
+        <span className="inline-flex items-center gap-1 text-[10px] font-bold text-azure-strong/70">
           {completed === level.units.length ? (
             <>
-              <CheckCircle2 size={12} className="text-emerald-500" />
+              <CheckCircle2 size={12} className="text-emerald-strong" />
               Niveau terminé
             </>
           ) : (
@@ -92,7 +92,7 @@ export function LevelCard({ level, lessons, className }: LevelCardProps) {
         </span>
         <ArrowRight
           size={15}
-          className="text-slate-300 transition-transform group-hover:translate-x-0.5 group-hover:text-brand-600"
+          className="text-slate-400 transition-transform group-hover:translate-x-0.5 group-hover:text-brand-strong"
         />
       </div>
     </Link>

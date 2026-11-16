@@ -48,7 +48,7 @@ function PhraseCard({
   return (
     <article className={cn("card-hover group flex flex-col p-4 sm:p-5", tinted ? "card-blue" : "card")}>
       <div className="flex items-start justify-between gap-3">
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-[10px] font-extrabold text-[#1d4ed8] ring-1 ring-[#2563eb]/15">
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-surface px-2.5 py-1 text-[10px] font-extrabold text-azure-strong ring-1 ring-azure-500/15">
           <span aria-hidden="true">{phrase.emoji}</span>
           Niveau {phrase.level}
         </span>
@@ -56,7 +56,7 @@ function PhraseCard({
           <button
             type="button"
             onClick={() => speak(phrase.en)}
-            className="grid h-8 w-8 place-items-center rounded-full text-slate-400 transition hover:bg-amber-50 hover:text-amber-600"
+            className="grid h-8 w-8 place-items-center rounded-full text-slate-400 transition hover:bg-amber-soft hover:text-amber-strong"
             aria-label={`Écouter : ${phrase.en}`}
           >
             <Volume2 size={15} strokeWidth={2.3} />
@@ -67,8 +67,8 @@ function PhraseCard({
             className={cn(
               "grid h-8 w-8 place-items-center rounded-full transition",
               copied
-                ? "bg-emerald-50 text-emerald-600"
-                : "text-slate-400 hover:bg-[#f2f6ff] hover:text-ink",
+                ? "bg-emerald-soft text-emerald-strong"
+                : "text-slate-400 hover:bg-surface-soft hover:text-ink",
             )}
             aria-label={copied ? "Copié" : "Copier l'expression"}
           >
@@ -80,8 +80,8 @@ function PhraseCard({
             className={cn(
               "grid h-8 w-8 place-items-center rounded-full transition",
               favorite
-                ? "bg-amber-500 text-white"
-                : "text-slate-400 hover:bg-amber-50 hover:text-amber-600",
+                ? "bg-amber-700 text-white"
+                : "text-slate-400 hover:bg-amber-soft hover:text-amber-strong",
             )}
             aria-label={favorite ? "Retirer des favoris" : "Ajouter aux favoris"}
           >
@@ -112,13 +112,13 @@ function PhraseCard({
       <div className="mt-auto flex items-center justify-between gap-2 pt-4">
         <Link
           to={`/lesson/${phrase.unitId}`}
-          className="min-w-0 truncate text-[10px] font-bold text-slate-400 transition hover:text-brand-600"
+          className="min-w-0 truncate text-[10px] font-bold text-slate-400 transition hover:text-brand-strong"
         >
           {phrase.unitTitle}
         </Link>
         <Link
           to={`/lesson/${phrase.unitId}`}
-          className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-[#f2f6ff] text-slate-400 transition group-hover:bg-brand-600 group-hover:text-white"
+          className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-surface-soft text-slate-400 transition group-hover:bg-brand-600 group-hover:text-white"
           aria-label={`Ouvrir la leçon ${phrase.unitTitle}`}
         >
           <ArrowUpRight size={13} />
@@ -168,7 +168,7 @@ export function ExpressionsPage() {
         title="Les mots pour le dire"
         description="910 phrases, idiomes et formules du quotidien. Écoute, enregistre tes favorites et retrouve-les quand tu en as besoin."
         icon={MessageCircle}
-        iconTone="from-[#2563eb] to-[#1e40af]"
+        iconTone="bg-[#2563eb]"
       />
 
       <div className="card-blue-deep animate-fade-up relative overflow-hidden p-5 sm:p-6">
@@ -207,7 +207,7 @@ export function ExpressionsPage() {
             value={search}
             onChange={(event) => setSearch(event.target.value)}
             placeholder="Chercher une expression en anglais ou en français…"
-            className="h-12 w-full rounded-2xl bg-white pl-11 pr-11 text-sm font-semibold text-ink ring-1 ring-[#2563eb]/15 transition placeholder:font-medium placeholder:text-slate-400 focus:ring-2 focus:ring-[#2563eb]/40"
+            className="h-12 w-full rounded-2xl bg-surface pl-11 pr-11 text-sm font-semibold text-ink ring-1 ring-azure-500/15 transition placeholder:font-medium placeholder:text-slate-400 focus:ring-2 focus:ring-azure-500/40"
             aria-label="Rechercher une expression"
           />
           {search && (
@@ -229,8 +229,8 @@ export function ExpressionsPage() {
             className={cn(
               "rounded-full px-3.5 py-2 text-[11px] font-extrabold transition",
               level === "all"
-                ? "bg-ink text-white"
-                : "bg-white text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
+                ? "bg-[#131a33] text-white"
+                : "bg-surface text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
             )}
           >
             Tous les niveaux
@@ -243,8 +243,8 @@ export function ExpressionsPage() {
               className={cn(
                 "inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[11px] font-extrabold transition",
                 level === value
-                  ? "bg-ink text-white"
-                  : "bg-white text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
+                  ? "bg-[#131a33] text-white"
+                  : "bg-surface text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
               )}
             >
               {LEVEL_EMOJIS[value]} Niv. {value}
@@ -257,8 +257,8 @@ export function ExpressionsPage() {
             className={cn(
               "inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[11px] font-extrabold transition",
               favoritesOnly
-                ? "bg-amber-500 text-white"
-                : "bg-white text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
+                ? "bg-amber-700 text-white"
+                : "bg-surface text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
             )}
           >
             {favoritesOnly ? <BookmarkCheck size={13} /> : <Bookmark size={13} />}
@@ -301,7 +301,7 @@ export function ExpressionsPage() {
                 setLevel("all");
                 setFavoritesOnly(false);
               }}
-              className="text-xs font-extrabold text-brand-600 hover:text-brand-700"
+              className="text-xs font-extrabold text-brand-strong hover:text-brand-strong"
             >
               Réinitialiser les filtres
             </button>
@@ -326,7 +326,7 @@ export function ExpressionsPage() {
               <button
                 type="button"
                 onClick={() => setVisible((value) => value + 24)}
-                className="rounded-full bg-white px-5 py-2.5 text-xs font-extrabold text-brand-600 shadow-soft ring-1 ring-slate-900/[0.06] transition hover:-translate-y-0.5 hover:text-brand-700"
+                className="rounded-full bg-surface px-5 py-2.5 text-xs font-extrabold text-brand-strong shadow-soft ring-1 ring-slate-900/[0.06] transition hover:-translate-y-0.5 hover:text-brand-strong"
               >
                 Afficher plus d'expressions ({filtered.length - visible})
               </button>

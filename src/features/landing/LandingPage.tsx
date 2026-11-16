@@ -117,11 +117,11 @@ function LessonPreview() {
 
       <div className="animate-float-slower relative rounded-[30px] bg-white p-5 shadow-[0_44px_90px_-32px_rgba(15,10,50,0.75)] ring-1 ring-white/40 sm:p-6">
         <div className="flex items-center justify-between gap-2">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#eef4ff] px-2.5 py-1 text-[9.5px] font-extrabold uppercase tracking-[0.13em] text-[#1d4ed8] ring-1 ring-[#2563eb]/12">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-azure-soft px-2.5 py-1 text-[9.5px] font-extrabold uppercase tracking-[0.13em] text-azure-strong ring-1 ring-azure-500/12">
             <MessageCircle size={11} strokeWidth={2.8} />
             Expression du jour
           </span>
-          <span className="rounded-full bg-[#f4f1ff] px-2.5 py-1 text-[10px] font-extrabold text-brand-700 ring-1 ring-brand-100">
+          <span className="rounded-full bg-brand-soft px-2.5 py-1 text-[10px] font-extrabold text-brand-strong ring-1 ring-brand-strong/20">
             B2
           </span>
         </div>
@@ -133,7 +133,7 @@ function LessonPreview() {
           Pourrais-tu parler un peu plus lentement, s'il te plaît ?
         </p>
 
-        <div className="mt-5 flex items-center gap-3 rounded-2xl bg-[#f6f9ff] p-3 ring-1 ring-[#2563eb]/8">
+        <div className="mt-5 flex items-center gap-3 rounded-2xl bg-surface-soft p-3 ring-1 ring-azure-500/8">
           <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[#3b82f6] to-[#1d4ed8] text-white shadow-[0_10px_20px_-8px_rgba(37,99,235,0.9)]">
             <Volume2 size={17} strokeWidth={2.5} />
           </span>
@@ -146,15 +146,15 @@ function LessonPreview() {
               />
             ))}
           </div>
-          <span className="shrink-0 text-[10px] font-extrabold tabular-nums text-[#1d4ed8]">
+          <span className="shrink-0 text-[10px] font-extrabold tabular-nums text-azure-strong">
             0:03
           </span>
         </div>
 
-        <div className="mt-4 border-t border-slate-100 pt-4">
+        <div className="mt-4 border-t border-line pt-4">
           <div className="flex items-center justify-between gap-2 text-[10.5px] font-extrabold">
             <span className="text-slate-400">Parcours · leçon 12 sur {TOTAL_UNITS}</span>
-            <span className="text-[#1d4ed8]">19 %</span>
+            <span className="text-azure-strong">19 %</span>
           </div>
           <div className="mt-2 h-2 overflow-hidden rounded-full bg-slate-100">
             <div className="h-full w-[19%] rounded-full bg-gradient-to-r from-[#60a5fa] to-[#1d4ed8]" />
@@ -277,7 +277,7 @@ function LandingNav() {
                 setOpen(false);
                 scrollToSection(link.id);
               }}
-              className="flex w-full items-center justify-between rounded-xl px-3.5 py-3 text-left text-[13px] font-extrabold text-slate-600 transition hover:bg-[#f2f6ff] hover:text-ink"
+              className="flex w-full items-center justify-between rounded-xl px-3.5 py-3 text-left text-[13px] font-extrabold text-slate-600 transition hover:bg-surface-soft hover:text-ink"
             >
               {link.label}
               <ChevronRight size={15} />
@@ -286,7 +286,7 @@ function LandingNav() {
           <Link
             to="/auth"
             onClick={() => setOpen(false)}
-            className="mt-1 flex items-center justify-center rounded-xl bg-brand-50 px-3.5 py-3 text-[13px] font-extrabold text-brand-700 ring-1 ring-brand-100"
+            className="mt-1 flex items-center justify-center rounded-xl bg-brand-soft px-3.5 py-3 text-[13px] font-extrabold text-brand-strong ring-1 ring-brand-strong/20"
           >
             Se connecter
           </Link>
@@ -318,7 +318,7 @@ export function LandingPage() {
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -bottom-32 left-[-10%] h-[380px] w-[380px] rounded-full bg-[#2563eb]/40 blur-[110px]"
+            className="pointer-events-none absolute -bottom-32 left-[-10%] h-[380px] w-[380px] rounded-full bg-azure-500/40 blur-[110px]"
           />
           <div
             aria-hidden="true"
@@ -357,7 +357,7 @@ export function LandingPage() {
               >
                 <EnterLink
                   to="/accueil"
-                  className="btn-shine group inline-flex h-13 items-center justify-center gap-2 rounded-2xl bg-white px-6 text-[14px] font-extrabold text-[#3b1878] shadow-[0_20px_44px_-18px_rgba(0,0,0,0.65)] transition hover:-translate-y-0.5 hover:bg-indigo-50 active:translate-y-0"
+                  className="btn-shine group inline-flex h-13 items-center justify-center gap-2 rounded-2xl bg-white px-6 text-[14px] font-extrabold text-brand-strong shadow-[0_20px_44px_-18px_rgba(0,0,0,0.65)] transition hover:-translate-y-0.5 hover:bg-indigo-soft active:translate-y-0"
                 >
                   Commencer gratuitement
                   <ArrowRight
@@ -445,8 +445,8 @@ export function LandingPage() {
                       className={cn(
                         "grid h-11 w-11 place-items-center rounded-2xl",
                         feature.tone === "blue"
-                          ? "bg-white text-[#1d4ed8] ring-1 ring-[#2563eb]/15"
-                          : "bg-[#eef4ff] text-[#1d4ed8] ring-1 ring-[#2563eb]/10",
+                          ? "bg-white text-azure-strong ring-1 ring-azure-500/15"
+                          : "bg-azure-soft text-azure-strong ring-1 ring-azure-500/10",
                       )}
                     >
                       <feature.icon size={20} strokeWidth={2.3} />
@@ -464,7 +464,7 @@ export function LandingPage() {
           </div>
         </section>
 
-        <section className="border-y border-slate-900/5 bg-[#f7f9ff] px-4 py-20 sm:px-6 sm:py-24 lg:px-9">
+        <section className="border-y border-slate-900/5 bg-surface-soft px-4 py-20 sm:px-6 sm:py-24 lg:px-9">
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
               <Reveal>
@@ -533,7 +533,7 @@ export function LandingPage() {
                   </div>
                   <EnterLink
                     to="/learn"
-                    className="inline-flex h-11 items-center gap-1.5 rounded-full bg-white px-4 text-[12px] font-extrabold text-[#1d4ed8] shadow-[0_16px_30px_-16px_rgba(0,0,0,0.6)] transition hover:-translate-y-0.5"
+                    className="inline-flex h-11 items-center gap-1.5 rounded-full bg-white px-4 text-[12px] font-extrabold text-azure-strong shadow-[0_16px_30px_-16px_rgba(0,0,0,0.6)] transition hover:-translate-y-0.5"
                   >
                     Voir le parcours
                     <ArrowUpRight size={15} strokeWidth={2.6} />
@@ -575,7 +575,7 @@ export function LandingPage() {
           <div className="mx-auto grid max-w-6xl gap-4 lg:grid-cols-[1.15fr_0.85fr]">
             <Reveal>
               <article className="card h-full p-6 sm:p-8">
-                <span className="grid h-11 w-11 place-items-center rounded-2xl bg-emerald-50 text-emerald-600 ring-1 ring-emerald-100">
+                <span className="grid h-11 w-11 place-items-center rounded-2xl bg-emerald-soft text-emerald-strong ring-1 ring-emerald-strong/20">
                   <ShieldCheck size={20} strokeWidth={2.3} />
                 </span>
                 <h2 className="mt-4 text-[24px] font-extrabold leading-tight tracking-[-0.03em] text-ink sm:text-[28px]">
@@ -596,7 +596,7 @@ export function LandingPage() {
                       key={item}
                       className="flex items-center gap-2 text-[12px] font-bold text-slate-600"
                     >
-                      <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-emerald-50 text-emerald-600 ring-1 ring-emerald-100">
+                      <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-emerald-soft text-emerald-strong ring-1 ring-emerald-strong/20">
                         <Check size={11} strokeWidth={3.2} />
                       </span>
                       {item}
@@ -609,7 +609,7 @@ export function LandingPage() {
             <Reveal delay={90}>
               <article className="card-blue flex h-full flex-col justify-between p-6 sm:p-8">
                 <div>
-                  <span className="grid h-11 w-11 place-items-center rounded-2xl bg-white text-[#1d4ed8] ring-1 ring-[#2563eb]/12">
+                  <span className="grid h-11 w-11 place-items-center rounded-2xl bg-white text-azure-strong ring-1 ring-azure-500/12">
                     <Target size={20} strokeWidth={2.3} />
                   </span>
                   <h2 className="mt-4 text-[22px] font-extrabold leading-tight tracking-[-0.03em] text-ink">
@@ -620,7 +620,7 @@ export function LandingPage() {
                     telle quelle.
                   </p>
                 </div>
-                <div className="mt-6 flex items-center gap-2 text-[11px] font-extrabold text-[#1d4ed8]">
+                <div className="mt-6 flex items-center gap-2 text-[11px] font-extrabold text-azure-strong">
                   <Gem size={14} fill="currentColor" />
                   XP, série et leçons conservés
                 </div>
@@ -633,7 +633,7 @@ export function LandingPage() {
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 pattern-dots opacity-25" />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -left-16 -top-20 h-72 w-72 rounded-full bg-[#2563eb]/30 blur-[90px]"
+            className="pointer-events-none absolute -left-16 -top-20 h-72 w-72 rounded-full bg-azure-500/30 blur-[90px]"
           />
           <div className="relative mx-auto flex max-w-6xl flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-xl">
@@ -654,7 +654,7 @@ export function LandingPage() {
             <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
               <EnterLink
                 to="/accueil"
-                className="btn-shine group inline-flex h-13 items-center justify-center gap-2 rounded-2xl bg-white px-6 text-[14px] font-extrabold text-[#3b1878] shadow-[0_20px_44px_-18px_rgba(0,0,0,0.6)] transition hover:-translate-y-0.5 hover:bg-indigo-50"
+                className="btn-shine group inline-flex h-13 items-center justify-center gap-2 rounded-2xl bg-white px-6 text-[14px] font-extrabold text-brand-strong shadow-[0_20px_44px_-18px_rgba(0,0,0,0.6)] transition hover:-translate-y-0.5 hover:bg-indigo-soft"
               >
                 Commencer maintenant
                 <ArrowRight

@@ -3,7 +3,6 @@ import { HashRouter, Link, Navigate, Route, Routes, useLocation } from "react-ro
 import { Compass } from "lucide-react";
 import { AuthProvider, useAuth } from "@/auth/AuthProvider";
 import { AppShell } from "@/components/AppShell";
-import { Logo } from "@/components/Logo";
 import { HomePage } from "@/features/home/HomePage";
 import { LandingPage } from "@/features/landing/LandingPage";
 import { LearnPage } from "@/features/learn/LearnPage";
@@ -48,27 +47,12 @@ function ThemeSync({ resolved, reducedMotion }: { resolved: string; reducedMotio
   return null;
 }
 
-function EntrySplash() {
-  return (
-    <div className="grid min-h-dvh place-items-center bg-[#4c1d95]">
-      <div className="animate-pop">
-        <Logo onDark />
-      </div>
-    </div>
-  );
-}
-
-/**
- * Point d'entrée du site : la page de présentation s'affiche lors de la
- * première visite, puis l'application prend le relais.
- */
 function Entry() {
   const { user, loading } = useAuth();
   const [entered] = useState(hasEnteredApp);
 
-  if (!entered && loading) return <EntrySplash />;
-  if (entered || user) return <Navigate to="/accueil" replace />;
-  return <LandingPage />;
+  if (!loading && user) return <Navigate to="/accueil" replace />;
+  return <LandingPage returning={entered} />;
 }
 
 function NotFound() {

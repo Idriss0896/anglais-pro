@@ -9,7 +9,6 @@ import {
   ChevronRight,
   Flame,
   Gem,
-  Headphones,
   Layers,
   Menu,
   MessageCircle,
@@ -190,7 +189,7 @@ function LessonPreview() {
   );
 }
 
-function LandingNav() {
+function LandingNav({ returning }: { returning: boolean }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -248,7 +247,7 @@ function LandingNav() {
             to="/accueil"
             className="btn-shine inline-flex h-10 items-center gap-1.5 rounded-full bg-gradient-to-br from-brand-500 to-brand-700 px-4 text-[12px] font-extrabold text-white shadow-[0_12px_26px_-12px_rgba(91,33,182,0.95)] ring-1 ring-white/20 transition hover:-translate-y-0.5 hover:to-brand-800 max-[379px]:hidden"
           >
-            Commencer
+            {returning ? "Reprendre" : "Commencer"}
             <ArrowRight size={14} strokeWidth={2.6} />
           </EnterLink>
           <button
@@ -296,7 +295,7 @@ function LandingNav() {
             onNavigate={() => setOpen(false)}
             className="mt-1 flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 px-3.5 py-3 text-[13px] font-extrabold text-white ring-1 ring-brand-700/20"
           >
-            Commencer gratuitement
+            {returning ? "Reprendre ma progression" : "Commencer gratuitement"}
             <ArrowRight size={15} strokeWidth={2.6} />
           </EnterLink>
         </div>
@@ -305,10 +304,10 @@ function LandingNav() {
   );
 }
 
-export function LandingPage() {
+export function LandingPage({ returning = false }: { returning?: boolean }) {
   return (
     <div className="min-h-dvh bg-white">
-      <LandingNav />
+      <LandingNav returning={returning} />
 
       <main>
         <section className="relative overflow-hidden bg-gradient-to-br from-[#2e1065] via-[#4c1d95] to-[#6d28d9] pb-28 pt-28 text-white sm:pb-32 sm:pt-32 lg:pb-36 lg:pt-36">
@@ -358,20 +357,20 @@ export function LandingPage() {
               >
                 <EnterLink
                   to="/accueil"
-                  className="btn-shine group inline-flex h-13 items-center justify-center gap-2 rounded-2xl bg-white px-6 text-[14px] font-extrabold text-brand-strong shadow-[0_20px_44px_-18px_rgba(0,0,0,0.65)] transition hover:-translate-y-0.5 hover:bg-indigo-soft active:translate-y-0"
+                  className="btn-shine group flex h-14 items-center justify-between gap-4 rounded-2xl bg-white pl-5 pr-2 text-[14px] font-extrabold tracking-[-0.01em] text-brand-strong shadow-[0_22px_46px_-18px_rgba(0,0,0,0.7)] transition hover:-translate-y-0.5 hover:bg-amber-50 active:translate-y-0 sm:w-[300px]"
                 >
-                  Commencer gratuitement
-                  <ArrowRight
-                    size={17}
-                    strokeWidth={2.6}
-                    className="transition-transform group-hover:translate-x-1"
-                  />
+                  <span className="font-nav truncate">
+                    {returning ? "Reprendre ma progression" : "Commencer gratuitement"}
+                  </span>
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand-700 text-white transition-transform group-hover:translate-x-0.5">
+                    <MaterialIcon name="arrow_forward" size={19} />
+                  </span>
                 </EnterLink>
                 <Link
-                  to="/auth"
-                  className="inline-flex h-13 items-center justify-center gap-2 rounded-2xl bg-white/10 px-5 text-[13.5px] font-extrabold text-white ring-1 ring-white/25 backdrop-blur transition hover:bg-white/15"
+                  to="/auth?mode=signup"
+                  className="font-nav inline-flex h-14 items-center justify-center gap-2 rounded-2xl bg-white/10 px-5 text-[13px] font-bold text-white ring-1 ring-white/25 backdrop-blur transition hover:bg-white/20"
                 >
-                  <Headphones size={17} />
+                  <MaterialIcon name="login" size={18} />
                   Créer mon compte
                 </Link>
               </div>
@@ -662,25 +661,31 @@ export function LandingPage() {
               </p>
             </div>
 
-            <div className="flex w-full flex-col gap-2.5 sm:w-auto">
-              <EnterLink
-                to="/accueil"
-                className="btn-shine group flex h-14 w-full items-center justify-between gap-3 rounded-2xl bg-white pl-5 pr-2 text-[14px] font-extrabold tracking-[-0.01em] text-brand-strong shadow-[0_24px_50px_-20px_rgba(0,0,0,0.7)] transition hover:-translate-y-0.5 hover:bg-amber-50 active:translate-y-0 sm:w-[300px]"
+            <div className="flex w-full flex-col gap-2.5 sm:w-[320px]">
+              <Link
+                to="/auth?mode=signup"
+                className="btn-shine group flex h-14 w-full items-center justify-between gap-3 rounded-2xl bg-white pl-5 pr-2 text-[14px] font-extrabold tracking-[-0.01em] text-brand-strong shadow-[0_24px_50px_-20px_rgba(0,0,0,0.7)] transition hover:-translate-y-0.5 hover:bg-amber-50 active:translate-y-0"
               >
-                <span className="font-nav truncate">Commencer maintenant</span>
+                <span className="font-nav truncate">Créer mon compte gratuit</span>
                 <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand-700 text-white transition-transform group-hover:translate-x-0.5">
                   <MaterialIcon name="arrow_forward" size={19} />
                 </span>
-              </EnterLink>
-              <Link
-                to="/auth"
-                className="font-nav inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-white/10 text-[12.5px] font-bold text-white ring-1 ring-white/25 transition hover:bg-white/20 sm:w-[300px]"
-              >
-                <MaterialIcon name="login" size={18} />
-                Se connecter
               </Link>
-              <p className="text-center text-[9.5px] font-semibold text-indigo-100/60 sm:text-right">
-                Progression sauvegardée · mode invité inclus
+              <EnterLink
+                to="/accueil"
+                className="font-nav inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-white/10 text-[12.5px] font-bold text-white ring-1 ring-white/25 transition hover:bg-white/20"
+              >
+                Continuer sans compte
+                <MaterialIcon name="chevron_right" size={17} />
+              </EnterLink>
+              <p className="mt-1 text-center text-[10.5px] font-semibold text-indigo-100/65">
+                Déjà inscrit ?{" "}
+                <Link
+                  to="/auth"
+                  className="font-bold text-white underline decoration-white/35 underline-offset-4 transition hover:decoration-white"
+                >
+                  Se connecter
+                </Link>
               </p>
             </div>
           </div>

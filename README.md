@@ -31,7 +31,8 @@ Une application web **mobile-first** pensée pour les francophones qui veulent p
 - **910 expressions utiles** — avec traduction, note d'usage et écoute audio.
 - **Révision ciblée** — sessions par compétence, marathon de 20 questions et flashcards.
 - **Progression motivante** — XP, cœurs qui se gagnent en terminant des leçons (3 maximum), série quotidienne, objectif journalier, rangs et succès. La barre supérieure met en avant les points, la série de jours, le pourcentage d'avancement et le profil, sans icône cœur.
-- **Page de présentation** — un landing page moderne (dégradés violet/bleu, aperçu de leçon animé, apparitions au défilement) accueille les nouveaux visiteurs avant l'application.
+- **Page de présentation** — un landing page moderne (dégradés violet/bleu, aperçu de leçon animé, apparitions au défilement) s'affiche à chaque ouverture du site, y compris sur un nouvel appareil, après un retour ou une arrivée depuis un moteur de recherche ; l'inscription et le mode invité sont proposés juste après.
+- **Référencement soigné** — métadonnées Open Graph/Twitter, image de partage 1200×630, données structurées JSON-LD, `robots.txt`, `sitemap.xml` et lien canonique vers la page de présentation.
 - **Audio intégré** — prononciation via la synthèse vocale du navigateur : la voix la plus naturelle disponible (Natural/Neural/Google/Samantha) est choisie automatiquement, le texte est découpé aux fins de phrase pour respecter la ponctuation, et un égaliseur animé accompagne l'écoute.
 - **Animations réelles** — apparitions en cascade, survols qui soulèvent les cartes, mascottes qui flottent, barres qui poussent, égaliseur de lecture et révélations au défilement sur la page de présentation ; tout se réduit depuis les Réglages ou le réglage système.
 - **Réglages centralisés** — une page `/reglages` regroupe l'apparence (clair, sombre ou système), la réduction des animations, la prononciation vocale, l'objectif quotidien, la série, le compte et la réinitialisation.
@@ -171,7 +172,7 @@ anglais-pro/
 
 | Route | Page |
 | --- | --- |
-| `/` | Page de présentation (première visite) puis redirection vers l'accueil |
+| `/` | Page de présentation, affichée à chaque ouverture ; un compte connecté rejoint directement `/accueil` |
 | `/accueil` | Accueil / tableau de bord |
 | `/learn` | Parcours par niveau |
 | `/grammar` | Bibliothèque de grammaire |

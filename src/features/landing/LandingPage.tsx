@@ -370,7 +370,7 @@ export function LandingPage({ returning = false }: { returning?: boolean }) {
                   to="/auth?mode=signup"
                   className="font-nav inline-flex h-14 items-center justify-center gap-2 rounded-2xl bg-white/10 px-5 text-[13px] font-bold text-white ring-1 ring-white/25 backdrop-blur transition hover:bg-white/20"
                 >
-                  <MaterialIcon name="login" size={18} />
+                  <MaterialIcon name="person_add" size={18} />
                   Créer mon compte
                 </Link>
               </div>

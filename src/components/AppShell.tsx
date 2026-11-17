@@ -478,25 +478,46 @@ function SiteFooter({ collapsed }: { collapsed: boolean }) {
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1.35fr] lg:gap-14">
           <div>
             <Logo to="/accueil" onDark />
-            <p className="mt-3 max-w-sm text-[12.5px] font-medium leading-6 text-indigo-100/60">
-              Cinq minutes par jour pour parler anglais avec assurance. Des leçons courtes, des
-              exercices variés et un suivi clair de ta progression.
+            <p className="mt-3 max-w-sm text-[12.5px] font-medium leading-6 text-indigo-100/70">
+              Cinq minutes par jour pour parler anglais avec assurance. Des leçons courtes,
+              des exercices variés et un suivi clair de ta progression.
             </p>
 
-            <div className="mt-5 flex flex-col gap-2 sm:flex-row">
+            <div className="mt-5 max-w-sm overflow-hidden rounded-[26px] bg-[#3b1878] p-4 ring-1 ring-white/12 shadow-[0_30px_60px_-40px_rgba(0,0,0,0.95)]">
+              <div className="flex items-center gap-1.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-300" />
+                <p className="font-nav text-[9.5px] font-bold uppercase tracking-[0.18em] text-amber-300">
+                  Gratuit · sans carte bancaire
+                </p>
+              </div>
+
+              <p className="font-display mt-2 text-[21px] font-extrabold leading-[1.12] tracking-[-0.025em] text-white">
+                Ton compte t'attend.
+                <br />
+                <span className="text-amber-200">Commence en 30 secondes.</span>
+              </p>
+
               <Link
                 to="/auth?mode=signup"
-                className="inline-flex h-11 items-center justify-center gap-2 rounded-2xl bg-white px-5 text-[12.5px] font-extrabold text-[#4c1d95] shadow-[0_16px_34px_-20px_rgba(0,0,0,0.9)] transition-colors hover:bg-indigo-soft"
+                className="group mt-4 flex h-14 w-full items-center justify-between gap-2 rounded-2xl bg-white pl-4 pr-1.5 text-[13.5px] font-extrabold tracking-[-0.01em] text-[#3b1878] shadow-[0_18px_36px_-22px_rgba(0,0,0,0.95)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-amber-50 active:translate-y-0"
               >
-                Créer mon compte gratuit
-                <MaterialIcon name="chevron_right" size={18} />
+                <span className="font-nav truncate">Créer mon compte gratuit</span>
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#4c1d95] text-white transition-transform duration-200 group-hover:translate-x-0.5">
+                  <MaterialIcon name="arrow_forward" size={20} />
+                </span>
               </Link>
+
               <Link
                 to="/practice"
-                className="inline-flex h-11 items-center justify-center gap-2 rounded-2xl bg-white/10 px-5 text-[12.5px] font-extrabold text-white ring-1 ring-white/15 transition-colors hover:bg-white/20"
+                className="font-nav mt-2 flex h-11 w-full items-center justify-center gap-2 rounded-2xl bg-white/10 text-[12.5px] font-bold text-white ring-1 ring-white/15 transition-colors hover:bg-white/20"
               >
+                <MaterialIcon name="fitness_center" size={17} />
                 Réviser maintenant
               </Link>
+
+              <p className="mt-2.5 text-center text-[9.5px] font-semibold text-indigo-100/60">
+                Progression sauvegardée · mode invité inclus
+              </p>
             </div>
 
             <dl className="mt-6 grid max-w-sm grid-cols-3 gap-2">

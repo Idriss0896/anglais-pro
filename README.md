@@ -26,13 +26,14 @@ Une application web **mobile-first** pensée pour les francophones qui veulent p
 - **63 leçons complètes** — chaque leçon combine théorie claire (encadrés, tableaux, phrases clés) et quiz interactif.
 - **4 types d'exercices** — choix multiple, saisie de texte, reconstruction de phrases par tuiles et association de paires.
 - **Bibliothèque filtrable** — recherche instantanée, filtres par niveau, catégorie et statut (à faire / terminé / favoris).
-- **Recherche globale** — la barre haute (ou les raccourcis `/` et Ctrl/Cmd + K) retrouve une leçon ou une expression, puis l'ouvre au clavier.
+- **Recherche globale** — la barre haute (ou les raccourcis `/` et Ctrl/Cmd + K) ouvre un dictionnaire : on tape un mot (anglais ou français), l'app affiche son sens, un exemple, l'écoute audio et la leçon qui le contient.
 - **Grammaire & vocabulaire** — 17 fiches de grammaire et 14 thèmes de vocabulaire, consultables hors leçon.
 - **910 expressions utiles** — avec traduction, note d'usage et écoute audio.
 - **Révision ciblée** — sessions par compétence, marathon de 20 questions et flashcards.
 - **Progression motivante** — XP, cœurs qui se gagnent en terminant des leçons (3 maximum), série quotidienne, objectif journalier, rangs et succès. La barre supérieure met en avant les points, la série de jours, le pourcentage d'avancement et le profil, sans icône cœur.
 - **Page de présentation** — un landing page moderne (dégradés violet/bleu, aperçu de leçon animé, apparitions au défilement) accueille les nouveaux visiteurs avant l'application.
-- **Audio intégré** — prononciation via la synthèse vocale du navigateur, pilotée depuis la page **Réglages** (interrupteur « Prononciation vocale », état « Activée » lisible et bouton d'écoute de test).
+- **Audio intégré** — prononciation via la synthèse vocale du navigateur : la voix la plus naturelle disponible (Natural/Neural/Google/Samantha) est choisie automatiquement, le texte est découpé aux fins de phrase pour respecter la ponctuation, et un égaliseur animé accompagne l'écoute.
+- **Animations réelles** — apparitions en cascade, survols qui soulèvent les cartes, mascottes qui flottent, barres qui poussent, égaliseur de lecture et révélations au défilement sur la page de présentation ; tout se réduit depuis les Réglages ou le réglage système.
 - **Réglages centralisés** — une page `/reglages` regroupe l'apparence (clair, sombre ou système), la réduction des animations, la prononciation vocale, l'objectif quotidien, la série, le compte et la réinitialisation.
 - **Mode nuit complet** — thème sombre appliqué par variables CSS sur toute l'application, mémorisé sur l'appareil et sans clignotement au chargement ; la page de présentation reste volontairement en clair.
 - **Sécurité renforcée** — sessions HttpOnly 14 jours, isolation par `user_id`, RLS et privilèges retirés sur les tables, limitation des tentatives et en-têtes stricts.

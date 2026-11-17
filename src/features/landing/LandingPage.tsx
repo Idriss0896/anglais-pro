@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { Mascot } from "@/components/Mascot";
+import { MaterialIcon } from "@/components/MaterialIcon";
 import { Reveal } from "@/components/Reveal";
 import { LEVELS, TOTAL_PHRASES, TOTAL_QUESTIONS, TOTAL_UNITS } from "@/data/curriculum";
 import { markEnteredApp } from "@/lib/entry";
@@ -635,40 +636,52 @@ export function LandingPage() {
             aria-hidden="true"
             className="pointer-events-none absolute -left-16 -top-20 h-72 w-72 rounded-full bg-azure-500/30 blur-[90px]"
           />
-          <div className="relative mx-auto flex max-w-6xl flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative mx-auto flex max-w-6xl flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
             <div className="max-w-xl">
               <div className="flex items-center gap-3">
                 <Mascot id="mia" mood="cheer" size={54} />
-                <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-indigo-100/70">
-                  Ta première leçon t'attend
-                </p>
+                <div>
+                  <span className="inline-flex items-center gap-1.5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-amber-300" />
+                    <p className="font-nav text-[9.5px] font-bold uppercase tracking-[0.18em] text-amber-300">
+                      Gratuit · sans carte bancaire
+                    </p>
+                  </span>
+                  <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-indigo-100/60">
+                    Ta première leçon t'attend
+                  </p>
+                </div>
               </div>
-              <h2 className="mt-4 text-[30px] font-extrabold leading-[1.06] tracking-[-0.04em] sm:text-[38px]">
-                Dans cinq minutes, tu auras déjà parlé anglais.
+              <h2 className="font-display mt-5 text-balance text-[32px] font-extrabold leading-[1.03] tracking-[-0.045em] sm:text-[42px]">
+                Dans cinq minutes, tu auras déjà{" "}
+                <span className="text-amber-200">parlé anglais</span>.
               </h2>
-              <p className="mt-3 text-[13px] font-medium leading-6 text-indigo-100/75">
+              <p className="mt-3 max-w-md text-pretty text-[13px] font-medium leading-6 text-indigo-100/75">
                 {TOTAL_QUESTIONS} exercices, {TOTAL_PHRASES} expressions et une voix pour tout
                 prononcer. Il ne reste qu'à commencer.
               </p>
             </div>
-            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+
+            <div className="flex w-full flex-col gap-2.5 sm:w-auto">
               <EnterLink
                 to="/accueil"
-                className="btn-shine group inline-flex h-13 items-center justify-center gap-2 rounded-2xl bg-white px-6 text-[14px] font-extrabold text-brand-strong shadow-[0_20px_44px_-18px_rgba(0,0,0,0.6)] transition hover:-translate-y-0.5 hover:bg-indigo-soft"
+                className="btn-shine group flex h-14 w-full items-center justify-between gap-3 rounded-2xl bg-white pl-5 pr-2 text-[14px] font-extrabold tracking-[-0.01em] text-brand-strong shadow-[0_24px_50px_-20px_rgba(0,0,0,0.7)] transition hover:-translate-y-0.5 hover:bg-amber-50 active:translate-y-0 sm:w-[300px]"
               >
-                Commencer maintenant
-                <ArrowRight
-                  size={17}
-                  strokeWidth={2.6}
-                  className="transition-transform group-hover:translate-x-1"
-                />
+                <span className="font-nav truncate">Commencer maintenant</span>
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand-700 text-white transition-transform group-hover:translate-x-0.5">
+                  <MaterialIcon name="arrow_forward" size={19} />
+                </span>
               </EnterLink>
               <Link
                 to="/auth"
-                className="inline-flex h-13 items-center justify-center rounded-2xl bg-white/10 px-5 text-[13px] font-extrabold text-white ring-1 ring-white/25 transition hover:bg-white/15"
+                className="font-nav inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-white/10 text-[12.5px] font-bold text-white ring-1 ring-white/25 transition hover:bg-white/20 sm:w-[300px]"
               >
+                <MaterialIcon name="login" size={18} />
                 Se connecter
               </Link>
+              <p className="text-center text-[9.5px] font-semibold text-indigo-100/60 sm:text-right">
+                Progression sauvegardée · mode invité inclus
+              </p>
             </div>
           </div>
         </section>

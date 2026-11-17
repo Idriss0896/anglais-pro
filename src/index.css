@@ -39,39 +39,39 @@
   --color-slate-400: #6f7889;
 
   /* Teintes d'accent (fond clair / texte contrasté) — déclinées en mode nuit. */
-  --color-brand-soft: #f1ecff;
+  --color-brand-soft: #eee6ff;
   --color-brand-strong: #5b21b6;
-  --color-azure-soft: #eaf1ff;
+  --color-azure-soft: #e3eeff;
   --color-azure-strong: #1d4ed8;
-  --color-emerald-soft: #e9f8f2;
+  --color-emerald-soft: #ddf7ea;
   --color-emerald-strong: #047857;
-  --color-rose-soft: #fdeef1;
+  --color-rose-soft: #fde5eb;
   --color-rose-strong: #be123c;
-  --color-amber-soft: #fdf3e2;
+  --color-amber-soft: #fdedd3;
   --color-amber-strong: #b45309;
-  --color-sky-soft: #e8f5fd;
+  --color-sky-soft: #dff2fd;
   --color-sky-strong: #0369a1;
-  --color-indigo-soft: #ebefff;
+  --color-indigo-soft: #e3e9ff;
   --color-indigo-strong: #4338ca;
-  --color-fuchsia-soft: #fbeafb;
+  --color-fuchsia-soft: #fbe3fb;
   --color-fuchsia-strong: #a21caf;
-  --color-teal-soft: #e6f7f4;
+  --color-teal-soft: #d9f5f0;
   --color-teal-strong: #0f766e;
-  --color-orange-soft: #fdf0e3;
+  --color-orange-soft: #fde9d6;
   --color-orange-strong: #c2410c;
-  --color-violet-soft: #f2eeff;
+  --color-violet-soft: #efe7ff;
   --color-violet-strong: #6d28d9;
-  --color-blue-soft: #e8f0fe;
+  --color-blue-soft: #e2ecfe;
   --color-blue-strong: #1a56db;
-  --color-cyan-soft: #e3f6f8;
+  --color-cyan-soft: #d7f2f6;
   --color-cyan-strong: #0e7490;
-  --color-purple-soft: #f3ebff;
+  --color-purple-soft: #f0e4ff;
   --color-purple-strong: #6b21a8;
-  --color-pink-soft: #fdebf3;
+  --color-pink-soft: #fde2ee;
   --color-pink-strong: #be185d;
-  --color-red-soft: #fdecec;
+  --color-red-soft: #fde3e3;
   --color-red-strong: #b91c1c;
-  --color-green-soft: #e9f7ec;
+  --color-green-soft: #e0f6e5;
   --color-green-strong: #15803d;
 
   --color-mist: #ffffff;
@@ -423,6 +423,61 @@
     background-size: 46px 46px;
     mask-image: radial-gradient(ellipse at 50% 20%, #000 25%, transparent 78%);
   }
+
+  /* Apparition en cascade : chaque enfant entre un peu après le précédent. */
+  .stagger > * {
+    animation: fade-up 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .stagger > *:nth-child(2) {
+    animation-delay: 60ms;
+  }
+
+  .stagger > *:nth-child(3) {
+    animation-delay: 120ms;
+  }
+
+  .stagger > *:nth-child(4) {
+    animation-delay: 180ms;
+  }
+
+  .stagger > *:nth-child(5) {
+    animation-delay: 240ms;
+  }
+
+  .stagger > *:nth-child(6) {
+    animation-delay: 300ms;
+  }
+
+  .stagger > *:nth-child(7) {
+    animation-delay: 360ms;
+  }
+
+  .stagger > *:nth-child(n + 8) {
+    animation-delay: 420ms;
+  }
+
+  /* Égaliseur de lecture vocale. */
+  .eq-bar {
+    height: 100%;
+    transform-origin: bottom;
+    animation: eq-bounce 0.9s ease-in-out infinite;
+  }
+
+  /* Survol « appuyé » des cartes cliquables. */
+  .lift {
+    transition:
+      transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+      box-shadow 0.28s ease;
+  }
+
+  .lift:hover {
+    transform: translateY(-4px) scale(1.006);
+  }
+
+  .lift:active {
+    transform: translateY(-1px) scale(0.997);
+  }
 }
 
 @keyframes fade-up {
@@ -574,6 +629,16 @@
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes eq-bounce {
+  0%,
+  100% {
+    transform: scaleY(0.28);
+  }
+  50% {
+    transform: scaleY(1);
   }
 }
 

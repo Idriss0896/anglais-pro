@@ -14,11 +14,11 @@ import { StatPill } from "@/components/StatPill";
 import { EmptyState } from "@/components/EmptyState";
 import { Mascot, MascotSay, mascotFor, MASCOTS } from "@/components/Mascot";
 import { LEVEL_EMOJIS, LEVEL_THEMES } from "@/lib/levels";
-import { CURRICULUM, TOTAL_UNITS, countByCategory } from "@/data/curriculum";
+import { TOTAL_UNITS, countByCategory } from "@/data/curriculum";
 import { useProgressStore } from "@/store/useProgressStore";
 import { cn, plural } from "@/lib/utils";
 import { speak } from "@/lib/audio";
-import type { CurriculumUnit } from "@/types";
+import { buildVocabEntries, VOCAB_UNITS } from "@/lib/vocabulary";
 
 interface VocabEntry {
   id: string;
@@ -26,34 +26,12 @@ interface VocabEntry {
   secondary: string;
 }
 
-const VOCAB_UNITS = CURRICULUM.filter((unit) => unit.cat === "vocabulary");
-
-function englishColumn(head?: string[]) {
-  if (!head) return 0;
-  const index = head.findIndex((column) => /english|anglais/i.test(column));
-  return index >= 0 ? index : 0;
-}
-
-function buildEntries(unit: CurriculumUnit): VocabEntry[] {
-  const entries: VocabEntry[] = [];
-  unit.theory.forEach((block, blockIndex) => {
-    if (block.t !== "table") return;
-    const index = englishColumn(block.head);
-    (block.rows ?? []).forEach((row, rowIndex) => {
-      const primary = row[index] ?? row[0] ?? "";
-      if (!primary) return;
-      const secondary = row
-        .filter((_, cellIndex) => cellIndex !== index)
-        .filter(Boolean)
-        .join(" · ");
-      entries.push({
-        id: `${unit.id}:vocab:${blockIndex}:${rowIndex}`,
-        primary,
-        secondary,
-      });
-    });
-  });
-  return entries;
+function buildEntries(unit: (typeof VOCAB_UNITS)[number]): VocabEntry[] {
+  return buildVocabEntries(unit).map((entry) => ({
+    id: entry.id,
+    primary: entry.primary,
+    secondary: [entry.example, entry.meaning].filter(Boolean).join(" · "),
+  }));
 }
 
 function VocabRow({ entry }: { entry: VocabEntry }) {

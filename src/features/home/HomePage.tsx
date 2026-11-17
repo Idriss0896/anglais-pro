@@ -18,10 +18,12 @@ import {
 } from "lucide-react";
 import { ButtonLink } from "@/components/Button";
 import { LevelCard } from "@/components/LevelCard";
+import { MaterialIcon } from "@/components/MaterialIcon";
 import { Mascot, mascotFor, MASCOTS } from "@/components/Mascot";
 import { ProgressBar } from "@/components/ProgressBar";
 import { ProgressRing } from "@/components/ProgressRing";
 import { SectionHeading } from "@/components/SectionHeading";
+import { SoundBars } from "@/components/SoundBars";
 import {
   ACHIEVEMENTS,
   type AchievementStats,
@@ -29,6 +31,7 @@ import {
 import { speak } from "@/lib/audio";
 import { CATEGORIES } from "@/lib/categories";
 import { LEVEL_THEMES } from "@/lib/levels";
+import { useSpeaking } from "@/lib/useSpeaking";
 import {
   formatLongDate,
   greeting,
@@ -69,7 +72,7 @@ function NextLessonCard() {
   return (
     <section className="card-blue-deep animate-fade-up relative overflow-hidden rounded-[30px] p-5 sm:p-7">
       <div className="pointer-events-none absolute inset-0 pattern-dots opacity-25" />
-      <div className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
+      <div className="animate-float-slow pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
 
       <div className="relative">
         <div className="flex flex-wrap items-center justify-between gap-2">
@@ -151,18 +154,19 @@ function CoachCard() {
   const unit = getNextUnit(lessons);
   const phraseBlock = unit.theory.find((block) => block.t === "phrases");
   const phrase = phraseBlock?.items?.[0];
+  const speaking = useSpeaking(phrase?.en ?? "");
   if (!phrase) return null;
   const coach = mascotFor(unit.id);
   const meta = MASCOTS[coach];
 
   return (
-    <section className="card animate-fade-up flex items-center gap-4 p-4 sm:p-5">
+    <section className="card lift animate-fade-up flex items-center gap-4 p-4 sm:p-5">
       <Mascot id={coach} mood="hello" size={82} className="hidden sm:block" />
       <div className="min-w-0 flex-1">
         <p className="eyebrow">
           {meta.name} · {unit.title}
         </p>
-        <p className="mt-1 font-display text-[16px] font-extrabold leading-snug text-ink">
+        <p className="mt-1 font-display text-[17px] font-extrabold leading-snug tracking-[-0.02em] text-ink">
           « {phrase.en} »
         </p>
         <p className="mt-0.5 text-[12px] font-medium leading-5 text-slate-500">{phrase.fr}</p>
@@ -170,10 +174,14 @@ function CoachCard() {
           <button
             type="button"
             onClick={() => speak(phrase.en)}
-            className="inline-flex h-8 items-center gap-1.5 rounded-full bg-brand-soft px-3 text-[11px] font-extrabold text-brand-strong ring-1 ring-brand-strong/20 transition hover:bg-brand-soft"
+            className="inline-flex h-8 items-center gap-1.5 rounded-full bg-brand-soft px-3 text-[11px] font-extrabold text-brand-strong ring-1 ring-brand-strong/20 transition hover:bg-brand-soft hover:ring-brand-strong/40"
           >
-            <Volume2 size={13} strokeWidth={2.6} />
-            Écouter
+            {speaking ? (
+              <SoundBars className="text-brand-strong" />
+            ) : (
+              <Volume2 size={13} strokeWidth={2.6} />
+            )}
+            {speaking ? "En lecture" : "Écouter"}
           </button>
           <Link
             to={`/lesson/${unit.id}`}
@@ -336,6 +344,7 @@ function FeaturedPhraseCard() {
   const favorites = useProgressStore((state) => state.favorites);
   const toggleFavorite = useProgressStore((state) => state.toggleFavorite);
   const phrase = getFeaturedPhrase();
+  const speaking = useSpeaking(phrase?.en ?? "");
   if (!phrase) return null;
   const favorite = favorites.includes(phrase.id);
 
@@ -361,7 +370,7 @@ function FeaturedPhraseCard() {
         </button>
       </div>
 
-      <p className="mt-3 font-display text-[20px] font-extrabold leading-snug text-ink">
+      <p className="mt-3 font-display text-[21px] font-extrabold leading-[1.25] tracking-[-0.025em] text-ink">
         “{phrase.en}”
       </p>
       <p className="mt-1 text-[12.5px] font-medium leading-5 text-slate-500">{phrase.fr}</p>
@@ -370,10 +379,10 @@ function FeaturedPhraseCard() {
         <button
           type="button"
           onClick={() => speak(phrase.en)}
-          className="inline-flex items-center gap-1.5 rounded-full bg-amber-soft px-3 py-1.5 text-[11px] font-extrabold text-amber-strong ring-1 ring-amber-strong/20 transition hover:-translate-y-0.5 hover:bg-amber-soft"
+          className="inline-flex items-center gap-1.5 rounded-full bg-amber-soft px-3 py-1.5 text-[11px] font-extrabold text-amber-strong ring-1 ring-amber-strong/20 transition hover:-translate-y-0.5 hover:ring-amber-strong/40"
         >
-          <Volume2 size={13} strokeWidth={2.5} />
-          Écouter
+          {speaking ? <SoundBars className="text-amber-strong" /> : <Volume2 size={13} strokeWidth={2.5} />}
+          {speaking ? "En lecture" : "Écouter"}
         </button>
         <Link
           to="/expressions"
@@ -471,7 +480,8 @@ const exploreCards = [
     title: "Grammaire",
     description: `${countByCategory("grammar")} fiches claires`,
     icon: CATEGORIES.grammar.icon,
-    tone: "bg-indigo-soft text-indigo-strong ring-indigo-strong/20",
+    surface: "bg-indigo-soft ring-1 ring-indigo-strong/15",
+    tone: "bg-surface text-indigo-strong ring-indigo-strong/15",
     accent: "text-indigo-strong",
   },
   {
@@ -479,7 +489,8 @@ const exploreCards = [
     title: "Expressions",
     description: `${TOTAL_PHRASES} phrases utiles`,
     icon: MessageCircle,
-    tone: "bg-amber-soft text-amber-strong ring-amber-strong/20",
+    surface: "bg-amber-soft ring-1 ring-amber-strong/15",
+    tone: "bg-surface text-amber-strong ring-amber-strong/15",
     accent: "text-amber-strong",
   },
   {
@@ -487,7 +498,8 @@ const exploreCards = [
     title: "Vocabulaire",
     description: `${countByCategory("vocabulary")} thèmes de mots`,
     icon: CATEGORIES.vocabulary.icon,
-    tone: "bg-emerald-soft text-emerald-strong ring-emerald-strong/20",
+    surface: "bg-emerald-soft ring-1 ring-emerald-strong/15",
+    tone: "bg-surface text-emerald-strong ring-emerald-strong/15",
     accent: "text-emerald-strong",
   },
   {
@@ -495,7 +507,8 @@ const exploreCards = [
     title: "Entraînement",
     description: `${TOTAL_QUESTIONS} exercices`,
     icon: Dumbbell,
-    tone: "bg-brand-soft text-brand-strong ring-brand-strong/20",
+    surface: "bg-brand-soft ring-1 ring-brand-strong/15",
+    tone: "bg-surface text-brand-strong ring-brand-strong/15",
     accent: "text-brand-strong",
   },
 ];
@@ -504,15 +517,12 @@ function ExploreGrid() {
   return (
     <section>
       <SectionHeading title="Explorer" description="Tout ce qu'il faut pour progresser" />
-      <div className="grid grid-cols-2 gap-3">
-        {exploreCards.map((card, index) => (
+      <div className="stagger grid grid-cols-2 gap-3">
+        {exploreCards.map((card) => (
           <Link
             key={card.to}
             to={card.to}
-            className={cn(
-              "card-hover group flex items-center gap-2.5 p-3 sm:gap-3 sm:p-4",
-              index % 2 === 0 ? "card-blue" : "card",
-            )}
+            className={cn("card lift group flex items-center gap-2.5 p-3 sm:gap-3 sm:p-4", card.surface)}
           >
             <span
               className={cn(
@@ -527,13 +537,16 @@ function ExploreGrid() {
               <span className="block truncate text-[11.5px] font-extrabold text-ink sm:text-[12.5px]">
                 {card.title}
               </span>
-              <span className="block truncate text-[9.5px] font-semibold text-slate-400 sm:text-[10px]">
+              <span className="block truncate text-[9.5px] font-semibold text-slate-500 sm:text-[10px]">
                 {card.description}
               </span>
             </span>
             <ArrowUpRight
               size={14}
-              className="hidden shrink-0 text-slate-400 transition group-hover:-translate-y-0.5 group-hover:text-brand-strong sm:block"
+              className={cn(
+                "hidden shrink-0 transition group-hover:-translate-y-0.5 sm:block",
+                card.accent,
+              )}
             />
           </Link>
         ))}
@@ -544,19 +557,57 @@ function ExploreGrid() {
 
 export function HomePage() {
   const lessons = useProgressStore((state) => state.lessons);
+  const streak = useProgressStore((state) => state.streak);
+  const completed = completedCount(lessons);
+  const overall = percent(completed, TOTAL_UNITS);
 
   return (
     <div className="space-y-6 lg:space-y-8">
-      <div className="animate-fade-up">
-        <p className="eyebrow">{formatLongDate()}</p>
-        <h1 className="mt-1.5 text-[28px] font-extrabold tracking-[-0.04em] text-ink sm:text-4xl">
-          {greeting()}{" "}
-          <span className="inline-block animate-float">👋</span>
-        </h1>
-        <p className="mt-1.5 text-sm font-medium text-slate-500">
-          Prêt(e) à faire progresser ton anglais aujourd'hui ?
-        </p>
-      </div>
+      <header className="animate-fade-up relative overflow-hidden rounded-[30px] bg-surface px-5 py-6 ring-1 ring-line sm:px-7 sm:py-8">
+        <div className="pattern-grid pointer-events-none absolute inset-0 opacity-60" />
+        <div className="animate-glow pointer-events-none absolute -right-24 -top-28 h-64 w-64 rounded-full bg-brand-soft blur-2xl" />
+        <span
+          aria-hidden="true"
+          className="font-display pointer-events-none absolute -bottom-8 right-8 hidden select-none text-[144px] font-extrabold leading-none tracking-[-0.06em] text-ink/[0.035] sm:block dark:hidden"
+        >
+          Speak
+        </span>
+
+        <div className="relative">
+          <span className="font-nav inline-flex items-center gap-1.5 rounded-full bg-brand-700 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white shadow-[0_12px_26px_-18px_rgba(46,16,101,0.95)]">
+            <MaterialIcon name="event_available" size={14} />
+            {formatLongDate()}
+          </span>
+
+          <h1 className="font-display mt-4 text-balance text-[32px] font-extrabold leading-[1.02] tracking-[-0.045em] text-ink sm:text-[44px]">
+            {greeting()}{" "}
+            <span className="inline-block origin-bottom animate-wave">👋</span>
+          </h1>
+
+          <p className="mt-2.5 max-w-xl text-pretty text-[13.5px] font-medium leading-6 text-slate-500 sm:text-[14.5px]">
+            Cinq minutes suffisent : une leçon courte, quelques exercices, et tu repars avec une
+            nouvelle phrase d'anglais.
+          </p>
+
+          <div className="mt-5 flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-soft px-3 py-1.5 text-[11px] font-extrabold text-emerald-strong ring-1 ring-emerald-strong/20">
+              <MaterialIcon name="local_fire_department" size={15} />
+              {streak} jour{streak > 1 ? "s" : ""} de série
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-azure-soft px-3 py-1.5 text-[11px] font-extrabold text-azure-strong ring-1 ring-azure-strong/20">
+              <MaterialIcon name="track_changes" size={15} />
+              {overall}% du parcours
+            </span>
+            <Link
+              to="/reglages"
+              className="inline-flex items-center gap-1.5 rounded-full bg-surface-soft px-3 py-1.5 text-[11px] font-extrabold text-slate-500 ring-1 ring-line transition hover:text-ink hover:ring-brand-strong/30"
+            >
+              <MaterialIcon name="tune" size={15} />
+              Personnaliser
+            </Link>
+          </div>
+        </div>
+      </header>
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(290px,0.8fr)] lg:items-start">
         <div className="animate-fade-up space-y-6" style={{ animationDelay: "70ms" }}>
@@ -569,7 +620,7 @@ export function HomePage() {
               description="3 niveaux, un seul objectif : oser parler"
               to="/learn"
             />
-            <div className="grid gap-3 sm:grid-cols-3">
+            <div className="stagger grid gap-3 sm:grid-cols-3">
               {LEVELS.map((level) => (
                 <LevelCard key={level.id} level={level} lessons={lessons} />
               ))}
@@ -579,7 +630,7 @@ export function HomePage() {
           <ExploreGrid />
         </div>
 
-        <aside className="animate-fade-up space-y-4 lg:sticky lg:top-6" style={{ animationDelay: "150ms" }}>
+        <aside className="stagger space-y-4 lg:sticky lg:top-6">
           <DailyGoalCard />
           <WeekCard />
           <FeaturedPhraseCard />

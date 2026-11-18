@@ -341,36 +341,6 @@
     -webkit-backdrop-filter: blur(18px);
   }
 
-  /* Icônes Material Symbols Rounded (jeu d'icônes de Google). */
-  .msi {
-    font-family: "Material Symbols Rounded";
-    font-weight: normal;
-    font-style: normal;
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    display: inline-block;
-    white-space: nowrap;
-    word-wrap: normal;
-    direction: ltr;
-    font-feature-settings: "liga";
-    -webkit-font-feature-settings: "liga";
-    font-variation-settings:
-      "FILL" 0,
-      "wght" 500,
-      "GRAD" 0,
-      "opsz" 24;
-    user-select: none;
-  }
-
-  .msi-fill {
-    font-variation-settings:
-      "FILL" 1,
-      "wght" 500,
-      "GRAD" 0,
-      "opsz" 24;
-  }
-
   /* Reflet animé sur les boutons principaux (désactivé en mode nuit). */
   .btn-shine {
     position: relative;

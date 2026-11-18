@@ -154,6 +154,15 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    overscroll-behavior-y: none;
+  }
+
+  /* Évite le zoom accidentel sur les contrôles tactiles iPhone. */
+  input,
+  textarea,
+  select,
+  button {
+    font-size: max(16px, 1em);
   }
 
   :focus-visible {
@@ -193,6 +202,35 @@
     box-shadow:
       0 0 0 1px var(--color-line),
       0 18px 40px -30px rgba(23, 37, 84, 0.28);
+  }
+
+  .app-shell-glow {
+    background:
+      radial-gradient(circle at 15% 10%, rgba(167, 139, 250, 0.3), transparent 32%),
+      radial-gradient(circle at 92% 72%, rgba(56, 189, 248, 0.2), transparent 28%),
+      #4c1d95;
+  }
+
+  .level-card-accent {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .level-card-accent::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 3px;
+    background: linear-gradient(90deg, #10b981, #38bdf8, #a78bfa, #f59e0b);
+    opacity: 0.8;
+    transform: scaleX(0.35);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+  }
+
+  .level-card-accent:hover::after,
+  .level-card-accent:focus-visible::after {
+    transform: scaleX(1);
   }
 
   /* Carte teintée bleue : surface douce, texte sombre. */

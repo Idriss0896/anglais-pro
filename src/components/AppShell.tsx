@@ -1,5 +1,18 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
+import {
+  BarChart3,
+  BookOpen,
+  ChevronRight,
+  Dumbbell,
+  Home,
+  LayoutGrid,
+  MessageCircle,
+  PanelLeftClose,
+  PanelLeftOpen,
+  Settings,
+  Shapes,
+} from "lucide-react";
 import { useAuth } from "@/auth/AuthProvider";
 import { GuestBanner } from "./GuestBanner";
 import { HeaderStat } from "./HeaderStat";
@@ -17,21 +30,21 @@ import { TOTAL_PHRASES, TOTAL_QUESTIONS, TOTAL_UNITS } from "@/data/curriculum";
 interface NavItem {
   to: string;
   label: string;
-  icon: string;
+  icon: typeof Home;
   end?: boolean;
 }
 
 const primaryNav: NavItem[] = [
-  { to: "/accueil", label: "Accueil", icon: "home", end: true },
-  { to: "/learn", label: "Parcours", icon: "grid_view" },
-  { to: "/grammar", label: "Grammaire", icon: "menu_book" },
-  { to: "/vocabulary", label: "Vocabulaire", icon: "style" },
-  { to: "/expressions", label: "Expressions", icon: "forum" },
+  { to: "/accueil", label: "Accueil", icon: Home, end: true },
+  { to: "/learn", label: "Parcours", icon: LayoutGrid },
+  { to: "/grammar", label: "Grammaire", icon: BookOpen },
+  { to: "/vocabulary", label: "Vocabulaire", icon: Shapes },
+  { to: "/expressions", label: "Expressions", icon: MessageCircle },
 ];
 
 const trainingNav: NavItem[] = [
-  { to: "/practice", label: "Réviser", icon: "fitness_center" },
-  { to: "/progress", label: "Progression", icon: "analytics" },
+  { to: "/practice", label: "Réviser", icon: Dumbbell },
+  { to: "/progress", label: "Progression", icon: BarChart3 },
 ];
 
 const footerNav: { title: string; links: { label: string; to: string }[] }[] = [
@@ -65,7 +78,7 @@ const footerNav: { title: string; links: { label: string; to: string }[] }[] = [
 const SIDEBAR_KEY = "anglais-pro:sidebar";
 
 /** Violet uni de la coquille (barre latérale et barre supérieure). */
-const SHELL = "bg-[#4c1d95]";
+const SHELL = "app-shell-glow";
 /** Violet plus profond du pied de page. */
 const SHELL_DEEP = "bg-[#2e1065]";
 
@@ -122,12 +135,7 @@ function SidebarLink({
     >
       {({ isActive }) => (
         <>
-          <MaterialIcon
-            name={item.icon}
-            size={20}
-            filled={isActive}
-            className="shrink-0"
-          />
+          <item.icon size={19} strokeWidth={isActive ? 2.6 : 2.1} className="shrink-0 transition-transform duration-200 group-hover:scale-110" />
           {!collapsed && <span className="truncate">{item.label}</span>}
         </>
       )}
@@ -140,13 +148,11 @@ function Sidebar({
   onToggle,
   open,
   onClose,
-  onSearch,
 }: {
   collapsed: boolean;
   onToggle: () => void;
   open: boolean;
   onClose: () => void;
-  onSearch: () => void;
 }) {
   const { user } = useAuth();
   const isDesktop = useIsDesktop();
@@ -189,33 +195,12 @@ function Sidebar({
           title={collapsed ? "Déplier le menu" : "Réduire le menu"}
           className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-white/10 text-indigo-100 ring-1 ring-white/20 transition-colors hover:bg-white/20 hover:text-white"
         >
-          <MaterialIcon name={collapsed ? "left_panel_open" : "left_panel_close"} size={19} />
+          {collapsed ? <PanelLeftOpen size={19} /> : <PanelLeftClose size={19} />}
         </button>
       </div>
 
-      <button
-        type="button"
-        onClick={onSearch}
-        title="Rechercher une leçon"
-        aria-label="Rechercher une leçon"
-        className={cn(
-          "font-nav mt-5 flex items-center rounded-2xl bg-white/10 text-indigo-100/80 ring-1 ring-white/15 transition-colors hover:bg-white/20 hover:text-white",
-          collapsed ? "justify-center px-0 py-3" : "gap-2.5 px-3 py-2.5 text-[12.5px] font-medium",
-        )}
-      >
-        <MaterialIcon name="search" size={18} />
-        {!collapsed && (
-          <>
-            <span className="truncate">Rechercher</span>
-            <kbd className="ml-auto rounded-md bg-white/10 px-1.5 py-0.5 text-[9px] font-semibold text-indigo-100/60 ring-1 ring-white/15">
-              /
-            </kbd>
-          </>
-        )}
-      </button>
-
       <nav
-        className="no-scrollbar relative mt-4 flex-1 space-y-1 overflow-y-auto overflow-x-hidden"
+        className="no-scrollbar relative mt-7 flex-1 space-y-1 overflow-y-auto overflow-x-hidden"
         aria-label="Navigation principale"
       >
         {!collapsed && (
@@ -256,7 +241,7 @@ function Sidebar({
         >
           {({ isActive }) => (
             <>
-              <MaterialIcon name="settings" size={20} filled={isActive} />
+              <Settings size={19} strokeWidth={isActive ? 2.6 : 2.1} />
               {!collapsed && <span className="truncate">Réglages</span>}
             </>
           )}
@@ -284,7 +269,7 @@ function Sidebar({
                   {user ? `${rank.label} · ${streak} j de série` : "Se connecter ou s'inscrire"}
                 </span>
               </span>
-              <MaterialIcon name="chevron_right" size={18} className="text-indigo-100/50" />
+              <ChevronRight size={18} className="text-indigo-100/50" />
             </>
           )}
         </Link>
@@ -408,7 +393,7 @@ function MobileHeader({ onOpenMenu }: { onOpenMenu: () => void }) {
           aria-controls="app-sidebar"
           className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white/10 text-indigo-100 ring-1 ring-white/15 transition-colors hover:bg-white/20 hover:text-white"
         >
-          <MaterialIcon name="left_panel_open" size={20} />
+          <PanelLeftOpen size={20} />
         </button>
 
         <Link
@@ -662,7 +647,6 @@ export function AppShell() {
         onToggle={() => setCollapsed((value) => !value)}
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
-        onSearch={openSearch}
       />
       <MobileHeader onOpenMenu={() => setMobileOpen(true)} />
       <main

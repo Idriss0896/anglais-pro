@@ -52,6 +52,7 @@ function Entry() {
   const [entered] = useState(hasEnteredApp);
 
   if (!loading && user) return <Navigate to="/accueil" replace />;
+  if (entered) return <Navigate to="/accueil" replace />;
   return <LandingPage returning={entered} />;
 }
 

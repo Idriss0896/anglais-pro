@@ -565,7 +565,7 @@ export function HomePage() {
 
   return (
     <div className="space-y-6 lg:space-y-8">
-      <header className="animate-fade-up relative overflow-hidden rounded-[30px] bg-surface px-5 py-6 ring-1 ring-line sm:px-7 sm:py-8">
+      <header className="animate-fade-up relative overflow-hidden rounded-[30px] bg-gradient-to-br from-surface via-surface to-brand-soft/55 px-5 py-6 ring-1 ring-line sm:px-7 sm:py-8">
         <div className="pattern-grid pointer-events-none absolute inset-0 opacity-60" />
         <div className="animate-glow pointer-events-none absolute -right-24 -top-28 h-64 w-64 rounded-full bg-brand-soft blur-2xl" />
         <span

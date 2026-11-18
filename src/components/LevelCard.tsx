@@ -22,7 +22,7 @@ export function LevelCard({ level, lessons, className }: LevelCardProps) {
     <Link
       to={`/learn?level=${level.num}`}
       className={cn(
-        "card card-hover group relative flex flex-col overflow-hidden",
+        "card card-hover level-card-accent group relative flex flex-col overflow-hidden",
         className,
       )}
     >

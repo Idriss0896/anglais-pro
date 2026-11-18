@@ -39,7 +39,7 @@ const STATS = [
   { value: TOTAL_UNITS, label: "leçons guidées" },
   { value: TOTAL_QUESTIONS, label: "exercices corrigés" },
   { value: TOTAL_PHRASES, label: "expressions prêtes à l'emploi" },
-  { value: "3", label: "niveaux, de A1 à B2" },
+  { value: "4", label: "niveaux, de A1 à C1" },
 ];
 
 const FEATURES = [
@@ -527,7 +527,7 @@ export function LandingPage({ returning = false }: { returning?: boolean }) {
                       Du premier mot à la conversation.
                     </h2>
                     <p className="mt-3 text-[13px] font-medium leading-6 text-indigo-100/75">
-                      {TOTAL_UNITS} leçons réparties en trois niveaux, avec un objectif mesurable à
+                      {TOTAL_UNITS} leçons réparties en quatre niveaux, avec un objectif mesurable à
                       chaque étape.
                     </p>
                   </div>
@@ -540,14 +540,18 @@ export function LandingPage({ returning = false }: { returning?: boolean }) {
                   </EnterLink>
                 </div>
 
-                <div className="relative mt-7 grid gap-3 sm:grid-cols-3">
+                <div className="relative mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                   {LEVELS.map((level) => {
                     const theme = LEVEL_THEMES[level.num];
                     return (
                       <div
                         key={level.id}
-                        className="rounded-[22px] bg-white/10 p-4 ring-1 ring-white/15 backdrop-blur transition duration-300 hover:-translate-y-1 hover:bg-white/15"
+                        className="relative overflow-hidden rounded-[22px] bg-white/10 p-4 ring-1 ring-white/15 backdrop-blur transition duration-300 hover:-translate-y-1 hover:bg-white/15"
                       >
+                        <span
+                          aria-hidden="true"
+                          className={cn("absolute inset-x-0 top-0 h-1.5", theme.gradient)}
+                        />
                         <div className="flex items-center justify-between gap-2">
                           <span className={cn("rounded-full bg-white/90 px-2.5 py-1 text-[9.5px] font-extrabold uppercase tracking-[0.1em]", theme.text)}>
                             {level.cefr}
@@ -754,7 +758,7 @@ export function LandingPage({ returning = false }: { returning?: boolean }) {
           </div>
 
           <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-5 text-[10.5px] font-semibold text-indigo-100/40 sm:flex-row sm:items-center">
-            <p>© {new Date().getFullYear()} Anglais Pro. Tous droits réservés.</p>
+            <p>© {new Date().getFullYear()} ANGLO CLUB. Tous droits réservés.</p>
             <p className="inline-flex items-center gap-1.5">
               <Layers size={12} />
               {TOTAL_UNITS} leçons · {TOTAL_QUESTIONS} exercices · {TOTAL_PHRASES} expressions

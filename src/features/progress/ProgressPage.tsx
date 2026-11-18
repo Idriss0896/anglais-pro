@@ -105,8 +105,9 @@ export function ProgressPage() {
   const perfectLessons = Object.values(lessons).filter(
     (lesson) => lesson.bestAccuracy === 100,
   ).length;
-  const level1 = LEVELS[0];
-  const level1Complete = level1.units.every((unit) => lessons[unit.id]?.completed);
+  const completedLevels = LEVELS.filter((level) =>
+    level.units.every((unit) => lessons[unit.id]?.completed),
+  ).map((level) => level.num);
 
   const achievementStats: AchievementStats = {
     completed,
@@ -116,7 +117,7 @@ export function ProgressPage() {
     xp,
     bestAccuracy: accuracy,
     perfectLessons,
-    level1Complete,
+    completedLevels,
   };
 
   const unlocked = useMemo(
@@ -367,7 +368,7 @@ export function ProgressPage() {
       </section>
 
       <p className="text-center text-[10px] font-bold text-slate-400">
-        Anglais Pro · {TOTAL_UNITS} leçons · Progression sauvegardée sur cet appareil
+        ANGLO CLUB · {TOTAL_UNITS} leçons · Progression sauvegardée sur cet appareil
       </p>
     </div>
   );

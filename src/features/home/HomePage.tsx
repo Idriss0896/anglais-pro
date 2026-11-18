@@ -406,7 +406,9 @@ function NextAchievementCard() {
   const bestStreak = useProgressStore((state) => state.bestStreak);
   const xp = useProgressStore((state) => state.xp);
   const completed = completedCount(lessons);
-  const level1 = LEVELS[0];
+  const completedLevels = LEVELS.filter((level) =>
+    level.units.every((unit) => lessons[unit.id]?.completed),
+  ).map((level) => level.num);
   const stats: AchievementStats = {
     completed,
     total: TOTAL_UNITS,
@@ -416,7 +418,7 @@ function NextAchievementCard() {
     bestAccuracy: accuracyAverage(lessons),
     perfectLessons: Object.values(lessons).filter((lesson) => lesson.bestAccuracy === 100)
       .length,
-    level1Complete: level1.units.every((unit) => lessons[unit.id]?.completed),
+    completedLevels,
   };
   const candidate = ACHIEVEMENTS.map((achievement) => ({
     ...achievement,
@@ -617,10 +619,10 @@ export function HomePage() {
           <section>
             <SectionHeading
               title="Ton parcours"
-              description="3 niveaux, un seul objectif : oser parler"
+              description="4 niveaux colorés, un seul objectif : oser parler"
               to="/learn"
             />
-            <div className="stagger grid gap-3 sm:grid-cols-3">
+            <div className="stagger grid gap-3 sm:grid-cols-2">
               {LEVELS.map((level) => (
                 <LevelCard key={level.id} level={level} lessons={lessons} />
               ))}

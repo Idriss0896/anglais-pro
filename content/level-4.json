@@ -1,0 +1,3594 @@
+[
+  {
+    "id": "l4-g1",
+    "cat": "grammar",
+    "title": "Conditionnels professionnels",
+    "subtitle": "Poser une condition, proposer une solution et rester poli",
+    "emoji": "🔀",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Le conditionnel est partout en anglais professionnel : il sert à planifier une action sous condition, à proposer une solution et à formuler une demande avec tact. Dans cette leçon, tu vois les quatre formes utiles, puis les formules de politesse qui font la différence dans un e-mail ou une réunion."
+      },
+      {
+        "t": "h",
+        "text": "A. Les quatre conditionnels utiles"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Type",
+          "Forme",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "Zéro conditionnel",
+            "If + présent, présent",
+            "If the client confirms, we start on Monday."
+          ],
+          [
+            "Premier conditionnel",
+            "If + présent, will + base verbale",
+            "If you send the file today, I will review it tomorrow."
+          ],
+          [
+            "Deuxième conditionnel",
+            "If + prétérit, would + base verbale",
+            "If we had more budget, we would hire a designer."
+          ],
+          [
+            "Troisième conditionnel",
+            "If + had + participe passé, would have + participe passé",
+            "If we had known, we would have changed the plan."
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Formules de politesse et de prudence"
+      },
+      {
+        "t": "phrases",
+        "title": "Formules professionnelles",
+        "items": [
+          {
+            "en": "If you could confirm by Friday, that would be perfect.",
+            "fr": "Si vous pouviez confirmer avant vendredi, ce serait parfait.",
+            "note": "Demande polie, très courante par e-mail."
+          },
+          {
+            "en": "Would it be possible to move the meeting?",
+            "fr": "Serait-il possible de déplacer la réunion ?",
+            "note": "Plus poli que « Move the meeting »."
+          },
+          {
+            "en": "Unless the price changes, we have a deal.",
+            "fr": "À moins que le prix ne change, nous avons un accord.",
+            "note": "Unless = if not."
+          },
+          {
+            "en": "Provided that the contract is signed, we can start.",
+            "fr": "À condition que le contrat soit signé, nous pouvons commencer.",
+            "note": "Provided that = à condition que."
+          },
+          {
+            "en": "In case of delay, please let us know immediately.",
+            "fr": "En cas de retard, prévenez-nous immédiatement.",
+            "note": "In case of + nom."
+          },
+          {
+            "en": "If there is anything else I can do, please tell me.",
+            "fr": "Si je peux faire autre chose, dites-le-moi.",
+            "note": "Formule de clôture utile."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Deux pièges à éviter"
+      },
+      {
+        "t": "tip",
+        "text": "On ne dit jamais « if I would ». On dit « If I had time, I would call you ». Et « unless » remplace « if not » : « Unless you confirm » = « If you don't confirm »."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "type",
+        "q": "Complète : If the client ______ (confirm) by Friday, we will start on Monday.",
+        "a": "confirms",
+        "accept": [
+          "confirms"
+        ],
+        "x": "Premier conditionnel : if + présent simple, will + base verbale."
+      },
+      {
+        "t": "type",
+        "q": "Complète : If we had a bigger budget, we ______ (hire) a designer.",
+        "a": "would hire",
+        "accept": [
+          "would hire",
+          "'d hire"
+        ],
+        "x": "Deuxième conditionnel : if + prétérit, would + base verbale."
+      },
+      {
+        "t": "type",
+        "q": "Complète : If they had warned us, we ______ (prepare) a backup plan.",
+        "a": "would have prepared",
+        "accept": [
+          "would have prepared",
+          "would've prepared"
+        ],
+        "x": "Troisième conditionnel : would have + participe passé."
+      },
+      {
+        "t": "choice",
+        "q": "Quelle phrase est correcte ?",
+        "opts": [
+          "If I would have time, I would call you.",
+          "If I had time, I would call you.",
+          "If I will have time, I would call you."
+        ],
+        "a": 1,
+        "x": "Après « if », on n'utilise ni « would » ni « will » : « If I had time, I would call you »."
+      },
+      {
+        "t": "choice",
+        "q": "« Unless » signifie :",
+        "opts": [
+          "si",
+          "à moins que",
+          "parce que"
+        ],
+        "a": 1,
+        "x": "Unless = if not : « à moins que »."
+      },
+      {
+        "t": "choice",
+        "q": "Quelle formule est la plus polie pour demander un changement de réunion ?",
+        "opts": [
+          "Move the meeting.",
+          "Would it be possible to move the meeting?",
+          "You must move the meeting."
+        ],
+        "a": 1,
+        "x": "« Would it be possible to… » est la formule de politesse attendue au travail."
+      },
+      {
+        "t": "tiles",
+        "q": "Traduis : Si vous confirmez aujourd'hui, nous commençons lundi.",
+        "tiles": [
+          "If",
+          "you",
+          "confirm",
+          "today",
+          "we",
+          "will",
+          "start",
+          "on",
+          "Monday"
+        ],
+        "a": "If you confirm today we will start on Monday",
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« In case of delay » signifie :",
+        "opts": [
+          "En cas de retard",
+          "Malgré le retard",
+          "Avant le retard"
+        ],
+        "a": 0,
+        "x": "« In case of » + nom = « en cas de »."
+      }
+    ]
+  },
+  {
+    "id": "l4-g2",
+    "cat": "grammar",
+    "title": "Voix passive des rapports",
+    "subtitle": "Décrire une action sans désigner de responsable",
+    "emoji": "🗂️",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans un rapport, un compte rendu ou un e-mail formel, la voix passive est très fréquente : elle met l'accent sur l'action ou le résultat plutôt que sur la personne qui l'a réalisée. C'est aussi une façon élégante de rester neutre."
+      },
+      {
+        "t": "h",
+        "text": "A. Former le passif"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Temps",
+          "Forme",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "Présent simple",
+            "am / is / are + participe passé",
+            "The report is checked every Friday."
+          ],
+          [
+            "Prétérit",
+            "was / were + participe passé",
+            "The invoice was sent yesterday."
+          ],
+          [
+            "Present perfect",
+            "has / have been + participe passé",
+            "The files have been archived."
+          ],
+          [
+            "Futur",
+            "will be + participe passé",
+            "The results will be announced on Monday."
+          ],
+          [
+            "Modal",
+            "modal + be + participe passé",
+            "The process can be improved."
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Pourquoi l'utiliser au travail"
+      },
+      {
+        "t": "phrases",
+        "title": "Formules de rapport",
+        "items": [
+          {
+            "en": "The report was submitted on time.",
+            "fr": "Le rapport a été remis à temps.",
+            "note": "On ne précise pas qui l'a remis : seul le résultat compte."
+          },
+          {
+            "en": "The invoice has been sent to the client.",
+            "fr": "La facture a été envoyée au client.",
+            "note": "Action récente, résultat présent."
+          },
+          {
+            "en": "The deadline will be extended by one week.",
+            "fr": "La date limite sera repoussée d'une semaine.",
+            "note": "Décision annoncée sans accuser personne."
+          },
+          {
+            "en": "Mistakes were made.",
+            "fr": "Des erreurs ont été commises.",
+            "note": "Formule neutre pour assumer un problème."
+          },
+          {
+            "en": "You are kindly requested to confirm your attendance.",
+            "fr": "Vous êtes prié de confirmer votre présence.",
+            "note": "Très formel : convocations et invitations."
+          },
+          {
+            "en": "The team was informed of the change.",
+            "fr": "L'équipe a été informée du changement.",
+            "note": "« by » n'est pas nécessaire si l'agent est évident."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Faut-il ajouter « by » ?"
+      },
+      {
+        "t": "tip",
+        "text": "On ajoute « by + agent » seulement si l'auteur de l'action est important : « The proposal was approved by the director ». Sinon, on l'omet : « The proposal was approved »."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "type",
+        "q": "Complète : The report ______ (submit) yesterday.",
+        "a": "was submitted",
+        "accept": [
+          "was submitted"
+        ],
+        "x": "Prétérit passif : was + participe passé."
+      },
+      {
+        "t": "type",
+        "q": "Complète : The invoices ______ (send) already.",
+        "a": "have been sent",
+        "accept": [
+          "have been sent",
+          "have already been sent"
+        ],
+        "x": "Present perfect passif : have been + participe passé."
+      },
+      {
+        "t": "type",
+        "q": "Complète : The results ______ (announce) on Monday.",
+        "a": "will be announced",
+        "accept": [
+          "will be announced"
+        ],
+        "x": "Futur passif : will be + participe passé."
+      },
+      {
+        "t": "choice",
+        "q": "Quelle phrase est au passif ?",
+        "opts": [
+          "The manager approved the budget.",
+          "The budget was approved yesterday.",
+          "The budget will increase next year."
+        ],
+        "a": 1,
+        "x": "« Was approved » = be + participe passé : c'est le passif."
+      },
+      {
+        "t": "choice",
+        "q": "Pourquoi utilise-t-on souvent le passif dans un rapport professionnel ?",
+        "opts": [
+          "Pour rendre la phrase plus longue",
+          "Pour mettre l'accent sur l'action plutôt que sur la personne",
+          "Pour éviter de donner une date"
+        ],
+        "a": 1,
+        "x": "Le passif met en avant le résultat ou l'action, pas l'auteur."
+      },
+      {
+        "t": "tiles",
+        "q": "Traduis : Le contrat a été signé hier.",
+        "tiles": [
+          "The",
+          "contract",
+          "was",
+          "signed",
+          "yesterday"
+        ],
+        "a": "The contract was signed yesterday",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Transforme au passif : They cancelled the flight. → The flight ______.",
+        "a": "was cancelled",
+        "accept": [
+          "was cancelled",
+          "was canceled"
+        ],
+        "x": "They cancelled → The flight was cancelled."
+      },
+      {
+        "t": "choice",
+        "q": "Dans « The proposal was approved by the director », « by » introduit :",
+        "opts": [
+          "la cause",
+          "l'auteur de l'action",
+          "le lieu"
+        ],
+        "a": 1,
+        "x": "« By » introduit l'agent, celui qui fait l'action."
+      }
+    ]
+  },
+  {
+    "id": "l4-g3",
+    "cat": "grammar",
+    "title": "Discours rapporté en réunion",
+    "subtitle": "Rapporter fidèlement ce que chacun a dit",
+    "emoji": "💬",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Après une réunion, il faut souvent rapporter les propos des participants : « Sarah a dit qu'elle enverrait le fichier », « Le client a demandé si le délai était tenable ». Le discours rapporté (reported speech) demande de décaler les temps et de changer les repères de temps."
+      },
+      {
+        "t": "h",
+        "text": "A. Le décalage des temps"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Discours direct",
+          "Discours rapporté",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "Présent",
+            "Prétérit",
+            "« I am ready. » → He said he was ready."
+          ],
+          [
+            "Prétérit",
+            "Past perfect",
+            "« I finished. » → She said she had finished."
+          ],
+          [
+            "Will",
+            "Would",
+            "« I will send it. » → He said he would send it."
+          ],
+          [
+            "Can",
+            "Could",
+            "« I can help. » → She said she could help."
+          ],
+          [
+            "Present perfect",
+            "Past perfect",
+            "« I have sent it. » → He said he had sent it."
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Say et tell"
+      },
+      {
+        "t": "phrases",
+        "title": "Verbes et repères de temps",
+        "items": [
+          {
+            "en": "He said (that) he was busy.",
+            "fr": "Il a dit qu'il était occupé.",
+            "note": "say + proposition, sans personne juste après."
+          },
+          {
+            "en": "He told me (that) he was busy.",
+            "fr": "Il m'a dit qu'il était occupé.",
+            "note": "tell + personne."
+          },
+          {
+            "en": "She asked if I had received the invoice.",
+            "fr": "Elle a demandé si j'avais reçu la facture.",
+            "note": "Question fermée : if / whether."
+          },
+          {
+            "en": "He asked me where I worked.",
+            "fr": "Il m'a demandé où je travaillais.",
+            "note": "Pas d'inversion dans la question rapportée."
+          },
+          {
+            "en": "She said she would call the next day.",
+            "fr": "Elle a dit qu'elle appellerait le lendemain.",
+            "note": "tomorrow → the next day."
+          },
+          {
+            "en": "He explained that the report had been sent the day before.",
+            "fr": "Il a expliqué que le rapport avait été envoyé la veille.",
+            "note": "yesterday → the day before."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Questions et ordres"
+      },
+      {
+        "t": "tip",
+        "text": "Dans une question rapportée, on remet l'ordre normal : « He asked me where I worked » (et non « where did I work »). Pour un ordre, on utilise tell + personne + to + verbe : « She told me to send the file »."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "type",
+        "q": "Rapporte : « I will send the file. » → She said she ______ the file.",
+        "a": "would send",
+        "accept": [
+          "would send"
+        ],
+        "x": "Will devient would au discours rapporté."
+      },
+      {
+        "t": "type",
+        "q": "Rapporte : « We are ready. » → They told me they ______ ready.",
+        "a": "were",
+        "accept": [
+          "were"
+        ],
+        "x": "Présent → prétérit : are devient were."
+      },
+      {
+        "t": "type",
+        "q": "Rapporte : « Did you receive the invoice? » → He asked ______ I had received the invoice.",
+        "a": "whether",
+        "accept": [
+          "whether",
+          "if"
+        ],
+        "x": "Question fermée : whether ou if."
+      },
+      {
+        "t": "choice",
+        "q": "Quelle phrase est correcte ?",
+        "opts": [
+          "He said me he was busy.",
+          "He told me he was busy.",
+          "He told that he was busy."
+        ],
+        "a": 1,
+        "x": "tell + personne : « He told me… ». say ne prend pas de personne juste après."
+      },
+      {
+        "t": "tiles",
+        "q": "Traduis : Elle a dit qu'elle avait terminé le rapport.",
+        "tiles": [
+          "She",
+          "said",
+          "she",
+          "had",
+          "finished",
+          "the",
+          "report"
+        ],
+        "a": "She said she had finished the report",
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« Tomorrow » devient, au discours rapporté :",
+        "opts": [
+          "the next day",
+          "yesterday",
+          "that day"
+        ],
+        "a": 0,
+        "x": "tomorrow → the next day ; today → that day ; yesterday → the day before."
+      },
+      {
+        "t": "type",
+        "q": "Rapporte : « I finished the report yesterday. » → She said she ______ the report the day before.",
+        "a": "had finished",
+        "accept": [
+          "had finished"
+        ],
+        "x": "Prétérit → past perfect : had finished."
+      },
+      {
+        "t": "choice",
+        "q": "Quelle question rapportée est correcte ?",
+        "opts": [
+          "He asked me where did I work.",
+          "He asked me where I worked.",
+          "He asked me where I did work."
+        ],
+        "a": 1,
+        "x": "Pas d'inversion dans une question rapportée."
+      }
+    ]
+  },
+  {
+    "id": "l4-g4",
+    "cat": "grammar",
+    "title": "Modaux au travail",
+    "subtitle": "Obligation, conseil, permission et probabilité",
+    "emoji": "🧭",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Les modaux permettent de doser ce que tu dis : une obligation, un conseil, une permission ou une simple probabilité. Bien les choisir évite de paraître autoritaire… ou trop vague."
+      },
+      {
+        "t": "h",
+        "text": "A. Le bon modal pour la bonne intention"
+      },
+      {
+        "t": "table",
+        "head": [
+          "Modal",
+          "Valeur",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "must",
+            "obligation forte (règle interne)",
+            "You must submit the form by Friday."
+          ],
+          [
+            "have to",
+            "obligation liée à une règle externe",
+            "We have to follow the safety procedure."
+          ],
+          [
+            "should",
+            "conseil, recommandation",
+            "You should reply within 24 hours."
+          ],
+          [
+            "could",
+            "demande polie, possibilité",
+            "Could you check the figures?"
+          ],
+          [
+            "may / might",
+            "probabilité",
+            "It might be a mistake."
+          ],
+          [
+            "don't have to",
+            "absence d'obligation",
+            "You don't have to attend, it's optional."
+          ],
+          [
+            "mustn't",
+            "interdiction",
+            "You mustn't share this document."
+          ]
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Formules utiles au bureau"
+      },
+      {
+        "t": "phrases",
+        "title": "Modaux en contexte",
+        "items": [
+          {
+            "en": "You should send a follow-up email.",
+            "fr": "Tu devrais envoyer un e-mail de suivi.",
+            "note": "Conseil."
+          },
+          {
+            "en": "Could I leave early today?",
+            "fr": "Puis-je partir plus tôt aujourd'hui ?",
+            "note": "Permission polie."
+          },
+          {
+            "en": "May I ask a question?",
+            "fr": "Puis-je poser une question ?",
+            "note": "Très formel."
+          },
+          {
+            "en": "It may take longer than expected.",
+            "fr": "Cela peut prendre plus de temps que prévu.",
+            "note": "Probabilité."
+          },
+          {
+            "en": "We must not miss the deadline.",
+            "fr": "Nous ne devons absolument pas rater la date limite.",
+            "note": "Interdiction / obligation négative."
+          },
+          {
+            "en": "You don't have to print the agenda.",
+            "fr": "Tu n'as pas besoin d'imprimer l'ordre du jour.",
+            "note": "Absence d'obligation, pas une interdiction."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Ne pas confondre"
+      },
+      {
+        "t": "tip",
+        "text": "« You mustn't » = c'est interdit. « You don't have to » = ce n'est pas obligatoire. Ce sont deux messages très différents : attention au contexte."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "Quel modal exprime une obligation venue de l'extérieur (une règle de l'entreprise) ?",
+        "opts": [
+          "must",
+          "have to",
+          "might"
+        ],
+        "a": 1,
+        "x": "« Have to » renvoie souvent à une règle externe, « must » à une obligation personnelle ou interne."
+      },
+      {
+        "t": "choice",
+        "q": "« You mustn't share this document » signifie :",
+        "opts": [
+          "Tu n'as pas besoin de partager ce document",
+          "Tu ne dois pas partager ce document",
+          "Tu devrais partager ce document"
+        ],
+        "a": 1,
+        "x": "Mustn't = interdiction."
+      },
+      {
+        "t": "type",
+        "q": "Complète avec un modal de conseil : You ______ reply within 24 hours.",
+        "a": "should",
+        "accept": [
+          "should"
+        ],
+        "x": "« Should » exprime le conseil."
+      },
+      {
+        "t": "type",
+        "q": "Complète : It ______ be a mistake — the figures look strange. (probabilité)",
+        "a": "might",
+        "accept": [
+          "might",
+          "may"
+        ],
+        "x": "« Might » ou « may » expriment la probabilité."
+      },
+      {
+        "t": "choice",
+        "q": "Quelle demande est la plus polie ?",
+        "opts": [
+          "Check the figures.",
+          "Could you check the figures?",
+          "You must check the figures."
+        ],
+        "a": 1,
+        "x": "« Could you… » est la demande polie standard."
+      },
+      {
+        "t": "tiles",
+        "q": "Traduis : Vous devez soumettre le formulaire avant vendredi.",
+        "tiles": [
+          "You",
+          "must",
+          "submit",
+          "the",
+          "form",
+          "by",
+          "Friday"
+        ],
+        "a": "You must submit the form by Friday",
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« You don't have to attend » signifie :",
+        "opts": [
+          "Tu ne dois pas venir",
+          "Tu n'es pas obligé de venir",
+          "Tu dois absolument venir"
+        ],
+        "a": 1,
+        "x": "Don't have to = absence d'obligation."
+      },
+      {
+        "t": "choice",
+        "q": "Pour demander une permission de façon formelle, on dit :",
+        "opts": [
+          "May I leave early?",
+          "I leave early.",
+          "You may leave early."
+        ],
+        "a": 0,
+        "x": "« May I… » est la formule formelle de permission."
+      }
+    ]
+  },
+  {
+    "id": "l4-v1",
+    "cat": "vocabulary",
+    "title": "Réunions et ordres du jour",
+    "subtitle": "Préparer, animer et suivre une réunion",
+    "emoji": "📅",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Dans cette leçon, tu apprends le vocabulaire complet d'une réunion professionnelle : la préparer, y participer et en assurer le suivi. Ce sont les mots que tu entendras dans presque toutes les entreprises anglophones."
+      },
+      {
+        "t": "h",
+        "text": "A. Avant la réunion"
+      },
+      {
+        "t": "phrases",
+        "title": "Avant la réunion",
+        "items": [
+          {
+            "en": "agenda",
+            "fr": "ordre du jour"
+          },
+          {
+            "en": "chairperson",
+            "fr": "président de séance"
+          },
+          {
+            "en": "attendee",
+            "fr": "participant"
+          },
+          {
+            "en": "minutes",
+            "fr": "compte rendu"
+          },
+          {
+            "en": "schedule",
+            "fr": "planning"
+          },
+          {
+            "en": "venue",
+            "fr": "lieu de la réunion"
+          },
+          {
+            "en": "invite",
+            "fr": "inviter"
+          },
+          {
+            "en": "reschedule",
+            "fr": "reprogrammer"
+          },
+          {
+            "en": "postpone",
+            "fr": "reporter"
+          },
+          {
+            "en": "confirm",
+            "fr": "confirmer"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Pendant la réunion"
+      },
+      {
+        "t": "phrases",
+        "title": "Pendant la réunion",
+        "items": [
+          {
+            "en": "kick off",
+            "fr": "lancer la réunion"
+          },
+          {
+            "en": "agenda item",
+            "fr": "point de l'ordre du jour"
+          },
+          {
+            "en": "update",
+            "fr": "point d'avancement"
+          },
+          {
+            "en": "raise a point",
+            "fr": "soulever un point"
+          },
+          {
+            "en": "brainstorm",
+            "fr": "remue-méninges"
+          },
+          {
+            "en": "consensus",
+            "fr": "consensus"
+          },
+          {
+            "en": "decision",
+            "fr": "décision"
+          },
+          {
+            "en": "action item",
+            "fr": "action à mener"
+          },
+          {
+            "en": "deadline",
+            "fr": "échéance"
+          },
+          {
+            "en": "wrap up",
+            "fr": "conclure"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Après la réunion"
+      },
+      {
+        "t": "phrases",
+        "title": "Après la réunion",
+        "items": [
+          {
+            "en": "follow-up",
+            "fr": "suivi"
+          },
+          {
+            "en": "summary",
+            "fr": "résumé"
+          },
+          {
+            "en": "assign",
+            "fr": "attribuer"
+          },
+          {
+            "en": "owner",
+            "fr": "responsable"
+          },
+          {
+            "en": "due date",
+            "fr": "date limite"
+          },
+          {
+            "en": "status",
+            "fr": "statut"
+          },
+          {
+            "en": "feedback",
+            "fr": "retour"
+          },
+          {
+            "en": "next steps",
+            "fr": "prochaines étapes"
+          },
+          {
+            "en": "takeaway",
+            "fr": "point clé à retenir"
+          },
+          {
+            "en": "agenda item owner",
+            "fr": "responsable d'un point"
+          }
+        ]
+      },
+      {
+        "t": "p",
+        "text": "À l'oral, « agenda » désigne l'ordre du jour d'une réunion, pas un agenda personnel. « Minutes » est le compte rendu officiel : on dit « take the minutes » pour « rédiger le compte rendu »."
+      },
+      {
+        "t": "tip",
+        "text": "« Minutes » (compte rendu) est toujours au pluriel : the minutes of the meeting. On dit « take the minutes » pour « rédiger le compte rendu »."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque terme anglais à sa traduction.",
+        "pairs": [
+          {
+            "en": "confirm",
+            "fr": "confirmer"
+          },
+          {
+            "en": "due date",
+            "fr": "date limite"
+          },
+          {
+            "en": "invite",
+            "fr": "inviter"
+          },
+          {
+            "en": "consensus",
+            "fr": "consensus"
+          },
+          {
+            "en": "agenda",
+            "fr": "ordre du jour"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « action item » ?",
+        "opts": [
+          "action à mener",
+          "point clé à retenir",
+          "résumé"
+        ],
+        "a": 0,
+        "x": "« action item » signifie « action à mener »."
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « deadline » ?",
+        "opts": [
+          "responsable",
+          "action à mener",
+          "échéance"
+        ],
+        "a": 2,
+        "x": "« deadline » signifie « échéance »."
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : ordre du jour.",
+        "a": "agenda",
+        "accept": [
+          "agenda"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : compte rendu.",
+        "a": "minutes",
+        "accept": [
+          "minutes"
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Traduis : Pourrions-nous ajouter ce point à l'ordre du jour ?",
+        "tiles": [
+          "Could",
+          "we",
+          "add",
+          "this",
+          "point",
+          "to",
+          "the",
+          "agenda"
+        ],
+        "a": "Could we add this point to the agenda",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : Please send the ______ of the meeting to everyone.",
+        "a": "minutes",
+        "accept": [
+          "minutes"
+        ],
+        "x": "Le compte rendu d'une réunion se dit « the minutes »."
+      }
+    ]
+  },
+  {
+    "id": "l4-v2",
+    "cat": "vocabulary",
+    "title": "E-mails et correspondance",
+    "subtitle": "Écrire clair, poli et efficace",
+    "emoji": "✉️",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Un e-mail professionnel réussi tient à quelques mots bien choisis : un objet précis, une formule d'ouverture correcte, une demande claire et une clôture polie. Voici le vocabulaire indispensable."
+      },
+      {
+        "t": "h",
+        "text": "A. Structure d'un e-mail"
+      },
+      {
+        "t": "phrases",
+        "title": "Structure d'un e-mail",
+        "items": [
+          {
+            "en": "subject line",
+            "fr": "objet de l'e-mail"
+          },
+          {
+            "en": "greeting",
+            "fr": "formule d'appel"
+          },
+          {
+            "en": "opening line",
+            "fr": "phrase d'introduction"
+          },
+          {
+            "en": "body",
+            "fr": "corps du message"
+          },
+          {
+            "en": "closing",
+            "fr": "formule de clôture"
+          },
+          {
+            "en": "sign-off",
+            "fr": "formule de politesse finale"
+          },
+          {
+            "en": "signature",
+            "fr": "signature"
+          },
+          {
+            "en": "attachment",
+            "fr": "pièce jointe"
+          },
+          {
+            "en": "recipient",
+            "fr": "destinataire"
+          },
+          {
+            "en": "CC / BCC",
+            "fr": "copie / copie cachée"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Actions courantes"
+      },
+      {
+        "t": "phrases",
+        "title": "Actions courantes",
+        "items": [
+          {
+            "en": "reply",
+            "fr": "répondre"
+          },
+          {
+            "en": "reply all",
+            "fr": "répondre à tous"
+          },
+          {
+            "en": "forward",
+            "fr": "transférer"
+          },
+          {
+            "en": "follow up",
+            "fr": "relancer"
+          },
+          {
+            "en": "acknowledge",
+            "fr": "accuser réception"
+          },
+          {
+            "en": "attach",
+            "fr": "joindre"
+          },
+          {
+            "en": "enclose",
+            "fr": "joindre (courrier formel)"
+          },
+          {
+            "en": "request",
+            "fr": "demander"
+          },
+          {
+            "en": "remind",
+            "fr": "rappeler"
+          },
+          {
+            "en": "confirm",
+            "fr": "confirmer"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Ton et registre"
+      },
+      {
+        "t": "phrases",
+        "title": "Ton et registre",
+        "items": [
+          {
+            "en": "formal",
+            "fr": "formel"
+          },
+          {
+            "en": "informal",
+            "fr": "informel"
+          },
+          {
+            "en": "courteous",
+            "fr": "courtois"
+          },
+          {
+            "en": "concise",
+            "fr": "concis"
+          },
+          {
+            "en": "clear",
+            "fr": "clair"
+          },
+          {
+            "en": "polite",
+            "fr": "poli"
+          },
+          {
+            "en": "apologise",
+            "fr": "s'excuser"
+          },
+          {
+            "en": "appreciate",
+            "fr": "apprécier"
+          },
+          {
+            "en": "look forward to",
+            "fr": "attendre avec impatience"
+          },
+          {
+            "en": "out of office",
+            "fr": "absent du bureau"
+          }
+        ]
+      },
+      {
+        "t": "p",
+        "text": "Répondre à tous peut être une erreur : vérifie toujours qui doit recevoir l'information. « CC » informe, « BCC » cache les destinataires, et « forward » transmet un message reçu."
+      },
+      {
+        "t": "tip",
+        "text": "« I look forward to hearing from you » : après « look forward to », on met un verbe en -ing. On écrit aussi « Please find attached… » pour annoncer une pièce jointe."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque terme anglais à sa traduction.",
+        "pairs": [
+          {
+            "en": "follow up",
+            "fr": "relancer"
+          },
+          {
+            "en": "courteous",
+            "fr": "courtois"
+          },
+          {
+            "en": "remind",
+            "fr": "rappeler"
+          },
+          {
+            "en": "attach",
+            "fr": "joindre"
+          },
+          {
+            "en": "confirm",
+            "fr": "confirmer"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « attachment » ?",
+        "opts": [
+          "répondre à tous",
+          "apprécier",
+          "pièce jointe"
+        ],
+        "a": 2,
+        "x": "« attachment » signifie « pièce jointe »."
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « follow up » ?",
+        "opts": [
+          "concis",
+          "transférer",
+          "relancer"
+        ],
+        "a": 2,
+        "x": "« follow up » signifie « relancer »."
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : pièce jointe.",
+        "a": "attachment",
+        "accept": [
+          "attachment"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : répondre à tous.",
+        "a": "reply all",
+        "accept": [
+          "reply all"
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Traduis : Veuillez trouver la facture en pièce jointe à cet e-mail.",
+        "tiles": [
+          "Please",
+          "find",
+          "the",
+          "invoice",
+          "attached",
+          "to",
+          "this",
+          "email"
+        ],
+        "a": "Please find the invoice attached to this email",
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Quelle formule est la plus professionnelle pour terminer un e-mail ?",
+        "opts": [
+          "Bye!",
+          "Kind regards,",
+          "See ya"
+        ],
+        "a": 1,
+        "x": "« Kind regards » est une clôture professionnelle standard."
+      }
+    ]
+  },
+  {
+    "id": "l4-v3",
+    "cat": "vocabulary",
+    "title": "Finance et budgets",
+    "subtitle": "Parler chiffres, coûts et résultats",
+    "emoji": "📊",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Même sans être comptable, tu auras besoin de comprendre un budget, une facture ou un prévisionnel. Ces mots reviennent dans les réunions de direction, les propositions commerciales et les bilans de projet."
+      },
+      {
+        "t": "h",
+        "text": "A. Les bases"
+      },
+      {
+        "t": "phrases",
+        "title": "Les bases",
+        "items": [
+          {
+            "en": "budget",
+            "fr": "budget"
+          },
+          {
+            "en": "revenue",
+            "fr": "chiffre d'affaires"
+          },
+          {
+            "en": "expense",
+            "fr": "dépense"
+          },
+          {
+            "en": "cost",
+            "fr": "coût"
+          },
+          {
+            "en": "profit",
+            "fr": "bénéfice"
+          },
+          {
+            "en": "loss",
+            "fr": "perte"
+          },
+          {
+            "en": "invoice",
+            "fr": "facture"
+          },
+          {
+            "en": "receipt",
+            "fr": "reçu"
+          },
+          {
+            "en": "forecast",
+            "fr": "prévision"
+          },
+          {
+            "en": "margin",
+            "fr": "marge"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Gérer l'argent"
+      },
+      {
+        "t": "phrases",
+        "title": "Gérer l'argent",
+        "items": [
+          {
+            "en": "cash flow",
+            "fr": "trésorerie"
+          },
+          {
+            "en": "overheads",
+            "fr": "frais généraux"
+          },
+          {
+            "en": "investment",
+            "fr": "investissement"
+          },
+          {
+            "en": "savings",
+            "fr": "économies"
+          },
+          {
+            "en": "break even",
+            "fr": "atteindre le seuil de rentabilité"
+          },
+          {
+            "en": "cost-effective",
+            "fr": "rentable"
+          },
+          {
+            "en": "affordable",
+            "fr": "abordable"
+          },
+          {
+            "en": "overspend",
+            "fr": "dépasser le budget"
+          },
+          {
+            "en": "cut costs",
+            "fr": "réduire les coûts"
+          },
+          {
+            "en": "allocate",
+            "fr": "allouer"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Résultats et objectifs"
+      },
+      {
+        "t": "phrases",
+        "title": "Résultats et objectifs",
+        "items": [
+          {
+            "en": "turnover",
+            "fr": "chiffre d'affaires annuel"
+          },
+          {
+            "en": "growth",
+            "fr": "croissance"
+          },
+          {
+            "en": "quarterly",
+            "fr": "trimestriel"
+          },
+          {
+            "en": "annual",
+            "fr": "annuel"
+          },
+          {
+            "en": "target",
+            "fr": "objectif chiffré"
+          },
+          {
+            "en": "variance",
+            "fr": "écart"
+          },
+          {
+            "en": "return on investment",
+            "fr": "retour sur investissement"
+          },
+          {
+            "en": "funding",
+            "fr": "financement"
+          },
+          {
+            "en": "raise",
+            "fr": "lever des fonds"
+          },
+          {
+            "en": "financial year",
+            "fr": "exercice fiscal"
+          }
+        ]
+      },
+      {
+        "t": "p",
+        "text": "« Revenue » est le chiffre d'affaires, « profit » le bénéfice : une entreprise peut avoir un fort chiffre d'affaires et peu de bénéfice. « Cost-effective » signifie rentable par rapport à son coût."
+      },
+      {
+        "t": "tip",
+        "text": "« Revenue » = chiffre d'affaires ; « profit » = bénéfice. Ne confonds pas non plus « cost » (coût) et « price » (prix de vente)."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque terme anglais à sa traduction.",
+        "pairs": [
+          {
+            "en": "revenue",
+            "fr": "chiffre d'affaires"
+          },
+          {
+            "en": "variance",
+            "fr": "écart"
+          },
+          {
+            "en": "cost-effective",
+            "fr": "rentable"
+          },
+          {
+            "en": "forecast",
+            "fr": "prévision"
+          },
+          {
+            "en": "receipt",
+            "fr": "reçu"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « revenue » ?",
+        "opts": [
+          "chiffre d'affaires",
+          "dépense",
+          "financement"
+        ],
+        "a": 0,
+        "x": "« revenue » signifie « chiffre d'affaires »."
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « invoice » ?",
+        "opts": [
+          "dépense",
+          "dépasser le budget",
+          "facture"
+        ],
+        "a": 2,
+        "x": "« invoice » signifie « facture »."
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : réduire les coûts.",
+        "a": "cut costs",
+        "accept": [
+          "cut costs"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : dépasser le budget.",
+        "a": "overspend",
+        "accept": [
+          "overspend"
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Traduis : Nous devons réduire les coûts avant la fin du trimestre.",
+        "tiles": [
+          "We",
+          "need",
+          "to",
+          "cut",
+          "costs",
+          "before",
+          "the",
+          "end",
+          "of",
+          "the",
+          "quarter"
+        ],
+        "a": "We need to cut costs before the end of the quarter",
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« Break even » signifie :",
+        "opts": [
+          "Faire faillite",
+          "Atteindre le seuil de rentabilité",
+          "Augmenter les prix"
+        ],
+        "a": 1,
+        "x": "Break even = ne plus perdre d'argent, sans encore gagner de bénéfice."
+      }
+    ]
+  },
+  {
+    "id": "l4-v4",
+    "cat": "vocabulary",
+    "title": "Projets et échéances",
+    "subtitle": "Cadrer, suivre et livrer dans les temps",
+    "emoji": "🗓️",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Un projet se raconte avec des jalons, des livrables et des délais. Ce vocabulaire te permet de comprendre un brief, de faire un point d'avancement et de signaler un risque avant qu'il ne devienne un problème."
+      },
+      {
+        "t": "h",
+        "text": "A. Cadrer le projet"
+      },
+      {
+        "t": "phrases",
+        "title": "Cadrer le projet",
+        "items": [
+          {
+            "en": "project",
+            "fr": "projet"
+          },
+          {
+            "en": "milestone",
+            "fr": "jalon"
+          },
+          {
+            "en": "deliverable",
+            "fr": "livrable"
+          },
+          {
+            "en": "scope",
+            "fr": "périmètre"
+          },
+          {
+            "en": "stakeholder",
+            "fr": "partie prenante"
+          },
+          {
+            "en": "kickoff",
+            "fr": "réunion de lancement"
+          },
+          {
+            "en": "timeline",
+            "fr": "calendrier"
+          },
+          {
+            "en": "brief",
+            "fr": "brief, cahier des charges"
+          },
+          {
+            "en": "objective",
+            "fr": "objectif"
+          },
+          {
+            "en": "requirement",
+            "fr": "exigence, besoin"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Suivre l'avancement"
+      },
+      {
+        "t": "phrases",
+        "title": "Suivre l'avancement",
+        "items": [
+          {
+            "en": "task",
+            "fr": "tâche"
+          },
+          {
+            "en": "priority",
+            "fr": "priorité"
+          },
+          {
+            "en": "deadline",
+            "fr": "échéance"
+          },
+          {
+            "en": "backlog",
+            "fr": "liste des tâches en attente"
+          },
+          {
+            "en": "sprint",
+            "fr": "sprint (cycle court)"
+          },
+          {
+            "en": "bottleneck",
+            "fr": "goulot d'étranglement"
+          },
+          {
+            "en": "blocker",
+            "fr": "obstacle bloquant"
+          },
+          {
+            "en": "progress",
+            "fr": "avancement"
+          },
+          {
+            "en": "on track",
+            "fr": "dans les temps"
+          },
+          {
+            "en": "behind schedule",
+            "fr": "en retard"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Clôturer et livrer"
+      },
+      {
+        "t": "phrases",
+        "title": "Clôturer et livrer",
+        "items": [
+          {
+            "en": "review",
+            "fr": "revue"
+          },
+          {
+            "en": "sign-off",
+            "fr": "validation finale"
+          },
+          {
+            "en": "handover",
+            "fr": "passation"
+          },
+          {
+            "en": "lessons learned",
+            "fr": "retour d'expérience"
+          },
+          {
+            "en": "closure",
+            "fr": "clôture"
+          },
+          {
+            "en": "rollout",
+            "fr": "déploiement"
+          },
+          {
+            "en": "launch",
+            "fr": "lancement"
+          },
+          {
+            "en": "quality check",
+            "fr": "contrôle qualité"
+          },
+          {
+            "en": "retrospective",
+            "fr": "rétrospective"
+          },
+          {
+            "en": "archive",
+            "fr": "archiver"
+          }
+        ]
+      },
+      {
+        "t": "p",
+        "text": "« On track » signifie dans les temps, « behind schedule » en retard. Un « blocker » est un obstacle qui empêche d'avancer immédiatement ; un « bottleneck » est un goulot d'étranglement plus structurel."
+      },
+      {
+        "t": "tip",
+        "text": "On dit « on track » (dans les temps) et « behind schedule » (en retard). Pour signaler un problème : « We are facing a blocker on the design »."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque terme anglais à sa traduction.",
+        "pairs": [
+          {
+            "en": "sign-off",
+            "fr": "validation finale"
+          },
+          {
+            "en": "scope",
+            "fr": "périmètre"
+          },
+          {
+            "en": "requirement",
+            "fr": "exigence, besoin"
+          },
+          {
+            "en": "progress",
+            "fr": "avancement"
+          },
+          {
+            "en": "kickoff",
+            "fr": "réunion de lancement"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « milestone » ?",
+        "opts": [
+          "jalon",
+          "projet",
+          "objectif"
+        ],
+        "a": 0,
+        "x": "« milestone » signifie « jalon »."
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « stakeholder » ?",
+        "opts": [
+          "calendrier",
+          "priorité",
+          "partie prenante"
+        ],
+        "a": 2,
+        "x": "« stakeholder » signifie « partie prenante »."
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : livrable.",
+        "a": "deliverable",
+        "accept": [
+          "deliverable"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : dans les temps.",
+        "a": "on track",
+        "accept": [
+          "on track"
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Traduis : Le projet est dans les temps pour le lancement de juin.",
+        "tiles": [
+          "The",
+          "project",
+          "is",
+          "on",
+          "track",
+          "for",
+          "the",
+          "June",
+          "launch"
+        ],
+        "a": "The project is on track for the June launch",
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Complète : We need to hit the next ______ before the client review.",
+        "a": "milestone",
+        "accept": [
+          "milestone"
+        ],
+        "x": "Un jalon se dit « a milestone »."
+      }
+    ]
+  },
+  {
+    "id": "l4-v5",
+    "cat": "vocabulary",
+    "title": "Contrats et négociation",
+    "subtitle": "Comprendre les termes et défendre ses intérêts",
+    "emoji": "🤝",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Lire un contrat en anglais ne demande pas d'être juriste : il faut reconnaître les clauses essentielles et le vocabulaire de la négociation. Voici les termes qui reviennent dans presque tous les accords."
+      },
+      {
+        "t": "h",
+        "text": "A. Le contrat"
+      },
+      {
+        "t": "phrases",
+        "title": "Le contrat",
+        "items": [
+          {
+            "en": "contract",
+            "fr": "contrat"
+          },
+          {
+            "en": "clause",
+            "fr": "clause"
+          },
+          {
+            "en": "terms",
+            "fr": "conditions"
+          },
+          {
+            "en": "agreement",
+            "fr": "accord"
+          },
+          {
+            "en": "party",
+            "fr": "partie"
+          },
+          {
+            "en": "signature",
+            "fr": "signature"
+          },
+          {
+            "en": "renewal",
+            "fr": "renouvellement"
+          },
+          {
+            "en": "breach",
+            "fr": "rupture, manquement"
+          },
+          {
+            "en": "penalty",
+            "fr": "pénalité"
+          },
+          {
+            "en": "binding",
+            "fr": "contraignant"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Négocier"
+      },
+      {
+        "t": "phrases",
+        "title": "Négocier",
+        "items": [
+          {
+            "en": "negotiate",
+            "fr": "négocier"
+          },
+          {
+            "en": "offer",
+            "fr": "offre"
+          },
+          {
+            "en": "counteroffer",
+            "fr": "contre-offre"
+          },
+          {
+            "en": "concession",
+            "fr": "concession"
+          },
+          {
+            "en": "compromise",
+            "fr": "compromis"
+          },
+          {
+            "en": "proposal",
+            "fr": "proposition"
+          },
+          {
+            "en": "leverage",
+            "fr": "levier de négociation"
+          },
+          {
+            "en": "win-win",
+            "fr": "gagnant-gagnant"
+          },
+          {
+            "en": "deal",
+            "fr": "accord, marché"
+          },
+          {
+            "en": "settle",
+            "fr": "conclure un accord"
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "C. Aspects juridiques"
+      },
+      {
+        "t": "phrases",
+        "title": "Aspects juridiques",
+        "items": [
+          {
+            "en": "confidential",
+            "fr": "confidentiel"
+          },
+          {
+            "en": "liability",
+            "fr": "responsabilité"
+          },
+          {
+            "en": "warranty",
+            "fr": "garantie"
+          },
+          {
+            "en": "termination",
+            "fr": "résiliation"
+          },
+          {
+            "en": "notice period",
+            "fr": "préavis"
+          },
+          {
+            "en": "compliance",
+            "fr": "conformité"
+          },
+          {
+            "en": "obligation",
+            "fr": "obligation"
+          },
+          {
+            "en": "amendment",
+            "fr": "avenant"
+          },
+          {
+            "en": "dispute",
+            "fr": "litige"
+          },
+          {
+            "en": "arbitration",
+            "fr": "arbitrage"
+          }
+        ]
+      },
+      {
+        "t": "p",
+        "text": "« A win-win deal » est un accord satisfaisant pour les deux parties. « We are not in a position to accept that » est une façon polie mais ferme de refuser une proposition."
+      },
+      {
+        "t": "tip",
+        "text": "« Terms » (conditions) est presque toujours au pluriel : terms and conditions. « Binding » signifie contraignant sur le plan juridique."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque terme anglais à sa traduction.",
+        "pairs": [
+          {
+            "en": "dispute",
+            "fr": "litige"
+          },
+          {
+            "en": "leverage",
+            "fr": "levier de négociation"
+          },
+          {
+            "en": "contract",
+            "fr": "contrat"
+          },
+          {
+            "en": "counteroffer",
+            "fr": "contre-offre"
+          },
+          {
+            "en": "penalty",
+            "fr": "pénalité"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « clause » ?",
+        "opts": [
+          "clause",
+          "renouvellement",
+          "signature"
+        ],
+        "a": 0,
+        "x": "« clause » signifie « clause »."
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « counteroffer » ?",
+        "opts": [
+          "litige",
+          "conclure un accord",
+          "contre-offre"
+        ],
+        "a": 2,
+        "x": "« counteroffer » signifie « contre-offre »."
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : gagnant-gagnant.",
+        "a": "win-win",
+        "accept": [
+          "win-win"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : résiliation.",
+        "a": "termination",
+        "accept": [
+          "termination"
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Traduis : Les deux parties ont signé le contrat la semaine dernière.",
+        "tiles": [
+          "Both",
+          "parties",
+          "signed",
+          "the",
+          "contract",
+          "last",
+          "week"
+        ],
+        "a": "Both parties signed the contract last week",
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "« A binding agreement » signifie :",
+        "opts": [
+          "Un accord sans valeur",
+          "Un accord juridiquement contraignant",
+          "Une simple proposition"
+        ],
+        "a": 1,
+        "x": "Binding = qui engage juridiquement les parties."
+      }
+    ]
+  },
+  {
+    "id": "l4-e1",
+    "cat": "expressions",
+    "title": "Demandes polies et nuances",
+    "subtitle": "Adoucir une demande, un refus ou un désaccord",
+    "emoji": "🙏",
+    "theory": [
+      {
+        "t": "p",
+        "text": "En anglais professionnel, la politesse ne consiste pas seulement à dire « please ». On utilise des formules d'atténuation (hedging) pour demander, refuser ou nuancer sans paraître brusque."
+      },
+      {
+        "t": "h",
+        "text": "A. Les expressions à connaître"
+      },
+      {
+        "t": "phrases",
+        "title": "Expressions professionnelles",
+        "items": [
+          {
+            "en": "Could you possibly send me the file?",
+            "fr": "Pourriez-vous m'envoyer le fichier ?",
+            "note": "« Possibly » renforce la politesse."
+          },
+          {
+            "en": "I was wondering if you could help me.",
+            "fr": "Je me demandais si vous pouviez m'aider.",
+            "note": "Très courant par e-mail."
+          },
+          {
+            "en": "Would you mind checking the figures?",
+            "fr": "Pourriez-vous vérifier les chiffres ?",
+            "note": "Would you mind + verbe en -ing."
+          },
+          {
+            "en": "I'm afraid I can't make it on Monday.",
+            "fr": "Je crains de ne pas pouvoir venir lundi.",
+            "note": "Refus poli."
+          },
+          {
+            "en": "It seems that we have a problem.",
+            "fr": "Il semble que nous ayons un problème.",
+            "note": "Constat atténué."
+          },
+          {
+            "en": "As far as I know, the order has been shipped.",
+            "fr": "Pour autant que je sache, la commande a été expédiée.",
+            "note": "Réserve polie."
+          },
+          {
+            "en": "To be honest, I'm not sure about that.",
+            "fr": "Pour être honnête, je n'en suis pas sûr.",
+            "note": "Doute exprimé avec tact."
+          },
+          {
+            "en": "I'd rather wait for the manager.",
+            "fr": "Je préférerais attendre le responsable.",
+            "note": "Préférence polie."
+          },
+          {
+            "en": "I may be wrong, but...",
+            "fr": "Je me trompe peut-être, mais...",
+            "note": "Prépare un désaccord."
+          },
+          {
+            "en": "Let me double-check and get back to you.",
+            "fr": "Laissez-moi vérifier et revenir vers vous.",
+            "note": "Gagne du temps sans s'engager."
+          },
+          {
+            "en": "I'm not entirely convinced.",
+            "fr": "Je ne suis pas entièrement convaincu.",
+            "note": "Désaccord mesuré."
+          },
+          {
+            "en": "If it's not too much trouble...",
+            "fr": "Si ce n'est pas trop vous demander...",
+            "note": "Demande de service."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Comment les utiliser"
+      },
+      {
+        "t": "p",
+        "text": "Ces formules s'utilisent surtout à l'écrit et à l'oral dans un contexte formel. Plus la demande est importante, plus on ajoute de précautions : « I was wondering if you could possibly… »."
+      },
+      {
+        "t": "tip",
+        "text": "« Would you mind… » est suivi d'un verbe en -ing : « Would you mind checking… ». Et « I'm afraid… » sert à annoncer une mauvaise nouvelle avec politesse."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque expression à sa traduction.",
+        "pairs": [
+          {
+            "en": "Let me double-check and get back to you.",
+            "fr": "Laissez-moi vérifier et revenir vers vous."
+          },
+          {
+            "en": "Would you mind checking the figures?",
+            "fr": "Pourriez-vous vérifier les chiffres ?"
+          },
+          {
+            "en": "I'm not entirely convinced.",
+            "fr": "Je ne suis pas entièrement convaincu."
+          },
+          {
+            "en": "I'm afraid I can't make it on Monday.",
+            "fr": "Je crains de ne pas pouvoir venir lundi."
+          },
+          {
+            "en": "Could you possibly send me the file?",
+            "fr": "Pourriez-vous m'envoyer le fichier ?"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « I was wondering if you could help me. » ?",
+        "opts": [
+          "Je préférerais attendre le responsable.",
+          "Je me demandais si vous pouviez m'aider.",
+          "Pourriez-vous m'envoyer le fichier ?"
+        ],
+        "a": 1,
+        "x": "« I was wondering if you could help me. » signifie « Je me demandais si vous pouviez m'aider. »."
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « I'm afraid I can't make it on Monday. » ?",
+        "opts": [
+          "Je crains de ne pas pouvoir venir lundi.",
+          "Pourriez-vous m'envoyer le fichier ?",
+          "Je ne suis pas entièrement convaincu."
+        ],
+        "a": 0,
+        "x": "« I'm afraid I can't make it on Monday. » signifie « Je crains de ne pas pouvoir venir lundi. »."
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : Pourriez-vous vérifier les chiffres.",
+        "a": "Would you mind checking the figures?",
+        "accept": [
+          "Would you mind checking the figures"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : Laissez-moi vérifier et revenir vers vous.",
+        "a": "Let me double-check and get back to you.",
+        "accept": [
+          "Let me double-check and get back to you"
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Traduis : Pourriez-vous vérifier les chiffres ?",
+        "tiles": [
+          "Would",
+          "you",
+          "mind",
+          "checking",
+          "the",
+          "figures"
+        ],
+        "a": "Would you mind checking the figures",
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Quelle phrase refuse poliment une invitation ?",
+        "opts": [
+          "No.",
+          "I'm afraid I can't make it on Monday.",
+          "I don't want to come."
+        ],
+        "a": 1,
+        "x": "« I'm afraid… » adoucit le refus."
+      }
+    ]
+  },
+  {
+    "id": "l4-e2",
+    "cat": "expressions",
+    "title": "Langue de la négociation",
+    "subtitle": "Proposer, refuser et trouver un accord",
+    "emoji": "⚖️",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Une négociation réussie se joue sur des phrases précises : proposer sans s'engager, refuser sans fermer la porte, et résumer ce qui a été accepté. Voici les expressions à maîtriser."
+      },
+      {
+        "t": "h",
+        "text": "A. Les expressions à connaître"
+      },
+      {
+        "t": "phrases",
+        "title": "Expressions professionnelles",
+        "items": [
+          {
+            "en": "Let's meet halfway.",
+            "fr": "Coupons la poire en deux.",
+            "note": "Chacun fait un pas."
+          },
+          {
+            "en": "That works for me.",
+            "fr": "Cela me convient.",
+            "note": "Accord clair."
+          },
+          {
+            "en": "I can offer a 5% discount.",
+            "fr": "Je peux offrir une remise de 5 %.",
+            "note": "Offre concrète."
+          },
+          {
+            "en": "We're not in a position to accept that.",
+            "fr": "Nous ne sommes pas en mesure d'accepter cela.",
+            "note": "Refus ferme et poli."
+          },
+          {
+            "en": "Would you consider a longer contract?",
+            "fr": "Envisageriez-vous un contrat plus long ?",
+            "note": "Contre-proposition."
+          },
+          {
+            "en": "That's a bit above our budget.",
+            "fr": "C'est un peu au-dessus de notre budget.",
+            "note": "Objection chiffrée."
+          },
+          {
+            "en": "Let's put that in writing.",
+            "fr": "Mettons cela par écrit.",
+            "note": "Sécurise l'accord."
+          },
+          {
+            "en": "We have a deal.",
+            "fr": "Nous avons un accord.",
+            "note": "Conclusion."
+          },
+          {
+            "en": "Can we find a compromise?",
+            "fr": "Pouvons-nous trouver un compromis ?",
+            "note": "Relance constructive."
+          },
+          {
+            "en": "I'll need to check with my team.",
+            "fr": "Je devrai vérifier avec mon équipe.",
+            "note": "Temps de réflexion."
+          },
+          {
+            "en": "To sum up, we agreed on...",
+            "fr": "En résumé, nous nous sommes mis d'accord sur...",
+            "note": "Récapitulatif."
+          },
+          {
+            "en": "Let's move on to the next point.",
+            "fr": "Passons au point suivant.",
+            "note": "Clôt un sujet."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Comment les utiliser"
+      },
+      {
+        "t": "p",
+        "text": "En négociation, « That works for me » vaut un accord : c'est plus clair et plus professionnel qu'un simple « OK ». Termine toujours par un résumé écrit : « Let's put that in writing »."
+      },
+      {
+        "t": "tip",
+        "text": "Ne dis pas « I want » pendant une négociation : préfère « We would like… » ou « Could we consider… ». Et vérifie toujours le résultat par écrit."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque expression à sa traduction.",
+        "pairs": [
+          {
+            "en": "Let's meet halfway.",
+            "fr": "Coupons la poire en deux."
+          },
+          {
+            "en": "We have a deal.",
+            "fr": "Nous avons un accord."
+          },
+          {
+            "en": "I'll need to check with my team.",
+            "fr": "Je devrai vérifier avec mon équipe."
+          },
+          {
+            "en": "Would you consider a longer contract?",
+            "fr": "Envisageriez-vous un contrat plus long ?"
+          },
+          {
+            "en": "Can we find a compromise?",
+            "fr": "Pouvons-nous trouver un compromis ?"
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « Let's meet halfway. » ?",
+        "opts": [
+          "Je devrai vérifier avec mon équipe.",
+          "En résumé, nous nous sommes mis d'accord sur...",
+          "Coupons la poire en deux."
+        ],
+        "a": 2,
+        "x": "« Let's meet halfway. » signifie « Coupons la poire en deux. »."
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « We're not in a position to accept that. » ?",
+        "opts": [
+          "Cela me convient.",
+          "Nous ne sommes pas en mesure d'accepter cela.",
+          "En résumé, nous nous sommes mis d'accord sur..."
+        ],
+        "a": 1,
+        "x": "« We're not in a position to accept that. » signifie « Nous ne sommes pas en mesure d'accepter cela. »."
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : Cela me convient.",
+        "a": "That works for me.",
+        "accept": [
+          "That works for me"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : Mettons cela par écrit.",
+        "a": "Let's put that in writing.",
+        "accept": [
+          "Let's put that in writing"
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Traduis : Coupons la poire en deux.",
+        "tiles": [
+          "Let's",
+          "meet",
+          "halfway"
+        ],
+        "a": "Let's meet halfway",
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Quelle phrase conclut un accord ?",
+        "opts": [
+          "We'll see.",
+          "We have a deal.",
+          "That's too expensive."
+        ],
+        "a": 1,
+        "x": "« We have a deal » marque l'accord final."
+      }
+    ]
+  },
+  {
+    "id": "l4-e3",
+    "cat": "expressions",
+    "title": "Présentations et prises de parole",
+    "subtitle": "Annoncer, structurer et conclure",
+    "emoji": "🎤",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Une présentation professionnelle se repère à sa structure : on annonce le plan, on guide l'auditoire, on illustre et on conclut. Ces expressions te donnent un squelette fiable pour toute prise de parole."
+      },
+      {
+        "t": "h",
+        "text": "A. Les expressions à connaître"
+      },
+      {
+        "t": "phrases",
+        "title": "Expressions professionnelles",
+        "items": [
+          {
+            "en": "Today I'll be covering three main points.",
+            "fr": "Aujourd'hui, je vais aborder trois points principaux.",
+            "note": "Annonce du plan."
+          },
+          {
+            "en": "Let's start with the context.",
+            "fr": "Commençons par le contexte.",
+            "note": "Première partie."
+          },
+          {
+            "en": "As you can see on this slide...",
+            "fr": "Comme vous pouvez le voir sur cette diapositive...",
+            "note": "Commentaire visuel."
+          },
+          {
+            "en": "Moving on to the next point...",
+            "fr": "Passons au point suivant...",
+            "note": "Transition."
+          },
+          {
+            "en": "To put it simply...",
+            "fr": "Pour le dire simplement...",
+            "note": "Reformulation."
+          },
+          {
+            "en": "That brings me to my second point.",
+            "fr": "Cela m'amène à mon deuxième point.",
+            "note": "Transition fluide."
+          },
+          {
+            "en": "Let me give you an example.",
+            "fr": "Laissez-moi vous donner un exemple.",
+            "note": "Illustration."
+          },
+          {
+            "en": "I'd like to highlight two figures.",
+            "fr": "J'aimerais mettre en avant deux chiffres.",
+            "note": "Accent sur les données."
+          },
+          {
+            "en": "In conclusion...",
+            "fr": "En conclusion...",
+            "note": "Dernière partie."
+          },
+          {
+            "en": "Thank you for your attention.",
+            "fr": "Merci de votre attention.",
+            "note": "Clôture."
+          },
+          {
+            "en": "I'm happy to take any questions.",
+            "fr": "Je suis prêt à répondre aux questions.",
+            "note": "Questions."
+          },
+          {
+            "en": "To sum up the main takeaway...",
+            "fr": "Pour résumer le point clé...",
+            "note": "Synthèse finale."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Comment les utiliser"
+      },
+      {
+        "t": "p",
+        "text": "Utilise une expression de transition à chaque changement de partie : cela aide l'auditoire à suivre et te laisse le temps de respirer. Termine par une phrase de conclusion claire, puis ouvre les questions."
+      },
+      {
+        "t": "tip",
+        "text": "Évite de lire tes diapositives : utilise-les comme support et commente-les avec « As you can see… ». Une pause après chaque transition rend la présentation plus professionnelle."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque expression à sa traduction.",
+        "pairs": [
+          {
+            "en": "That brings me to my second point.",
+            "fr": "Cela m'amène à mon deuxième point."
+          },
+          {
+            "en": "In conclusion...",
+            "fr": "En conclusion..."
+          },
+          {
+            "en": "I'd like to highlight two figures.",
+            "fr": "J'aimerais mettre en avant deux chiffres."
+          },
+          {
+            "en": "To sum up the main takeaway...",
+            "fr": "Pour résumer le point clé..."
+          },
+          {
+            "en": "I'm happy to take any questions.",
+            "fr": "Je suis prêt à répondre aux questions."
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « Moving on to the next point... » ?",
+        "opts": [
+          "Passons au point suivant...",
+          "En conclusion...",
+          "J'aimerais mettre en avant deux chiffres."
+        ],
+        "a": 0,
+        "x": "« Moving on to the next point... » signifie « Passons au point suivant... »."
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « As you can see on this slide... » ?",
+        "opts": [
+          "Pour résumer le point clé...",
+          "J'aimerais mettre en avant deux chiffres.",
+          "Comme vous pouvez le voir sur cette diapositive..."
+        ],
+        "a": 2,
+        "x": "« As you can see on this slide... » signifie « Comme vous pouvez le voir sur cette diapositive... »."
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : En conclusion.",
+        "a": "In conclusion...",
+        "accept": [
+          "In conclusion.."
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : Merci de votre attention.",
+        "a": "Thank you for your attention.",
+        "accept": [
+          "Thank you for your attention"
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Traduis : Aujourd'hui, je vais aborder trois points principaux.",
+        "tiles": [
+          "Today",
+          "I'll",
+          "be",
+          "covering",
+          "three",
+          "main",
+          "points"
+        ],
+        "a": "Today I'll be covering three main points",
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Quelle expression annonce la fin d'une présentation ?",
+        "opts": [
+          "Let's start with...",
+          "In conclusion...",
+          "Moving on to..."
+        ],
+        "a": 1,
+        "x": "« In conclusion » introduit la conclusion."
+      }
+    ]
+  },
+  {
+    "id": "l4-e4",
+    "cat": "expressions",
+    "title": "Entretiens d'embauche",
+    "subtitle": "Se présenter et valoriser son expérience",
+    "emoji": "💼",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Un entretien d'embauche en anglais suit souvent les mêmes étapes : se présenter, parler de son expérience, illustrer ses forces et poser des questions. Voici les phrases qui font bonne impression."
+      },
+      {
+        "t": "h",
+        "text": "A. Les expressions à connaître"
+      },
+      {
+        "t": "phrases",
+        "title": "Expressions professionnelles",
+        "items": [
+          {
+            "en": "Tell me about yourself.",
+            "fr": "Parlez-moi de vous.",
+            "note": "Question d'ouverture classique."
+          },
+          {
+            "en": "I have five years of experience in marketing.",
+            "fr": "J'ai cinq ans d'expérience en marketing.",
+            "note": "Chiffre ton expérience."
+          },
+          {
+            "en": "I'm passionate about solving customer problems.",
+            "fr": "Je suis passionné par la résolution des problèmes clients.",
+            "note": "Montre ta motivation."
+          },
+          {
+            "en": "I thrive under pressure.",
+            "fr": "Je m'épanouis sous pression.",
+            "note": "Force utile, à illustrer."
+          },
+          {
+            "en": "My greatest strength is my attention to detail.",
+            "fr": "Ma plus grande force est mon souci du détail.",
+            "note": "Force + exemple."
+          },
+          {
+            "en": "I'm currently looking for a new challenge.",
+            "fr": "Je cherche actuellement un nouveau défi.",
+            "note": "Explique ta démarche."
+          },
+          {
+            "en": "I'd describe myself as reliable and curious.",
+            "fr": "Je me décrirais comme fiable et curieux.",
+            "note": "Personnalité."
+          },
+          {
+            "en": "Could you tell me more about the role?",
+            "fr": "Pourriez-vous m'en dire plus sur le poste ?",
+            "note": "Question pertinente."
+          },
+          {
+            "en": "What are your salary expectations?",
+            "fr": "Quelles sont vos attentes salariales ?",
+            "note": "Question fréquente."
+          },
+          {
+            "en": "I'm available from next month.",
+            "fr": "Je suis disponible à partir du mois prochain.",
+            "note": "Disponibilité."
+          },
+          {
+            "en": "Thank you for the opportunity.",
+            "fr": "Merci pour cette opportunité.",
+            "note": "Clôture polie."
+          },
+          {
+            "en": "I look forward to hearing from you.",
+            "fr": "J'attends de vos nouvelles avec impatience.",
+            "note": "Fin d'e-mail de suivi."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Comment les utiliser"
+      },
+      {
+        "t": "p",
+        "text": "Prépare deux ou trois exemples concrets (situation, action, résultat) pour illustrer tes réponses. Évite les réponses d'un mot : développe en une ou deux phrases, puis laisse la parole au recruteur."
+      },
+      {
+        "t": "tip",
+        "text": "Pour parler de tes faiblesses, choisis une vraie piste de progrès et termine par ce que tu fais pour l'améliorer. « I'm a perfectionist » est un cliché : préfère un exemple concret."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque expression à sa traduction.",
+        "pairs": [
+          {
+            "en": "I'm available from next month.",
+            "fr": "Je suis disponible à partir du mois prochain."
+          },
+          {
+            "en": "Could you tell me more about the role?",
+            "fr": "Pourriez-vous m'en dire plus sur le poste ?"
+          },
+          {
+            "en": "I thrive under pressure.",
+            "fr": "Je m'épanouis sous pression."
+          },
+          {
+            "en": "What are your salary expectations?",
+            "fr": "Quelles sont vos attentes salariales ?"
+          },
+          {
+            "en": "I'm passionate about solving customer problems.",
+            "fr": "Je suis passionné par la résolution des problèmes clients."
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « I thrive under pressure. » ?",
+        "opts": [
+          "Quelles sont vos attentes salariales ?",
+          "Merci pour cette opportunité.",
+          "Je m'épanouis sous pression."
+        ],
+        "a": 2,
+        "x": "« I thrive under pressure. » signifie « Je m'épanouis sous pression. »."
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « I'm currently looking for a new challenge. » ?",
+        "opts": [
+          "Je me décrirais comme fiable et curieux.",
+          "Je suis disponible à partir du mois prochain.",
+          "Je cherche actuellement un nouveau défi."
+        ],
+        "a": 2,
+        "x": "« I'm currently looking for a new challenge. » signifie « Je cherche actuellement un nouveau défi. »."
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : Je suis passionné par la résolution des problèmes clients.",
+        "a": "I'm passionate about solving customer problems.",
+        "accept": [
+          "I'm passionate about solving customer problems"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : Pourriez-vous m'en dire plus sur le poste.",
+        "a": "Could you tell me more about the role?",
+        "accept": [
+          "Could you tell me more about the role"
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Traduis : Je suis passionné par la résolution des problèmes clients.",
+        "tiles": [
+          "I'm",
+          "passionate",
+          "about",
+          "solving",
+          "customer",
+          "problems"
+        ],
+        "a": "I'm passionate about solving customer problems",
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Quelle réponse développe le mieux une force professionnelle ?",
+        "opts": [
+          "I'm good.",
+          "My greatest strength is my attention to detail; for example, I reduced invoice errors by 30%.",
+          "I don't know."
+        ],
+        "a": 1,
+        "x": "Une force s'illustre par un exemple concret et un résultat."
+      }
+    ]
+  },
+  {
+    "id": "l4-e5",
+    "cat": "expressions",
+    "title": "Téléphone et visioconférences",
+    "subtitle": "Gérer les problèmes techniques et conclure un appel",
+    "emoji": "📞",
+    "theory": [
+      {
+        "t": "p",
+        "text": "En appel ou en visioconférence, la clarté compte encore plus qu'à l'écrit. Ces expressions permettent de vérifier que tout le monde suit, de résoudre un problème audio et de terminer l'échange avec des actions précises."
+      },
+      {
+        "t": "h",
+        "text": "A. Les expressions à connaître"
+      },
+      {
+        "t": "phrases",
+        "title": "Expressions professionnelles",
+        "items": [
+          {
+            "en": "Can you hear me?",
+            "fr": "Vous m'entendez ?",
+            "note": "Vérification de base."
+          },
+          {
+            "en": "You're on mute.",
+            "fr": "Votre micro est coupé.",
+            "note": "Visioconférence."
+          },
+          {
+            "en": "Could you repeat that, please?",
+            "fr": "Pourriez-vous répéter, s'il vous plaît ?",
+            "note": "Demande polie."
+          },
+          {
+            "en": "The line is breaking up.",
+            "fr": "La ligne coupe.",
+            "note": "Problème audio."
+          },
+          {
+            "en": "Let me share my screen.",
+            "fr": "Laissez-moi partager mon écran.",
+            "note": "Partage d'écran."
+          },
+          {
+            "en": "Sorry, I missed that.",
+            "fr": "Désolé, j'ai manqué cela.",
+            "note": "On n'a pas entendu."
+          },
+          {
+            "en": "Can everyone see the slide?",
+            "fr": "Tout le monde voit-il la diapositive ?",
+            "note": "Vérification visuelle."
+          },
+          {
+            "en": "Let's take this offline.",
+            "fr": "Reprenons cela en dehors de l'appel.",
+            "note": "Sujet à traiter à part."
+          },
+          {
+            "en": "I'll follow up by email.",
+            "fr": "Je ferai un suivi par e-mail.",
+            "note": "Suite écrite."
+          },
+          {
+            "en": "We're running out of time.",
+            "fr": "Nous manquons de temps.",
+            "note": "Clôture imminente."
+          },
+          {
+            "en": "Let's schedule a follow-up call.",
+            "fr": "Planifions un appel de suivi.",
+            "note": "Prochaine étape."
+          },
+          {
+            "en": "Thanks everyone for joining.",
+            "fr": "Merci à tous d'être venus.",
+            "note": "Clôture."
+          }
+        ]
+      },
+      {
+        "t": "h",
+        "text": "B. Comment les utiliser"
+      },
+      {
+        "t": "p",
+        "text": "Quand le son coupe, signale-le immédiatement : « Sorry, you're breaking up ». Et termine toujours par un résumé oral ou écrit des décisions prises."
+      },
+      {
+        "t": "tip",
+        "text": "« You're on mute » est l'expression exacte utilisée en visioconférence. Pour reporter un sujet : « Let's take this offline » — tout le monde comprend qu'il sera traité hors de l'appel."
+      }
+    ],
+    "quiz": [
+      {
+        "t": "match",
+        "q": "Associe chaque expression à sa traduction.",
+        "pairs": [
+          {
+            "en": "Could you repeat that, please?",
+            "fr": "Pourriez-vous répéter, s'il vous plaît ?"
+          },
+          {
+            "en": "We're running out of time.",
+            "fr": "Nous manquons de temps."
+          },
+          {
+            "en": "Can you hear me?",
+            "fr": "Vous m'entendez ?"
+          },
+          {
+            "en": "You're on mute.",
+            "fr": "Votre micro est coupé."
+          },
+          {
+            "en": "I'll follow up by email.",
+            "fr": "Je ferai un suivi par e-mail."
+          }
+        ],
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « You're on mute. » ?",
+        "opts": [
+          "Merci à tous d'être venus.",
+          "Votre micro est coupé.",
+          "Vous m'entendez ?"
+        ],
+        "a": 1,
+        "x": "« You're on mute. » signifie « Votre micro est coupé. »."
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « Let's take this offline. » ?",
+        "opts": [
+          "La ligne coupe.",
+          "Reprenons cela en dehors de l'appel.",
+          "Laissez-moi partager mon écran."
+        ],
+        "a": 1,
+        "x": "« Let's take this offline. » signifie « Reprenons cela en dehors de l'appel. »."
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : Pourriez-vous répéter, s'il vous plaît.",
+        "a": "Could you repeat that, please?",
+        "accept": [
+          "Could you repeat that, please"
+        ],
+        "x": ""
+      },
+      {
+        "t": "type",
+        "q": "Traduis en anglais : Je ferai un suivi par e-mail.",
+        "a": "I'll follow up by email.",
+        "accept": [
+          "I'll follow up by email"
+        ],
+        "x": ""
+      },
+      {
+        "t": "tiles",
+        "q": "Traduis : Désolé, votre micro est coupé.",
+        "tiles": [
+          "Sorry,",
+          "you're",
+          "on",
+          "mute"
+        ],
+        "a": "Sorry, you're on mute",
+        "x": ""
+      },
+      {
+        "t": "choice",
+        "q": "Que signifie « Let's take this offline » ?",
+        "opts": [
+          "Déconnectons-nous",
+          "Traitons ce sujet en dehors de l'appel",
+          "Enregistrons la réunion"
+        ],
+        "a": 1,
+        "x": "On reporte le sujet à une discussion hors ligne."
+      }
+    ]
+  },
+  {
+    "id": "l4-r1",
+    "cat": "reading",
+    "title": "A Project Kickoff",
+    "subtitle": "Comprendre une réunion de lancement",
+    "emoji": "🚀",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Lis ce compte rendu de réunion de lancement, puis réponds aux questions. Il utilise le vocabulaire des projets, du calendrier et des responsabilités."
+      },
+      {
+        "t": "h",
+        "text": "🚀 The Atlas kickoff meeting"
+      },
+      {
+        "t": "p",
+        "text": "On Monday morning, the marketing team at Northwind met for the kickoff of the Atlas project. Sarah, the project manager, opened the meeting by reminding everyone of the objective: launch the new website before the end of the quarter. She presented the scope, the timeline and the three main milestones."
+      },
+      {
+        "t": "p",
+        "text": "Each participant received a copy of the brief and the list of deliverables. Tom, the lead designer, raised a risk: the mockups could take longer than expected. Sarah suggested adding a one-week buffer and scheduling a short follow-up meeting every Friday."
+      },
+      {
+        "t": "p",
+        "text": "At the end of the meeting, she summarised the decisions and assigned one action item to each person. The minutes were sent the same day, with clear due dates. Everyone agreed that the meeting had been efficient."
+      },
+      {
+        "t": "h",
+        "text": "Vocabulaire utile"
+      },
+      {
+        "t": "phrases",
+        "title": "À retenir",
+        "items": [
+          {
+            "en": "kickoff",
+            "fr": "réunion de lancement"
+          },
+          {
+            "en": "scope",
+            "fr": "périmètre"
+          },
+          {
+            "en": "milestone",
+            "fr": "jalon"
+          },
+          {
+            "en": "deliverable",
+            "fr": "livrable"
+          },
+          {
+            "en": "buffer",
+            "fr": "marge de sécurité"
+          },
+          {
+            "en": "action item",
+            "fr": "action à mener"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "What is the objective of the Atlas project?",
+        "opts": [
+          "Hire a design team",
+          "Launch a new website",
+          "Open a new office"
+        ],
+        "a": 1,
+        "x": "« Launch the new website before the end of the quarter »."
+      },
+      {
+        "t": "choice",
+        "q": "Who leads the project?",
+        "opts": [
+          "Tom",
+          "Sarah",
+          "Northwind"
+        ],
+        "a": 1,
+        "x": "Sarah est la cheffe de projet (project manager)."
+      },
+      {
+        "t": "choice",
+        "q": "What risk did Tom raise?",
+        "opts": [
+          "The budget",
+          "The mockups",
+          "The server"
+        ],
+        "a": 1,
+        "x": "« The mockups could take longer than expected »."
+      },
+      {
+        "t": "choice",
+        "q": "How did Sarah handle the risk?",
+        "opts": [
+          "She cancelled the project",
+          "She added a one-week buffer and weekly follow-ups",
+          "She hired another designer"
+        ],
+        "a": 1,
+        "x": "Elle ajoute une semaine de marge et une réunion de suivi chaque vendredi."
+      },
+      {
+        "t": "choice",
+        "q": "When were the minutes sent?",
+        "opts": [
+          "The same day",
+          "The following week",
+          "They were not sent"
+        ],
+        "a": 0,
+        "x": "« The minutes were sent the same day »."
+      },
+      {
+        "t": "match",
+        "q": "Associe chaque terme à sa traduction.",
+        "pairs": [
+          {
+            "en": "scope",
+            "fr": "périmètre"
+          },
+          {
+            "en": "milestone",
+            "fr": "jalon"
+          },
+          {
+            "en": "deliverable",
+            "fr": "livrable"
+          },
+          {
+            "en": "buffer",
+            "fr": "marge de sécurité"
+          },
+          {
+            "en": "action item",
+            "fr": "action à mener"
+          }
+        ],
+        "x": ""
+      }
+    ]
+  },
+  {
+    "id": "l4-r2",
+    "cat": "reading",
+    "title": "A Client Proposal",
+    "subtitle": "Lire une proposition commerciale",
+    "emoji": "📄",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Ce texte résume une proposition commerciale envoyée à un client. Lis-le attentivement : les questions portent sur le contenu, les chiffres et les prochaines étapes."
+      },
+      {
+        "t": "h",
+        "text": "📄 Proposal for Brightline Ltd"
+      },
+      {
+        "t": "p",
+        "text": "Dear Ms Carter, thank you for the opportunity to submit our proposal for the redesign of your online store. Based on our discussion, the scope includes a new homepage, a simplified checkout and a mobile version of the site."
+      },
+      {
+        "t": "p",
+        "text": "The project will run over ten weeks and is divided into four milestones: discovery, design, development and launch. Our fixed price is €24,000, including two rounds of revisions. Payment is split into three invoices, at the beginning, at the design sign-off and at delivery."
+      },
+      {
+        "t": "p",
+        "text": "We have planned a two-week buffer before launch to allow for testing. If you approve the proposal by 15 March, we can start on 1 April. We would be happy to schedule a call to walk you through the details."
+      },
+      {
+        "t": "h",
+        "text": "Vocabulaire utile"
+      },
+      {
+        "t": "phrases",
+        "title": "À retenir",
+        "items": [
+          {
+            "en": "proposal",
+            "fr": "proposition commerciale"
+          },
+          {
+            "en": "scope",
+            "fr": "périmètre"
+          },
+          {
+            "en": "fixed price",
+            "fr": "prix forfaitaire"
+          },
+          {
+            "en": "invoice",
+            "fr": "facture"
+          },
+          {
+            "en": "sign-off",
+            "fr": "validation"
+          },
+          {
+            "en": "buffer",
+            "fr": "marge"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "What is included in the scope?",
+        "opts": [
+          "A new logo",
+          "A new homepage, a simplified checkout and a mobile version",
+          "A social media campaign"
+        ],
+        "a": 1,
+        "x": "Le périmètre est annoncé dans le premier paragraphe."
+      },
+      {
+        "t": "choice",
+        "q": "How long will the project take?",
+        "opts": [
+          "Four weeks",
+          "Ten weeks",
+          "Two weeks"
+        ],
+        "a": 1,
+        "x": "« The project will run over ten weeks »."
+      },
+      {
+        "t": "choice",
+        "q": "How much does the project cost?",
+        "opts": [
+          "€24,000",
+          "€42,000",
+          "€2,400"
+        ],
+        "a": 0,
+        "x": "« Our fixed price is €24,000 »."
+      },
+      {
+        "t": "choice",
+        "q": "How many invoices are planned?",
+        "opts": [
+          "Two",
+          "Three",
+          "Four"
+        ],
+        "a": 1,
+        "x": "« Payment is split into three invoices »."
+      },
+      {
+        "t": "choice",
+        "q": "What happens if the proposal is approved by 15 March?",
+        "opts": [
+          "The project starts on 1 April",
+          "The price is reduced",
+          "The launch is cancelled"
+        ],
+        "a": 0,
+        "x": "« We can start on 1 April »."
+      },
+      {
+        "t": "choice",
+        "q": "Why is there a two-week buffer?",
+        "opts": [
+          "For holidays",
+          "For testing before launch",
+          "To hire staff"
+        ],
+        "a": 1,
+        "x": "« … to allow for testing »."
+      }
+    ]
+  },
+  {
+    "id": "l4-r3",
+    "cat": "reading",
+    "title": "An Annual Performance Review",
+    "subtitle": "Comprendre un entretien annuel",
+    "emoji": "📈",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Ce texte raconte un entretien annuel d'évaluation. Tu y retrouveras le vocabulaire des objectifs, du feedback et de l'évolution professionnelle."
+      },
+      {
+        "t": "h",
+        "text": "📈 Maria's performance review"
+      },
+      {
+        "t": "p",
+        "text": "Maria had her annual performance review on Thursday. Her manager, David, started by reviewing the goals they had set twelve months earlier. Maria had exceeded her sales target by 18% and had led two successful client projects."
+      },
+      {
+        "t": "p",
+        "text": "David gave her positive feedback on her reliability and her ability to explain complex figures. He also suggested one area for improvement: delegating more tasks instead of handling everything herself. Maria agreed and said she would like to take a leadership training course."
+      },
+      {
+        "t": "p",
+        "text": "They discussed her career path. David explained that a team leader position would open in the summer and encouraged her to apply. They agreed on three objectives for the coming year and scheduled a follow-up meeting in six months."
+      },
+      {
+        "t": "h",
+        "text": "Vocabulaire utile"
+      },
+      {
+        "t": "phrases",
+        "title": "À retenir",
+        "items": [
+          {
+            "en": "performance review",
+            "fr": "entretien d'évaluation"
+          },
+          {
+            "en": "goal",
+            "fr": "objectif"
+          },
+          {
+            "en": "exceed a target",
+            "fr": "dépasser un objectif"
+          },
+          {
+            "en": "feedback",
+            "fr": "retour, évaluation"
+          },
+          {
+            "en": "career path",
+            "fr": "évolution professionnelle"
+          },
+          {
+            "en": "delegate",
+            "fr": "déléguer"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "By how much did Maria exceed her sales target?",
+        "opts": [
+          "8%",
+          "12%",
+          "18%"
+        ],
+        "a": 2,
+        "x": "« She had exceeded her sales target by 18% »."
+      },
+      {
+        "t": "choice",
+        "q": "What did David praise?",
+        "opts": [
+          "Her punctuality and her humour",
+          "Her reliability and her ability to explain complex figures",
+          "Her English accent"
+        ],
+        "a": 1,
+        "x": "David souligne sa fiabilité et sa clarté sur les chiffres."
+      },
+      {
+        "t": "choice",
+        "q": "What improvement did David suggest?",
+        "opts": [
+          "Working longer hours",
+          "Delegating more tasks",
+          "Changing department"
+        ],
+        "a": 1,
+        "x": "« Delegating more tasks instead of handling everything herself »."
+      },
+      {
+        "t": "choice",
+        "q": "What would Maria like to do?",
+        "opts": [
+          "Take a leadership training course",
+          "Move to another country",
+          "Reduce her working hours"
+        ],
+        "a": 0,
+        "x": "« She would like to take a leadership training course »."
+      },
+      {
+        "t": "choice",
+        "q": "Which position could open in the summer?",
+        "opts": [
+          "Sales assistant",
+          "Team leader",
+          "Project manager"
+        ],
+        "a": 1,
+        "x": "« A team leader position would open in the summer »."
+      },
+      {
+        "t": "choice",
+        "q": "When is the next follow-up meeting?",
+        "opts": [
+          "In one month",
+          "In six months",
+          "Next week"
+        ],
+        "a": 1,
+        "x": "« … scheduled a follow-up meeting in six months »."
+      }
+    ]
+  },
+  {
+    "id": "l4-r4",
+    "cat": "reading",
+    "title": "A Business Trip",
+    "subtitle": "Organiser un déplacement professionnel",
+    "emoji": "🧳",
+    "theory": [
+      {
+        "t": "p",
+        "text": "Ce texte décrit un déplacement professionnel à Londres. Il rassemble le vocabulaire du voyage d'affaires, des rendez-vous et des notes de frais."
+      },
+      {
+        "t": "h",
+        "text": "🧳 Three days in London"
+      },
+      {
+        "t": "p",
+        "text": "James travelled to London on Tuesday for a three-day business trip. He took an early flight so that he could attend a lunch meeting with a new supplier. On arrival, he checked into his hotel, which was a ten-minute walk from the client's office."
+      },
+      {
+        "t": "p",
+        "text": "The first afternoon was dedicated to a product presentation. James had prepared a short deck and a one-page summary for the attendees. The client asked several questions about the delivery schedule, and they agreed to test a small order before signing a larger contract."
+      },
+      {
+        "t": "p",
+        "text": "On Wednesday, James visited the warehouse and reviewed the logistics with the operations team. In the evening, he had dinner with the client, which helped build a stronger relationship. On Thursday morning, he sent a follow-up email with the agreed next steps and kept all his receipts for the expense report."
+      },
+      {
+        "t": "h",
+        "text": "Vocabulaire utile"
+      },
+      {
+        "t": "phrases",
+        "title": "À retenir",
+        "items": [
+          {
+            "en": "business trip",
+            "fr": "déplacement professionnel"
+          },
+          {
+            "en": "supplier",
+            "fr": "fournisseur"
+          },
+          {
+            "en": "delivery schedule",
+            "fr": "calendrier de livraison"
+          },
+          {
+            "en": "warehouse",
+            "fr": "entrepôt"
+          },
+          {
+            "en": "next steps",
+            "fr": "prochaines étapes"
+          },
+          {
+            "en": "expense report",
+            "fr": "note de frais"
+          }
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "t": "choice",
+        "q": "Why did James take an early flight?",
+        "opts": [
+          "To attend a lunch meeting",
+          "To visit a museum",
+          "To avoid traffic"
+        ],
+        "a": 0,
+        "x": "« … so that he could attend a lunch meeting with a new supplier »."
+      },
+      {
+        "t": "choice",
+        "q": "Where was his hotel?",
+        "opts": [
+          "At the airport",
+          "Ten minutes from the client's office",
+          "Next to the warehouse"
+        ],
+        "a": 1,
+        "x": "« … a ten-minute walk from the client's office »."
+      },
+      {
+        "t": "choice",
+        "q": "What did the client agree to do?",
+        "opts": [
+          "Sign a larger contract immediately",
+          "Test a small order first",
+          "Cancel the project"
+        ],
+        "a": 1,
+        "x": "« … agree to test a small order before signing a larger contract »."
+      },
+      {
+        "t": "choice",
+        "q": "What did James do on Wednesday?",
+        "opts": [
+          "Visited the warehouse",
+          "Flew home",
+          "Met a journalist"
+        ],
+        "a": 0,
+        "x": "« James visited the warehouse and reviewed the logistics »."
+      },
+      {
+        "t": "choice",
+        "q": "Why did he keep his receipts?",
+        "opts": [
+          "For the hotel",
+          "For the expense report",
+          "For the client"
+        ],
+        "a": 1,
+        "x": "« … kept all his receipts for the expense report »."
+      },
+      {
+        "t": "match",
+        "q": "Associe chaque terme à sa traduction.",
+        "pairs": [
+          {
+            "en": "supplier",
+            "fr": "fournisseur"
+          },
+          {
+            "en": "warehouse",
+            "fr": "entrepôt"
+          },
+          {
+            "en": "next steps",
+            "fr": "prochaines étapes"
+          },
+          {
+            "en": "expense report",
+            "fr": "note de frais"
+          },
+          {
+            "en": "delivery schedule",
+            "fr": "calendrier de livraison"
+          }
+        ],
+        "x": ""
+      }
+    ]
+  }
+]

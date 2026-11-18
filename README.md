@@ -1,13 +1,13 @@
-# Anglais Pro
+# ANGLO CLUB
 
-> Apprendre l'anglais, 5 minutes par jour — cours, exercices, expressions et grammaire, du niveau A1 au B2.
+> Apprendre l'anglais, 5 minutes par jour — cours, exercices, expressions et grammaire, du niveau A1 au C1.
 
 Une application web **mobile-first** pensée pour les francophones qui veulent progresser en anglais sans s'ennuyer. Leçons courtes, exercices variés, révision intelligente et suivi de progression : tout est là pour installer une vraie habitude.
 
-![Aperçu de l'accueil d'Anglais Pro](docs/preview.png)
+![Aperçu de l'accueil d'ANGLO CLUB](docs/preview.png)
 
 <p align="center">
-  <img src="docs/preview-mobile.png" alt="Aperçu mobile d'Anglais Pro" width="300" />
+  <img src="docs/preview-mobile.png" alt="Aperçu mobile d'ANGLO CLUB" width="300" />
 </p>
 
 <p>
@@ -22,13 +22,13 @@ Une application web **mobile-first** pensée pour les francophones qui veulent p
 
 ## 💎 Fonctionnalités
 
-- **Parcours structuré en 3 niveaux** — Fondations (A1–A2), Intermédiaire (B1), Avancé (B2).
-- **63 leçons complètes** — chaque leçon combine théorie claire (encadrés, tableaux, phrases clés) et quiz interactif.
+- **Parcours structuré en 4 niveaux colorés** — Débutant (A1–A2), Intermédiaire (B1), Avancé (B2), Professionnel (B2–C1).
+- **81 leçons complètes** — chaque leçon combine théorie claire (encadrés, tableaux, phrases clés) et quiz interactif.
 - **4 types d'exercices** — choix multiple, saisie de texte, reconstruction de phrases par tuiles et association de paires.
 - **Bibliothèque filtrable** — recherche instantanée, filtres par niveau, catégorie et statut (à faire / terminé / favoris).
 - **Recherche globale** — la barre haute (ou les raccourcis `/` et Ctrl/Cmd + K) ouvre un dictionnaire : on tape un mot (anglais ou français), l'app affiche son sens, un exemple, l'écoute audio et la leçon qui le contient.
 - **Grammaire & vocabulaire** — 17 fiches de grammaire et 14 thèmes de vocabulaire, consultables hors leçon.
-- **910 expressions utiles** — avec traduction, note d'usage et écoute audio.
+- **1 168 expressions utiles** — avec traduction, note d'usage et écoute audio.
 - **Révision ciblée** — sessions par compétence, marathon de 20 questions et flashcards.
 - **Progression motivante** — XP, cœurs qui se gagnent en terminant des leçons (3 maximum), série quotidienne, objectif journalier, rangs et succès. La barre supérieure met en avant les points, la série de jours, le pourcentage d'avancement et le profil, sans icône cœur.
 - **Page de présentation** — un landing page moderne (dégradés violet/bleu, aperçu de leçon animé, apparitions au défilement) s'affiche à chaque ouverture du site, y compris sur un nouvel appareil, après un retour ou une arrivée depuis un moteur de recherche ; l'inscription et le mode invité sont proposés juste après.
@@ -46,14 +46,15 @@ Une application web **mobile-first** pensée pour les francophones qui veulent p
 
 ## 📚 Contenu
 
-| Niveau | Nom | Référence CECRL | Leçons | Exercices |
-| :----: | --- | :-------------: | -----: | --------: |
-| 1 | Fondations | A1 – A2 | 23 | 301 |
-| 2 | Intermédiaire | B1 | 22 | 250 |
-| 3 | Avancé | B2 | 18 | 221 |
-| **Total** | | | **63** | **772** |
+| Niveau | Nom | Couleur | Référence CECRL | Leçons | Exercices |
+| :----: | --- | --- | :-------------: | -----: | --------: |
+| 1 | Débutant | Émeraude | A1 – A2 | 23 | 301 |
+| 2 | Intermédiaire | Azur | B1 | 22 | 250 |
+| 3 | Avancé | Fuchsia | B2 | 18 | 221 |
+| 4 | Professionnel | Ambre | B2 – C1 | 18 | 126 |
+| **Total** | | | | **81** | **898** |
 
-- **910 expressions** prêtes à l'emploi
+- **1 168 expressions** prêtes à l'emploi
 - **452 lignes de vocabulaire** réparties en 14 thèmes
 - **17 fiches de grammaire** et **3 leçons de lecture**
 
@@ -132,7 +133,8 @@ anglais-pro/
 ├─ content/                 # Données pédagogiques (JSON, source de vérité)
 │  ├─ level-1.json
 │  ├─ level-2.json
-│  └─ level-3.json
+│  ├─ level-3.json
+│  └─ level-4.json
 ├─ api/                     # Fonctions serverless Vercel
 │  ├─ auth/                 # signup, login, logout, me, Google OAuth
 │  ├─ profile.js            # Nom + photo

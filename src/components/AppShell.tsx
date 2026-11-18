@@ -569,7 +569,7 @@ function SiteFooter({ collapsed }: { collapsed: boolean }) {
             Français (France)
           </div>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] font-semibold text-indigo-100/45">
-            <span>© 2026 Anglais Pro</span>
+            <span>© 2026 ANGLO CLUB</span>
           </div>
         </div>
       </div>

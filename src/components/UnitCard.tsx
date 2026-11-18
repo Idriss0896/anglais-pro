@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import type { CurriculumUnit, LessonProgress } from "@/types";
 import { CATEGORIES } from "@/lib/categories";
-import { LEVEL_THEMES } from "@/lib/levels";
+import { LEVEL_SHORT_NAMES, LEVEL_THEMES } from "@/lib/levels";
 import { cn } from "@/lib/utils";
 import { unitMinutes } from "@/data/curriculum";
 import { CategoryBadge } from "./CategoryBadge";
@@ -18,7 +18,7 @@ interface UnitCardProps {
   unit: CurriculumUnit;
   progress?: LessonProgress;
   featured?: boolean;
-  /** Carte bleu clair, pour alterner avec les cartes blanches. */
+  /** Carte légèrement teintée de la couleur du niveau. */
   tinted?: boolean;
   className?: string;
 }
@@ -40,22 +40,35 @@ export function UnitCard({
       to={`/lesson/${unit.id}`}
       className={cn(
         "card card-hover group relative flex flex-col overflow-hidden p-4 sm:p-5",
-        featured ? "card-blue-deep" : done || tinted ? "card-blue" : "",
+        featured
+          ? cn(levelTheme.chip, "border-transparent shadow-[0_22px_44px_-24px_rgba(19,26,51,0.55)]")
+          : tinted
+            ? levelTheme.soft
+            : "bg-surface",
+        !featured && cn(levelTheme.border, "hover:-translate-y-1 hover:shadow-[0_20px_38px_-26px_rgba(19,26,51,0.45)]"),
         className,
       )}
     >
+      <span
+        className={cn(
+          "absolute inset-x-0 top-0 h-1.5",
+          featured ? "bg-white/30" : levelTheme.gradient,
+        )}
+        aria-hidden="true"
+      />
+
       {featured && (
-        <span className="absolute right-4 top-4 inline-flex items-center gap-1 rounded-full bg-surface px-2.5 py-1 text-[10px] font-extrabold text-azure-strong shadow-sm">
+        <span className="absolute right-4 top-4 inline-flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 text-[10px] font-extrabold text-white ring-1 ring-white/25">
           <Play size={11} className="fill-current" />
           Prochaine
         </span>
       )}
 
-      <div className="flex items-start gap-3">
+      <div className="flex items-start gap-3 pt-1">
         <span
           className={cn(
-            "grid h-12 w-12 shrink-0 place-items-center rounded-2xl text-2xl ring-1 ring-inset",
-            featured ? "bg-white/15 ring-white/25" : cn(theme.soft, "ring-white/60"),
+            "grid h-12 w-12 shrink-0 place-items-center rounded-2xl text-2xl ring-1 ring-inset transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-105",
+            featured ? "bg-white/15 ring-white/25" : cn(levelTheme.soft, "ring-white/60"),
           )}
           aria-hidden="true"
         >
@@ -67,10 +80,12 @@ export function UnitCard({
             <span
               className={cn(
                 "inline-flex items-center rounded-full px-2 py-1 text-[10px] font-extrabold",
-                featured ? "bg-white/15 text-white ring-1 ring-white/20" : levelTheme.badge,
+                featured
+                  ? "bg-white/15 text-white ring-1 ring-white/20"
+                  : levelTheme.badge,
               )}
             >
-              Niv. {unit.level}
+              {LEVEL_SHORT_NAMES[unit.level]}
             </span>
             {done && (
               <span
@@ -97,7 +112,7 @@ export function UnitCard({
           <p
             className={cn(
               "mt-1 line-clamp-2 text-xs font-medium leading-5",
-              featured ? "text-white/70" : "text-slate-500",
+              featured ? "text-white/75" : "text-slate-500",
             )}
           >
             {unit.subtitle}
@@ -109,7 +124,7 @@ export function UnitCard({
         <div
           className={cn(
             "flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] font-bold",
-            featured ? "text-white/60" : "text-slate-400",
+            featured ? "text-white/70" : "text-slate-400",
           )}
         >
           <span className="inline-flex items-center gap-1">
@@ -124,7 +139,7 @@ export function UnitCard({
             <span
               className={cn(
                 "inline-flex items-center gap-1",
-                featured ? "text-emerald-200" : "text-emerald-strong",
+                featured ? "text-white" : "text-emerald-strong",
               )}
             >
               <CheckCircle2 size={12.5} />
@@ -134,10 +149,16 @@ export function UnitCard({
         </div>
         <span
           className={cn(
-            "grid h-8 w-8 shrink-0 place-items-center rounded-full transition-all",
+            "grid h-8 w-8 shrink-0 place-items-center rounded-full transition-all duration-300",
             featured
-              ? "bg-surface text-azure-strong"
-              : "bg-azure-soft text-azure-strong group-hover:bg-azure-700 group-hover:text-white",
+              ? "bg-white text-ink group-hover:rotate-45"
+              : cn(
+                  levelTheme.soft,
+                  levelTheme.text,
+                  "group-hover:text-white",
+                  levelTheme.gradient,
+                  "group-hover:rotate-45",
+                ),
           )}
         >
           <ArrowUpRight size={15} strokeWidth={2.6} />
@@ -149,7 +170,7 @@ export function UnitCard({
           value={progress.bestAccuracy}
           height="h-1.5"
           className={cn("mt-3", featured && "bg-white/20")}
-          barClassName={featured ? "bg-emerald-300" : "bg-emerald-500"}
+          barClassName={featured ? "bg-white" : levelTheme.bar}
           label={`Meilleur score : ${progress.bestAccuracy}%`}
         />
       )}

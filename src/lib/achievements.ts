@@ -2,6 +2,7 @@ import {
   Award,
   BadgeCheck,
   BookOpenCheck,
+  Briefcase,
   CalendarCheck,
   Crown,
   Flame,
@@ -9,10 +10,12 @@ import {
   Gem,
   GraduationCap,
   Medal,
+  Rocket,
   Target,
   Trophy,
   type LucideIcon,
 } from "lucide-react";
+import { TOTAL_UNITS } from "@/data/curriculum";
 
 export interface AchievementStats {
   completed: number;
@@ -22,7 +25,8 @@ export interface AchievementStats {
   xp: number;
   bestAccuracy: number;
   perfectLessons: number;
-  level1Complete: boolean;
+  /** Numéros des niveaux entièrement terminés. */
+  completedLevels: number[];
 }
 
 export interface Achievement {
@@ -66,29 +70,56 @@ export const ACHIEVEMENTS: Achievement[] = [
   {
     id: "halfway",
     title: "À mi-chemin",
-    description: "Termine la moitié du parcours",
+    description: `Termine la moitié des ${TOTAL_UNITS} leçons`,
     icon: Target,
     tone: "bg-indigo-400",
-    goal: Math.ceil(63 / 2),
+    goal: Math.ceil(TOTAL_UNITS / 2),
     value: (stats) => stats.completed,
   },
   {
     id: "graduate",
     title: "Diplômé",
-    description: "Termine les 63 leçons",
+    description: `Termine les ${TOTAL_UNITS} leçons`,
     icon: GraduationCap,
     tone: "bg-fuchsia-500",
-    goal: 63,
+    goal: TOTAL_UNITS,
     value: (stats) => stats.completed,
   },
   {
     id: "level-1",
-    title: "Fondations solides",
-    description: "Termine tout le niveau 1",
+    title: "Les bases acquises",
+    description: "Termine tout le niveau Débutant",
     icon: Crown,
     tone: "bg-emerald-500",
     goal: 1,
-    value: (stats) => (stats.level1Complete ? 1 : 0),
+    value: (stats) => (stats.completedLevels.includes(1) ? 1 : 0),
+  },
+  {
+    id: "level-2",
+    title: "À l'aise",
+    description: "Termine tout le niveau Intermédiaire",
+    icon: Rocket,
+    tone: "bg-azure-500",
+    goal: 1,
+    value: (stats) => (stats.completedLevels.includes(2) ? 1 : 0),
+  },
+  {
+    id: "level-3",
+    title: "Assurance",
+    description: "Termine tout le niveau Avancé",
+    icon: Medal,
+    tone: "bg-fuchsia-500",
+    goal: 1,
+    value: (stats) => (stats.completedLevels.includes(3) ? 1 : 0),
+  },
+  {
+    id: "level-4",
+    title: "Prêt pour le travail",
+    description: "Termine tout le niveau Professionnel",
+    icon: Briefcase,
+    tone: "bg-amber-500",
+    goal: 1,
+    value: (stats) => (stats.completedLevels.includes(4) ? 1 : 0),
   },
   {
     id: "streak-3",

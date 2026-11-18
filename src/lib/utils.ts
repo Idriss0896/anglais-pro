@@ -92,7 +92,7 @@ export function percent(part: number, total: number) {
   return Math.round((part / total) * 100);
 }
 
-export function initials(name = "Anglais Pro") {
+export function initials(name = "Anglo Club") {
   return name
     .split(" ")
     .map((part) => part[0])

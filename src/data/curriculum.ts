@@ -1,6 +1,7 @@
 import level1 from "../../content/level-1.json";
 import level2 from "../../content/level-2.json";
 import level3 from "../../content/level-3.json";
+import level4 from "../../content/level-4.json";
 import type {
   CategoryKey,
   CurriculumQuestion,
@@ -16,11 +17,16 @@ export const LEVELS: LevelMeta[] = [
   {
     id: "level-1",
     num: 1,
-    title: "Fondations",
+    title: "Débutant",
     subtitle: "Les bases pour se débrouiller",
     description:
       "Saluer, se présenter, compter, parler du quotidien et construire ses premières phrases avec confiance.",
     cefr: "A1 – A2",
+    outcomes: [
+      "Saluer, se présenter et poser les premières questions",
+      "Commander, demander et se débrouiller au quotidien",
+      "Comprendre une phrase simple à l'oral comme à l'écrit",
+    ],
     units: asUnits(level1),
   },
   {
@@ -31,6 +37,11 @@ export const LEVELS: LevelMeta[] = [
     description:
       "Raconter, décrire, voyager, exprimer ses émotions et comprendre les nuances de l'anglais courant.",
     cefr: "B1",
+    outcomes: [
+      "Raconter une histoire au passé sans hésiter",
+      "Voyager, décrire un lieu et gérer une situation imprévue",
+      "Exprimer une opinion simple et justifier un choix",
+    ],
     units: asUnits(level2),
   },
   {
@@ -39,9 +50,29 @@ export const LEVELS: LevelMeta[] = [
     title: "Avancé",
     subtitle: "Parler avec assurance",
     description:
-      "Maîtriser les temps, les modaux, les idiomes et l'anglais professionnel pour des conversations naturelles.",
+      "Maîtriser les temps, les modaux, les idiomes et les structures nuancées pour des conversations naturelles.",
     cefr: "B2",
+    outcomes: [
+      "Maîtriser les temps, les modaux et le style indirect",
+      "Nuancer son propos et comprendre les idiomes courants",
+      "Soutenir une conversation naturelle sur un sujet complexe",
+    ],
     units: asUnits(level3),
+  },
+  {
+    id: "level-4",
+    num: 4,
+    title: "Professionnel",
+    subtitle: "Réussir en anglais au travail",
+    description:
+      "Réunions, e-mails, négociations, présentations et entretiens : l'anglais concret du monde professionnel.",
+    cefr: "B2 – C1",
+    outcomes: [
+      "Animer une réunion et rédiger un compte rendu clair",
+      "Écrire des e-mails et des propositions commerciales efficaces",
+      "Négocier, présenter et passer un entretien en anglais",
+    ],
+    units: asUnits(level4),
   },
 ];
 

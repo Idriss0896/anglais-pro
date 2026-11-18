@@ -14,7 +14,7 @@ import { StatPill } from "@/components/StatPill";
 import { EmptyState } from "@/components/EmptyState";
 import { Mascot, MascotSay, mascotFor, MASCOTS } from "@/components/Mascot";
 import { LEVEL_EMOJIS, LEVEL_THEMES } from "@/lib/levels";
-import { TOTAL_UNITS, countByCategory } from "@/data/curriculum";
+import { LEVELS, TOTAL_UNITS, countByCategory } from "@/data/curriculum";
 import { useProgressStore } from "@/store/useProgressStore";
 import { cn, plural } from "@/lib/utils";
 import { speak } from "@/lib/audio";
@@ -58,7 +58,7 @@ function VocabRow({ entry }: { entry: VocabEntry }) {
 export function VocabularyPage() {
   const lessons = useProgressStore((state) => state.lessons);
   const [search, setSearch] = useState("");
-  const [level, setLevel] = useState<"all" | 1 | 2 | 3>("all");
+  const [level, setLevel] = useState<"all" | number>("all");
   const [openId, setOpenId] = useState<string | null>(VOCAB_UNITS[0]?.id ?? null);
 
   const unitsWithEntries = useMemo(
@@ -166,7 +166,7 @@ export function VocabularyPage() {
           >
             Tous les niveaux
           </button>
-          {([1, 2, 3] as const).map((value) => (
+          {LEVELS.map(({ num: value }) => (
             <button
               key={value}
               type="button"

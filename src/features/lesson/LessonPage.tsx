@@ -24,7 +24,6 @@ import { Mascot, MascotSay, mascotFor, MASCOTS } from "@/components/Mascot";
 import { StatPill } from "@/components/StatPill";
 import { QuizSession } from "@/features/lesson/QuizSession";
 import { ALL_QUESTIONS, getUnit, makePhraseId, unitMinutes } from "@/data/curriculum";
-import { CATEGORIES } from "@/lib/categories";
 import { LEVEL_THEMES } from "@/lib/levels";
 import { speak } from "@/lib/audio";
 import { cn, plural } from "@/lib/utils";
@@ -254,7 +253,6 @@ export function LessonPage() {
     );
   }
 
-  const theme = CATEGORIES[unit.cat];
   const levelTheme = LEVEL_THEMES[unit.level];
   const minutes = unitMinutes(unit);
   const phraseCount = unit.theory
@@ -303,7 +301,7 @@ export function LessonPage() {
         <section
           className={cn(
             "relative overflow-hidden rounded-[30px] p-5 text-white shadow-[0_26px_56px_-28px_rgba(23,22,43,.5)] sm:p-7",
-            theme.card,
+            levelTheme.chip,
           )}
         >
           <div className="pointer-events-none absolute inset-0 pattern-dots opacity-25" />

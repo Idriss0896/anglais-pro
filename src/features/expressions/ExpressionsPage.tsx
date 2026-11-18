@@ -16,6 +16,7 @@ import { EmptyState } from "@/components/EmptyState";
 import { Mascot, MascotSay, mascotFor, MASCOTS } from "@/components/Mascot";
 import { CATEGORIES } from "@/lib/categories";
 import { LEVEL_EMOJIS } from "@/lib/levels";
+import { LEVELS } from "@/data/curriculum";
 import { PHRASES } from "@/data/curriculum";
 import { useProgressStore } from "@/store/useProgressStore";
 import { copyText } from "@/lib/utils";
@@ -134,7 +135,7 @@ export function ExpressionsPage() {
   const [params] = useSearchParams();
   const queryParam = params.get("q") ?? "";
   const [search, setSearch] = useState(queryParam);
-  const [level, setLevel] = useState<"all" | 1 | 2 | 3>("all");
+  const [level, setLevel] = useState<"all" | number>("all");
   const [favoritesOnly, setFavoritesOnly] = useState(false);
   const [visible, setVisible] = useState(24);
 
@@ -235,7 +236,7 @@ export function ExpressionsPage() {
           >
             Tous les niveaux
           </button>
-          {([1, 2, 3] as const).map((value) => (
+          {LEVELS.map(({ num: value }) => (
             <button
               key={value}
               type="button"

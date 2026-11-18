@@ -9,39 +9,46 @@ interface LogoProps {
   to?: string;
 }
 
+const MARK = `${import.meta.env.BASE_URL}logo-mark.svg`;
+
 /**
- * Marque « Anglais Pro » : un monogramme A dessiné à la main (aucune icône
- * linguistique générique) avec un point ambre, cohérent avec le favicon.
+ * Marque ANGLO CLUB : l'écusson (cercle violet, Union Jack, A blanc et flèche
+ * dorée) accompagne le wordmark bicolore ANGLO / CLUB.
  */
 export function Logo({ compact = false, onDark = false, className, to = "/" }: LogoProps) {
   return (
     <Link
       to={to}
       className={cn("group inline-flex items-center gap-2.5", className)}
-      aria-label="Anglais Pro — Accueil"
+      aria-label="ANGLO CLUB — Accueil"
     >
-      <span className="relative grid h-10 w-10 shrink-0 place-items-center overflow-hidden rounded-2xl bg-brand-600 text-white shadow-glow ring-1 ring-white/20 transition-all duration-300 group-hover:-rotate-3 group-hover:scale-105 group-active:scale-95">
-        <svg
-          viewBox="0 0 64 64"
-          className="relative h-[22px] w-[22px] drop-shadow-[0_2px_3px_rgba(23,22,43,0.25)]"
-          aria-hidden="true"
-        >
-          <path
-            d="M13 48 L25.5 15 h6.5 L44.5 48 h-7.6 l-3.1-8.4H23.7L20.6 48z"
-            fill="currentColor"
-          />
-          <path d="M25.9 33.6 h6.9 l-3.45-9.6z" fill="#3c2ca4" />
-        </svg>
-        <span className="absolute right-1 top-1 h-2.5 w-2.5 rounded-full bg-amber-400 ring-2 ring-brand-700/50" />
-      </span>
+      <img
+        src={MARK}
+        alt=""
+        width={40}
+        height={40}
+        className="h-10 w-10 shrink-0 select-none drop-shadow-[0_6px_14px_rgba(46,16,101,0.28)] transition-transform duration-300 ease-out group-hover:-rotate-3 group-hover:scale-105 group-active:scale-95"
+        draggable={false}
+      />
       {!compact && (
-        <span
-          className={cn(
-            "font-display text-[19px] font-extrabold tracking-[-0.03em]",
-            onDark ? "text-white" : "text-ink",
-          )}
-        >
-          Anglais<span className={onDark ? "text-brand-300" : "text-brand-strong"}>Pro</span>
+        <span className="flex flex-col leading-none">
+          <span
+            className={cn(
+              "font-display text-[17px] font-extrabold uppercase leading-none tracking-[0.08em]",
+              onDark ? "text-white" : "text-ink",
+            )}
+          >
+            Anglo
+            <span className={onDark ? "text-amber-300" : "text-amber-strong"}> Club</span>
+          </span>
+          <span
+            className={cn(
+              "mt-1 text-[9px] font-bold uppercase tracking-[0.22em]",
+              onDark ? "text-white/55" : "text-faint",
+            )}
+          >
+            L'anglais qui se parle
+          </span>
         </span>
       )}
     </Link>

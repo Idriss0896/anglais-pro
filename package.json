@@ -3,7 +3,7 @@
   "private": true,
   "version": "2.0.0",
   "type": "module",
-  "description": "Anglais Pro — apprendre l'anglais avec des cours, des exercices et des expressions, du niveau débutant au niveau avancé.",
+  "description": "ANGLO CLUB — apprendre l'anglais avec des cours, des exercices et des expressions, du niveau débutant au niveau professionnel.",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

@@ -361,7 +361,7 @@ export function SettingsPage() {
       </Section>
 
       <p className="text-center text-[10px] font-bold text-slate-400">
-        Anglais Pro · réglages enregistrés sur cet appareil
+        ANGLO CLUB · réglages enregistrés sur cet appareil
       </p>
 
       <Modal

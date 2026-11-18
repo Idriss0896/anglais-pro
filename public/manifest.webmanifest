@@ -1,15 +1,15 @@
 {
-  "name": "Anglais Pro — Apprendre l'anglais",
-  "short_name": "Anglais Pro",
-  "description": "Cours, exercices, expressions et grammaire pour apprendre l'anglais du niveau débutant au niveau avancé.",
+  "name": "ANGLO CLUB — Apprendre l'anglais",
+  "short_name": "ANGLO CLUB",
+  "description": "Quatre niveaux, du débutant au professionnel : cours, exercices, expressions et grammaire pour apprendre l'anglais.",
   "lang": "fr",
   "dir": "ltr",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#ffffff",
-  "theme_color": "#5b21b6",
+  "background_color": "#2e1065",
+  "theme_color": "#2e1065",
   "icons": [
     {
       "src": "./app-icon.svg",

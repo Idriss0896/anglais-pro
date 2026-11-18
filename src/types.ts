@@ -51,6 +51,8 @@ export interface LevelMeta {
   subtitle: string;
   description: string;
   cefr: string;
+  /** Ce que l'apprenant saura faire à la fin du niveau. */
+  outcomes?: string[];
   units: Unit[];
 }
 

@@ -1,14 +1,20 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { useSearchParams } from "react-router-dom";
 import {
+  ArrowRight,
+  CheckCircle2,
   LayoutGrid,
   Search,
+  Sparkles,
   X,
   type LucideIcon,
 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { UnitCard } from "@/components/UnitCard";
 import { EmptyState } from "@/components/EmptyState";
+import { ProgressBar } from "@/components/ProgressBar";
+import { ProgressRing } from "@/components/ProgressRing";
+import { Reveal } from "@/components/Reveal";
 import { CATEGORIES, CATEGORY_KEYS } from "@/lib/categories";
 import { LEVEL_EMOJIS, LEVEL_THEMES } from "@/lib/levels";
 import {
@@ -76,7 +82,7 @@ export function LibraryPage({
   }, [queryParam]);
 
   const levelParam = Number(params.get("level"));
-  const activeLevel = [1, 2, 3].includes(levelParam) ? levelParam : "all";
+  const activeLevel = LEVELS.some((level) => level.num === levelParam) ? levelParam : "all";
   const categoryParam = params.get("cat");
   const activeCategory: CategoryKey | "all" = fixedCategory
     ? fixedCategory
@@ -113,13 +119,10 @@ export function LibraryPage({
     return counts;
   }, [activeLevel]);
 
-  const groups =
-    activeLevel === "all"
-      ? LEVELS.map((level) => ({
-          level,
-          units: filtered.filter((unit) => unit.level === level.num),
-        })).filter((group) => group.units.length > 0)
-      : [];
+  const groups = LEVELS.map((level) => ({
+    level,
+    units: filtered.filter((unit) => unit.level === level.num),
+  })).filter((group) => group.units.length > 0);
 
   return (
     <div className="space-y-6">
@@ -133,6 +136,103 @@ export function LibraryPage({
 
       {banner}
 
+      {/* Parcours : quatre étapes colorées, cliquables pour filtrer. */}
+      <Reveal>
+        <section className="rounded-[28px] bg-surface p-4 ring-1 ring-line sm:p-5">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <p className="eyebrow text-slate-400">Le parcours</p>
+              <h2 className="mt-1 text-[15px] font-extrabold text-ink">
+                Quatre niveaux, du premier mot au monde du travail
+              </h2>
+            </div>
+            <button
+              type="button"
+              onClick={() => updateParam("level", null)}
+              className={cn(
+                "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-extrabold transition",
+                activeLevel === "all"
+                  ? "bg-brand-700 text-white"
+                  : "bg-surface-soft text-slate-500 ring-1 ring-line hover:text-ink",
+              )}
+            >
+              Tout le parcours
+            </button>
+          </div>
+
+          <div className="stagger mt-4 grid gap-2.5 sm:grid-cols-2 xl:grid-cols-4">
+            {LEVELS.map((level) => {
+              const theme = LEVEL_THEMES[level.num];
+              const done = level.units.filter((unit) => lessons[unit.id]?.completed).length;
+              const progress = percent(done, level.units.length);
+              const active = activeLevel === level.num;
+              return (
+                <button
+                  key={level.id}
+                  type="button"
+                  onClick={() => updateParam("level", active ? null : String(level.num))}
+                  aria-pressed={active}
+                  className={cn(
+                    "group relative overflow-hidden rounded-2xl p-3.5 text-left ring-1 transition duration-300",
+                    active
+                      ? cn(theme.surface, "ring-2", theme.ring, "shadow-sm")
+                      : cn("bg-surface-soft ring-line hover:-translate-y-0.5", theme.border),
+                  )}
+                >
+                  <span
+                    aria-hidden="true"
+                    className={cn(
+                      "pointer-events-none absolute inset-x-0 top-0 h-1",
+                      theme.gradient,
+                    )}
+                  />
+                  <div className="flex items-center gap-2.5">
+                    <span
+                      className={cn(
+                        "grid h-9 w-9 shrink-0 place-items-center rounded-xl text-lg transition-transform duration-300 group-hover:-rotate-6",
+                        theme.soft,
+                      )}
+                      aria-hidden="true"
+                    >
+                      {LEVEL_EMOJIS[level.num]}
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <p className={cn("text-[9px] font-extrabold uppercase tracking-[0.16em]", theme.text)}>
+                        Étape {level.num} · {level.cefr}
+                      </p>
+                      <p className="truncate text-[13px] font-extrabold text-ink">{level.title}</p>
+                    </div>
+                    <span className={cn("shrink-0 text-[11px] font-extrabold", theme.text)}>
+                      {progress}%
+                    </span>
+                  </div>
+                  <ProgressBar
+                    value={progress}
+                    height="h-1.5"
+                    className="mt-2.5 bg-surface"
+                    barClassName={theme.bar}
+                    label={`Progression ${level.title}`}
+                  />
+                  <div className="mt-2 flex items-center justify-between text-[10px] font-bold text-slate-400">
+                    <span>
+                      {level.units.length} leçons · {done} terminées
+                    </span>
+                    <ArrowRight
+                      size={13}
+                      className={cn(
+                        "transition-transform duration-300 group-hover:translate-x-0.5",
+                        theme.text,
+                      )}
+                    />
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </section>
+      </Reveal>
+
+      {/* Recherche et filtres de catégorie. */}
       <div className="animate-fade-up space-y-4" style={{ animationDelay: "60ms" }}>
         <div className="relative">
           <Search
@@ -157,49 +257,6 @@ export function LibraryPage({
               <X size={15} />
             </button>
           )}
-        </div>
-
-        <div className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:px-0">
-          <button
-            type="button"
-            onClick={() => updateParam("level", null)}
-            className={cn(
-              "shrink-0 rounded-full px-3.5 py-2 text-[11px] font-extrabold transition",
-              activeLevel === "all"
-                ? "bg-azure-700 text-white shadow-sm"
-                : "bg-surface text-slate-500 ring-1 ring-azure-500/15 hover:text-azure-strong",
-            )}
-          >
-            Tous les niveaux
-          </button>
-          {LEVELS.map((level) => {
-            const theme = LEVEL_THEMES[level.num];
-            const active = activeLevel === level.num;
-            return (
-              <button
-                key={level.id}
-                type="button"
-                onClick={() => updateParam("level", String(level.num))}
-                className={cn(
-                  "inline-flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-[11px] font-extrabold transition",
-                  active
-                    ? "bg-azure-700 text-white shadow-sm"
-                    : "bg-surface text-slate-500 ring-1 ring-azure-500/15 hover:text-azure-strong",
-                )}
-              >
-                <span>{LEVEL_EMOJIS[level.num]}</span>
-                Niv. {level.num}
-                <span
-                  className={cn(
-                    "rounded-full px-1.5 py-0.5 text-[9px]",
-                    active ? "bg-white/15 text-white/70" : cn(theme.soft, theme.text),
-                  )}
-                >
-                  {level.units.length}
-                </span>
-              </button>
-            );
-          })}
         </div>
 
         {!fixedCategory && (
@@ -278,77 +335,116 @@ export function LibraryPage({
             </button>
           }
         />
-      ) : activeLevel === "all" ? (
-        <div className="space-y-8">
-          {groups.map(({ level, units }) => {
+      ) : (
+        <div className="space-y-6">
+          {groups.map(({ level, units }, index) => {
             const theme = LEVEL_THEMES[level.num];
             const done = level.units.filter((unit) => lessons[unit.id]?.completed).length;
+            const progress = percent(done, level.units.length);
+            const exercises = level.units.reduce((sum, unit) => sum + unit.quiz.length, 0);
             return (
-              <section key={level.id} className="animate-fade-up">
-                <div className="mb-3 flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-2.5">
+              <Reveal key={level.id} delay={index * 70}>
+                <section
+                  id={level.id}
+                  className={cn(
+                    "scroll-mt-24 overflow-hidden rounded-[28px] bg-surface ring-1",
+                    theme.border,
+                  )}
+                >
+                  <header className={cn("relative overflow-hidden px-4 py-4 sm:px-6 sm:py-5", theme.chip)}>
                     <span
-                      className={cn(
-                        "grid h-9 w-9 place-items-center rounded-xl text-base text-white",
-                        theme.gradient,
-                      )}
+                      aria-hidden="true"
+                      className="pointer-events-none absolute -right-3 -top-8 select-none font-display text-[132px] font-extrabold leading-none text-white/10"
                     >
-                      {LEVEL_EMOJIS[level.num]}
+                      {level.num}
                     </span>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h2 className="text-[17px] font-extrabold text-ink">{level.title}</h2>
-                        <span
-                          className={cn(
-                            "rounded-full px-2 py-0.5 text-[9px] font-extrabold ring-1",
-                            theme.soft,
-                            theme.text,
-                            theme.ring,
-                          )}
-                        >
-                          {level.cefr}
-                        </span>
+                    <div className="relative flex flex-wrap items-center gap-4">
+                      <span
+                        className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white/15 text-2xl ring-1 ring-white/25 sm:h-14 sm:w-14"
+                        aria-hidden="true"
+                      >
+                        {LEVEL_EMOJIS[level.num]}
+                      </span>
+
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[9.5px] font-extrabold uppercase tracking-[0.2em] text-white/65">
+                          Niveau {level.num} · {level.cefr}
+                        </p>
+                        <h2 className="mt-0.5 text-[20px] font-extrabold leading-tight text-white sm:text-[23px]">
+                          {level.title}
+                        </h2>
+                        <p className="mt-1 line-clamp-1 text-[11.5px] font-medium text-white/70">
+                          {level.subtitle}
+                        </p>
                       </div>
-                      <p className="text-[10px] font-bold text-slate-400">
-                        {units.length} leçons affichées
+
+                      <div className="flex items-center gap-4">
+                        <div className="hidden text-right sm:block">
+                          <p className="text-[11px] font-extrabold text-white">
+                            {units.length} {plural(units.length, "leçon")}
+                          </p>
+                          <p className="text-[10px] font-bold text-white/60">
+                            {exercises} exercices
+                          </p>
+                        </div>
+                        <ProgressRing
+                          value={progress}
+                          size={54}
+                          stroke={6}
+                          trackClassName="stroke-white/25"
+                          barClassName="stroke-white"
+                          label={`Progression ${level.title}`}
+                        >
+                          <span className="text-[11px] font-extrabold text-white">{progress}%</span>
+                        </ProgressRing>
+                      </div>
+                    </div>
+
+                    {level.outcomes && (
+                      <ul className="relative mt-3 hidden flex-wrap gap-x-4 gap-y-1.5 sm:flex">
+                        {level.outcomes.map((outcome) => (
+                          <li
+                            key={outcome}
+                            className="inline-flex items-center gap-1.5 text-[10.5px] font-semibold text-white/70"
+                          >
+                            <CheckCircle2 size={12} className="shrink-0 text-white/80" />
+                            {outcome}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </header>
+
+                  <div className={cn("p-3 sm:p-4", theme.surface)}>
+                    <div className="mb-2.5 flex items-center justify-between gap-3 px-1">
+                      <p className="inline-flex items-center gap-1.5 text-[10px] font-extrabold uppercase tracking-[0.12em] text-slate-500">
+                        <Sparkles size={12} className={theme.text} />
+                        {done}/{level.units.length} terminées · {progress}%
                       </p>
+                      <ProgressBar
+                        value={progress}
+                        height="h-1.5"
+                        className="max-w-[160px] flex-1 bg-surface"
+                        barClassName={theme.bar}
+                        label={`Progression ${level.title}`}
+                      />
+                    </div>
+                    <div className="stagger grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                      {units.map((unit, unitIndex) => (
+                        <UnitCard
+                          key={unit.id}
+                          unit={unit}
+                          progress={lessons[unit.id]}
+                          featured={unit.id === nextUnit.id}
+                          tinted={unitIndex % 2 === 1}
+                        />
+                      ))}
                     </div>
                   </div>
-                  <div className="text-right">
-                    <p className={cn("text-[11px] font-extrabold", theme.text)}>
-                      {percent(done, level.units.length)}%
-                    </p>
-                    <p className="text-[9px] font-bold text-slate-400">
-                      {done}/{level.units.length}
-                    </p>
-                  </div>
-                </div>
-                <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-                  {units.map((unit, index) => (
-                    <UnitCard
-                      key={unit.id}
-                      unit={unit}
-                      progress={lessons[unit.id]}
-                      featured={unit.id === nextUnit.id}
-                      tinted={index % 2 === 1}
-                    />
-                  ))}
-                </div>
-              </section>
+                </section>
+              </Reveal>
             );
           })}
-        </div>
-      ) : (
-        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-          {filtered.map((unit, index) => (
-            <UnitCard
-              key={unit.id}
-              unit={unit}
-              progress={lessons[unit.id]}
-              featured={unit.id === nextUnit.id}
-              tinted={index % 2 === 1}
-            />
-          ))}
         </div>
       )}
     </div>

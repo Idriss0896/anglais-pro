@@ -128,8 +128,8 @@ function SidebarLink({
           "font-nav group flex items-center rounded-2xl text-[13.5px] font-semibold tracking-[-0.01em] transition-all duration-200 hover:-translate-y-0.5",
           collapsed ? "justify-center px-0 py-3" : "gap-3 px-3 py-2.5",
           isActive
-            ? "bg-white text-[#4c1d95]"
-            : "text-indigo-100/75 hover:bg-white/10 hover:text-white",
+            ? "bg-white text-[#6d28d9]"
+            : "text-white/80 hover:bg-white/10 hover:text-white",
         )
       }
     >
@@ -193,7 +193,7 @@ function Sidebar({
                 : "Réduire le menu en icônes"
           }
           title={collapsed ? "Déplier le menu" : "Réduire le menu"}
-          className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-white/10 text-indigo-100 ring-1 ring-white/20 transition-colors hover:bg-white/20 hover:text-white"
+          className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-white/10 text-white ring-1 ring-white/20 transition-colors hover:bg-white/20 hover:text-white"
         >
           {collapsed ? <PanelLeftOpen size={19} /> : <PanelLeftClose size={19} />}
         </button>
@@ -204,7 +204,7 @@ function Sidebar({
         aria-label="Navigation principale"
       >
         {!collapsed && (
-          <p className="font-nav px-3 pb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-indigo-200/60">
+          <p className="font-nav px-3 pb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/60">
             Apprendre
           </p>
         )}
@@ -213,7 +213,7 @@ function Sidebar({
         ))}
 
         {!collapsed && (
-          <p className="font-nav px-3 pb-2 pt-5 text-[10px] font-semibold uppercase tracking-[0.18em] text-indigo-200/60">
+          <p className="font-nav px-3 pb-2 pt-5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/60">
             Entraînement
           </p>
         )}
@@ -234,8 +234,8 @@ function Sidebar({
               "font-nav flex items-center rounded-2xl text-[13.5px] font-semibold transition-colors",
               collapsed ? "justify-center px-0 py-3" : "gap-3 px-3 py-2.5",
               isActive
-                ? "bg-white text-[#4c1d95]"
-                : "text-indigo-100/75 hover:bg-white/10 hover:text-white",
+                ? "bg-white text-[#6d28d9]"
+                : "text-white/80 hover:bg-white/10 hover:text-white",
             )
           }
         >
@@ -265,11 +265,11 @@ function Sidebar({
                 <span className="font-nav block truncate text-[13px] font-semibold text-white">
                   {user ? user.name || user.email.split("@")[0] : "Mon compte"}
                 </span>
-                <span className="font-nav block truncate text-[11px] font-normal text-indigo-100/60">
+                <span className="font-nav block truncate text-[11px] font-normal text-white/60">
                   {user ? `${rank.label} · ${streak} j de série` : "Se connecter ou s'inscrire"}
                 </span>
               </span>
-              <ChevronRight size={18} className="text-indigo-100/50" />
+              <ChevronRight size={18} className="text-white/55" />
             </>
           )}
         </Link>

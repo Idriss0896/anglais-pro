@@ -16,6 +16,7 @@ import {
   logoutRequest,
   putProgressRequest,
   signupRequest,
+  updateAccountRequest,
   updateProfileRequest,
   type User,
 } from "@/lib/api";
@@ -33,6 +34,7 @@ interface AuthContextValue {
   login: (email: string, password: string) => Promise<User>;
   logout: () => Promise<void>;
   updateProfile: (patch: { name?: string | null; avatar?: string | null }) => Promise<User>;
+  updateAccount: (patch: { currentPassword: string; email?: string; newPassword?: string }) => Promise<User>;
   refresh: () => Promise<void>;
 }
 
@@ -171,6 +173,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     [],
   );
 
+  const updateAccount = useCallback(
+    async (patch: { currentPassword: string; email?: string; newPassword?: string }) => {
+      const result = await updateAccountRequest(patch);
+      setUser(result.user);
+      userRef.current = result.user;
+      return result.user;
+    },
+    [],
+  );
+
   const refresh = useCallback(async () => {
     try {
       const me = await getMe();
@@ -194,9 +206,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       login,
       logout,
       updateProfile,
+      updateAccount,
       refresh,
     }),
-    [user, loading, apiReady, googleEnabled, signup, login, logout, updateProfile, refresh],
+    [user, loading, apiReady, googleEnabled, signup, login, logout, updateProfile, updateAccount, refresh],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

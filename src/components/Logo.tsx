@@ -41,14 +41,6 @@ export function Logo({ compact = false, onDark = false, className, to = "/" }: L
             Anglo
             <span className={onDark ? "text-amber-300" : "text-amber-strong"}> Club</span>
           </span>
-          <span
-            className={cn(
-              "font-nav mt-1 text-[8px] font-bold uppercase tracking-[0.2em]",
-              onDark ? "text-white/55" : "text-faint",
-            )}
-          >
-            L'anglais qui se parle
-          </span>
         </span>
       )}
     </Link>

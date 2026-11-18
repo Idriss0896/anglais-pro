@@ -1,9 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { RotateCcw, SlidersHorizontal } from "lucide-react";
+import {
+  AudioLines,
+  Check,
+  ChevronRight,
+  Eye,
+  EyeOff,
+  Flame,
+  KeyRound,
+  LockKeyhole,
+  Mail,
+  Moon,
+  MonitorCog,
+  Palette,
+  Play,
+  RotateCcw,
+  SlidersHorizontal,
+  Target,
+  UserRound,
+  Volume2,
+  VolumeX,
+  type LucideIcon,
+} from "lucide-react";
 import { useAuth } from "@/auth/AuthProvider";
 import { PageHeader } from "@/components/PageHeader";
-import { MaterialIcon } from "@/components/MaterialIcon";
 import { Modal } from "@/components/Modal";
 import { Toggle } from "@/components/Toggle";
 import { Button } from "@/components/Button";
@@ -19,22 +39,22 @@ const THEMES: {
   value: ThemePreference;
   label: string;
   hint: string;
-  icon: string;
+  icon: LucideIcon;
 }[] = [
-  { value: "light", label: "Clair", hint: "Fond lumineux", icon: "light_mode" },
-  { value: "dark", label: "Sombre", hint: "Repos des yeux", icon: "dark_mode" },
-  { value: "system", label: "Système", hint: "Suit l'appareil", icon: "brightness_auto" },
+  { value: "light", label: "Clair", hint: "Fond lumineux", icon: Palette },
+  { value: "dark", label: "Sombre", hint: "Repos des yeux", icon: Moon },
+  { value: "system", label: "Système", hint: "Suit l'appareil", icon: MonitorCog },
 ];
 
 const GOALS = [20, 30, 50, 100];
 
 function Section({
-  icon,
+  icon: Icon,
   title,
   description,
   children,
 }: {
-  icon: string;
+  icon: LucideIcon;
   title: string;
   description?: string;
   children: React.ReactNode;
@@ -42,8 +62,8 @@ function Section({
   return (
     <section className="card card-hover overflow-hidden">
       <div className="flex items-start gap-3 border-b border-line px-5 py-4">
-        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-brand-soft text-brand-strong">
-          <MaterialIcon name={icon} size={21} />
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-brand-soft text-brand-strong transition-transform duration-300 hover:rotate-6 hover:scale-105">
+          <Icon size={21} strokeWidth={2.2} />
         </span>
         <div>
           <h2 className="text-[15px] font-extrabold text-ink">{title}</h2>
@@ -60,13 +80,13 @@ function Section({
 }
 
 function Row({
-  icon,
+  icon: Icon,
   tone,
   title,
   description,
   children,
 }: {
-  icon: string;
+  icon: LucideIcon;
   tone: string;
   title: string;
   description: string;
@@ -76,7 +96,7 @@ function Row({
     <div className="flex flex-col gap-3 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
       <div className="flex min-w-0 items-center gap-3">
         <span className={cn("grid h-9 w-9 shrink-0 place-items-center rounded-xl", tone)}>
-          <MaterialIcon name={icon} size={18} />
+          <Icon size={18} strokeWidth={2.2} />
         </span>
         <div className="min-w-0">
           <p className="text-[12.5px] font-extrabold text-ink">{title}</p>
@@ -89,7 +109,7 @@ function Row({
 }
 
 export function SettingsPage() {
-  const { user, apiReady, logout } = useAuth();
+  const { user, apiReady, logout, updateAccount } = useAuth();
   const theme = useSettingsStore((state) => state.theme);
   const audio = useSettingsStore((state) => state.audio);
   const setTheme = useSettingsStore((state) => state.setTheme);
@@ -104,6 +124,18 @@ export function SettingsPage() {
 
   const [resetOpen, setResetOpen] = useState(false);
   const [tested, setTested] = useState(false);
+  const [email, setEmail] = useState(user?.email ?? "");
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [accountMessage, setAccountMessage] = useState<string | null>(null);
+  const [accountError, setAccountError] = useState<string | null>(null);
+  const [accountPending, setAccountPending] = useState(false);
+
+  useEffect(() => {
+    setEmail(user?.email ?? "");
+  }, [user?.email]);
 
   const rank = getRank(xp);
   const goalXp = todayXp(activity);
@@ -113,6 +145,30 @@ export function SettingsPage() {
     const ok = speak("Hello! Welcome to English Pro. Let's practise speaking together.");
     setTested(ok);
   };
+
+  async function saveAccount() {
+    setAccountMessage(null);
+    setAccountError(null);
+    if (!currentPassword) {
+      setAccountError("Saisis ton mot de passe actuel pour confirmer.");
+      return;
+    }
+    setAccountPending(true);
+    try {
+      await updateAccount({
+        currentPassword,
+        email: email.trim(),
+        newPassword: newPassword || undefined,
+      });
+      setCurrentPassword("");
+      setNewPassword("");
+      setAccountMessage("Tes informations de connexion ont été mises à jour.");
+    } catch (caught) {
+      setAccountError(caught instanceof Error ? caught.message : "Impossible d'enregistrer ces changements.");
+    } finally {
+      setAccountPending(false);
+    }
+  }
 
   return (
     <div className="mx-auto max-w-4xl space-y-6">
@@ -125,7 +181,7 @@ export function SettingsPage() {
       />
 
       <Section
-        icon="palette"
+        icon={Palette}
         title="Apparence"
         description="Choisis le thème qui te convient le mieux."
       >
@@ -142,17 +198,17 @@ export function SettingsPage() {
                   className={cn(
                     "flex items-center gap-3 rounded-2xl px-3 py-3 text-left transition-colors",
                     active
-                      ? "bg-brand-soft ring-2 ring-[#4c1d95]"
+                      ? "bg-brand-soft ring-2 ring-[#6d28d9]"
                       : "bg-surface-soft ring-1 ring-line hover:bg-surface-muted",
                   )}
                 >
                   <span
                     className={cn(
                       "grid h-9 w-9 shrink-0 place-items-center rounded-xl",
-                      active ? "bg-[#4c1d95] text-white" : "bg-surface text-slate-500 ring-1 ring-line",
+                      active ? "bg-[#6d28d9] text-white" : "bg-surface text-slate-500 ring-1 ring-line",
                     )}
                   >
-                    <MaterialIcon name={option.icon} size={19} filled={active} />
+                    <option.icon size={19} strokeWidth={active ? 2.6 : 2.1} />
                   </span>
                   <span className="min-w-0">
                     <span className="block text-[12.5px] font-extrabold text-ink">
@@ -163,11 +219,7 @@ export function SettingsPage() {
                     </span>
                   </span>
                   {active && (
-                    <MaterialIcon
-                      name="check"
-                      size={18}
-                      className="ml-auto shrink-0 text-brand-strong"
-                    />
+                    <Check size={18} strokeWidth={3} className="ml-auto shrink-0 text-brand-strong" />
                   )}
                 </button>
               );
@@ -178,12 +230,12 @@ export function SettingsPage() {
       </Section>
 
       <Section
-        icon="volume_up"
+        icon={Volume2}
         title="Audio"
         description="Une voix anglaise lit chaque mot et chaque expression."
       >
         <Row
-          icon={audio ? "volume_up" : "volume_off"}
+          icon={audio ? Volume2 : VolumeX}
           tone={audio ? "bg-emerald-soft text-emerald-strong" : "bg-surface-muted text-slate-500"}
           title="Prononciation vocale"
           description={
@@ -206,7 +258,7 @@ export function SettingsPage() {
         <div className="flex flex-col gap-3 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
             <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-azure-soft text-azure-strong">
-              <MaterialIcon name="graphic_eq" size={18} />
+              <AudioLines size={18} strokeWidth={2.2} />
             </span>
             <div>
               <p className="text-[12.5px] font-extrabold text-ink">Tester la voix</p>
@@ -218,14 +270,14 @@ export function SettingsPage() {
             </div>
           </div>
           <Button variant="soft" size="sm" onClick={testVoice} disabled={!audio}>
-            <MaterialIcon name="play_arrow" size={18} />
+            <Play size={18} strokeWidth={2.4} />
             {tested ? "Réécouter" : "Écouter"}
           </Button>
         </div>
       </Section>
 
       <Section
-        icon="track_changes"
+        icon={Target}
         title="Apprentissage"
         description="Fixe le rythme que tu veux tenir chaque jour."
       >
@@ -247,7 +299,7 @@ export function SettingsPage() {
                   className={cn(
                     "h-9 rounded-full px-3.5 text-[11px] font-extrabold transition-colors",
                     dailyGoal === goal
-                      ? "bg-[#4c1d95] text-white"
+                      ? "bg-[#6d28d9] text-white"
                       : "bg-surface-soft text-slate-500 ring-1 ring-line hover:text-ink",
                   )}
                 >
@@ -271,7 +323,7 @@ export function SettingsPage() {
         </div>
 
         <Row
-          icon="local_fire_department"
+          icon={Flame}
           tone="bg-amber-soft text-amber-strong"
           title="Série de jours"
           description={`${streak} jour${streak > 1 ? "s" : ""} d'affilée · niveau ${rank.label}`}
@@ -281,13 +333,13 @@ export function SettingsPage() {
             className="inline-flex h-9 items-center gap-1.5 rounded-full bg-surface-soft px-3.5 text-[11px] font-extrabold text-slate-600 ring-1 ring-line transition-colors hover:text-ink"
           >
             Voir ma progression
-            <MaterialIcon name="chevron_right" size={16} />
+            <ChevronRight size={16} />
           </Link>
         </Row>
       </Section>
 
       <Section
-        icon="person"
+        icon={UserRound}
         title="Compte"
         description="Tes informations et l'accès à ton profil."
       >
@@ -308,7 +360,7 @@ export function SettingsPage() {
               to="/profile"
               className="inline-flex h-9 items-center gap-1.5 rounded-full bg-surface-soft px-3.5 text-[11px] font-extrabold text-slate-600 ring-1 ring-line transition-colors hover:text-ink"
             >
-              <MaterialIcon name="person" size={16} />
+              <UserRound size={16} />
               Mon profil
             </Link>
             {user && (
@@ -321,7 +373,77 @@ export function SettingsPage() {
       </Section>
 
       <Section
-        icon="restart_alt"
+        icon={LockKeyhole}
+        title="Connexion et sécurité"
+        description="Modifie l'adresse email et le mot de passe de ton compte."
+      >
+        {!user ? (
+          <div className="px-5 py-5 text-[12px] font-semibold text-slate-500">
+            Connecte-toi pour modifier tes informations de connexion.
+          </div>
+        ) : user.provider === "google" ? (
+          <div className="flex items-start gap-3 px-5 py-5">
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-sky-soft text-sky-strong">
+              <KeyRound size={19} />
+            </span>
+            <p className="text-[12px] font-semibold leading-5 text-slate-500">
+              Ce compte utilise Google. La connexion et le mot de passe se gèrent depuis ton compte Google.
+            </p>
+          </div>
+        ) : (
+          <div className="space-y-4 px-5 py-5">
+            {(accountMessage || accountError) && (
+              <div className={cn(
+                "flex items-center gap-2 rounded-2xl px-3.5 py-3 text-[11.5px] font-bold ring-1",
+                accountError
+                  ? "bg-rose-soft text-rose-strong ring-rose-strong/20"
+                  : "bg-emerald-soft text-emerald-strong ring-emerald-strong/20",
+              )}>
+                {accountError ? <KeyRound size={15} /> : <Check size={15} strokeWidth={3} />}
+                {accountError ?? accountMessage}
+              </div>
+            )}
+            <label className="block">
+              <span className="mb-1.5 block text-[10.5px] font-extrabold uppercase tracking-[0.12em] text-slate-500">Adresse email</span>
+              <span className="relative flex items-center">
+                <Mail size={16} className="pointer-events-none absolute left-3.5 text-slate-400" />
+                <input value={email} onChange={(event) => setEmail(event.target.value)} type="email" autoComplete="email" className="h-11 w-full rounded-2xl bg-surface-soft pl-10 pr-3.5 text-[13px] font-semibold text-ink outline-none ring-1 ring-line transition focus:bg-surface focus:ring-2 focus:ring-brand-400" />
+              </span>
+            </label>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <label className="block">
+                <span className="mb-1.5 block text-[10.5px] font-extrabold uppercase tracking-[0.12em] text-slate-500">Mot de passe actuel</span>
+                <span className="relative flex items-center">
+                  <LockKeyhole size={16} className="pointer-events-none absolute left-3.5 text-slate-400" />
+                  <input value={currentPassword} onChange={(event) => setCurrentPassword(event.target.value)} type={showCurrentPassword ? "text" : "password"} autoComplete="current-password" className="h-11 w-full rounded-2xl bg-surface-soft px-10 text-[13px] font-semibold text-ink outline-none ring-1 ring-line transition focus:bg-surface focus:ring-2 focus:ring-brand-400" />
+                  <button type="button" onClick={() => setShowCurrentPassword((value) => !value)} aria-label={showCurrentPassword ? "Masquer le mot de passe actuel" : "Afficher le mot de passe actuel"} className="absolute right-2 grid h-8 w-8 place-items-center rounded-xl text-slate-400 transition hover:bg-surface hover:text-ink">
+                    {showCurrentPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                  </button>
+                </span>
+              </label>
+              <label className="block">
+                <span className="mb-1.5 block text-[10.5px] font-extrabold uppercase tracking-[0.12em] text-slate-500">Nouveau mot de passe</span>
+                <span className="relative flex items-center">
+                  <KeyRound size={16} className="pointer-events-none absolute left-3.5 text-slate-400" />
+                  <input value={newPassword} onChange={(event) => setNewPassword(event.target.value)} type={showNewPassword ? "text" : "password"} autoComplete="new-password" placeholder="Laisser vide pour garder l'actuel" className="h-11 w-full rounded-2xl bg-surface-soft px-10 text-[13px] font-semibold text-ink outline-none ring-1 ring-line transition focus:bg-surface focus:ring-2 focus:ring-brand-400" />
+                  <button type="button" onClick={() => setShowNewPassword((value) => !value)} aria-label={showNewPassword ? "Masquer le nouveau mot de passe" : "Afficher le nouveau mot de passe"} className="absolute right-2 grid h-8 w-8 place-items-center rounded-xl text-slate-400 transition hover:bg-surface hover:text-ink">
+                    {showNewPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                  </button>
+                </span>
+              </label>
+            </div>
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-[10.5px] font-medium text-slate-400">Le nouveau mot de passe doit contenir 8 caractères, une lettre et un chiffre.</p>
+              <Button variant="primary" size="sm" onClick={() => void saveAccount()} disabled={accountPending}>
+                {accountPending ? "Enregistrement…" : "Enregistrer"}
+              </Button>
+            </div>
+          </div>
+        )}
+      </Section>
+
+      <Section
+        icon={RotateCcw}
         title="Données"
         description="La progression est enregistrée sur cet appareil."
       >

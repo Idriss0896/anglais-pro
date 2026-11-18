@@ -107,6 +107,17 @@ export function updateProfileRequest(payload: { name?: string | null; avatar?: s
   });
 }
 
+export function updateAccountRequest(payload: {
+  currentPassword: string;
+  email?: string;
+  newPassword?: string;
+}) {
+  return request<{ user: User }>("/api/account", {
+    method: "PATCH",
+    body: JSON.stringify(payload),
+  });
+}
+
 export function getProgressRequest<T>() {
   return request<{ state: T | null; updatedAt: string | null }>("/api/progress", {
     method: "GET",

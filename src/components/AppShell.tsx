@@ -687,7 +687,9 @@ export function AppShell() {
       <main
         className={cn(
           "notebook-canvas relative transition-[padding] duration-300",
-          collapsed ? "lg:pl-[84px]" : "lg:pl-[272px]",
+          collapsed
+            ? "notebook-canvas--collapsed lg:pl-[84px]"
+            : "notebook-canvas--expanded lg:pl-[272px]",
         )}
       >
         <DesktopTopBar scrolled={scrolled} />

@@ -265,17 +265,47 @@
   }
 
   .notebook-canvas {
-    background-color: var(--color-surface-soft);
+    --notebook-paper: #f5f6ff;
+    --notebook-grid: rgba(102, 119, 181, 0.2);
+    --notebook-margin: 48px;
+    background-color: var(--notebook-paper);
     background-image:
-      linear-gradient(rgba(116, 40, 255, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(116, 40, 255, 0.06) 1px, transparent 1px);
-    background-size: 28px 28px;
+      linear-gradient(var(--notebook-grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--notebook-grid) 1px, transparent 1px),
+      linear-gradient(
+        90deg,
+        transparent 0 var(--notebook-margin),
+        rgba(244, 63, 94, 0.3) var(--notebook-margin),
+        rgba(244, 63, 94, 0.3) calc(var(--notebook-margin) + 2px),
+        transparent calc(var(--notebook-margin) + 2px) 100%
+      );
+    background-size: 26px 26px, 26px 26px, 100% 100%;
+    background-attachment: fixed;
+  }
+
+  @media (min-width: 1024px) {
+    .notebook-canvas--expanded {
+      --notebook-margin: 292px;
+    }
+
+    .notebook-canvas--collapsed {
+      --notebook-margin: 104px;
+    }
   }
 
   html[data-theme="dark"] .notebook-canvas {
+    --notebook-paper: #171d31;
+    --notebook-grid: rgba(171, 158, 235, 0.2);
     background-image:
-      linear-gradient(rgba(196, 181, 253, 0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(196, 181, 253, 0.045) 1px, transparent 1px);
+      linear-gradient(var(--notebook-grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--notebook-grid) 1px, transparent 1px),
+      linear-gradient(
+        90deg,
+        transparent 0 var(--notebook-margin),
+        rgba(251, 113, 133, 0.34) var(--notebook-margin),
+        rgba(251, 113, 133, 0.34) calc(var(--notebook-margin) + 2px),
+        transparent calc(var(--notebook-margin) + 2px) 100%
+      );
   }
 
   .font-nav {

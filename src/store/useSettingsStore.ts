@@ -8,11 +8,8 @@ interface SettingsState {
   theme: ThemePreference;
   /** Prononciation audio des mots anglais. */
   audio: boolean;
-  /** Réduit les animations et les transitions. */
-  reducedMotion: boolean;
   setTheme: (value: ThemePreference) => void;
   setAudio: (value: boolean) => void;
-  setReducedMotion: (value: boolean) => void;
 }
 
 /**
@@ -24,10 +21,8 @@ export const useSettingsStore = create<SettingsState>()(
     (set) => ({
       theme: "system",
       audio: true,
-      reducedMotion: false,
       setTheme: (theme) => set({ theme }),
       setAudio: (audio) => set({ audio }),
-      setReducedMotion: (reducedMotion) => set({ reducedMotion }),
     }),
     { name: "anglais-pro-settings", version: 1 },
   ),

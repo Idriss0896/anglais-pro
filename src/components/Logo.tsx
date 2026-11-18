@@ -34,7 +34,7 @@ export function Logo({ compact = false, onDark = false, className, to = "/" }: L
         <span className="flex flex-col leading-none">
           <span
             className={cn(
-              "font-display text-[17px] font-extrabold uppercase leading-none tracking-[0.08em]",
+              "font-display text-[18px] font-black uppercase leading-none tracking-[0.11em]",
               onDark ? "text-white" : "text-ink",
             )}
           >
@@ -43,7 +43,7 @@ export function Logo({ compact = false, onDark = false, className, to = "/" }: L
           </span>
           <span
             className={cn(
-              "mt-1 text-[9px] font-bold uppercase tracking-[0.22em]",
+              "font-nav mt-1 text-[8px] font-bold uppercase tracking-[0.2em]",
               onDark ? "text-white/55" : "text-faint",
             )}
           >

@@ -11,7 +11,6 @@
       (theme === "dark" ||
         (theme !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches));
     document.documentElement.dataset.theme = dark ? "dark" : "light";
-    document.documentElement.dataset.motion = saved.reducedMotion ? "reduced" : "normal";
   } catch (error) {
     document.documentElement.dataset.theme = "light";
   }

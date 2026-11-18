@@ -125,7 +125,7 @@ function SidebarLink({
       onClick={onSelect}
       className={({ isActive }) =>
         cn(
-          "font-nav group flex items-center rounded-2xl text-[13.5px] font-semibold tracking-[-0.01em] transition-colors duration-200",
+          "font-nav group flex items-center rounded-2xl text-[13.5px] font-semibold tracking-[-0.01em] transition-all duration-200 hover:-translate-y-0.5",
           collapsed ? "justify-center px-0 py-3" : "gap-3 px-3 py-2.5",
           isActive
             ? "bg-white text-[#4c1d95]"

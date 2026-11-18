@@ -30,7 +30,7 @@
 
   /* Surfaces et texte : ces valeurs basculent en mode nuit. */
   --color-surface: #ffffff;
-  --color-surface-soft: #f2f5fb;
+  --color-surface-soft: #eef1ff;
   --color-surface-muted: #e9eef8;
   --color-line: #e4e8f2;
   --color-ink: #131a33;
@@ -39,19 +39,19 @@
   --color-slate-400: #6f7889;
 
   /* Teintes d'accent (fond clair / texte contrasté) — déclinées en mode nuit. */
-  --color-brand-soft: #eee6ff;
+  --color-brand-soft: #e5d9ff;
   --color-brand-strong: #5b21b6;
   --color-azure-soft: #e3eeff;
   --color-azure-strong: #1d4ed8;
-  --color-emerald-soft: #ddf7ea;
+  --color-emerald-soft: #d2f6e2;
   --color-emerald-strong: #047857;
   --color-rose-soft: #fde5eb;
   --color-rose-strong: #be123c;
-  --color-amber-soft: #fdedd3;
+  --color-amber-soft: #ffedc2;
   --color-amber-strong: #b45309;
   --color-sky-soft: #dff2fd;
   --color-sky-strong: #0369a1;
-  --color-indigo-soft: #e3e9ff;
+  --color-indigo-soft: #dfe6ff;
   --color-indigo-strong: #4338ca;
   --color-fuchsia-soft: #fbe3fb;
   --color-fuchsia-strong: #a21caf;
@@ -216,10 +216,13 @@
   }
 
   .app-shell-glow {
-    background:
-      radial-gradient(circle at 15% 10%, rgba(167, 139, 250, 0.3), transparent 32%),
-      radial-gradient(circle at 92% 72%, rgba(56, 189, 248, 0.2), transparent 28%),
-      #4c1d95;
+    background: #6d28d9;
+    animation: shell-breathe 10s ease-in-out infinite;
+  }
+
+  .font-nav {
+    font-feature-settings: "ss01" 1, "cv11" 1;
+    letter-spacing: -0.012em;
   }
 
   .level-card-accent {
@@ -719,19 +722,14 @@
   }
 }
 
-/* Préférence « animations réduites » (réglages) ou réglage système. */
-[data-motion="reduced"] *,
-[data-motion="reduced"] *::before,
-[data-motion="reduced"] *::after {
-  scroll-behavior: auto !important;
-  animation-duration: 0.01ms !important;
-  animation-iteration-count: 1 !important;
-  transition-duration: 0.01ms !important;
-}
-
-[data-motion="reduced"] .reveal {
-  opacity: 1;
-  transform: none;
+@keyframes shell-breathe {
+  0%,
+  100% {
+    background-color: #6d28d9;
+  }
+  50% {
+    background-color: #7c3aed;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

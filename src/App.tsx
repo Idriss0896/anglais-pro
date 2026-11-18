@@ -33,16 +33,12 @@ function ScrollToTop() {
  * Applique le thème sur <html>. La page de présentation reste toujours en
  * clair : c'est une page marketing au fond violet, pensée pour ce rendu.
  */
-function ThemeSync({ resolved, reducedMotion }: { resolved: string; reducedMotion: boolean }) {
+function ThemeSync({ resolved }: { resolved: string }) {
   const { pathname } = useLocation();
 
   useEffect(() => {
     document.documentElement.dataset.theme = pathname === "/" ? "light" : resolved;
   }, [resolved, pathname]);
-
-  useEffect(() => {
-    document.documentElement.dataset.motion = reducedMotion ? "reduced" : "normal";
-  }, [reducedMotion]);
 
   return null;
 }
@@ -79,7 +75,6 @@ function NotFound() {
 export default function App() {
   const theme = useSettingsStore((state) => state.theme);
   const audio = useSettingsStore((state) => state.audio);
-  const reducedMotion = useSettingsStore((state) => state.reducedMotion);
   const [systemDark, setSystemDark] = useState(() => {
     if (typeof window === "undefined") return false;
     return window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -106,7 +101,7 @@ export default function App() {
 
   return (
     <HashRouter>
-      <ThemeSync resolved={resolved} reducedMotion={reducedMotion} />
+      <ThemeSync resolved={resolved} />
       <AuthProvider>
         <ScrollToTop />
         <Routes>

@@ -92,10 +92,8 @@ export function SettingsPage() {
   const { user, apiReady, logout } = useAuth();
   const theme = useSettingsStore((state) => state.theme);
   const audio = useSettingsStore((state) => state.audio);
-  const reducedMotion = useSettingsStore((state) => state.reducedMotion);
   const setTheme = useSettingsStore((state) => state.setTheme);
   const setAudio = useSettingsStore((state) => state.setAudio);
-  const setReducedMotion = useSettingsStore((state) => state.setReducedMotion);
 
   const xp = useProgressStore((state) => state.xp);
   const streak = useProgressStore((state) => state.streak);
@@ -123,7 +121,7 @@ export function SettingsPage() {
         title="Réglages"
         description="Tout ce qui concerne l'affichage, le son et ta progression, réuni au même endroit."
         icon={SlidersHorizontal}
-        iconTone="bg-[#4c1d95]"
+        iconTone="bg-[#6d28d9]"
       />
 
       <Section
@@ -177,21 +175,6 @@ export function SettingsPage() {
           </div>
         </div>
 
-        <Row
-          icon="animation"
-          tone="bg-violet-soft text-violet-strong"
-          title="Réduire les animations"
-          description="Supprime les mouvements et les transitions."
-        >
-          <span className="hidden text-[10px] font-extrabold uppercase tracking-[0.1em] text-slate-500 sm:block">
-            {reducedMotion ? "Activé" : "Désactivé"}
-          </span>
-          <Toggle
-            checked={reducedMotion}
-            onChange={setReducedMotion}
-            label="Réduire les animations"
-          />
-        </Row>
       </Section>
 
       <Section

@@ -5,6 +5,7 @@ interface LogoProps {
   compact?: boolean;
   onDark?: boolean;
   className?: string;
+  variant?: "sidebar" | "default";
   /** Destination du lien (l'accueil de l'application par défaut). */
   to?: string;
 }
@@ -15,7 +16,13 @@ const MARK = `${import.meta.env.BASE_URL}logo-mark.svg`;
  * Marque ANGLO CLUB : l'écusson (cercle violet, Union Jack, A blanc et flèche
  * dorée) accompagne le wordmark bicolore ANGLO / CLUB.
  */
-export function Logo({ compact = false, onDark = false, className, to = "/" }: LogoProps) {
+export function Logo({
+  compact = false,
+  onDark = false,
+  className,
+  to = "/",
+  variant = "default",
+}: LogoProps) {
   return (
     <Link
       to={to}
@@ -34,7 +41,12 @@ export function Logo({ compact = false, onDark = false, className, to = "/" }: L
         <span className="flex flex-col leading-none">
           <span
             className={cn(
-              "font-brand whitespace-nowrap text-[21px] font-black uppercase leading-none tracking-[0.035em]",
+              cn(
+                "font-brand whitespace-nowrap font-bold uppercase leading-none",
+                variant === "sidebar"
+                  ? "text-[22px] tracking-[0.015em]"
+                  : "text-[27px] tracking-[0.02em]",
+              ),
               onDark ? "text-white" : "text-ink",
             )}
           >

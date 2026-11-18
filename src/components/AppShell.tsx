@@ -181,7 +181,7 @@ function Sidebar({
           collapsed ? "flex-col items-center gap-3" : "items-center justify-between gap-2",
         )}
       >
-        <Logo to="/accueil" compact={collapsed} onDark />
+        <Logo to="/accueil" compact={collapsed} onDark variant="sidebar" />
         <button
           type="button"
           onClick={onToggle}

@@ -473,42 +473,67 @@ function SiteFooter({ collapsed }: { collapsed: boolean }) {
               des exercices variés et un suivi clair de ta progression.
             </p>
 
-            <div className="mt-5 max-w-sm overflow-hidden rounded-[26px] bg-[#3b1878] p-4 ring-1 ring-white/12 shadow-[0_30px_60px_-40px_rgba(0,0,0,0.95)]">
-              <div className="flex items-center gap-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-amber-300" />
-                <p className="font-nav text-[9.5px] font-bold uppercase tracking-[0.18em] text-amber-300">
-                  Gratuit · sans carte bancaire
-                </p>
+            <section className="relative mt-5 w-full max-w-sm overflow-hidden rounded-[28px] border border-white/12 bg-[#35106f] p-4 shadow-[0_28px_60px_-34px_rgba(0,0,0,0.85)] sm:p-5">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-10 -top-12 h-36 w-36 rounded-full bg-brand-500/25 blur-3xl"
+              />
+              <div className="relative flex items-start gap-3">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white/10 text-amber-200 ring-1 ring-white/15">
+                  <MaterialIcon name="person_add" size={19} />
+                </span>
+                <div className="min-w-0 pt-0.5">
+                  <div className="flex items-center gap-1.5">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300" />
+                    <p className="font-nav text-[9px] font-extrabold uppercase tracking-[0.16em] text-amber-300 sm:text-[9.5px]">
+                      Gratuit · sans carte bancaire
+                    </p>
+                  </div>
+                  <h2 className="font-display mt-2 text-[20px] font-extrabold leading-[1.12] tracking-[-0.025em] text-white sm:text-[21px]">
+                    Ton compte t'attend.
+                    <span className="mt-0.5 block text-amber-200">Commence en 30 secondes.</span>
+                  </h2>
+                </div>
               </div>
 
-              <p className="font-display mt-2 text-[21px] font-extrabold leading-[1.12] tracking-[-0.025em] text-white">
-                Ton compte t'attend.
-                <br />
-                <span className="text-amber-200">Commence en 30 secondes.</span>
-              </p>
+              <div className="relative mt-4 grid gap-2">
+                <Link
+                  to="/auth?mode=signup"
+                  className="group flex min-h-14 w-full items-center justify-between gap-3 rounded-2xl bg-white px-3.5 py-2.5 text-[#35106f] shadow-[0_16px_32px_-20px_rgba(0,0,0,0.8)] ring-1 ring-white/75 transition-all duration-200 hover:-translate-y-0.5 hover:bg-amber-50 hover:shadow-lg focus-visible:ring-4 focus-visible:ring-amber-300/50 active:translate-y-0 sm:px-4"
+                >
+                  <span className="font-nav min-w-0 flex-1 text-left text-[12.5px] font-extrabold leading-tight sm:text-[13px]">
+                    Créer mon compte gratuit
+                  </span>
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand-700 text-white transition-transform duration-200 group-hover:translate-x-0.5 group-hover:bg-brand-600">
+                    <MaterialIcon name="arrow_forward" size={19} />
+                  </span>
+                </Link>
 
-              <Link
-                to="/auth?mode=signup"
-                className="group mt-4 flex h-14 w-full items-center justify-between gap-2 rounded-2xl bg-white pl-4 pr-1.5 text-[13.5px] font-extrabold tracking-[-0.01em] text-[#3b1878] shadow-[0_18px_36px_-22px_rgba(0,0,0,0.95)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-amber-50 active:translate-y-0"
-              >
-                <span className="font-nav truncate">Créer mon compte gratuit</span>
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#4c1d95] text-white transition-transform duration-200 group-hover:translate-x-0.5">
-                  <MaterialIcon name="arrow_forward" size={20} />
-                </span>
-              </Link>
+                <Link
+                  to="/practice"
+                  className="group flex min-h-12 w-full items-center justify-between gap-3 rounded-2xl border border-white/20 bg-white/10 px-4 py-2 text-white transition-all duration-200 hover:-translate-y-0.5 hover:border-white/35 hover:bg-white/15 focus-visible:ring-4 focus-visible:ring-white/30 active:translate-y-0"
+                >
+                  <span className="flex min-w-0 items-center gap-2.5">
+                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-white/10 text-amber-200 ring-1 ring-white/10">
+                      <MaterialIcon name="fitness_center" size={17} />
+                    </span>
+                    <span className="font-nav truncate text-left text-[12px] font-extrabold sm:text-[12.5px]">
+                      Réviser maintenant
+                    </span>
+                  </span>
+                  <MaterialIcon
+                    name="arrow_forward"
+                    size={16}
+                    className="text-white/65 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-white"
+                  />
+                </Link>
+              </div>
 
-              <Link
-                to="/practice"
-                className="font-nav mt-2 flex h-11 w-full items-center justify-center gap-2 rounded-2xl bg-white/10 text-[12.5px] font-bold text-white ring-1 ring-white/15 transition-colors hover:bg-white/20"
-              >
-                <MaterialIcon name="fitness_center" size={17} />
-                Réviser maintenant
-              </Link>
-
-              <p className="mt-2.5 text-center text-[9.5px] font-semibold text-indigo-100/60">
+              <p className="relative mt-3 inline-flex w-full items-center justify-center gap-1.5 text-center text-[9.5px] font-semibold text-indigo-100/65">
+                <MaterialIcon name="verified_user" size={13} />
                 Progression sauvegardée · mode invité inclus
               </p>
-            </div>
+            </section>
 
             <dl className="mt-6 grid max-w-sm grid-cols-3 gap-2">
               {stats.map((stat) => (

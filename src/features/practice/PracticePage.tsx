@@ -120,46 +120,51 @@ function ModeCard({ mode }: { mode: PracticeMode }) {
   return (
     <Link
       to={`/practice/session/${mode.id}`}
-      className="card card-hover group relative flex flex-col overflow-hidden p-4 sm:p-5"
+      className="card card-hover group relative isolate flex min-h-[210px] flex-col overflow-hidden border border-line/80 p-4 transition-all duration-300 focus-visible:ring-4 focus-visible:ring-brand-300/45 sm:p-5"
     >
+      <span
+        aria-hidden="true"
+        className={cn("absolute inset-x-0 top-0 h-1 opacity-80", mode.tone)}
+      />
       <div
         className={cn(
-          "pointer-events-none absolute -right-8 -top-10 h-32 w-32 rounded-full opacity-10 blur-2xl transition group-hover:opacity-20",
+          "pointer-events-none absolute -right-8 -top-10 h-36 w-36 rounded-full opacity-[0.08] blur-3xl transition duration-300 group-hover:opacity-20",
           mode.tone,
         )}
       />
-      <div className="flex items-start justify-between gap-2">
+      <div className="relative flex items-start justify-between gap-3">
         <span
           className={cn(
-            "grid h-11 w-11 place-items-center rounded-2xl text-white shadow-sm",
+            "grid h-12 w-12 place-items-center rounded-[18px] text-white shadow-md ring-1 ring-black/5 transition duration-300 group-hover:scale-105 group-hover:rotate-[-3deg]",
             mode.tone,
           )}
         >
-          <mode.icon size={20} strokeWidth={2.3} />
+          <mode.icon size={22} strokeWidth={2.2} />
         </span>
         <span
           className={cn(
-            "rounded-full px-2.5 py-1 text-[9px] font-extrabold ring-1 ring-inset",
+            "inline-flex min-h-7 items-center rounded-full px-3 py-1 text-[10px] font-extrabold ring-1 ring-inset ring-black/5",
             mode.soft,
             mode.text,
-            "ring-white/40",
           )}
         >
           {mode.label}
         </span>
       </div>
-      <h3 className="mt-3 text-[16px] font-extrabold text-ink">{mode.title}</h3>
-      <p className="mt-1 text-[11.5px] font-medium leading-5 text-slate-500">
+      <h3 className="relative mt-4 text-[17px] font-extrabold tracking-[-0.02em] text-ink sm:text-[18px]">
+        {mode.title}
+      </h3>
+      <p className="relative mt-1.5 max-w-[38ch] text-[12px] font-medium leading-[1.65] text-slate-500 sm:text-[12.5px]">
         {mode.description}
       </p>
-      <div className="mt-auto flex items-center justify-between gap-2 pt-4">
-        <span className="inline-flex items-center gap-1 text-[10px] font-bold text-slate-400">
-          <CircleHelp size={12} />
+      <div className="relative mt-auto flex items-center justify-between gap-2 border-t border-line/80 pt-3.5">
+        <span className="inline-flex items-center gap-1.5 text-[10.5px] font-bold text-slate-500">
+          <CircleHelp size={14} className={mode.text} />
           {mode.questions} questions
         </span>
-        <span className="inline-flex items-center gap-1 text-[11px] font-extrabold text-brand-strong">
+        <span className="inline-flex min-h-9 items-center gap-1.5 rounded-xl px-3 text-[11.5px] font-extrabold text-brand-strong transition-all duration-200 group-hover:bg-brand-600 group-hover:text-white group-focus-visible:bg-brand-600 group-focus-visible:text-white">
           Commencer
-          <ArrowRight size={13} className="transition group-hover:translate-x-0.5" />
+          <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-0.5" />
         </span>
       </div>
     </Link>

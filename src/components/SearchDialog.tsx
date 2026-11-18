@@ -339,18 +339,16 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
   const phrases = hits.filter((hit) => hit.kind === "phrase") as PhraseHit[];
 
   return (
-    <div className="fixed inset-0 z-[70] flex items-start justify-center px-3 pt-[6vh] sm:px-6">
-      <div
-        aria-hidden="true"
-        onClick={onClose}
-        className="animate-fade-in absolute inset-0 bg-[#160b3d]/60 backdrop-blur-[3px]"
-      />
-
+    <div
+      className="fixed inset-0 z-[70] flex items-start justify-center px-3 pt-[82px] sm:px-6 lg:pl-[272px] lg:pt-[86px]"
+      onClick={onClose}
+    >
       <div
         role="dialog"
         aria-modal="true"
         aria-label="Rechercher un mot, une leçon ou une expression"
-        className="animate-slide-up relative flex w-full max-w-2xl flex-col overflow-hidden rounded-[28px] bg-surface shadow-[0_40px_90px_-30px_rgba(30,16,96,0.6)] ring-1 ring-line"
+        onClick={(event) => event.stopPropagation()}
+        className="animate-slide-up relative flex w-full max-w-2xl flex-col overflow-hidden rounded-[26px] bg-surface shadow-[0_30px_70px_-24px_rgba(30,16,96,0.48)] ring-1 ring-line"
       >
         <div className="flex items-center gap-3 border-b border-line px-4 py-3.5">
           <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-brand-soft text-brand-strong">

@@ -20,7 +20,7 @@ import {
   getRank,
   type AchievementStats,
 } from "@/lib/achievements";
-import { LEVEL_EMOJIS, LEVEL_THEMES } from "@/lib/levels";
+import { LEVEL_ICONS, LEVEL_THEMES } from "@/lib/levels";
 import { LEVELS, TOTAL_UNITS } from "@/data/curriculum";
 import {
   accuracyAverage,
@@ -249,6 +249,7 @@ export function ProgressPage() {
         <div className="grid gap-3 sm:grid-cols-3">
           {LEVELS.map((level) => {
             const theme = LEVEL_THEMES[level.num];
+            const LevelIcon = LEVEL_ICONS[level.num];
             const done = level.units.filter((unit) => lessons[unit.id]?.completed).length;
             const value = percent(done, level.units.length);
             return (
@@ -260,7 +261,7 @@ export function ProgressPage() {
                       theme.gradient,
                     )}
                   >
-                    {LEVEL_EMOJIS[level.num]}
+                    <LevelIcon size={18} strokeWidth={2.2} />
                   </span>
                   <div className="min-w-0 flex-1">
                     <p className="truncate text-[13px] font-extrabold text-ink">{level.title}</p>

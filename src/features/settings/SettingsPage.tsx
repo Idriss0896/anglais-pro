@@ -40,7 +40,7 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="card overflow-hidden">
+    <section className="card card-hover overflow-hidden">
       <div className="flex items-start gap-3 border-b border-line px-5 py-4">
         <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-brand-soft text-brand-strong">
           <MaterialIcon name={icon} size={21} />

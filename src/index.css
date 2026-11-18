@@ -202,6 +202,17 @@
     box-shadow:
       0 0 0 1px var(--color-line),
       0 18px 40px -30px rgba(23, 37, 84, 0.28);
+    transition:
+      transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+      box-shadow 0.3s ease,
+      background-color 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 0 0 1px color-mix(in oklab, var(--color-brand-400) 28%, var(--color-line)),
+      0 24px 55px -28px rgba(49, 29, 130, 0.42);
   }
 
   .app-shell-glow {
@@ -264,6 +275,15 @@
     box-shadow:
       0 0 0 1px var(--color-line),
       var(--shadow-lift);
+  }
+
+  .motion-surface {
+    background:
+      radial-gradient(circle at 10% 10%, rgba(124, 58, 237, 0.18), transparent 34%),
+      radial-gradient(circle at 88% 22%, rgba(14, 165, 233, 0.16), transparent 30%),
+      var(--color-surface);
+    background-size: 140% 140%;
+    animation: surface-drift 14s ease-in-out infinite alternate;
   }
 
   .eyebrow {
@@ -536,6 +556,15 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes surface-drift {
+  from {
+    background-position: 0% 0%, 100% 0%, 0 0;
+  }
+  to {
+    background-position: 18% 12%, 82% 22%, 0 0;
   }
 }
 

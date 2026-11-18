@@ -16,7 +16,7 @@ import { ProgressBar } from "@/components/ProgressBar";
 import { ProgressRing } from "@/components/ProgressRing";
 import { Reveal } from "@/components/Reveal";
 import { CATEGORIES, CATEGORY_KEYS } from "@/lib/categories";
-import { LEVEL_EMOJIS, LEVEL_THEMES } from "@/lib/levels";
+import { LEVEL_ICONS, LEVEL_THEMES } from "@/lib/levels";
 import {
   CURRICULUM,
   LEVELS,
@@ -194,7 +194,7 @@ export function LibraryPage({
                       )}
                       aria-hidden="true"
                     >
-                      {LEVEL_EMOJIS[level.num]}
+                      {(() => { const Icon = LEVEL_ICONS[level.num]; return <Icon size={18} strokeWidth={2.2} />; })()}
                     </span>
                     <div className="min-w-0 flex-1">
                       <p className={cn("text-[9px] font-extrabold uppercase tracking-[0.16em]", theme.text)}>
@@ -363,7 +363,7 @@ export function LibraryPage({
                         className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white/15 text-2xl ring-1 ring-white/25 sm:h-14 sm:w-14"
                         aria-hidden="true"
                       >
-                        {LEVEL_EMOJIS[level.num]}
+                        {(() => { const Icon = LEVEL_ICONS[level.num]; return <Icon size={24} strokeWidth={2.1} />; })()}
                       </span>
 
                       <div className="min-w-0 flex-1">

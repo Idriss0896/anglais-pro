@@ -185,7 +185,7 @@ export interface Rank {
 }
 
 export const RANKS: Rank[] = [
-  { label: "Curieux", min: 0, max: 299, tone: "bg-indigo-400" },
+  { label: "Départ", min: 0, max: 299, tone: "bg-indigo-400" },
   { label: "Apprenti", min: 300, max: 799, tone: "bg-emerald-400" },
   { label: "Intermédiaire", min: 800, max: 1499, tone: "bg-sky-400" },
   { label: "Confirmé", min: 1500, max: 2499, tone: "bg-indigo-400" },

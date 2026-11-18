@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Play } from "lucide-react";
 import type { LevelMeta, LessonProgress } from "@/types";
-import { LEVEL_EMOJIS, LEVEL_THEMES } from "@/lib/levels";
+import { LEVEL_ICONS, LEVEL_THEMES } from "@/lib/levels";
 import { cn, percent, plural } from "@/lib/utils";
 import { ProgressBar } from "./ProgressBar";
 
@@ -17,6 +17,7 @@ export function LevelCard({ level, lessons, className }: LevelCardProps) {
   const progress = percent(completed, level.units.length);
   const next = level.units.find((unit) => !lessons[unit.id]?.completed);
   const finished = completed === level.units.length;
+  const LevelIcon = LEVEL_ICONS[level.num];
 
   return (
     <Link
@@ -38,7 +39,7 @@ export function LevelCard({ level, lessons, className }: LevelCardProps) {
             className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white/15 text-lg ring-1 ring-white/20 transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105"
             aria-hidden="true"
           >
-            {LEVEL_EMOJIS[level.num]}
+            <LevelIcon size={20} strokeWidth={2.2} />
           </span>
           <div className="min-w-0 flex-1">
             <p className="text-[9px] font-extrabold uppercase tracking-[0.18em] text-white/65">

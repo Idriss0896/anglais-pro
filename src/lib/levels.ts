@@ -1,3 +1,5 @@
+import { Brain, BriefcaseBusiness, Compass, Sprout, type LucideIcon } from "lucide-react";
+
 export interface LevelTheme {
   /** Couleur pleine de référence (badges, pastilles, barres). */
   gradient: string;
@@ -78,11 +80,11 @@ export const LEVEL_THEMES: Record<number, LevelTheme> = {
   },
 };
 
-export const LEVEL_EMOJIS: Record<number, string> = {
-  1: "🌱",
-  2: "🌿",
-  3: "🌳",
-  4: "💼",
+export const LEVEL_ICONS: Record<number, LucideIcon> = {
+  1: Sprout,
+  2: Compass,
+  3: Brain,
+  4: BriefcaseBusiness,
 };
 
 /** Noms courts utilisés dans les filtres et les onglets. */

@@ -15,7 +15,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { EmptyState } from "@/components/EmptyState";
 import { Mascot, MascotSay, mascotFor, MASCOTS } from "@/components/Mascot";
 import { CATEGORIES } from "@/lib/categories";
-import { LEVEL_EMOJIS } from "@/lib/levels";
+import { LEVEL_ICONS } from "@/lib/levels";
 import { LEVELS } from "@/data/curriculum";
 import { PHRASES } from "@/data/curriculum";
 import { useProgressStore } from "@/store/useProgressStore";
@@ -248,7 +248,7 @@ export function ExpressionsPage() {
                   : "bg-surface text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
               )}
             >
-              {LEVEL_EMOJIS[value]} Niv. {value}
+              {(() => { const Icon = LEVEL_ICONS[value]; return <Icon size={13} strokeWidth={2.4} />; })()} Niv. {value}
             </button>
           ))}
           <span className="mx-1 hidden h-5 w-px bg-slate-200 sm:block" />

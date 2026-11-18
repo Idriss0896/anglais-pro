@@ -13,7 +13,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { StatPill } from "@/components/StatPill";
 import { EmptyState } from "@/components/EmptyState";
 import { Mascot, MascotSay, mascotFor, MASCOTS } from "@/components/Mascot";
-import { LEVEL_EMOJIS, LEVEL_THEMES } from "@/lib/levels";
+import { LEVEL_ICONS, LEVEL_THEMES } from "@/lib/levels";
 import { LEVELS, TOTAL_UNITS, countByCategory } from "@/data/curriculum";
 import { useProgressStore } from "@/store/useProgressStore";
 import { cn, plural } from "@/lib/utils";
@@ -178,7 +178,7 @@ export function VocabularyPage() {
                   : "bg-surface text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
               )}
             >
-              {LEVEL_EMOJIS[value]} Niv. {value}
+              {(() => { const Icon = LEVEL_ICONS[value]; return <Icon size={13} strokeWidth={2.4} />; })()} Niv. {value}
             </button>
           ))}
         </div>

@@ -128,7 +128,7 @@ function SidebarLink({
           "font-nav group flex items-center rounded-2xl text-[13.5px] font-semibold tracking-[-0.01em] transition-all duration-200 hover:-translate-y-0.5",
           collapsed ? "justify-center px-0 py-3" : "gap-3 px-3 py-2.5",
           isActive
-            ? "bg-white text-[#7c2dff]"
+            ? "bg-white text-[#7428ff]"
             : "text-white/80 hover:bg-white/10 hover:text-white",
         )
       }
@@ -234,7 +234,7 @@ function Sidebar({
               "font-nav flex items-center rounded-2xl text-[13.5px] font-semibold transition-colors",
               collapsed ? "justify-center px-0 py-3" : "gap-3 px-3 py-2.5",
               isActive
-                ? "bg-white text-[#7c2dff]"
+                ? "bg-white text-[#7428ff]"
                 : "text-white/80 hover:bg-white/10 hover:text-white",
             )
           }
@@ -686,7 +686,7 @@ export function AppShell() {
       />
       <main
         className={cn(
-          "relative transition-[padding] duration-300",
+          "notebook-canvas relative transition-[padding] duration-300",
           collapsed ? "lg:pl-[84px]" : "lg:pl-[272px]",
         )}
       >

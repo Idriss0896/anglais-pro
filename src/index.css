@@ -289,6 +289,19 @@
     animation: surface-drift 14s ease-in-out infinite alternate;
   }
 
+  .landing-hero {
+    background:
+      radial-gradient(circle at 78% 8%, rgba(124, 58, 237, 0.95), transparent 32%),
+      radial-gradient(circle at 8% 85%, rgba(37, 99, 235, 0.6), transparent 34%),
+      #24105c;
+    background-size: 150% 150%;
+    animation: landing-aurora 16s ease-in-out infinite alternate;
+  }
+
+  .landing-beam {
+    animation: beam-sweep 5s ease-in-out infinite;
+  }
+
   .eyebrow {
     font-size: 0.6875rem;
     font-weight: 800;
@@ -729,6 +742,27 @@
   }
   50% {
     background-color: #7c3aed;
+  }
+}
+
+@keyframes landing-aurora {
+  from {
+    background-position: 0% 0%, 100% 100%, 0 0;
+  }
+  to {
+    background-position: 100% 20%, 0% 80%, 0 0;
+  }
+}
+
+@keyframes beam-sweep {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateX(-50%) scaleX(0.65);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
   }
 }
 

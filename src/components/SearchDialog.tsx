@@ -348,10 +348,10 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
         aria-modal="true"
         aria-label="Rechercher un mot, une leçon ou une expression"
         onClick={(event) => event.stopPropagation()}
-        className="animate-slide-up relative flex w-full max-w-2xl flex-col overflow-hidden rounded-[26px] bg-surface shadow-[0_30px_70px_-24px_rgba(30,16,96,0.48)] ring-1 ring-line"
+        className="animate-slide-up relative flex w-full max-w-2xl flex-col overflow-hidden rounded-[26px] bg-[#6d28d9] shadow-[0_30px_70px_-24px_rgba(30,16,96,0.48)] ring-1 ring-white/25"
       >
         <div className="flex items-center gap-3 border-b border-line px-4 py-3.5">
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-brand-soft text-brand-strong">
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-white/15 text-white ring-1 ring-white/20">
             <MaterialIcon name="search" size={20} />
           </span>
           <input
@@ -361,7 +361,7 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
             onKeyDown={onKeyDown}
             placeholder="Un mot en anglais ou en français…"
             aria-label="Rechercher un mot, une leçon ou une expression"
-            className="h-9 min-w-0 flex-1 bg-transparent text-[15px] font-bold text-ink outline-none placeholder:font-medium placeholder:text-slate-400"
+            className="h-9 min-w-0 flex-1 bg-transparent text-[15px] font-bold text-white outline-none placeholder:font-medium placeholder:text-white/65"
           />
           {query && (
             <button
@@ -371,20 +371,25 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
                 inputRef.current?.focus();
               }}
               aria-label="Effacer la recherche"
-              className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-slate-400 transition hover:bg-surface-soft hover:text-ink"
+              className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-white/70 transition hover:bg-white/15 hover:text-white"
             >
               <X size={16} />
             </button>
           )}
         </div>
 
-        <div className="max-h-[60vh] overflow-y-auto px-2 py-2">
+        <div
+          className={cn(
+            "max-h-[60vh] overflow-y-auto px-2 py-2",
+            query.trim().length < 2 ? "bg-[#4c1d95]" : "bg-surface",
+          )}
+        >
           {query.trim().length < 2 ? (
             <div className="px-4 py-7">
-              <p className="font-display text-[15px] font-extrabold text-ink">
+              <p className="font-display text-[15px] font-extrabold text-white">
                 Cherche un mot, obtiens son sens
               </p>
-              <p className="mt-1 text-[12px] font-medium leading-5 text-slate-500">
+              <p className="mt-1 text-[12px] font-medium leading-5 text-indigo-100/75">
                 Écris un mot en anglais (ou en français) : l'application te donne sa
                 traduction, son usage et la leçon pour l'écouter et le réviser.
               </p>
@@ -397,7 +402,7 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
                       setQuery(example);
                       inputRef.current?.focus();
                     }}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-surface-soft px-3 py-1.5 text-[11px] font-extrabold text-slate-600 ring-1 ring-line transition hover:bg-brand-soft hover:text-brand-strong"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-[11px] font-extrabold text-white ring-1 ring-white/20 transition hover:bg-white/20"
                   >
                     <MaterialIcon name="translate" size={14} />
                     {example}
@@ -609,7 +614,12 @@ export function SearchDialog({ open, onClose }: { open: boolean; onClose: () => 
           )}
         </div>
 
-        <div className="flex items-center justify-between gap-3 border-t border-line bg-surface-soft px-4 py-2.5 text-[10px] font-bold text-slate-500">
+        <div className={cn(
+          "flex items-center justify-between gap-3 border-t px-4 py-2.5 text-[10px] font-bold",
+          query.trim().length < 2
+            ? "border-white/15 bg-[#3b1878] text-indigo-100/70"
+            : "border-line bg-surface-soft text-slate-500",
+        )}>
           <span className="inline-flex items-center gap-1.5">
             <CornerDownLeft size={12} />
             Entrée pour ouvrir

@@ -482,36 +482,36 @@ const exploreCards = [
     title: "Grammaire",
     description: `${countByCategory("grammar")} fiches claires`,
     icon: CATEGORIES.grammar.icon,
-    surface: "bg-indigo-soft ring-1 ring-indigo-strong/15",
-    tone: "bg-surface text-indigo-strong ring-indigo-strong/15",
-    accent: "text-indigo-strong",
+    surface: "bg-[#4f46e5] text-white ring-1 ring-indigo-300/30",
+    tone: "bg-white/15 text-white ring-white/25",
+    accent: "text-white",
   },
   {
     to: "/expressions",
     title: "Expressions",
     description: `${TOTAL_PHRASES} phrases utiles`,
     icon: MessageCircle,
-    surface: "bg-amber-soft ring-1 ring-amber-strong/15",
-    tone: "bg-surface text-amber-strong ring-amber-strong/15",
-    accent: "text-amber-strong",
+    surface: "bg-[#f59e0b] text-white ring-1 ring-amber-200/30",
+    tone: "bg-white/15 text-white ring-white/25",
+    accent: "text-white",
   },
   {
     to: "/vocabulary",
     title: "Vocabulaire",
     description: `${countByCategory("vocabulary")} thèmes de mots`,
     icon: CATEGORIES.vocabulary.icon,
-    surface: "bg-emerald-soft ring-1 ring-emerald-strong/15",
-    tone: "bg-surface text-emerald-strong ring-emerald-strong/15",
-    accent: "text-emerald-strong",
+    surface: "bg-[#059669] text-white ring-1 ring-emerald-200/30",
+    tone: "bg-white/15 text-white ring-white/25",
+    accent: "text-white",
   },
   {
     to: "/practice",
     title: "Entraînement",
     description: `${TOTAL_QUESTIONS} exercices`,
     icon: Dumbbell,
-    surface: "bg-brand-soft ring-1 ring-brand-strong/15",
-    tone: "bg-surface text-brand-strong ring-brand-strong/15",
-    accent: "text-brand-strong",
+    surface: "bg-[#7c3aed] text-white ring-1 ring-violet-300/30",
+    tone: "bg-white/15 text-white ring-white/25",
+    accent: "text-white",
   },
 ];
 
@@ -536,10 +536,10 @@ function ExploreGrid() {
               <card.icon size={19} strokeWidth={2.3} className="hidden sm:block" />
             </span>
             <span className="min-w-0 flex-1">
-              <span className="block truncate text-[11.5px] font-extrabold text-ink sm:text-[12.5px]">
+              <span className="block truncate text-[11.5px] font-extrabold text-white sm:text-[12.5px]">
                 {card.title}
               </span>
-              <span className="block truncate text-[9.5px] font-semibold text-slate-500 sm:text-[10px]">
+              <span className="block truncate text-[9.5px] font-semibold text-white/75 sm:text-[10px]">
                 {card.description}
               </span>
             </span>

@@ -310,7 +310,7 @@ export function LandingPage({ returning = false }: { returning?: boolean }) {
       <LandingNav returning={returning} />
 
       <main>
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#2e1065] via-[#4c1d95] to-[#6d28d9] pb-28 pt-28 text-white sm:pb-32 sm:pt-32 lg:pb-36 lg:pt-36">
+        <section className="landing-hero relative overflow-hidden pb-28 pt-28 text-white sm:pb-32 sm:pt-32 lg:pb-36 lg:pt-36">
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 hero-grid" />
           <div
             aria-hidden="true"
@@ -324,6 +324,7 @@ export function LandingPage({ returning = false }: { returning?: boolean }) {
             aria-hidden="true"
             className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white/10 to-transparent"
           />
+          <div aria-hidden="true" className="landing-beam pointer-events-none absolute left-1/2 top-0 h-px w-[48%] -translate-x-1/2 bg-gradient-to-r from-transparent via-amber-300/80 to-transparent" />
 
           <div className="relative mx-auto grid w-full max-w-6xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[1.06fr_1fr] lg:gap-10 lg:px-9">
             <div>

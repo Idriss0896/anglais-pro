@@ -34,7 +34,7 @@ export function Logo({ compact = false, onDark = false, className, to = "/" }: L
         <span className="flex flex-col leading-none">
           <span
             className={cn(
-              "font-display text-[18px] font-black uppercase leading-none tracking-[0.11em]",
+              "font-brand whitespace-nowrap text-[21px] font-black uppercase leading-none tracking-[0.035em]",
               onDark ? "text-white" : "text-ink",
             )}
           >

@@ -4,20 +4,24 @@
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 @theme {
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-display: "Bricolage Grotesque", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-nav: "Sora", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  /* Inter : très lisible en petit corps, professionnelle sur toute l'interface.
+     Manrope : titres géométriques, plus affirmés, sans excès de style. */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Helvetica Neue",
+    Arial, sans-serif;
+  --font-display: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-brand: "Poppins", "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-nav: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  --color-brand-50: #f4f1ff;
-  --color-brand-100: #e9e3ff;
-  --color-brand-200: #d6ccff;
-  --color-brand-300: #b6a4ff;
-  --color-brand-400: #9578ff;
-  --color-brand-500: #7754f6;
-  --color-brand-600: #5b21b6;
-  --color-brand-700: #4c1d95;
-  --color-brand-800: #3b1878;
-  --color-brand-900: #2e1065;
+  --color-brand-50: #f5f3ff;
+  --color-brand-100: #ede9fe;
+  --color-brand-200: #ddd6fe;
+  --color-brand-300: #c4b5fd;
+  --color-brand-400: #a78bfa;
+  --color-brand-500: #8b5cf6;
+  --color-brand-600: #7c2dff;
+  --color-brand-700: #6d28d9;
+  --color-brand-800: #5b21b6;
+  --color-brand-900: #4c1d95;
 
   /* Bleu de marque : utilisé pour les surfaces et les cartes. */
   --color-azure-50: #eef4ff;
@@ -39,8 +43,8 @@
   --color-slate-400: #6f7889;
 
   /* Teintes d'accent (fond clair / texte contrasté) — déclinées en mode nuit. */
-  --color-brand-soft: #e5d9ff;
-  --color-brand-strong: #5b21b6;
+  --color-brand-soft: #ede9fe;
+  --color-brand-strong: #6d28d9;
   --color-azure-soft: #e3eeff;
   --color-azure-strong: #1d4ed8;
   --color-emerald-soft: #d2f6e2;
@@ -78,7 +82,7 @@
 
   --shadow-soft: 0 20px 48px -28px rgba(23, 37, 84, 0.26);
   --shadow-lift: 0 24px 52px -24px rgba(23, 37, 84, 0.3);
-  --shadow-glow: 0 18px 40px -18px rgba(91, 33, 182, 0.5);
+  --shadow-glow: 0 18px 40px -18px rgba(124, 58, 237, 0.5);
 }
 
 @layer base {
@@ -152,7 +156,11 @@
     background-color: var(--color-surface-soft);
     color: var(--color-ink);
     font-family: var(--font-sans);
+    font-optical-sizing: auto;
+    font-feature-settings: "cv05" 1, "cv08" 1;
+    letter-spacing: -0.004em;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     overscroll-behavior-y: none;
   }
@@ -186,7 +194,13 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.024em;
+    text-wrap: balance;
+  }
+
+  h1,
+  h2 {
+    font-weight: 800;
   }
 
   * {
@@ -216,13 +230,16 @@
   }
 
   .app-shell-glow {
-    background: #6d28d9;
-    animation: shell-breathe 10s ease-in-out infinite;
+    /* Violet vif, uni : la couleur de marque du bandeau et du menu latéral. */
+    background: #7c2dff;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.18),
+      0 18px 40px -30px rgba(91, 33, 182, 0.75);
   }
 
   .font-nav {
-    font-feature-settings: "ss01" 1, "cv11" 1;
-    letter-spacing: -0.012em;
+    font-feature-settings: "cv05" 1;
+    letter-spacing: -0.006em;
   }
 
   .level-card-accent {
@@ -399,6 +416,12 @@
     animation: slide-up 0.38s cubic-bezier(0.2, 0.8, 0.2, 1) both;
   }
 
+  /* Apparition du panneau de recherche : courte et nette, sans sursaut. */
+  .animate-search-in {
+    transform-origin: top center;
+    animation: search-in 0.16s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
   .animate-bar {
     transform-origin: bottom;
     animation: bar-grow 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
@@ -563,6 +586,17 @@
   }
 }
 
+@keyframes search-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 @keyframes pop {
   0% {
     opacity: 0;
@@ -702,16 +736,6 @@
   }
   50% {
     transform: scaleY(1);
-  }
-}
-
-@keyframes shell-breathe {
-  0%,
-  100% {
-    background-color: #6d28d9;
-  }
-  50% {
-    background-color: #7c3aed;
   }
 }
 

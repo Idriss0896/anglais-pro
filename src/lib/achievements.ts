@@ -15,7 +15,7 @@ import {
   Trophy,
   type LucideIcon,
 } from "lucide-react";
-import { TOTAL_UNITS } from "@/data/curriculum";
+import { TOTAL_UNITS } from "@/data/overview";
 
 export interface AchievementStats {
   completed: number;

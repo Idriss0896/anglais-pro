@@ -22,7 +22,7 @@ import { Logo } from "@/components/Logo";
 import { Mascot } from "@/components/Mascot";
 import { MaterialIcon } from "@/components/MaterialIcon";
 import { Reveal } from "@/components/Reveal";
-import { LEVELS, TOTAL_PHRASES, TOTAL_QUESTIONS, TOTAL_UNITS } from "@/data/curriculum";
+import { LEVEL_OVERVIEW, TOTAL_PHRASES, TOTAL_QUESTIONS, TOTAL_UNITS } from "@/data/overview";
 import { markEnteredApp } from "@/lib/entry";
 import { LEVEL_THEMES } from "@/lib/levels";
 import { cn } from "@/lib/utils";
@@ -542,7 +542,7 @@ export function LandingPage({ returning = false }: { returning?: boolean }) {
                 </div>
 
                 <div className="relative mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                  {LEVELS.map((level) => {
+                  {LEVEL_OVERVIEW.map((level) => {
                     const theme = LEVEL_THEMES[level.num];
                     return (
                       <div
@@ -558,7 +558,7 @@ export function LandingPage({ returning = false }: { returning?: boolean }) {
                             {level.cefr}
                           </span>
                           <span className="text-[10px] font-extrabold text-indigo-100/60">
-                            {level.units.length} leçons
+                            {level.lessons} leçons
                           </span>
                         </div>
                         <h3 className="mt-3 text-[15.5px] font-extrabold text-white">

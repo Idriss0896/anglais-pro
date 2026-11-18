@@ -19,13 +19,13 @@ import { HeaderStat } from "./HeaderStat";
 import { Logo } from "./Logo";
 import { MaterialIcon } from "./MaterialIcon";
 import { ProgressRing } from "./ProgressRing";
-import { SearchDialog } from "./SearchDialog";
+import { QuickSearch } from "./QuickSearch";
 import { UserAvatar } from "./UserAvatar";
 import { UserMenu } from "./UserMenu";
 import { useProgressStore, completedCount } from "@/store/useProgressStore";
 import { getRank } from "@/lib/achievements";
 import { cn, formatNumber, percent, plural } from "@/lib/utils";
-import { TOTAL_PHRASES, TOTAL_QUESTIONS, TOTAL_UNITS } from "@/data/curriculum";
+import { TOTAL_PHRASES, TOTAL_QUESTIONS, TOTAL_UNITS } from "@/data/overview";
 
 interface NavItem {
   to: string;
@@ -128,7 +128,7 @@ function SidebarLink({
           "font-nav group flex items-center rounded-2xl text-[13.5px] font-semibold tracking-[-0.01em] transition-all duration-200 hover:-translate-y-0.5",
           collapsed ? "justify-center px-0 py-3" : "gap-3 px-3 py-2.5",
           isActive
-            ? "bg-white text-[#6d28d9]"
+            ? "bg-white text-[#7c2dff]"
             : "text-white/80 hover:bg-white/10 hover:text-white",
         )
       }
@@ -234,7 +234,7 @@ function Sidebar({
               "font-nav flex items-center rounded-2xl text-[13.5px] font-semibold transition-colors",
               collapsed ? "justify-center px-0 py-3" : "gap-3 px-3 py-2.5",
               isActive
-                ? "bg-white text-[#6d28d9]"
+                ? "bg-white text-[#7c2dff]"
                 : "text-white/80 hover:bg-white/10 hover:text-white",
             )
           }
@@ -291,7 +291,7 @@ function useScrolled(threshold = 8) {
   return scrolled;
 }
 
-function DesktopTopBar({ scrolled, onSearch }: { scrolled: boolean; onSearch: () => void }) {
+function DesktopTopBar({ scrolled }: { scrolled: boolean }) {
   const xp = useProgressStore((state) => state.xp);
   const streak = useProgressStore((state) => state.streak);
   const lessons = useProgressStore((state) => state.lessons);
@@ -310,18 +310,8 @@ function DesktopTopBar({ scrolled, onSearch }: { scrolled: boolean; onSearch: ()
               : "shadow-[0_22px_48px_-28px_rgba(59,24,120,0.9)]",
           )}
         >
-          <button
-            type="button"
-            onClick={onSearch}
-            className="group flex h-10 w-full max-w-[280px] items-center gap-2.5 rounded-2xl bg-white/10 px-3.5 text-left text-[12.5px] font-medium text-indigo-100/70 ring-1 ring-white/15 transition-colors hover:bg-white/20 hover:text-white"
-            aria-label="Rechercher une leçon"
-          >
-            <MaterialIcon name="search" size={18} className="text-indigo-100/85" />
-            <span className="truncate">Rechercher une leçon…</span>
-            <kbd className="ml-auto hidden rounded-md bg-white/10 px-1.5 py-0.5 text-[10px] font-semibold text-indigo-100/60 ring-1 ring-white/20 xl:block">
-              /
-            </kbd>
-          </button>
+          {/* Recherche intégrée : on tape directement, les résultats s'affichent dessous. */}
+          <QuickSearch className="w-full max-w-[320px]" />
 
           <div className="ml-auto flex items-center gap-1.5">
             <HeaderStat
@@ -370,75 +360,90 @@ function DesktopTopBar({ scrolled, onSearch }: { scrolled: boolean; onSearch: ()
   );
 }
 
-function MobileHeader({ onOpenMenu }: { onOpenMenu: () => void }) {
+function MobileHeader({
+  onOpenMenu,
+  searchOpen,
+  onOpenSearch,
+  onCloseSearch,
+}: {
+  onOpenMenu: () => void;
+  searchOpen: boolean;
+  onOpenSearch: () => void;
+  onCloseSearch: () => void;
+}) {
   const xp = useProgressStore((state) => state.xp);
   const streak = useProgressStore((state) => state.streak);
-  const lessons = useProgressStore((state) => state.lessons);
-  const completed = completedCount(lessons);
-  const overall = percent(completed, TOTAL_UNITS);
 
   return (
     <header className="sticky top-0 z-30 px-4 pt-3 lg:hidden">
       <div
         className={cn(
-          "flex h-16 items-center gap-1.5 rounded-[24px] px-2.5 ring-1 ring-white/15 shadow-[0_18px_40px_-22px_rgba(59,24,120,0.9)]",
+          "rounded-[24px] px-2.5 ring-1 ring-white/15 shadow-[0_18px_40px_-22px_rgba(59,24,120,0.9)]",
           SHELL,
         )}
       >
-        <button
-          type="button"
-          onClick={onOpenMenu}
-          aria-label="Ouvrir le menu"
-          title="Ouvrir le menu"
-          aria-controls="app-sidebar"
-          className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white/10 text-indigo-100 ring-1 ring-white/15 transition-colors hover:bg-white/20 hover:text-white"
-        >
-          <PanelLeftOpen size={20} />
-        </button>
+        <div className="flex h-16 items-center gap-1.5">
+          <button
+            type="button"
+            onClick={onOpenMenu}
+            aria-label="Ouvrir le menu"
+            title="Ouvrir le menu"
+            aria-controls="app-sidebar"
+            className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white/10 text-indigo-100 ring-1 ring-white/15 transition-colors hover:bg-white/20 hover:text-white"
+          >
+            <PanelLeftOpen size={20} />
+          </button>
 
-        <Link
-          to="/progress"
-          aria-label={`Progression du parcours : ${overall}%`}
-          className="min-w-0 flex-1 rounded-2xl bg-white/10 px-2.5 py-1.5 ring-1 ring-white/15 transition-colors hover:bg-white/20 max-[359px]:px-2"
-        >
-          <div className="flex items-center justify-between gap-1.5 text-[9px] font-semibold uppercase tracking-[0.08em] text-indigo-100/70 max-[359px]:justify-center">
-            <span className="truncate max-[359px]:hidden">Avancée</span>
-            <span className="text-white">{overall}%</span>
+          <button
+            type="button"
+            onClick={onOpenSearch}
+            aria-label="Rechercher un mot"
+            title="Rechercher un mot"
+            aria-expanded={searchOpen}
+            className={cn(
+              "grid h-10 w-10 shrink-0 place-items-center rounded-2xl ring-1 ring-white/15 transition-colors",
+              searchOpen
+                ? "bg-white text-brand-700"
+                : "bg-white/10 text-indigo-100 hover:bg-white/20 hover:text-white",
+            )}
+          >
+            <MaterialIcon name="search" size={20} />
+          </button>
+
+          <HeaderStat
+            compact
+            className="ml-auto"
+            icon={<MaterialIcon name="local_fire_department" size={14} filled />}
+            tone="amber"
+            label="Série"
+            value={`${streak} j`}
+            title={`Série de ${streak} ${plural(streak, "jour", "jours")}`}
+            to="/progress"
+          />
+
+          <HeaderStat
+            compact
+            icon={<MaterialIcon name="diamond" size={13} filled />}
+            tone="violet"
+            label="Points"
+            content={
+              <>
+                {formatNumber(xp)}
+                <span className="hidden min-[360px]:inline"> XP</span>
+              </>
+            }
+            title={`${formatNumber(xp)} points d'expérience`}
+            to="/progress"
+          />
+
+          <UserMenu onDark />
+        </div>
+
+        {searchOpen && (
+          <div className="pb-2.5">
+            <QuickSearch variant="mobile" autoFocus onClose={onCloseSearch} />
           </div>
-          <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-white/20 max-[359px]:hidden">
-            <div
-              className="h-full rounded-full bg-emerald-400 transition-[width] duration-700"
-              style={{ width: `${overall}%` }}
-            />
-          </div>
-        </Link>
-
-        <HeaderStat
-          compact
-          icon={<MaterialIcon name="local_fire_department" size={14} filled />}
-          tone="amber"
-          label="Série"
-          value={`${streak} j`}
-          title={`Série de ${streak} ${plural(streak, "jour", "jours")}`}
-          to="/progress"
-        />
-
-        <HeaderStat
-          compact
-          icon={<MaterialIcon name="diamond" size={13} filled />}
-          tone="violet"
-          label="Points"
-          content={
-            <>
-              {formatNumber(xp)}
-              <span className="hidden min-[360px]:inline"> XP</span>
-            </>
-          }
-          title={`${formatNumber(xp)} points d'expérience`}
-          to="/progress"
-        />
-
-        <UserMenu onDark />
+        )}
       </div>
     </header>
   );
@@ -605,7 +610,7 @@ export function AppShell() {
     };
   }, [mobileOpen, isDesktop]);
 
-  // Raccourcis de recherche : « / » ou Ctrl/Cmd + K.
+  // Ctrl/Cmd + K : ouvre la recherche mobile (sur ordinateur, « / » suffit).
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       const target = event.target as HTMLElement | null;
@@ -614,7 +619,7 @@ export function AppShell() {
         target?.tagName === "TEXTAREA" ||
         target?.isContentEditable;
       if (typing) return;
-      if (event.key === "/" || ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k")) {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
         event.preventDefault();
         setMobileOpen(false);
         setSearchOpen(true);
@@ -648,14 +653,19 @@ export function AppShell() {
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
       />
-      <MobileHeader onOpenMenu={() => setMobileOpen(true)} />
+      <MobileHeader
+        onOpenMenu={() => setMobileOpen(true)}
+        searchOpen={searchOpen}
+        onOpenSearch={() => setSearchOpen((value) => !value)}
+        onCloseSearch={() => setSearchOpen(false)}
+      />
       <main
         className={cn(
           "relative transition-[padding] duration-300",
           collapsed ? "lg:pl-[84px]" : "lg:pl-[272px]",
         )}
       >
-        <DesktopTopBar scrolled={scrolled} onSearch={openSearch} />
+        <DesktopTopBar scrolled={scrolled} />
         <div
           key={pathname}
           className="animate-page-in mx-auto w-full max-w-6xl px-4 pb-10 pt-5 sm:px-6 lg:px-9 lg:pb-12 lg:pt-6"
@@ -665,8 +675,6 @@ export function AppShell() {
         </div>
       </main>
       <SiteFooter collapsed={collapsed} />
-
-      <SearchDialog open={searchOpen} onClose={() => setSearchOpen(false)} />
     </div>
   );
 }

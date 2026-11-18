@@ -1,25 +1,86 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState, type ComponentType } from "react";
 import { HashRouter, Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Compass } from "lucide-react";
 import { AuthProvider, useAuth } from "@/auth/AuthProvider";
-import { AppShell } from "@/components/AppShell";
-import { HomePage } from "@/features/home/HomePage";
 import { LandingPage } from "@/features/landing/LandingPage";
-import { LearnPage } from "@/features/learn/LearnPage";
-import { GrammarPage } from "@/features/grammar/GrammarPage";
-import { VocabularyPage } from "@/features/vocabulary/VocabularyPage";
-import { ExpressionsPage } from "@/features/expressions/ExpressionsPage";
-import { PracticePage } from "@/features/practice/PracticePage";
-import { PracticeSessionPage } from "@/features/practice/PracticeSessionPage";
-import { FlashcardsPage } from "@/features/practice/FlashcardsPage";
-import { LessonPage } from "@/features/lesson/LessonPage";
-import { ProgressPage } from "@/features/progress/ProgressPage";
-import { SettingsPage } from "@/features/settings/SettingsPage";
-import { AuthPage } from "@/features/auth/AuthPage";
-import { ProfilePage } from "@/features/profile/ProfilePage";
 import { useSettingsStore } from "@/store/useSettingsStore";
 import { primeSpeech, setAudioEnabled } from "@/lib/audio";
 import { hasEnteredApp } from "@/lib/entry";
+
+/**
+ * Les pages de l'application sont chargées à la demande : la première visite
+ * n'embarque que la présentation, puis chaque écran arrive en quelques
+ * millisecondes grâce au préchargement lancé pendant les temps morts.
+ */
+function page<T extends Record<string, unknown>>(name: keyof T, load: () => Promise<T>) {
+  return lazy(() =>
+    load().then((module) => ({ default: module[name] as ComponentType })),
+  );
+}
+
+const loadHome = () => import("@/features/home/HomePage");
+const loadLearn = () => import("@/features/learn/LearnPage");
+const loadShell = () => import("@/components/AppShell");
+const loadGrammar = () => import("@/features/grammar/GrammarPage");
+const loadVocabulary = () => import("@/features/vocabulary/VocabularyPage");
+const loadExpressions = () => import("@/features/expressions/ExpressionsPage");
+const loadPractice = () => import("@/features/practice/PracticePage");
+const loadPracticeSession = () => import("@/features/practice/PracticeSessionPage");
+const loadFlashcards = () => import("@/features/practice/FlashcardsPage");
+const loadLesson = () => import("@/features/lesson/LessonPage");
+const loadProgress = () => import("@/features/progress/ProgressPage");
+const loadSettings = () => import("@/features/settings/SettingsPage");
+const loadAuth = () => import("@/features/auth/AuthPage");
+const loadProfile = () => import("@/features/profile/ProfilePage");
+
+const HomePage = page("HomePage", loadHome);
+const AppShell = page("AppShell", loadShell);
+const LearnPage = page("LearnPage", loadLearn);
+const GrammarPage = page("GrammarPage", loadGrammar);
+const VocabularyPage = page("VocabularyPage", loadVocabulary);
+const ExpressionsPage = page("ExpressionsPage", loadExpressions);
+const PracticePage = page("PracticePage", loadPractice);
+const PracticeSessionPage = page("PracticeSessionPage", loadPracticeSession);
+const FlashcardsPage = page("FlashcardsPage", loadFlashcards);
+const LessonPage = page("LessonPage", loadLesson);
+const ProgressPage = page("ProgressPage", loadProgress);
+const SettingsPage = page("SettingsPage", loadSettings);
+const AuthPage = page("AuthPage", loadAuth);
+const ProfilePage = page("ProfilePage", loadProfile);
+
+/** Précharge les écrans principaux pendant les temps morts du navigateur. */
+function usePrefetchPages() {
+  useEffect(() => {
+    const load = () => {
+      void loadHome();
+      void loadLearn();
+      void loadProgress();
+      void loadGrammar();
+      void loadVocabulary();
+      void loadExpressions();
+      void loadLesson();
+      void loadPractice();
+    };
+
+    if (typeof window.requestIdleCallback === "function") {
+      const id = window.requestIdleCallback(load, { timeout: 2500 });
+      return () => window.cancelIdleCallback(id);
+    }
+    const timer = window.setTimeout(load, 1800);
+    return () => window.clearTimeout(timer);
+  }, []);
+}
+
+function PageFallback() {
+  return (
+    <div className="flex min-h-[60vh] items-center justify-center px-4">
+      <span
+        aria-label="Chargement de la page"
+        className="h-9 w-9 animate-spin rounded-full border-[3px] border-brand-500/25 border-t-brand-600"
+      />
+    </div>
+  );
+}
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -75,6 +136,7 @@ function NotFound() {
 export default function App() {
   const theme = useSettingsStore((state) => state.theme);
   const audio = useSettingsStore((state) => state.audio);
+  usePrefetchPages();
   const [systemDark, setSystemDark] = useState(() => {
     if (typeof window === "undefined") return false;
     return window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -104,25 +166,27 @@ export default function App() {
       <ThemeSync resolved={resolved} />
       <AuthProvider>
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Entry />} />
-          <Route path="/auth" element={<AuthPage />} />
-          <Route path="/lesson/:unitId" element={<LessonPage />} />
-          <Route path="/practice/session/:mode" element={<PracticeSessionPage />} />
-          <Route element={<AppShell />}>
-            <Route path="/accueil" element={<HomePage />} />
-            <Route path="/learn" element={<LearnPage />} />
-            <Route path="/grammar" element={<GrammarPage />} />
-            <Route path="/vocabulary" element={<VocabularyPage />} />
-            <Route path="/expressions" element={<ExpressionsPage />} />
-            <Route path="/practice" element={<PracticePage />} />
-            <Route path="/practice/flashcards" element={<FlashcardsPage />} />
-            <Route path="/progress" element={<ProgressPage />} />
-            <Route path="/reglages" element={<SettingsPage />} />
-            <Route path="/profile" element={<ProfilePage />} />
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
+        <Suspense fallback={<PageFallback />}>
+          <Routes>
+            <Route path="/" element={<Entry />} />
+            <Route path="/auth" element={<AuthPage />} />
+            <Route path="/lesson/:unitId" element={<LessonPage />} />
+            <Route path="/practice/session/:mode" element={<PracticeSessionPage />} />
+            <Route element={<AppShell />}>
+              <Route path="/accueil" element={<HomePage />} />
+              <Route path="/learn" element={<LearnPage />} />
+              <Route path="/grammar" element={<GrammarPage />} />
+              <Route path="/vocabulary" element={<VocabularyPage />} />
+              <Route path="/expressions" element={<ExpressionsPage />} />
+              <Route path="/practice" element={<PracticePage />} />
+              <Route path="/practice/flashcards" element={<FlashcardsPage />} />
+              <Route path="/progress" element={<ProgressPage />} />
+              <Route path="/reglages" element={<SettingsPage />} />
+              <Route path="/profile" element={<ProfilePage />} />
+              <Route path="*" element={<NotFound />} />
+            </Route>
+          </Routes>
+        </Suspense>
       </AuthProvider>
     </HashRouter>
   );

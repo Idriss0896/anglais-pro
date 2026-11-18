@@ -2,6 +2,7 @@ import level1 from "../../content/level-1.json";
 import level2 from "../../content/level-2.json";
 import level3 from "../../content/level-3.json";
 import level4 from "../../content/level-4.json";
+import { LEVEL_OVERVIEW } from "./overview";
 import type {
   CategoryKey,
   CurriculumQuestion,
@@ -129,9 +130,19 @@ export const PHRASES: PhraseEntry[] = CURRICULUM.flatMap((unit) =>
   ),
 );
 
-export const TOTAL_UNITS = CURRICULUM.length;
-export const TOTAL_QUESTIONS = ALL_QUESTIONS.length;
-export const TOTAL_PHRASES = PHRASES.length;
+export { TOTAL_UNITS, TOTAL_QUESTIONS, TOTAL_PHRASES } from "./overview";
+
+if (import.meta.env.DEV) {
+  // Garde-fou : la vue d'ensemble allégée doit rester fidèle au contenu.
+  for (const level of LEVELS) {
+    const overview = LEVEL_OVERVIEW.find((entry) => entry.num === level.num);
+    if (!overview || overview.lessons !== level.units.length) {
+      console.warn(
+        `[contenu] Le niveau ${level.num} affiche ${overview?.lessons ?? "?"} leçons dans overview.ts mais en contient ${level.units.length}.`,
+      );
+    }
+  }
+}
 
 export const CATEGORY_ORDER: CategoryKey[] = [
   "grammar",

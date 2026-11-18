@@ -1,5 +1,12 @@
-const CACHE_NAME = "anglo-club-v1";
-const APP_SHELL = ["./", "./index.html", "./manifest.webmanifest", "./app-icon.svg", "./favicon.svg"];
+const CACHE_NAME = "anglo-club-v2";
+const APP_SHELL = [
+  "./",
+  "./index.html",
+  "./manifest.webmanifest",
+  "./app-icon.svg",
+  "./favicon.svg",
+  "./fonts/material-symbols-rounded.woff2",
+];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)));

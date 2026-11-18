@@ -3,6 +3,14 @@
 /* Le mode nuit s'applique via l'attribut data-theme sur <html>. */
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
+@font-face {
+  font-family: "Material Symbols Rounded";
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: block;
+  src: url("/fonts/material-symbols-rounded.woff2") format("woff2");
+}
+
 @theme {
   /* Inter : très lisible en petit corps, professionnelle sur toute l'interface.
      Manrope : titres géométriques, plus affirmés, sans excès de style. */

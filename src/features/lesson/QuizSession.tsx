@@ -20,7 +20,7 @@ import {
   Trophy,
   Volume2,
   XCircle,
-} from "lucide-react";
+} from "@/lib/icons";
 import { Button } from "@/components/Button";
 import { ProgressBar } from "@/components/ProgressBar";
 import { StatPill } from "@/components/StatPill";

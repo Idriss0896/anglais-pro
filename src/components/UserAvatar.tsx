@@ -1,4 +1,4 @@
-import { UserRound } from "lucide-react";
+import { UserRound } from "@/lib/icons";
 import type { User } from "@/lib/api";
 import { cn } from "@/lib/utils";
 

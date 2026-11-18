@@ -21,7 +21,7 @@ import {
   Volume2,
   VolumeX,
   type LucideIcon,
-} from "lucide-react";
+} from "@/lib/icons";
 import { useAuth } from "@/auth/AuthProvider";
 import { PageHeader } from "@/components/PageHeader";
 import { Modal } from "@/components/Modal";

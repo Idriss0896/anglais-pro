@@ -17,7 +17,7 @@ import {
   Target,
   Trophy,
   type LucideIcon,
-} from "lucide-react";
+} from "@/lib/icons";
 import { PageHeader } from "@/components/PageHeader";
 import { StatPill } from "@/components/StatPill";
 import { ProgressBar } from "@/components/ProgressBar";

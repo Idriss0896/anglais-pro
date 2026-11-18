@@ -12,7 +12,7 @@ import {
   PanelLeftOpen,
   Settings,
   Shapes,
-} from "lucide-react";
+} from "@/lib/icons";
 import { useAuth } from "@/auth/AuthProvider";
 import { GuestBanner } from "./GuestBanner";
 import { HeaderStat } from "./HeaderStat";

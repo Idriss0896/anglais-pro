@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowRight, CloudUpload, X } from "lucide-react";
+import { ArrowRight, CloudUpload, X } from "@/lib/icons";
 import { useAuth } from "@/auth/AuthProvider";
 import { completedCount, useProgressStore } from "@/store/useProgressStore";
 

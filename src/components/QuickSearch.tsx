@@ -1,6 +1,6 @@
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { ArrowRight, CornerDownLeft, Search, X } from "lucide-react";
+import { ArrowRight, CornerDownLeft, Search, X } from "@/lib/icons";
 import { MaterialIcon } from "@/components/MaterialIcon";
 import { LEVEL_SHORT_NAMES, LEVEL_THEMES } from "@/lib/levels";
 import { speak } from "@/lib/audio";
@@ -249,11 +249,18 @@ export function QuickSearch({
       <div
         className={cn(
           "flex h-10 w-full items-center gap-2.5 rounded-2xl bg-white/12 px-3 ring-1 ring-white/20 transition-all duration-200",
-          "focus-within:bg-white/20 focus-within:ring-2 focus-within:ring-white/45",
-          open && "bg-white/20 ring-white/40",
+          "focus-within:bg-white focus-within:ring-2 focus-within:ring-white/75",
+          open && "bg-white ring-white/75",
         )}
       >
-        <Search size={17} strokeWidth={2.4} className="shrink-0 text-indigo-100/90" />
+        <Search
+          size={17}
+          strokeWidth={2.4}
+          className={cn(
+            "shrink-0 transition-colors",
+            open ? "text-brand-700" : "text-indigo-100/90",
+          )}
+        />
         <input
           ref={inputRef}
           type="search"
@@ -271,7 +278,12 @@ export function QuickSearch({
           onFocus={() => setOpen(true)}
           onClick={() => setOpen(true)}
           onKeyDown={onKeyDown}
-          className="min-w-0 flex-1 bg-transparent text-[13px] font-semibold text-white outline-none [&::-webkit-search-cancel-button]:hidden placeholder:font-medium placeholder:text-indigo-100/70"
+          className={cn(
+            "min-w-0 flex-1 bg-transparent text-[13px] font-semibold outline-none [&::-webkit-search-cancel-button]:hidden placeholder:font-medium",
+            open
+              ? "text-brand-900 placeholder:text-slate-400"
+              : "text-white placeholder:text-indigo-100/70",
+          )}
         />
         {query ? (
           <button
@@ -282,7 +294,12 @@ export function QuickSearch({
               setOpen(true);
             }}
             aria-label="Effacer la recherche"
-            className="grid h-6 w-6 shrink-0 place-items-center rounded-full text-indigo-100/70 transition hover:bg-white/15 hover:text-white"
+            className={cn(
+              "grid h-6 w-6 shrink-0 place-items-center rounded-full transition",
+              open
+                ? "text-slate-500 hover:bg-brand-50 hover:text-brand-700"
+                : "text-indigo-100/70 hover:bg-white/15 hover:text-white",
+            )}
           >
             <X size={14} />
           </button>

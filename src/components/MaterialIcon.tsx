@@ -1,116 +1,80 @@
-import {
-  Activity,
-  ArrowLeft,
-  ArrowRight,
-  AudioLines,
-  BarChart3,
-  BookOpen,
-  CalendarCheck,
-  Check,
-  ChevronDown,
-  ChevronRight,
-  CircleHelp,
-  CloudOff,
-  Dumbbell,
-  Flame,
-  Gem,
-  Globe2,
-  Languages,
-  Layers,
-  LayoutGrid,
-  LogIn,
-  LogOut,
-  Moon,
-  Palette,
-  PanelLeftClose,
-  PanelLeftOpen,
-  Play,
-  RotateCcw,
-  Search,
-  Settings,
-  ShieldCheck,
-  SlidersHorizontal,
-  Sparkles,
-  Sun,
-  SunMoon,
-  Target,
-  UserRound,
-  UserRoundPlus,
-  Volume2,
-  VolumeX,
-  type LucideIcon,
-} from "lucide-react";
+import type { HTMLAttributes } from "react";
 
-interface MaterialIconProps {
-  /** Nom historique, conservé pour ne pas modifier les pages existantes. */
+export interface MaterialIconProps extends HTMLAttributes<HTMLSpanElement> {
+  /** Nom Material Symbol ; les anciens noms sont conservés via ICON_ALIASES. */
   name: string;
   size?: number;
   filled?: boolean;
-  className?: string;
-  /** Libellé accessible ; l'icône est décorative quand il est absent. */
   label?: string;
 }
 
-const ICONS: Record<string, LucideIcon> = {
-  activity: Activity,
-  analytics: BarChart3,
-  animation: Sparkles,
-  arrow_back: ArrowLeft,
-  arrow_forward: ArrowRight,
-  brightness_auto: SunMoon,
-  check: Check,
-  chevron_right: ChevronRight,
-  cloud_off: CloudOff,
-  dark_mode: Moon,
-  diamond: Gem,
-  event_available: CalendarCheck,
-  expand_more: ChevronDown,
-  fitness_center: Dumbbell,
-  graphic_eq: AudioLines,
-  grid_view: LayoutGrid,
-  layers: Layers,
-  left_panel_close: PanelLeftClose,
-  left_panel_open: PanelLeftOpen,
-  light_mode: Sun,
-  local_fire_department: Flame,
-  login: LogIn,
-  logout: LogOut,
-  menu_book: BookOpen,
-  palette: Palette,
-  person: UserRound,
-  person_add: UserRoundPlus,
-  play_arrow: Play,
-  public: Globe2,
-  restart_alt: RotateCcw,
-  search: Search,
-  settings: Settings,
-  shield: ShieldCheck,
-  track_changes: Target,
-  translate: Languages,
-  tune: SlidersHorizontal,
-  volume_off: VolumeX,
-  volume_up: Volume2,
+const ICON_ALIASES: Record<string, string> = {
+  activity: "monitoring",
+  analytics: "monitoring",
+  animation: "auto_awesome",
+  arrow_back: "arrow_back",
+  arrow_forward: "arrow_forward",
+  brightness_auto: "brightness_auto",
+  check: "check",
+  chevron_right: "chevron_right",
+  cloud_off: "cloud_off",
+  dark_mode: "dark_mode",
+  diamond: "diamond",
+  event_available: "event_available",
+  expand_more: "expand_more",
+  fitness_center: "fitness_center",
+  graphic_eq: "graphic_eq",
+  grid_view: "grid_view",
+  layers: "layers",
+  left_panel_close: "left_panel_close",
+  left_panel_open: "left_panel_open",
+  light_mode: "light_mode",
+  local_fire_department: "local_fire_department",
+  login: "login",
+  logout: "logout",
+  menu_book: "menu_book",
+  palette: "palette",
+  person: "person",
+  person_add: "person_add",
+  play_arrow: "play_arrow",
+  public: "public",
+  restart_alt: "restart_alt",
+  search: "search",
+  settings: "settings",
+  shield: "shield",
+  track_changes: "track_changes",
+  translate: "translate",
+  tune: "tune",
+  volume_off: "volume_off",
+  volume_up: "volume_up",
 };
 
-/** Icône locale Lucide : aucune police distante ni ligature fragile. */
+/** Google Material Symbols Rounded, chargé dans index.html. */
 export function MaterialIcon({
   name,
   size = 20,
   filled = false,
   className,
   label,
+  style,
+  ...attributes
 }: MaterialIconProps) {
-  const Icon = ICONS[name] ?? CircleHelp;
+  const symbol = ICON_ALIASES[name] ?? name;
 
   return (
-    <Icon
-      className={["shrink-0", className ?? ""].filter(Boolean).join(" ")}
-      size={size}
-      strokeWidth={2.1}
-      fill={filled ? "currentColor" : "none"}
+    <span
+      {...attributes}
+      className={["google-symbol shrink-0", className ?? ""].filter(Boolean).join(" ")}
+      style={{
+        fontSize: size,
+        fontVariationSettings: `"FILL" ${filled ? 1 : 0}, "wght" 500, "GRAD" 0, "opsz" ${size}`,
+        ...style,
+      }}
       role={label ? "img" : undefined}
       aria-label={label}
       aria-hidden={label ? undefined : true}
-    />
+    >
+      {symbol}
+    </span>
   );
 }

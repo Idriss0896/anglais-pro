@@ -1,5 +1,5 @@
 import { LibraryPage } from "@/features/library/LibraryPage";
-import { LayoutGrid } from "lucide-react";
+import { LayoutGrid } from "@/lib/icons";
 
 export function LearnPage() {
   return (

@@ -86,6 +86,25 @@
 }
 
 @layer base {
+  .google-symbol {
+    display: inline-block;
+    flex: 0 0 auto;
+    overflow: hidden;
+    font-family: "Material Symbols Rounded", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings: "liga";
+    -webkit-font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+    user-select: none;
+  }
+
   html {
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;

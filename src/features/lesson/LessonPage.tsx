@@ -16,7 +16,7 @@ import {
   Table2,
   Trophy,
   Volume2,
-} from "lucide-react";
+} from "@/lib/icons";
 import { FocusShell } from "@/components/AppShell";
 import { Button } from "@/components/Button";
 import { CategoryBadge } from "@/components/CategoryBadge";

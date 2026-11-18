@@ -10,7 +10,7 @@ import {
   Medal,
   Settings2,
   Target,
-} from "lucide-react";
+} from "@/lib/icons";
 import { PageHeader } from "@/components/PageHeader";
 import { ProgressBar } from "@/components/ProgressBar";
 import { ProgressRing } from "@/components/ProgressRing";

@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useState, type ComponentType } from "react";
 import { HashRouter, Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
-import { Compass } from "lucide-react";
+import { Compass } from "@/lib/icons";
 import { AuthProvider, useAuth } from "@/auth/AuthProvider";
 import { LandingPage } from "@/features/landing/LandingPage";
 import { useSettingsStore } from "@/store/useSettingsStore";

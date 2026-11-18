@@ -5,7 +5,7 @@ import {
   Clock3,
   ListChecks,
   Play,
-} from "lucide-react";
+} from "@/lib/icons";
 import type { CurriculumUnit, LessonProgress } from "@/types";
 import { CATEGORIES } from "@/lib/categories";
 import { LEVEL_SHORT_NAMES, LEVEL_THEMES } from "@/lib/levels";

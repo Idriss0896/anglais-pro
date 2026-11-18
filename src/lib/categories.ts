@@ -4,7 +4,7 @@ import {
   MessageCircle,
   Tag,
   type LucideIcon,
-} from "lucide-react";
+} from "@/lib/icons";
 import type { CategoryKey } from "../types";
 
 export interface CategoryTheme {

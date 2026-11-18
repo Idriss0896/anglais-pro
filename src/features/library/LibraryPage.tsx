@@ -8,7 +8,7 @@ import {
   Sparkles,
   X,
   type LucideIcon,
-} from "lucide-react";
+} from "@/lib/icons";
 import { PageHeader } from "@/components/PageHeader";
 import { UnitCard } from "@/components/UnitCard";
 import { EmptyState } from "@/components/EmptyState";

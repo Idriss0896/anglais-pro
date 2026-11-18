@@ -15,7 +15,7 @@ import {
   Target,
   Trophy,
   Volume2,
-} from "lucide-react";
+} from "@/lib/icons";
 import { ButtonLink } from "@/components/Button";
 import { LevelCard } from "@/components/LevelCard";
 import { MaterialIcon } from "@/components/MaterialIcon";

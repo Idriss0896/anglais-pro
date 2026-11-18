@@ -1,6 +1,6 @@
 import { useEffect, type ReactNode } from "react";
 import { createPortal } from "react-dom";
-import { X, type LucideIcon } from "lucide-react";
+import { X, type LucideIcon } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 
 interface ModalProps {

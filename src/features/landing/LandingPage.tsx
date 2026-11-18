@@ -17,7 +17,7 @@ import {
   Target,
   Volume2,
   X,
-} from "lucide-react";
+} from "@/lib/icons";
 import { Logo } from "@/components/Logo";
 import { Mascot } from "@/components/Mascot";
 import { MaterialIcon } from "@/components/MaterialIcon";

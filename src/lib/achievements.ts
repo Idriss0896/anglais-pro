@@ -14,7 +14,7 @@ import {
   Target,
   Trophy,
   type LucideIcon,
-} from "lucide-react";
+} from "@/lib/icons";
 import { TOTAL_UNITS } from "@/data/overview";
 
 export interface AchievementStats {

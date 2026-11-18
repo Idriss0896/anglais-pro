@@ -12,7 +12,7 @@ import {
   Target,
   Volume2,
   X,
-} from "lucide-react";
+} from "@/lib/icons";
 import { PageHeader } from "@/components/PageHeader";
 import { StatPill } from "@/components/StatPill";
 import { Button } from "@/components/Button";

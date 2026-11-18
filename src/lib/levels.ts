@@ -1,4 +1,4 @@
-import { Brain, BriefcaseBusiness, Compass, Sprout, type LucideIcon } from "lucide-react";
+import { Brain, BriefcaseBusiness, Compass, Sprout, type LucideIcon } from "@/lib/icons";
 
 export interface LevelTheme {
   /** Couleur pleine de référence (badges, pastilles, barres). */

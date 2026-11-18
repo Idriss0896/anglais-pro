@@ -10,7 +10,7 @@ import {
   Search,
   Volume2,
   X,
-} from "lucide-react";
+} from "@/lib/icons";
 import { PageHeader } from "@/components/PageHeader";
 import { EmptyState } from "@/components/EmptyState";
 import { Mascot, MascotSay, mascotFor, MASCOTS } from "@/components/Mascot";

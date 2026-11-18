@@ -14,7 +14,7 @@ import {
   ShieldCheck,
   UserRound,
   WifiOff,
-} from "lucide-react";
+} from "@/lib/icons";
 import { useAuth } from "@/auth/AuthProvider";
 import { Logo } from "@/components/Logo";
 import { markEnteredApp } from "@/lib/entry";

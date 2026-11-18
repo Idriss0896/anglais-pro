@@ -1,4 +1,4 @@
-import { BookOpen, Lightbulb } from "lucide-react";
+import { BookOpen, Lightbulb } from "@/lib/icons";
 import { LibraryPage } from "@/features/library/LibraryPage";
 
 function GrammarBanner() {

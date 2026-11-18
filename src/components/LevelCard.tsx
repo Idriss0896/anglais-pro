@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Play } from "lucide-react";
+import { ArrowRight, CheckCircle2, Play } from "@/lib/icons";
 import type { LevelMeta, LessonProgress } from "@/types";
 import { LEVEL_ICONS, LEVEL_THEMES } from "@/lib/levels";
 import { cn, percent, plural } from "@/lib/utils";

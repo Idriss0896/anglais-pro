@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 import { Link, type LinkProps } from "react-router-dom";
-import { LoaderCircle, type LucideIcon } from "lucide-react";
+import { LoaderCircle, type LucideIcon } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 
 type ButtonVariant =

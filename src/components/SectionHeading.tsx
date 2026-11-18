@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, type LucideIcon } from "lucide-react";
+import { ArrowRight, type LucideIcon } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 
 interface SectionHeadingProps {

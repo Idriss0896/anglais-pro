@@ -61,7 +61,7 @@ export function HeaderStat({
         )}
         <span
           className={cn(
-            "block truncate font-extrabold tabular-nums text-white",
+            "block truncate font-extrabold tabular-nums leading-[1.25] text-white",
             compact ? "text-[12px]" : "mt-1 text-[12.5px]",
           )}
         >

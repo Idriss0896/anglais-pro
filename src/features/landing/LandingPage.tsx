@@ -112,7 +112,7 @@ function LessonPreview() {
     <div className="relative mx-auto w-full max-w-[430px]">
       <div
         aria-hidden="true"
-        className="animate-glow pointer-events-none absolute -inset-10 rounded-[46px] bg-[radial-gradient(circle_at_50%_40%,rgba(196,181,253,0.5),transparent_66%)] blur-2xl"
+        className="animate-glow pointer-events-none absolute -inset-10 rounded-[46px] bg-brand-300/30 blur-2xl"
       />
 
       <div className="animate-float-slower relative rounded-[30px] bg-white p-5 shadow-[0_44px_90px_-32px_rgba(15,10,50,0.75)] ring-1 ring-white/40 sm:p-6">
@@ -134,14 +134,14 @@ function LessonPreview() {
         </p>
 
         <div className="mt-5 flex items-center gap-3 rounded-2xl bg-surface-soft p-3 ring-1 ring-azure-500/8">
-          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[#3b82f6] to-[#1d4ed8] text-white shadow-[0_10px_20px_-8px_rgba(37,99,235,0.9)]">
+          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#2563eb] text-white shadow-[0_10px_20px_-8px_rgba(37,99,235,0.9)]">
             <Volume2 size={17} strokeWidth={2.5} />
           </span>
           <div className="flex h-9 flex-1 items-center justify-between gap-[3px]">
             {WAVE_BARS.map((height, index) => (
               <span
                 key={index}
-                className="animate-wave w-full max-w-[5px] rounded-full bg-gradient-to-t from-[#1d4ed8] to-[#93c5fd]"
+                className="animate-wave w-full max-w-[5px] rounded-full bg-[#60a5fa]"
                 style={{ height: `${height}px`, animationDelay: `${index * 70}ms` }}
               />
             ))}
@@ -157,13 +157,13 @@ function LessonPreview() {
             <span className="text-azure-strong">19 %</span>
           </div>
           <div className="mt-2 h-2 overflow-hidden rounded-full bg-slate-100">
-            <div className="h-full w-[19%] rounded-full bg-gradient-to-r from-[#60a5fa] to-[#1d4ed8]" />
+            <div className="h-full w-[19%] rounded-full bg-[#2563eb]" />
           </div>
         </div>
       </div>
 
       <div className="animate-float absolute -right-3 -top-6 hidden items-center gap-2 rounded-2xl bg-white px-3 py-2 shadow-[0_18px_36px_-18px_rgba(15,10,50,0.55)] ring-1 ring-slate-900/5 sm:flex">
-        <span className="grid h-7 w-7 place-items-center rounded-xl bg-gradient-to-br from-amber-300 to-orange-500 text-white">
+        <span className="grid h-7 w-7 place-items-center rounded-xl bg-amber-400 text-white">
           <Flame size={14} fill="currentColor" />
         </span>
         <span className="leading-none">
@@ -175,7 +175,7 @@ function LessonPreview() {
       </div>
 
       <div className="animate-float-slow absolute -bottom-7 -left-2 hidden items-center gap-2 rounded-2xl bg-white px-3 py-2 shadow-[0_18px_36px_-18px_rgba(15,10,50,0.55)] ring-1 ring-slate-900/5 sm:flex">
-        <span className="grid h-7 w-7 place-items-center rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 text-white">
+        <span className="grid h-7 w-7 place-items-center rounded-xl bg-emerald-500 text-white">
           <Check size={14} strokeWidth={3.2} />
         </span>
         <span className="leading-none">
@@ -245,7 +245,7 @@ function LandingNav({ returning }: { returning: boolean }) {
           </Link>
           <EnterLink
             to="/accueil"
-            className="btn-shine inline-flex h-10 items-center gap-1.5 rounded-full bg-gradient-to-br from-brand-500 to-brand-700 px-4 text-[12px] font-extrabold text-white shadow-[0_12px_26px_-12px_rgba(91,33,182,0.95)] ring-1 ring-white/20 transition hover:-translate-y-0.5 hover:to-brand-800 max-[379px]:hidden"
+            className="btn-shine inline-flex h-10 items-center gap-1.5 rounded-full bg-brand-600 px-4 text-[12px] font-extrabold text-white shadow-[0_12px_26px_-12px_rgba(91,33,182,0.95)] ring-1 ring-white/20 transition hover:-translate-y-0.5 hover:bg-brand-700 max-[479px]:hidden"
           >
             {returning ? "Reprendre" : "Commencer"}
             <ArrowRight size={14} strokeWidth={2.6} />
@@ -293,7 +293,7 @@ function LandingNav({ returning }: { returning: boolean }) {
           <EnterLink
             to="/accueil"
             onNavigate={() => setOpen(false)}
-            className="mt-1 flex items-center justify-center gap-1.5 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 px-3.5 py-3 text-[13px] font-extrabold text-white ring-1 ring-brand-700/20"
+            className="mt-1 flex items-center justify-center gap-1.5 rounded-xl bg-brand-600 px-3.5 py-3 text-[13px] font-extrabold text-white ring-1 ring-brand-700/20"
           >
             {returning ? "Reprendre ma progression" : "Commencer gratuitement"}
             <ArrowRight size={15} strokeWidth={2.6} />
@@ -320,11 +320,7 @@ export function LandingPage({ returning = false }: { returning?: boolean }) {
             aria-hidden="true"
             className="pointer-events-none absolute -bottom-32 left-[-10%] h-[380px] w-[380px] rounded-full bg-azure-500/40 blur-[110px]"
           />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white/10 to-transparent"
-          />
-          <div aria-hidden="true" className="landing-beam pointer-events-none absolute left-1/2 top-0 h-px w-[48%] -translate-x-1/2 bg-gradient-to-r from-transparent via-amber-300/80 to-transparent" />
+          <div aria-hidden="true" className="landing-beam pointer-events-none absolute left-1/2 top-0 h-px w-[48%] -translate-x-1/2 bg-amber-300/80" />
 
           <div className="relative mx-auto grid w-full max-w-6xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[1.06fr_1fr] lg:gap-10 lg:px-9">
             <div>
@@ -485,13 +481,13 @@ export function LandingPage({ returning = false }: { returning?: boolean }) {
               <div className="relative">
                 <div
                   aria-hidden="true"
-                  className="absolute left-[22px] top-4 hidden h-[calc(100%-2rem)] w-px bg-gradient-to-b from-[#2563eb]/30 via-[#2563eb]/15 to-transparent sm:block"
+                  className="absolute left-[22px] top-4 hidden h-[calc(100%-2rem)] w-px bg-[#2563eb]/25 sm:block"
                 />
                 <ol className="space-y-4">
                   {STEPS.map((step, index) => (
                     <Reveal key={step.title} delay={index * 100}>
                       <li className="relative flex gap-4 rounded-[22px] bg-white p-4 ring-1 ring-slate-900/5 sm:gap-5 sm:p-5">
-                        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-[#3b82f6] to-[#1d4ed8] font-display text-[15px] font-extrabold text-white shadow-[0_12px_24px_-12px_rgba(37,99,235,0.9)]">
+                        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-[#2563eb] font-display text-[15px] font-extrabold text-white shadow-[0_12px_24px_-12px_rgba(37,99,235,0.9)]">
                           {String(index + 1).padStart(2, "0")}
                         </span>
                         <div>
@@ -634,7 +630,7 @@ export function LandingPage({ returning = false }: { returning?: boolean }) {
           </div>
         </section>
 
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#2e1065] via-[#4c1d95] to-[#6d28d9] px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-9">
+        <section className="relative overflow-hidden bg-brand-700 px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-9">
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 pattern-dots opacity-25" />
           <div
             aria-hidden="true"

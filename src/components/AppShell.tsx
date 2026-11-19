@@ -12,6 +12,7 @@ import {
   PanelLeftOpen,
   Settings,
   Shapes,
+  X,
 } from "@/lib/icons";
 import { useAuth } from "@/auth/AuthProvider";
 import { GuestBanner } from "./GuestBanner";
@@ -125,18 +126,45 @@ function SidebarLink({
       onClick={onSelect}
       className={({ isActive }) =>
         cn(
-          "font-nav group flex items-center rounded-2xl text-[13.5px] font-semibold tracking-[-0.01em] transition-all duration-200 hover:-translate-y-0.5",
-          collapsed ? "justify-center px-0 py-3" : "gap-3 px-3 py-2.5",
+          "font-nav group relative flex items-center rounded-2xl text-[13.5px] font-semibold tracking-[-0.01em] transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70",
+          collapsed ? "justify-center px-0 py-2" : "gap-3 px-2.5 py-2",
           isActive
-            ? "bg-white text-[#7428ff]"
+            ? collapsed
+              ? "bg-white/15 text-white"
+              : "bg-white text-brand-700 shadow-[0_14px_30px_-18px_rgba(0,0,0,0.75)]"
             : "text-white/80 hover:bg-white/10 hover:text-white",
         )
       }
     >
       {({ isActive }) => (
         <>
-          <item.icon size={19} strokeWidth={isActive ? 2.6 : 2.1} className="shrink-0 transition-transform duration-200 group-hover:scale-110" />
-          {!collapsed && <span className="truncate">{item.label}</span>}
+          <span
+            className={cn(
+              "grid shrink-0 place-items-center rounded-xl transition-all duration-200",
+              collapsed ? "h-9 w-9" : "h-8 w-8",
+              isActive
+                ? collapsed
+                  ? "bg-white text-brand-700"
+                  : "bg-brand-600 text-white"
+                : "bg-white/10 text-white/85 group-hover:scale-105 group-hover:bg-white/20 group-hover:text-white",
+            )}
+          >
+            <item.icon size={17} strokeWidth={isActive ? 2.6 : 2.1} />
+          </span>
+          {!collapsed && (
+            <>
+              <span className="min-w-0 flex-1 truncate">{item.label}</span>
+              <ChevronRight
+                size={14}
+                className={cn(
+                  "shrink-0 transition-all duration-200",
+                  isActive
+                    ? "text-brand-600/60"
+                    : "-translate-x-1 text-white/0 group-hover:translate-x-0 group-hover:text-white/60",
+                )}
+              />
+            </>
+          )}
         </>
       )}
     </NavLink>
@@ -182,21 +210,27 @@ function Sidebar({
         )}
       >
         <Logo to="/accueil" compact={collapsed} onDark variant="sidebar" />
-        <button
-          type="button"
-          onClick={onToggle}
-          aria-label={
-            collapsed
-              ? "Déplier le menu"
-              : isDesktop
-                ? "Réduire le menu"
-                : "Réduire le menu en icônes"
-          }
-          title={collapsed ? "Déplier le menu" : "Réduire le menu"}
-          className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-white/10 text-white ring-1 ring-white/20 transition-colors hover:bg-white/20 hover:text-white"
-        >
-          {collapsed ? <PanelLeftOpen size={19} /> : <PanelLeftClose size={19} />}
-        </button>
+        {isDesktop ? (
+          <button
+            type="button"
+            onClick={onToggle}
+            aria-label={collapsed ? "Déplier le menu" : "Réduire le menu"}
+            title={collapsed ? "Déplier le menu" : "Réduire le menu"}
+            className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-white/10 text-white ring-1 ring-white/20 transition-colors hover:bg-white/20 hover:text-white"
+          >
+            {collapsed ? <PanelLeftOpen size={19} /> : <PanelLeftClose size={19} />}
+          </button>
+        ) : (
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Fermer le menu"
+            title="Fermer le menu"
+            className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-white/10 text-white ring-1 ring-white/20 transition-colors hover:bg-white/20 hover:text-white"
+          >
+            <X size={19} />
+          </button>
+        )}
       </div>
 
       <nav
@@ -204,8 +238,9 @@ function Sidebar({
         aria-label="Navigation principale"
       >
         {!collapsed && (
-          <p className="font-nav px-3 pb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/60">
+          <p className="font-nav flex items-center gap-2 px-3 pb-2 text-[9.5px] font-bold uppercase tracking-[0.2em] text-white/55">
             Apprendre
+            <span className="h-px flex-1 bg-white/20" />
           </p>
         )}
         {primaryNav.map((item) => (
@@ -213,8 +248,9 @@ function Sidebar({
         ))}
 
         {!collapsed && (
-          <p className="font-nav px-3 pb-2 pt-5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/60">
+          <p className="font-nav flex items-center gap-2 px-3 pb-2 pt-5 text-[9.5px] font-bold uppercase tracking-[0.2em] text-white/55">
             Entraînement
+            <span className="h-px flex-1 bg-white/20" />
           </p>
         )}
         {collapsed && <div className="mx-auto my-2 h-px w-8 bg-white/15" />}
@@ -224,37 +260,20 @@ function Sidebar({
       </nav>
 
       <div className="relative mt-3 space-y-1">
-        <NavLink
-          to="/reglages"
-          title="Réglages"
-          aria-label="Réglages"
-          onClick={onClose}
-          className={({ isActive }) =>
-            cn(
-              "font-nav flex items-center rounded-2xl text-[13.5px] font-semibold transition-colors",
-              collapsed ? "justify-center px-0 py-3" : "gap-3 px-3 py-2.5",
-              isActive
-                ? "bg-white text-[#7428ff]"
-                : "text-white/80 hover:bg-white/10 hover:text-white",
-            )
-          }
-        >
-          {({ isActive }) => (
-            <>
-              <Settings size={19} strokeWidth={isActive ? 2.6 : 2.1} />
-              {!collapsed && <span className="truncate">Réglages</span>}
-            </>
-          )}
-        </NavLink>
+        <SidebarLink
+          item={{ to: "/reglages", label: "Réglages", icon: Settings }}
+          collapsed={collapsed}
+          onSelect={onClose}
+        />
 
-        <div className="h-px bg-white/15" />
+        <div className="my-2 h-px bg-white/15" />
 
         <Link
           to={user ? "/profile" : "/auth"}
           title={user ? "Mon profil" : "Se connecter"}
           onClick={onClose}
           className={cn(
-            "flex items-center rounded-2xl transition-colors hover:bg-white/10",
+            "group flex items-center rounded-2xl ring-1 ring-transparent transition-all duration-200 hover:bg-white/10 hover:ring-white/15 active:scale-[0.99]",
             collapsed ? "justify-center p-1.5" : "gap-3 p-2.5",
           )}
         >
@@ -269,7 +288,10 @@ function Sidebar({
                   {user ? `${rank.label} · ${streak} j de série` : "Se connecter ou s'inscrire"}
                 </span>
               </span>
-              <ChevronRight size={18} className="text-white/55" />
+              <ChevronRight
+                size={18}
+                className="shrink-0 text-white/55 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-white"
+              />
             </>
           )}
         </Link>
@@ -360,17 +382,7 @@ function DesktopTopBar({ scrolled }: { scrolled: boolean }) {
   );
 }
 
-function MobileHeader({
-  onOpenMenu,
-  searchOpen,
-  onOpenSearch,
-  onCloseSearch,
-}: {
-  onOpenMenu: () => void;
-  searchOpen: boolean;
-  onOpenSearch: () => void;
-  onCloseSearch: () => void;
-}) {
+function MobileHeader({ onOpenMenu }: { onOpenMenu: () => void }) {
   const xp = useProgressStore((state) => state.xp);
   const streak = useProgressStore((state) => state.streak);
 
@@ -378,41 +390,34 @@ function MobileHeader({
     <header className="sticky top-0 z-30 px-4 pt-3 lg:hidden">
       <div
         className={cn(
-          "rounded-[24px] px-2.5 ring-1 ring-white/15 shadow-[0_18px_40px_-22px_rgba(59,24,120,0.9)]",
+          "rounded-[24px] px-2.5 py-2 ring-1 ring-white/15 shadow-[0_18px_40px_-22px_rgba(59,24,120,0.9)]",
           SHELL,
         )}
       >
-        <div className="flex h-16 items-center gap-1.5">
+        <div className="flex h-11 items-center gap-2">
           <button
             type="button"
             onClick={onOpenMenu}
             aria-label="Ouvrir le menu"
             title="Ouvrir le menu"
             aria-controls="app-sidebar"
-            className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white/10 text-indigo-100 ring-1 ring-white/15 transition-colors hover:bg-white/20 hover:text-white"
+            className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-white/10 text-indigo-100 ring-1 ring-white/15 transition-colors hover:bg-white/20 hover:text-white"
           >
-            <PanelLeftOpen size={20} />
+            <PanelLeftOpen size={19} />
           </button>
 
-          <button
-            type="button"
-            onClick={onOpenSearch}
-            aria-label="Rechercher un mot"
-            title="Rechercher un mot"
-            aria-expanded={searchOpen}
-            className={cn(
-              "grid h-10 w-10 shrink-0 place-items-center rounded-2xl ring-1 ring-white/15 transition-colors",
-              searchOpen
-                ? "bg-white text-brand-700"
-                : "bg-white/10 text-indigo-100 hover:bg-white/20 hover:text-white",
-            )}
-          >
-            <MaterialIcon name="search" size={20} />
-          </button>
+          <Logo to="/accueil" onDark variant="mobile" className="min-w-0" />
+
+          <div className="ml-auto flex shrink-0 items-center gap-1.5">
+            <UserMenu onDark />
+          </div>
+        </div>
+
+        <div className="flex items-center gap-1.5 pb-1 pt-1.5">
+          <QuickSearch variant="mobile" className="min-w-0 flex-1" />
 
           <HeaderStat
             compact
-            className="ml-auto"
             icon={<MaterialIcon name="local_fire_department" size={14} filled />}
             tone="amber"
             label="Série"
@@ -429,21 +434,13 @@ function MobileHeader({
             content={
               <>
                 {formatNumber(xp)}
-                <span className="hidden min-[360px]:inline"> XP</span>
+                <span className="hidden min-[380px]:inline"> XP</span>
               </>
             }
             title={`${formatNumber(xp)} points d'expérience`}
             to="/progress"
           />
-
-          <UserMenu onDark />
         </div>
-
-        {searchOpen && (
-          <div className="pb-2.5">
-            <QuickSearch variant="mobile" autoFocus onClose={onCloseSearch} />
-          </div>
-        )}
       </div>
     </header>
   );
@@ -597,7 +594,6 @@ export function AppShell() {
   const scrolled = useScrolled();
   const isDesktop = useIsDesktop();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
   const [collapsed, setCollapsed] = useState<boolean>(() => {
     if (typeof window === "undefined") return false;
     return window.localStorage.getItem(SIDEBAR_KEY) === "collapsed";
@@ -635,29 +631,21 @@ export function AppShell() {
     };
   }, [mobileOpen, isDesktop]);
 
-  // Ctrl/Cmd + K : ouvre la recherche mobile (sur ordinateur, « / » suffit).
+  // Ctrl/Cmd + K : place le curseur dans la recherche (mobile ; sur ordinateur, « / » suffit).
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
-      const target = event.target as HTMLElement | null;
-      const typing =
-        target?.tagName === "INPUT" ||
-        target?.tagName === "TEXTAREA" ||
-        target?.isContentEditable;
-      if (typing) return;
-      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
-        event.preventDefault();
-        setMobileOpen(false);
-        setSearchOpen(true);
-      }
+      if (!(event.metaKey || event.ctrlKey) || event.key.toLowerCase() !== "k") return;
+      if (window.matchMedia("(min-width: 1024px)").matches) return;
+      event.preventDefault();
+      setMobileOpen(false);
+      const input = document.querySelector<HTMLInputElement>(
+        'header input[type="search"]',
+      );
+      input?.focus();
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
-
-  const openSearch = () => {
-    setMobileOpen(false);
-    setSearchOpen(true);
-  };
 
   return (
     <div className="min-h-dvh">
@@ -678,12 +666,7 @@ export function AppShell() {
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
       />
-      <MobileHeader
-        onOpenMenu={() => setMobileOpen(true)}
-        searchOpen={searchOpen}
-        onOpenSearch={() => setSearchOpen((value) => !value)}
-        onCloseSearch={() => setSearchOpen(false)}
-      />
+      <MobileHeader onOpenMenu={() => setMobileOpen(true)} />
       <main
         className={cn(
           "notebook-canvas relative transition-[padding] duration-300",

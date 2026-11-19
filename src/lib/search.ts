@@ -153,6 +153,99 @@ const PHRASE_INDEX = PHRASES.map((phrase) => ({
   wordCount: phrase.en.trim().split(/\s+/).length,
 }));
 
+/**
+ * Petit dictionnaire de survie : les mots et formules que l'on cherche en
+ * premier. Ils complètent les tableaux des leçons pour que « hello »,
+ * « merci » ou « demain » aient toujours une fiche claire.
+ */
+const CORE_WORDS: Array<{ en: string; fr: string; example?: string }> = [
+  { en: "hello", fr: "bonjour", example: "Hello, how are you?" },
+  { en: "hi", fr: "salut", example: "Hi, nice to see you!" },
+  { en: "goodbye", fr: "au revoir", example: "Goodbye, see you tomorrow." },
+  { en: "bye", fr: "salut, à plus" },
+  { en: "please", fr: "s'il te plaît / s'il vous plaît" },
+  { en: "thank you", fr: "merci", example: "Thank you very much." },
+  { en: "thanks", fr: "merci" },
+  { en: "sorry", fr: "désolé(e)", example: "Sorry, I'm late." },
+  { en: "excuse me", fr: "excusez-moi" },
+  { en: "yes", fr: "oui" },
+  { en: "no", fr: "non" },
+  { en: "maybe", fr: "peut-être" },
+  { en: "good morning", fr: "bonjour (le matin)" },
+  { en: "good afternoon", fr: "bon après-midi" },
+  { en: "good evening", fr: "bonsoir" },
+  { en: "good night", fr: "bonne nuit" },
+  { en: "how are you", fr: "comment vas-tu ?" },
+  { en: "nice to meet you", fr: "enchanté(e)" },
+  { en: "see you later", fr: "à plus tard" },
+  { en: "welcome", fr: "bienvenue" },
+  { en: "help", fr: "aide ; aider" },
+  { en: "water", fr: "eau" },
+  { en: "food", fr: "nourriture" },
+  { en: "name", fr: "nom" },
+  { en: "friend", fr: "ami(e)" },
+  { en: "work", fr: "travail ; travailler" },
+  { en: "time", fr: "temps ; heure" },
+  { en: "day", fr: "jour" },
+  { en: "today", fr: "aujourd'hui" },
+  { en: "tomorrow", fr: "demain" },
+  { en: "yesterday", fr: "hier" },
+  { en: "love", fr: "aimer ; amour" },
+  { en: "want", fr: "vouloir" },
+  { en: "need", fr: "avoir besoin" },
+  { en: "know", fr: "savoir ; connaître" },
+  { en: "understand", fr: "comprendre" },
+  { en: "speak", fr: "parler" },
+  { en: "listen", fr: "écouter" },
+  { en: "read", fr: "lire" },
+  { en: "write", fr: "écrire" },
+  { en: "learn", fr: "apprendre" },
+  { en: "house", fr: "maison" },
+  { en: "home", fr: "chez soi ; maison" },
+  { en: "money", fr: "argent" },
+  { en: "happy", fr: "heureux / heureuse" },
+  { en: "tired", fr: "fatigué(e)" },
+  { en: "hungry", fr: "affamé(e)" },
+  { en: "beautiful", fr: "beau / belle" },
+  { en: "big", fr: "grand(e)" },
+  { en: "small", fr: "petit(e)" },
+  { en: "fast", fr: "rapide" },
+  { en: "slow", fr: "lent(e)" },
+];
+
+const CORE_FALLBACK = CURRICULUM[0];
+
+for (const [index, entry] of CORE_WORDS.entries()) {
+  const key = normalize(entry.en);
+  if (WORD_ENTRIES.some((word) => normalize(word.en) === key)) continue;
+
+  const phrase = PHRASE_INDEX.find((item) => item.en.includes(key));
+  const source = phrase
+    ? {
+        unitId: phrase.hit.unitId,
+        unitTitle: phrase.hit.unitTitle,
+        unitEmoji: phrase.hit.unitEmoji,
+        level: phrase.hit.level,
+        category: phrase.hit.category,
+      }
+    : {
+        unitId: CORE_FALLBACK.id,
+        unitTitle: CORE_FALLBACK.title,
+        unitEmoji: CORE_FALLBACK.emoji,
+        level: CORE_FALLBACK.level,
+        category: CORE_FALLBACK.cat,
+      };
+
+  WORD_ENTRIES.push({
+    kind: "word",
+    id: `core-${index}`,
+    en: entry.en,
+    fr: entry.fr,
+    example: entry.example ?? (phrase && phrase.hit.en !== entry.en ? phrase.hit.en : undefined),
+    ...source,
+  });
+}
+
 const WORD_INDEX = WORD_ENTRIES.map((entry) => ({
   hit: entry,
   en: normalize(entry.en),
@@ -274,7 +367,7 @@ export function search(query: string): SearchResult {
   let definition: EntryHit | undefined;
   if (single) {
     const best = wordMatches[0];
-    if (best && best.score >= 170) definition = wordHits[0];
+    if (best && best.score >= 130) definition = wordHits[0];
     else {
       const exact = PHRASE_INDEX.find((entry) => entry.en === needle || entry.fr === needle);
       if (exact) definition = { ...exact.hit, exact: true };

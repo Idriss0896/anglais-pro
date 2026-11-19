@@ -1,4 +1,4 @@
-import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
+import { useDeferredValue, useEffect, useId, useMemo, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ArrowRight, CornerDownLeft, Search, X } from "@/lib/icons";
 import { MaterialIcon } from "@/components/MaterialIcon";
@@ -76,6 +76,7 @@ export function QuickSearch({
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(autoFocus);
   const [active, setActive] = useState(0);
+  const listId = useId();
 
   // La frappe reste fluide : la recherche suit avec un léger différé.
   const deferredQuery = useDeferredValue(query);
@@ -112,14 +113,24 @@ export function QuickSearch({
     };
   }, [open]);
 
-  // Raccourci « / » depuis n'importe où dans l'application.
+  // Raccourcis sur ordinateur : « / » et Ctrl/Cmd + K ouvrent la recherche.
   useEffect(() => {
     if (variant !== "desktop") return;
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key !== "/" || event.metaKey || event.ctrlKey || event.altKey) return;
+      const isSlash = event.key === "/";
+      const isCommand = (event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k";
+      if (!isSlash && !isCommand) return;
+      if (isSlash && (event.metaKey || event.ctrlKey || event.altKey)) return;
+      if (!window.matchMedia("(min-width: 1024px)").matches) return;
+
       const target = event.target as HTMLElement | null;
-      if (target && /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName)) return;
-      if (target?.isContentEditable) return;
+      const typing =
+        target?.tagName === "INPUT" ||
+        target?.tagName === "TEXTAREA" ||
+        target?.tagName === "SELECT" ||
+        target?.isContentEditable;
+      if (isSlash && typing) return;
+
       event.preventDefault();
       inputRef.current?.focus();
       setOpen(true);
@@ -213,12 +224,12 @@ export function QuickSearch({
           </span>
           <span className="min-w-0 flex-1">
             <span className="flex items-center gap-1.5">
-              <span className="truncate text-[12.5px] font-extrabold text-ink">
+              <span className="truncate text-[13px] font-extrabold text-ink">
                 <Highlight text={hit.en} query={deferredQuery} />
               </span>
               <LevelChip level={hit.level} />
             </span>
-            <span className="mt-0.5 block truncate text-[10.5px] font-semibold text-azure-strong">
+            <span className="mt-0.5 block truncate text-[11px] font-semibold text-azure-strong">
               <Highlight text={hit.fr} query={deferredQuery} />
             </span>
           </span>
@@ -245,12 +256,12 @@ export function QuickSearch({
   };
 
   return (
-    <div ref={wrapRef} className={cn("relative", className)}>
+    <div ref={wrapRef} className={cn(variant === "mobile" ? "min-w-0" : "relative", className)}>
       <div
         className={cn(
           "flex h-10 w-full items-center gap-2.5 rounded-2xl bg-white/12 px-3 ring-1 ring-white/20 transition-all duration-200",
           "focus-within:bg-white focus-within:ring-2 focus-within:ring-white/75",
-          open && "bg-white ring-white/75",
+          open && "bg-white ring-2 ring-brand-500/45",
         )}
       >
         <Search
@@ -267,7 +278,7 @@ export function QuickSearch({
           value={query}
           role="combobox"
           aria-expanded={open}
-          aria-controls="quick-search-results"
+          aria-controls={listId}
           aria-autocomplete="list"
           aria-label="Rechercher un mot, une expression ou une leçon"
           placeholder="Rechercher un mot…"
@@ -279,7 +290,7 @@ export function QuickSearch({
           onClick={() => setOpen(true)}
           onKeyDown={onKeyDown}
           className={cn(
-            "min-w-0 flex-1 bg-transparent text-[13px] font-semibold outline-none [&::-webkit-search-cancel-button]:hidden placeholder:font-medium",
+            "min-w-0 flex-1 bg-transparent text-[13px] font-semibold outline-none [&::-webkit-search-cancel-button]:hidden placeholder:font-medium focus-visible:shadow-none",
             open
               ? "text-brand-900 placeholder:text-slate-400"
               : "text-white placeholder:text-indigo-100/70",
@@ -327,12 +338,14 @@ export function QuickSearch({
 
       {showResults && (
         <div
-          id="quick-search-results"
+          id={listId}
           role="listbox"
           aria-label="Résultats de recherche"
           className={cn(
-            "animate-search-in absolute left-0 right-0 z-50 mt-2 overflow-hidden rounded-[22px] bg-surface text-left shadow-[0_26px_60px_-24px_rgba(23,22,43,0.45)] ring-1 ring-brand-500/20",
-            variant === "mobile" && "max-h-[68vh]",
+            "animate-search-in absolute z-50 mt-2 overflow-hidden rounded-[22px] bg-surface text-left shadow-[0_26px_60px_-24px_rgba(23,22,43,0.45)] ring-1 ring-brand-500/20",
+            variant === "mobile"
+              ? "left-4 right-4 top-full max-h-[68vh]"
+              : "left-0 w-[400px]",
           )}
         >
           <div className="flex items-center justify-between gap-2 border-b border-line bg-brand-soft/60 px-3.5 py-2">
@@ -440,7 +453,7 @@ export function QuickSearch({
                         <button
                           type="button"
                           onClick={() => go(definition)}
-                          className="inline-flex h-7 shrink-0 items-center gap-1 rounded-full bg-ink px-2.5 text-[10px] font-extrabold text-white transition hover:bg-brand-800 active:scale-95"
+                          className="inline-flex h-7 shrink-0 items-center gap-1 rounded-full bg-brand-600 px-2.5 text-[10px] font-extrabold text-white transition hover:bg-brand-700 active:scale-95"
                         >
                           Ouvrir la leçon
                           <MaterialIcon name="arrow_forward" size={13} />
@@ -492,12 +505,12 @@ export function QuickSearch({
                       </span>
                       <span className="min-w-0 flex-1">
                         <span className="flex items-center gap-1.5">
-                          <span className="truncate text-[12.5px] font-extrabold text-ink">
+                          <span className="truncate text-[13px] font-extrabold text-ink">
                             <Highlight text={hit.title} query={deferredQuery} />
                           </span>
                           <LevelChip level={hit.level} />
                         </span>
-                        <span className="mt-0.5 block truncate text-[10.5px] font-semibold text-slate-500">
+                        <span className="mt-0.5 block truncate text-[11px] font-semibold text-slate-500">
                           {CATEGORIES[hit.category].shortLabel} · {hit.subtitle}
                         </span>
                       </span>

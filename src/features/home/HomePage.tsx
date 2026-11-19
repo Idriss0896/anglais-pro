@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -68,11 +69,36 @@ function NextLessonCard() {
   const minutes = unitMinutes(unit);
   const progress = lessons[unit.id];
   const isDone = Boolean(progress?.completed);
+  const cardRef = useRef<HTMLElement | null>(null);
+
+  // Au toucher ou au clic, la carte se soulève puis rebondit brièvement.
+  const playTap = () => {
+    const element = cardRef.current;
+    if (!element) return;
+    element.classList.remove("animate-card-tap");
+    void element.offsetWidth;
+    element.classList.add("animate-card-tap");
+  };
 
   return (
-    <section className="card-blue-deep animate-fade-up relative overflow-hidden rounded-[30px] p-5 sm:p-7">
+    <section
+      ref={cardRef}
+      onPointerDown={playTap}
+      onAnimationEnd={(event) => {
+        if (event.animationName === "card-tap") {
+          cardRef.current?.classList.remove("animate-card-tap");
+        }
+      }}
+      className="card-blue-deep animate-fade-up group relative cursor-pointer overflow-hidden rounded-[30px] p-5 transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-[0_34px_70px_-26px_rgba(23,37,84,0.65)] sm:p-7"
+    >
       <div className="pointer-events-none absolute inset-0 pattern-dots opacity-25" />
       <div className="animate-float-slow pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
+      <span
+        aria-hidden="true"
+        className="card-spark pointer-events-none absolute right-6 top-6 text-lg opacity-0"
+      >
+        ✨
+      </span>
 
       <div className="relative">
         <div className="flex flex-wrap items-center justify-between gap-2">
@@ -87,7 +113,7 @@ function NextLessonCard() {
         </div>
 
         <div className="mt-5 flex items-start gap-4">
-          <span className="grid h-16 w-16 shrink-0 place-items-center rounded-[22px] bg-white/10 text-3xl ring-1 ring-white/15 backdrop-blur-sm">
+          <span className="card-emoji grid h-16 w-16 shrink-0 place-items-center rounded-[22px] bg-white/10 text-3xl ring-1 ring-white/15 backdrop-blur-sm transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
             {unit.emoji}
           </span>
           <div className="min-w-0">

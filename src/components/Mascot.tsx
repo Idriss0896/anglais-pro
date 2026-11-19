@@ -14,7 +14,7 @@ interface Palette {
   skinShade: string;
   hair: string;
   shirt: string;
-  bg: [string, string];
+  bg: string;
 }
 
 export const MASCOTS: Record<MascotId, Palette> = {
@@ -28,7 +28,7 @@ export const MASCOTS: Record<MascotId, Palette> = {
     skinShade: "#e9b492",
     hair: "#33254a",
     shirt: "#6d5ce7",
-    bg: ["#ede9fe", "#d8d0fd"],
+    bg: "#ede9fe",
   },
   leo: {
     name: "Leo",
@@ -40,7 +40,7 @@ export const MASCOTS: Record<MascotId, Palette> = {
     skinShade: "#dda077",
     hair: "#3a2b23",
     shirt: "#0ea5e9",
-    bg: ["#e0f2fe", "#c2e7fd"],
+    bg: "#e0f2fe",
   },
   zoe: {
     name: "Zoé",
@@ -52,7 +52,7 @@ export const MASCOTS: Record<MascotId, Palette> = {
     skinShade: "#9a6243",
     hair: "#211c2c",
     shirt: "#10b981",
-    bg: ["#d1fae5", "#b3f2dd"],
+    bg: "#d1fae5",
   },
   sam: {
     name: "Sam",
@@ -64,7 +64,7 @@ export const MASCOTS: Record<MascotId, Palette> = {
     skinShade: "#e2bd99",
     hair: "#9a4a12",
     shirt: "#f59e0b",
-    bg: ["#fef3c7", "#fce6a8"],
+    bg: "#fef3c7",
   },
 };
 
@@ -116,10 +116,6 @@ export function Mascot({
       className={cn("shrink-0", animated && "mascot-float", className)}
     >
       <defs>
-        <linearGradient id={`${uid}-bg`} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor={c.bg[0]} />
-          <stop offset="100%" stopColor={c.bg[1]} />
-        </linearGradient>
         <clipPath id={`${uid}-circle`}>
           <circle cx="48" cy="48" r="46" />
         </clipPath>
@@ -128,7 +124,7 @@ export function Mascot({
         </clipPath>
       </defs>
 
-      <circle cx="48" cy="48" r="46" fill={`url(#${uid}-bg)`} />
+      <circle cx="48" cy="48" r="46" fill={c.bg} />
 
       <g clipPath={`url(#${uid}-circle)`}>
         <circle cx="20" cy="22" r="20" fill="#ffffff" opacity="0.32" />

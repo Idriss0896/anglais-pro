@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -13,10 +13,13 @@ import {
   MessageCircle,
   Play,
   PlayCircle,
+  SlidersHorizontal,
+  Sparkles,
   Target,
   Trophy,
   Volume2,
 } from "@/lib/icons";
+import { useAuth } from "@/auth/AuthProvider";
 import { ButtonLink } from "@/components/Button";
 import { LevelCard } from "@/components/LevelCard";
 import { MaterialIcon } from "@/components/MaterialIcon";
@@ -35,7 +38,7 @@ import { LEVEL_THEMES } from "@/lib/levels";
 import { useSpeaking } from "@/lib/useSpeaking";
 import {
   formatLongDate,
-  greeting,
+  englishGreeting,
   lastNDays,
   percent,
   plural,
@@ -58,6 +61,17 @@ import {
   useProgressStore,
 } from "@/store/useProgressStore";
 import { cn } from "@/lib/utils";
+
+/** Nom lisible déduit de l'email quand aucun nom n'est renseigné. */
+function nameFromEmail(email?: string | null) {
+  if (!email) return "";
+  return (email.split("@")[0] ?? "")
+    .replace(/\d+/g, " ")
+    .split(/[._\-+\s]+/)
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase())
+    .join(" ");
+}
 
 function NextLessonCard() {
   const lessons = useProgressStore((state) => state.lessons);
@@ -586,8 +600,28 @@ function ExploreGrid() {
 export function HomePage() {
   const lessons = useProgressStore((state) => state.lessons);
   const streak = useProgressStore((state) => state.streak);
+  const { user } = useAuth();
+  const [now, setNow] = useState(() => new Date());
+
+  // La salutation suit l'horloge : elle bascule seule en soirée puis la nuit.
+  useEffect(() => {
+    const timer = window.setInterval(() => setNow(new Date()), 30_000);
+    return () => window.clearInterval(timer);
+  }, []);
+
   const completed = completedCount(lessons);
   const overall = percent(completed, TOTAL_UNITS);
+  const hello = englishGreeting(now);
+  const displayName = user?.name?.trim() || nameFromEmail(user?.email) || "there";
+  const nextUnit = getNextUnit(lessons);
+  const actionLabel =
+    completed >= TOTAL_UNITS ? "Réviser" : completed > 0 ? "Reprendre" : "Commencer";
+  const subtitle =
+    hello.moment === "night"
+      ? "Une petite session avant de dormir : cinq minutes, une leçon, et ton anglais avance même la nuit."
+      : hello.moment === "evening"
+        ? "Belle soirée pour progresser : une leçon courte, quelques exercices, et tu gardes ton rythme."
+        : "Cinq minutes suffisent : une leçon courte, quelques exercices, et tu repars avec une nouvelle phrase d'anglais.";
 
   return (
     <div className="space-y-6 lg:space-y-8">
@@ -604,20 +638,61 @@ export function HomePage() {
         <div className="relative">
           <span className="font-nav inline-flex items-center gap-1.5 rounded-full bg-brand-700 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white shadow-[0_12px_26px_-18px_rgba(46,16,101,0.95)]">
             <MaterialIcon name="event_available" size={14} />
-            {formatLongDate()}
+            {formatLongDate(now)}
           </span>
 
-          <h1 className="font-display mt-4 text-balance text-[32px] font-extrabold leading-[1.02] tracking-[-0.045em] text-ink sm:text-[44px]">
-            {greeting()}{" "}
-            <span className="inline-block origin-bottom animate-wave">👋</span>
+          <h1 className="font-display mt-4 text-balance text-[30px] font-extrabold leading-[1.1] tracking-[-0.045em] text-ink sm:text-[44px]">
+            <span className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5">
+              <span>{hello.text},</span>
+              <span
+                aria-hidden="true"
+                className="greeting-emoji order-2 text-[0.88em] leading-none sm:order-3"
+              >
+                {hello.emoji}
+              </span>
+              <span className="order-3 inline-flex items-center rounded-[0.55em] bg-brand-soft px-2.5 py-0.5 text-brand-strong ring-1 ring-brand-strong/15 sm:order-2">
+                {displayName}
+              </span>
+            </span>
           </h1>
 
           <p className="mt-2.5 max-w-xl text-pretty text-[13.5px] font-medium leading-6 text-slate-500 sm:text-[14.5px]">
-            Cinq minutes suffisent : une leçon courte, quelques exercices, et tu repars avec une
-            nouvelle phrase d'anglais.
+            {subtitle}
           </p>
 
-          <div className="mt-5 flex flex-wrap items-center gap-2">
+          <div className="mt-5 grid grid-cols-2 gap-2.5 sm:flex sm:flex-wrap sm:items-center">
+            <ButtonLink
+              to={`/lesson/${nextUnit.id}`}
+              size="lg"
+              icon={Play}
+              iconRight={ArrowRight}
+              className="col-span-2 w-full rounded-full sm:col-span-1 sm:w-auto"
+            >
+              {actionLabel}
+            </ButtonLink>
+            <ButtonLink
+              to="/practice"
+              variant="secondary"
+              size="md"
+              icon={Dumbbell}
+              className="w-full whitespace-nowrap rounded-full sm:w-auto"
+            >
+              <span className="sm:hidden">Réviser</span>
+              <span className="hidden sm:inline">Réviser 5 min</span>
+            </ButtonLink>
+            <ButtonLink
+              to="/reglages"
+              variant="ghost"
+              size="md"
+              icon={SlidersHorizontal}
+              className="w-full whitespace-nowrap rounded-full ring-1 ring-line hover:bg-surface-soft hover:text-ink sm:w-auto"
+            >
+              <span className="sm:hidden">Réglages</span>
+              <span className="hidden sm:inline">Personnaliser</span>
+            </ButtonLink>
+          </div>
+
+          <div className="mt-4 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-soft px-3 py-1.5 text-[11px] font-extrabold text-emerald-strong ring-1 ring-emerald-strong/20">
               <MaterialIcon name="local_fire_department" size={15} />
               {streak} jour{streak > 1 ? "s" : ""} de série
@@ -626,13 +701,10 @@ export function HomePage() {
               <MaterialIcon name="track_changes" size={15} />
               {overall}% du parcours
             </span>
-            <Link
-              to="/reglages"
-              className="inline-flex items-center gap-1.5 rounded-full bg-surface-soft px-3 py-1.5 text-[11px] font-extrabold text-slate-500 ring-1 ring-line transition hover:text-ink hover:ring-brand-strong/30"
-            >
-              <MaterialIcon name="tune" size={15} />
-              Personnaliser
-            </Link>
+            <span className="hidden items-center gap-1.5 rounded-full bg-surface-soft px-3 py-1.5 text-[11px] font-extrabold text-slate-500 ring-1 ring-line sm:inline-flex">
+              <Sparkles size={13} strokeWidth={2.6} className="text-brand-strong" />
+              Prochaine étape : {nextUnit.title}
+            </span>
           </div>
         </div>
       </header>

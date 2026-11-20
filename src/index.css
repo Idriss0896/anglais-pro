@@ -560,6 +560,14 @@
     animation: wave 1.15s ease-in-out infinite;
   }
 
+  /* Emoji de salutation : petit coucou régulier, jamais envahissant. */
+  .greeting-emoji {
+    display: inline-block;
+    transform-origin: 70% 80%;
+    animation: greeting-wave 2.6s cubic-bezier(0.3, 0.8, 0.3, 1) infinite;
+    filter: drop-shadow(0 6px 10px rgba(23, 22, 43, 0.16));
+  }
+
   .animate-glow {
     animation: glow-pulse 6s ease-in-out infinite;
   }
@@ -815,6 +823,29 @@
   }
   50% {
     transform: scaleY(1);
+  }
+}
+
+@keyframes greeting-wave {
+  0%,
+  62%,
+  100% {
+    transform: rotate(0deg) translateY(0) scale(1);
+  }
+  8% {
+    transform: rotate(17deg) translateY(-2px) scale(1.04);
+  }
+  18% {
+    transform: rotate(-9deg) translateY(0) scale(1);
+  }
+  28% {
+    transform: rotate(15deg) translateY(-2px) scale(1.04);
+  }
+  40% {
+    transform: rotate(-7deg) translateY(0) scale(1);
+  }
+  52% {
+    transform: rotate(9deg) translateY(-1px) scale(1.02);
   }
 }
 

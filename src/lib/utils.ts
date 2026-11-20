@@ -87,6 +87,24 @@ export function greeting(date = new Date()) {
   return "Bonsoir";
 }
 
+export type DayMoment = "day" | "evening" | "night";
+
+/**
+ * Salutation anglaise selon le moment de la journée : « Hi » en journée,
+ * « Good evening » le soir et « Good night » la nuit. Chaque salutation
+ * embarque son emoji pour l'accueil personnalisé.
+ */
+export function englishGreeting(date = new Date()): {
+  text: string;
+  emoji: string;
+  moment: DayMoment;
+} {
+  const hour = date.getHours();
+  if (hour >= 22 || hour < 5) return { text: "Good night", emoji: "🌙", moment: "night" };
+  if (hour >= 18) return { text: "Good evening", emoji: "🌆", moment: "evening" };
+  return { text: "Hi", emoji: "👋", moment: "day" };
+}
+
 export function percent(part: number, total: number) {
   if (!total) return 0;
   return Math.round((part / total) * 100);

@@ -268,10 +268,54 @@
 
   .app-shell-glow {
     /* Violet vif, uni : la couleur de marque du bandeau et du menu latéral. */
-    background: #7428ff;
+    background-color: #7428ff;
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.22),
       0 20px 44px -28px rgba(91, 33, 182, 0.8);
+  }
+
+  /* Navigation latérale : deux groupes lisibles, avec une entrée en cascade
+     assez courte pour donner du rythme sans ralentir l'accès aux cours. */
+  .sidebar-section-title {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 0.88rem;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+  }
+
+  .sidebar-section-icon {
+    display: grid;
+    height: 1.4rem;
+    width: 1.4rem;
+    flex: 0 0 auto;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 0.55rem;
+    color: #fef08a;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .sidebar-nav-group .sidebar-link {
+    animation: sidebar-link-in 0.42s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  .sidebar-nav-group .sidebar-link:nth-child(2) { animation-delay: 35ms; }
+  .sidebar-nav-group .sidebar-link:nth-child(3) { animation-delay: 70ms; }
+  .sidebar-nav-group .sidebar-link:nth-child(4) { animation-delay: 105ms; }
+  .sidebar-nav-group .sidebar-link:nth-child(5) { animation-delay: 140ms; }
+
+  .sidebar-link[aria-current="page"] {
+    box-shadow: 0 12px 28px -18px rgba(30, 16, 60, 0.9);
+  }
+
+  /* Feuille de contenu : les écrans ne reposent plus directement sur le
+     quadrillage décoratif du fond, sans ajouter une carte à chaque bloc. */
+  .page-surface {
+    border: 1px solid color-mix(in oklab, var(--color-line) 82%, transparent);
+    border-radius: 2rem;
+    background-color: color-mix(in oklab, var(--color-surface) 96%, transparent);
+    box-shadow: 0 24px 60px -46px rgba(23, 37, 84, 0.55);
   }
 
   .notebook-canvas {
@@ -653,6 +697,17 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes sidebar-link-in {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 

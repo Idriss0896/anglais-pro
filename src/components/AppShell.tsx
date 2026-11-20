@@ -7,6 +7,7 @@ import {
   Dumbbell,
   Home,
   LayoutGrid,
+  Lightbulb,
   MessageCircle,
   PanelLeftClose,
   PanelLeftOpen,
@@ -46,6 +47,7 @@ const primaryNav: NavItem[] = [
 const trainingNav: NavItem[] = [
   { to: "/practice", label: "Réviser", icon: Dumbbell },
   { to: "/progress", label: "Progression", icon: BarChart3 },
+  { to: "/reglages", label: "Réglages", icon: Settings },
 ];
 
 const footerNav: { title: string; links: { label: string; to: string }[] }[] = [
@@ -126,8 +128,8 @@ function SidebarLink({
       onClick={onSelect}
       className={({ isActive }) =>
         cn(
-          "font-nav group relative flex items-center rounded-2xl text-[13.5px] font-semibold tracking-[-0.01em] transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70",
-          collapsed ? "justify-center px-0 py-2" : "gap-3 px-2.5 py-2",
+          "sidebar-link font-nav group relative flex items-center rounded-2xl text-[13.5px] font-semibold tracking-[-0.01em] transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70",
+          collapsed ? "justify-center px-0 py-2" : "gap-3 px-2.5 py-1.5 lg:py-2",
           isActive
             ? collapsed
               ? "bg-white/15 text-white"
@@ -141,7 +143,7 @@ function SidebarLink({
           <span
             className={cn(
               "grid shrink-0 place-items-center rounded-xl transition-all duration-200",
-              collapsed ? "h-9 w-9" : "h-8 w-8",
+              collapsed ? "h-9 w-9" : "h-7 w-7 lg:h-8 lg:w-8",
               isActive
                 ? collapsed
                   ? "bg-white text-brand-700"
@@ -238,34 +240,34 @@ function Sidebar({
         aria-label="Navigation principale"
       >
         {!collapsed && (
-          <p className="font-nav flex items-center gap-2 px-3 pb-2 text-[9.5px] font-bold uppercase tracking-[0.2em] text-white/55">
-            Apprendre
+          <p className="sidebar-section-title font-nav flex items-center gap-2 px-3 pb-2">
+            <span className="sidebar-section-icon"><Lightbulb size={13} /></span>
+            <span>Apprendre</span>
             <span className="h-px flex-1 bg-white/20" />
           </p>
         )}
-        {primaryNav.map((item) => (
-          <SidebarLink key={item.to} item={item} collapsed={collapsed} onSelect={onClose} />
-        ))}
+        <div className="sidebar-nav-group">
+          {primaryNav.map((item) => (
+            <SidebarLink key={item.to} item={item} collapsed={collapsed} onSelect={onClose} />
+          ))}
+        </div>
 
         {!collapsed && (
-          <p className="font-nav flex items-center gap-2 px-3 pb-2 pt-5 text-[9.5px] font-bold uppercase tracking-[0.2em] text-white/55">
-            Entraînement
+          <p className="sidebar-section-title font-nav flex items-center gap-2 px-3 pb-2 pt-5">
+            <span className="sidebar-section-icon"><Dumbbell size={13} /></span>
+            <span>Entraînement</span>
             <span className="h-px flex-1 bg-white/20" />
           </p>
         )}
         {collapsed && <div className="mx-auto my-2 h-px w-8 bg-white/15" />}
-        {trainingNav.map((item) => (
-          <SidebarLink key={item.to} item={item} collapsed={collapsed} onSelect={onClose} />
-        ))}
+        <div className="sidebar-nav-group">
+          {trainingNav.map((item) => (
+            <SidebarLink key={item.to} item={item} collapsed={collapsed} onSelect={onClose} />
+          ))}
+        </div>
       </nav>
 
-      <div className="relative mt-3 space-y-1">
-        <SidebarLink
-          item={{ to: "/reglages", label: "Réglages", icon: Settings }}
-          collapsed={collapsed}
-          onSelect={onClose}
-        />
-
+      <div className="relative mt-3 hidden space-y-1 lg:block">
         <div className="my-2 h-px bg-white/15" />
 
         <Link
@@ -678,7 +680,7 @@ export function AppShell() {
         <DesktopTopBar scrolled={scrolled} />
         <div
           key={pathname}
-          className="animate-page-in mx-auto w-full max-w-6xl px-4 pb-10 pt-5 sm:px-6 lg:px-9 lg:pb-12 lg:pt-6"
+          className="animate-page-in page-surface mx-auto w-full max-w-6xl px-3 pb-4 pt-3 sm:px-5 sm:pb-6 sm:pt-5 lg:px-7 lg:pb-8 lg:pt-6"
         >
           <GuestBanner />
           <Outlet />

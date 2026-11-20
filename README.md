@@ -115,6 +115,15 @@ npm run build
 npm run preview
 ```
 
+### Vérifier avant un push
+
+```bash
+npm run typecheck
+npm run build
+```
+
+Le build produit `dist/` et vérifie le typage TypeScript avant de générer les fichiers Vite.
+
 ## 📜 Scripts
 
 | Commande | Description |
@@ -208,6 +217,9 @@ interface Unit {
 ## 🎨 Design system
 
 - **Couleurs pleines uniquement** dans l'application : le violet `#4c1d95` structure la barre latérale, la barre supérieure et le pied de page, les cartes et boutons utilisent des teintes franches. Aucun dégradé hors de la page de présentation.
+- **Navigation latérale hiérarchisée** : les grands titres `Apprendre` et `Entraînement` regroupent respectivement les leçons, la grammaire, le vocabulaire, les expressions, la révision, la progression et les réglages. Sur mobile, les deux groupes restent visibles dans le tiroir violet.
+- **Surface de lecture** : les pages de l'application sont posées sur une feuille claire et sobre au-dessus du quadrillage décoratif. Le fond reste vivant sans faire concurrence aux textes, aux leçons ou aux exercices.
+- **Motion design utile** : les liens du menu entrent en cascade, les états actifs sont immédiatement identifiables et toutes les animations respectent `prefers-reduced-motion` ainsi que le réglage « Réduire les animations ».
 - **Clair / sombre** piloté par `data-theme` sur `<html>` et des variables CSS (`--color-surface`, `--color-ink`, `--color-line`, échelles `*-soft` / `*-strong`). La préférence « Système » suit l'appareil, et un script inline applique le thème avant le premier rendu.
 - **Accessibilité** : `data-motion="reduced"` désactive les animations, contrastes renforcés (textes secondaires `--color-faint`), cibles tactiles ≥ 44 px, tiroir mobile refermable avec `Échap`, zones sûres (`safe-area-inset`).
 - Typographies **Bricolage Grotesque** (titres), **Plus Jakarta Sans** (texte) et **Sora** (navigation latérale).

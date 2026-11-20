@@ -11,14 +11,23 @@
   src: url("/fonts/material-symbols-rounded.woff2") format("woff2");
 }
 
+/* Alfa Slab One : slab wood type, auto-hébergée pour un rendu garanti. */
+@font-face {
+  font-family: "Alfa Slab One";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/alfa-slab-one-latin.woff2") format("woff2");
+}
+
 @theme {
   /* Inter : très lisible en petit corps, professionnelle sur toute l'interface.
      Manrope : titres géométriques, plus affirmés, sans excès de style. */
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Helvetica Neue",
     Arial, sans-serif;
   --font-display: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
-  /* Rye (Google Fonts) : bois gravé, réservé au wordmark ANGLO CLUB. */
-  --font-brand: "Rye", "Manrope", Georgia, serif;
+  /* Alfa Slab One (auto-hébergée) : slab wood type, réservée au wordmark ANGLO CLUB. */
+  --font-brand: "Alfa Slab One", "Manrope", Georgia, serif;
   --font-nav: "Inter", ui-sans-serif, system-ui, sans-serif;
 
   --color-brand-50: #f5f3ff;

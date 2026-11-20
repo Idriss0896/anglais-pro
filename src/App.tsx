@@ -179,6 +179,7 @@ export default function App() {
               <Route path="/vocabulary" element={<VocabularyPage />} />
               <Route path="/expressions" element={<ExpressionsPage />} />
               <Route path="/practice" element={<PracticePage />} />
+              <Route path="/exercices" element={<PracticePage />} />
               <Route path="/practice/flashcards" element={<FlashcardsPage />} />
               <Route path="/progress" element={<ProgressPage />} />
               <Route path="/reglages" element={<SettingsPage />} />

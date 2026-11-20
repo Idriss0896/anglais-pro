@@ -190,6 +190,7 @@ anglais-pro/
 | `/vocabulary` | Thèmes de vocabulaire |
 | `/expressions` | Expressions et favoris |
 | `/practice` | Choix du mode de révision |
+| `/exercices` | Exercices guidés par format, avec consignes et corrections |
 | `/practice/session/:mode` | Session d'exercices |
 | `/practice/flashcards` | Flashcards |
 | `/lesson/:unitId` | Leçon (théorie + quiz) |
@@ -217,8 +218,8 @@ interface Unit {
 ## 🎨 Design system
 
 - **Couleurs pleines uniquement** dans l'application : le violet `#4c1d95` structure la barre latérale, la barre supérieure et le pied de page, les cartes et boutons utilisent des teintes franches. Aucun dégradé hors de la page de présentation.
-- **Navigation latérale hiérarchisée** : les grands titres `Apprendre` et `Entraînement` regroupent respectivement les leçons, la grammaire, le vocabulaire, les expressions, la révision, la progression et les réglages. Sur mobile, les deux groupes restent visibles dans le tiroir violet.
-- **Surface de lecture** : les pages de l'application sont posées sur une feuille claire et sobre au-dessus du quadrillage décoratif. Le fond reste vivant sans faire concurrence aux textes, aux leçons ou aux exercices.
+- **Navigation latérale hiérarchisée** : les grands titres `Apprendre` et `Entraînement` regroupent respectivement les leçons, la grammaire, le vocabulaire, les expressions, la révision, les exercices, la progression et les réglages. Sur mobile, les deux groupes restent visibles dans le tiroir violet.
+- **Écriture sur cahier** : les écrans utilisent directement un fond à lignes horizontales et une marge rouge, sans feuille lisse globale. Le contenu reste lisible tout en conservant une personnalité de carnet d'apprentissage.
 - **Motion design utile** : les liens du menu entrent en cascade, les états actifs sont immédiatement identifiables et toutes les animations respectent `prefers-reduced-motion` ainsi que le réglage « Réduire les animations ».
 - **Clair / sombre** piloté par `data-theme` sur `<html>` et des variables CSS (`--color-surface`, `--color-ink`, `--color-line`, échelles `*-soft` / `*-strong`). La préférence « Système » suit l'appareil, et un script inline applique le thème avant le premier rendu.
 - **Accessibilité** : `data-motion="reduced"` désactive les animations, contrastes renforcés (textes secondaires `--color-faint`), cibles tactiles ≥ 44 px, tiroir mobile refermable avec `Échap`, zones sûres (`safe-area-inset`).

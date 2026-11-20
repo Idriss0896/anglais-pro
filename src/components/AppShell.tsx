@@ -8,6 +8,7 @@ import {
   Home,
   LayoutGrid,
   Lightbulb,
+  ListChecks,
   MessageCircle,
   PanelLeftClose,
   PanelLeftOpen,
@@ -46,6 +47,7 @@ const primaryNav: NavItem[] = [
 
 const trainingNav: NavItem[] = [
   { to: "/practice", label: "Réviser", icon: Dumbbell },
+  { to: "/exercices", label: "Exercices", icon: ListChecks },
   { to: "/progress", label: "Progression", icon: BarChart3 },
   { to: "/reglages", label: "Réglages", icon: Settings },
 ];
@@ -198,7 +200,7 @@ function Sidebar({
       aria-hidden={drawerHidden || undefined}
       inert={drawerHidden || undefined}
       className={cn(
-        "fixed inset-y-0 left-0 z-50 flex flex-col overflow-hidden pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-5 shadow-[0_36px_80px_-40px_rgba(30,16,60,0.9)] will-change-transform",
+        "fixed inset-y-0 left-0 z-50 flex flex-col overflow-hidden pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-3 shadow-[0_36px_80px_-40px_rgba(30,16,60,0.9)] will-change-transform lg:pt-5",
         SHELL,
         "transition-[width,padding,transform] duration-300 ease-out lg:translate-x-0 lg:shadow-none",
         collapsed ? "w-[84px] px-2.5" : "w-[272px] px-4",
@@ -236,7 +238,7 @@ function Sidebar({
       </div>
 
       <nav
-        className="no-scrollbar relative mt-7 flex-1 space-y-1 overflow-y-auto overflow-x-hidden"
+        className="no-scrollbar relative mt-4 flex-1 space-y-1 overflow-y-auto overflow-x-hidden lg:mt-7"
         aria-label="Navigation principale"
       >
         {!collapsed && (
@@ -253,7 +255,7 @@ function Sidebar({
         </div>
 
         {!collapsed && (
-          <p className="sidebar-section-title font-nav flex items-center gap-2 px-3 pb-2 pt-5">
+          <p className="sidebar-section-title font-nav flex items-center gap-2 px-3 pb-2 pt-4 lg:pt-5">
             <span className="sidebar-section-icon"><Dumbbell size={13} /></span>
             <span>Entraînement</span>
             <span className="h-px flex-1 bg-white/20" />
@@ -680,7 +682,7 @@ export function AppShell() {
         <DesktopTopBar scrolled={scrolled} />
         <div
           key={pathname}
-          className="animate-page-in page-surface mx-auto w-full max-w-6xl px-3 pb-4 pt-3 sm:px-5 sm:pb-6 sm:pt-5 lg:px-7 lg:pb-8 lg:pt-6"
+          className="animate-page-in mx-auto w-full max-w-6xl px-4 pb-10 pt-5 sm:px-6 lg:px-9 lg:pb-12 lg:pt-6"
         >
           <GuestBanner />
           <Outlet />

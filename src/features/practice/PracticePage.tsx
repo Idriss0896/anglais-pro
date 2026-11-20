@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   ArrowRight,
   Blocks,
@@ -172,6 +172,8 @@ function ModeCard({ mode }: { mode: PracticeMode }) {
 }
 
 export function PracticePage() {
+  const { pathname } = useLocation();
+  const exercisesMode = pathname === "/exercices";
   const xp = useProgressStore((state) => state.xp);
   const lessons = useProgressStore((state) => state.lessons);
   const activity = useProgressStore((state) => state.activity);
@@ -185,10 +187,14 @@ export function PracticePage() {
   return (
     <div className="space-y-6">
       <PageHeader
-        eyebrow="Salle d'entraînement"
-        title="Réviser, encore et encore"
-        description="Des sessions courtes et variées pour ancrer ce que tu apprends. Choisis ton format, on s'occupe du reste."
-        icon={Dumbbell}
+        eyebrow={exercisesMode ? "Exercices guidés" : "Salle d'entraînement"}
+        title={exercisesMode ? "Comprendre, pratiquer, progresser" : "Réviser, encore et encore"}
+        description={
+          exercisesMode
+            ? "Choisis un exercice, lis la consigne, réponds à ton rythme et découvre immédiatement pourquoi ta réponse est juste."
+            : "Des sessions courtes et variées pour ancrer ce que tu apprends. Choisis ton format, on s'occupe du reste."
+        }
+        icon={exercisesMode ? ListChecks : Dumbbell}
         iconTone="bg-brand-500"
         actions={
           <>

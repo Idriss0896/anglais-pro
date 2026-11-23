@@ -486,6 +486,84 @@
   .btn-shine:hover::after {
     transform: translateX(300%) skewX(-18deg);
   }
+
+  /* Motion design commun aux actions : une réponse immédiate au toucher,
+     puis un reflet discret au survol des pointeurs précis. */
+  .motion-button {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    will-change: transform;
+  }
+
+  .motion-button::after {
+    content: "";
+    position: absolute;
+    inset: -30% auto -30% -70%;
+    width: 38%;
+    transform: skewX(-18deg);
+    background: rgba(255, 255, 255, 0.18);
+    pointer-events: none;
+    transition: transform 0.62s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 0;
+  }
+
+  .motion-button:hover {
+    transform: translateY(-2px);
+  }
+
+  .motion-button:hover::after {
+    transform: translateX(360%) skewX(-18deg);
+  }
+
+  .motion-button:active {
+    transform: translateY(0) scale(0.975);
+    transition-duration: 90ms;
+  }
+
+  .motion-button > svg:last-child {
+    transition: transform 0.24s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .motion-button:hover > svg:last-child {
+    transform: translateX(3px);
+  }
+
+  .motion-button > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Ligne lumineuse de changement d'écran : elle donne un repère sans
+     ajouter de loader ni bloquer la lecture du contenu. */
+  .route-stage {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .route-stage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 9%;
+    width: 34%;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, transparent, #a78bfa 42%, #fbbf24 75%, transparent);
+    opacity: 0;
+    pointer-events: none;
+    animation: route-beam 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    z-index: 2;
+  }
+
+  .page-header-motion > div > div:first-child > div:first-child {
+    animation: header-icon-in 0.62s cubic-bezier(0.2, 0.9, 0.3, 1.15) 90ms both;
+  }
+
+  /* À chaque ouverture du tiroir, les liens reprennent leur rythme d'entrée. */
+  aside[data-open="true"] .sidebar-nav-group .sidebar-link {
+    animation: sidebar-link-in 0.42s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
 }
 
 @layer utilities {
@@ -935,6 +1013,31 @@
   50% {
     opacity: 1;
     transform: translateX(-50%) scaleX(1);
+  }
+}
+
+@keyframes route-beam {
+  0% {
+    opacity: 0;
+    transform: translateX(-24%) scaleX(0.35);
+  }
+  18% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(190%) scaleX(1.1);
+  }
+}
+
+@keyframes header-icon-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.82) rotate(-8deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
   }
 }
 

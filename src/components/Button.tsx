@@ -58,7 +58,7 @@ export function Button({
   return (
     <button
       className={cn(
-        "inline-flex select-none items-center justify-center font-extrabold transition-all duration-200 focus-visible:ring-4 focus-visible:ring-brand-strong/20 disabled:pointer-events-none disabled:opacity-45",
+        "motion-button inline-flex select-none items-center justify-center font-extrabold transition-all duration-200 focus-visible:ring-4 focus-visible:ring-brand-strong/20 disabled:pointer-events-none disabled:opacity-45",
         variants[variant],
         sizes[size],
         full && "w-full",
@@ -104,7 +104,7 @@ export function ButtonLink({
   return (
     <Link
       className={cn(
-        "inline-flex select-none items-center justify-center font-extrabold transition-all duration-200 focus-visible:ring-4 focus-visible:ring-brand-strong/20",
+        "motion-button inline-flex select-none items-center justify-center font-extrabold transition-all duration-200 focus-visible:ring-4 focus-visible:ring-brand-strong/20",
         variants[variant],
         sizes[size],
         full && "w-full",

@@ -199,6 +199,8 @@ function Sidebar({
       aria-label="Menu latéral"
       aria-hidden={drawerHidden || undefined}
       inert={drawerHidden || undefined}
+      data-open={open || undefined}
+      data-collapsed={collapsed || undefined}
       className={cn(
         "fixed inset-y-0 left-0 z-50 flex flex-col overflow-hidden pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-3 shadow-[0_36px_80px_-40px_rgba(30,16,60,0.9)] will-change-transform lg:pt-5",
         SHELL,
@@ -682,7 +684,7 @@ export function AppShell() {
         <DesktopTopBar scrolled={scrolled} />
         <div
           key={pathname}
-          className="animate-page-in mx-auto w-full max-w-6xl px-4 pb-10 pt-5 sm:px-6 lg:px-9 lg:pb-12 lg:pt-6"
+          className="route-stage animate-page-in mx-auto w-full max-w-6xl px-4 pb-10 pt-5 sm:px-6 lg:px-9 lg:pb-12 lg:pt-6"
         >
           <GuestBanner />
           <Outlet />

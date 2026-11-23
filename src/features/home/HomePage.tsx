@@ -624,8 +624,8 @@ export function HomePage() {
         : "Cinq minutes suffisent : une leçon courte, quelques exercices, et tu repars avec une nouvelle phrase d'anglais.";
 
   return (
-    <div className="space-y-6 lg:space-y-8">
-      <header className="motion-surface animate-fade-up relative overflow-hidden rounded-[30px] px-5 py-6 ring-1 ring-line sm:px-7 sm:py-8">
+    <div className="home-motion-page space-y-6 lg:space-y-8">
+      <header className="home-motion-hero motion-surface animate-fade-up relative overflow-hidden rounded-[30px] px-5 py-6 ring-1 ring-line sm:px-7 sm:py-8">
         <div className="pattern-grid pointer-events-none absolute inset-0 opacity-60" />
         <div className="animate-glow pointer-events-none absolute -right-24 -top-28 h-64 w-64 rounded-full bg-brand-soft blur-2xl" />
         <span
@@ -635,7 +635,7 @@ export function HomePage() {
           Speak
         </span>
 
-        <div className="relative">
+        <div className="home-motion-hero__content relative">
           <span className="font-nav inline-flex items-center gap-1.5 rounded-full bg-brand-700 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-white shadow-[0_12px_26px_-18px_rgba(46,16,101,0.95)]">
             <MaterialIcon name="event_available" size={14} />
             {formatLongDate(now)}
@@ -709,7 +709,7 @@ export function HomePage() {
         </div>
       </header>
 
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(290px,0.8fr)] lg:items-start">
+      <div className="home-motion-grid grid gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(290px,0.8fr)] lg:items-start">
         <div className="animate-fade-up space-y-6" style={{ animationDelay: "70ms" }}>
           <NextLessonCard />
           <CoachCard />

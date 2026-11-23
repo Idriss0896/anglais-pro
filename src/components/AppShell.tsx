@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, type MouseEvent, type PointerEvent } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import {
   BarChart3,
@@ -112,6 +112,79 @@ function ScrollToTop() {
   return null;
 }
 
+/** Permet de parcourir le menu avec un geste de glissement, comme une poignée. */
+function useDragScroll<T extends HTMLElement>() {
+  const ref = useRef<T | null>(null);
+  const drag = useRef({
+    active: false,
+    pointerId: -1,
+    startY: 0,
+    startScrollTop: 0,
+    moved: false,
+  });
+  const [dragging, setDragging] = useState(false);
+
+  const onPointerDown = (event: PointerEvent<T>) => {
+    // Sur mobile, on laisse le navigateur gérer le scroll tactile natif.
+    if (event.pointerType === "touch") return;
+    if (event.pointerType === "mouse" && event.button !== 0) return;
+    const element = ref.current;
+    if (!element) return;
+
+    drag.current = {
+      active: true,
+      pointerId: event.pointerId,
+      startY: event.clientY,
+      startScrollTop: element.scrollTop,
+      moved: false,
+    };
+    element.setPointerCapture?.(event.pointerId);
+    setDragging(true);
+  };
+
+  const onPointerMove = (event: PointerEvent<T>) => {
+    const element = ref.current;
+    const state = drag.current;
+    if (!element || !state.active || state.pointerId !== event.pointerId) return;
+
+    const delta = event.clientY - state.startY;
+    if (Math.abs(delta) > 4) state.moved = true;
+    if (!state.moved) return;
+
+    element.scrollTop = state.startScrollTop - delta;
+    event.preventDefault();
+  };
+
+  const endDrag = (event: PointerEvent<T>) => {
+    const element = ref.current;
+    const state = drag.current;
+    if (!element || !state.active || state.pointerId !== event.pointerId) return;
+
+    if (element.hasPointerCapture?.(event.pointerId)) {
+      element.releasePointerCapture(event.pointerId);
+    }
+    state.active = false;
+    setDragging(false);
+  };
+
+  const onClickCapture = (event: MouseEvent<T>) => {
+    if (!drag.current.moved) return;
+    event.preventDefault();
+    event.stopPropagation();
+    drag.current.moved = false;
+  };
+
+  return {
+    ref,
+    dragging,
+    onPointerDown,
+    onPointerMove,
+    onPointerUp: endDrag,
+    onPointerCancel: endDrag,
+    onClickCapture,
+  };
+}
+
 function SidebarLink({
   item,
   collapsed,
@@ -192,6 +265,7 @@ function Sidebar({
   const xp = useProgressStore((state) => state.xp);
   const streak = useProgressStore((state) => state.streak);
   const rank = getRank(xp);
+  const navDrag = useDragScroll<HTMLElement>();
 
   return (
     <aside
@@ -205,7 +279,7 @@ function Sidebar({
         "fixed inset-y-0 left-0 z-50 flex flex-col overflow-hidden pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-3 shadow-[0_36px_80px_-40px_rgba(30,16,60,0.9)] will-change-transform lg:pt-5",
         SHELL,
         "transition-[width,padding,transform] duration-300 ease-out lg:translate-x-0 lg:shadow-none",
-        collapsed ? "w-[84px] px-2.5" : "w-[272px] px-4",
+        collapsed ? "w-[84px] px-2.5" : "w-[292px] px-4 lg:w-[272px]",
         open ? "translate-x-0" : "-translate-x-full",
       )}
     >
@@ -240,8 +314,18 @@ function Sidebar({
       </div>
 
       <nav
-        className="no-scrollbar relative mt-4 flex-1 space-y-1 overflow-y-auto overflow-x-hidden lg:mt-7"
-        aria-label="Navigation principale"
+        ref={navDrag.ref}
+        onPointerDown={navDrag.onPointerDown}
+        onPointerMove={navDrag.onPointerMove}
+        onPointerUp={navDrag.onPointerUp}
+        onPointerCancel={navDrag.onPointerCancel}
+        onClickCapture={navDrag.onClickCapture}
+        data-dragging={navDrag.dragging || undefined}
+        className={cn(
+          "sidebar-drag-scroll no-scrollbar relative mt-4 flex-1 space-y-1 overflow-y-auto overflow-x-hidden lg:mt-7",
+          navDrag.dragging && "is-dragging",
+        )}
+        aria-label="Navigation principale — glisse pour parcourir"
       >
         {!collapsed && (
           <p className="sidebar-section-title font-nav flex items-center gap-2 px-3 pb-2">

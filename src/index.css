@@ -309,6 +309,66 @@
     box-shadow: 0 12px 28px -18px rgba(30, 16, 60, 0.9);
   }
 
+  .sidebar-drag-scroll {
+    cursor: grab;
+    touch-action: pan-y;
+    overscroll-behavior: contain;
+    scroll-behavior: auto;
+  }
+
+  @media (pointer: fine) {
+    .sidebar-drag-scroll {
+      touch-action: none;
+    }
+  }
+
+  .sidebar-drag-scroll.is-dragging {
+    cursor: grabbing;
+    user-select: none;
+  }
+
+  .sidebar-link {
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  .sidebar-link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, transparent 18%, rgba(124, 45, 255, 0.09) 48%, transparent 78%);
+    transform: translateX(-125%);
+    pointer-events: none;
+  }
+
+  .sidebar-link > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .sidebar-link[aria-current="page"]::before {
+    animation: sidebar-active-sheen 3.2s ease-in-out infinite;
+  }
+
+  .sidebar-link[aria-current="page"] > span:first-child {
+    box-shadow: 0 8px 18px -10px rgba(91, 33, 182, 0.9);
+  }
+
+  .sidebar-link[aria-current="page"] > span:first-child svg {
+    animation: sidebar-icon-breathe 2.8s ease-in-out infinite;
+  }
+
+  @media (max-width: 1023px) {
+    .sidebar-section-title {
+      font-size: 0.95rem;
+    }
+
+    .sidebar-link {
+      min-height: 46px;
+      font-size: 0.90625rem;
+    }
+  }
+
   .notebook-canvas {
     --notebook-paper: #f5f6ff;
     --notebook-grid: rgba(102, 119, 181, 0.24);
@@ -532,6 +592,17 @@
   .motion-button > * {
     position: relative;
     z-index: 1;
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    .motion-button::after {
+      animation: touch-button-sheen 4.8s ease-in-out infinite;
+    }
+
+    .card-hover:active,
+    .lift:active {
+      transform: translateY(-2px) scale(0.992);
+    }
   }
 
   /* Ligne lumineuse de changement d'écran : elle donne un repère sans
@@ -1057,6 +1128,38 @@
   to {
     opacity: 1;
     transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes sidebar-active-sheen {
+  0%,
+  35% {
+    transform: translateX(-125%);
+  }
+  65%,
+  100% {
+    transform: translateX(125%);
+  }
+}
+
+@keyframes sidebar-icon-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12) rotate(-4deg);
+  }
+}
+
+@keyframes touch-button-sheen {
+  0%,
+  52% {
+    transform: translateX(-260%) skewX(-18deg);
+  }
+  72%,
+  100% {
+    transform: translateX(360%) skewX(-18deg);
   }
 }
 

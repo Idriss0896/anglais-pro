@@ -1,4 +1,6 @@
-const CACHE_NAME = "anglo-club-v2";
+// Incrémente ce nom à chaque évolution visuelle majeure pour éviter de servir
+// un ancien bundle CSS/JS aux utilisateurs déjà installés.
+const CACHE_NAME = "anglo-club-v3";
 const APP_SHELL = [
   "./",
   "./index.html",

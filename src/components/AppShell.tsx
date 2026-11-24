@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type MouseEvent, type PointerEvent } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type PointerEvent } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import {
   BarChart3,
@@ -112,6 +112,85 @@ function ScrollToTop() {
   return null;
 }
 
+/**
+ * Sur mobile, la page ne doit jamais glisser latéralement ni se laisser
+ * pincer. On combine le verrou CSS (`overflow-x: clip`, `touch-action`) avec
+ * ce garde-fou : toute dérive horizontale est ramenée à zéro, et un geste
+ * franchement horizontal est bloqué hors des listes qui défilent d'elles-mêmes.
+ */
+function useHorizontalLock() {
+  useEffect(() => {
+    let startX = 0;
+    let startY = 0;
+    let tracking = false;
+    let allowPanX = false;
+
+    const reset = () => {
+      if (window.scrollX !== 0) {
+        window.scrollTo({ left: 0, top: window.scrollY, behavior: "instant" as ScrollBehavior });
+      }
+    };
+
+    const onTouchStart = (event: TouchEvent) => {
+      allowPanX = Boolean(
+        (event.target as Element | null)?.closest(
+          '[data-pan-x], .overflow-x-auto, .no-scrollbar-x',
+        ),
+      );
+      if (event.touches.length !== 1) {
+        tracking = false;
+        return;
+      }
+      startX = event.touches[0].clientX;
+      startY = event.touches[0].clientY;
+      tracking = true;
+    };
+
+    const onTouchMove = (event: TouchEvent) => {
+      // Deux doigts ou plus : on refuse le zoom par pincement.
+      if (event.touches.length > 1) {
+        if (event.cancelable) event.preventDefault();
+        return;
+      }
+      if (!tracking || allowPanX) return;
+      const dx = event.touches[0].clientX - startX;
+      const dy = event.touches[0].clientY - startY;
+      if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy) && event.cancelable) {
+        event.preventDefault();
+      }
+    };
+
+    const onTouchEnd = () => {
+      tracking = false;
+      allowPanX = false;
+      reset();
+    };
+
+    // Safari iOS : les événements « gesture » sont la porte d'entrée du zoom.
+    const blockGesture = (event: Event) => event.preventDefault();
+
+    window.addEventListener("scroll", reset, { passive: true });
+    document.addEventListener("touchstart", onTouchStart, { passive: true });
+    document.addEventListener("touchmove", onTouchMove, { passive: false });
+    document.addEventListener("touchend", onTouchEnd, { passive: true });
+    document.addEventListener("touchcancel", onTouchEnd, { passive: true });
+    document.addEventListener("gesturestart", blockGesture, { passive: false });
+    document.addEventListener("gesturechange", blockGesture, { passive: false });
+
+    reset();
+
+    return () => {
+      window.removeEventListener("scroll", reset);
+      document.removeEventListener("touchstart", onTouchStart);
+      document.removeEventListener("touchmove", onTouchMove);
+      document.removeEventListener("touchend", onTouchEnd);
+      document.removeEventListener("touchcancel", onTouchEnd);
+      document.removeEventListener("gesturestart", blockGesture);
+      document.removeEventListener("gesturechange", blockGesture);
+    };
+  }, []);
+}
+
 /** Permet de parcourir le menu avec un geste de glissement, comme une poignée. */
 function useDragScroll<T extends HTMLElement>() {
   const ref = useRef<T | null>(null);
@@ -120,7 +199,6 @@ function useDragScroll<T extends HTMLElement>() {
     pointerId: -1,
     startY: 0,
     startScrollTop: 0,
-    moved: false,
   });
   const [dragging, setDragging] = useState(false);
 
@@ -136,10 +214,7 @@ function useDragScroll<T extends HTMLElement>() {
       pointerId: event.pointerId,
       startY: event.clientY,
       startScrollTop: element.scrollTop,
-      moved: false,
     };
-    element.setPointerCapture?.(event.pointerId);
-    setDragging(true);
   };
 
   const onPointerMove = (event: PointerEvent<T>) => {
@@ -148,9 +223,12 @@ function useDragScroll<T extends HTMLElement>() {
     if (!element || !state.active || state.pointerId !== event.pointerId) return;
 
     const delta = event.clientY - state.startY;
-    if (Math.abs(delta) > 4) state.moved = true;
-    if (!state.moved) return;
+    if (Math.abs(delta) <= 4) return;
 
+    if (!element.hasPointerCapture?.(event.pointerId)) {
+      element.setPointerCapture?.(event.pointerId);
+    }
+    setDragging(true);
     element.scrollTop = state.startScrollTop - delta;
     event.preventDefault();
   };
@@ -167,13 +245,6 @@ function useDragScroll<T extends HTMLElement>() {
     setDragging(false);
   };
 
-  const onClickCapture = (event: MouseEvent<T>) => {
-    if (!drag.current.moved) return;
-    event.preventDefault();
-    event.stopPropagation();
-    drag.current.moved = false;
-  };
-
   return {
     ref,
     dragging,
@@ -181,17 +252,19 @@ function useDragScroll<T extends HTMLElement>() {
     onPointerMove,
     onPointerUp: endDrag,
     onPointerCancel: endDrag,
-    onClickCapture,
   };
 }
 
 function SidebarLink({
   item,
   collapsed,
+  step,
   onSelect,
 }: {
   item: NavItem;
   collapsed: boolean;
+  /** Position dans le menu : sert au décalage de l'animation mobile. */
+  step: number;
   onSelect?: () => void;
 }) {
   return (
@@ -201,9 +274,10 @@ function SidebarLink({
       title={collapsed ? item.label : undefined}
       aria-label={item.label}
       onClick={onSelect}
+      style={{ "--nav-step": Math.min(step, 5) } as CSSProperties}
       className={({ isActive }) =>
         cn(
-          "sidebar-link font-nav group relative flex items-center rounded-2xl text-[13.5px] font-semibold tracking-[-0.01em] transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70",
+          "sidebar-link font-nav group relative flex items-center rounded-2xl text-base font-semibold tracking-[-0.01em] transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 lg:text-[13.5px]",
           collapsed ? "justify-center px-0 py-2" : "gap-3 px-2.5 py-1.5 lg:py-2",
           isActive
             ? collapsed
@@ -217,8 +291,8 @@ function SidebarLink({
         <>
           <span
             className={cn(
-              "grid shrink-0 place-items-center rounded-xl transition-all duration-200",
-              collapsed ? "h-9 w-9" : "h-7 w-7 lg:h-8 lg:w-8",
+              "sidebar-icon-tile grid shrink-0 place-items-center rounded-2xl lg:rounded-xl",
+              collapsed ? "h-9 w-9" : "h-10 w-10 lg:h-8 lg:w-8",
               isActive
                 ? collapsed
                   ? "bg-white text-brand-700"
@@ -226,13 +300,13 @@ function SidebarLink({
                 : "bg-white/10 text-white/85 group-hover:scale-105 group-hover:bg-white/20 group-hover:text-white",
             )}
           >
-            <item.icon size={17} strokeWidth={isActive ? 2.6 : 2.1} />
+            <item.icon size={19} strokeWidth={isActive ? 2.6 : 2.1} />
           </span>
           {!collapsed && (
             <>
               <span className="min-w-0 flex-1 truncate">{item.label}</span>
               <ChevronRight
-                size={14}
+                size={16}
                 className={cn(
                   "shrink-0 transition-all duration-200",
                   isActive
@@ -276,9 +350,9 @@ function Sidebar({
       data-open={open || undefined}
       data-collapsed={collapsed || undefined}
       className={cn(
-        "fixed inset-y-0 left-0 z-50 flex flex-col overflow-hidden pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-3 shadow-[0_36px_80px_-40px_rgba(30,16,60,0.9)] will-change-transform lg:pt-5",
+        "fixed inset-y-0 left-0 z-50 flex flex-col overflow-hidden pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-3 shadow-[0_36px_80px_-40px_rgba(30,16,60,0.9)] will-change-[transform,translate] lg:pt-5",
         SHELL,
-        "transition-[width,padding,transform] duration-300 ease-out lg:translate-x-0 lg:shadow-none",
+        "transition-[width,padding,transform,translate] duration-[420ms] ease-[cubic-bezier(0.32,0.72,0,1)] lg:translate-x-0 lg:shadow-none",
         collapsed ? "w-[84px] px-2.5" : "w-[292px] px-4 lg:w-[272px]",
         open ? "translate-x-0" : "-translate-x-full",
       )}
@@ -306,9 +380,9 @@ function Sidebar({
             onClick={onClose}
             aria-label="Fermer le menu"
             title="Fermer le menu"
-            className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-white/10 text-white ring-1 ring-white/20 transition-colors hover:bg-white/20 hover:text-white"
+            className="sidebar-close-button grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white text-brand-700 shadow-[0_10px_22px_-12px_rgba(0,0,0,0.6)] ring-1 ring-white/70 transition-[transform,background-color] duration-300 hover:rotate-90 hover:bg-amber-50 active:scale-95"
           >
-            <X size={19} />
+            <X size={21} strokeWidth={2.6} />
           </button>
         )}
       </div>
@@ -319,7 +393,6 @@ function Sidebar({
         onPointerMove={navDrag.onPointerMove}
         onPointerUp={navDrag.onPointerUp}
         onPointerCancel={navDrag.onPointerCancel}
-        onClickCapture={navDrag.onClickCapture}
         data-dragging={navDrag.dragging || undefined}
         className={cn(
           "sidebar-drag-scroll no-scrollbar relative mt-4 flex-1 space-y-1 overflow-y-auto overflow-x-hidden lg:mt-7",
@@ -335,8 +408,14 @@ function Sidebar({
           </p>
         )}
         <div className="sidebar-nav-group">
-          {primaryNav.map((item) => (
-            <SidebarLink key={item.to} item={item} collapsed={collapsed} onSelect={onClose} />
+          {primaryNav.map((item, index) => (
+            <SidebarLink
+              key={item.to}
+              item={item}
+              collapsed={collapsed}
+              step={index}
+              onSelect={onClose}
+            />
           ))}
         </div>
 
@@ -349,13 +428,19 @@ function Sidebar({
         )}
         {collapsed && <div className="mx-auto my-2 h-px w-8 bg-white/15" />}
         <div className="sidebar-nav-group">
-          {trainingNav.map((item) => (
-            <SidebarLink key={item.to} item={item} collapsed={collapsed} onSelect={onClose} />
+          {trainingNav.map((item, index) => (
+            <SidebarLink
+              key={item.to}
+              item={item}
+              collapsed={collapsed}
+              step={index}
+              onSelect={onClose}
+            />
           ))}
         </div>
       </nav>
 
-      <div className="relative mt-3 hidden space-y-1 lg:block">
+      <div className="relative mt-3 space-y-1">
         <div className="my-2 h-px bg-white/15" />
 
         <Link
@@ -371,10 +456,10 @@ function Sidebar({
           {!collapsed && (
             <>
               <span className="min-w-0 flex-1">
-                <span className="font-nav block truncate text-[13px] font-semibold text-white">
+                <span className="font-nav block truncate text-[14px] font-semibold text-white lg:text-[13px]">
                   {user ? user.name || user.email.split("@")[0] : "Mon compte"}
                 </span>
-                <span className="font-nav block truncate text-[11px] font-normal text-white/60">
+                <span className="font-nav block truncate text-[12px] font-normal text-white/70 lg:text-[11px] lg:text-white/60">
                   {user ? `${rank.label} · ${streak} j de série` : "Se connecter ou s'inscrire"}
                 </span>
               </span>
@@ -484,16 +569,21 @@ function MobileHeader({ onOpenMenu }: { onOpenMenu: () => void }) {
           SHELL,
         )}
       >
-        <div className="flex h-11 items-center gap-2">
+        <div className="flex h-12 items-center gap-2">
           <button
             type="button"
             onClick={onOpenMenu}
             aria-label="Ouvrir le menu"
             title="Ouvrir le menu"
             aria-controls="app-sidebar"
-            className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-white/10 text-indigo-100 ring-1 ring-white/15 transition-colors hover:bg-white/20 hover:text-white"
+            className="menu-trigger grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white text-brand-700 ring-1 ring-white/60"
           >
-            <PanelLeftOpen size={19} />
+            <span className="menu-bars" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </span>
+            <span className="menu-trigger__dot" aria-hidden="true" />
           </button>
 
           <Logo to="/accueil" onDark variant="mobile" className="min-w-0" />
@@ -683,6 +773,7 @@ export function AppShell() {
   const { pathname } = useLocation();
   const scrolled = useScrolled();
   const isDesktop = useIsDesktop();
+  useHorizontalLock();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [collapsed, setCollapsed] = useState<boolean>(() => {
     if (typeof window === "undefined") return false;
@@ -738,14 +829,14 @@ export function AppShell() {
   }, []);
 
   return (
-    <div className="min-h-dvh">
+    <div className="min-h-dvh overflow-x-clip">
       <ScrollToTop />
 
       <div
         aria-hidden="true"
         onClick={() => setMobileOpen(false)}
         className={cn(
-          "fixed inset-0 z-40 bg-[#1e1060]/60 backdrop-blur-[2px] transition-opacity duration-300 lg:hidden",
+          "fixed inset-0 z-40 bg-[#1e1060]/55 backdrop-blur-[3px] transition-opacity duration-300 ease-out lg:hidden",
           mobileOpen ? "opacity-100" : "pointer-events-none opacity-0",
         )}
       />
@@ -771,7 +862,9 @@ export function AppShell() {
           className="route-stage animate-page-in mx-auto w-full max-w-6xl px-4 pb-10 pt-5 sm:px-6 lg:px-9 lg:pb-12 lg:pt-6"
         >
           <GuestBanner />
-          <Outlet />
+          <div className="page-motion-root">
+            <Outlet />
+          </div>
         </div>
       </main>
       <SiteFooter collapsed={collapsed} />
@@ -780,8 +873,9 @@ export function AppShell() {
 }
 
 export function FocusShell({ children }: { children: React.ReactNode }) {
+  useHorizontalLock();
   return (
-    <div className="mx-auto min-h-dvh w-full max-w-4xl px-4 pb-10 pt-4 sm:px-6 sm:pt-6">
+    <div className="animate-page-in mx-auto min-h-dvh w-full max-w-4xl px-4 pb-10 pt-4 sm:px-6 sm:pt-6">
       {children}
     </div>
   );

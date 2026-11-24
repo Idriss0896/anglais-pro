@@ -188,8 +188,25 @@
     --color-slate-950: #fbfcff;
   }
 
+  /* Mobile : l'écran reste immobile. Pas de dérive horizontale, pas de
+     rebond latéral et pas de zoom par pincement — l'app se comporte comme
+     une application native. */
+  html {
+    width: 100%;
+    overflow-x: clip;
+    overscroll-behavior-x: none;
+    touch-action: pan-y;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
   body {
+    width: 100%;
+    max-width: 100%;
     min-height: 100dvh;
+    overflow-x: clip;
+    overscroll-behavior: none;
+    touch-action: pan-y;
     background-color: var(--color-surface-soft);
     color: var(--color-ink);
     font-family: var(--font-sans);
@@ -199,7 +216,19 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    overscroll-behavior-y: none;
+  }
+
+  @supports not (overflow: clip) {
+    html,
+    body {
+      overflow-x: hidden;
+    }
+  }
+
+  #root {
+    width: 100%;
+    min-width: 0;
+    overflow-x: clip;
   }
 
   /* Évite le zoom accidentel sur les contrôles tactiles iPhone. */
@@ -208,6 +237,24 @@
   select,
   button {
     font-size: max(16px, 1em);
+  }
+
+  button,
+  a,
+  [role="button"] {
+    touch-action: manipulation;
+  }
+
+  button,
+  [role="button"] {
+    transition-property: transform, box-shadow, background-color, border-color, color, opacity;
+    transition-duration: 180ms;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  button:active:not(:disabled),
+  [role="button"]:active {
+    transform: scale(0.975);
   }
 
   :focus-visible {
@@ -274,6 +321,102 @@
       0 20px 44px -28px rgba(91, 33, 182, 0.8);
   }
 
+  #app-sidebar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 12% 8%, rgba(255, 255, 255, 0.24), transparent 24%),
+      linear-gradient(120deg, transparent 35%, rgba(255, 255, 255, 0.1) 52%, transparent 70%);
+    opacity: 0.42;
+    transform: translateX(-18%);
+    transition: opacity 0.45s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #app-sidebar[data-open]::before {
+    opacity: 0.8;
+    transform: translateX(0);
+  }
+
+  #app-sidebar > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Bouton d'ouverture du tiroir mobile : pastille claire, barres animées. */
+  .menu-trigger {
+    position: relative;
+    isolation: isolate;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.95),
+      inset 0 -1px 0 rgba(76, 29, 149, 0.08),
+      0 12px 24px -14px rgba(23, 8, 55, 0.9);
+  }
+
+  .menu-bars {
+    display: flex;
+    width: 19px;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .menu-bars span {
+    display: block;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transition:
+      width 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .menu-bars span:nth-child(2) {
+    width: 13px;
+  }
+
+  .menu-trigger:hover .menu-bars span:nth-child(2),
+  .menu-trigger:focus-visible .menu-bars span:nth-child(2) {
+    width: 19px;
+  }
+
+  .menu-trigger:hover .menu-bars span:first-child {
+    transform: translateX(1.5px);
+  }
+
+  .menu-trigger:hover .menu-bars span:last-child {
+    transform: translateX(-1.5px);
+  }
+
+  .menu-trigger__dot {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    height: 5px;
+    width: 5px;
+    border-radius: 999px;
+    background: #fbbf24;
+    box-shadow: 0 0 0 2px #fff;
+  }
+
+  /* Tuiles d'icônes du menu : relief doux et réaction au survol. */
+  .sidebar-icon-tile {
+    transition:
+      transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 0.25s ease,
+      box-shadow 0.25s ease,
+      color 0.25s ease;
+  }
+
+  .sidebar-link:hover .sidebar-icon-tile {
+    transform: translateY(-1px) scale(1.07) rotate(-3deg);
+  }
+
+  .sidebar-link:active .sidebar-icon-tile {
+    transform: scale(0.94);
+  }
+
   /* Navigation latérale : deux groupes lisibles, avec une entrée en cascade
      assez courte pour donner du rythme sans ralentir l'accès aux cours. */
   .sidebar-section-title {
@@ -296,14 +439,17 @@
     background: rgba(255, 255, 255, 0.1);
   }
 
-  .sidebar-nav-group .sidebar-link {
-    animation: sidebar-link-in 0.42s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  }
+  /* Entrée en cascade du menu sur ordinateur (au chargement de la page). */
+  @media (min-width: 1024px) {
+    .sidebar-nav-group .sidebar-link {
+      animation: sidebar-link-in 0.42s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    }
 
-  .sidebar-nav-group .sidebar-link:nth-child(2) { animation-delay: 35ms; }
-  .sidebar-nav-group .sidebar-link:nth-child(3) { animation-delay: 70ms; }
-  .sidebar-nav-group .sidebar-link:nth-child(4) { animation-delay: 105ms; }
-  .sidebar-nav-group .sidebar-link:nth-child(5) { animation-delay: 140ms; }
+    .sidebar-nav-group .sidebar-link:nth-child(2) { animation-delay: 35ms; }
+    .sidebar-nav-group .sidebar-link:nth-child(3) { animation-delay: 70ms; }
+    .sidebar-nav-group .sidebar-link:nth-child(4) { animation-delay: 105ms; }
+    .sidebar-nav-group .sidebar-link:nth-child(5) { animation-delay: 140ms; }
+  }
 
   .sidebar-link[aria-current="page"] {
     box-shadow: 0 12px 28px -18px rgba(30, 16, 60, 0.9);
@@ -325,6 +471,19 @@
   .sidebar-drag-scroll.is-dragging {
     cursor: grabbing;
     user-select: none;
+  }
+
+  .sidebar-drag-scroll::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .sidebar-drag-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.34);
+    border-radius: 999px;
+  }
+
+  .sidebar-drag-scroll:focus-visible {
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.4);
   }
 
   .sidebar-link {
@@ -360,12 +519,70 @@
 
   @media (max-width: 1023px) {
     .sidebar-section-title {
-      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 1rem;
+      letter-spacing: -0.012em;
+    }
+
+    .sidebar-section-icon {
+      height: 1.6rem;
+      width: 1.6rem;
+      border-radius: 0.6rem;
+    }
+
+    .sidebar-section-icon svg {
+      width: 15px;
+      height: 15px;
     }
 
     .sidebar-link {
-      min-height: 46px;
-      font-size: 0.90625rem;
+      min-height: 3.4rem;
+      font-size: 1rem;
+      font-weight: 650;
+    }
+
+    /* Tuiles d'icônes plus généreuses : le menu se lit d'un coup d'œil. */
+    .sidebar-link > span:first-child {
+      height: 2.5rem;
+      width: 2.5rem;
+      border-radius: 0.9rem;
+    }
+
+    .sidebar-link > span:first-child svg {
+      width: 21px;
+      height: 21px;
+    }
+
+    .sidebar-link > svg:last-child {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Ouverture et fermeture animées : chaque lien glisse depuis la gauche
+       avec un léger décalage, puis repart de la même façon à la fermeture. */
+    #app-sidebar .sidebar-link {
+      opacity: 0;
+      transform: translateX(-18px);
+      transition:
+        opacity 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+        background-color 0.2s ease,
+        color 0.2s ease;
+      transition-delay: calc(var(--nav-step, 0) * 32ms);
+    }
+
+    #app-sidebar[data-open] .sidebar-link {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .sidebar-close-button {
+      animation: sidebar-close-in 0.52s cubic-bezier(0.18, 0.9, 0.22, 1) both;
+    }
+
+    #app-sidebar:not([data-open]) .sidebar-close-button {
+      opacity: 0;
+      transform: rotate(-90deg) scale(0.72);
     }
   }
 
@@ -600,9 +817,23 @@
     }
 
     .card-hover:active,
-    .lift:active {
+    .lift:active,
+    .card:active,
+    .card-blue:active,
+    .card-blue-deep:active {
       transform: translateY(-2px) scale(0.992);
     }
+  }
+
+  /* Toutes les pages passent par le même rythme : arrivée douce du contenu,
+     puis les composants internes prennent le relais via .stagger. */
+  .page-motion-root {
+    min-width: 0;
+    animation: page-route-in 0.62s cubic-bezier(0.18, 0.9, 0.22, 1) both;
+  }
+
+  .page-motion-root > * {
+    min-width: 0;
   }
 
   /* Ligne lumineuse de changement d'écran : elle donne un repère sans
@@ -1142,6 +1373,17 @@
   }
 }
 
+@keyframes sidebar-close-in {
+  from {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.72);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
 @keyframes sidebar-icon-breathe {
   0%,
   100% {
@@ -1160,6 +1402,24 @@
   72%,
   100% {
     transform: translateX(360%) skewX(-18deg);
+  }
+}
+
+@keyframes page-route-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.992);
+    filter: saturate(0.85);
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.002);
+    filter: saturate(1.02);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: saturate(1);
   }
 }
 
@@ -1183,6 +1443,13 @@
   .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  /* Aucun contenu ne doit attendre son tour quand les animations sont coupées. */
+  .stagger > *,
+  #app-sidebar .sidebar-link {
+    animation-delay: 0ms !important;
+    transition-delay: 0ms !important;
   }
 
   *,

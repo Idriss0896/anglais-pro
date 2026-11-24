@@ -221,7 +221,7 @@ export function ProfilePage() {
   }
 
   return (
-    <div className="space-y-5">
+    <div className="stagger space-y-5">
       {welcome && (
         <div className="animate-fade-up flex items-center gap-2 rounded-2xl bg-emerald-soft px-4 py-3 text-[12px] font-bold text-emerald-strong ring-1 ring-emerald-strong/20">
           <Check size={16} className="shrink-0 text-emerald-strong" />

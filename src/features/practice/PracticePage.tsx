@@ -185,7 +185,7 @@ export function PracticePage() {
   const goalPercent = dailyGoal ? Math.min(100, Math.round((goalXp / dailyGoal) * 100)) : 0;
 
   return (
-    <div className="space-y-6">
+    <div className="stagger space-y-6">
       <PageHeader
         eyebrow={exercisesMode ? "Exercices guidés" : "Salle d'entraînement"}
         title={exercisesMode ? "Comprendre, pratiquer, progresser" : "Réviser, encore et encore"}

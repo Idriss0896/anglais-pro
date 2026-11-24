@@ -171,7 +171,7 @@ export function SettingsPage() {
   }
 
   return (
-    <div className="mx-auto max-w-4xl space-y-6">
+    <div className="stagger mx-auto max-w-4xl space-y-6">
       <PageHeader
         eyebrow="Préférences"
         title="Réglages"

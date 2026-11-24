@@ -125,7 +125,7 @@ export function LibraryPage({
   })).filter((group) => group.units.length > 0);
 
   return (
-    <div className="space-y-6">
+    <div className="stagger space-y-6">
       <PageHeader
         eyebrow={eyebrow}
         title={title}

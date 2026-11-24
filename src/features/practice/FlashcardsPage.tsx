@@ -86,7 +86,7 @@ export function FlashcardsPage() {
   const knownPercent = Math.round((known / deck.length) * 100);
 
   return (
-    <div className="space-y-6">
+    <div className="stagger space-y-6">
       <PageHeader
         eyebrow="Révision active"
         title="Cartes mémoire"

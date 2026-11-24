@@ -163,7 +163,7 @@ export function ExpressionsPage() {
   const displayed = filtered.slice(0, visible);
 
   return (
-    <div className="space-y-6">
+    <div className="stagger space-y-6">
       <PageHeader
         eyebrow="Boîte à expressions"
         title="Les mots pour le dire"

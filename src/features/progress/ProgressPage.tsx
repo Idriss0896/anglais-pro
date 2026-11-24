@@ -130,7 +130,7 @@ export function ProgressPage() {
   );
 
   return (
-    <div className="space-y-6">
+    <div className="stagger space-y-6">
       <PageHeader
         eyebrow="Mon espace"
         title="Ta progression"

@@ -812,8 +812,10 @@
   }
 
   @media (hover: none) and (pointer: coarse) {
+    /* Sur mobile, aucun reflet animé : les boutons restent d'une seule
+       couleur pleine, nette et lisible, conformément à la charte. */
     .motion-button::after {
-      animation: touch-button-sheen 4.8s ease-in-out infinite;
+      display: none;
     }
 
     .card-hover:active,

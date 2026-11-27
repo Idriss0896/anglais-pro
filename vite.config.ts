@@ -93,7 +93,7 @@ function routePreload(): Plugin {
   else if (path.indexOf("/expressions") === 0) names = ["AppShell", "ExpressionsPage", "LibraryPage", "content"];
   else if (path.indexOf("/progress") === 0) names = ["AppShell", "ProgressPage", "content"];
   else if (path.indexOf("/reglages") === 0) names = ["AppShell", "SettingsPage"];
-  else if (path.indexOf("/profile") === 0) names = ["AppShell", "ProfilePage", "content"];
+  else if (path.indexOf("/profile") === 0) names = ["AppShell", "ProfilePage"];
   else names = ["AppShell"];
 
   var base = "./";

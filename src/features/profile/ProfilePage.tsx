@@ -25,7 +25,7 @@ import { ProgressRing } from "@/components/ProgressRing";
 import { UserAvatar } from "@/components/UserAvatar";
 import { fileToAvatar } from "@/lib/avatar";
 import { ApiError } from "@/lib/api";
-import { TOTAL_UNITS } from "@/data/curriculum";
+import { TOTAL_UNITS } from "@/data/overview";
 import { getRank } from "@/lib/achievements";
 import {
   accuracyAverage,

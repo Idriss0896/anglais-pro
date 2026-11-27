@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type FormEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import {
   AlertCircle,
@@ -19,7 +19,7 @@ import { useAuth } from "@/auth/AuthProvider";
 import { Logo } from "@/components/Logo";
 import { markEnteredApp } from "@/lib/entry";
 import { ApiError, googleStartUrl } from "@/lib/api";
-import { TOTAL_PHRASES, TOTAL_QUESTIONS, TOTAL_UNITS } from "@/data/curriculum";
+import { TOTAL_PHRASES, TOTAL_QUESTIONS, TOTAL_UNITS } from "@/data/overview";
 import { cn, formatNumber } from "@/lib/utils";
 
 type Mode = "login" | "signup";
@@ -110,6 +110,9 @@ export function AuthPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // Après une inscription, on passe par le profil pour personnaliser le compte.
+  // Une connexion classique ramène directement à l'accueil personnalisé.
+  const destination = useRef("/accueil");
 
   const oauthError = searchParams.get("error");
   const message = useMemo(() => {
@@ -122,7 +125,7 @@ export function AuthPage() {
 
   useEffect(() => {
     if (user && !pending) {
-      navigate("/profile?welcome=1", { replace: true });
+      navigate(destination.current, { replace: true });
     }
   }, [user, pending, navigate]);
 
@@ -150,11 +153,13 @@ export function AuthPage() {
     setPending(true);
     try {
       if (mode === "signup") {
+        destination.current = "/profile?welcome=1";
         await signup(email, password, name);
       } else {
+        destination.current = "/accueil";
         await login(email, password);
       }
-      navigate("/profile?welcome=1", { replace: true });
+      navigate(destination.current, { replace: true });
     } catch (caught) {
       setError(
         caught instanceof ApiError

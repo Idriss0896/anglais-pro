@@ -14,6 +14,7 @@ import {
   PanelLeftOpen,
   Settings,
   Shapes,
+  WifiOff,
   X,
 } from "@/lib/icons";
 import { useAuth } from "@/auth/AuthProvider";
@@ -340,6 +341,20 @@ function Sidebar({
   const streak = useProgressStore((state) => state.streak);
   const rank = getRank(xp);
   const navDrag = useDragScroll<HTMLElement>();
+  // Sur mobile, le tiroir fermé ne rend pas ses liens : le premier écran reste
+  // léger et le menu apparaît dès l'ouverture. Le contenu reste monté le temps
+  // de l'animation de fermeture.
+  const [contentVisible, setContentVisible] = useState(isDesktop || open);
+  const showContent = contentVisible || isDesktop || open;
+
+  useEffect(() => {
+    if (isDesktop || open) {
+      setContentVisible(true);
+      return;
+    }
+    const timer = window.setTimeout(() => setContentVisible(false), 450);
+    return () => window.clearTimeout(timer);
+  }, [isDesktop, open]);
 
   return (
     <aside
@@ -351,18 +366,21 @@ function Sidebar({
       data-collapsed={collapsed || undefined}
       className={cn(
         "fixed inset-y-0 left-0 z-50 flex flex-col overflow-hidden pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-3 shadow-[0_36px_80px_-40px_rgba(30,16,60,0.9)] will-change-[transform,translate] lg:pt-5",
+        "safe-top-mobile",
         SHELL,
         "transition-[width,padding,transform,translate] duration-[420ms] ease-[cubic-bezier(0.32,0.72,0,1)] lg:translate-x-0 lg:shadow-none",
         collapsed ? "w-[84px] px-2.5" : "w-[292px] px-4 lg:w-[272px]",
         open ? "translate-x-0" : "-translate-x-full",
       )}
     >
-      <div
-        className={cn(
-          "relative flex",
-          collapsed ? "flex-col items-center gap-3" : "items-center justify-between gap-2",
-        )}
-      >
+      {showContent && (
+        <>
+          <div
+            className={cn(
+              "relative flex",
+              collapsed ? "flex-col items-center gap-3" : "items-center justify-between gap-2",
+            )}
+          >
         <Logo to="/accueil" compact={collapsed} onDark variant="sidebar" />
         {isDesktop ? (
           <button
@@ -470,7 +488,9 @@ function Sidebar({
             </>
           )}
         </Link>
-      </div>
+          </div>
+        </>
+      )}
     </aside>
   );
 }
@@ -557,12 +577,50 @@ function DesktopTopBar({ scrolled }: { scrolled: boolean }) {
   );
 }
 
+/** Signale une coupure réseau sans bloquer l'apprentissage hors ligne. */
+function useOnlineStatus() {
+  const [online, setOnline] = useState(() =>
+    typeof navigator === "undefined" ? true : navigator.onLine,
+  );
+
+  useEffect(() => {
+    const goOnline = () => setOnline(true);
+    const goOffline = () => setOnline(false);
+    window.addEventListener("online", goOnline);
+    window.addEventListener("offline", goOffline);
+    return () => {
+      window.removeEventListener("online", goOnline);
+      window.removeEventListener("offline", goOffline);
+    };
+  }, []);
+
+  return online;
+}
+
+function OfflineBanner() {
+  const online = useOnlineStatus();
+  if (online) return null;
+
+  return (
+    <div
+      role="status"
+      className="animate-rise fixed inset-x-3 bottom-[max(0.75rem,env(safe-area-inset-bottom))] z-40 mx-auto flex max-w-md items-start gap-2.5 rounded-2xl bg-[#1c0b45] px-4 py-3 text-white shadow-[0_24px_50px_-20px_rgba(10,5,30,0.9)] ring-1 ring-white/15"
+    >
+      <WifiOff size={17} className="mt-0.5 shrink-0 text-amber-200" />
+      <p className="text-[12px] font-semibold leading-5 text-white/85">
+        <span className="font-extrabold text-white">Mode hors ligne.</span> Ta progression reste
+        enregistrée sur cet appareil.
+      </p>
+    </div>
+  );
+}
+
 function MobileHeader({ onOpenMenu }: { onOpenMenu: () => void }) {
   const xp = useProgressStore((state) => state.xp);
   const streak = useProgressStore((state) => state.streak);
 
   return (
-    <header className="sticky top-0 z-30 px-4 pt-3 lg:hidden">
+    <header className="safe-top-mobile sticky top-0 z-30 px-4 pt-3 lg:hidden">
       <div
         className={cn(
           "rounded-[24px] px-2.5 py-2 ring-1 ring-white/15 shadow-[0_18px_40px_-22px_rgba(59,24,120,0.9)]",
@@ -653,7 +711,7 @@ function SiteFooter({ collapsed }: { collapsed: boolean }) {
             <section className="relative mt-5 w-full max-w-sm overflow-hidden rounded-[28px] border border-white/12 bg-[#35106f] p-4 shadow-[0_28px_60px_-34px_rgba(0,0,0,0.85)] sm:p-5">
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -right-10 -top-12 h-36 w-36 rounded-full bg-brand-500/25 blur-3xl"
+                className="pointer-events-none absolute -right-10 -top-12 h-36 w-36 rounded-full bg-[radial-gradient(circle_at_center,rgba(124,45,255,0.32),transparent_70%)]"
               />
               <div className="relative flex items-start gap-3">
                 <span className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white/10 text-amber-200 ring-1 ring-white/15">
@@ -662,7 +720,7 @@ function SiteFooter({ collapsed }: { collapsed: boolean }) {
                 <div className="min-w-0 pt-0.5">
                   <div className="flex items-center gap-1.5">
                     <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300" />
-                    <p className="font-nav text-[9px] font-extrabold uppercase tracking-[0.16em] text-amber-300 sm:text-[9.5px]">
+                    <p className="font-nav text-[9px] font-extrabold uppercase tracking-[0.16em] text-amber-200 sm:text-[9.5px]">
                       Gratuit · sans carte bancaire
                     </p>
                   </div>
@@ -722,7 +780,7 @@ function SiteFooter({ collapsed }: { collapsed: boolean }) {
                   <dd className="text-[15px] font-extrabold leading-none tabular-nums">
                     {formatNumber(stat.value)}
                   </dd>
-                  <dd className="mt-1 text-[9.5px] font-bold uppercase tracking-[0.1em] text-indigo-100/50">
+                  <dd className="mt-1 text-[9.5px] font-bold uppercase tracking-[0.1em] text-indigo-100/75">
                     {stat.label}
                   </dd>
                 </div>
@@ -733,7 +791,7 @@ function SiteFooter({ collapsed }: { collapsed: boolean }) {
           <div className="grid grid-cols-3 gap-x-3 gap-y-7 sm:gap-x-8">
             {footerNav.map((group) => (
               <div key={group.title}>
-                <p className="text-[9.5px] font-extrabold uppercase tracking-[0.12em] text-indigo-200/50 sm:text-[10px] sm:tracking-[0.16em]">
+                <p className="text-[9.5px] font-extrabold uppercase tracking-[0.12em] text-indigo-200/75 sm:text-[10px] sm:tracking-[0.16em]">
                   {group.title}
                 </p>
                 <ul className="mt-2.5 space-y-2 sm:mt-3 sm:space-y-2.5">
@@ -741,7 +799,7 @@ function SiteFooter({ collapsed }: { collapsed: boolean }) {
                     <li key={link.label}>
                       <Link
                         to={link.to}
-                        className="inline-flex text-[11.5px] font-semibold leading-tight text-indigo-100/70 transition-colors hover:text-white sm:text-[12.5px]"
+                        className="inline-flex min-h-11 min-w-11 items-center text-[11.5px] font-semibold leading-tight text-indigo-100/70 transition-colors hover:text-white sm:min-h-0 sm:py-0.5 sm:text-[12.5px]"
                       >
                         {link.label}
                       </Link>
@@ -754,13 +812,13 @@ function SiteFooter({ collapsed }: { collapsed: boolean }) {
         </div>
 
         <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-2 text-[11.5px] font-semibold text-indigo-100/50">
+          <div className="flex items-center gap-2 text-[11.5px] font-semibold text-indigo-100/75">
             <span className="grid h-6 w-6 place-items-center rounded-lg bg-white/10 ring-1 ring-white/10">
               <MaterialIcon name="public" size={14} />
             </span>
             Français (France)
           </div>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] font-semibold text-indigo-100/45">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] font-semibold text-indigo-100/70">
             <span>© 2026 ANGLO CLUB</span>
           </div>
         </div>
@@ -868,6 +926,7 @@ export function AppShell() {
         </div>
       </main>
       <SiteFooter collapsed={collapsed} />
+      <OfflineBanner />
     </div>
   );
 }
@@ -875,8 +934,11 @@ export function AppShell() {
 export function FocusShell({ children }: { children: React.ReactNode }) {
   useHorizontalLock();
   return (
-    <div className="animate-page-in mx-auto min-h-dvh w-full max-w-4xl px-4 pb-10 pt-4 sm:px-6 sm:pt-6">
-      {children}
-    </div>
+    <>
+      <div className="animate-page-in mx-auto min-h-dvh w-full max-w-4xl px-4 pb-10 pt-4 sm:px-6 sm:pt-6">
+        {children}
+      </div>
+      <OfflineBanner />
+    </>
   );
 }

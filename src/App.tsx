@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect, useState, type ComponentType } from "react";
 import { HashRouter, Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { Compass } from "@/lib/icons";
 import { AuthProvider, useAuth } from "@/auth/AuthProvider";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { LandingPage } from "@/features/landing/LandingPage";
 import { useSettingsStore } from "@/store/useSettingsStore";
 import { primeSpeech, setAudioEnabled } from "@/lib/audio";
@@ -48,10 +49,21 @@ const SettingsPage = page("SettingsPage", loadSettings);
 const AuthPage = page("AuthPage", loadAuth);
 const ProfilePage = page("ProfilePage", loadProfile);
 
-/** Précharge les écrans principaux pendant les temps morts du navigateur. */
+/**
+ * Précharge les écrans principaux, mais seulement après le premier rendu et
+ * jamais depuis la page de présentation. Le chargement à la demande reste la
+ * priorité : on ne vole pas la bande passante ni le thread principal au écran
+ * que le visiteur est en train de lire.
+ */
 function usePrefetchPages() {
   useEffect(() => {
+    let timer = 0;
+    let idleId = 0;
+    let done = false;
+
     const load = () => {
+      if (done) return;
+      done = true;
       void loadHome();
       void loadLearn();
       void loadProgress();
@@ -62,12 +74,41 @@ function usePrefetchPages() {
       void loadPractice();
     };
 
-    if (typeof window.requestIdleCallback === "function") {
-      const id = window.requestIdleCallback(load, { timeout: 2500 });
-      return () => window.cancelIdleCallback(id);
-    }
-    const timer = window.setTimeout(load, 1800);
-    return () => window.clearTimeout(timer);
+    const isLanding = () => {
+      const hash = window.location.hash;
+      return !hash || hash === "#" || hash === "#/" || hash.startsWith("#/auth");
+    };
+
+    const schedule = () => {
+      window.clearTimeout(timer);
+      if (done || isLanding()) return;
+      // 15 s : le visiteur a largement le temps de lire son écran avant que
+      // les autres pages ne se préparent en arrière-plan.
+      timer = window.setTimeout(() => {
+        if (typeof window.requestIdleCallback === "function") {
+          idleId = window.requestIdleCallback(load, { timeout: 2500 });
+        } else {
+          load();
+        }
+      }, 15_000);
+    };
+
+    const onInteract = () => {
+      if (!isLanding()) load();
+    };
+
+    window.addEventListener("pointerdown", onInteract, { passive: true });
+    window.addEventListener("keydown", onInteract);
+    window.addEventListener("hashchange", schedule);
+    schedule();
+
+    return () => {
+      window.clearTimeout(timer);
+      if (idleId) window.cancelIdleCallback(idleId);
+      window.removeEventListener("pointerdown", onInteract);
+      window.removeEventListener("keydown", onInteract);
+      window.removeEventListener("hashchange", schedule);
+    };
   }, []);
 }
 
@@ -164,31 +205,33 @@ export default function App() {
   return (
     <HashRouter>
       <ThemeSync resolved={resolved} />
-      <AuthProvider>
-        <ScrollToTop />
-        <Suspense fallback={<PageFallback />}>
-          <Routes>
-            <Route path="/" element={<Entry />} />
-            <Route path="/auth" element={<AuthPage />} />
-            <Route path="/lesson/:unitId" element={<LessonPage />} />
-            <Route path="/practice/session/:mode" element={<PracticeSessionPage />} />
-            <Route element={<AppShell />}>
-              <Route path="/accueil" element={<HomePage />} />
-              <Route path="/learn" element={<LearnPage />} />
-              <Route path="/grammar" element={<GrammarPage />} />
-              <Route path="/vocabulary" element={<VocabularyPage />} />
-              <Route path="/expressions" element={<ExpressionsPage />} />
-              <Route path="/practice" element={<PracticePage />} />
-              <Route path="/exercices" element={<PracticePage />} />
-              <Route path="/practice/flashcards" element={<FlashcardsPage />} />
-              <Route path="/progress" element={<ProgressPage />} />
-              <Route path="/reglages" element={<SettingsPage />} />
-              <Route path="/profile" element={<ProfilePage />} />
-              <Route path="*" element={<NotFound />} />
-            </Route>
-          </Routes>
-        </Suspense>
-      </AuthProvider>
+      <ErrorBoundary>
+        <AuthProvider>
+          <ScrollToTop />
+          <Suspense fallback={<PageFallback />}>
+            <Routes>
+              <Route path="/" element={<Entry />} />
+              <Route path="/auth" element={<AuthPage />} />
+              <Route path="/lesson/:unitId" element={<LessonPage />} />
+              <Route path="/practice/session/:mode" element={<PracticeSessionPage />} />
+              <Route element={<AppShell />}>
+                <Route path="/accueil" element={<HomePage />} />
+                <Route path="/learn" element={<LearnPage />} />
+                <Route path="/grammar" element={<GrammarPage />} />
+                <Route path="/vocabulary" element={<VocabularyPage />} />
+                <Route path="/expressions" element={<ExpressionsPage />} />
+                <Route path="/practice" element={<PracticePage />} />
+                <Route path="/exercices" element={<PracticePage />} />
+                <Route path="/practice/flashcards" element={<FlashcardsPage />} />
+                <Route path="/progress" element={<ProgressPage />} />
+                <Route path="/reglages" element={<SettingsPage />} />
+                <Route path="/profile" element={<ProfilePage />} />
+                <Route path="*" element={<NotFound />} />
+              </Route>
+            </Routes>
+          </Suspense>
+        </AuthProvider>
+      </ErrorBoundary>
     </HashRouter>
   );
 }

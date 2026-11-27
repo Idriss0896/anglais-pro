@@ -1,4 +1,5 @@
 {
+  "id": "/",
   "name": "ANGLO CLUB — Apprendre l'anglais",
   "short_name": "ANGLO CLUB",
   "description": "Quatre niveaux, du débutant au professionnel : cours, exercices, expressions et grammaire pour apprendre l'anglais.",
@@ -8,20 +9,53 @@
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#6d28d9",
+  "background_color": "#7428ff",
   "theme_color": "#7c2dff",
+  "categories": ["education", "productivity"],
   "icons": [
     {
-      "src": "./app-icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "./app-icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "maskable"
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Mon parcours",
+      "short_name": "Parcours",
+      "url": "./#/learn",
+      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Réviser",
+      "short_name": "Réviser",
+      "url": "./#/practice",
+      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Ma progression",
+      "short_name": "Progression",
+      "url": "./#/progress",
+      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192" }]
     }
   ]
 }

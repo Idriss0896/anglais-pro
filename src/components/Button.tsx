@@ -32,13 +32,13 @@ const variants: Record<ButtonVariant, string> = {
   ghost: "text-slate-600 hover:bg-slate-900/[0.06] hover:text-ink",
   soft: "bg-brand-soft text-brand-strong ring-1 ring-brand-600/10 hover:bg-brand-100",
   success:
-    "bg-emerald-600 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.26),0_12px_26px_-14px_rgba(5,150,105,0.85)] hover:bg-emerald-700",
+    "bg-emerald-700 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.26),0_12px_26px_-14px_rgba(5,150,105,0.85)] hover:bg-emerald-800",
   dark: "bg-[#131a33] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_12px_26px_-16px_rgba(23,22,43,0.85)] hover:bg-[#1d2542]",
   danger: "bg-rose-soft text-rose-strong ring-1 ring-rose-600/15 hover:bg-rose-soft",
 };
 
 const sizes: Record<ButtonSize, string> = {
-  sm: "h-9 px-4 text-[12.5px] rounded-full gap-1.5",
+  sm: "h-11 px-4 text-[12.5px] rounded-full gap-1.5 sm:h-9",
   md: "h-11 px-5 text-sm rounded-full gap-2",
   lg: "h-12 px-6 text-[15px] rounded-full gap-2.5",
 };

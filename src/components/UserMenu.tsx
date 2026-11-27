@@ -58,9 +58,11 @@ export function UserMenu({
         onClick={() => setOpen((value) => !value)}
         aria-haspopup="menu"
         aria-expanded={open}
-        aria-label={user ? `Compte de ${label}` : "Se connecter ou créer un compte"}
+        aria-label={
+          showIdentity ? undefined : user ? `Compte de ${label}` : "Se connecter ou créer un compte"
+        }
         className={cn(
-          "group flex items-center gap-2 rounded-full transition focus-visible:ring-4",
+          "group flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-full transition focus-visible:ring-4",
           showIdentity
             ? onDark
               ? "bg-white/10 p-1 pr-2.5 ring-1 ring-white/20 hover:bg-white/20"
@@ -87,7 +89,7 @@ export function UserMenu({
             <span
               className={cn(
                 "block text-[10px] font-bold",
-                onDark ? "text-indigo-100/65" : "text-slate-400",
+                onDark ? "text-white/95" : "text-slate-400",
               )}
             >
               {user ? rank.label : apiReady ? "Compte gratuit" : "Mode invité"}

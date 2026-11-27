@@ -42,6 +42,10 @@ export function HeaderStat({
   title,
   className,
 }: HeaderStatProps) {
+  const hint =
+    title ??
+    (typeof value === "string" || typeof value === "number" ? `${label} : ${value}` : label);
+
   const inner = (
     <>
       <span
@@ -55,7 +59,7 @@ export function HeaderStat({
       </span>
       <span className="min-w-0 leading-none">
         {!compact && (
-          <span className="block truncate text-[8.5px] font-extrabold uppercase tracking-[0.14em] text-indigo-100/60">
+          <span className="block truncate text-[8.5px] font-extrabold uppercase tracking-[0.14em] text-white">
             {label}
           </span>
         )}
@@ -68,29 +72,26 @@ export function HeaderStat({
           {content ?? value}
         </span>
       </span>
+      {compact && <span className="sr-only">{hint}</span>}
     </>
   );
 
   const classes = cn(
     "group inline-flex shrink-0 items-center gap-2 rounded-2xl bg-white/10 ring-1 ring-white/15 transition-colors hover:bg-white/20",
-    compact ? "h-10 px-2" : "h-11 px-2.5",
+    compact ? "h-11 px-2" : "h-11 px-2.5",
     className,
   );
 
-  const hint =
-    title ??
-    (typeof value === "string" || typeof value === "number" ? `${label} : ${value}` : label);
-
   if (to) {
     return (
-      <Link to={to} className={classes} title={hint} aria-label={hint}>
+      <Link to={to} className={classes} title={hint}>
         {inner}
       </Link>
     );
   }
 
   return (
-    <span className={classes} title={hint} aria-label={hint}>
+    <span className={classes} title={hint}>
       {inner}
     </span>
   );

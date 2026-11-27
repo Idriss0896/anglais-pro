@@ -41,7 +41,7 @@ export function SectionHeading({
         (to && (
           <Link
             to={to}
-            className="group inline-flex shrink-0 items-center gap-1 text-xs font-extrabold text-brand-strong hover:text-brand-strong"
+            className="group inline-flex min-h-11 shrink-0 items-center gap-1 text-xs font-extrabold text-brand-strong hover:text-brand-strong"
           >
             {linkLabel}
             <ArrowRight

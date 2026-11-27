@@ -125,14 +125,14 @@ export function FlashcardsPage() {
                   <div className="rounded-2xl bg-emerald-soft p-3 ring-1 ring-emerald-strong/20">
                     <Check size={16} className="mx-auto text-emerald-strong" />
                     <p className="mt-1 text-lg font-extrabold text-emerald-strong">{known}</p>
-                    <p className="text-[9px] font-extrabold uppercase text-emerald-600/60">
+                    <p className="text-[9px] font-extrabold uppercase text-emerald-700 dark:text-emerald-300">
                       Connues
                     </p>
                   </div>
                   <div className="rounded-2xl bg-amber-soft p-3 ring-1 ring-amber-strong/20">
                     <RefreshCw size={16} className="mx-auto text-amber-strong" />
                     <p className="mt-1 text-lg font-extrabold text-amber-strong">{review}</p>
-                    <p className="text-[9px] font-extrabold uppercase text-amber-600/60">
+                    <p className="text-[9px] font-extrabold uppercase text-amber-800 dark:text-amber-300">
                       À revoir
                     </p>
                   </div>
@@ -203,7 +203,7 @@ export function FlashcardsPage() {
                       <button
                         type="button"
                         onClick={() => speak(current.en)}
-                        className="grid h-9 w-9 place-items-center rounded-full bg-white/10 text-white ring-1 ring-white/15 transition hover:bg-white/20"
+                        className="grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white ring-1 ring-white/15 transition hover:bg-white/20"
                         aria-label="Écouter l'expression"
                       >
                         <Volume2 size={17} />
@@ -212,7 +212,7 @@ export function FlashcardsPage() {
                         type="button"
                         onClick={() => toggleFavorite(current.id)}
                         className={cn(
-                          "grid h-9 w-9 place-items-center rounded-full ring-1 transition",
+                          "grid h-11 w-11 place-items-center rounded-full ring-1 transition",
                           favorite
                             ? "bg-amber-400 text-amber-strong ring-amber-300"
                             : "bg-white/10 text-white/80 ring-white/15 hover:bg-white/20",
@@ -289,7 +289,7 @@ export function FlashcardsPage() {
               <div className="mt-3 flex items-center justify-between">
                 <Link
                   to="/practice"
-                  className="inline-flex items-center gap-1.5 text-[11px] font-extrabold text-slate-400 hover:text-brand-strong"
+                  className="inline-flex min-h-11 items-center gap-1.5 text-[11px] font-extrabold text-slate-400 hover:text-brand-strong"
                 >
                   <ArrowLeft size={13} />
                   Quitter les cartes
@@ -297,7 +297,7 @@ export function FlashcardsPage() {
                 <button
                   type="button"
                   onClick={restart}
-                  className="inline-flex items-center gap-1.5 text-[11px] font-extrabold text-slate-400 hover:text-brand-strong"
+                  className="inline-flex min-h-11 items-center gap-1.5 text-[11px] font-extrabold text-slate-400 hover:text-brand-strong"
                 >
                   <RefreshCw size={13} />
                   Mélanger
@@ -338,17 +338,17 @@ export function FlashcardsPage() {
             <div className="mt-4 grid grid-cols-2 gap-2">
               <div className="rounded-xl bg-emerald-soft p-2.5 text-center ring-1 ring-emerald-strong/20">
                 <p className="text-base font-extrabold text-emerald-strong">{known}</p>
-                <p className="text-[9px] font-extrabold uppercase text-emerald-600/60">Connues</p>
+                <p className="text-[9px] font-extrabold uppercase text-emerald-700 dark:text-emerald-300">Connues</p>
               </div>
               <div className="rounded-xl bg-amber-soft p-2.5 text-center ring-1 ring-amber-strong/20">
                 <p className="text-base font-extrabold text-amber-strong">{review}</p>
-                <p className="text-[9px] font-extrabold uppercase text-amber-600/60">À revoir</p>
+                <p className="text-[9px] font-extrabold uppercase text-amber-800 dark:text-amber-300">À revoir</p>
               </div>
             </div>
           </section>
 
           <section className="rounded-[24px] bg-[#131a33] p-5 text-white">
-            <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-white/40">
+            <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-white/60">
               Méthode
             </p>
             <h3 className="mt-1 text-[15px] font-extrabold">Répète à voix haute</h3>
@@ -356,7 +356,7 @@ export function FlashcardsPage() {
               Lis l'expression, écoute la prononciation, puis dis-la à voix haute avant
               de retourner la carte. La mémoire auditive fait la différence.
             </p>
-            <div className="mt-3 flex items-center gap-1.5 text-[10px] font-bold text-amber-300">
+            <div className="mt-3 flex items-center gap-1.5 text-[10px] font-bold text-amber-200">
               <Volume2 size={12} />
               Audio disponible sur chaque carte
             </div>

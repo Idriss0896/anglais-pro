@@ -28,7 +28,7 @@ export function Logo({
   return (
     <Link
       to={to}
-      className={cn("group inline-flex items-center", isMobile ? "gap-2" : "gap-2.5", className)}
+      className={cn("group inline-flex min-h-11 items-center", isMobile ? "gap-2" : "gap-2.5", className)}
       aria-label="ANGLO CLUB — Accueil"
     >
       <img
@@ -36,6 +36,7 @@ export function Logo({
         alt=""
         width={40}
         height={40}
+        fetchPriority="high"
         className={cn(
           "shrink-0 select-none drop-shadow-[0_6px_14px_rgba(46,16,101,0.28)] transition-transform duration-300 ease-out group-hover:-rotate-3 group-hover:scale-105 group-active:scale-95",
           isMobile ? "h-8 w-8" : "h-10 w-10",
@@ -56,7 +57,7 @@ export function Logo({
             )}
           >
             Anglo
-            <span className={onDark ? "text-amber-300" : "text-amber-strong"}> Club</span>
+            <span className={onDark ? "text-amber-200" : "text-amber-strong"}> Club</span>
           </span>
         </span>
       )}

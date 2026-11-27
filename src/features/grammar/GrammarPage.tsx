@@ -9,7 +9,7 @@ function GrammarBanner() {
       <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="max-w-xl">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.14em] text-white/75 ring-1 ring-white/10">
-            <Lightbulb size={12} className="text-amber-300" />
+            <Lightbulb size={12} className="text-amber-200" />
             La méthode
           </span>
           <h2 className="mt-3 text-xl font-extrabold tracking-[-0.02em] sm:text-2xl">

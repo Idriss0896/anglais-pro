@@ -188,7 +188,7 @@ export function AuthPage() {
           <Link
             to="/"
             onClick={() => markEnteredApp()}
-            className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-2 text-[11.5px] font-extrabold text-indigo-100 ring-1 ring-white/15 transition hover:-translate-y-0.5 hover:bg-white/15 hover:text-white"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-white/10 px-3.5 text-[11.5px] font-extrabold text-indigo-100 ring-1 ring-white/15 transition hover:-translate-y-0.5 hover:bg-white/15 hover:text-white"
           >
             <ArrowLeft size={14} />
             Continuer sans compte
@@ -293,7 +293,7 @@ export function AuthPage() {
                   type="button"
                   onClick={() => switchMode(item)}
                   className={cn(
-                    "h-10 rounded-xl text-[12.5px] font-extrabold transition-all",
+                    "h-11 rounded-xl text-[12.5px] font-extrabold transition-all",
                     mode === item
                       ? "bg-surface text-ink shadow-[0_8px_18px_-10px_rgba(23,22,43,0.4)]"
                       : "text-slate-500 hover:text-ink",
@@ -363,7 +363,7 @@ export function AuthPage() {
                   type="button"
                   onClick={() => setShowPassword((value) => !value)}
                   aria-label={showPassword ? "Masquer le mot de passe" : "Afficher le mot de passe"}
-                  className="absolute right-2 grid h-9 w-9 place-items-center rounded-xl text-slate-400 transition hover:bg-surface hover:text-slate-600"
+                  className="absolute right-2 grid h-11 w-11 place-items-center rounded-xl text-slate-400 transition hover:bg-surface hover:text-slate-600"
                 >
                   {showPassword ? <EyeOff size={17} /> : <Eye size={17} />}
                 </button>
@@ -435,7 +435,7 @@ export function AuthPage() {
             <Link
               to="/"
               onClick={() => markEnteredApp()}
-              className="mt-4 flex items-center justify-center gap-1.5 text-[11.5px] font-bold text-slate-500 transition hover:text-ink"
+              className="mt-4 flex min-h-11 items-center justify-center gap-1.5 text-[11.5px] font-bold text-slate-500 transition hover:text-ink"
             >
               Continuer sans compte
               <ArrowRight size={13} />

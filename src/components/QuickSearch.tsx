@@ -1,21 +1,28 @@
-import { useDeferredValue, useEffect, useId, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useDeferredValue,
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ArrowRight, CornerDownLeft, Search, X } from "@/lib/icons";
 import { MaterialIcon } from "@/components/MaterialIcon";
 import { LEVEL_SHORT_NAMES, LEVEL_THEMES } from "@/lib/levels";
 import { speak } from "@/lib/audio";
-import {
-  SEARCH_EXAMPLES,
-  search,
-  splitHighlight,
-  type EntryHit,
-  type Hit,
-  type LessonHit,
-  type WordHit,
-} from "@/lib/search";
+import { splitHighlight } from "@/lib/highlight";
+import type { EntryHit, Hit, LessonHit, SearchResult, WordHit } from "@/lib/search";
 import { cn, plural } from "@/lib/utils";
 import type { CategoryKey } from "@/types";
 import { CATEGORIES } from "@/lib/categories";
+
+/** Suggestions affichées avant la première frappe (aucun index à charger). */
+const SEARCH_EXAMPLES = ["airport", "meeting", "family", "always", "schedule"];
+
+/** Le moteur de recherche complet n'est chargé qu'à la première interaction. */
+type SearchApi = typeof import("@/lib/search");
 
 interface QuickSearchProps {
   className?: string;
@@ -76,11 +83,24 @@ export function QuickSearch({
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(autoFocus);
   const [active, setActive] = useState(0);
+  const [searchApi, setSearchApi] = useState<SearchApi | null>(null);
   const listId = useId();
+
+  // L'index complet représente plusieurs centaines de kilo-octets : il ne doit
+  // jamais retarder le premier écran. On le charge au premier focus (ou survol).
+  const loadSearch = useCallback(() => {
+    if (searchApi) return;
+    void import("@/lib/search")
+      .then((module) => setSearchApi(module))
+      .catch(() => undefined);
+  }, [searchApi]);
 
   // La frappe reste fluide : la recherche suit avec un léger différé.
   const deferredQuery = useDeferredValue(query);
-  const result = useMemo(() => search(deferredQuery), [deferredQuery]);
+  const result = useMemo<SearchResult>(
+    () => (searchApi ? searchApi.search(deferredQuery) : { hits: [] }),
+    [searchApi, deferredQuery],
+  );
 
   const rows: Hit[] = useMemo(
     () => (result.definition ? [result.definition, ...result.hits] : result.hits),
@@ -91,8 +111,10 @@ export function QuickSearch({
   const showResults = open && isTyping;
 
   useEffect(() => {
-    if (autoFocus) inputRef.current?.focus();
-  }, [autoFocus]);
+    if (!autoFocus) return;
+    loadSearch();
+    inputRef.current?.focus();
+  }, [autoFocus, loadSearch]);
 
   // Referme le panneau à chaque changement de page.
   useEffect(() => {
@@ -132,12 +154,13 @@ export function QuickSearch({
       if (isSlash && typing) return;
 
       event.preventDefault();
+      loadSearch();
       inputRef.current?.focus();
       setOpen(true);
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [variant]);
+  }, [variant, loadSearch]);
 
   useEffect(() => {
     setActive(0);
@@ -256,10 +279,14 @@ export function QuickSearch({
   };
 
   return (
-    <div ref={wrapRef} className={cn(variant === "mobile" ? "min-w-0" : "relative", className)}>
+    <div
+      ref={wrapRef}
+      onPointerEnter={loadSearch}
+      className={cn(variant === "mobile" ? "min-w-0" : "relative", className)}
+    >
       <div
         className={cn(
-          "flex h-10 w-full items-center gap-2.5 rounded-2xl bg-white/12 px-3 ring-1 ring-white/20 transition-all duration-200",
+          "flex h-11 w-full items-center gap-2.5 rounded-2xl bg-white/12 px-3 ring-1 ring-white/20 transition-all duration-200",
           "focus-within:bg-white focus-within:ring-2 focus-within:ring-white/75",
           open && "bg-white ring-2 ring-brand-500/45",
         )}
@@ -283,14 +310,21 @@ export function QuickSearch({
           aria-label="Rechercher un mot, une expression ou une leçon"
           placeholder="Rechercher un mot…"
           onChange={(event) => {
+            loadSearch();
             setQuery(event.target.value);
             setOpen(true);
           }}
-          onFocus={() => setOpen(true)}
-          onClick={() => setOpen(true)}
+          onFocus={() => {
+            loadSearch();
+            setOpen(true);
+          }}
+          onClick={() => {
+            loadSearch();
+            setOpen(true);
+          }}
           onKeyDown={onKeyDown}
           className={cn(
-            "min-w-0 flex-1 bg-transparent text-[13px] font-semibold outline-none [&::-webkit-search-cancel-button]:hidden placeholder:font-medium focus-visible:shadow-none",
+            "min-w-0 flex-1 bg-transparent text-[13px] font-semibold outline-none [&::-webkit-search-cancel-button]:hidden placeholder:font-medium focus-visible:shadow-none h-full",
             open
               ? "text-brand-900 placeholder:text-slate-400"
               : "text-white placeholder:text-indigo-100/70",
@@ -306,7 +340,7 @@ export function QuickSearch({
             }}
             aria-label="Effacer la recherche"
             className={cn(
-              "grid h-6 w-6 shrink-0 place-items-center rounded-full transition",
+              "grid h-9 w-9 shrink-0 place-items-center rounded-full transition",
               open
                 ? "text-slate-500 hover:bg-brand-50 hover:text-brand-700"
                 : "text-indigo-100/70 hover:bg-white/15 hover:text-white",
@@ -324,7 +358,7 @@ export function QuickSearch({
                   setOpen(false);
                 }}
                 aria-label="Fermer la recherche"
-                className="grid h-7 w-7 shrink-0 place-items-center rounded-full text-indigo-100/80 transition hover:bg-white/15 hover:text-white"
+                className="grid h-9 w-9 shrink-0 place-items-center rounded-full text-indigo-100/80 transition hover:bg-white/15 hover:text-white"
               >
                 <X size={15} />
               </button>
@@ -367,7 +401,14 @@ export function QuickSearch({
               variant === "mobile" ? "max-h-[54vh]" : "max-h-[62vh]",
             )}
           >
-            {!isTyping ? (
+            {isTyping && !searchApi ? (
+              <div className="px-3 py-4 text-center">
+                <p className="text-[12px] font-extrabold text-ink">Chargement du dictionnaire…</p>
+                <p className="mt-1 text-[11px] font-medium leading-5 text-slate-500">
+                  Les résultats arrivent dans un instant.
+                </p>
+              </div>
+            ) : !isTyping ? (
               <div className="px-2 py-3">
                 <p className="text-[12.5px] font-extrabold text-ink">
                   Écris un mot, obtiens son sens.

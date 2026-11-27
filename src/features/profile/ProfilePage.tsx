@@ -313,7 +313,7 @@ export function ProfilePage() {
               </p>
               <p className="text-lg font-extrabold">
                 {completed}
-                <span className="text-[12px] font-bold text-indigo-100/50"> / {TOTAL_UNITS} leçons</span>
+                <span className="text-[12px] font-bold text-indigo-100/75"> / {TOTAL_UNITS} leçons</span>
               </p>
               <p className="text-[11px] font-semibold text-indigo-100/60">{xp} XP au total</p>
             </div>

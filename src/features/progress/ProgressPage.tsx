@@ -145,17 +145,17 @@ export function ProgressPage() {
           <div className="pointer-events-none absolute -right-16 -top-20 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
           <div className="relative">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.14em] text-white/70 ring-1 ring-white/10">
-              <Medal size={12} className="text-amber-300" />
+              <Medal size={12} className="text-amber-200" />
               Niveau {rank.label}
             </span>
             <div className="mt-4 flex items-end justify-between gap-4">
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/40">
+                <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/70">
                   Points d'expérience
                 </p>
                 <p className="mt-1 text-4xl font-extrabold tracking-[-0.04em] sm:text-5xl">
                   {xp}
-                  <span className="ml-1 text-base font-bold text-white/40">XP</span>
+                  <span className="ml-1 text-base font-bold text-white/70">XP</span>
                 </p>
               </div>
               <ProgressRing
@@ -170,7 +170,7 @@ export function ProgressPage() {
               </ProgressRing>
             </div>
             <div className="mt-4">
-              <div className="mb-1.5 flex items-center justify-between text-[10px] font-bold text-white/45">
+              <div className="mb-1.5 flex items-center justify-between text-[10px] font-bold text-white/70">
                 <span>
                   {nextRank ? `Prochain rang : ${nextRank.label}` : "Rang maximum atteint"}
                 </span>
@@ -241,7 +241,7 @@ export function ProgressPage() {
           </div>
           <Link
             to="/learn"
-            className="text-[11px] font-extrabold text-brand-strong hover:text-brand-strong"
+            className="inline-flex min-h-11 items-center text-[11px] font-extrabold text-brand-strong hover:text-brand-strong"
           >
             Voir le parcours
           </Link>
@@ -362,7 +362,7 @@ export function ProgressPage() {
         </div>
         <Link
           to="/reglages"
-          className="inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-full bg-[#4c1d95] px-4 text-[11px] font-extrabold text-white transition-colors hover:bg-[#3b1878]"
+          className="inline-flex h-11 shrink-0 items-center justify-center gap-1.5 rounded-full bg-[#4c1d95] px-4 text-[11px] font-extrabold text-white transition-colors hover:bg-[#3b1878]"
         >
           Ouvrir les réglages
         </Link>

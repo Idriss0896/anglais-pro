@@ -112,7 +112,7 @@ function LessonPreview() {
     <div className="relative mx-auto w-full max-w-[430px]">
       <div
         aria-hidden="true"
-        className="animate-glow pointer-events-none absolute -inset-10 rounded-[46px] bg-brand-300/30 blur-2xl"
+        className="pointer-events-none absolute -inset-10 rounded-[46px] bg-[radial-gradient(circle_at_center,rgba(196,181,253,0.34),transparent_72%)]"
       />
 
       <div className="animate-float-slower relative rounded-[30px] bg-white p-5 shadow-[0_44px_90px_-32px_rgba(15,10,50,0.75)] ring-1 ring-white/40 sm:p-6">
@@ -153,7 +153,7 @@ function LessonPreview() {
 
         <div className="mt-4 border-t border-line pt-4">
           <div className="flex items-center justify-between gap-2 text-[10.5px] font-extrabold">
-            <span className="text-slate-400">Parcours · leçon 12 sur {TOTAL_UNITS}</span>
+            <span className="text-slate-500">Parcours · leçon 12 sur {TOTAL_UNITS}</span>
             <span className="text-azure-strong">19 %</span>
           </div>
           <div className="mt-2 h-2 overflow-hidden rounded-full bg-slate-100">
@@ -167,7 +167,7 @@ function LessonPreview() {
           <Flame size={14} fill="currentColor" />
         </span>
         <span className="leading-none">
-          <span className="block text-[8px] font-extrabold uppercase tracking-[0.12em] text-slate-400">
+          <span className="block text-[8px] font-extrabold uppercase tracking-[0.12em] text-slate-500">
             Série
           </span>
           <span className="mt-0.5 block text-[11px] font-extrabold text-ink">12 jours</span>
@@ -179,7 +179,7 @@ function LessonPreview() {
           <Check size={14} strokeWidth={3.2} />
         </span>
         <span className="leading-none">
-          <span className="block text-[8px] font-extrabold uppercase tracking-[0.12em] text-slate-400">
+          <span className="block text-[8px] font-extrabold uppercase tracking-[0.12em] text-slate-500">
             Leçon terminée
           </span>
           <span className="mt-0.5 block text-[11px] font-extrabold text-ink">+20 XP</span>
@@ -235,7 +235,7 @@ function LandingNav({ returning }: { returning: boolean }) {
             to="/auth"
             onClick={() => setOpen(false)}
             className={cn(
-              "hidden h-10 items-center rounded-full px-4 text-[12px] font-extrabold transition sm:inline-flex",
+              "hidden h-11 items-center rounded-full px-4 text-[12px] font-extrabold transition sm:inline-flex",
               scrolled
                 ? "text-slate-600 ring-1 ring-slate-900/10 hover:bg-slate-900/5 hover:text-ink"
                 : "text-white ring-1 ring-white/25 hover:bg-white/10",
@@ -245,7 +245,7 @@ function LandingNav({ returning }: { returning: boolean }) {
           </Link>
           <EnterLink
             to="/accueil"
-            className="btn-shine inline-flex h-10 items-center gap-1.5 rounded-full bg-brand-600 px-4 text-[12px] font-extrabold text-white shadow-[0_12px_26px_-12px_rgba(91,33,182,0.95)] ring-1 ring-white/20 transition hover:-translate-y-0.5 hover:bg-brand-700 max-[479px]:hidden"
+            className="btn-shine inline-flex h-11 items-center gap-1.5 rounded-full bg-brand-600 px-4 text-[12px] font-extrabold text-white shadow-[0_12px_26px_-12px_rgba(91,33,182,0.95)] ring-1 ring-white/20 transition hover:-translate-y-0.5 hover:bg-brand-700 max-[479px]:hidden"
           >
             {returning ? "Reprendre" : "Commencer"}
             <ArrowRight size={14} strokeWidth={2.6} />
@@ -256,7 +256,7 @@ function LandingNav({ returning }: { returning: boolean }) {
             aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
             aria-expanded={open}
             className={cn(
-              "grid h-10 w-10 place-items-center rounded-full transition lg:hidden",
+              "grid h-11 w-11 place-items-center rounded-full transition lg:hidden",
               scrolled
                 ? "bg-slate-900/5 text-ink ring-1 ring-slate-900/10"
                 : "bg-white/10 text-white ring-1 ring-white/20",
@@ -314,11 +314,11 @@ export function LandingPage({ returning = false }: { returning?: boolean }) {
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 hero-grid" />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-24 -top-24 h-[420px] w-[420px] rounded-full bg-[#7c3aed]/55 blur-[110px]"
+            className="pointer-events-none absolute -right-24 -top-24 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle_closest-side,rgba(124,58,237,0.55),transparent)]"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -bottom-32 left-[-10%] h-[380px] w-[380px] rounded-full bg-azure-500/40 blur-[110px]"
+            className="pointer-events-none absolute -bottom-32 left-[-10%] h-[380px] w-[380px] rounded-full bg-[radial-gradient(circle_closest-side,rgba(37,99,235,0.4),transparent)]"
           />
           <div aria-hidden="true" className="landing-beam pointer-events-none absolute left-1/2 top-0 h-px w-[48%] -translate-x-1/2 bg-amber-300/80" />
 
@@ -332,10 +332,7 @@ export function LandingPage({ returning = false }: { returning?: boolean }) {
                 {TOTAL_UNITS} leçons · {TOTAL_PHRASES} expressions
               </span>
 
-              <h1
-                className="animate-rise mt-5 max-w-[15ch] text-[38px] font-extrabold leading-[1.03] tracking-[-0.045em] sm:text-[52px] lg:text-[58px]"
-                style={{ animationDelay: "70ms" }}
-              >
+              <h1 className="mt-5 max-w-[15ch] text-[38px] font-extrabold leading-[1.03] tracking-[-0.045em] sm:text-[52px] lg:text-[58px]">
                 L'anglais qui se <span className="text-gradient">parle</span>, pas celui qu'on
                 récite.
               </h1>
@@ -485,18 +482,21 @@ export function LandingPage({ returning = false }: { returning?: boolean }) {
                 />
                 <ol className="space-y-4">
                   {STEPS.map((step, index) => (
-                    <Reveal key={step.title} delay={index * 100}>
-                      <li className="relative flex gap-4 rounded-[22px] bg-white p-4 ring-1 ring-slate-900/5 sm:gap-5 sm:p-5">
-                        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-[#2563eb] font-display text-[15px] font-extrabold text-white shadow-[0_12px_24px_-12px_rgba(37,99,235,0.9)]">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                        <div>
-                          <h3 className="text-[14.5px] font-extrabold text-ink">{step.title}</h3>
-                          <p className="mt-1 text-[12.5px] font-medium leading-6 text-slate-500">
-                            {step.text}
-                          </p>
-                        </div>
-                      </li>
+                    <Reveal
+                      as="li"
+                      key={step.title}
+                      delay={index * 100}
+                      className="relative flex gap-4 rounded-[22px] bg-white p-4 ring-1 ring-slate-900/5 sm:gap-5 sm:p-5"
+                    >
+                      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-[#2563eb] font-display text-[15px] font-extrabold text-white shadow-[0_12px_24px_-12px_rgba(37,99,235,0.9)]">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <div>
+                        <h3 className="text-[14.5px] font-extrabold text-ink">{step.title}</h3>
+                        <p className="mt-1 text-[12.5px] font-medium leading-6 text-slate-500">
+                          {step.text}
+                        </p>
+                      </div>
                     </Reveal>
                   ))}
                 </ol>
@@ -643,7 +643,7 @@ export function LandingPage({ returning = false }: { returning?: boolean }) {
                 <div>
                   <span className="inline-flex items-center gap-1.5">
                     <span className="h-1.5 w-1.5 rounded-full bg-amber-300" />
-                    <p className="font-nav text-[9.5px] font-bold uppercase tracking-[0.18em] text-amber-300">
+                    <p className="font-nav text-[9.5px] font-bold uppercase tracking-[0.18em] text-amber-200">
                       Gratuit · sans carte bancaire
                     </p>
                   </span>
@@ -683,7 +683,7 @@ export function LandingPage({ returning = false }: { returning?: boolean }) {
                 Déjà inscrit ?{" "}
                 <Link
                   to="/auth"
-                  className="font-bold text-white underline decoration-white/35 underline-offset-4 transition hover:decoration-white"
+                  className="inline-flex min-h-11 items-center font-bold text-white underline decoration-white/35 underline-offset-4 transition hover:decoration-white"
                 >
                   Se connecter
                 </Link>
@@ -704,49 +704,49 @@ export function LandingPage({ returning = false }: { returning?: boolean }) {
               </p>
             </div>
             <div>
-              <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-indigo-100/45">
+              <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-indigo-100/75">
                 Apprendre
               </p>
               <ul className="mt-3 space-y-2 text-[12px] font-bold text-indigo-100/70">
                 <li>
-                  <EnterLink to="/learn" className="transition hover:text-white">
+                  <EnterLink to="/learn" className="inline-flex min-h-11 items-center transition hover:text-white">
                     Le parcours
                   </EnterLink>
                 </li>
                 <li>
-                  <EnterLink to="/grammar" className="transition hover:text-white">
+                  <EnterLink to="/grammar" className="inline-flex min-h-11 items-center transition hover:text-white">
                     Grammaire
                   </EnterLink>
                 </li>
                 <li>
-                  <EnterLink to="/vocabulary" className="transition hover:text-white">
+                  <EnterLink to="/vocabulary" className="inline-flex min-h-11 items-center transition hover:text-white">
                     Vocabulaire
                   </EnterLink>
                 </li>
                 <li>
-                  <EnterLink to="/expressions" className="transition hover:text-white">
+                  <EnterLink to="/expressions" className="inline-flex min-h-11 items-center transition hover:text-white">
                     Expressions
                   </EnterLink>
                 </li>
               </ul>
             </div>
             <div>
-              <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-indigo-100/45">
+              <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-indigo-100/75">
                 Ton espace
               </p>
               <ul className="mt-3 space-y-2 text-[12px] font-bold text-indigo-100/70">
                 <li>
-                  <Link to="/auth" className="transition hover:text-white">
+                  <Link to="/auth" className="inline-flex min-h-11 items-center transition hover:text-white">
                     Se connecter
                   </Link>
                 </li>
                 <li>
-                  <EnterLink to="/progress" className="transition hover:text-white">
+                  <EnterLink to="/progress" className="inline-flex min-h-11 items-center transition hover:text-white">
                     Ma progression
                   </EnterLink>
                 </li>
                 <li>
-                  <EnterLink to="/profile" className="transition hover:text-white">
+                  <EnterLink to="/profile" className="inline-flex min-h-11 items-center transition hover:text-white">
                     Mon profil
                   </EnterLink>
                 </li>
@@ -754,7 +754,7 @@ export function LandingPage({ returning = false }: { returning?: boolean }) {
             </div>
           </div>
 
-          <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-5 text-[10.5px] font-semibold text-indigo-100/40 sm:flex-row sm:items-center">
+          <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-5 text-[10.5px] font-semibold text-indigo-100/70 sm:flex-row sm:items-center">
             <p>© {new Date().getFullYear()} ANGLO CLUB. Tous droits réservés.</p>
             <p className="inline-flex items-center gap-1.5">
               <Layers size={12} />

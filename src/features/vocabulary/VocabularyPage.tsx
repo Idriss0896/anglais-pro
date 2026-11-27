@@ -46,7 +46,7 @@ function VocabRow({ entry }: { entry: VocabEntry }) {
       <button
         type="button"
         onClick={() => speak(entry.primary)}
-        className="grid h-7 w-7 shrink-0 place-items-center rounded-full text-slate-400 opacity-0 transition group-hover/row:opacity-100 hover:bg-emerald-soft hover:text-emerald-strong focus-visible:opacity-100"
+        className="grid h-11 w-11 shrink-0 place-items-center rounded-full text-slate-400 opacity-100 transition hover:bg-emerald-soft hover:text-emerald-strong focus-visible:opacity-100 sm:h-7 sm:w-7 sm:opacity-0 sm:group-hover/row:opacity-100"
         aria-label={`Écouter : ${entry.primary}`}
       >
         <Volume2 size={14} strokeWidth={2.3} />
@@ -158,7 +158,7 @@ export function VocabularyPage() {
             type="button"
             onClick={() => setLevel("all")}
             className={cn(
-              "rounded-full px-3.5 py-2 text-[11px] font-extrabold transition",
+              "rounded-full px-3.5 py-2 text-[11px] font-extrabold transition min-h-11",
               level === "all"
                 ? "bg-[#131a33] text-white"
                 : "bg-surface text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
@@ -172,7 +172,7 @@ export function VocabularyPage() {
               type="button"
               onClick={() => setLevel(value)}
               className={cn(
-                "inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[11px] font-extrabold transition",
+                "inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[11px] font-extrabold transition min-h-11",
                 level === value
                   ? "bg-[#131a33] text-white"
                   : "bg-surface text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
@@ -311,7 +311,7 @@ export function VocabularyPage() {
                       </span>
                       <Link
                         to={`/lesson/${unit.id}`}
-                        className="inline-flex items-center gap-1 text-[11px] font-extrabold text-emerald-strong hover:text-emerald-strong"
+                        className="inline-flex min-h-11 items-center gap-1 text-[11px] font-extrabold text-emerald-strong hover:text-emerald-strong"
                       >
                         Ouvrir la leçon
                         <ArrowUpRight size={13} />

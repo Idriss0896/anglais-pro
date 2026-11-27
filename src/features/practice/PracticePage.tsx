@@ -210,7 +210,7 @@ export function PracticePage() {
           <div className="pointer-events-none absolute inset-0 pattern-dots opacity-25" />
           <div className="relative">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.14em] text-white/75 ring-1 ring-white/10">
-              <Flame size={12} className="text-amber-300" fill="currentColor" />
+              <Flame size={12} className="text-amber-200" fill="currentColor" />
               {streak} jour{streak > 1 ? "s" : ""} de série
             </span>
             <h2 className="mt-3 text-2xl font-extrabold tracking-[-0.03em] sm:text-3xl">

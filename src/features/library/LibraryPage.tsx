@@ -150,7 +150,7 @@ export function LibraryPage({
               type="button"
               onClick={() => updateParam("level", null)}
               className={cn(
-                "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-extrabold transition",
+                "inline-flex items-center gap-1.5 rounded-full px-3 min-h-11 py-1.5 text-[11px] font-extrabold transition",
                 activeLevel === "all"
                   ? "bg-brand-700 text-white"
                   : "bg-surface-soft text-slate-500 ring-1 ring-line hover:text-ink",
@@ -265,7 +265,7 @@ export function LibraryPage({
               type="button"
               onClick={() => updateParam("cat", null)}
               className={cn(
-                "inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-extrabold transition",
+                "inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 min-h-11 py-1.5 text-[11px] font-extrabold transition",
                 activeCategory === "all"
                   ? "bg-brand-600 text-white"
                   : "bg-surface text-slate-500 ring-1 ring-azure-500/15 hover:text-azure-strong",
@@ -285,7 +285,7 @@ export function LibraryPage({
                   type="button"
                   onClick={() => updateParam("cat", key)}
                   className={cn(
-                    "inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-extrabold transition",
+                    "inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 min-h-11 py-1.5 text-[11px] font-extrabold transition",
                     active
                       ? "bg-azure-700 text-white"
                       : "bg-surface text-slate-500 ring-1 ring-azure-500/15 hover:text-azure-strong",

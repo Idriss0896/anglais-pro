@@ -297,7 +297,7 @@ export function SettingsPage() {
                   onClick={() => setDailyGoal(goal)}
                   aria-pressed={dailyGoal === goal}
                   className={cn(
-                    "h-9 rounded-full px-3.5 text-[11px] font-extrabold transition-colors",
+                    "h-11 rounded-full px-3.5 text-[11px] font-extrabold transition-colors",
                     dailyGoal === goal
                       ? "bg-[#6d28d9] text-white"
                       : "bg-surface-soft text-slate-500 ring-1 ring-line hover:text-ink",
@@ -330,7 +330,7 @@ export function SettingsPage() {
         >
           <Link
             to="/progress"
-            className="inline-flex h-9 items-center gap-1.5 rounded-full bg-surface-soft px-3.5 text-[11px] font-extrabold text-slate-600 ring-1 ring-line transition-colors hover:text-ink"
+            className="inline-flex h-11 items-center gap-1.5 rounded-full bg-surface-soft px-3.5 text-[11px] font-extrabold text-slate-600 ring-1 ring-line transition-colors hover:text-ink"
           >
             Voir ma progression
             <ChevronRight size={16} />
@@ -358,7 +358,7 @@ export function SettingsPage() {
           <div className="flex shrink-0 items-center gap-2">
             <Link
               to="/profile"
-              className="inline-flex h-9 items-center gap-1.5 rounded-full bg-surface-soft px-3.5 text-[11px] font-extrabold text-slate-600 ring-1 ring-line transition-colors hover:text-ink"
+              className="inline-flex h-11 items-center gap-1.5 rounded-full bg-surface-soft px-3.5 text-[11px] font-extrabold text-slate-600 ring-1 ring-line transition-colors hover:text-ink"
             >
               <UserRound size={16} />
               Mon profil

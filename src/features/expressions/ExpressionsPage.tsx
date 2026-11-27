@@ -57,7 +57,7 @@ function PhraseCard({
           <button
             type="button"
             onClick={() => speak(phrase.en)}
-            className="grid h-8 w-8 place-items-center rounded-full text-slate-400 transition hover:bg-amber-soft hover:text-amber-strong"
+            className="grid h-11 w-11 place-items-center rounded-full text-slate-400 transition hover:bg-amber-soft hover:text-amber-strong sm:h-8 sm:w-8"
             aria-label={`Écouter : ${phrase.en}`}
           >
             <Volume2 size={15} strokeWidth={2.3} />
@@ -66,7 +66,7 @@ function PhraseCard({
             type="button"
             onClick={handleCopy}
             className={cn(
-              "grid h-8 w-8 place-items-center rounded-full transition",
+              "grid h-11 w-11 place-items-center rounded-full transition sm:h-8 sm:w-8",
               copied
                 ? "bg-emerald-soft text-emerald-strong"
                 : "text-slate-400 hover:bg-surface-soft hover:text-ink",
@@ -79,7 +79,7 @@ function PhraseCard({
             type="button"
             onClick={onToggle}
             className={cn(
-              "grid h-8 w-8 place-items-center rounded-full transition",
+              "grid h-11 w-11 place-items-center rounded-full transition sm:h-8 sm:w-8",
               favorite
                 ? "bg-amber-700 text-white"
                 : "text-slate-400 hover:bg-amber-soft hover:text-amber-strong",
@@ -113,13 +113,13 @@ function PhraseCard({
       <div className="mt-auto flex items-center justify-between gap-2 pt-4">
         <Link
           to={`/lesson/${phrase.unitId}`}
-          className="min-w-0 truncate text-[10px] font-bold text-slate-400 transition hover:text-brand-strong"
+          className="inline-flex min-h-11 min-w-0 items-center truncate text-[10px] font-bold text-slate-400 transition hover:text-brand-strong"
         >
           {phrase.unitTitle}
         </Link>
         <Link
           to={`/lesson/${phrase.unitId}`}
-          className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-surface-soft text-slate-400 transition group-hover:bg-brand-600 group-hover:text-white"
+          className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-surface-soft text-slate-400 transition group-hover:bg-brand-600 group-hover:text-white sm:h-7 sm:w-7"
           aria-label={`Ouvrir la leçon ${phrase.unitTitle}`}
         >
           <ArrowUpRight size={13} />
@@ -228,7 +228,7 @@ export function ExpressionsPage() {
             type="button"
             onClick={() => setLevel("all")}
             className={cn(
-              "rounded-full px-3.5 py-2 text-[11px] font-extrabold transition",
+              "rounded-full px-3.5 py-2 text-[11px] font-extrabold transition min-h-11",
               level === "all"
                 ? "bg-[#131a33] text-white"
                 : "bg-surface text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
@@ -242,7 +242,7 @@ export function ExpressionsPage() {
               type="button"
               onClick={() => setLevel(value)}
               className={cn(
-                "inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[11px] font-extrabold transition",
+                "inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[11px] font-extrabold transition min-h-11",
                 level === value
                   ? "bg-[#131a33] text-white"
                   : "bg-surface text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
@@ -256,7 +256,7 @@ export function ExpressionsPage() {
             type="button"
             onClick={() => setFavoritesOnly((value) => !value)}
             className={cn(
-              "inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[11px] font-extrabold transition",
+              "inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[11px] font-extrabold transition min-h-11",
               favoritesOnly
                 ? "bg-amber-700 text-white"
                 : "bg-surface text-slate-500 ring-1 ring-slate-900/[0.06] hover:text-ink",
@@ -327,7 +327,7 @@ export function ExpressionsPage() {
               <button
                 type="button"
                 onClick={() => setVisible((value) => value + 24)}
-                className="rounded-full bg-surface px-5 py-2.5 text-xs font-extrabold text-brand-strong shadow-soft ring-1 ring-slate-900/[0.06] transition hover:-translate-y-0.5 hover:text-brand-strong"
+                className="min-h-11 rounded-full bg-surface px-5 py-2.5 text-xs font-extrabold text-brand-strong shadow-soft ring-1 ring-slate-900/[0.06] transition hover:-translate-y-0.5 hover:text-brand-strong"
               >
                 Afficher plus d'expressions ({filtered.length - visible})
               </button>

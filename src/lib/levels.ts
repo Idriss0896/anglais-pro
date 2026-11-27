@@ -36,7 +36,7 @@ export const LEVEL_THEMES: Record<number, LevelTheme> = {
     badge: "bg-emerald-soft text-emerald-strong ring-1 ring-emerald-strong/20",
     surface: "bg-emerald-soft/50",
     border: "border-emerald-strong/20",
-    chip: "bg-emerald-600 text-white",
+    chip: "bg-emerald-700 text-white",
     onSolid: "text-white",
   },
   2: {
@@ -75,7 +75,7 @@ export const LEVEL_THEMES: Record<number, LevelTheme> = {
     badge: "bg-amber-soft text-amber-strong ring-1 ring-amber-strong/20",
     surface: "bg-amber-soft/50",
     border: "border-amber-strong/20",
-    chip: "bg-amber-600 text-white",
+    chip: "bg-amber-700 text-white",
     onSolid: "text-white",
   },
 };

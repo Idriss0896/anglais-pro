@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { createElement, useEffect, useRef, useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 interface RevealProps {
@@ -6,6 +6,8 @@ interface RevealProps {
   /** Délai en millisecondes pour décaler l'apparition. */
   delay?: number;
   className?: string;
+  /** Permet de rester dans une liste sémantique (ul/ol) sans div parasite. */
+  as?: "div" | "li" | "article";
 }
 
 /**
@@ -13,8 +15,8 @@ interface RevealProps {
  * Le rendu final est identique sans JavaScript : le contenu est seulement
  * décalé de quelques pixels pendant l'animation.
  */
-export function Reveal({ children, delay = 0, className }: RevealProps) {
-  const ref = useRef<HTMLDivElement | null>(null);
+export function Reveal({ children, delay = 0, className, as: Tag = "div" }: RevealProps) {
+  const ref = useRef<HTMLElement | null>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -40,13 +42,13 @@ export function Reveal({ children, delay = 0, className }: RevealProps) {
     return () => observer.disconnect();
   }, []);
 
-  return (
-    <div
-      ref={ref}
-      className={cn("reveal", visible && "is-visible", className)}
-      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
-    >
-      {children}
-    </div>
+  return createElement(
+    Tag,
+    {
+      ref,
+      className: cn("reveal", visible && "is-visible", className),
+      style: delay ? { transitionDelay: `${delay}ms` } : undefined,
+    },
+    children,
   );
 }

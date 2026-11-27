@@ -1,6 +1,6 @@
 // Incrémente ce nom à chaque évolution majeure pour éviter de servir un
 // ancien bundle CSS/JS aux utilisateurs déjà installés.
-const CACHE_VERSION = "anglo-club-v5";
+const CACHE_VERSION = "anglo-club-v6";
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const ASSET_CACHE = `${CACHE_VERSION}-assets`;
 
@@ -69,6 +69,30 @@ async function networkFirstNavigation(request) {
   }
 }
 
+/**
+ * Fichier généré à chaque build (liste des chunks à précharger) : le réseau
+ * d'abord pour rester aligné sur l'index HTML courant. Sans cela, un ancien
+ * `route-preload.js` en cache demanderait des assets qui n'existent plus.
+ */
+async function networkFirstFile(request) {
+  const cache = await caches.open(SHELL_CACHE);
+  try {
+    const response = await fetch(request);
+    if (response.ok) {
+      cache.put(request, response.clone()).catch(() => undefined);
+    }
+    return response;
+  } catch {
+    return (
+      (await cache.match(request)) ||
+      new Response("", {
+        status: 503,
+        headers: { "Content-Type": "text/plain; charset=utf-8" },
+      })
+    );
+  }
+}
+
 /** Assets versionnés (hash dans le nom) : immuables, donc cache d'abord. */
 async function cacheFirst(request) {
   const cached = await caches.match(request);
@@ -112,6 +136,12 @@ self.addEventListener("fetch", (event) => {
 
   if (request.mode === "navigate") {
     event.respondWith(networkFirstNavigation(request));
+    return;
+  }
+
+  // Généré à chaque build : doit correspondre à l'index servi juste avant.
+  if (url.pathname.endsWith("/route-preload.js")) {
+    event.respondWith(networkFirstFile(request));
     return;
   }
 

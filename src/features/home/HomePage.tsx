@@ -267,7 +267,10 @@ export function HomePage() {
             {formatLongDate(now)}
           </span>
 
-          <h1 className="font-display mt-4 text-[30px] font-extrabold leading-[1.1] tracking-[-0.045em] text-ink sm:text-[44px]">
+          <h1
+            aria-label={`${hello.text}, ${displayName}`}
+            className="font-display mt-4 text-[30px] font-extrabold leading-[1.1] tracking-[-0.045em] text-ink sm:text-[44px]"
+          >
             <span className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5">
               <span>{hello.text},</span>
               <span
